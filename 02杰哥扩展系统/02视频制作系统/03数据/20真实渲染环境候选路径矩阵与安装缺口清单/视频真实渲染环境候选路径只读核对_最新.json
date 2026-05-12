@@ -1,0 +1,62 @@
+{
+  "名称": "视频真实渲染环境候选路径只读核对",
+  "生成时间": "2026-05-08 17:52:07",
+  "来源包": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\20真实渲染环境候选路径矩阵与安装缺口清单\\视频真实渲染环境候选路径矩阵与安装缺口清单_最新.json",
+  "error_count": 0,
+  "可进入真实渲染": false,
+  "can_enter_real_render": false,
+  "不得进入真实渲染原因": [
+    "本轮只读核对不包含真实渲染放行授权",
+    "未执行 magick 或 magick -version，不能确认 ImageMagick 实际运行版本",
+    "未调用 MoneyPrinterTurbo，不能确认工程依赖、配置和真实渲染链路状态",
+    "未核验素材授权、人审回执、发布放行链和真实渲染前最终确认记录",
+    "MoneyPrinterTurbo：未发现候选安装目录存在",
+    "MoneyPrinterTurbo：未发现 start.bat、app/main.py、webui/Main.py 任一入口文件",
+    "ImageMagick：shutil.which('magick') 未解析到命令名",
+    "ImageMagick：候选目录未识别到 magick.exe",
+    "真实渲染放行链：本包没有真实渲染授权、素材授权、人审回执、发布放行的全链验收"
+  ],
+  "候选路径摘要": {
+    "MoneyPrinterTurbo候选目录数": 8,
+    "MoneyPrinterTurbo存在目录数": 0,
+    "MoneyPrinterTurbo含入口文件目录数": 0,
+    "ImageMagick候选目录数": 6,
+    "ImageMagick存在目录数": 2,
+    "ImageMagick含magick_exe目录数": 0,
+    "ImageMagick_PATH命令名可解析": false
+  },
+  "下一步人工安装配置核对": [
+    "人工确认 MoneyPrinterTurbo 实际安装目录，并确认 start.bat、app/main.py、webui/Main.py 中的有效入口",
+    "人工确认 ImageMagick 安装目录是否包含 magick.exe",
+    "人工确认 PATH 中 magick 命令名是否可解析；版本核对只能在另行授权窗口手工执行",
+    "人工补齐素材授权、人审回执、任务单、发布放行链和真实渲染前最终确认记录",
+    "总管未另行下发明确放行任务前，不得触发真实渲染、上传发布、n8n、企业微信公共配置或服务重载"
+  ],
+  "readonly_flags": {
+    "真实渲染": false,
+    "生成真实视频": false,
+    "上传发布": false,
+    "调用MoneyPrinterTurbo": false,
+    "执行magick": false,
+    "执行magick_version": false,
+    "触发n8n": false,
+    "修改企业微信公共配置": false,
+    "修改总管面板": false,
+    "修改一键接续包": false,
+    "重载服务": false
+  },
+  "readonly_flags_ascii": {
+    "real_render": false,
+    "generate_real_video": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false
+  },
+  "核对结论": "只读核对完成；当前不得进入真实渲染，不得生成真实视频，不得上传发布。"
+}

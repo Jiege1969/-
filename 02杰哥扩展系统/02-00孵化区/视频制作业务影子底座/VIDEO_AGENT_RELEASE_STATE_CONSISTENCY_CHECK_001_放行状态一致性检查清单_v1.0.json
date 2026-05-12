@@ -1,0 +1,31 @@
+{
+  "asset_id": "VIDEO_AGENT_RELEASE_STATE_CONSISTENCY_CHECK_001",
+  "name": "放行状态一致性检查清单",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:12:00 +08:00",
+  "risk_level": "低风险",
+  "purpose": "防止生成放行、真实渲染放行、发布放行被混用",
+  "checks": [
+    "生成放行状态",
+    "真实渲染放行状态",
+    "发布放行状态",
+    "成品预览状态",
+    "素材授权状态",
+    "AI标识状态",
+    "平台规则状态"
+  ],
+  "consistency_rules": [
+    "生成放行不能推导真实渲染放行",
+    "真实渲染放行不能推导发布放行",
+    "成品预览通过不能推导发布放行",
+    "企业微信口令不能替代任一放行清单",
+    "放行状态冲突时以更保守状态为准"
+  ],
+  "boundary": {
+    "modify_release_list": false,
+    "release_generation": false,
+    "release_render": false,
+    "release_publish": false,
+    "real_system_triggered": false
+  }
+}

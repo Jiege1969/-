@@ -1,0 +1,73 @@
+{
+  "sample_id": "Y-SAMPLE-04-MANUAL-CONFIRMATION-MISSING-BLOCKED",
+  "sample_type": "人工确认缺失禁出",
+  "status": "blocked_by_missing_confirmation",
+  "input": {
+    "input_id": "manual-final-check-input-004",
+    "source_reference_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\08真实输出前最终确认包\\样本04_人工构造输入引用_不读取真实文档.txt",
+    "source_reference_type": "manual_placeholder",
+    "authorization_status": "manual_shadow_only",
+    "input_scope_note": "字段用于确认缺少人工签名时必须禁出；不读取、不复制、不转换真实业务文档。",
+    "source_read_performed": false
+  },
+  "output_preview": {
+    "preview_id": "Y-PREVIEW-004",
+    "preview_format": "confirmation_block_preview",
+    "preview_content_summary": "输出预览字段完整，但缺少人工确认签名，必须禁出。",
+    "preview_metadata": {
+      "title": "人工确认缺失禁出样本",
+      "all_preview_fields_present": true,
+      "manual_signature_present": false
+    },
+    "no_real_output_file": true,
+    "real_file_path": null
+  },
+  "manual_confirmation": {
+    "confirm_required": true,
+    "confirm_status": "missing",
+    "confirmer": null,
+    "confirm_time": null,
+    "confirm_result": "rejected_missing_human_signature",
+    "signature_required": true
+  },
+  "risk": {
+    "risk_level": "medium_confirmation_gap",
+    "risk_items": [
+      "缺少人工确认人",
+      "缺少确认时间",
+      "缺少签名"
+    ],
+    "sensitive_info_check": "not_detected_in_manual_placeholder",
+    "external_send_check": "blocked",
+    "formal_write_check": "blocked",
+    "risk_clearance_status": "not_cleared_due_to_missing_confirmation"
+  },
+  "rollback": {
+    "rollback_required": true,
+    "rollback_mode": "reject_until_manual_confirmation_completed",
+    "rollback_scope": "confirmation_preview_metadata_only",
+    "rollback_action": "退回人工确认步骤；不生成真实输出，不对用户文档执行任何回滚动作。",
+    "rollback_confirm_required": true
+  },
+  "release_block_conditions": {
+    "block_if_input_missing": true,
+    "block_if_no_manual_confirmation": true,
+    "block_if_risk_not_cleared": true,
+    "block_if_real_output_requested": true,
+    "block_if_batch_or_external_action": true,
+    "block_action": "block_real_output_until_human_signature"
+  },
+  "action_switches": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_output_file_generation": false,
+    "allow_delete_move_overwrite": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_wecom_real_message": false,
+    "allow_formal_library_write": false,
+    "allow_broker_api": false,
+    "allow_auto_trade": false
+  }
+}

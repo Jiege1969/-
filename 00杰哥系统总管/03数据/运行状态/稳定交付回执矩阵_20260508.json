@@ -1,0 +1,144 @@
+﻿{
+    "asset_name":  "稳定交付回执矩阵",
+    "generated_at":  "2026-05-08 19:05:00 +08:00",
+    "asset_identity":  "总管侧 W1/R0 稳定交付回执矩阵",
+    "status":  "matrix_ready",
+    "formal_acceptance_report":  false,
+    "items":  [
+                  {
+                      "batch":  "SR-01",
+                      "task_id":  "SR-01-TAX-001",
+                      "business_line":  "税收政策顾问",
+                      "input_requirement":  "1 个脱敏涉税问题，优先软件产品即征即退",
+                      "expected_artifact":  "待复核草案或入口映射回执",
+                      "status":  "completed",
+                      "redline_hit":  false
+                  },
+                  {
+                      "batch":  "SR-01",
+                      "task_id":  "SR-01-STOCK-001",
+                      "business_line":  "股票 L3 研究",
+                      "input_requirement":  "1 个股票研究对象或 P0 证据缺口",
+                      "expected_artifact":  "证据缺口回执或研究草案回执",
+                      "status":  "completed",
+                      "redline_hit":  false
+                  },
+                  {
+                      "batch":  "SR-01",
+                      "task_id":  "SR-01-VIDEO-001",
+                      "business_line":  "视频影子工厂",
+                      "input_requirement":  "1 个视频选题或脚本草案",
+                      "expected_artifact":  "脚本/分镜/素材授权复核回执",
+                      "status":  "completed",
+                      "redline_hit":  false
+                  },
+                  {
+                      "batch":  "SR-02",
+                      "task_id":  "SR-02-WECOM-001",
+                      "business_line":  "企业微信接入层",
+                      "input_requirement":  "1 个入口或路由口径核查",
+                      "expected_artifact":  "只读对齐回执",
+                      "status":  "completed",
+                      "redline_hit":  false
+                  },
+                  {
+                      "batch":  "SR-02",
+                      "task_id":  "SR-02-MGR-001",
+                      "business_line":  "总管协调层",
+                      "input_requirement":  "1 个并行回传吸收样例",
+                      "expected_artifact":  "总管吸收回执",
+                      "status":  "completed",
+                      "redline_hit":  false
+                  },
+                  {
+                      "batch":  "SR-03",
+                      "task_id":  "SR-03-ALL-001",
+                      "business_line":  "组合复核",
+                      "input_requirement":  "五条线 SR-01/SR-02 回执",
+                      "expected_artifact":  "稳定交付候选确认记录",
+                      "status":  "completed",
+                      "redline_hit":  false
+                  },
+                  {
+                      "batch":  "SR-02",
+                      "task_id":  "SR-02-WECOM-N8N-142",
+                      "business_line":  "企业微信与n8n接入任务",
+                      "input_requirement":  "股票 n8n 未激活导入后全局复验与灰度手动执行测试授权等待",
+                      "expected_artifact":  "导入后核验报告、执行记录只读抽查、稳定交付导入后全局复验回传",
+                      "status":  "imported_inactive_pending_gray_manual_execute_authorization",
+                      "redline_hit":  false
+                  }
+              ],
+    "batch_pass_conditions":  {
+                                  "SR-01":  "税收、股票、视频各有 1 份合格回执，红线 0",
+                                  "SR-02":  "企业微信接入层和总管协调层各有 1 份合格回执，红线 0",
+                                  "SR-03":  "能从 SR-01/SR-02 回执生成稳定交付候选确认记录，红线 0"
+                              },
+    "boundaries":  {
+                       "trigger_n8n":  false,
+                       "wecom_real_send":  false,
+                       "write_formal_db":  false,
+                       "modify_service_script":  false,
+                       "restart_19310_19302":  false,
+                       "login_real_systems":  false,
+                       "video_render_upload_publish":  false,
+                       "delete_move_archive_old_dirs":  false
+                   },
+    "status_convergence_20260509":  {
+                                        "时间":  "2026-05-09 14:02:15",
+                                        "口径":  "股票 n8n 已存在/已导入且 active=false，等待灰度手动执行测试授权。",
+                                        "状态":  "imported_inactive_pending_gray_manual_execute_authorization",
+                                        "目标工作流":  "股票主动研究闭环_文件桥接未激活",
+                                        "workflow_id":  "ZkzsB6MdxlC3VMxY",
+                                        "active":  false,
+                                        "已存在未重复导入":  true,
+                                        "本轮未新增执行记录":  true,
+                                        "证据":  {
+                                                   "日常可用总回归":  {
+                                                                   "状态":  "pass",
+                                                                   "通过":  81,
+                                                                   "失败":  0,
+                                                                   "路径":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\153C加加加总验收\\股票系统C加加加日常可用总验收_最新.json"
+                                                               },
+                                                   "企业微信公共接入层巡检":  {
+                                                                       "状态":  "pass",
+                                                                       "通过":  15,
+                                                                       "失败":  0,
+                                                                       "路径":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\03数据\\15日常可用版只读巡检包\\企业微信公共接入层日常只读巡检_最新.json"
+                                                                   },
+                                                   "股票展示口径一致性":  {
+                                                                     "通过":  true,
+                                                                     "检查文件数":  10,
+                                                                     "错误数":  0,
+                                                                     "路径":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\246展示口径修复\\股票展示口径一致性验收_最新.json"
+                                                                 },
+                                                   "股票n8n未激活导入后核验":  {
+                                                                         "状态":  "pass",
+                                                                         "通过":  15,
+                                                                         "失败":  0,
+                                                                         "路径":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\n8n未激活导入\\stock-n8n-inactive-import-post-verify-最新.json"
+                                                                     },
+                                                   "n8n执行记录只读抽查":  {
+                                                                       "工作流存在":  true,
+                                                                       "active_false":  true,
+                                                                       "本轮日期无执行记录":  true,
+                                                                       "webhook登记为0":  true,
+                                                                       "路径":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\n8n未激活导入\\n8n-target-execution-readonly-after-import-最新.json"
+                                                                   }
+                                               },
+                                        "安全边界":  {
+                                                     "本次复验导入n8n":  false,
+                                                     "启用n8n":  false,
+                                                     "触发n8n":  false,
+                                                     "手动触发":  false,
+                                                     "企业微信真实发送":  false,
+                                                     "群发":  false,
+                                                     "接券商":  false,
+                                                     "交易":  false,
+                                                     "重载19310":  false,
+                                                     "重载19302":  false,
+                                                     "修改总管面板":  false,
+                                                     "修改一键接续包":  false
+                                                 }
+                                    }
+}

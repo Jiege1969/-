@@ -1,0 +1,334 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stock Capital Institution Unlock Evidence Card Schema",
+  "description": "单股资金/机构/减持解禁证据卡影子Schema。用于把公开资金流、机构持仓、限售解禁、减持计划和交易公开信息结构化为L3基本面/资金分项的证据与缺口。该Schema只服务研究分析，不生成交易动作。",
+  "type": "object",
+  "required": [
+    "名称",
+    "版本",
+    "生成日期",
+    "所属系统",
+    "资产身份",
+    "状态",
+    "stock",
+    "evidence_scope",
+    "source_requirements",
+    "evidence_slots",
+    "capital_institution_shadow_score",
+    "front_output_compression",
+    "safety_boundary"
+  ],
+  "properties": {
+    "名称": {
+      "type": "string"
+    },
+    "版本": {
+      "type": "string"
+    },
+    "生成日期": {
+      "type": "string",
+      "format": "date"
+    },
+    "所属系统": {
+      "type": "string"
+    },
+    "资产身份": {
+      "type": "string",
+      "enum": [
+        "W1证据候选卡",
+        "影子证据卡",
+        "样本证据卡",
+        "正式证据卡候选"
+      ]
+    },
+    "状态": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "source_requirements_ready",
+        "evidence_ready",
+        "pending_review",
+        "human_reviewed"
+      ]
+    },
+    "not_formal_config": {
+      "type": "boolean",
+      "const": true
+    },
+    "not_entrypoint": {
+      "type": "boolean",
+      "const": true
+    },
+    "not_external_send": {
+      "type": "boolean",
+      "const": true
+    },
+    "stock": {
+      "type": "object",
+      "required": [
+        "name",
+        "code",
+        "display_code"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "display_code": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence_scope": {
+      "type": "object",
+      "required": [
+        "capital_flow",
+        "institutional_holding",
+        "unlock_reduction",
+        "public_trading_disclosure"
+      ],
+      "properties": {
+        "capital_flow": {
+          "type": "string"
+        },
+        "institutional_holding": {
+          "type": "string"
+        },
+        "unlock_reduction": {
+          "type": "string"
+        },
+        "public_trading_disclosure": {
+          "type": "string"
+        }
+      }
+    },
+    "source_requirements": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_name",
+          "source_type",
+          "required_fields",
+          "status",
+          "usage_boundary"
+        ],
+        "properties": {
+          "source_name": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "required_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_collected",
+              "candidate_source_registered",
+              "collected_pending_review",
+              "reviewed"
+            ]
+          },
+          "usage_boundary": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence_slots": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "slot",
+          "display_name",
+          "status",
+          "required_fields",
+          "evidence",
+          "missing",
+          "front_usage"
+        ],
+        "properties": {
+          "slot": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "missing",
+              "candidate_source_registered",
+              "partial",
+              "evidence_ready",
+              "not_applicable"
+            ]
+          },
+          "required_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "front_usage": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "capital_institution_shadow_score": {
+      "type": "object",
+      "required": [
+        "score",
+        "max_score",
+        "score_status",
+        "score_reason",
+        "positive_evidence",
+        "negative_evidence",
+        "missing",
+        "confidence"
+      ],
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "max_score": {
+          "type": "number",
+          "const": 5
+        },
+        "score_status": {
+          "type": "string",
+          "enum": [
+            "not_scored",
+            "shadow_scored",
+            "pending_review",
+            "human_reviewed"
+          ]
+        },
+        "score_reason": {
+          "type": "string"
+        },
+        "positive_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "negative_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      }
+    },
+    "front_output_compression": {
+      "type": "object",
+      "required": [
+        "one_sentence",
+        "user_facing_reason",
+        "missing_sentence",
+        "do_not_say"
+      ],
+      "properties": {
+        "one_sentence": {
+          "type": "string"
+        },
+        "user_facing_reason": {
+          "type": "string"
+        },
+        "missing_sentence": {
+          "type": "string"
+        },
+        "do_not_say": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "safety_boundary": {
+      "type": "object",
+      "required": [
+        "only_for_research",
+        "not_investment_advice",
+        "not_buy_sell_signal",
+        "not_position_adjustment",
+        "not_broker_interface",
+        "not_auto_trade",
+        "not_external_send"
+      ],
+      "properties": {
+        "only_for_research": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_investment_advice": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_buy_sell_signal": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_position_adjustment": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_broker_interface": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_auto_trade": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_external_send": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    }
+  }
+}

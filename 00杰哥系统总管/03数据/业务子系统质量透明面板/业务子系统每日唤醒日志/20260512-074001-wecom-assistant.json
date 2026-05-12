@@ -1,0 +1,86 @@
+﻿{
+    "status":  "quality_score_failed",
+    "system_slug":  "wecom-assistant",
+    "system_name":  "企业微信助手系统",
+    "audit_only":  false,
+    "global_lock_acquired":  true,
+    "system_lock_acquired":  true,
+    "system_root":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统",
+    "system_script_dir":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\02脚本",
+    "planned_scripts":  [
+                            "生成企业微信助手系统状态摘要.py",
+                            "生成企业微信统一指令本地调用预演.py",
+                            "生成企业微信统一指令路由预演.py",
+                            "生成企业微信统一指令使用速查卡.py"
+                        ],
+    "scorer":  "生成企业微信助手系统日报质量评分.py",
+    "actions":  [
+                    {
+                        "script":  "生成企业微信助手系统状态摘要.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\02脚本\\生成企业微信助手系统状态摘要.py",
+                        "exit_code":  -404,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  true
+                    },
+                    {
+                        "script":  "生成企业微信统一指令本地调用预演.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\02脚本\\生成企业微信统一指令本地调用预演.py",
+                        "exit_code":  -404,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  true
+                    },
+                    {
+                        "script":  "生成企业微信统一指令路由预演.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\02脚本\\生成企业微信统一指令路由预演.py",
+                        "exit_code":  -404,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  true
+                    },
+                    {
+                        "script":  "生成企业微信统一指令使用速查卡.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\02脚本\\生成企业微信统一指令使用速查卡.py",
+                        "exit_code":  -404,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  true
+                    },
+                    {
+                        "script":  "生成企业微信助手系统日报质量评分.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\02脚本\\生成企业微信助手系统日报质量评分.py",
+                        "exit_code":  -404,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  true
+                    }
+                ],
+    "safety":  {
+                   "real_wecom_send":  false,
+                   "n8n_trigger":  false,
+                   "broker_api":  false,
+                   "auto_trade":  false,
+                   "formal_output":  false,
+                   "real_conversion":  false,
+                   "real_render":  false
+               },
+    "environment_locks":  {
+                              "STOCK_REAL_SEND":  "0",
+                              "STOCK_ENABLE_N8N_TRIGGER":  "0",
+                              "STOCK_ENABLE_BROKER_API":  "0",
+                              "STOCK_ENABLE_AUTO_TRADE":  "0",
+                              "WECOM_REAL_SEND":  "0",
+                              "WEWORK_REAL_SEND":  "0",
+                              "ENABLE_N8N_TRIGGER":  "0",
+                              "ENABLE_FORMAL_OUTPUT":  "0",
+                              "ENABLE_REAL_CONVERSION":  "0",
+                              "ENABLE_REAL_RENDER":  "0"
+                          },
+    "started_by":  {
+                       "user":  "Administrator",
+                       "computer":  "杰哥",
+                       "pid":  19800
+                   },
+    "time":  "2026-05-12 07:40:01"
+}

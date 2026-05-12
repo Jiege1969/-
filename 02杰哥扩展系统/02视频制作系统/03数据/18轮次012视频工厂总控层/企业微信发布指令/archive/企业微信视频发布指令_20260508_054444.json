@@ -1,0 +1,51 @@
+{
+  "生成时间": "2026-05-08 05:44:44",
+  "状态": "完成",
+  "输入": "登录检查 B站 账号=creator",
+  "路由": "杰哥视频助理发布指令",
+  "目标系统": "02杰哥扩展系统/02视频制作系统",
+  "回复": "发布账号登录态检查已完成。\n平台：bilibili\n账号：creator\n总体状态：blocked\n返回码：1\n如果失败，请在本地终端执行 login 命令后重试。",
+  "reply_text": "发布账号登录态检查已完成。\n平台：bilibili\n账号：creator\n总体状态：blocked\n返回码：1\n如果失败，请在本地终端执行 login 命令后重试。",
+  "real_send": false,
+  "n8n": false,
+  "企业微信模拟回复": {
+    "msgtype": "markdown",
+    "markdown": {
+      "content": "【杰哥视频助理】\n发布账号登录态检查已完成。\n平台：bilibili\n账号：creator\n总体状态：blocked\n返回码：1\n如果失败，请在本地终端执行 login 命令后重试。"
+    }
+  },
+  "安全边界": {
+    "真实发送企业微信": false,
+    "触发n8n": false,
+    "绕过发布放行清单": false,
+    "自动发布": false
+  },
+  "publish_account_check": {
+    "returncode": 0,
+    "stdout": "{\n  \"生成时间\": \"2026-05-08 05:44:44\",\n  \"平台\": \"bilibili\",\n  \"账号\": \"creator\",\n  \"命令\": [\n    \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\social-auto-upload\\\\.venv\\\\Scripts\\\\sau.exe\",\n    \"bilibili\",\n    \"check\",\n    \"--account\",\n    \"creator\"\n  ],\n  \"命令文本\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\social-auto-upload\\\\.venv\\\\Scripts\\\\sau.exe bilibili check --account creator\",\n  \"stdout\": \"invalid\\n\",\n  \"stderr\": \"\",\n  \"returncode\": 1,\n  \"总体状态\": \"blocked\",\n  \"安全边界\": {\n    \"上传\": false,\n    \"发布\": false,\n    \"触发n8n\": false,\n    \"企业微信真实发送\": false\n  }\n}\n",
+    "stderr": "",
+    "report": {
+      "生成时间": "2026-05-08 05:44:44",
+      "平台": "bilibili",
+      "账号": "creator",
+      "命令": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+        "bilibili",
+        "check",
+        "--account",
+        "creator"
+      ],
+      "命令文本": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe bilibili check --account creator",
+      "stdout": "invalid\n",
+      "stderr": "",
+      "returncode": 1,
+      "总体状态": "blocked",
+      "安全边界": {
+        "上传": false,
+        "发布": false,
+        "触发n8n": false,
+        "企业微信真实发送": false
+      }
+    }
+  }
+}

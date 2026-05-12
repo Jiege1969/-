@@ -1,0 +1,238 @@
+{
+  "名称": "五样本前台缺口压缩预演",
+  "generated_at": "2026-05-08 07:44:03",
+  "asset_identity": "W1前台话术预演",
+  "status": "ready",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_score_write": true,
+  "previews": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "source_score": 56.3,
+      "source_conclusion": "暂不建议关注",
+      "source_confidence": "low",
+      "front_preview": {
+        "first_line": "云南锗业（sz002428）",
+        "conclusion_line": "结论：暂不建议关注",
+        "action_line": "现在怎么处理：暂时只适合观察，不适合给强结论。",
+        "one_line_gap": "锗锭价格/景气还没有观测点入账，行业景气仍是关键缺口。 已匹配结构化政策事件，政策只能作为分项依据，不能单因子强推。 资金、机构和解禁减持证据位已建立，但当前仍是待采集状态，不能作为强化结论的依据。",
+        "why_not_higher": "不是更高评级，主要因为：锗锭价格/景气还没有观测点入账，行业景气仍是关键缺口。 已匹配结构化政策事件，政策只能作为分项依据，不能单因子强推。 资金、机构和解禁减持证据位已建立，但当前仍是待采集状态，不能作为强化结论的依据。",
+        "do_not_say": [
+          "可以买入",
+          "可以卖出",
+          "建议加仓",
+          "建议减仓",
+          "资金明显流入",
+          "机构持续加仓",
+          "趋势已经确认",
+          "未入库政策利好"
+        ]
+      },
+      "evidence_status": {
+        "price_status": "source_registered",
+        "price_observation_count": 0,
+        "policy_classification": "structured_policy_ready",
+        "policy_score_allowed": true,
+        "capital_score_status": "not_scored",
+        "capital_confidence": "low"
+      },
+      "safety_boundary": {
+        "not_formal_config": true,
+        "not_entrypoint": true,
+        "not_external_send": true,
+        "not_service_restart": true,
+        "not_n8n": true,
+        "not_broker_interface": true,
+        "not_auto_trade": true
+      }
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "source_score": 46.0,
+      "source_conclusion": "暂不建议关注",
+      "source_confidence": "low",
+      "front_preview": {
+        "first_line": "天齐锂业（sz002466）",
+        "conclusion_line": "结论：暂不建议关注",
+        "action_line": "现在怎么处理：暂时只适合观察，不适合给强结论。",
+        "one_line_gap": "电池级碳酸锂价格/景气只有1个观测点，只能弱参考，不能写趋势确认。 未匹配到直接结构化政策，政策项不能加分。 资金、机构和解禁减持证据位已建立，但当前仍是待采集状态，不能作为强化结论的依据。",
+        "why_not_higher": "不是更高评级，主要因为：电池级碳酸锂价格/景气只有1个观测点，只能弱参考，不能写趋势确认。 未匹配到直接结构化政策，政策项不能加分。 资金、机构和解禁减持证据位已建立，但当前仍是待采集状态，不能作为强化结论的依据。",
+        "do_not_say": [
+          "可以买入",
+          "可以卖出",
+          "建议加仓",
+          "建议减仓",
+          "资金明显流入",
+          "机构持续加仓",
+          "趋势已经确认",
+          "未入库政策利好"
+        ]
+      },
+      "evidence_status": {
+        "price_status": "single_observation",
+        "price_observation_count": 1,
+        "policy_classification": "no_direct_structured_policy",
+        "policy_score_allowed": false,
+        "capital_score_status": "not_scored",
+        "capital_confidence": "low"
+      },
+      "safety_boundary": {
+        "not_formal_config": true,
+        "not_entrypoint": true,
+        "not_external_send": true,
+        "not_service_restart": true,
+        "not_n8n": true,
+        "not_broker_interface": true,
+        "not_auto_trade": true
+      }
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "source_score": 54.0,
+      "source_conclusion": "暂不建议关注",
+      "source_confidence": "medium",
+      "front_preview": {
+        "first_line": "华虹公司（sh688347）",
+        "conclusion_line": "结论：暂不建议关注",
+        "action_line": "现在怎么处理：暂时只适合观察，不适合给强结论。",
+        "one_line_gap": "晶圆代工景气指标价格/景气还没有观测点入账，行业景气仍是关键缺口。 半导体政策背景存在，但尚未结构化到单股政策事件，前台只能写政策证据待补。 资金、机构和解禁减持证据位已建立，但当前仍是待采集状态，不能作为强化结论的依据。",
+        "why_not_higher": "不是更高评级，主要因为：晶圆代工景气指标价格/景气还没有观测点入账，行业景气仍是关键缺口。 半导体政策背景存在，但尚未结构化到单股政策事件，前台只能写政策证据待补。 资金、机构和解禁减持证据位已建立，但当前仍是待采集状态，不能作为强化结论的依据。",
+        "do_not_say": [
+          "可以买入",
+          "可以卖出",
+          "建议加仓",
+          "建议减仓",
+          "资金明显流入",
+          "机构持续加仓",
+          "趋势已经确认",
+          "未入库政策利好"
+        ]
+      },
+      "evidence_status": {
+        "price_status": "source_registered",
+        "price_observation_count": 0,
+        "policy_classification": "candidate_policy_needed",
+        "policy_score_allowed": false,
+        "capital_score_status": "not_scored",
+        "capital_confidence": "low"
+      },
+      "safety_boundary": {
+        "not_formal_config": true,
+        "not_entrypoint": true,
+        "not_external_send": true,
+        "not_service_restart": true,
+        "not_n8n": true,
+        "not_broker_interface": true,
+        "not_auto_trade": true
+      }
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "source_score": 48.0,
+      "source_conclusion": "暂不建议关注",
+      "source_confidence": "medium",
+      "front_preview": {
+        "first_line": "浙商中拓（sz000906）",
+        "conclusion_line": "结论：暂不建议关注",
+        "action_line": "现在怎么处理：暂时只适合观察，不适合给强结论。",
+        "one_line_gap": "大宗商品/供应链景气指标价格/景气还没有观测点入账，行业景气仍是关键缺口。 未发现可直接映射到公司的结构化政策事件。 资金、机构和解禁减持证据位已建立，但当前仍是待采集状态，不能作为强化结论的依据。",
+        "why_not_higher": "不是更高评级，主要因为：大宗商品/供应链景气指标价格/景气还没有观测点入账，行业景气仍是关键缺口。 未发现可直接映射到公司的结构化政策事件。 资金、机构和解禁减持证据位已建立，但当前仍是待采集状态，不能作为强化结论的依据。",
+        "do_not_say": [
+          "可以买入",
+          "可以卖出",
+          "建议加仓",
+          "建议减仓",
+          "资金明显流入",
+          "机构持续加仓",
+          "趋势已经确认",
+          "未入库政策利好"
+        ]
+      },
+      "evidence_status": {
+        "price_status": "source_registered",
+        "price_observation_count": 0,
+        "policy_classification": "no_direct_structured_policy",
+        "policy_score_allowed": false,
+        "capital_score_status": "not_scored",
+        "capital_confidence": "low"
+      },
+      "safety_boundary": {
+        "not_formal_config": true,
+        "not_entrypoint": true,
+        "not_external_send": true,
+        "not_service_restart": true,
+        "not_n8n": true,
+        "not_broker_interface": true,
+        "not_auto_trade": true
+      }
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "source_score": 28.0,
+      "source_conclusion": "暂不建议关注",
+      "source_confidence": "medium",
+      "front_preview": {
+        "first_line": "正丹股份（sz300641）",
+        "conclusion_line": "结论：暂不建议关注",
+        "action_line": "现在怎么处理：暂时只适合观察，不适合给强结论。",
+        "one_line_gap": "偏苯三酸酐/TMA价格/景气还没有观测点入账，行业景气仍是关键缺口。 未匹配到直接结构化政策，化工品景气需由价格和财报证据验证。 政策项不能加分。 资金、机构和解禁减持证据位已建立，但当前仍是待采集状态，不能作为强化结论的依据。",
+        "why_not_higher": "不是更高评级，主要因为：偏苯三酸酐/TMA价格/景气还没有观测点入账，行业景气仍是关键缺口。 未匹配到直接结构化政策，化工品景气需由价格和财报证据验证。 政策项不能加分。 资金、机构和解禁减持证据位已建立，但当前仍是待采集状态，不能作为强化结论的依据。",
+        "do_not_say": [
+          "可以买入",
+          "可以卖出",
+          "建议加仓",
+          "建议减仓",
+          "资金明显流入",
+          "机构持续加仓",
+          "趋势已经确认",
+          "未入库政策利好"
+        ]
+      },
+      "evidence_status": {
+        "price_status": "source_registered",
+        "price_observation_count": 0,
+        "policy_classification": "no_direct_structured_policy",
+        "policy_score_allowed": false,
+        "capital_score_status": "not_scored",
+        "capital_confidence": "low"
+      },
+      "safety_boundary": {
+        "not_formal_config": true,
+        "not_entrypoint": true,
+        "not_external_send": true,
+        "not_service_restart": true,
+        "not_n8n": true,
+        "not_broker_interface": true,
+        "not_auto_trade": true
+      }
+    }
+  ],
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_score_write": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

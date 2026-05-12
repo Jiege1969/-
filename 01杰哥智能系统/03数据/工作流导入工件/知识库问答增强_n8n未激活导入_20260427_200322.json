@@ -1,0 +1,109 @@
+{
+  "name": "知识库问答增强",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "c8854567-24e9-406a-969e-793879c48c54",
+      "name": "手动触发",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        260,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "702418bd-a725-408a-8407-4a67999a574b",
+              "name": "状态",
+              "value": "dry_run_only",
+              "type": "string"
+            },
+            {
+              "id": "650ba385-0836-4363-9af1-941cfab73366",
+              "name": "工作流名",
+              "value": "知识库问答增强",
+              "type": "string"
+            },
+            {
+              "id": "47ef1d2b-9995-4d0b-9d72-199d7a42b96f",
+              "name": "执行摘要",
+              "value": "未激活导入验证工件，仅用于确认知识库问答增强链路，不写入向量库或数据库。",
+              "type": "string"
+            },
+            {
+              "id": "50402b57-2a70-43f1-a242-9f210a613741",
+              "name": "风险提示",
+              "value": "当前不启用Webhook，不读取真实外部资料，不写Qdrant/PostgreSQL。",
+              "type": "string"
+            },
+            {
+              "id": "9255b37a-cffc-40c6-854f-9f264c97dff7",
+              "name": "是否需要人工复核",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "id": "74677e8a-5088-4c4c-91d6-11847a9c4c81",
+      "name": "生成只读知识库响应",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        520,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "知识库问答增强未激活导入工件\\n生成时间：2026-04-27 20:03:22\\n安全边界：无Webhook、无凭据、不写Qdrant、不写PostgreSQL、无外发。",
+        "height": 240,
+        "width": 360,
+        "color": 5
+      },
+      "id": "3e490da9-f764-44ae-8172-9b1a194a4809",
+      "name": "安全边界说明",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        260,
+        20
+      ]
+    }
+  ],
+  "connections": {
+    "手动触发": {
+      "main": [
+        [
+          {
+            "node": "生成只读知识库响应",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "staticData": null,
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "jiege_v3_gray_import": true,
+    "target": "jiege_n8n",
+    "must_remain_inactive": true,
+    "generated_at": "2026-04-27 20:03:22",
+    "no_qdrant_write": true,
+    "no_postgres_write": true
+  }
+}

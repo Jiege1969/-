@@ -1,0 +1,47 @@
+{
+  "record_id": "VIDEO_AGENT_VAI_061_063_HANDOFF_20260508",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "work_scope": "W1/R0 low-risk shadow construction",
+  "round_summary": [
+    "Created VAI001-VAI060 stage rollup.",
+    "Created gap-to-review queue mapping.",
+    "Created receipt field consistency checklist."
+  ],
+  "changed_files": [
+    "VIDEO_AGENT_STAGE_ROLLUP_001_VAI001至VAI060阶段总收口_v1.0.md",
+    "VIDEO_AGENT_STAGE_ROLLUP_001_VAI001至VAI060阶段总收口_v1.0.json",
+    "VIDEO_AGENT_GAP_TO_REVIEW_QUEUE_MAPPING_001_缺口到复核队列映射表_v1.0.md",
+    "VIDEO_AGENT_GAP_TO_REVIEW_QUEUE_MAPPING_001_缺口到复核队列映射表_v1.0.json",
+    "VIDEO_AGENT_RECEIPT_FIELD_CONSISTENCY_CHECK_001_回执字段一致性检查清单_v1.0.md",
+    "VIDEO_AGENT_RECEIPT_FIELD_CONSISTENCY_CHECK_001_回执字段一致性检查清单_v1.0.json",
+    "VIDEO_AGENT_VAI_061_063_对齐回传记录_20260508.md",
+    "VIDEO_AGENT_VAI_061_063_对齐回传记录_20260508.json"
+  ],
+  "risk_level": "low",
+  "real_system_triggered": {
+    "model_api": false,
+    "material_read": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "real_account_cookie_or_api_key_read": false,
+    "service_port_manager_public_or_formal_change": false
+  },
+  "requires_manager_integration": false,
+  "manager_integration_note": "Formal index integration requires index merge precheck and manager decision.",
+  "next_suggestions": [
+    "Create status-query reply quality checklist.",
+    "Create shadow asset naming conflict checklist.",
+    "Create review queue intake status board draft."
+  ],
+  "self_check": {
+    "read_panel_and_start_package_first": true,
+    "write_scope_limited_to_video_shadow_base": true,
+    "json_validated_by_convertfrom_json": true,
+    "scan_hits_are_boundary_statements": true,
+    "no_real_execution": true,
+    "no_manager_public_service_formal_or_other_line_changes": true
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "asset_id": "VIDEO_AGENT_INDEX_MERGE_PRECHECK_001",
+  "version": "v1.0",
+  "asset_type": "shadow_precheck_list",
+  "construction_level": "W1/R0",
+  "scope": "video_production_shadow_base",
+  "status": "draft",
+  "purpose": "Check whether a shadow index draft is ready to be submitted for manager or human integration without directly modifying manager or formal indexes.",
+  "precheck_items": [
+    {
+      "id": "IMC-001",
+      "item": "write_scope",
+      "pass_standard": "All new assets are inside the video production shadow base.",
+      "failure_action": "Stop merge and register boundary risk."
+    },
+    {
+      "id": "IMC-002",
+      "item": "file_pairing",
+      "pass_standard": "Key assets have both md and json files or a clear single-file reason.",
+      "failure_action": "Complete missing pair or register gap."
+    },
+    {
+      "id": "IMC-003",
+      "item": "json_parse",
+      "pass_standard": "JSON files pass local parse check.",
+      "failure_action": "Fix JSON format before submission."
+    },
+    {
+      "id": "IMC-004",
+      "item": "risk_level",
+      "pass_standard": "Assets are marked W1/R0 or low-risk shadow construction.",
+      "failure_action": "Escalate to manager decision."
+    },
+    {
+      "id": "IMC-005",
+      "item": "redline_isolation",
+      "pass_standard": "No implementation instructions for real model, render, publish, n8n, or WeCom real send.",
+      "failure_action": "Keep blocker record only and remove implementation wording."
+    },
+    {
+      "id": "IMC-006",
+      "item": "gate_split",
+      "pass_standard": "Generation release, real render release, and publishing release stay separate.",
+      "failure_action": "Split gate records before moving forward."
+    },
+    {
+      "id": "IMC-007",
+      "item": "human_review",
+      "pass_standard": "Next-stage assets carry human review or pending review fields.",
+      "failure_action": "Add review fields."
+    },
+    {
+      "id": "IMC-008",
+      "item": "conclusion_wording",
+      "pass_standard": "Shadow drafts are not described as formal conclusions.",
+      "failure_action": "Change wording to draft or pending review."
+    }
+  ],
+  "boundaries": {
+    "modify_manager_files": false,
+    "modify_public_components": false,
+    "trigger_wecom_real_send": false,
+    "connect_n8n": false,
+    "trigger_real_render_or_publish": false
+  }
+}

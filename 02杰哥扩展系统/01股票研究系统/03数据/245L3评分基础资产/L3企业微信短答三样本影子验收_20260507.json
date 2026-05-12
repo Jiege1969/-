@@ -1,0 +1,104 @@
+{
+  "名称": "L3企业微信短答五样本影子验收",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子验收卡",
+  "状态": "passed",
+  "minimum_case_count": 3,
+  "actual_case_count": 5,
+  "samples": [
+    {
+      "stock_name": "云南锗业",
+      "stock_code": "sz002428",
+      "domain_type": "稀有金属/锗资源",
+      "conclusion": "暂不建议关注",
+      "fundamental_result": "收入增长但利润、扣非和现金流偏弱，基本面弱支撑。",
+      "short_answer_file": "03数据/245L3评分基础资产/企业微信短答_云南锗业_财报补证影子样例_20260507.md"
+    },
+    {
+      "stock_name": "天齐锂业",
+      "stock_code": "sz002466",
+      "domain_type": "锂资源/能源金属",
+      "conclusion": "暂不建议关注",
+      "fundamental_result": "一季度收入和利润明显修复，但现金流和锂价周期仍需验证。",
+      "short_answer_file": "03数据/245L3评分基础资产/企业微信短答_天齐锂业_财报补证影子样例_20260507.md"
+    },
+    {
+      "stock_name": "华虹公司",
+      "stock_code": "sh688347",
+      "domain_type": "半导体晶圆代工",
+      "conclusion": "暂不建议关注",
+      "fundamental_result": "营收和现金流有支撑，但利润率和ROE偏弱，晶圆代工周期压力仍在。",
+      "short_answer_file": "03数据/245L3评分基础资产/企业微信短答_华虹公司_财报补证影子样例_20260507.md"
+    },
+    {
+      "stock_name": "浙商中拓",
+      "stock_code": "sz000906",
+      "domain_type": "供应链集成服务",
+      "conclusion": "暂不建议关注",
+      "fundamental_result": "收入和现金流改善，但扣非仍弱、ROE不高，供应链业务要重点看风控和周转。",
+      "short_answer_file": "03数据/245L3评分基础资产/企业微信短答_浙商中拓_财报补证影子样例_20260507.md"
+    },
+    {
+      "stock_name": "正丹股份",
+      "stock_code": "sz300641",
+      "domain_type": "精细化工/新材料",
+      "conclusion": "暂不建议关注",
+      "fundamental_result": "2025年和2026年一季度收入利润都在下滑，当前基本面不支持提高关注。",
+      "short_answer_file": "03数据/245L3评分基础资产/企业微信短答_正丹股份_财报补证影子样例_20260507.md"
+    }
+  ],
+  "acceptance_results": [
+    {
+      "item": "样本覆盖",
+      "status": "pass",
+      "evidence": "已覆盖稀有金属、锂资源、半导体晶圆代工，避免模板只适配资源股。"
+    },
+    {
+      "item": "前台结论优先",
+      "status": "pass",
+      "evidence": "三只样本均第一行明确对象，先给结论和一句话原因，再给观察条件和风险线。"
+    },
+    {
+      "item": "财报不再空白",
+      "status": "pass",
+      "evidence": "三只样本均使用财报基本面证据卡压缩为用户可读的基本面结论。"
+    },
+    {
+      "item": "证据缺口显式保留",
+      "status": "pass",
+      "evidence": "三只样本均保留关键missing，不用空值或横杠冒充判断条件。"
+    },
+    {
+      "item": "不越权",
+      "status": "pass",
+      "evidence": "三只样本均未输出买入、卖出、仓位、下单、目标价，未触发企业微信真实发送。"
+    },
+    {
+      "item": "正式化准备",
+      "status": "partial",
+      "evidence": "影子闭环最低样本已完成；正式入口、正式脚本、服务、n8n、企业微信真实发送仍未接入，需要W3确认。"
+    }
+  ],
+  "shadow_version_decision": {
+    "can_be_called_shadow_usable": true,
+    "can_user_review_now": true,
+    "can_formalize_without_confirmation": false,
+    "reason": "已达到3样本影子验收，但正式化会触及企业微信入口和正式脚本，必须暂停确认。"
+  },
+  "remaining_before_formal": [
+    "正式入口改动清单",
+    "正式脚本改动清单",
+    "回滚方案",
+    "企业微信真实发送拦截和停止开关确认",
+    "市场风格partial降级规则保留",
+    "用户确认是否进入W3正式化"
+  ],
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_service_restart": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

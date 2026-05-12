@@ -1,0 +1,3493 @@
+﻿{
+    "名称":  "第29轮状态检查时间戳流水删除清单",
+    "生成时间":  "2026-05-06 16:54:50 +08:00",
+    "删除数量":  498,
+    "删除项":  [
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260430_090812.json",
+                    "Name":  "snapshot_20260430_090812.json",
+                    "Length":  31824,
+                    "LastWriteTime":  "2026-04-30 09:08:34",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260430_091652.json",
+                    "Name":  "snapshot_20260430_091652.json",
+                    "Length":  32096,
+                    "LastWriteTime":  "2026-04-30 09:17:12",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260430_092157.json",
+                    "Name":  "snapshot_20260430_092157.json",
+                    "Length":  32096,
+                    "LastWriteTime":  "2026-04-30 09:22:17",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260430_092506.json",
+                    "Name":  "snapshot_20260430_092506.json",
+                    "Length":  32095,
+                    "LastWriteTime":  "2026-04-30 09:25:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260430_100056.json",
+                    "Name":  "snapshot_20260430_100056.json",
+                    "Length":  31527,
+                    "LastWriteTime":  "2026-04-30 10:01:19",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260501_064723.json",
+                    "Name":  "snapshot_20260501_064723.json",
+                    "Length":  12617,
+                    "LastWriteTime":  "2026-05-01 06:47:49",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260502_181145.json",
+                    "Name":  "snapshot_20260502_181145.json",
+                    "Length":  14067,
+                    "LastWriteTime":  "2026-05-02 18:12:15",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260503_051414.json",
+                    "Name":  "snapshot_20260503_051414.json",
+                    "Length":  12614,
+                    "LastWriteTime":  "2026-05-03 05:14:41",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260504_063830.json",
+                    "Name":  "snapshot_20260504_063830.json",
+                    "Length":  12609,
+                    "LastWriteTime":  "2026-05-04 06:38:57",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_163049.json",
+                    "Name":  "snapshot_20260505_163049.json",
+                    "Length":  32112,
+                    "LastWriteTime":  "2026-05-05 16:31:14",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_163710.json",
+                    "Name":  "snapshot_20260505_163710.json",
+                    "Length":  32112,
+                    "LastWriteTime":  "2026-05-05 16:37:35",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_163816.json",
+                    "Name":  "snapshot_20260505_163816.json",
+                    "Length":  32112,
+                    "LastWriteTime":  "2026-05-05 16:38:41",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_164005.json",
+                    "Name":  "snapshot_20260505_164005.json",
+                    "Length":  32112,
+                    "LastWriteTime":  "2026-05-05 16:40:30",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_165411.json",
+                    "Name":  "snapshot_20260505_165411.json",
+                    "Length":  32112,
+                    "LastWriteTime":  "2026-05-05 16:54:35",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_165502.json",
+                    "Name":  "snapshot_20260505_165502.json",
+                    "Length":  32112,
+                    "LastWriteTime":  "2026-05-05 16:55:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_170235.json",
+                    "Name":  "snapshot_20260505_170235.json",
+                    "Length":  32112,
+                    "LastWriteTime":  "2026-05-05 17:03:00",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_171119.json",
+                    "Name":  "snapshot_20260505_171119.json",
+                    "Length":  14664,
+                    "LastWriteTime":  "2026-05-05 17:11:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_172454.json",
+                    "Name":  "snapshot_20260505_172454.json",
+                    "Length":  31535,
+                    "LastWriteTime":  "2026-05-05 17:25:18",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_172520.json",
+                    "Name":  "snapshot_20260505_172520.json",
+                    "Length":  31535,
+                    "LastWriteTime":  "2026-05-05 17:25:44",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_173446.json",
+                    "Name":  "snapshot_20260505_173446.json",
+                    "Length":  31830,
+                    "LastWriteTime":  "2026-05-05 17:35:11",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_173516.json",
+                    "Name":  "snapshot_20260505_173516.json",
+                    "Length":  31829,
+                    "LastWriteTime":  "2026-05-05 17:35:41",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_173916.json",
+                    "Name":  "snapshot_20260505_173916.json",
+                    "Length":  31830,
+                    "LastWriteTime":  "2026-05-05 17:39:40",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_174443.json",
+                    "Name":  "snapshot_20260505_174443.json",
+                    "Length":  31530,
+                    "LastWriteTime":  "2026-05-05 17:45:08",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_174746.json",
+                    "Name":  "snapshot_20260505_174746.json",
+                    "Length":  31530,
+                    "LastWriteTime":  "2026-05-05 17:48:10",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_174938.json",
+                    "Name":  "snapshot_20260505_174938.json",
+                    "Length":  31530,
+                    "LastWriteTime":  "2026-05-05 17:50:03",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_175146.json",
+                    "Name":  "snapshot_20260505_175146.json",
+                    "Length":  31530,
+                    "LastWriteTime":  "2026-05-05 17:52:10",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_175549.json",
+                    "Name":  "snapshot_20260505_175549.json",
+                    "Length":  31530,
+                    "LastWriteTime":  "2026-05-05 17:56:13",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_180243.json",
+                    "Name":  "snapshot_20260505_180243.json",
+                    "Length":  31530,
+                    "LastWriteTime":  "2026-05-05 18:03:07",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_180444.json",
+                    "Name":  "snapshot_20260505_180444.json",
+                    "Length":  31529,
+                    "LastWriteTime":  "2026-05-05 18:05:08",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_180824.json",
+                    "Name":  "snapshot_20260505_180824.json",
+                    "Length":  31528,
+                    "LastWriteTime":  "2026-05-05 18:08:49",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_181137.json",
+                    "Name":  "snapshot_20260505_181137.json",
+                    "Length":  31528,
+                    "LastWriteTime":  "2026-05-05 18:12:01",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_181532.json",
+                    "Name":  "snapshot_20260505_181532.json",
+                    "Length":  31531,
+                    "LastWriteTime":  "2026-05-05 18:15:57",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_181817.json",
+                    "Name":  "snapshot_20260505_181817.json",
+                    "Length":  31530,
+                    "LastWriteTime":  "2026-05-05 18:18:42",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_182003.json",
+                    "Name":  "snapshot_20260505_182003.json",
+                    "Length":  31531,
+                    "LastWriteTime":  "2026-05-05 18:20:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_182327.json",
+                    "Name":  "snapshot_20260505_182327.json",
+                    "Length":  31529,
+                    "LastWriteTime":  "2026-05-05 18:23:51",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_182625.json",
+                    "Name":  "snapshot_20260505_182625.json",
+                    "Length":  31528,
+                    "LastWriteTime":  "2026-05-05 18:26:49",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_182831.json",
+                    "Name":  "snapshot_20260505_182831.json",
+                    "Length":  31526,
+                    "LastWriteTime":  "2026-05-05 18:28:56",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_183140.json",
+                    "Name":  "snapshot_20260505_183140.json",
+                    "Length":  31529,
+                    "LastWriteTime":  "2026-05-05 18:32:04",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_183335.json",
+                    "Name":  "snapshot_20260505_183335.json",
+                    "Length":  31528,
+                    "LastWriteTime":  "2026-05-05 18:33:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_183854.json",
+                    "Name":  "snapshot_20260505_183854.json",
+                    "Length":  31527,
+                    "LastWriteTime":  "2026-05-05 18:39:19",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_184335.json",
+                    "Name":  "snapshot_20260505_184335.json",
+                    "Length":  31527,
+                    "LastWriteTime":  "2026-05-05 18:44:00",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_184520.json",
+                    "Name":  "snapshot_20260505_184520.json",
+                    "Length":  31529,
+                    "LastWriteTime":  "2026-05-05 18:45:44",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_184704.json",
+                    "Name":  "snapshot_20260505_184704.json",
+                    "Length":  31527,
+                    "LastWriteTime":  "2026-05-05 18:47:29",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_212711.json",
+                    "Name":  "snapshot_20260505_212711.json",
+                    "Length":  11124,
+                    "LastWriteTime":  "2026-05-05 21:27:42",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260505_214446.json",
+                    "Name":  "snapshot_20260505_214446.json",
+                    "Length":  31817,
+                    "LastWriteTime":  "2026-05-05 21:45:11",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_120636.json",
+                    "Name":  "snapshot_20260506_120636.json",
+                    "Length":  31478,
+                    "LastWriteTime":  "2026-05-06 12:06:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_120912.json",
+                    "Name":  "snapshot_20260506_120912.json",
+                    "Length":  31478,
+                    "LastWriteTime":  "2026-05-06 12:09:35",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_122724.json",
+                    "Name":  "snapshot_20260506_122724.json",
+                    "Length":  31466,
+                    "LastWriteTime":  "2026-05-06 12:27:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_124604.json",
+                    "Name":  "snapshot_20260506_124604.json",
+                    "Length":  32154,
+                    "LastWriteTime":  "2026-05-06 12:46:14",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_125043.json",
+                    "Name":  "snapshot_20260506_125043.json",
+                    "Length":  32154,
+                    "LastWriteTime":  "2026-05-06 12:50:53",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_140719.json",
+                    "Name":  "snapshot_20260506_140719.json",
+                    "Length":  32155,
+                    "LastWriteTime":  "2026-05-06 14:07:29",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_142856.json",
+                    "Name":  "snapshot_20260506_142856.json",
+                    "Length":  31866,
+                    "LastWriteTime":  "2026-05-06 14:29:06",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_144357.json",
+                    "Name":  "snapshot_20260506_144357.json",
+                    "Length":  31866,
+                    "LastWriteTime":  "2026-05-06 14:44:07",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_145422.json",
+                    "Name":  "snapshot_20260506_145422.json",
+                    "Length":  31865,
+                    "LastWriteTime":  "2026-05-06 14:54:32",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_150430.json",
+                    "Name":  "snapshot_20260506_150430.json",
+                    "Length":  31866,
+                    "LastWriteTime":  "2026-05-06 15:04:40",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_150821.json",
+                    "Name":  "snapshot_20260506_150821.json",
+                    "Length":  32155,
+                    "LastWriteTime":  "2026-05-06 15:08:31",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_152032.json",
+                    "Name":  "snapshot_20260506_152032.json",
+                    "Length":  31568,
+                    "LastWriteTime":  "2026-05-06 15:20:42",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_152555.json",
+                    "Name":  "snapshot_20260506_152555.json",
+                    "Length":  31568,
+                    "LastWriteTime":  "2026-05-06 15:26:05",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_154231.json",
+                    "Name":  "snapshot_20260506_154231.json",
+                    "Length":  31568,
+                    "LastWriteTime":  "2026-05-06 15:42:41",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_155116.json",
+                    "Name":  "snapshot_20260506_155116.json",
+                    "Length":  31264,
+                    "LastWriteTime":  "2026-05-06 15:51:25",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_155922.json",
+                    "Name":  "snapshot_20260506_155922.json",
+                    "Length":  31551,
+                    "LastWriteTime":  "2026-05-06 15:59:32",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_160503.json",
+                    "Name":  "snapshot_20260506_160503.json",
+                    "Length":  31262,
+                    "LastWriteTime":  "2026-05-06 16:05:12",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_161505.json",
+                    "Name":  "snapshot_20260506_161505.json",
+                    "Length":  31264,
+                    "LastWriteTime":  "2026-05-06 16:15:15",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_162752.json",
+                    "Name":  "snapshot_20260506_162752.json",
+                    "Length":  31857,
+                    "LastWriteTime":  "2026-05-06 16:28:02",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_164046.json",
+                    "Name":  "snapshot_20260506_164046.json",
+                    "Length":  31858,
+                    "LastWriteTime":  "2026-05-06 16:40:56",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_20260506_165236.json",
+                    "Name":  "snapshot_20260506_165236.json",
+                    "Length":  31554,
+                    "LastWriteTime":  "2026-05-06 16:52:45",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_192620.log",
+                    "Name":  "read_only_status_check_20260426_192620.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 19:26:23",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_192629.log",
+                    "Name":  "read_only_status_check_20260426_192629.log",
+                    "Length":  276,
+                    "LastWriteTime":  "2026-04-26 19:26:32",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_192637.log",
+                    "Name":  "read_only_status_check_20260426_192637.log",
+                    "Length":  276,
+                    "LastWriteTime":  "2026-04-26 19:26:40",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_192657.log",
+                    "Name":  "read_only_status_check_20260426_192657.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 19:26:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_192745.log",
+                    "Name":  "read_only_status_check_20260426_192745.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 19:27:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_192901.log",
+                    "Name":  "read_only_status_check_20260426_192901.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-26 19:29:03",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_194031.log",
+                    "Name":  "read_only_status_check_20260426_194031.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 19:40:33",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_194424.log",
+                    "Name":  "read_only_status_check_20260426_194424.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 19:44:26",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_194655.log",
+                    "Name":  "read_only_status_check_20260426_194655.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 19:46:57",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_194857.log",
+                    "Name":  "read_only_status_check_20260426_194857.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 19:48:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_195147.log",
+                    "Name":  "read_only_status_check_20260426_195147.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-26 19:51:49",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_201416.log",
+                    "Name":  "read_only_status_check_20260426_201416.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:14:18",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_201550.log",
+                    "Name":  "read_only_status_check_20260426_201550.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:15:52",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_201637.log",
+                    "Name":  "read_only_status_check_20260426_201637.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:16:39",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_201726.log",
+                    "Name":  "read_only_status_check_20260426_201726.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:17:28",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_201833.log",
+                    "Name":  "read_only_status_check_20260426_201833.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:18:35",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_202016.log",
+                    "Name":  "read_only_status_check_20260426_202016.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:20:17",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_202250.log",
+                    "Name":  "read_only_status_check_20260426_202250.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:22:52",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_203303.log",
+                    "Name":  "read_only_status_check_20260426_203303.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:33:05",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_203434.log",
+                    "Name":  "read_only_status_check_20260426_203434.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:34:36",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_203822.log",
+                    "Name":  "read_only_status_check_20260426_203822.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:38:24",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_203951.log",
+                    "Name":  "read_only_status_check_20260426_203951.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-26 20:39:53",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_204452.log",
+                    "Name":  "read_only_status_check_20260426_204452.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:44:54",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_204648.log",
+                    "Name":  "read_only_status_check_20260426_204648.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:46:49",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_205505.log",
+                    "Name":  "read_only_status_check_20260426_205505.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:55:07",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_205608.log",
+                    "Name":  "read_only_status_check_20260426_205608.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 20:56:10",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_210317.log",
+                    "Name":  "read_only_status_check_20260426_210317.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 21:03:19",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_210411.log",
+                    "Name":  "read_only_status_check_20260426_210411.log",
+                    "Length":  276,
+                    "LastWriteTime":  "2026-04-26 21:04:13",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_210652.log",
+                    "Name":  "read_only_status_check_20260426_210652.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 21:06:53",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_210955.log",
+                    "Name":  "read_only_status_check_20260426_210955.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 21:09:57",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_211037.log",
+                    "Name":  "read_only_status_check_20260426_211037.log",
+                    "Length":  276,
+                    "LastWriteTime":  "2026-04-26 21:10:39",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_211348.log",
+                    "Name":  "read_only_status_check_20260426_211348.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 21:13:50",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_211437.log",
+                    "Name":  "read_only_status_check_20260426_211437.log",
+                    "Length":  276,
+                    "LastWriteTime":  "2026-04-26 21:14:39",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_211830.log",
+                    "Name":  "read_only_status_check_20260426_211830.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 21:18:32",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_212141.log",
+                    "Name":  "read_only_status_check_20260426_212141.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 21:21:42",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_212243.log",
+                    "Name":  "read_only_status_check_20260426_212243.log",
+                    "Length":  276,
+                    "LastWriteTime":  "2026-04-26 21:22:45",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_213459.log",
+                    "Name":  "read_only_status_check_20260426_213459.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 21:35:01",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_213611.log",
+                    "Name":  "read_only_status_check_20260426_213611.log",
+                    "Length":  276,
+                    "LastWriteTime":  "2026-04-26 21:36:13",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_214021.log",
+                    "Name":  "read_only_status_check_20260426_214021.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 21:40:23",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_221547.log",
+                    "Name":  "read_only_status_check_20260426_221547.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 22:15:50",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_222137.log",
+                    "Name":  "read_only_status_check_20260426_222137.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 22:21:39",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_223018.log",
+                    "Name":  "read_only_status_check_20260426_223018.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 22:30:20",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_223317.log",
+                    "Name":  "read_only_status_check_20260426_223317.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 22:33:19",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_225148.log",
+                    "Name":  "read_only_status_check_20260426_225148.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 22:51:50",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_225335.log",
+                    "Name":  "read_only_status_check_20260426_225335.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 22:53:37",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_225435.log",
+                    "Name":  "read_only_status_check_20260426_225435.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 22:54:37",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_230526.log",
+                    "Name":  "read_only_status_check_20260426_230526.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-26 23:05:28",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260426_230640.log",
+                    "Name":  "read_only_status_check_20260426_230640.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-26 23:06:42",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_072523.log",
+                    "Name":  "read_only_status_check_20260427_072523.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 07:25:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_072602.log",
+                    "Name":  "read_only_status_check_20260427_072602.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 07:26:04",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_072732.log",
+                    "Name":  "read_only_status_check_20260427_072732.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-27 07:27:34",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_073923.log",
+                    "Name":  "read_only_status_check_20260427_073923.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 07:39:25",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_074013.log",
+                    "Name":  "read_only_status_check_20260427_074013.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 07:40:15",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_074254.log",
+                    "Name":  "read_only_status_check_20260427_074254.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 07:42:55",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_074340.log",
+                    "Name":  "read_only_status_check_20260427_074340.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-27 07:43:42",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_075016.log",
+                    "Name":  "read_only_status_check_20260427_075016.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 07:50:17",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_075408.log",
+                    "Name":  "read_only_status_check_20260427_075408.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 07:54:10",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_075810.log",
+                    "Name":  "read_only_status_check_20260427_075810.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 07:58:11",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_080058.log",
+                    "Name":  "read_only_status_check_20260427_080058.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 08:00:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_080443.log",
+                    "Name":  "read_only_status_check_20260427_080443.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 08:04:45",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_080731.log",
+                    "Name":  "read_only_status_check_20260427_080731.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 08:07:32",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_081001.log",
+                    "Name":  "read_only_status_check_20260427_081001.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 08:10:02",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_190305.log",
+                    "Name":  "read_only_status_check_20260427_190305.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-27 19:03:07",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_190533.log",
+                    "Name":  "read_only_status_check_20260427_190533.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:05:35",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_190753.log",
+                    "Name":  "read_only_status_check_20260427_190753.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:07:55",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_191108.log",
+                    "Name":  "read_only_status_check_20260427_191108.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:11:10",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_192239.log",
+                    "Name":  "read_only_status_check_20260427_192239.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:22:41",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_192512.log",
+                    "Name":  "read_only_status_check_20260427_192512.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:25:14",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_193235.log",
+                    "Name":  "read_only_status_check_20260427_193235.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:32:37",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_193450.log",
+                    "Name":  "read_only_status_check_20260427_193450.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:34:52",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_193707.log",
+                    "Name":  "read_only_status_check_20260427_193707.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:37:09",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_194007.log",
+                    "Name":  "read_only_status_check_20260427_194007.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:40:09",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_194156.log",
+                    "Name":  "read_only_status_check_20260427_194156.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:41:58",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_195038.log",
+                    "Name":  "read_only_status_check_20260427_195038.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:50:40",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_195251.log",
+                    "Name":  "read_only_status_check_20260427_195251.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:52:53",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_195728.log",
+                    "Name":  "read_only_status_check_20260427_195728.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:57:30",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_195836.log",
+                    "Name":  "read_only_status_check_20260427_195836.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 19:58:38",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_200331.log",
+                    "Name":  "read_only_status_check_20260427_200331.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 20:03:33",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_200601.log",
+                    "Name":  "read_only_status_check_20260427_200601.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 20:06:03",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_200845.log",
+                    "Name":  "read_only_status_check_20260427_200845.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-27 20:08:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_201327.log",
+                    "Name":  "read_only_status_check_20260427_201327.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-27 20:13:29",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_201610.log",
+                    "Name":  "read_only_status_check_20260427_201610.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 20:16:12",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_202934.log",
+                    "Name":  "read_only_status_check_20260427_202934.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 20:29:36",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_203635.log",
+                    "Name":  "read_only_status_check_20260427_203635.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 20:36:37",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_204719.log",
+                    "Name":  "read_only_status_check_20260427_204719.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 20:47:21",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_205226.log",
+                    "Name":  "read_only_status_check_20260427_205226.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 20:52:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_210159.log",
+                    "Name":  "read_only_status_check_20260427_210159.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:02:01",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_210624.log",
+                    "Name":  "read_only_status_check_20260427_210624.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:06:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_210713.log",
+                    "Name":  "read_only_status_check_20260427_210713.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:07:15",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_210809.log",
+                    "Name":  "read_only_status_check_20260427_210809.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:08:11",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_211124.log",
+                    "Name":  "read_only_status_check_20260427_211124.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:11:25",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_211201.log",
+                    "Name":  "read_only_status_check_20260427_211201.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:12:03",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_211709.log",
+                    "Name":  "read_only_status_check_20260427_211709.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:17:11",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_211738.log",
+                    "Name":  "read_only_status_check_20260427_211738.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:17:40",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_211916.log",
+                    "Name":  "read_only_status_check_20260427_211916.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:19:18",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_211943.log",
+                    "Name":  "read_only_status_check_20260427_211943.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:19:45",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_212749.log",
+                    "Name":  "read_only_status_check_20260427_212749.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:27:51",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_212824.log",
+                    "Name":  "read_only_status_check_20260427_212824.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:28:26",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_212958.log",
+                    "Name":  "read_only_status_check_20260427_212958.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-27 21:30:00",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_213202.log",
+                    "Name":  "read_only_status_check_20260427_213202.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:32:19",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_213416.log",
+                    "Name":  "read_only_status_check_20260427_213416.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:34:18",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_213449.log",
+                    "Name":  "read_only_status_check_20260427_213449.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:34:51",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_213824.log",
+                    "Name":  "read_only_status_check_20260427_213824.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:38:26",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_213932.log",
+                    "Name":  "read_only_status_check_20260427_213932.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:39:34",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_214324.log",
+                    "Name":  "read_only_status_check_20260427_214324.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:43:26",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_214358.log",
+                    "Name":  "read_only_status_check_20260427_214358.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:44:00",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_214658.log",
+                    "Name":  "read_only_status_check_20260427_214658.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-27 21:47:00",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_214853.log",
+                    "Name":  "read_only_status_check_20260427_214853.log",
+                    "Length":  272,
+                    "LastWriteTime":  "2026-04-27 21:48:55",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_215114.log",
+                    "Name":  "read_only_status_check_20260427_215114.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:51:16",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_215459.log",
+                    "Name":  "read_only_status_check_20260427_215459.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:55:01",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_215711.log",
+                    "Name":  "read_only_status_check_20260427_215711.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-27 21:57:13",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_215901.log",
+                    "Name":  "read_only_status_check_20260427_215901.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 21:59:03",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_220056.log",
+                    "Name":  "read_only_status_check_20260427_220056.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 22:00:58",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_220231.log",
+                    "Name":  "read_only_status_check_20260427_220231.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 22:02:33",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_220410.log",
+                    "Name":  "read_only_status_check_20260427_220410.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 22:04:12",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_220541.log",
+                    "Name":  "read_only_status_check_20260427_220541.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 22:05:43",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_220718.log",
+                    "Name":  "read_only_status_check_20260427_220718.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 22:07:20",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_220849.log",
+                    "Name":  "read_only_status_check_20260427_220849.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 22:08:51",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_221019.log",
+                    "Name":  "read_only_status_check_20260427_221019.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 22:10:21",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_221151.log",
+                    "Name":  "read_only_status_check_20260427_221151.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 22:11:53",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_221340.log",
+                    "Name":  "read_only_status_check_20260427_221340.log",
+                    "Length":  275,
+                    "LastWriteTime":  "2026-04-27 22:13:42",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_221522.log",
+                    "Name":  "read_only_status_check_20260427_221522.log",
+                    "Length":  274,
+                    "LastWriteTime":  "2026-04-27 22:15:24",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_221707.log",
+                    "Name":  "read_only_status_check_20260427_221707.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:17:09",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_222102.log",
+                    "Name":  "read_only_status_check_20260427_222102.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:21:04",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_222241.log",
+                    "Name":  "read_only_status_check_20260427_222241.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:22:43",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_222420.log",
+                    "Name":  "read_only_status_check_20260427_222420.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:24:22",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_222558.log",
+                    "Name":  "read_only_status_check_20260427_222558.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:26:00",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_222743.log",
+                    "Name":  "read_only_status_check_20260427_222743.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:27:45",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_222927.log",
+                    "Name":  "read_only_status_check_20260427_222927.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:29:30",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_223116.log",
+                    "Name":  "read_only_status_check_20260427_223116.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:31:18",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_223405.log",
+                    "Name":  "read_only_status_check_20260427_223405.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:34:07",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_223553.log",
+                    "Name":  "read_only_status_check_20260427_223553.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:35:55",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_223735.log",
+                    "Name":  "read_only_status_check_20260427_223735.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:37:37",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_223925.log",
+                    "Name":  "read_only_status_check_20260427_223925.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:39:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_224145.log",
+                    "Name":  "read_only_status_check_20260427_224145.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:41:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_224418.log",
+                    "Name":  "read_only_status_check_20260427_224418.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:44:20",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_224613.log",
+                    "Name":  "read_only_status_check_20260427_224613.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:46:15",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_224806.log",
+                    "Name":  "read_only_status_check_20260427_224806.log",
+                    "Length":  284,
+                    "LastWriteTime":  "2026-04-27 22:48:08",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_224847.log",
+                    "Name":  "read_only_status_check_20260427_224847.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:48:49",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_225123.log",
+                    "Name":  "read_only_status_check_20260427_225123.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:51:25",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_225351.log",
+                    "Name":  "read_only_status_check_20260427_225351.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:53:53",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_225605.log",
+                    "Name":  "read_only_status_check_20260427_225605.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:56:07",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_225645.log",
+                    "Name":  "read_only_status_check_20260427_225645.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-27 22:56:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_225825.log",
+                    "Name":  "read_only_status_check_20260427_225825.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 22:58:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_230016.log",
+                    "Name":  "read_only_status_check_20260427_230016.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 23:00:18",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_230214.log",
+                    "Name":  "read_only_status_check_20260427_230214.log",
+                    "Length":  284,
+                    "LastWriteTime":  "2026-04-27 23:02:16",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_230254.log",
+                    "Name":  "read_only_status_check_20260427_230254.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 23:02:56",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_230452.log",
+                    "Name":  "read_only_status_check_20260427_230452.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 23:04:54",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_233232.log",
+                    "Name":  "read_only_status_check_20260427_233232.log",
+                    "Length":  284,
+                    "LastWriteTime":  "2026-04-27 23:32:34",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_234037.log",
+                    "Name":  "read_only_status_check_20260427_234037.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 23:40:39",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_234422.log",
+                    "Name":  "read_only_status_check_20260427_234422.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 23:44:24",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_234712.log",
+                    "Name":  "read_only_status_check_20260427_234712.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 23:47:14",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_234927.log",
+                    "Name":  "read_only_status_check_20260427_234927.log",
+                    "Length":  284,
+                    "LastWriteTime":  "2026-04-27 23:49:29",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_235111.log",
+                    "Name":  "read_only_status_check_20260427_235111.log",
+                    "Length":  284,
+                    "LastWriteTime":  "2026-04-27 23:51:13",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260427_235319.log",
+                    "Name":  "read_only_status_check_20260427_235319.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-27 23:53:21",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_001254.log",
+                    "Name":  "read_only_status_check_20260428_001254.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-28 00:12:56",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_001555.log",
+                    "Name":  "read_only_status_check_20260428_001555.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-28 00:15:57",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_001838.log",
+                    "Name":  "read_only_status_check_20260428_001838.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-28 00:18:40",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_002000.log",
+                    "Name":  "read_only_status_check_20260428_002000.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-28 00:20:02",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_002131.log",
+                    "Name":  "read_only_status_check_20260428_002131.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-28 00:21:33",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_002354.log",
+                    "Name":  "read_only_status_check_20260428_002354.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 00:23:56",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_002557.log",
+                    "Name":  "read_only_status_check_20260428_002557.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 00:25:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_002642.log",
+                    "Name":  "read_only_status_check_20260428_002642.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 00:26:44",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_002849.log",
+                    "Name":  "read_only_status_check_20260428_002849.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 00:28:51",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_002932.log",
+                    "Name":  "read_only_status_check_20260428_002932.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 00:29:35",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_003127.log",
+                    "Name":  "read_only_status_check_20260428_003127.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 00:31:29",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_003226.log",
+                    "Name":  "read_only_status_check_20260428_003226.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 00:32:29",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_003446.log",
+                    "Name":  "read_only_status_check_20260428_003446.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 00:34:48",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_003530.log",
+                    "Name":  "read_only_status_check_20260428_003530.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 00:35:32",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_003729.log",
+                    "Name":  "read_only_status_check_20260428_003729.log",
+                    "Length":  281,
+                    "LastWriteTime":  "2026-04-28 00:37:31",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_003819.log",
+                    "Name":  "read_only_status_check_20260428_003819.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 00:38:22",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_045959.log",
+                    "Name":  "read_only_status_check_20260428_045959.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 05:00:02",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_050046.log",
+                    "Name":  "read_only_status_check_20260428_050046.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 05:00:48",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_051717.log",
+                    "Name":  "read_only_status_check_20260428_051717.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 05:17:20",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_061213.log",
+                    "Name":  "read_only_status_check_20260428_061213.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 06:12:16",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_061342.log",
+                    "Name":  "read_only_status_check_20260428_061342.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 06:13:44",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_061930.log",
+                    "Name":  "read_only_status_check_20260428_061930.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 06:19:32",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_062238.log",
+                    "Name":  "read_only_status_check_20260428_062238.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 06:22:40",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_063806.log",
+                    "Name":  "read_only_status_check_20260428_063806.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 06:38:09",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_064239.log",
+                    "Name":  "read_only_status_check_20260428_064239.log",
+                    "Length":  281,
+                    "LastWriteTime":  "2026-04-28 06:42:42",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_064423.log",
+                    "Name":  "read_only_status_check_20260428_064423.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 06:44:26",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_064809.log",
+                    "Name":  "read_only_status_check_20260428_064809.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 06:48:11",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_065421.log",
+                    "Name":  "read_only_status_check_20260428_065421.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 06:54:24",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_065728.log",
+                    "Name":  "read_only_status_check_20260428_065728.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 06:57:30",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_070502.log",
+                    "Name":  "read_only_status_check_20260428_070502.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:05:04",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_071112.log",
+                    "Name":  "read_only_status_check_20260428_071112.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:11:14",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_071448.log",
+                    "Name":  "read_only_status_check_20260428_071448.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:14:50",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_071757.log",
+                    "Name":  "read_only_status_check_20260428_071757.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:17:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_071938.log",
+                    "Name":  "read_only_status_check_20260428_071938.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:19:40",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_072444.log",
+                    "Name":  "read_only_status_check_20260428_072444.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:24:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_072549.log",
+                    "Name":  "read_only_status_check_20260428_072549.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:25:52",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_073657.log",
+                    "Name":  "read_only_status_check_20260428_073657.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:36:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_073902.log",
+                    "Name":  "read_only_status_check_20260428_073902.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:39:05",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_074320.log",
+                    "Name":  "read_only_status_check_20260428_074320.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:43:22",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_074425.log",
+                    "Name":  "read_only_status_check_20260428_074425.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:44:28",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_074446.log",
+                    "Name":  "read_only_status_check_20260428_074446.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:44:49",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_074707.log",
+                    "Name":  "read_only_status_check_20260428_074707.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:47:09",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_075210.log",
+                    "Name":  "read_only_status_check_20260428_075210.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:52:13",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_075333.log",
+                    "Name":  "read_only_status_check_20260428_075333.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 07:53:36",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_080417.log",
+                    "Name":  "read_only_status_check_20260428_080417.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 08:04:20",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_083035.log",
+                    "Name":  "read_only_status_check_20260428_083035.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 08:30:38",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_083449.log",
+                    "Name":  "read_only_status_check_20260428_083449.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 08:34:52",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_083730.log",
+                    "Name":  "read_only_status_check_20260428_083730.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 08:37:32",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_084114.log",
+                    "Name":  "read_only_status_check_20260428_084114.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 08:41:17",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_084507.log",
+                    "Name":  "read_only_status_check_20260428_084507.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 08:45:10",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_084713.log",
+                    "Name":  "read_only_status_check_20260428_084713.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 08:47:16",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_085009.log",
+                    "Name":  "read_only_status_check_20260428_085009.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 08:50:12",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_085628.log",
+                    "Name":  "read_only_status_check_20260428_085628.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 08:56:30",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_085931.log",
+                    "Name":  "read_only_status_check_20260428_085931.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 08:59:34",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_090435.log",
+                    "Name":  "read_only_status_check_20260428_090435.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 09:04:38",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_090755.log",
+                    "Name":  "read_only_status_check_20260428_090755.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 09:07:58",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_091041.log",
+                    "Name":  "read_only_status_check_20260428_091041.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 09:10:44",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_091448.log",
+                    "Name":  "read_only_status_check_20260428_091448.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 09:14:51",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_091800.log",
+                    "Name":  "read_only_status_check_20260428_091800.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 09:18:03",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_094817.log",
+                    "Name":  "read_only_status_check_20260428_094817.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 09:48:21",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_095455.log",
+                    "Name":  "read_only_status_check_20260428_095455.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 09:54:57",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_095919.log",
+                    "Name":  "read_only_status_check_20260428_095919.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 09:59:22",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_100244.log",
+                    "Name":  "read_only_status_check_20260428_100244.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 10:02:46",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_100526.log",
+                    "Name":  "read_only_status_check_20260428_100526.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 10:05:29",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_101116.log",
+                    "Name":  "read_only_status_check_20260428_101116.log",
+                    "Length":  280,
+                    "LastWriteTime":  "2026-04-28 10:11:19",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_101701.log",
+                    "Name":  "read_only_status_check_20260428_101701.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 10:17:04",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_102140.log",
+                    "Name":  "read_only_status_check_20260428_102140.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 10:21:43",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_102737.log",
+                    "Name":  "read_only_status_check_20260428_102737.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 10:27:40",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_103324.log",
+                    "Name":  "read_only_status_check_20260428_103324.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 10:33:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_103825.log",
+                    "Name":  "read_only_status_check_20260428_103825.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 10:38:28",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_104354.log",
+                    "Name":  "read_only_status_check_20260428_104354.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 10:43:58",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_105200.log",
+                    "Name":  "read_only_status_check_20260428_105200.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 10:52:04",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_110227.log",
+                    "Name":  "read_only_status_check_20260428_110227.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 11:02:30",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_114328.log",
+                    "Name":  "read_only_status_check_20260428_114328.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 11:43:31",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_114847.log",
+                    "Name":  "read_only_status_check_20260428_114847.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 11:48:50",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_120027.log",
+                    "Name":  "read_only_status_check_20260428_120027.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 12:00:31",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_120512.log",
+                    "Name":  "read_only_status_check_20260428_120512.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 12:05:15",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_121409.log",
+                    "Name":  "read_only_status_check_20260428_121409.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 12:14:13",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_125829.log",
+                    "Name":  "read_only_status_check_20260428_125829.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 12:58:33",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_131004.log",
+                    "Name":  "read_only_status_check_20260428_131004.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 13:10:08",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_131608.log",
+                    "Name":  "read_only_status_check_20260428_131608.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 13:16:11",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_132140.log",
+                    "Name":  "read_only_status_check_20260428_132140.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 13:21:43",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_133800.log",
+                    "Name":  "read_only_status_check_20260428_133800.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 13:38:03",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_134458.log",
+                    "Name":  "read_only_status_check_20260428_134458.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 13:45:02",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_145651.log",
+                    "Name":  "read_only_status_check_20260428_145651.log",
+                    "Length":  280,
+                    "LastWriteTime":  "2026-04-28 14:56:55",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_150457.log",
+                    "Name":  "read_only_status_check_20260428_150457.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 15:05:00",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_151947.log",
+                    "Name":  "read_only_status_check_20260428_151947.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 15:19:51",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_152522.log",
+                    "Name":  "read_only_status_check_20260428_152522.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 15:25:25",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_153114.log",
+                    "Name":  "read_only_status_check_20260428_153114.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 15:31:17",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_153610.log",
+                    "Name":  "read_only_status_check_20260428_153610.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 15:36:14",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_161130.log",
+                    "Name":  "read_only_status_check_20260428_161130.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 16:11:34",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_162341.log",
+                    "Name":  "read_only_status_check_20260428_162341.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 16:23:45",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_162848.log",
+                    "Name":  "read_only_status_check_20260428_162848.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 16:28:52",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_163717.log",
+                    "Name":  "read_only_status_check_20260428_163717.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 16:37:21",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_164210.log",
+                    "Name":  "read_only_status_check_20260428_164210.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 16:42:14",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_164705.log",
+                    "Name":  "read_only_status_check_20260428_164705.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 16:47:09",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_165505.log",
+                    "Name":  "read_only_status_check_20260428_165505.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 16:55:09",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_170343.log",
+                    "Name":  "read_only_status_check_20260428_170343.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 17:03:46",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_171249.log",
+                    "Name":  "read_only_status_check_20260428_171249.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 17:12:54",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_172807.log",
+                    "Name":  "read_only_status_check_20260428_172807.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 17:28:11",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_173016.log",
+                    "Name":  "read_only_status_check_20260428_173016.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 17:30:20",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_173315.log",
+                    "Name":  "read_only_status_check_20260428_173315.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 17:33:20",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_173644.log",
+                    "Name":  "read_only_status_check_20260428_173644.log",
+                    "Length":  280,
+                    "LastWriteTime":  "2026-04-28 17:36:48",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_173816.log",
+                    "Name":  "read_only_status_check_20260428_173816.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 17:38:21",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_174643.log",
+                    "Name":  "read_only_status_check_20260428_174643.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 17:46:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_174826.log",
+                    "Name":  "read_only_status_check_20260428_174826.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 17:48:31",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_175406.log",
+                    "Name":  "read_only_status_check_20260428_175406.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 17:54:10",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_175743.log",
+                    "Name":  "read_only_status_check_20260428_175743.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 17:57:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_180343.log",
+                    "Name":  "read_only_status_check_20260428_180343.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 18:03:48",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_180633.log",
+                    "Name":  "read_only_status_check_20260428_180633.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 18:06:38",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_181008.log",
+                    "Name":  "read_only_status_check_20260428_181008.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 18:10:13",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_181309.log",
+                    "Name":  "read_only_status_check_20260428_181309.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 18:13:14",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_181610.log",
+                    "Name":  "read_only_status_check_20260428_181610.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 18:16:15",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_182438.log",
+                    "Name":  "read_only_status_check_20260428_182438.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 18:24:43",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_183642.log",
+                    "Name":  "read_only_status_check_20260428_183642.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 18:36:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_184147.log",
+                    "Name":  "read_only_status_check_20260428_184147.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 18:41:52",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_184839.log",
+                    "Name":  "read_only_status_check_20260428_184839.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 18:48:43",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_192657.log",
+                    "Name":  "read_only_status_check_20260428_192657.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 19:27:03",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_193310.log",
+                    "Name":  "read_only_status_check_20260428_193310.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 19:33:15",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_194418.log",
+                    "Name":  "read_only_status_check_20260428_194418.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 19:44:23",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_194953.log",
+                    "Name":  "read_only_status_check_20260428_194953.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 19:49:58",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_195641.log",
+                    "Name":  "read_only_status_check_20260428_195641.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 19:56:46",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_200155.log",
+                    "Name":  "read_only_status_check_20260428_200155.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 20:02:00",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_203233.log",
+                    "Name":  "read_only_status_check_20260428_203233.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 20:32:39",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_203537.log",
+                    "Name":  "read_only_status_check_20260428_203537.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 20:35:43",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_204102.log",
+                    "Name":  "read_only_status_check_20260428_204102.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 20:41:08",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_204709.log",
+                    "Name":  "read_only_status_check_20260428_204709.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 20:47:15",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_205147.log",
+                    "Name":  "read_only_status_check_20260428_205147.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 20:51:52",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_205434.log",
+                    "Name":  "read_only_status_check_20260428_205434.log",
+                    "Length":  282,
+                    "LastWriteTime":  "2026-04-28 20:54:39",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_205926.log",
+                    "Name":  "read_only_status_check_20260428_205926.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 20:59:31",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_211230.log",
+                    "Name":  "read_only_status_check_20260428_211230.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 21:12:35",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_211638.log",
+                    "Name":  "read_only_status_check_20260428_211638.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 21:16:44",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_211853.log",
+                    "Name":  "read_only_status_check_20260428_211853.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 21:18:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_212620.log",
+                    "Name":  "read_only_status_check_20260428_212620.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 21:26:26",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_212957.log",
+                    "Name":  "read_only_status_check_20260428_212957.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 21:30:03",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_213440.log",
+                    "Name":  "read_only_status_check_20260428_213440.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 21:34:45",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_214650.log",
+                    "Name":  "read_only_status_check_20260428_214650.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 21:46:56",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_215319.log",
+                    "Name":  "read_only_status_check_20260428_215319.log",
+                    "Length":  283,
+                    "LastWriteTime":  "2026-04-28 21:53:25",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_222916.log",
+                    "Name":  "read_only_status_check_20260428_222916.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-04-28 22:29:21",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_224816.log",
+                    "Name":  "read_only_status_check_20260428_224816.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:48:23",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_224827.log",
+                    "Name":  "read_only_status_check_20260428_224827.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:48:33",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_224838.log",
+                    "Name":  "read_only_status_check_20260428_224838.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:48:44",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_224848.log",
+                    "Name":  "read_only_status_check_20260428_224848.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:48:54",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_224859.log",
+                    "Name":  "read_only_status_check_20260428_224859.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-04-28 22:49:05",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_224909.log",
+                    "Name":  "read_only_status_check_20260428_224909.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:49:15",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_224920.log",
+                    "Name":  "read_only_status_check_20260428_224920.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:49:26",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_224930.log",
+                    "Name":  "read_only_status_check_20260428_224930.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:49:36",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_224941.log",
+                    "Name":  "read_only_status_check_20260428_224941.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:49:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_224952.log",
+                    "Name":  "read_only_status_check_20260428_224952.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:49:58",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225002.log",
+                    "Name":  "read_only_status_check_20260428_225002.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:50:08",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225013.log",
+                    "Name":  "read_only_status_check_20260428_225013.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:50:19",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225023.log",
+                    "Name":  "read_only_status_check_20260428_225023.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:50:30",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225034.log",
+                    "Name":  "read_only_status_check_20260428_225034.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-04-28 22:50:40",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225045.log",
+                    "Name":  "read_only_status_check_20260428_225045.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:50:51",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225055.log",
+                    "Name":  "read_only_status_check_20260428_225055.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:51:02",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225106.log",
+                    "Name":  "read_only_status_check_20260428_225106.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:51:12",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225117.log",
+                    "Name":  "read_only_status_check_20260428_225117.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:51:23",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225127.log",
+                    "Name":  "read_only_status_check_20260428_225127.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:51:34",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225138.log",
+                    "Name":  "read_only_status_check_20260428_225138.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:51:44",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225149.log",
+                    "Name":  "read_only_status_check_20260428_225149.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:51:55",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225159.log",
+                    "Name":  "read_only_status_check_20260428_225159.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:52:06",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225210.log",
+                    "Name":  "read_only_status_check_20260428_225210.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-04-28 22:52:16",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225221.log",
+                    "Name":  "read_only_status_check_20260428_225221.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:52:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225231.log",
+                    "Name":  "read_only_status_check_20260428_225231.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:52:37",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225242.log",
+                    "Name":  "read_only_status_check_20260428_225242.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:52:48",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225253.log",
+                    "Name":  "read_only_status_check_20260428_225253.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:52:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225303.log",
+                    "Name":  "read_only_status_check_20260428_225303.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:53:10",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225314.log",
+                    "Name":  "read_only_status_check_20260428_225314.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:53:20",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225325.log",
+                    "Name":  "read_only_status_check_20260428_225325.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:53:31",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225335.log",
+                    "Name":  "read_only_status_check_20260428_225335.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:53:42",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225346.log",
+                    "Name":  "read_only_status_check_20260428_225346.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-04-28 22:53:52",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225357.log",
+                    "Name":  "read_only_status_check_20260428_225357.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:54:03",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225408.log",
+                    "Name":  "read_only_status_check_20260428_225408.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:54:14",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225418.log",
+                    "Name":  "read_only_status_check_20260428_225418.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:54:24",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225429.log",
+                    "Name":  "read_only_status_check_20260428_225429.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:54:35",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225440.log",
+                    "Name":  "read_only_status_check_20260428_225440.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:54:46",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225450.log",
+                    "Name":  "read_only_status_check_20260428_225450.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:54:56",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225501.log",
+                    "Name":  "read_only_status_check_20260428_225501.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:55:07",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225512.log",
+                    "Name":  "read_only_status_check_20260428_225512.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:55:18",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225522.log",
+                    "Name":  "read_only_status_check_20260428_225522.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-04-28 22:55:28",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225533.log",
+                    "Name":  "read_only_status_check_20260428_225533.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:55:39",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225544.log",
+                    "Name":  "read_only_status_check_20260428_225544.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:55:50",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225555.log",
+                    "Name":  "read_only_status_check_20260428_225555.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:56:01",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225605.log",
+                    "Name":  "read_only_status_check_20260428_225605.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:56:12",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225616.log",
+                    "Name":  "read_only_status_check_20260428_225616.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-04-28 22:56:22",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225627.log",
+                    "Name":  "read_only_status_check_20260428_225627.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-04-28 22:56:33",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225638.log",
+                    "Name":  "read_only_status_check_20260428_225638.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:56:44",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225649.log",
+                    "Name":  "read_only_status_check_20260428_225649.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:56:55",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225659.log",
+                    "Name":  "read_only_status_check_20260428_225659.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:57:06",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225710.log",
+                    "Name":  "read_only_status_check_20260428_225710.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:57:17",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225721.log",
+                    "Name":  "read_only_status_check_20260428_225721.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:57:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225732.log",
+                    "Name":  "read_only_status_check_20260428_225732.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:57:38",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225743.log",
+                    "Name":  "read_only_status_check_20260428_225743.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:57:49",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225754.log",
+                    "Name":  "read_only_status_check_20260428_225754.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:58:00",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225804.log",
+                    "Name":  "read_only_status_check_20260428_225804.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:58:11",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225815.log",
+                    "Name":  "read_only_status_check_20260428_225815.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:58:22",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225826.log",
+                    "Name":  "read_only_status_check_20260428_225826.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:58:32",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225837.log",
+                    "Name":  "read_only_status_check_20260428_225837.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:58:43",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_225849.log",
+                    "Name":  "read_only_status_check_20260428_225849.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 22:58:56",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_232340.log",
+                    "Name":  "read_only_status_check_20260428_232340.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-28 23:23:46",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260428_233649.log",
+                    "Name":  "read_only_status_check_20260428_233649.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-28 23:36:58",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260429_001628.log",
+                    "Name":  "read_only_status_check_20260429_001628.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-29 00:16:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260429_001849.log",
+                    "Name":  "read_only_status_check_20260429_001849.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-29 00:18:57",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260429_053839.log",
+                    "Name":  "read_only_status_check_20260429_053839.log",
+                    "Length":  288,
+                    "LastWriteTime":  "2026-04-29 05:38:50",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260429_072747.log",
+                    "Name":  "read_only_status_check_20260429_072747.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-04-29 07:28:16",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260430_090812.log",
+                    "Name":  "read_only_status_check_20260430_090812.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-04-30 09:08:34",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260430_091652.log",
+                    "Name":  "read_only_status_check_20260430_091652.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-04-30 09:17:12",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260430_092157.log",
+                    "Name":  "read_only_status_check_20260430_092157.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-04-30 09:22:17",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260430_092506.log",
+                    "Name":  "read_only_status_check_20260430_092506.log",
+                    "Length":  285,
+                    "LastWriteTime":  "2026-04-30 09:25:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260430_100056.log",
+                    "Name":  "read_only_status_check_20260430_100056.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-04-30 10:01:19",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260501_064723.log",
+                    "Name":  "read_only_status_check_20260501_064723.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-05-01 06:47:49",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260502_181145.log",
+                    "Name":  "read_only_status_check_20260502_181145.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-05-02 18:12:15",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260503_051414.log",
+                    "Name":  "read_only_status_check_20260503_051414.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-05-03 05:14:41",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260504_063830.log",
+                    "Name":  "read_only_status_check_20260504_063830.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-05-04 06:38:57",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_163049.log",
+                    "Name":  "read_only_status_check_20260505_163049.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 16:31:14",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_163710.log",
+                    "Name":  "read_only_status_check_20260505_163710.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 16:37:35",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_163816.log",
+                    "Name":  "read_only_status_check_20260505_163816.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 16:38:41",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_164005.log",
+                    "Name":  "read_only_status_check_20260505_164005.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 16:40:30",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_165411.log",
+                    "Name":  "read_only_status_check_20260505_165411.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 16:54:35",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_165502.log",
+                    "Name":  "read_only_status_check_20260505_165502.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 16:55:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_170235.log",
+                    "Name":  "read_only_status_check_20260505_170235.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 17:03:00",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_171119.log",
+                    "Name":  "read_only_status_check_20260505_171119.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 17:11:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_172454.log",
+                    "Name":  "read_only_status_check_20260505_172454.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 17:25:19",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_172520.log",
+                    "Name":  "read_only_status_check_20260505_172520.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 17:25:44",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_173446.log",
+                    "Name":  "read_only_status_check_20260505_173446.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 17:35:11",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_173516.log",
+                    "Name":  "read_only_status_check_20260505_173516.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-05-05 17:35:41",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_173916.log",
+                    "Name":  "read_only_status_check_20260505_173916.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 17:39:40",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_174443.log",
+                    "Name":  "read_only_status_check_20260505_174443.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 17:45:08",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_174746.log",
+                    "Name":  "read_only_status_check_20260505_174746.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 17:48:10",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_174938.log",
+                    "Name":  "read_only_status_check_20260505_174938.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 17:50:03",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_175146.log",
+                    "Name":  "read_only_status_check_20260505_175146.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 17:52:10",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_175549.log",
+                    "Name":  "read_only_status_check_20260505_175549.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 17:56:13",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_180243.log",
+                    "Name":  "read_only_status_check_20260505_180243.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:03:07",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_180444.log",
+                    "Name":  "read_only_status_check_20260505_180444.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:05:08",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_180824.log",
+                    "Name":  "read_only_status_check_20260505_180824.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:08:49",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_181137.log",
+                    "Name":  "read_only_status_check_20260505_181137.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-05-05 18:12:01",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_181532.log",
+                    "Name":  "read_only_status_check_20260505_181532.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:15:57",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_181817.log",
+                    "Name":  "read_only_status_check_20260505_181817.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-05-05 18:18:42",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_182003.log",
+                    "Name":  "read_only_status_check_20260505_182003.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:20:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_182327.log",
+                    "Name":  "read_only_status_check_20260505_182327.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:23:51",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_182625.log",
+                    "Name":  "read_only_status_check_20260505_182625.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:26:49",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_182831.log",
+                    "Name":  "read_only_status_check_20260505_182831.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-05-05 18:28:56",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_183140.log",
+                    "Name":  "read_only_status_check_20260505_183140.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:32:04",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_183335.log",
+                    "Name":  "read_only_status_check_20260505_183335.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:33:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_183854.log",
+                    "Name":  "read_only_status_check_20260505_183854.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:39:19",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_184335.log",
+                    "Name":  "read_only_status_check_20260505_184335.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:44:00",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_184520.log",
+                    "Name":  "read_only_status_check_20260505_184520.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:45:44",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_184704.log",
+                    "Name":  "read_only_status_check_20260505_184704.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 18:47:29",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_212711.log",
+                    "Name":  "read_only_status_check_20260505_212711.log",
+                    "Length":  286,
+                    "LastWriteTime":  "2026-05-05 21:27:42",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260505_214446.log",
+                    "Name":  "read_only_status_check_20260505_214446.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-05 21:45:11",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_120636.log",
+                    "Name":  "read_only_status_check_20260506_120636.log",
+                    "Length":  287,
+                    "LastWriteTime":  "2026-05-06 12:06:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_120912.log",
+                    "Name":  "read_only_status_check_20260506_120912.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 12:09:35",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_122724.log",
+                    "Name":  "read_only_status_check_20260506_122724.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 12:27:47",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_124604.log",
+                    "Name":  "read_only_status_check_20260506_124604.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 12:46:14",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_125043.log",
+                    "Name":  "read_only_status_check_20260506_125043.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 12:50:53",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_140719.log",
+                    "Name":  "read_only_status_check_20260506_140719.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 14:07:29",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_142856.log",
+                    "Name":  "read_only_status_check_20260506_142856.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 14:29:06",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_144357.log",
+                    "Name":  "read_only_status_check_20260506_144357.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 14:44:07",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_145422.log",
+                    "Name":  "read_only_status_check_20260506_145422.log",
+                    "Length":  354,
+                    "LastWriteTime":  "2026-05-06 14:54:32",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_150430.log",
+                    "Name":  "read_only_status_check_20260506_150430.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 15:04:40",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_150821.log",
+                    "Name":  "read_only_status_check_20260506_150821.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 15:08:31",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_152032.log",
+                    "Name":  "read_only_status_check_20260506_152032.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 15:20:42",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_152555.log",
+                    "Name":  "read_only_status_check_20260506_152555.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 15:26:05",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_154231.log",
+                    "Name":  "read_only_status_check_20260506_154231.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 15:42:41",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_155116.log",
+                    "Name":  "read_only_status_check_20260506_155116.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 15:51:25",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_155922.log",
+                    "Name":  "read_only_status_check_20260506_155922.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 15:59:32",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_160503.log",
+                    "Name":  "read_only_status_check_20260506_160503.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 16:05:12",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_161505.log",
+                    "Name":  "read_only_status_check_20260506_161505.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 16:15:15",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_162752.log",
+                    "Name":  "read_only_status_check_20260506_162752.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 16:28:02",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_164046.log",
+                    "Name":  "read_only_status_check_20260506_164046.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 16:40:56",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance\\read_only_status_check_20260506_165236.log",
+                    "Name":  "read_only_status_check_20260506_165236.log",
+                    "Length":  355,
+                    "LastWriteTime":  "2026-05-06 16:52:45",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\状态检查\\read_only_status_check_20260426_183312.log",
+                    "Name":  "read_only_status_check_20260426_183312.log",
+                    "Length":  272,
+                    "LastWriteTime":  "2026-04-26 18:33:14",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\状态检查\\read_only_status_check_20260426_183832.log",
+                    "Name":  "read_only_status_check_20260426_183832.log",
+                    "Length":  272,
+                    "LastWriteTime":  "2026-04-26 18:38:34",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\状态检查\\read_only_status_check_20260426_184157.log",
+                    "Name":  "read_only_status_check_20260426_184157.log",
+                    "Length":  272,
+                    "LastWriteTime":  "2026-04-26 18:41:59",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\状态检查\\read_only_status_check_20260426_184526.log",
+                    "Name":  "read_only_status_check_20260426_184526.log",
+                    "Length":  272,
+                    "LastWriteTime":  "2026-04-26 18:45:27",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\状态检查\\read_only_status_check_20260426_185104.log",
+                    "Name":  "read_only_status_check_20260426_185104.log",
+                    "Length":  273,
+                    "LastWriteTime":  "2026-04-26 18:51:06",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                },
+                {
+                    "FullName":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\状态检查\\read_only_status_check_20260426_191504.log",
+                    "Name":  "read_only_status_check_20260426_191504.log",
+                    "Length":  276,
+                    "LastWriteTime":  "2026-04-26 19:15:06",
+                    "Reason":  "状态检查脚本已改为只写_latest；时间戳验收流水无当前依赖"
+                }
+            ]
+}

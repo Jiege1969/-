@@ -1,0 +1,48 @@
+{
+  "record_id": "VIDEO_AGENT_VAI_091_093_HANDOFF_20260508",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "work_scope": "W1/W2 low-risk shadow construction",
+  "round_summary": [
+    "Created pre-publish gate overview field consistency check.",
+    "Created WeCom view-next-review-actions reply sample.",
+    "Created VAI001-VAI090 line asset index draft v5."
+  ],
+  "changed_files": [
+    "VIDEO_AGENT_PRE_PUBLISH_GATE_OVERVIEW_FIELD_CHECK_001_发布前门禁总览字段一致性检查_v1.0.md",
+    "VIDEO_AGENT_PRE_PUBLISH_GATE_OVERVIEW_FIELD_CHECK_001_发布前门禁总览字段一致性检查_v1.0.json",
+    "VIDEO_AGENT_WECOM_VIEW_NEXT_REVIEW_ACTIONS_REPLY_SAMPLE_001_企业微信查看下一步复核事项回执样例_v1.0.md",
+    "VIDEO_AGENT_WECOM_VIEW_NEXT_REVIEW_ACTIONS_REPLY_SAMPLE_001_企业微信查看下一步复核事项回执样例_v1.0.json",
+    "VIDEO_AGENT_LINE_ASSET_INDEX_DRAFT_005_VAI001至VAI090本线资产索引草案_v5.0.md",
+    "VIDEO_AGENT_LINE_ASSET_INDEX_DRAFT_005_VAI001至VAI090本线资产索引草案_v5.0.json",
+    "VIDEO_AGENT_VAI_091_093_对齐回传记录_20260508.md",
+    "VIDEO_AGENT_VAI_091_093_对齐回传记录_20260508.json"
+  ],
+  "risk_level": "low",
+  "real_system_triggered": {
+    "model_api": false,
+    "material_read": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "real_account_cookie_or_api_key_read": false,
+    "platform_upload_or_publish": false,
+    "service_port_manager_public_or_formal_change": false
+  },
+  "requires_manager_integration": false,
+  "manager_integration_note": "Real WeCom route integration for next-review-actions inquiry must return to manager decision.",
+  "next_suggestions": [
+    "Create VAI088-VAI093 mini-stage rollup.",
+    "Create pre-publish gate gap-to-review queue mapping sample.",
+    "Create final human confirmation placeholder receipt template."
+  ],
+  "self_check": {
+    "read_panel_and_start_package_first": true,
+    "write_scope_limited_to_video_shadow_base": true,
+    "json_validated_by_convertfrom_json": true,
+    "scan_hits_are_refusal_no_trigger_no_connection_or_index_boundary_statements": true,
+    "no_real_execution": true,
+    "no_manager_public_service_formal_or_other_line_changes": true
+  }
+}

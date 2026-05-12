@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-05-09 17:21:58",
+  "scope": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统",
+  "total_files": 5587,
+  "extension_counts": {
+    ".json": 2780,
+    ".md": 1663,
+    ".py": 727,
+    ".pyc": 208,
+    ".png": 54,
+    ".csv": 50,
+    ".bat": 49,
+    ".svg": 27,
+    ".log": 11,
+    ".ps1": 9,
+    ".html": 3,
+    ".pdf": 2,
+    ".zip": 1,
+    ".sqlite": 1,
+    ".jsonl": 1,
+    ".db": 1
+  },
+  "core_design_files": [
+    {
+      "path": "01配置/旧草案吸收规则.json",
+      "exists": true
+    },
+    {
+      "path": "01配置/股票分析报告工作流_v1.0.json",
+      "exists": true
+    },
+    {
+      "path": "01配置/动态样本池规则.json",
+      "exists": true
+    },
+    {
+      "path": "01配置/研究决策复盘闭环规则.json",
+      "exists": true
+    },
+    {
+      "path": "01配置/分层过滤规则.json",
+      "exists": true
+    },
+    {
+      "path": "01配置/股票系统搭建闭环防误解规则_v1.0.json",
+      "exists": true
+    },
+    {
+      "path": "01配置/股票三线分析与模型路由配置.json",
+      "exists": true
+    },
+    {
+      "path": "01配置/盘后批处理资源预算规则.json",
+      "exists": true
+    },
+    {
+      "path": "01配置/股票日常运行规则.json",
+      "exists": true
+    },
+    {
+      "path": "01配置/股票研究最小闭环演练规则.json",
+      "exists": true
+    },
+    {
+      "path": "01配置/L3_scoring_contract_v1.0.json",
+      "exists": true
+    },
+    {
+      "path": "07文档/旧股票草案吸收报告.md",
+      "exists": true
+    },
+    {
+      "path": "03数据/08草案吸收/旧股票系统核心逻辑吸收差异报告.md",
+      "exists": true
+    },
+    {
+      "path": "07文档/股票研究闭环优先建设与旧系统退役方案.md",
+      "exists": true
+    },
+    {
+      "path": "03数据/144交付总包/股票系统交付总包_最新.md",
+      "exists": true
+    }
+  ],
+  "confirmed_understanding": [
+    "????????????????????????",
+    "?????????/L8X -> L7 -> L6 -> L5 -> ?????/?? -> ?????? -> ???????",
+    "n8n????????????????",
+    "??????????????????????????????????",
+    "??/????????????n8n??????????????????????"
+  ],
+  "not_claimed": [
+    "????????????Python?????",
+    "????????????????????????????",
+    "????????????????????????????????????"
+  ],
+  "safety": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "broker": false,
+    "trade": false,
+    "reload_19310_19302": false
+  }
+}

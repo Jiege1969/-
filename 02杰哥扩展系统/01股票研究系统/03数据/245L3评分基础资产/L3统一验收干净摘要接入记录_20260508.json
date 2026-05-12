@@ -1,0 +1,39 @@
+{
+  "名称": "L3统一验收干净摘要接入记录",
+  "日期": "2026-05-08",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "自动验收接入记录",
+  "目的": "为自动续跑和人工快速查看提供ASCII文件名、ASCII步骤ID的统一验收摘要，避免Windows控制台中文编码导致验收报告看起来乱码。",
+  "本次修改": [
+    "02脚本/运行L3短答证据刷新与验收.py"
+  ],
+  "本次新增输出": [
+    "03数据/245L3评分基础资产/l3_unified_validation_summary_latest.json",
+    "03数据/245L3评分基础资产/l3_unified_validation_summary_latest.md"
+  ],
+  "摘要步骤ID": [
+    "market_style_update",
+    "industry_price_card_update",
+    "industry_price_ledger_validation",
+    "policy_event_validation",
+    "review_loop_validation",
+    "l3_wecom_short_answer_validation",
+    "l3_wecom_bridge_dry_run"
+  ],
+  "当前验收结果": {
+    "status": "passed",
+    "passed_count": 7,
+    "step_count": 7
+  },
+  "使用规则": [
+    "自动续跑开始时优先读取l3_unified_validation_summary_latest.json判断整体状态。",
+    "需要排查细节时再读取L3短答证据刷新与验收_最新.json和各分项验收报告。",
+    "干净摘要不替代详细证据链，只负责快速判断整体是否通过。"
+  ],
+  "安全边界": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

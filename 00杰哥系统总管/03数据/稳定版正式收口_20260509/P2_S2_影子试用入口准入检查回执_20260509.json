@@ -1,0 +1,42 @@
+{
+  "id": "P2-S2-SHADOW-TRIAL-ENTRY-ADMISSION-RECEIPT-20260509",
+  "executed_at": "2026-05-09 09:23:54 +08:00",
+  "execution_type": "readonly_admission_check",
+  "status": "pass",
+  "command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S2影子试用入口只读准入检查.py'",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\51P2S2影子试用入口只读准入检查\\P2S2影子试用入口只读准入检查_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\51P2S2影子试用入口只读准入检查\\P2S2影子试用入口只读准入检查_最新.json"
+  ],
+  "summary": {
+    "artifact_count": 6,
+    "passed": 6,
+    "failed": 0,
+    "index_formal_claim_failed": 0,
+    "redline_false_check_count": 42
+  },
+  "fixes_applied": [
+    {
+      "issue": "税收索引 JSON 带 UTF-8 BOM，检查器初版按纯 UTF-8 读取导致误判",
+      "action": "检查器读取口径调整为 utf-8-sig"
+    },
+    {
+      "issue": "税收影子索引缺少顶层 formal_capability_claim 字段",
+      "action": "补为 false，与本职工作和视频线保持一致"
+    },
+    {
+      "issue": "Python 中文输出在 PowerShell 中存在乱码风险",
+      "action": "为脚本 stdout 配置 UTF-8"
+    }
+  ],
+  "conclusion": "P2-S1 影子试用入口可进入受控试用填卡前置阶段；不代表正式业务上线。",
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

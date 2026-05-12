@@ -1,0 +1,44 @@
+{
+  "asset_id": "VIDEO_AGENT_PREVIEW_REVIEW_RECEIPT_TEMPLATE_001",
+  "version": "v1.0",
+  "asset_type": "human_review_receipt_template",
+  "construction_level": "W1/R0",
+  "scope": "final_video_preview_human_review",
+  "status": "draft_template",
+  "purpose": "Record human review result for video preview without triggering rerender, upload, or publishing.",
+  "fields": [
+    "receipt_id",
+    "task_id",
+    "preview_version",
+    "aspect_ratio",
+    "script_match",
+    "subtitle_check",
+    "audio_check",
+    "material_check",
+    "ai_label_check",
+    "review_result",
+    "required_revision",
+    "reviewer",
+    "real_system_triggered"
+  ],
+  "blank_receipt": {
+    "receipt_id": "to_be_filled",
+    "task_id": "to_be_filled",
+    "preview_version": "to_be_filled",
+    "aspect_ratio": "to_be_filled",
+    "script_match": "pending_confirmation",
+    "subtitle_check": "pending_confirmation",
+    "audio_check": "pending_confirmation",
+    "material_check": "pending_confirmation",
+    "ai_label_check": "pending_confirmation",
+    "review_result": "pending_confirmation",
+    "required_revision": "to_be_filled",
+    "reviewer": "to_be_filled",
+    "real_system_triggered": false
+  },
+  "fixed_rules": [
+    "Preview approval does not equal publishing release.",
+    "If material, subtitles, audio, or AI label remains pending, publishing is still blocked.",
+    "This template must not trigger rerendering or publishing."
+  ]
+}

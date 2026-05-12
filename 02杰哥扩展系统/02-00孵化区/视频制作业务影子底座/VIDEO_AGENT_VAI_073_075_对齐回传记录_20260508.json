@@ -1,0 +1,48 @@
+{
+  "record_id": "VIDEO_AGENT_VAI_073_075_HANDOFF_20260508",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "work_scope": "W1/R0 low-risk shadow construction",
+  "round_summary": [
+    "Created review queue escalation rule.",
+    "Created AI label confirmation receipt template.",
+    "Created final preview review receipt template."
+  ],
+  "changed_files": [
+    "VIDEO_AGENT_REVIEW_QUEUE_ESCALATION_RULE_001_复核队列升级规则_v1.0.md",
+    "VIDEO_AGENT_REVIEW_QUEUE_ESCALATION_RULE_001_复核队列升级规则_v1.0.json",
+    "VIDEO_AGENT_AI_LABEL_CONFIRMATION_RECEIPT_TEMPLATE_001_AI标识确认回执模板_v1.0.md",
+    "VIDEO_AGENT_AI_LABEL_CONFIRMATION_RECEIPT_TEMPLATE_001_AI标识确认回执模板_v1.0.json",
+    "VIDEO_AGENT_PREVIEW_REVIEW_RECEIPT_TEMPLATE_001_成品预览复核回执模板_v1.0.md",
+    "VIDEO_AGENT_PREVIEW_REVIEW_RECEIPT_TEMPLATE_001_成品预览复核回执模板_v1.0.json",
+    "VIDEO_AGENT_VAI_073_075_对齐回传记录_20260508.md",
+    "VIDEO_AGENT_VAI_073_075_对齐回传记录_20260508.json"
+  ],
+  "risk_level": "low",
+  "real_system_triggered": {
+    "model_api": false,
+    "material_read": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "real_account_cookie_or_api_key_read": false,
+    "rerender_upload_or_platform_operation": false,
+    "service_port_manager_public_or_formal_change": false
+  },
+  "requires_manager_integration": false,
+  "manager_integration_note": "Future integration with a real publishing chain requires manager decision.",
+  "next_suggestions": [
+    "Create pre-publish four-piece completeness checklist.",
+    "Create material authorization proof receipt template.",
+    "Create VAI070-VAI075 mini-stage rollup."
+  ],
+  "self_check": {
+    "read_panel_and_start_package_first": true,
+    "write_scope_limited_to_video_shadow_base": true,
+    "json_validated_by_convertfrom_json": true,
+    "scan_hits_are_blocking_refusal_or_no_trigger_statements": true,
+    "no_real_execution": true,
+    "no_manager_public_service_formal_or_other_line_changes": true
+  }
+}

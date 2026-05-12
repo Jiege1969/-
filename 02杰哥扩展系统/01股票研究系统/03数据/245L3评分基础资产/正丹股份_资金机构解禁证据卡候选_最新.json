@@ -1,0 +1,211 @@
+{
+  "名称": "正丹股份资金机构解禁证据卡候选",
+  "版本": "shadow_v1.0",
+  "生成日期": "2026-05-08",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "W1证据候选卡",
+  "状态": "source_requirements_ready",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "stock": {
+    "name": "正丹股份",
+    "code": "sz300641",
+    "display_code": "300641.SZ"
+  },
+  "evidence_scope": {
+    "capital_flow": "公开资金流向字段，作为L3基本面/资金分项的辅助证据。",
+    "institutional_holding": "定期报告或公开持仓中的机构持股结构和报告期变化。",
+    "unlock_reduction": "限售解禁、股东减持计划、减持进展或减持完成公告。",
+    "public_trading_disclosure": "交易公开信息、龙虎榜等异常交易公开披露，仅在适用时使用。"
+  },
+  "source_requirements": [
+    {
+      "source_name": "交易所/巨潮资讯上市公司公告",
+      "source_type": "公告",
+      "required_fields": [
+        "公告日期",
+        "公告标题",
+        "公告链接",
+        "减持计划/进展/完成状态",
+        "限售解禁数量与比例"
+      ],
+      "status": "candidate_source_registered",
+      "usage_boundary": "只用于确认是否存在减持、解禁或其他公开披露压力，不得自动生成交易动作。"
+    },
+    {
+      "source_name": "上市公司定期报告前十大股东/机构持仓章节",
+      "source_type": "定期报告",
+      "required_fields": [
+        "报告期",
+        "机构名称",
+        "持股数量",
+        "持股比例",
+        "环比变化",
+        "来源链接"
+      ],
+      "status": "candidate_source_registered",
+      "usage_boundary": "只用于判断机构持仓证据是否增强或减弱；没有完整报告期对比时不得写机构持续加仓。"
+    },
+    {
+      "source_name": "公开资金流向页面",
+      "source_type": "公开行情衍生数据",
+      "required_fields": [
+        "交易日",
+        "主力净流入额",
+        "主力净流入占比",
+        "成交额",
+        "来源页面",
+        "采集时间"
+      ],
+      "status": "candidate_source_registered",
+      "usage_boundary": "只能作为辅助证据；单日资金流不得直接改变L3结论。"
+    },
+    {
+      "source_name": "交易公开信息/龙虎榜（如适用）",
+      "source_type": "交易公开信息",
+      "required_fields": [
+        "交易日",
+        "上榜原因",
+        "买卖席位性质",
+        "净买入/净卖出",
+        "来源链接"
+      ],
+      "status": "candidate_source_registered",
+      "usage_boundary": "只用于解释异常交易背景；不上榜则写不适用或缺失，不得虚构席位。"
+    }
+  ],
+  "evidence_slots": [
+    {
+      "slot": "capital_flow",
+      "display_name": "资金流向",
+      "status": "candidate_source_registered",
+      "required_fields": [
+        "交易日",
+        "主力净流入额",
+        "主力净流入占比",
+        "成交额",
+        "来源页面",
+        "采集时间"
+      ],
+      "evidence": [],
+      "missing": [
+        "尚未采集可复核的资金流向字段。"
+      ],
+      "front_usage": "未采集前只能写资金证据仍缺，不能写资金明显流入或流出。"
+    },
+    {
+      "slot": "institutional_holding",
+      "display_name": "机构持仓",
+      "status": "candidate_source_registered",
+      "required_fields": [
+        "报告期",
+        "机构名称",
+        "持股数量",
+        "持股比例",
+        "环比变化",
+        "来源链接"
+      ],
+      "evidence": [],
+      "missing": [
+        "尚未合并定期报告或公开持仓数据。"
+      ],
+      "front_usage": "未形成报告期对比前，不能写机构持续增配或明显撤退。"
+    },
+    {
+      "slot": "unlock_schedule",
+      "display_name": "限售解禁",
+      "status": "candidate_source_registered",
+      "required_fields": [
+        "解禁日期",
+        "解禁数量",
+        "占总股本比例",
+        "解禁股东",
+        "来源链接"
+      ],
+      "evidence": [],
+      "missing": [
+        "尚未采集未来解禁日期、数量和比例。"
+      ],
+      "front_usage": "未核验前只能写解禁压力待核验。"
+    },
+    {
+      "slot": "reduction_plan",
+      "display_name": "减持计划/进展",
+      "status": "candidate_source_registered",
+      "required_fields": [
+        "公告日期",
+        "股东名称",
+        "计划减持数量/比例",
+        "进展状态",
+        "来源链接"
+      ],
+      "evidence": [],
+      "missing": [
+        "尚未采集近期限售股东或董监高减持计划与进展。"
+      ],
+      "front_usage": "未核验前不能写减持压力已消除或风险明显释放。"
+    },
+    {
+      "slot": "public_trading_disclosure",
+      "display_name": "交易公开信息",
+      "status": "candidate_source_registered",
+      "required_fields": [
+        "交易日",
+        "上榜原因",
+        "席位信息",
+        "净买入/净卖出",
+        "来源链接"
+      ],
+      "evidence": [],
+      "missing": [
+        "尚未检查是否存在近期交易公开信息或龙虎榜。"
+      ],
+      "front_usage": "不上榜或未核验时，不得用席位叙事强化结论。"
+    }
+  ],
+  "capital_institution_shadow_score": {
+    "score": 0,
+    "max_score": 5,
+    "score_status": "not_scored",
+    "score_reason": "本卡当前只完成证据位和来源要求登记，尚未采集可复核数值，因此不得给资金/机构/解禁加分。",
+    "positive_evidence": [],
+    "negative_evidence": [],
+    "missing": [
+      "资金流、机构持仓、解禁减持未合并。",
+      "更高分受制于价格低于修复区、成交不足、业绩下滑、产品价格和资金证据缺失。"
+    ],
+    "confidence": "low"
+  },
+  "front_output_compression": {
+    "one_sentence": "资金、机构和解禁减持证据位已建立，但当前仍是待采集状态，不能作为强化结论的依据。",
+    "user_facing_reason": "前台可以说明该项仍是关键缺口；后台必须等公开字段入账后再参与评分。",
+    "missing_sentence": "缺少可复核的资金流向、机构持仓变化、限售解禁和减持计划/进展字段。",
+    "do_not_say": [
+      "资金明显流入",
+      "机构持续加仓",
+      "减持压力已经释放",
+      "可以据此买入或卖出",
+      "可以调整仓位"
+    ]
+  },
+  "linked_l3_gap": {
+    "priority": "P0",
+    "priority_reasons": [
+      "行业价格尚未形成可用观测",
+      "资金/机构/减持解禁证据未合并",
+      "政策事件匹配或暴露度不足",
+      "市场风格只宜作辅助参考"
+    ],
+    "source_l3_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\正丹股份_sz300641_财报补证影子版_20260507.json"
+  },
+  "safety_boundary": {
+    "only_for_research": true,
+    "not_investment_advice": true,
+    "not_buy_sell_signal": true,
+    "not_position_adjustment": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_external_send": true
+  }
+}

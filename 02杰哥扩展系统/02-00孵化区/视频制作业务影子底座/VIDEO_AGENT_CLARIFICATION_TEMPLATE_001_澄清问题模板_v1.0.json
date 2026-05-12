@@ -1,0 +1,40 @@
+{
+  "contract_id": "VIDEO_AGENT_CLARIFICATION_TEMPLATE_001",
+  "name": "澄清问题模板",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 09:55:00 +08:00",
+  "asset_identity": "视频创作智能体 W1/R0 澄清问题模板",
+  "risk_level": "W1/R0",
+  "why_not_extend_existing": "意图路由表只定义无法判断时澄清一次；本模板定义澄清问题怎么写、问什么、问到什么程度。",
+  "capability_gain": [
+    "信息不足时只问关键一问",
+    "高风险指令转入门禁确认",
+    "把含混表达映射到契约字段",
+    "避免连续追问"
+  ],
+  "clarification_scenarios": [
+    {"scene": "目标不清", "route_to": "会话状态契约"},
+    {"scene": "平台不清", "route_to": "会话状态契约"},
+    {"scene": "修改范围不清", "route_to": "局部修正契约"},
+    {"scene": "素材风险", "route_to": "素材授权门禁"},
+    {"scene": "生成风险", "route_to": "生成放行门禁"},
+    {"scene": "发布风险", "route_to": "发布放行门禁"},
+    {"scene": "多意图冲突", "route_to": "意图路由"}
+  ],
+  "rules": {
+    "max_questions_per_turn": 1,
+    "must_map_to_contract_fields": true,
+    "high_risk_goes_to_gate_only": true,
+    "no_answer_state": "pending_clarification"
+  },
+  "boundary": {
+    "call_model_api": false,
+    "receive_real_wecom_message": false,
+    "start_service": false,
+    "generate_real_media": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false
+  },
+  "formal_capability_claim": false
+}

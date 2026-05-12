@@ -1,0 +1,154 @@
+{
+  "name": "五样本前台结论型短答验收清单",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 08:42:22",
+  "asset_identity": "W1验收清单",
+  "status": "draft",
+  "source_assets": {
+    "preview": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本前台缺口压缩预演_最新.json",
+    "wording_rules": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\前台缺口话术规则草案_最新.json"
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "acceptance_contract": [
+    "第一行必须明确股票名称和代码。",
+    "前台先给结论，不把后台分析过程原样堆给用户。",
+    "依据只保留关键原因，后台证据链另存。",
+    "证据缺失必须显式标注缺口，不得用空值或横杠冒充判断。",
+    "L3 评分和政策/市场风格判断必须读取结构化证据，不得由模型凭空补分。",
+    "不得出现买入、卖出、下单、仓位调整、自动交易或券商接口能力。"
+  ],
+  "sample_checks": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "source_text_length": 25,
+      "first_line": "name: 云南锗业",
+      "checks": {
+        "object_first_line": false,
+        "conclusion_first": false,
+        "evidence_gap_explicit": false,
+        "rule_wording_hit": false,
+        "no_trade_terms": true,
+        "no_overclaim_when_missing": true,
+        "front_readability": true
+      },
+      "rule_wording_hits": [],
+      "prohibited_trade_terms": [],
+      "overclaim_terms": [],
+      "result": "needs_revision",
+      "revision_hint": "第一行改为明确对象：云南锗业（sz002428）。；开头先给结论词，不先堆指标。；缺财报、资金、政策、行业价格或市场风格证据时必须一句话标明缺口。；套用已生成的缺口话术规则，避免临场发挥。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "source_text_length": 25,
+      "first_line": "name: 天齐锂业",
+      "checks": {
+        "object_first_line": false,
+        "conclusion_first": false,
+        "evidence_gap_explicit": false,
+        "rule_wording_hit": false,
+        "no_trade_terms": true,
+        "no_overclaim_when_missing": true,
+        "front_readability": true
+      },
+      "rule_wording_hits": [],
+      "prohibited_trade_terms": [],
+      "overclaim_terms": [],
+      "result": "needs_revision",
+      "revision_hint": "第一行改为明确对象：天齐锂业（sz002466）。；开头先给结论词，不先堆指标。；缺财报、资金、政策、行业价格或市场风格证据时必须一句话标明缺口。；套用已生成的缺口话术规则，避免临场发挥。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "source_text_length": 25,
+      "first_line": "name: 华虹公司",
+      "checks": {
+        "object_first_line": false,
+        "conclusion_first": false,
+        "evidence_gap_explicit": false,
+        "rule_wording_hit": false,
+        "no_trade_terms": true,
+        "no_overclaim_when_missing": true,
+        "front_readability": true
+      },
+      "rule_wording_hits": [],
+      "prohibited_trade_terms": [],
+      "overclaim_terms": [],
+      "result": "needs_revision",
+      "revision_hint": "第一行改为明确对象：华虹公司（sh688347）。；开头先给结论词，不先堆指标。；缺财报、资金、政策、行业价格或市场风格证据时必须一句话标明缺口。；套用已生成的缺口话术规则，避免临场发挥。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "source_text_length": 25,
+      "first_line": "name: 浙商中拓",
+      "checks": {
+        "object_first_line": false,
+        "conclusion_first": false,
+        "evidence_gap_explicit": false,
+        "rule_wording_hit": false,
+        "no_trade_terms": true,
+        "no_overclaim_when_missing": true,
+        "front_readability": true
+      },
+      "rule_wording_hits": [],
+      "prohibited_trade_terms": [],
+      "overclaim_terms": [],
+      "result": "needs_revision",
+      "revision_hint": "第一行改为明确对象：浙商中拓（sz000906）。；开头先给结论词，不先堆指标。；缺财报、资金、政策、行业价格或市场风格证据时必须一句话标明缺口。；套用已生成的缺口话术规则，避免临场发挥。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "source_text_length": 25,
+      "first_line": "name: 正丹股份",
+      "checks": {
+        "object_first_line": false,
+        "conclusion_first": false,
+        "evidence_gap_explicit": false,
+        "rule_wording_hit": false,
+        "no_trade_terms": true,
+        "no_overclaim_when_missing": true,
+        "front_readability": true
+      },
+      "rule_wording_hits": [],
+      "prohibited_trade_terms": [],
+      "overclaim_terms": [],
+      "result": "needs_revision",
+      "revision_hint": "第一行改为明确对象：正丹股份（sz300641）。；开头先给结论词，不先堆指标。；缺财报、资金、政策、行业价格或市场风格证据时必须一句话标明缺口。；套用已生成的缺口话术规则，避免临场发挥。"
+    }
+  ],
+  "summary": {
+    "sample_count": 5,
+    "pass_count": 0,
+    "needs_revision_count": 5
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_adapter_write": true,
+    "not_score_write": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "名称": "03进化系统轻量任务契约审计清单",
+  "创建日期": "2026-05-05",
+  "所属系统": "03杰哥进化系统",
+  "适用范围": "标准任务单JSON、SQLite影子台账、Redis影子映射、n8n干跑、真实动作闸门、股票分析only边界",
+  "审计结论口径": {
+    "全部通过": "可进入03规则沉淀和只读回收",
+    "任一失败": "阻断进入真实动作链路，仅允许补齐任务单、修正边界或继续影子验证"
+  },
+  "检查项": [
+    {
+      "检查项ID": "CHK-LTC-001",
+      "检查名称": "不得新增第二中枢",
+      "检查内容": "产物不得声明替代00总管，不得新增跨系统总入口、总调度、总权限或总执行器。",
+      "通过条件": "center_role=rule_deposit_only 且 second_center_created=false",
+      "阻断项": true
+    },
+    {
+      "检查项ID": "CHK-LTC-002",
+      "检查名称": "标准任务单JSON字段完整",
+      "检查内容": "任务单必须包含task_id、source_system、target_system、intent、scope、inputs、expected_outputs、safety_boundary、dry_run、real_action_requested、acceptance。",
+      "通过条件": "required_fields全部存在，dry_run=true，real_action_requested=false",
+      "阻断项": true
+    },
+    {
+      "检查项ID": "CHK-LTC-003",
+      "检查名称": "SQLite仅为影子权威台账",
+      "检查内容": "SQLite只记录影子任务、状态、验收和阻断原因，不作为正式业务库或真实动作执行源。",
+      "通过条件": "sqlite.role=shadow_authoritative_ledger 且 official_db_write=false",
+      "阻断项": true
+    },
+    {
+      "检查项ID": "CHK-LTC-004",
+      "检查名称": "Redis仅为影子映射增强",
+      "检查内容": "Redis只做任务ID、状态、幂等键、审计索引等影子缓存，不承载真实动作队列或权限放行。",
+      "通过条件": "redis.role=shadow_mapping_enhancement 且 real_action_queue=false",
+      "阻断项": true
+    },
+    {
+      "检查项ID": "CHK-LTC-005",
+      "检查名称": "n8n仅干跑",
+      "检查内容": "n8n只能使用mock payload和本地解析，不调用webhook，不启用工作流，不写生产凭据。",
+      "通过条件": "n8n.mode=dry_run_only 且 triggered=false 且 webhook_called=false",
+      "阻断项": true
+    },
+    {
+      "检查项ID": "CHK-LTC-006",
+      "检查名称": "真实动作默认关闭并归单线闸门",
+      "检查内容": "企业微信、正式库、n8n、券商接口、自动交易等真实动作均默认关闭；未来如需放行只能走唯一人工闸门。",
+      "通过条件": "real_actions_enabled=false 且 gate.mode=single_line_manual_gate",
+      "阻断项": true
+    },
+    {
+      "检查项ID": "CHK-LTC-007",
+      "检查名称": "股票分析only",
+      "检查内容": "股票相关任务只允许分析、复盘、规则沉淀和只读验收，不连接券商、不下单、不自动交易。",
+      "通过条件": "stock_scope=analysis_only 且 broker_api_called=false 且 auto_trade=false 且 order_placed=false",
+      "阻断项": true
+    },
+    {
+      "检查项ID": "CHK-LTC-008",
+      "检查名称": "禁止接口全关闭",
+      "检查内容": "n8n、企业微信、正式库、券商接口、自动交易、外部网络调用、生产凭据读取均必须显式为false。",
+      "通过条件": "prohibited_actions全部为false",
+      "阻断项": true
+    }
+  ],
+  "阻断项清单": [
+    "新增或替代00总管的第二中枢",
+    "任务单缺少JSON必填字段或隐含真实动作授权",
+    "SQLite写正式库或驱动真实动作",
+    "Redis成为真实动作队列或权限放行器",
+    "n8n webhook调用、工作流启用或生产凭据写入",
+    "企业微信真实发送、正式库写入、券商接口调用、下单或自动交易",
+    "股票研究输出被机器直接消费为交易指令"
+  ]
+}

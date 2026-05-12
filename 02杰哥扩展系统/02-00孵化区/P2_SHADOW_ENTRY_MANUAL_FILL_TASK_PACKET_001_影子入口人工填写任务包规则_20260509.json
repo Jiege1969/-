@@ -1,0 +1,51 @@
+{
+  "rule_id": "P2_SHADOW_ENTRY_MANUAL_FILL_TASK_PACKET_001",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S14",
+  "status": "manual_fill_task_packet_rule_not_writer",
+  "purpose": "将 P2-S13 差异预览压缩为人工填写任务包，不写目标入口",
+  "input_dependency": "P2-S13 影子入口填写差异预览样例",
+  "task_packet_is_fill_result": false,
+  "task_packet_is_release_form": false,
+  "required_task_fields": [
+    "task_id",
+    "target_line",
+    "target_entry",
+    "target_path",
+    "candidate_fields",
+    "must_remain_false_fields",
+    "must_remain_pending_fields",
+    "must_not_change_fields",
+    "post_manual_fill_recheck",
+    "write_target_entry",
+    "auto_fill_shadow_entry",
+    "release_form",
+    "formal_capability_claim"
+  ],
+  "post_manual_fill_recheck": [
+    "json_parse_check",
+    "redline_false_check",
+    "target_entry_status_check",
+    "readonly_shadow_regression"
+  ],
+  "hard_rules": {
+    "preview_only": true,
+    "write_target_entry": false,
+    "auto_fill_shadow_entry": false,
+    "release_form": false,
+    "formal_capability_claim": false,
+    "real_material_read_by_script": false
+  },
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

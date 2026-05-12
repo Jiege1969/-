@@ -1,0 +1,948 @@
+{
+  "名称": "知识库日志旧流水清理",
+  "执行时间": "2026-05-06 21:54:08 +08:00",
+  "当前结论": "通过",
+  "目标目录": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库",
+  "清理前文件数": 164,
+  "清理前最新锚点": 11,
+  "候选旧时间戳": 153,
+  "删除数量": 153,
+  "删除字节": 2315289,
+  "剩余旧时间戳": 0,
+  "模式汇总": [
+    {
+      "模式": "knowledge-system-status-summary-verify-<ts>.json",
+      "文件数": 67,
+      "最新锚点": 0,
+      "旧时间戳": 67,
+      "字节": 309164
+    },
+    {
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json",
+      "文件数": 47,
+      "最新锚点": 0,
+      "旧时间戳": 47,
+      "字节": 239794
+    },
+    {
+      "模式": "knowledge-traceable-qa-entry-verify-<ts>.json",
+      "文件数": 9,
+      "最新锚点": 0,
+      "旧时间戳": 9,
+      "字节": 337265
+    },
+    {
+      "模式": "smart-system-knowledge-middleware-exception-loop-<ts>.json",
+      "文件数": 6,
+      "最新锚点": 0,
+      "旧时间戳": 6,
+      "字节": 182532
+    },
+    {
+      "模式": "smart-system-knowledge-middleware-exception-loop-verify-<ts>.json",
+      "文件数": 6,
+      "最新锚点": 0,
+      "旧时间戳": 6,
+      "字节": 341704
+    },
+    {
+      "模式": "stock-acceptance-report-qa-sample-generate-<ts>.json",
+      "文件数": 5,
+      "最新锚点": 0,
+      "旧时间戳": 5,
+      "字节": 139712
+    },
+    {
+      "模式": "stock-acceptance-report-qa-sample-verify-<ts>.json",
+      "文件数": 5,
+      "最新锚点": 0,
+      "旧时间戳": 5,
+      "字节": 254777
+    },
+    {
+      "模式": "knowledge-stock-evidence-traceable-qa-acceptance-verify-<ts>.json",
+      "文件数": 3,
+      "最新锚点": 0,
+      "旧时间戳": 3,
+      "字节": 323323
+    },
+    {
+      "模式": "knowledge-formal-expansion-with-backup-verify-<ts>.json",
+      "文件数": 2,
+      "最新锚点": 0,
+      "旧时间戳": 2,
+      "字节": 27557
+    },
+    {
+      "模式": "knowledge-traceable-qa-sample-acceptance-verify-<ts>.json",
+      "文件数": 2,
+      "最新锚点": 0,
+      "旧时间戳": 2,
+      "字节": 55787
+    },
+    {
+      "模式": "stock-acceptance-traceable-qa-entry-verify-<ts>.json",
+      "文件数": 1,
+      "最新锚点": 0,
+      "旧时间戳": 1,
+      "字节": 103674
+    },
+    {
+      "模式": "knowledge-formal-expansion-with-backup-verify-最新.json",
+      "文件数": 1,
+      "最新锚点": 1,
+      "旧时间戳": 0,
+      "字节": 14089
+    },
+    {
+      "模式": "knowledge-local-qa-preview-verify-最新.json",
+      "文件数": 1,
+      "最新锚点": 1,
+      "旧时间戳": 0,
+      "字节": 5099
+    },
+    {
+      "模式": "knowledge-retrieval-enhancement-chain-verify-最新.json",
+      "文件数": 1,
+      "最新锚点": 1,
+      "旧时间戳": 0,
+      "字节": 3478
+    },
+    {
+      "模式": "knowledge-stock-evidence-traceable-qa-acceptance-verify-最新.json",
+      "文件数": 1,
+      "最新锚点": 1,
+      "旧时间戳": 0,
+      "字节": 109356
+    },
+    {
+      "模式": "knowledge-system-status-summary-verify-最新.json",
+      "文件数": 1,
+      "最新锚点": 1,
+      "旧时间戳": 0,
+      "字节": 4895
+    },
+    {
+      "模式": "knowledge-traceable-qa-entry-verify-最新.json",
+      "文件数": 1,
+      "最新锚点": 1,
+      "旧时间戳": 0,
+      "字节": 39000
+    },
+    {
+      "模式": "knowledge-traceable-qa-sample-acceptance-verify-最新.json",
+      "文件数": 1,
+      "最新锚点": 1,
+      "旧时间戳": 0,
+      "字节": 27846
+    },
+    {
+      "模式": "r02-knowledge-local-ingest-executor-verify-最新.json",
+      "文件数": 1,
+      "最新锚点": 1,
+      "旧时间戳": 0,
+      "字节": 5028
+    },
+    {
+      "模式": "smart-system-knowledge-middleware-exception-loop-verify-最新.json",
+      "文件数": 1,
+      "最新锚点": 1,
+      "旧时间戳": 0,
+      "字节": 67349
+    },
+    {
+      "模式": "stock-acceptance-report-qa-sample-verify-最新.json",
+      "文件数": 1,
+      "最新锚点": 1,
+      "旧时间戳": 0,
+      "字节": 50988
+    },
+    {
+      "模式": "stock-acceptance-traceable-qa-entry-verify-最新.json",
+      "文件数": 1,
+      "最新锚点": 1,
+      "旧时间戳": 0,
+      "字节": 103674
+    }
+  ],
+  "删除文件": [
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-formal-expansion-with-backup-verify-20260505-102353.json",
+      "字节": 13468,
+      "模式": "knowledge-formal-expansion-with-backup-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-formal-expansion-with-backup-verify-20260505-102530.json",
+      "字节": 14089,
+      "模式": "knowledge-formal-expansion-with-backup-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-120559.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-120902.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-121240.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-123443.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-124426.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-124535.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-125045.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-130743.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-131826.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-132156.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-132321.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-132453.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-132702.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-133702.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-134622.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260429-134846.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260430-072454.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260430-082425.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260501-190819.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260501-191210.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260501-191617.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260504-065658.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260504-070142.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260504-070523.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260504-071437.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260505-053740.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260505-102543.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260505-102711.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260505-104531.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260505-105010.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-101358.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-102149.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-102154.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-102423.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-102546.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-102744.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-102905.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-105610.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-111023.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-111902.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-112352.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-113910.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-115547.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-120211.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-120728.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-122731.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-local-qa-preview-verify-20260506-124625.json",
+      "字节": 5102,
+      "模式": "knowledge-local-qa-preview-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-stock-evidence-traceable-qa-acceptance-verify-20260505-104046.json",
+      "字节": 106276,
+      "模式": "knowledge-stock-evidence-traceable-qa-acceptance-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-stock-evidence-traceable-qa-acceptance-verify-20260505-104115.json",
+      "字节": 107691,
+      "模式": "knowledge-stock-evidence-traceable-qa-acceptance-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-stock-evidence-traceable-qa-acceptance-verify-20260505-111726.json",
+      "字节": 109356,
+      "模式": "knowledge-stock-evidence-traceable-qa-acceptance-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-082947.json",
+      "字节": 3970,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-083011.json",
+      "字节": 3970,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-083354.json",
+      "字节": 3970,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-083610.json",
+      "字节": 3970,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-083826.json",
+      "字节": 3970,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-084149.json",
+      "字节": 3970,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-084430.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-084632.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-085724.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-090021.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-090148.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-090350.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-103800.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-104011.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-104513.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-104603.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-104645.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-104854.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-104927.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-115732.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-120200.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-120307.json",
+      "字节": 3971,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-120708.json",
+      "字节": 4927,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-120826.json",
+      "字节": 4927,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-120902.json",
+      "字节": 4927,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-121240.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-123443.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-124426.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-124535.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-125045.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-130742.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-131826.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-132156.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-132321.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-132453.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-132702.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-133701.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-134622.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260429-134846.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260430-072454.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260430-082425.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260501-190819.json",
+      "字节": 4933,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260501-191209.json",
+      "字节": 4933,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260501-191616.json",
+      "字节": 4933,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260504-065658.json",
+      "字节": 4933,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260504-070142.json",
+      "字节": 4933,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260504-070523.json",
+      "字节": 4933,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260504-071437.json",
+      "字节": 4933,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260505-102543.json",
+      "字节": 4926,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260505-102711.json",
+      "字节": 4925,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-101358.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-102149.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-102153.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-102423.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-102546.json",
+      "字节": 4928,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-102744.json",
+      "字节": 4929,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-102905.json",
+      "字节": 4929,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-105610.json",
+      "字节": 4929,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-111023.json",
+      "字节": 4930,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-111902.json",
+      "字节": 4930,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-112352.json",
+      "字节": 4930,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-113909.json",
+      "字节": 4930,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-115547.json",
+      "字节": 4930,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-120211.json",
+      "字节": 4930,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-120728.json",
+      "字节": 4930,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-122731.json",
+      "字节": 4930,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-system-status-summary-verify-20260506-124625.json",
+      "字节": 4930,
+      "模式": "knowledge-system-status-summary-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-traceable-qa-entry-verify-20260505-100909.json",
+      "字节": 27829,
+      "模式": "knowledge-traceable-qa-entry-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-traceable-qa-entry-verify-20260505-100940.json",
+      "字节": 23634,
+      "模式": "knowledge-traceable-qa-entry-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-traceable-qa-entry-verify-20260505-102543.json",
+      "字节": 52114,
+      "模式": "knowledge-traceable-qa-entry-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-traceable-qa-entry-verify-20260505-102620.json",
+      "字节": 38688,
+      "模式": "knowledge-traceable-qa-entry-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-traceable-qa-entry-verify-20260505-102702.json",
+      "字节": 39000,
+      "模式": "knowledge-traceable-qa-entry-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-traceable-qa-entry-verify-20260505-104531.json",
+      "字节": 39000,
+      "模式": "knowledge-traceable-qa-entry-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-traceable-qa-entry-verify-20260505-105010.json",
+      "字节": 39000,
+      "模式": "knowledge-traceable-qa-entry-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-traceable-qa-entry-verify-20260505-110553.json",
+      "字节": 39000,
+      "模式": "knowledge-traceable-qa-entry-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-traceable-qa-entry-verify-20260505-111726.json",
+      "字节": 39000,
+      "模式": "knowledge-traceable-qa-entry-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-traceable-qa-sample-acceptance-verify-20260505-095430.json",
+      "字节": 27941,
+      "模式": "knowledge-traceable-qa-sample-acceptance-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\knowledge-traceable-qa-sample-acceptance-verify-20260505-095503.json",
+      "字节": 27846,
+      "模式": "knowledge-traceable-qa-sample-acceptance-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-20260505-110525.json",
+      "字节": 30422,
+      "模式": "smart-system-knowledge-middleware-exception-loop-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-20260505-111726.json",
+      "字节": 30422,
+      "模式": "smart-system-knowledge-middleware-exception-loop-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-20260505-112703.json",
+      "字节": 30422,
+      "模式": "smart-system-knowledge-middleware-exception-loop-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-20260505-113811.json",
+      "字节": 30422,
+      "模式": "smart-system-knowledge-middleware-exception-loop-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-20260505-115401.json",
+      "字节": 30422,
+      "模式": "smart-system-knowledge-middleware-exception-loop-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-20260505-115523.json",
+      "字节": 30422,
+      "模式": "smart-system-knowledge-middleware-exception-loop-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-verify-20260505-110505.json",
+      "字节": 4959,
+      "模式": "smart-system-knowledge-middleware-exception-loop-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-verify-20260505-110525.json",
+      "字节": 67349,
+      "模式": "smart-system-knowledge-middleware-exception-loop-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-verify-20260505-111726.json",
+      "字节": 67349,
+      "模式": "smart-system-knowledge-middleware-exception-loop-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-verify-20260505-112703.json",
+      "字节": 67349,
+      "模式": "smart-system-knowledge-middleware-exception-loop-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-verify-20260505-113811.json",
+      "字节": 67349,
+      "模式": "smart-system-knowledge-middleware-exception-loop-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-verify-20260505-115402.json",
+      "字节": 67349,
+      "模式": "smart-system-knowledge-middleware-exception-loop-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\stock-acceptance-report-qa-sample-generate-20260505-104520.json",
+      "字节": 27812,
+      "模式": "stock-acceptance-report-qa-sample-generate-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\stock-acceptance-report-qa-sample-generate-20260505-104958.json",
+      "字节": 27975,
+      "模式": "stock-acceptance-report-qa-sample-generate-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\stock-acceptance-report-qa-sample-generate-20260505-110412.json",
+      "字节": 27975,
+      "模式": "stock-acceptance-report-qa-sample-generate-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\stock-acceptance-report-qa-sample-generate-20260505-110540.json",
+      "字节": 27975,
+      "模式": "stock-acceptance-report-qa-sample-generate-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\stock-acceptance-report-qa-sample-generate-20260505-111726.json",
+      "字节": 27975,
+      "模式": "stock-acceptance-report-qa-sample-generate-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\stock-acceptance-report-qa-sample-verify-20260505-104520.json",
+      "字节": 50825,
+      "模式": "stock-acceptance-report-qa-sample-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\stock-acceptance-report-qa-sample-verify-20260505-104958.json",
+      "字节": 50988,
+      "模式": "stock-acceptance-report-qa-sample-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\stock-acceptance-report-qa-sample-verify-20260505-110412.json",
+      "字节": 50988,
+      "模式": "stock-acceptance-report-qa-sample-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\stock-acceptance-report-qa-sample-verify-20260505-110541.json",
+      "字节": 50988,
+      "模式": "stock-acceptance-report-qa-sample-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\stock-acceptance-report-qa-sample-verify-20260505-111726.json",
+      "字节": 50988,
+      "模式": "stock-acceptance-report-qa-sample-verify-<ts>.json"
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\stock-acceptance-traceable-qa-entry-verify-20260505-110625.json",
+      "字节": 103674,
+      "模式": "stock-acceptance-traceable-qa-entry-verify-<ts>.json"
+    }
+  ],
+  "失败": [],
+  "保留原则": [
+    "保留固定最新锚点",
+    "保留正式数据、正式扩容执行报告、备份目录和不可再生资产",
+    "删除 04日志/知识库 内无当前依赖的可再生旧验收日志"
+  ],
+  "安全边界": {
+    "未触发n8n": true,
+    "未发送企业微信": true,
+    "未调用券商接口": true,
+    "未自动交易": true,
+    "未删除正式知识库数据": true
+  }
+}

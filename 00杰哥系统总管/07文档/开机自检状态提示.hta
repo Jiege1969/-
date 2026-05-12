@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <hta:application
+    applicationname="JiegeStartupStatus"
+    border="thin"
+    caption="yes"
+    maximizebutton="no"
+    minimizebutton="no"
+    showintaskbar="yes"
+    singleinstance="yes"
+    sysmenu="yes"
+    windowstate="normal"
+  />
+  <title>杰哥，您好！智能系统已经为您准备好了！</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 420px;
+      height: 230px;
+      overflow: hidden;
+      font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+      background: #111827;
+      color: #f9fafb;
+    }
+    .wrap {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 22px 24px;
+      background: linear-gradient(135deg, #111827 0%, #1f2937 54%, #0f172a 100%);
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .ring {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      position: relative;
+      flex: 0 0 auto;
+      background: conic-gradient(#22c55e, #86efac, #22c55e);
+      animation: spin 1.25s linear infinite;
+      box-shadow: 0 0 26px rgba(34, 197, 94, .35);
+    }
+    .ring:after {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 50%;
+      background: #111827;
+    }
+    .mark {
+      position: absolute;
+      z-index: 2;
+      left: 24px;
+      top: 18px;
+      font-size: 30px;
+      font-weight: 700;
+      color: #86efac;
+      animation: pop .7s ease-out both;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      letter-spacing: 0;
+      font-weight: 700;
+    }
+    .sub {
+      margin: 0;
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 12px;
+      font-size: 13px;
+      color: #d1d5db;
+    }
+    .pill {
+      border: 1px solid rgba(148, 163, 184, .28);
+      border-radius: 6px;
+      padding: 7px 9px;
+      background: rgba(15, 23, 42, .58);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .foot {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #94a3b8;
+      font-size: 12px;
+    }
+    button {
+      border: 1px solid rgba(148, 163, 184, .35);
+      background: rgba(15, 23, 42, .8);
+      color: #e5e7eb;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .warn .ring { background: conic-gradient(#f59e0b, #fde68a, #f59e0b); box-shadow: 0 0 26px rgba(245, 158, 11, .35); }
+    .warn .mark { color: #fde68a; }
+    .bad .ring { background: conic-gradient(#ef4444, #fecaca, #ef4444); box-shadow: 0 0 26px rgba(239, 68, 68, .35); }
+    .bad .mark { color: #fecaca; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pop {
+      from { transform: scale(.6); opacity: .2; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+<div id="wrap" class="wrap">
+  <div class="top">
+    <div class="ring"><div id="mark" class="mark">✓</div></div>
+    <div>
+      <h1 id="title">杰哥，您好！智能系统已经为您准备好了！</h1>
+      <p id="sub" class="sub">开机自检已经通过，后台服务已就绪。</p>
+    </div>
+  </div>
+  <div class="grid">
+    <div id="ready" class="pill">总管：读取中</div>
+    <div id="ai" class="pill">AI底座：读取中</div>
+    <div id="warn" class="pill">警告：读取中</div>
+    <div id="time" class="pill">时间：读取中</div>
+  </div>
+  <div class="foot">
+    <span id="autoClose">12 秒后自动关闭</span>
+    <button onclick="openReport()">查看报告</button>
+  </div>
+</div>
+<script type="text/javascript">
+var reportPath = "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\开机施工准备\\startup_construction_preflight_latest.md";
+
+function readReport() {
+  try {
+    var fso = new ActiveXObject("Scripting.FileSystemObject");
+    if (!fso.FileExists(reportPath)) return "";
+    var file = fso.OpenTextFile(reportPath, 1, false, -1);
+    var text = file.ReadAll();
+    file.Close();
+    return text;
+  } catch (e) {
+    return "";
+  }
+}
+
+function has(text, needle) {
+  return text.indexOf(needle) >= 0;
+}
+
+function lineAfter(text, prefix) {
+  var rows = text.split(/\r?\n/);
+  for (var i = 0; i < rows.length; i++) {
+    if (rows[i].indexOf(prefix) >= 0) return rows[i].replace(/^[- ]+/, "");
+  }
+  return "";
+}
+
+function openReport() {
+  try {
+    var shell = new ActiveXObject("WScript.Shell");
+    shell.Run('notepad.exe "' + reportPath + '"', 1, false);
+  } catch (e) {}
+}
+
+function init() {
+  window.resizeTo(438, 270);
+  var x = screen.availWidth - 470;
+  var y = screen.availHeight - 320;
+  window.moveTo(x, y);
+
+  var text = readReport();
+  var readyOk = has(text, "Ready for Codex construction: True");
+  var aiOk = has(text, "V3 AI base healthcheck: True");
+  var warnOk = has(text, "Warnings\r\n\r\nnone") || has(text, "Warnings\n\nnone");
+  var generated = lineAfter(text, "Generated at:");
+  var wrap = document.getElementById("wrap");
+  var mark = document.getElementById("mark");
+  var title = document.getElementById("title");
+  var sub = document.getElementById("sub");
+
+  document.getElementById("ready").innerText = readyOk ? "总管：已就绪" : "总管：未就绪";
+  document.getElementById("ai").innerText = aiOk ? "AI底座：已就绪" : "AI底座：待检查";
+  document.getElementById("warn").innerText = warnOk ? "警告：无" : "警告：请查看报告";
+  document.getElementById("time").innerText = generated || "时间：未知";
+
+  var closeMs = 12000;
+  if (readyOk && aiOk && warnOk) {
+    title.innerText = "杰哥，您好！智能系统已经为您准备好了！";
+    sub.innerText = "开机自检通过，后台服务已就绪。";
+    mark.innerText = "✓";
+  } else if (text.length > 0) {
+    wrap.className = "wrap warn";
+    title.innerText = "系统需要查看";
+    sub.innerText = "自检完成，但有项目需要确认。";
+    mark.innerText = "!";
+    closeMs = 30000;
+    document.getElementById("autoClose").innerText = "30 秒后自动关闭";
+  } else {
+    wrap.className = "wrap bad";
+    title.innerText = "未读到自检报告";
+    sub.innerText = "后台可能尚未完成，请稍后查看报告。";
+    mark.innerText = "×";
+    closeMs = 30000;
+    document.getElementById("autoClose").innerText = "30 秒后自动关闭";
+  }
+  window.setTimeout(function(){ window.close(); }, closeMs);
+}
+
+window.onload = init;
+</script>
+</body>
+</html>

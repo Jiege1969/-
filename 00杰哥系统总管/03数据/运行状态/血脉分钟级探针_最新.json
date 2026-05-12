@@ -1,0 +1,145 @@
+﻿{
+    "record_time":  "2026-05-13 13:28:01",
+    "status":  "ready",
+    "ready":  true,
+    "corrected_port_mapping":  {
+                                   "redis":  26379,
+                                   "n8n":  28679,
+                                   "ollama":  29134,
+                                   "note":  "Port mapping follows local registry. The earlier 28679/29134 wording was corrected here."
+                               },
+    "services":  [
+                     {
+                         "name":  "股票助手",
+                         "kind":  "http_get",
+                         "port":  19300,
+                         "ok":  true,
+                         "status":  "ok",
+                         "selected_url":  "http://127.0.0.1:19300/health",
+                         "attempts":  [
+                                          {
+                                              "url":  "http://127.0.0.1:19300/health",
+                                              "status_code":  200,
+                                              "elapsed_ms":  126,
+                                              "ok":  true,
+                                              "error":  null
+                                          }
+                                      ]
+                     },
+                     {
+                         "name":  "股票企微桥接/公网分流",
+                         "kind":  "http_get",
+                         "port":  19302,
+                         "ok":  true,
+                         "status":  "ok",
+                         "selected_url":  "http://127.0.0.1:19302/health",
+                         "attempts":  [
+                                          {
+                                              "url":  "http://127.0.0.1:19302/health",
+                                              "status_code":  200,
+                                              "elapsed_ms":  15,
+                                              "ok":  true,
+                                              "error":  null
+                                          }
+                                      ]
+                     },
+                     {
+                         "name":  "企业微信统一指令",
+                         "kind":  "http_get",
+                         "port":  19310,
+                         "ok":  true,
+                         "status":  "ok",
+                         "selected_url":  "http://127.0.0.1:19310/health",
+                         "attempts":  [
+                                          {
+                                              "url":  "http://127.0.0.1:19310/health",
+                                              "status_code":  200,
+                                              "elapsed_ms":  44,
+                                              "ok":  true,
+                                              "error":  null
+                                          }
+                                      ]
+                     },
+                     {
+                         "name":  "智能体大脑",
+                         "kind":  "http_get",
+                         "port":  28100,
+                         "ok":  true,
+                         "status":  "ok",
+                         "selected_url":  "http://127.0.0.1:28100/health",
+                         "attempts":  [
+                                          {
+                                              "url":  "http://127.0.0.1:28100/health",
+                                              "status_code":  200,
+                                              "elapsed_ms":  15,
+                                              "ok":  true,
+                                              "error":  null
+                                          }
+                                      ]
+                     },
+                     {
+                         "name":  "Redis",
+                         "kind":  "redis_tcp_fallback",
+                         "port":  26379,
+                         "ok":  true,
+                         "status":  "tcp_open",
+                         "elapsed_ms":  7,
+                         "error":  null,
+                         "fallback_used":  true
+                     },
+                     {
+                         "name":  "n8n",
+                         "kind":  "http_get",
+                         "port":  28679,
+                         "ok":  true,
+                         "status":  "ok",
+                         "selected_url":  "http://127.0.0.1:28679/healthz",
+                         "attempts":  [
+                                          {
+                                              "url":  "http://127.0.0.1:28679/healthz",
+                                              "status_code":  200,
+                                              "elapsed_ms":  16,
+                                              "ok":  true,
+                                              "error":  null
+                                          }
+                                      ]
+                     },
+                     {
+                         "name":  "Ollama",
+                         "kind":  "http_get",
+                         "port":  29134,
+                         "ok":  true,
+                         "status":  "ok",
+                         "selected_url":  "http://127.0.0.1:29134/api/tags",
+                         "attempts":  [
+                                          {
+                                              "url":  "http://127.0.0.1:29134/api/tags",
+                                              "status_code":  200,
+                                              "elapsed_ms":  188,
+                                              "ok":  true,
+                                              "error":  null
+                                          }
+                                      ]
+                     }
+                 ],
+    "failed_count":  0,
+    "failed_services":  [
+
+                        ],
+    "event_chain_id":  null,
+    "safety":  {
+                   "http_method":  "GET only",
+                   "redis_action":  "PING or TCP connect only",
+                   "trigger_n8n":  false,
+                   "post_wecom":  true,
+                   "send_wecom":  true,
+                   "repair_service":  false,
+                   "restart_service":  false,
+                   "call_broker_api":  false,
+                   "auto_trade":  false,
+                   "delete_data":  false
+               },
+    "event_snapshot_paths":  [
+
+                             ]
+}

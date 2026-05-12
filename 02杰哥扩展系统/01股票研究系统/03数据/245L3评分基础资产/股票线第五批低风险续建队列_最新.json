@@ -1,0 +1,100 @@
+{
+  "name": "股票线第五批低风险续建队列",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 12:42:49",
+  "asset_identity": "W1/W2股票线低风险连续施工队列",
+  "status": "active",
+  "source_assets": {
+    "fourth_queue_completed_count": 5,
+    "fourth_queue_queued_count": 0
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "construction_queue": [
+    {
+      "id": "STOCK-AUTO5-001",
+      "title": "前台短答综合样例二次压缩验收",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把对象、结论、主因、关键缺口、置信度压缩为更贴近企业微信使用场景的短答。",
+      "validation_asset": "前台短答综合样例二次压缩验收结果_最新.json",
+      "completed_at": "2026-05-08 12:20:26"
+    },
+    {
+      "id": "STOCK-AUTO5-002",
+      "title": "报告缺口优先级排序样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把missing从平铺列表改成P0/P1/P2优先级，便于后续补证和复盘。",
+      "validation_asset": "报告缺口优先级排序样例验收结果_最新.json",
+      "completed_at": "2026-05-08 12:35:11"
+    },
+    {
+      "id": "STOCK-AUTO5-003",
+      "title": "复盘字段到经验候选映射样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把人工修正和复盘结果沉淀为经验候选，不自动改正式规则。",
+      "validation_asset": "复盘字段到经验候选映射样例验收结果_最新.json",
+      "completed_at": "2026-05-08 12:37:14"
+    },
+    {
+      "id": "STOCK-AUTO5-004",
+      "title": "用户视角报告读感验收样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "检查前台输出是否结论先行、少过程、依据够用、缺口清楚。",
+      "validation_asset": "用户视角报告读感验收样例验收结果_最新.json",
+      "completed_at": "2026-05-08 12:40:31"
+    },
+    {
+      "id": "STOCK-AUTO5-005",
+      "title": "第五批统一影子验收总表",
+      "risk_level": "W2",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "汇总第五批影子资产验收状态，形成本批收口记录。",
+      "validation_asset": "股票线第五批统一影子验收总表验收_最新.json",
+      "completed_at": "2026-05-08 12:42:49"
+    }
+  ],
+  "blocked_queue": [
+    {
+      "id": "STOCK-AUTO5-BLOCK-001",
+      "title": "把影子短答接入企业微信真实发送",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "真实外发属于红线事项，本业务线不得实施。"
+    },
+    {
+      "id": "STOCK-AUTO5-BLOCK-002",
+      "title": "把复盘候选自动改成正式评分规则",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "正式规则调整必须人工复核并交回总管判断。"
+    }
+  ],
+  "summary": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

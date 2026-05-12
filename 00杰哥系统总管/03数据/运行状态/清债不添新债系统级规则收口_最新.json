@@ -1,0 +1,42 @@
+{
+  "report": "清债不添新债系统级规则收口",
+  "generated_at": "2026-05-06 07:34:00 +08:00",
+  "user_requirement": "清债不是留档观察以后处理的堆叠游戏; applies to work objects, construction logic, and all intelligent agent system links",
+  "updated_artifacts": [
+    "D:/杰哥智能化系统/03杰哥进化系统/03数据/32技术债清偿强制前置规则/清债不添新债原则_最新.md",
+    "D:/杰哥智能化系统/03杰哥进化系统/03数据/32技术债清偿强制前置规则/清债不添新债原则_最新.json",
+    "D:/杰哥智能化系统/03杰哥进化系统/03数据/32技术债清偿强制前置规则/施工者自约束规则_最新.md",
+    "D:/杰哥智能化系统/03杰哥进化系统/03数据/32技术债清偿强制前置规则/施工者自约束规则_最新.json",
+    "D:/杰哥智能化系统/00杰哥系统总管/07文档/施工安全规则.md",
+    "D:/杰哥智能化系统/00杰哥系统总管/01配置/新模块开工前置规则.json",
+    "D:/杰哥智能化系统/03杰哥进化系统/01配置/技术债清偿前置规则.json"
+  ],
+  "new_gate": {
+    "id": "PRE-006",
+    "name": "清债不添新债确认",
+    "blocks": [
+      "push_scannable_technical_dependency_judgment_back_to_user",
+      "use_archive_observe_disable_as_substitute_for_clear_disposition",
+      "reports_or_ledgers_create_new_unclosed_queue"
+    ]
+  },
+  "applies_to": [
+    "work_objects",
+    "Codex_and_construction_agents",
+    "jiege_intelligent_agent_system_links"
+  ],
+  "validation": {
+    "new_module_rule_json_parse_ok": true,
+    "no_new_debt_rule_json_parse_ok": true,
+    "constructor_self_rule_json_parse_ok": true,
+    "construction_safety_rule_updated": true,
+    "pre_006_present": true
+  },
+  "safety": {
+    "triggered_n8n": false,
+    "sent_wecom": false,
+    "called_broker_api": false,
+    "auto_trade": false,
+    "deleted_formal_data": false
+  }
+}

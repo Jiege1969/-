@@ -1,0 +1,62 @@
+﻿{
+    "report":  "WSL2一致性备份执行前核验",
+    "generated_at":  "2026-05-06 08:55:20 +08:00",
+    "assets":  [
+                   {
+                       "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\WSL2\\docker-desktop\\disk\\docker_data.vhdx",
+                       "bytes":  117365014528,
+                       "gb":  109.3,
+                       "last_write":  "2026-05-06 08:55:07"
+                   },
+                   {
+                       "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\WSL2\\Ubuntu-24.04\\ext4.vhdx",
+                       "bytes":  85931851776,
+                       "gb":  80.03,
+                       "last_write":  "2026-05-06 08:55:12"
+                   }
+               ],
+    "total_bytes":  203296866304,
+    "total_gb":  189.33,
+    "f_free_bytes":  3893661044736,
+    "f_free_gb":  3626.25,
+    "d_free_gb":  394.31,
+    "target_example":  "F:\\系统备份\\WSL2一致性备份_20260506_085520",
+    "space_ok":  true,
+    "wsl_state_raw":  " \u0000 \u0000N\u0000A\u0000M\u0000E\u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000S\u0000T\u0000A\u0000T\u0000E\u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000V\u0000E\u0000R\u0000S\u0000I\u0000O\u0000N\u0000\n\u0000\n\u0000*\u0000 \u0000d\u0000o\u0000c\u0000k\u0000e\u0000r\u0000-\u0000d\u0000e\u0000s\u0000k\u0000t\u0000o\u0000p\u0000 \u0000 \u0000 \u0000 \u0000R\u0000u\u0000n\u0000n\u0000i\u0000n\u0000g\u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u00002\u0000\n\u0000\n\u0000 \u0000 \u0000U\u0000b\u0000u\u0000n\u0000t\u0000u\u0000-\u00002\u00004\u0000.\u00000\u00004\u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000R\u0000u\u0000n\u0000n\u0000i\u0000n\u0000g\u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u00002\u0000\n\u0000\n\u0000",
+    "docker_running":  [
+                           "jiege_v3_ollama|ollama/ollama:0.20.5|Up 11 hours|127.0.0.1:29134-\u003e11434/tcp",
+                           "jiege_v3_redis|redis:7.2.5-alpine|Up 11 hours|127.0.0.1:26379-\u003e6379/tcp",
+                           "jiege_v3_n8n|n8nio/n8n:1.123.30|Up About an hour|127.0.0.1:28679-\u003e5678/tcp"
+                       ],
+    "consistency_decision":  "当前docker-desktop与Ubuntu-24.04均为Running，VHDX正在变化；不能热拷并冒充可靠备份。",
+    "executable_window_steps":  [
+                                    "记录窗口前血脉探针与Docker状态",
+                                    "暂停写入型计划任务或确认窗口内无施工",
+                                    "停止Docker Desktop或执行 wsl --shutdown",
+                                    "确认 wsl --list --verbose 无 Running 发行版",
+                                    "复制两个VHDX到F盘目标目录",
+                                    "计算源/目标文件大小与SHA256",
+                                    "启动Docker Desktop/WSL",
+                                    "验收n8n/Ollama/Redis/血脉探针",
+                                    "更新F盘备份总台账"
+                                ],
+    "not_executed":  {
+                         "reason":  "需要停止Docker/WSL，属于运行态硬闸门；本轮只读核验，不热拷。",
+                         "stopped_docker_or_wsl":  false,
+                         "copied_vhdx":  false,
+                         "hashed_running_vhdx":  false
+                     },
+    "safety":  {
+                   "stopped_services":  false,
+                   "stopped_wsl":  false,
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false,
+                   "hot_copied_vhdx":  false,
+                   "deleted_data":  false
+               },
+    "executor_script":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\维护\\Invoke-WSL2ConsistentBackup.ps1",
+    "executor_script_sha256":  "E2622CBC77A5BEAD5AEBDD3879F0D5CD483ADE7D40EAF88D6713C7FF0CCD7E36",
+    "executor_closeout":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\WSL2一致性备份执行器收口_最新.json"
+}

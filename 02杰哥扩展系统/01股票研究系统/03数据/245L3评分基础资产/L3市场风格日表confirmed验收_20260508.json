@@ -1,0 +1,37 @@
+{
+  "名称": "L3市场风格日表confirmed验收",
+  "日期": "2026-05-08",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "数据验收记录",
+  "状态": "confirmed",
+  "源文件": "03数据/245L3评分基础资产/market_style_daily_latest.json",
+  "验收结果": {
+    "status": "confirmed",
+    "date": "2026-05-07",
+    "risk_appetite_ready": true,
+    "sector_heat_ready": true,
+    "size_style_ready": true,
+    "liquidity_ready": true,
+    "missing_empty": true,
+    "final_adaptation_score": 16,
+    "moderate_coefficient": 1.06
+  },
+  "关键证据": [
+    "全市场样本5528只，上涨3246只、下跌1801只，涨跌家数比1.8023。",
+    "涨停约153只，跌停约14只。",
+    "行业板块热度来自东方财富公开板块行情涨跌幅排序。",
+    "沪深300涨跌幅0.48%，国证2000涨跌幅1.94%，大小盘风格为small。",
+    "上证指数与深证成指成交额合计约31439.56亿元，近60日分位0.9833。"
+  ],
+  "前台影响": {
+    "before": "市场风格得分11/20，但仍是partial，只能低置信参考。",
+    "after": "市场风格得分16/20，可作为环境适配参考。"
+  },
+  "安全边界": {
+    "only_read_public_market_data": true,
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

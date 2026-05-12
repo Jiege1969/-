@@ -1,0 +1,261 @@
+{
+  "package_id": "01智能系统_交付候选API模型路由干跑验收包",
+  "version": "2026-05-05.H",
+  "scope": "01杰哥智能系统",
+  "task_batch": "并行小任务H",
+  "purpose": "在不调用真实模型、不联网、不触发外部服务的前提下，验收交付候选API/模型路由从标准任务单到receipt输出的干跑闭环。",
+  "runtime": {
+    "mode": "dry_run",
+    "dry_run_default": true,
+    "real_model_invocation_enabled": false,
+    "network_enabled_for_this_package": false,
+    "external_service_trigger_enabled": false,
+    "n8n_trigger_enabled": false,
+    "wecom_send_enabled": false,
+    "formal_database_write_enabled": false,
+    "broker_api_enabled": false,
+    "auto_trade_enabled": false
+  },
+  "acceptance_flow": [
+    "standard_task_order",
+    "api_contract_validation",
+    "model_route_selection",
+    "middleware_capability_plan",
+    "failure_code_fallback",
+    "receipt_output"
+  ],
+  "standard_task_order_contract": {
+    "schema_version": "task_order.v1.dry_run",
+    "input_format": "JSON object",
+    "required_fields": [
+      "task_id",
+      "schema_version",
+      "source",
+      "intent",
+      "input",
+      "routing_hint",
+      "safety",
+      "dry_run",
+      "receipt_required"
+    ],
+    "hard_gates": {
+      "dry_run_must_be_true": true,
+      "real_action_allowed_must_be_false": true,
+      "receipt_required_must_be_true": true,
+      "forbidden_when_requires_external_trigger": true
+    }
+  },
+  "api_contract": {
+    "name": "delivery_candidate_task_api",
+    "method_label": "LOCAL_DRY_RUN_ONLY",
+    "request_contract": {
+      "task_id": "string",
+      "schema_version": "task_order.v1.dry_run",
+      "source": "string",
+      "intent": {
+        "category": "string",
+        "action": "string",
+        "risk_level": "low|medium|high"
+      },
+      "input": {
+        "payload_type": "json|text|file_ref",
+        "payload_ref": "local_ref_only",
+        "sensitive_data": "none|masked"
+      },
+      "routing_hint": {
+        "preferred_capability": "string",
+        "preferred_model_family_label": "string",
+        "allow_fallback": "boolean"
+      },
+      "safety": {
+        "real_action_allowed": false,
+        "external_call_allowed": false,
+        "formal_write_allowed": false,
+        "broker_call_allowed": false
+      },
+      "dry_run": true,
+      "receipt_required": true
+    },
+    "response_contract": {
+      "receipt_id": "string",
+      "task_id": "string",
+      "dry_run": true,
+      "status": "DRY_RUN_PLANNED|BLOCKED_BY_SAFETY|BLOCKED_NO_SAFE_ROUTE|VALIDATION_FAILED",
+      "selected_route": "object",
+      "middleware_plan": "array",
+      "fallback": "object",
+      "external_calls": [],
+      "blocked_actions": "array",
+      "evidence": "array"
+    }
+  },
+  "model_routing": {
+    "router_name": "delivery_candidate_shadow_model_router",
+    "invocation": "disabled",
+    "selection_mode": "label_only",
+    "output_mode": "planned_receipt_only",
+    "decision_inputs": [
+      "intent.category",
+      "intent.action",
+      "intent.risk_level",
+      "routing_hint.preferred_capability",
+      "routing_hint.preferred_model_family_label",
+      "input.payload_type"
+    ],
+    "candidate_routes": [
+      {
+        "route_id": "MR-LOCAL-PLAN-001",
+        "capability": "task_contract_parse",
+        "model_family_label": "none",
+        "prompt_profile_label": "no_prompt",
+        "execution": "local_parse_only",
+        "selected_when": "schema and safety gates pass",
+        "real_model_call": false
+      },
+      {
+        "route_id": "MR-SHADOW-LLM-PLAN-001",
+        "capability": "planning_text_generation",
+        "model_family_label": "general_llm_shadow_label",
+        "prompt_profile_label": "delivery_candidate_planner_v1",
+        "execution": "plan_label_only_no_invocation",
+        "selected_when": "task asks for planning but dry_run remains enforced",
+        "real_model_call": false
+      },
+      {
+        "route_id": "MR-SHADOW-KB-PLAN-001",
+        "capability": "knowledge_lookup",
+        "model_family_label": "embedding_shadow_label",
+        "prompt_profile_label": "knowledge_evidence_shadow_v1",
+        "execution": "planned_lookup_only",
+        "selected_when": "routing_hint.preferred_capability is knowledge_lookup",
+        "real_model_call": false
+      }
+    ],
+    "blocked_operations": [
+      "call_real_model_api",
+      "send_prompt_to_external_provider",
+      "stream_model_output",
+      "load_remote_model",
+      "connect_model_service"
+    ]
+  },
+  "middleware_capability_plan": [
+    {
+      "step": 1,
+      "capability": "task_contract_parse",
+      "route_label": "local_json_contract_validator",
+      "execution": "local_read_only",
+      "writes": "none"
+    },
+    {
+      "step": 2,
+      "capability": "model_route_select",
+      "route_label": "shadow_model_router_label_only",
+      "execution": "decision_label_only",
+      "writes": "none"
+    },
+    {
+      "step": 3,
+      "capability": "workflow_plan",
+      "route_label": "n8n_dry_run_plan_no_trigger",
+      "execution": "planned_only",
+      "writes": "shadow_receipt_only"
+    },
+    {
+      "step": 4,
+      "capability": "message_delivery",
+      "route_label": "unified_message_receipt_no_send",
+      "execution": "receipt_only",
+      "writes": "shadow_receipt_only"
+    },
+    {
+      "step": 5,
+      "capability": "ledger_mapping",
+      "route_label": "sqlite_redis_shadow_plan",
+      "execution": "shadow_plan_only",
+      "writes": "no_formal_db_no_real_redis"
+    }
+  ],
+  "failure_code_fallback": [
+    {
+      "code": "DRYRUN_API_400_SCHEMA_INVALID",
+      "trigger": "required field missing or schema_version mismatch",
+      "fallback_status": "VALIDATION_FAILED",
+      "degrade_to": "receipt_only_with_validation_errors",
+      "retry_allowed": false
+    },
+    {
+      "code": "DRYRUN_ROUTE_404_NO_SAFE_ROUTE",
+      "trigger": "no candidate route can satisfy safety gates",
+      "fallback_status": "BLOCKED_NO_SAFE_ROUTE",
+      "degrade_to": "blocked_receipt_no_execution",
+      "retry_allowed": false
+    },
+    {
+      "code": "DRYRUN_MODEL_451_REAL_MODEL_DISABLED",
+      "trigger": "selected plan would require real model invocation",
+      "fallback_status": "BLOCKED_BY_SAFETY",
+      "degrade_to": "label_only_route_receipt",
+      "retry_allowed": false
+    },
+    {
+      "code": "DRYRUN_MW_452_EXTERNAL_TRIGGER_DISABLED",
+      "trigger": "plan would trigger n8n, enterprise WeChat, broker API, or another external service",
+      "fallback_status": "BLOCKED_BY_SAFETY",
+      "degrade_to": "shadow_plan_no_trigger",
+      "retry_allowed": false
+    },
+    {
+      "code": "DRYRUN_DB_453_FORMAL_WRITE_DISABLED",
+      "trigger": "plan would write formal database, vector database, or real Redis",
+      "fallback_status": "BLOCKED_BY_SAFETY",
+      "degrade_to": "shadow_write_plan_only",
+      "retry_allowed": false
+    }
+  ],
+  "receipt_contract": {
+    "required_fields": [
+      "receipt_id",
+      "task_id",
+      "dry_run",
+      "status",
+      "selected_route",
+      "middleware_plan",
+      "fallback",
+      "external_calls",
+      "blocked_actions",
+      "evidence",
+      "created_at"
+    ],
+    "external_calls_must_be_empty": true,
+    "formal_writes_must_be_empty": true,
+    "real_model_call_must_be_false": true
+  },
+  "safety_boundary": {
+    "allowed_actions": [
+      "读取本地JSON和Markdown",
+      "本地字段校验",
+      "生成模型路由标签",
+      "生成中台能力计划",
+      "生成失败码降级计划",
+      "生成receipt验收证据"
+    ],
+    "prohibited_actions": [
+      "触发n8n",
+      "调用企业微信",
+      "写入正式库",
+      "写入正式向量库",
+      "连接或写入真实Redis",
+      "调用券商接口",
+      "自动交易",
+      "下单",
+      "调用真实模型接口",
+      "发起外部网络请求"
+    ]
+  },
+  "acceptance": {
+    "expected_result": "PASS",
+    "validator": "验证01智能系统交付候选API模型路由干跑验收包.ps1",
+    "validator_mode": "read_only_local_parse"
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "名称": "视频真实渲染环境候选路径矩阵与安装缺口清单验收",
+  "generated_at": "2026-05-08 17:59:42",
+  "error_count": 0,
+  "错误数": 0,
+  "通过数": 20,
+  "检查项": [
+    {
+      "名称": "候选路径矩阵包存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\真实渲染环境候选路径矩阵与安装缺口清单\\视频真实渲染环境候选路径矩阵与安装缺口清单_最新.json"
+    },
+    {
+      "名称": "安装缺口清单存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\真实渲染环境候选路径矩阵与安装缺口清单\\视频真实渲染环境安装缺口清单_最新.json"
+    },
+    {
+      "名称": "下一步人工确认清单存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\真实渲染环境候选路径矩阵与安装缺口清单\\视频真实渲染环境下一步人工确认清单_最新.json"
+    },
+    {
+      "名称": "只读核对结果存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\真实渲染环境候选路径矩阵与安装缺口清单\\视频真实渲染环境候选路径只读核对_最新.json"
+    },
+    {
+      "名称": "矩阵包中文红线标志均为 false",
+      "通过": true,
+      "详情": {
+        "真实渲染": false,
+        "生成真实视频": false,
+        "上传发布": false,
+        "调用MoneyPrinterTurbo": false,
+        "执行magick": false,
+        "执行magick_version": false,
+        "触发n8n": false,
+        "修改企业微信公共配置": false,
+        "修改总管面板": false,
+        "修改一键接续包": false,
+        "重载服务": false,
+        "安装软件": false,
+        "写入系统环境变量": false
+      }
+    },
+    {
+      "名称": "矩阵包英文红线标志均为 false",
+      "通过": true,
+      "详情": {
+        "real_render": false,
+        "generate_real_video": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false,
+        "install_software": false,
+        "write_system_environment": false
+      }
+    },
+    {
+      "名称": "只读核对中文红线标志均为 false",
+      "通过": true,
+      "详情": {
+        "真实渲染": false,
+        "生成真实视频": false,
+        "上传发布": false,
+        "调用MoneyPrinterTurbo": false,
+        "执行magick": false,
+        "执行magick_version": false,
+        "触发n8n": false,
+        "修改企业微信公共配置": false,
+        "修改总管面板": false,
+        "修改一键接续包": false,
+        "重载服务": false,
+        "安装软件": false,
+        "写入系统环境变量": false
+      }
+    },
+    {
+      "名称": "只读核对英文红线标志均为 false",
+      "通过": true,
+      "详情": {
+        "real_render": false,
+        "generate_real_video": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false,
+        "install_software": false,
+        "write_system_environment": false
+      }
+    },
+    {
+      "名称": "真实渲染仍 blocked",
+      "通过": true,
+      "详情": {
+        "package": "blocked",
+        "check": "blocked"
+      }
+    },
+    {
+      "名称": "真实发布仍 blocked",
+      "通过": true,
+      "详情": {
+        "package": "blocked",
+        "check": "blocked"
+      }
+    },
+    {
+      "名称": "当前仅候选路径/缺口清单",
+      "通过": true,
+      "详情": "candidate_path_gap_inventory_only"
+    },
+    {
+      "名称": "不得伪装已接入真实渲染",
+      "通过": true,
+      "详情": {
+        "package": false,
+        "check": false
+      }
+    },
+    {
+      "名称": "不得伪装已接入真实发布",
+      "通过": true,
+      "详情": {
+        "package": false,
+        "check": false
+      }
+    },
+    {
+      "名称": "MoneyPrinterTurbo 候选路径矩阵存在",
+      "通过": true,
+      "详情": 6
+    },
+    {
+      "名称": "ImageMagick 候选路径矩阵存在",
+      "通过": true,
+      "详情": 15
+    },
+    {
+      "名称": "安装缺口清单非空",
+      "通过": true,
+      "详情": 4
+    },
+    {
+      "名称": "人工确认清单非空",
+      "通过": true,
+      "详情": 5
+    },
+    {
+      "名称": "阻断原因包含 MoneyPrinterTurbo",
+      "通过": true,
+      "详情": [
+        "MoneyPrinterTurbo 未被调用，依赖、配置、素材、输出和真实渲染链路未验证。",
+        "ImageMagick 未被调用，未执行 magick 或 magick -version，版本与 PATH 可运行性未验证。",
+        "本任务只读识别候选路径和安装缺口，不安装软件、不写系统环境变量、不放行真实渲染。",
+        "真实发布链路未接 n8n、未改企业微信公共配置、未改总管面板、未改一键接续包，真实发布仍 blocked。",
+        "MoneyPrinterTurbo 本轮未调用，真实渲染入口、依赖和配置仍未验证。",
+        "ImageMagick 本轮未执行，未运行 magick 或 magick -version，版本与可运行性仍未验证。",
+        "本轮仅复核目录和入口文件存在性，不构成真实渲染接入。",
+        "真实发布链路未放行，仍 blocked。",
+        "MoneyPrinterTurbo 未发现可确认入口文件，需人工补充或确认根目录。",
+        "ImageMagick 未发现 magick.exe，需人工安装或确认路径。"
+      ]
+    },
+    {
+      "名称": "阻断原因包含 ImageMagick/magick",
+      "通过": true,
+      "详情": [
+        "MoneyPrinterTurbo 未被调用，依赖、配置、素材、输出和真实渲染链路未验证。",
+        "ImageMagick 未被调用，未执行 magick 或 magick -version，版本与 PATH 可运行性未验证。",
+        "本任务只读识别候选路径和安装缺口，不安装软件、不写系统环境变量、不放行真实渲染。",
+        "真实发布链路未接 n8n、未改企业微信公共配置、未改总管面板、未改一键接续包，真实发布仍 blocked。",
+        "MoneyPrinterTurbo 本轮未调用，真实渲染入口、依赖和配置仍未验证。",
+        "ImageMagick 本轮未执行，未运行 magick 或 magick -version，版本与可运行性仍未验证。",
+        "本轮仅复核目录和入口文件存在性，不构成真实渲染接入。",
+        "真实发布链路未放行，仍 blocked。",
+        "MoneyPrinterTurbo 未发现可确认入口文件，需人工补充或确认根目录。",
+        "ImageMagick 未发现 magick.exe，需人工安装或确认路径。"
+      ]
+    },
+    {
+      "名称": "只读核对 error_count 为 0",
+      "通过": true,
+      "详情": 0
+    }
+  ],
+  "产物路径": {
+    "候选路径矩阵包": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\真实渲染环境候选路径矩阵与安装缺口清单\\视频真实渲染环境候选路径矩阵与安装缺口清单_最新.json",
+    "安装缺口清单": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\真实渲染环境候选路径矩阵与安装缺口清单\\视频真实渲染环境安装缺口清单_最新.json",
+    "下一步人工确认清单": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\真实渲染环境候选路径矩阵与安装缺口清单\\视频真实渲染环境下一步人工确认清单_最新.json",
+    "只读核对结果": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\真实渲染环境候选路径矩阵与安装缺口清单\\视频真实渲染环境候选路径只读核对_最新.json",
+    "最终验收日志": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染环境候选路径矩阵与安装缺口清单验收\\video-render-env-candidate-path-gap-verify-最新.json"
+  },
+  "红线确认": {
+    "真实渲染仍blocked": true,
+    "真实发布仍blocked": true,
+    "当前仅候选路径缺口清单": true,
+    "未调用MoneyPrinterTurbo": true,
+    "未调用ImageMagick": true,
+    "未执行magick": true,
+    "未执行magick_version": true,
+    "未真实渲染": true,
+    "未上传发布": true,
+    "未接n8n": true,
+    "未修改企业微信公共配置": true,
+    "未修改总管面板": true,
+    "未修改一键接续包": true,
+    "未重载任何服务": true,
+    "未安装软件": true,
+    "未写系统环境变量": true
+  },
+  "验收结论": "通过"
+}

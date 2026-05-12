@@ -1,0 +1,64 @@
+{
+  "id": "VIDEO_AGENT_CLARIFICATION_STATE_MAPPING_001",
+  "name": "澄清问题到会话状态映射预演",
+  "asset_identity": "video_creation_agent_shadow_clarification_state_mapping",
+  "stage": "W1_R0",
+  "status": "draft_mapping_not_real_router",
+  "boundary": {
+    "modify_formal_entry": false,
+    "wechat_integration": false,
+    "trigger_n8n": false,
+    "call_model": false,
+    "formal_task_write": false,
+    "execution_approval": false
+  },
+  "mappings": [
+    {
+      "scenario": "goal_unclear",
+      "question": "clarify_video_goal",
+      "updates": ["user_idea_summary", "current_intent"],
+      "next_state": "draft_intake",
+      "human_gate": false
+    },
+    {
+      "scenario": "platform_unclear",
+      "question": "clarify_target_platform",
+      "updates": ["platform_rule_status", "linked_materials"],
+      "next_state": "clarification_needed_or_option_draft",
+      "human_gate": "depends_on_platform_rule_gap"
+    },
+    {
+      "scenario": "revision_scope_unclear",
+      "question": "clarify_revision_scope",
+      "updates": ["current_intent", "task_stage"],
+      "next_state": "partial_revision_pending",
+      "human_gate": false
+    },
+    {
+      "scenario": "asset_risk",
+      "question": "clarify_asset_source_and_authorization",
+      "updates": ["asset_authorization_status", "manual_review_items"],
+      "next_state": "human_review_pending",
+      "human_gate": true
+    },
+    {
+      "scenario": "generation_risk",
+      "question": "clarify_generation_request",
+      "updates": ["redline_hits", "manual_review_items"],
+      "next_state": "blocked_for_manager_review",
+      "human_gate": true
+    },
+    {
+      "scenario": "publish_risk",
+      "question": "clarify_publish_or_external_send_request",
+      "updates": ["redline_hits", "manual_review_items"],
+      "next_state": "blocked_for_manager_review",
+      "human_gate": true
+    }
+  ],
+  "principles": [
+    "low_risk_clarification_updates_shadow_state_only",
+    "asset_generation_publish_external_send_keep_human_gate",
+    "field_completion_does_not_equal_generation_or_publish_approval"
+  ]
+}

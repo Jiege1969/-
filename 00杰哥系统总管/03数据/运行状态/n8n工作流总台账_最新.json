@@ -1,0 +1,1150 @@
+﻿{
+    "名称":  "n8n工作流总台账",
+    "生成时间":  "2026-05-06 05:15:53",
+    "根目录":  "D:\\杰哥智能化系统",
+    "文件总数":  10891,
+    "按系统":  [
+                {
+                    "系统":  "00总管",
+                    "数量":  5699
+                },
+                {
+                    "系统":  "01智能",
+                    "数量":  497
+                },
+                {
+                    "系统":  "02扩展",
+                    "数量":  4695
+                }
+            ],
+    "按状态":  [
+                {
+                    "状态":  "禁用/干跑/影子草案",
+                    "数量":  4663
+                },
+                {
+                    "状态":  "工作流日志",
+                    "数量":  3428
+                },
+                {
+                    "状态":  "待判定",
+                    "数量":  1977
+                },
+                {
+                    "状态":  "验收/回滚/闸口证据",
+                    "数量":  672
+                },
+                {
+                    "状态":  "最新证据/草案",
+                    "数量":  146
+                },
+                {
+                    "状态":  "live运行资产",
+                    "数量":  5
+                }
+            ],
+    "按风险":  [
+                {
+                    "风险":  "中-建账保留",
+                    "数量":  4663
+                },
+                {
+                    "风险":  "中-按日志台账",
+                    "数量":  3428
+                },
+                {
+                    "风险":  "中",
+                    "数量":  1977
+                },
+                {
+                    "风险":  "高-保留",
+                    "数量":  818
+                },
+                {
+                    "风险":  "高-禁止删除",
+                    "数量":  5
+                }
+            ],
+    "样例":  [
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".py",
+                   "SizeKB":  2.93,
+                   "LastWriteTime":  "2026-04-28 09:58:15",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\验证股票企业微信n8n灰度导入许可令汇总.py"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".py",
+                   "SizeKB":  2.677,
+                   "LastWriteTime":  "2026-04-28 18:47:58",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\验证股票助手n8n刷新后Webhook灰度验收预案汇总.py"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 21:21:32",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-212132.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 21:21:48",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-212148.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 21:35:08",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-213508.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 21:40:30",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-214030.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 22:15:56",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-221556.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 22:21:45",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-222145.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 22:30:26",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-223026.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 22:33:25",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-223325.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 22:52:02",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-225202.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 22:53:43",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-225343.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 22:54:44",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-225444.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 23:05:35",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-230535.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-26 23:06:49",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260426-230649.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-27 07:25:33",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-072533.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-27 07:26:32",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-072632.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-27 07:27:41",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-072741.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-27 07:39:31",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-073931.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-27 07:40:21",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-074021.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-27 07:43:02",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-074302.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-27 07:43:48",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-074348.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-27 07:50:24",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-075024.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  3.101,
+                   "LastWriteTime":  "2026-04-27 07:54:17",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-075417.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  6.387,
+                   "LastWriteTime":  "2026-04-27 07:58:02",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-075802.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  6.387,
+                   "LastWriteTime":  "2026-04-27 07:58:18",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-075818.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  13.209,
+                   "LastWriteTime":  "2026-04-27 08:00:49",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-080049.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  13.209,
+                   "LastWriteTime":  "2026-04-27 08:01:06",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-080106.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  13.209,
+                   "LastWriteTime":  "2026-04-27 08:04:52",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-080452.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  13.209,
+                   "LastWriteTime":  "2026-04-27 08:07:39",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\n8n导入审查验收\\n8n-import-review-verify-20260427-080739.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.371,
+                   "LastWriteTime":  "2026-04-27 23:01:50",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\first-batch-n8n-disabled-workflow-draft-verify-20260427-230150.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 21:09:47",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-210947.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 21:10:03",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-211003.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 21:13:56",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-211356.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 21:18:38",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-211838.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 21:21:48",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-212148.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 21:35:07",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-213507.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 21:40:30",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-214030.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 22:15:56",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-221556.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 22:21:45",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-222145.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 22:30:26",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-223026.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 22:33:25",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-223325.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 22:52:02",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-225202.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 22:53:43",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-225343.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 22:54:43",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-225443.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 23:05:35",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-230535.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-26 23:06:49",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260426-230649.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 07:25:33",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-072533.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 07:26:32",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-072632.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 07:27:41",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-072741.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 07:39:31",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-073931.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 07:40:21",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-074021.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 07:43:02",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-074302.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 07:43:48",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-074348.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 07:50:24",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-075024.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 07:54:17",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-075417.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 07:58:18",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-075818.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 08:01:06",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-080106.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 08:04:51",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-080451.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  2.083,
+                   "LastWriteTime":  "2026-04-27 08:07:39",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\工作流验收\\workflow-base-verify-20260427-080739.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 09:58:26",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-095826.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 10:00:02",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-100002.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 10:03:27",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-100327.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 10:06:10",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-100610.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 10:12:00",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-101200.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 10:17:44",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-101744.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 10:22:23",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-102223.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 10:28:22",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-102822.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 10:34:08",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-103408.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 10:39:08",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-103908.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 10:44:38",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-104438.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 10:52:45",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-105245.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 11:03:11",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-110311.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 11:44:12",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-114412.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 11:49:30",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-114930.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 12:01:11",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-120111.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 12:06:00",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-120600.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 12:14:58",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-121458.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 12:59:14",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-125914.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 13:10:49",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-131049.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 13:16:53",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-131653.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 13:22:26",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-132226.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 13:38:46",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-133846.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 13:45:44",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-134544.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 14:57:38",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-145738.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 15:05:43",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-150543.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 15:20:33",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-152033.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 15:26:08",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-152608.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 15:32:00",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-153200.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 15:36:56",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-153656.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 16:12:18",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-161218.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 16:24:27",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-162427.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 16:29:34",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-162934.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 16:38:04",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-163804.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 16:42:57",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-164257.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 16:47:51",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-164751.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 16:55:52",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-165552.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 17:04:29",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-170429.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 17:13:37",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-171337.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 17:28:55",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-172855.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 17:31:04",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-173104.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 17:34:03",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-173403.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 17:37:31",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-173731.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 17:39:04",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-173904.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 17:47:30",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-174730.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 17:49:14",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-174914.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 17:54:54",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-175454.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 17:58:31",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-175831.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 18:04:32",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-180432.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 18:07:21",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-180721.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 18:10:57",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-181057.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 18:13:58",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-181358.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 18:16:58",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-181658.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 18:25:28",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-182528.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 18:37:31",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-183731.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 18:42:35",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-184235.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 18:49:28",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-184928.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 19:27:47",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-192747.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 19:34:01",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-193401.json"
+               },
+               {
+                   "Area":  "00总管",
+                   "Status":  "验收/回滚/闸口证据",
+                   "Risk":  "高-保留",
+                   "Extension":  ".json",
+                   "SizeKB":  0.887,
+                   "LastWriteTime":  "2026-04-28 19:45:07",
+                   "Path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\股票企业微信n8n灰度导入许可令\\stock-wework-n8n-import-permit-summary-verify-20260428-194507.json"
+               }
+           ]
+}

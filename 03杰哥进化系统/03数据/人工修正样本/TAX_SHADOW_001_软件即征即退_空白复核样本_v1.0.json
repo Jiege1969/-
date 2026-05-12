@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "sample_id": "TAX-SHADOW-001-REVIEW",
+  "created_at": "2026-05-07T11:10:00+08:00",
+  "business_line": "税收业务影子底座",
+  "asset_identity": "learning_sample_instance",
+  "status": "blank_review_sample",
+  "source_case": {
+    "case_id": "TAX-SHADOW-001",
+    "case_title": "软件产品增值税即征即退影子样例",
+    "input_summary": "一般纳税人销售自行开发软件产品，咨询即征即退适用条件和测算",
+    "draft_output_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\软件产品即征即退_影子样例_v1.0.md",
+    "metadata_card_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收政策元数据卡_财税2011_100_v1.0.json"
+  },
+  "human_review": {
+    "reviewer": "",
+    "review_time": "",
+    "review_action": "pending",
+    "review_text": ""
+  },
+  "correction_detail": {
+    "original_statement": "",
+    "corrected_statement": "",
+    "correction_reason": "",
+    "evidence_or_experience_source": "",
+    "certainty_level": "pending"
+  },
+  "learning_tags": [
+    "税收",
+    "增值税",
+    "软件产品",
+    "即征即退",
+    "待复核草案",
+    "地方口径待补"
+  ],
+  "risk_flags": {
+    "affects_external_action": false,
+    "affects_business_write": false,
+    "affects_user_decision": true,
+    "requires_human_confirmation_before_reuse": true
+  },
+  "evolution_status": {
+    "status": "sample_only",
+    "similar_sample_count": 1,
+    "promotion_condition": "人工复核后仍只作为样本；同类样本达到阈值后才可形成进化建议"
+  },
+  "reuse_guidance": {
+    "can_be_used_as_hint": true,
+    "can_be_used_as_final_rule": false,
+    "required_output_label": "待复核草案"
+  },
+  "safety_boundary": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_db": false,
+    "call_model_inference": false,
+    "generate_final_tax_conclusion": false
+  }
+}

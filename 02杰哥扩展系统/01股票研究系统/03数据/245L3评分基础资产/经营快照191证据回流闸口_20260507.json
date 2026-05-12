@@ -1,0 +1,59 @@
+{
+  "名称": "经营快照191证据回流闸口",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子回流闸口",
+  "状态": "pending_preview",
+  "purpose": "防止已有191人工核验证据长期停留在台账中，未回流到166经营快照、L3基本面/资金分项和企业微信短答。",
+  "input_assets": [
+    "03数据/166公司经营快照/公司经营快照_最新.json",
+    "03数据/191单股证据核验人工填写台账/单股证据核验人工填写台账_sz002466_20260506_124629.json",
+    "03数据/245L3评分基础资产/经营快照_vs_191台账差异清单_20260507.json"
+  ],
+  "gating_rules": [
+    {
+      "rule_id": "GATE-001",
+      "rule": "只有191台账对应链路核验状态为已核验、缺失字段为0时，才允许进入写回预览。"
+    },
+    {
+      "rule_id": "GATE-002",
+      "rule": "写回预览必须列出将要替换的166字段和来源，不得直接覆盖正式快照。"
+    },
+    {
+      "rule_id": "GATE-003",
+      "rule": "正式写回166经营快照前，需要人工确认；若要形成自动同步脚本或正式规则，需暂停确认。"
+    },
+    {
+      "rule_id": "GATE-004",
+      "rule": "回流后的前台短答只压缩成结论和原因，不粘贴长段年报原文。"
+    }
+  ],
+  "candidate_writeback_preview": [
+    {
+      "stock_name": "天齐锂业",
+      "stock_code": "sz002466",
+      "target_snapshot_fields": [
+        "公司概况.核心业务",
+        "公司概况.行业地位",
+        "公司概况.主营产品",
+        "公司概况.主要客户或下游",
+        "公司概况.未来方向",
+        "证据状态.公司概况"
+      ],
+      "source_ledger_chain": "公司概况",
+      "source_status": "已核验",
+      "preview_status": "ready_to_generate",
+      "formal_writeback_status": "not_allowed_without_confirmation"
+    }
+  ],
+  "next_shadow_action": "生成天齐锂业经营快照写回预览，展示从191台账提炼后的短句字段，不直接改166。",
+  "safety_boundary": {
+    "not_write_166_snapshot": true,
+    "not_modify_formal_script": true,
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_service_restart": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

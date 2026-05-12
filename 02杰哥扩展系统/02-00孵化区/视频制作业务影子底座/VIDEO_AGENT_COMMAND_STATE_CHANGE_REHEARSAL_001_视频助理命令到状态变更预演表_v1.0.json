@@ -1,0 +1,29 @@
+{
+  "asset_id": "VIDEO_AGENT_COMMAND_STATE_CHANGE_REHEARSAL_001",
+  "name": "视频助理命令到状态变更预演表",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:22:00 +08:00",
+  "risk_level": "低风险",
+  "mappings": [
+    {"command": "我想做一期视频", "intent": "新建任务", "target_state": "shadow_intake"},
+    {"command": "用第三个角度写", "intent": "确认方向", "target_state": "shadow_draft_ready"},
+    {"command": "把开头改生活化", "intent": "局部修正", "target_state": "shadow_revision_needed"},
+    {"command": "可以生成视频吗", "intent": "生成预检", "target_state": "shadow_generation_gate_pending"},
+    {"command": "开始渲染", "intent": "真实渲染预检", "target_state": "shadow_render_gate_pending"},
+    {"command": "预览通过", "intent": "成品预览回执", "target_state": "shadow_publish_gate_pending"},
+    {"command": "发吧", "intent": "发布预检", "target_state": "shadow_publish_gate_pending"},
+    {"command": "这条经验以后复用", "intent": "复盘进化", "target_state": "shadow_closed"}
+  ],
+  "rules": [
+    "命令只改变影子状态，不触发真实执行",
+    "开始渲染和发吧只进入预检或缺口卡",
+    "缺任务ID时进入澄清，不猜测任务",
+    "状态变更必须保留回传记录"
+  ],
+  "boundary": {
+    "connect_wecom_route": false,
+    "render": false,
+    "publish": false,
+    "real_system_triggered": false
+  }
+}

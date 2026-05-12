@@ -1,0 +1,149 @@
+{
+  "name": "报告缺口优先级排序样例",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 12:34:58",
+  "asset_identity": "W1报告缺口优先级排序样例",
+  "status": "shadow_missing_priority_sample",
+  "not_formal_config": true,
+  "not_score_write": true,
+  "not_entrypoint": true,
+  "priority_rules": {
+    "P0": "没有该证据会直接限制结论强度或置信度。",
+    "P1": "影响报告解释质量和复核重点，但通常不单独阻断观察结论。",
+    "P2": "用于增强比较和复盘，不作为当前结论前置条件。"
+  },
+  "records": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "002428"
+      },
+      "missing_priority": {
+        "P0": [
+          "锗价连续观测",
+          "政策事件暴露度与时效衰减",
+          "最新财报核心摘要"
+        ],
+        "P1": [
+          "资金承接变化",
+          "资源板块热度",
+          "公告事项复核"
+        ],
+        "P2": [
+          "同类资源股对比",
+          "历史政策事件复盘"
+        ]
+      },
+      "front_gap_phrase": "关键缺口优先看锗价、政策暴露度和财报，未补齐前置信度维持medium。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "002466"
+      },
+      "missing_priority": {
+        "P0": [
+          "锂价连续观测",
+          "盈利修复证据",
+          "最新财报核心摘要"
+        ],
+        "P1": [
+          "库存/供需线索",
+          "资金趋势",
+          "新能源板块热度"
+        ],
+        "P2": [
+          "同业估值对比",
+          "政策候选复核"
+        ]
+      },
+      "front_gap_phrase": "关键缺口优先看锂价、盈利修复和财报，未确认前只适合观察。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "688347"
+      },
+      "missing_priority": {
+        "P0": [
+          "半导体景气代理指标",
+          "毛利率趋势",
+          "机构资金变化"
+        ],
+        "P1": [
+          "政策事件匹配",
+          "产能利用率线索",
+          "板块热度"
+        ],
+        "P2": [
+          "同业估值对比",
+          "中长期国产化叙事复盘"
+        ]
+      },
+      "front_gap_phrase": "关键缺口优先看景气、毛利率和机构资金，缺证据时不表达科技风格共振。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "000906"
+      },
+      "missing_priority": {
+        "P0": [
+          "经营现金流",
+          "负债结构",
+          "商品周期联动"
+        ],
+        "P1": [
+          "资金承接",
+          "公告风险",
+          "供应链业务景气"
+        ],
+        "P2": [
+          "同类供应链公司对比",
+          "政策关联度复核"
+        ]
+      },
+      "front_gap_phrase": "关键缺口优先看现金流、负债和商品周期，未补齐前不输出强结论。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "300641"
+      },
+      "missing_priority": {
+        "P0": [
+          "核心产品价格连续序列",
+          "利润弹性",
+          "资金承接强弱"
+        ],
+        "P1": [
+          "价差变化",
+          "订单景气",
+          "化工板块热度"
+        ],
+        "P2": [
+          "同类化工品对比",
+          "环保/出口政策候选复核"
+        ]
+      },
+      "front_gap_phrase": "关键缺口优先看产品价格、利润弹性和资金承接，补齐前维持观察口径。"
+    }
+  ],
+  "summary": {
+    "sample_count": 5,
+    "all_have_p0_p1_p2": true,
+    "formal_score_update_allowed": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

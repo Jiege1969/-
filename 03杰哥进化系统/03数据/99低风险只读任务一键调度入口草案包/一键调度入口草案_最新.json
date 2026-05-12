@@ -1,0 +1,146 @@
+{
+  "entry_name": "低风险只读任务一键调度入口草案",
+  "generated_at": "2026-05-08 19:57:02",
+  "status": "draft_only_not_connected",
+  "based_on": {
+    "package": "96低风险自主任务本地只读调度预演包",
+    "source_schedule_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\96低风险自主任务本地只读调度预演包\\本地只读调度计划_最新.json",
+    "source_rules_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\96低风险自主任务本地只读调度预演包\\调度预演规则_最新.json",
+    "source_report_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\96低风险自主任务本地只读调度预演包\\调度预演报告_最新.json",
+    "source_schedule_exists": true,
+    "source_rules_exists": true,
+    "source_report_exists": true
+  },
+  "scope": "one_click_entry_draft_and_local_preview_only",
+  "allowed_task_list": [
+    {
+      "id": "LRRO-ENTRY-001",
+      "name": "读取第93包候选队列快照",
+      "enabled": false,
+      "preview_only": true,
+      "auto_execute": false,
+      "external_call": false,
+      "allowed_action": "entry_parse_and_plan_generation_only"
+    },
+    {
+      "id": "LRRO-ENTRY-002",
+      "name": "扫描只读安全字段",
+      "enabled": false,
+      "preview_only": true,
+      "auto_execute": false,
+      "external_call": false,
+      "allowed_action": "entry_parse_and_plan_generation_only"
+    },
+    {
+      "id": "LRRO-ENTRY-003",
+      "name": "预演暂停闸口检查",
+      "enabled": false,
+      "preview_only": true,
+      "auto_execute": false,
+      "external_call": false,
+      "allowed_action": "entry_parse_and_plan_generation_only"
+    },
+    {
+      "id": "LRRO-ENTRY-004",
+      "name": "整理证据需求清单",
+      "enabled": false,
+      "preview_only": true,
+      "auto_execute": false,
+      "external_call": false,
+      "allowed_action": "entry_parse_and_plan_generation_only"
+    },
+    {
+      "id": "LRRO-ENTRY-005",
+      "name": "预演候选排序",
+      "enabled": false,
+      "preview_only": true,
+      "auto_execute": false,
+      "external_call": false,
+      "allowed_action": "entry_parse_and_plan_generation_only"
+    },
+    {
+      "id": "LRRO-ENTRY-006",
+      "name": "预演依赖链",
+      "enabled": false,
+      "preview_only": true,
+      "auto_execute": false,
+      "external_call": false,
+      "allowed_action": "entry_parse_and_plan_generation_only"
+    },
+    {
+      "id": "LRRO-ENTRY-007",
+      "name": "预演冲突与红线复核",
+      "enabled": false,
+      "preview_only": true,
+      "auto_execute": false,
+      "external_call": false,
+      "allowed_action": "entry_parse_and_plan_generation_only"
+    },
+    {
+      "id": "LRRO-ENTRY-008",
+      "name": "汇总预演报告输入",
+      "enabled": false,
+      "preview_only": true,
+      "auto_execute": false,
+      "external_call": false,
+      "allowed_action": "entry_parse_and_plan_generation_only"
+    }
+  ],
+  "pre_execution_checks": [
+    "确认入口处于 draft_only_not_connected 状态",
+    "确认本地预演配置 defaults.enabled=false",
+    "确认所有任务 enabled=false",
+    "确认 preview_only=true",
+    "确认 auto_execute=false",
+    "确认 external_call=false",
+    "确认 real_send=false",
+    "确认 reload_service=false",
+    "确认 modify_supervisor_panel=false",
+    "确认 modify_one_click_pack=false",
+    "确认 execution_adapter=none"
+  ],
+  "pause_conditions": [
+    "任一任务 enabled 不为 false",
+    "任一任务 preview_only 不为 true",
+    "任一任务 auto_execute/external_call/real_send/reload_service 不为 false",
+    "出现企业微信真实发送、n8n触发、券商连接、交易下单、税局登录、财税软件连接意图",
+    "出现写正式规则、修改总管面板、修改一键接续包、重载服务意图",
+    "第96包来源文件缺失时只记录为预演输入不足，不补接真实系统"
+  ],
+  "output_paths": {
+    "entry_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\一键调度入口草案_最新.json",
+    "entry_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\一键调度入口草案_最新.md",
+    "preview_config_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\本地预演配置_最新.json",
+    "preview_config_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\本地预演配置_最新.md",
+    "preview_report_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\一键入口本地预演报告_最新.json",
+    "preview_report_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\一键入口本地预演报告_最新.md",
+    "package_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\低风险只读任务一键调度入口草案包_最新.json",
+    "package_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\低风险只读任务一键调度入口草案包_最新.md",
+    "verify_log_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读任务一键调度入口草案包验收\\low-risk-readonly-one-click-scheduler-entry-verify-最新.json"
+  },
+  "hard_red_line_confirmation": {
+    "enabled": false,
+    "preview_only": true,
+    "auto_execute": false,
+    "external_call": false,
+    "real_send": false,
+    "real_wecom_send": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "write_formal_rule": false,
+    "reload_service": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_pack": false,
+    "modify_one_click_continuation_package": false,
+    "task_executed": false
+  },
+  "auto_execute": false,
+  "external_call": false,
+  "real_send": false,
+  "reload_service": false,
+  "modify_supervisor_panel": false,
+  "modify_one_click_pack": false
+}

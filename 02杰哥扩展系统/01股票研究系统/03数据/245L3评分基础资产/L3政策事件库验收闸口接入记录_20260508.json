@@ -1,0 +1,38 @@
+{
+  "名称": "L3政策事件库验收闸口接入记录",
+  "日期": "2026-05-08",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "自动验收接入记录",
+  "目的": "把政策事件库从静态样本推进为可被统一刷新验收检查的结构化证据资产，防止缺来源、缺暴露、过期或字段异常的政策事件进入L3评分。",
+  "本次新增": [
+    "02脚本/验证政策事件库.py",
+    "03数据/245L3评分基础资产/政策事件库验收_最新.json",
+    "03数据/245L3评分基础资产/政策事件库验收_最新.md"
+  ],
+  "本次修改": [
+    "02脚本/运行L3短答证据刷新与验收.py"
+  ],
+  "验收规则": [
+    "政策事件必须有event_id、title、publish_date、source_url、source_name、source_level、impact_direction、impact_strength、event_confidence、industry_tags、description、risk_counterpoint。",
+    "impact_strength和event_confidence必须在0-1之间。",
+    "source_url必须是可复核URL。",
+    "股票暴露映射必须引用已存在的event_id。",
+    "stock_code必须是6位数字。",
+    "exposure必须在0-1之间。",
+    "每个事件若没有股票暴露映射，只能作为提醒项，不进入单股政策评分。"
+  ],
+  "当前验收结果": {
+    "政策事件库验收": "passed",
+    "统一刷新与验收": "passed",
+    "event_count": 1,
+    "exposure_count": 2,
+    "blocking_count": 0
+  },
+  "安全边界": {
+    "not_external_fetch": true,
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

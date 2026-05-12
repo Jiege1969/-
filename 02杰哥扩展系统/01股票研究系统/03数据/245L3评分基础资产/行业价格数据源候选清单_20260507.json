@@ -1,0 +1,161 @@
+{
+  "名称": "行业价格数据源候选清单",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子数据源清单",
+  "状态": "source_registered",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "目的": "登记云南锗业、天齐锂业、正丹股份等样本所需的行业价格来源候选，作为后续行业价格证据卡的源头，不直接抓取、不外发、不启用正式链路。",
+  "source_use_rules": [
+    "公开价格页可作为行情线索或辅助交叉验证，涉及正式结论前需记录数据日期、口径、单位和来源角色。",
+    "会员或授权数据不得通过爬虫、截屏、绕过登录等方式使用；只登记入口，不自动抓取受限数据。",
+    "媒体和研报里的价格只能作为线索，不能替代原始价格页或公司公告/财报。",
+    "行业价格证据未形成证据卡时，前台只能写行业价格未入账，不能写价格已经支撑结论。",
+    "行业价格只影响研究分析置信度，不产生买卖、下单、仓位或自动交易动作。"
+  ],
+  "stock_product_mapping": [
+    {
+      "stock_name": "云南锗业",
+      "display_code": "sz002428",
+      "stock_type": "资源股",
+      "tracked_products": [
+        {
+          "product_name": "锗锭",
+          "product_code": "germanium_ingot",
+          "exposure_weight": 0.95,
+          "front_usage": "判断锗价是否支持公司利润预期和政策事件强度。"
+        }
+      ]
+    },
+    {
+      "stock_name": "天齐锂业",
+      "display_code": "sz002466",
+      "stock_type": "锂资源/锂化工",
+      "tracked_products": [
+        {
+          "product_name": "电池级碳酸锂",
+          "product_code": "battery_grade_lithium_carbonate",
+          "exposure_weight": 0.9,
+          "front_usage": "判断锂价周期是否支持利润修复延续。"
+        }
+      ]
+    },
+    {
+      "stock_name": "正丹股份",
+      "display_code": "sz300641",
+      "stock_type": "化工高波动",
+      "tracked_products": [
+        {
+          "product_name": "偏苯三酸酐/TMA",
+          "product_code": "trimellitic_anhydride_tma",
+          "exposure_weight": 0.9,
+          "front_usage": "判断核心产品价格和价差是否支持业绩弹性。"
+        }
+      ]
+    }
+  ],
+  "candidate_sources": [
+    {
+      "source_id": "PRICE-SMM-GE-001",
+      "source_name": "上海有色网SMM-锗价格页",
+      "source_url": "https://hq.smm.cn/h5/germanium-price",
+      "source_type": "公开价格页",
+      "coverage": [
+        "锗锭"
+      ],
+      "source_role": "行情线索",
+      "checked_at": "2026-05-07",
+      "notes": "可用于锗价方向线索；正式入账前需遵守SMM数据授权和使用边界。"
+    },
+    {
+      "source_id": "PRICE-SMM-METHODOLOGY-001",
+      "source_name": "上海有色网SMM-小金属价格方法论",
+      "source_url": "https://www.smm.cn/evt/methodology/pdf/minor-metals.pdf",
+      "source_type": "价格方法论",
+      "coverage": [
+        "锗锭50Ω/cm等小金属价格口径"
+      ],
+      "source_role": "方法论核验",
+      "checked_at": "2026-05-07",
+      "notes": "用于理解采价时间、样本和口径，不直接替代价格观测值。"
+    },
+    {
+      "source_id": "PRICE-SMM-LI-001",
+      "source_name": "上海有色网SMM-新能源材料价格页",
+      "source_url": "https://newenergy.smm.cn/price",
+      "source_type": "公开价格页",
+      "coverage": [
+        "电池级碳酸锂",
+        "工业级碳酸锂",
+        "锂盐相关产品"
+      ],
+      "source_role": "行情线索",
+      "checked_at": "2026-05-07",
+      "notes": "用于锂价方向线索；正式入账前需记录具体产品、单位、日期和授权边界。"
+    },
+    {
+      "source_id": "PRICE-SMM-LI-METHODOLOGY-001",
+      "source_name": "上海有色网SMM-电池级碳酸锂现货价格方法论",
+      "source_url": "https://static.smm.cn/comp.smm.cn/1.0.22/static/comp.smm.cn/pdf/SMM%E7%94%B5%E6%B1%A0%E7%BA%A7%E7%A2%B3%E9%85%B8%E9%94%82%E7%8E%B0%E8%B4%A7%E4%BB%B7%E6%A0%BC%E6%96%B9%E6%B3%95%E8%AE%BA.pdf",
+      "source_type": "价格方法论",
+      "coverage": [
+        "电池级碳酸锂现货价格口径"
+      ],
+      "source_role": "方法论核验",
+      "checked_at": "2026-05-07",
+      "notes": "用于确认碳酸锂价格口径和评估方式。"
+    },
+    {
+      "source_id": "PRICE-BAIINFO-TMA-001",
+      "source_name": "百川盈孚-TMA价格行情",
+      "source_url": "https://www.baiinfo.com/juzhishuzhiyuanliao/TMA",
+      "source_type": "行业数据平台",
+      "coverage": [
+        "偏苯三酸酐/TMA"
+      ],
+      "source_role": "行情线索",
+      "checked_at": "2026-05-07",
+      "notes": "用于TMA价格线索；正式入账前需确认授权、具体报价口径和日期。"
+    },
+    {
+      "source_id": "PRICE-OILCHEM-TMA-001",
+      "source_name": "隆众资讯-TMA行情",
+      "source_url": "https://list.oilchem.net/2946/17.html",
+      "source_type": "行业数据平台",
+      "coverage": [
+        "偏苯三酸酐/TMA"
+      ],
+      "source_role": "辅助交叉验证",
+      "checked_at": "2026-05-07",
+      "notes": "用于TMA市场动态和交叉验证；会员数据需遵守授权边界。"
+    },
+    {
+      "source_id": "PRICE-100PPI-TMA-001",
+      "source_name": "生意社化工频道-偏苯三酸酐商品价格",
+      "source_url": "https://chem.100ppi.com/price/plist-7850--4.html",
+      "source_type": "商品价格平台",
+      "coverage": [
+        "偏苯三酸酐/TMA"
+      ],
+      "source_role": "辅助交叉验证",
+      "checked_at": "2026-05-07",
+      "notes": "用于TMA公开报价线索；需核验报价主体、日期、单位和可比性。"
+    }
+  ],
+  "当前结论": {
+    "source_registered": true,
+    "price_values_pulled": false,
+    "formal_chain_status": "not_integrated",
+    "front_output_rule": "行业价格证据卡未形成前，企业微信短答只能写行业价格仍待入账，不能写行业价格已经支撑强结论。"
+  },
+  "安全边界": {
+    "only_for_research": true,
+    "not_investment_advice": true,
+    "not_buy_sell_signal": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_external_send": true
+  }
+}

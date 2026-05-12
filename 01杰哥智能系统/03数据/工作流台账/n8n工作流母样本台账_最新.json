@@ -1,0 +1,131 @@
+{
+  "generated_at": "2026-05-06 07:43:00 +08:00",
+  "state": "post_prune_mother_samples",
+  "workflow_count": 5,
+  "active_count": 0,
+  "inactive_count": 5,
+  "counts": {
+    "workflow_entity": 5,
+    "shared_workflow": 5,
+    "workflow_history": 5,
+    "workflow_statistics": 2,
+    "execution_entity": 3,
+    "execution_data": 3
+  },
+  "integrity_check": "ok",
+  "workflows": [
+    {
+      "id": "ZkzsB6MdxlC3VMxY",
+      "name": "股票主动研究闭环_文件桥接未激活",
+      "active": 0,
+      "triggerCount": 0,
+      "createdAt": "2026-05-01 06:29:01.088",
+      "updatedAt": "2026-05-01 06:29:01.088",
+      "isArchived": 0,
+      "versionCounter": 1,
+      "description": null,
+      "mother_sample_role": "??????????????",
+      "risk": "?",
+      "node_count": 4,
+      "node_types": [
+        "n8n-nodes-base.manualTrigger",
+        "n8n-nodes-base.executeCommand",
+        "n8n-nodes-base.set",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "rollback": "??????? database.before.sqlite ???????? exports_keep/exports_delete ??? JSON",
+      "status": "???????active ???? 0??????????"
+    },
+    {
+      "id": "h0xpxp9rPrUSqk1G",
+      "name": "股票主动研究闭环_桥接未激活",
+      "active": 0,
+      "triggerCount": 0,
+      "createdAt": "2026-05-01 06:26:24.853",
+      "updatedAt": "2026-05-01 06:26:24.853",
+      "isArchived": 0,
+      "versionCounter": 1,
+      "description": null,
+      "mother_sample_role": "????????????",
+      "risk": "?",
+      "node_count": 4,
+      "node_types": [
+        "n8n-nodes-base.manualTrigger",
+        "n8n-nodes-base.executeCommand",
+        "n8n-nodes-base.set",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "rollback": "??????? database.before.sqlite ???????? exports_keep/exports_delete ??? JSON",
+      "status": "???????active ???? 0??????????"
+    },
+    {
+      "id": "un0S6SrQSCIsjuhn",
+      "name": "股票助手企业微信Webhook桥接入口未激活v2",
+      "active": 0,
+      "triggerCount": 0,
+      "createdAt": "2026-04-28 16:14:34.232",
+      "updatedAt": "2026-04-28 16:14:34.232",
+      "isArchived": 0,
+      "versionCounter": 1,
+      "description": null,
+      "mother_sample_role": "????????Webhook????v2",
+      "risk": "?",
+      "node_count": 4,
+      "node_types": [
+        "n8n-nodes-base.webhook",
+        "n8n-nodes-base.httpRequest",
+        "n8n-nodes-base.respondToWebhook",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "rollback": "??????? database.before.sqlite ???????? exports_keep/exports_delete ??? JSON",
+      "status": "???????active ???? 0??????????"
+    },
+    {
+      "id": "JBVQ8osGXlHoSJfR",
+      "name": "股票助手n8n本地执行回环测试",
+      "active": 0,
+      "triggerCount": 0,
+      "createdAt": "2026-04-28 15:38:47.980",
+      "updatedAt": "2026-04-28 15:38:47.980",
+      "isArchived": 0,
+      "versionCounter": 1,
+      "description": null,
+      "mother_sample_role": "????????????",
+      "risk": "?",
+      "node_count": 2,
+      "node_types": [
+        "n8n-nodes-base.executeWorkflowTrigger",
+        "n8n-nodes-base.set"
+      ],
+      "rollback": "??????? database.before.sqlite ???????? exports_keep/exports_delete ??? JSON",
+      "status": "???????active ???? 0??????????"
+    },
+    {
+      "id": "urKB3BwGfDWQMKb5",
+      "name": "股票助手企业微信查询适配器未激活导入件",
+      "active": 0,
+      "triggerCount": 0,
+      "createdAt": "2026-04-28 09:52:50.038",
+      "updatedAt": "2026-04-28 09:52:50.038",
+      "isArchived": 0,
+      "versionCounter": 1,
+      "description": null,
+      "mother_sample_role": "?????????????",
+      "risk": "?",
+      "node_count": 4,
+      "node_types": [
+        "n8n-nodes-base.manualTrigger",
+        "n8n-nodes-base.set",
+        "n8n-nodes-base.code",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "rollback": "??????? database.before.sqlite ???????? exports_keep/exports_delete ??? JSON",
+      "status": "???????active ???? 0??????????"
+    }
+  ],
+  "safety": {
+    "triggered_n8n": false,
+    "called_webhook": false,
+    "sent_wecom": false
+  }
+}

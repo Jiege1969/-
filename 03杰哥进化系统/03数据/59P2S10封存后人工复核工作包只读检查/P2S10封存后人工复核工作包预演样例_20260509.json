@@ -1,0 +1,203 @@
+{
+  "sample_only": true,
+  "review_items": [
+    {
+      "source_receipt_id": "P2S7-RECEIPT-001",
+      "material_id": "VIRTUAL-P2S5-CASE-001",
+      "target_line": "tax",
+      "target_entry": "TAX_DAILY_INTAKE_002",
+      "seal_bucket": "ready_shadow_preview",
+      "review_questions": [
+        "材料是否已脱敏或授权",
+        "目标业务线是否正确",
+        "目标入口是否仍为空白或待复核状态",
+        "是否只生成待复核草案或预填建议",
+        "是否仍保持不写正式库、不外发、不触发 n8n"
+      ],
+      "allowed_actions": [
+        "人工读取脱敏材料",
+        "人工决定是否填写影子入口",
+        "人工补充缺口字段"
+      ],
+      "forbidden_actions": [
+        "自动填写影子入口",
+        "自动生成正式业务结论",
+        "自动发送、上传、申报、交易、渲染或发布"
+      ],
+      "human_review_required": true,
+      "auto_fill_shadow_entry": false,
+      "write_target_entry": false,
+      "formal_capability_claim": false,
+      "release_form": false,
+      "redline_status": "pass"
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-002",
+      "material_id": "VIRTUAL-P2S5-CASE-002",
+      "target_line": "office_work",
+      "target_entry": "OFFICE_SHADOW_002",
+      "seal_bucket": "ready_shadow_preview",
+      "review_questions": [
+        "材料是否已脱敏或授权",
+        "目标业务线是否正确",
+        "目标入口是否仍为空白或待复核状态",
+        "是否只生成待复核草案或预填建议",
+        "是否仍保持不写正式库、不外发、不触发 n8n"
+      ],
+      "allowed_actions": [
+        "人工读取脱敏材料",
+        "人工决定是否填写影子入口",
+        "人工补充缺口字段"
+      ],
+      "forbidden_actions": [
+        "自动填写影子入口",
+        "自动生成正式业务结论",
+        "自动发送、上传、申报、交易、渲染或发布"
+      ],
+      "human_review_required": true,
+      "auto_fill_shadow_entry": false,
+      "write_target_entry": false,
+      "formal_capability_claim": false,
+      "release_form": false,
+      "redline_status": "pass"
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-003",
+      "material_id": "VIRTUAL-P2S5-CASE-003",
+      "target_line": "video_production",
+      "target_entry": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "seal_bucket": "ready_shadow_preview",
+      "review_questions": [
+        "材料是否已脱敏或授权",
+        "目标业务线是否正确",
+        "目标入口是否仍为空白或待复核状态",
+        "是否只生成待复核草案或预填建议",
+        "是否仍保持不写正式库、不外发、不触发 n8n"
+      ],
+      "allowed_actions": [
+        "人工读取脱敏材料",
+        "人工决定是否填写影子入口",
+        "人工补充缺口字段"
+      ],
+      "forbidden_actions": [
+        "自动填写影子入口",
+        "自动生成正式业务结论",
+        "自动发送、上传、申报、交易、渲染或发布"
+      ],
+      "human_review_required": true,
+      "auto_fill_shadow_entry": false,
+      "write_target_entry": false,
+      "formal_capability_claim": false,
+      "release_form": false,
+      "redline_status": "pass"
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-004",
+      "material_id": "VIRTUAL-P2S5-CASE-004",
+      "target_line": "shared_policy_evidence",
+      "target_entry": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "seal_bucket": "ready_shadow_preview",
+      "review_questions": [
+        "材料是否已脱敏或授权",
+        "目标业务线是否正确",
+        "目标入口是否仍为空白或待复核状态",
+        "是否只生成待复核草案或预填建议",
+        "是否仍保持不写正式库、不外发、不触发 n8n"
+      ],
+      "allowed_actions": [
+        "人工读取脱敏材料",
+        "人工决定是否填写影子入口",
+        "人工补充缺口字段"
+      ],
+      "forbidden_actions": [
+        "自动填写影子入口",
+        "自动生成正式业务结论",
+        "自动发送、上传、申报、交易、渲染或发布"
+      ],
+      "human_review_required": true,
+      "auto_fill_shadow_entry": false,
+      "write_target_entry": false,
+      "formal_capability_claim": false,
+      "release_form": false,
+      "redline_status": "pass"
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-005",
+      "material_id": "VIRTUAL-P2S5-CASE-005",
+      "target_line": "pause",
+      "target_entry": "gap_or_redline_record",
+      "seal_bucket": "pause_gap_archive",
+      "review_questions": [
+        "缺口是否真实存在",
+        "是否可以通过补充脱敏材料解决",
+        "是否需要继续暂停"
+      ],
+      "allowed_actions": [
+        "记录缺口",
+        "请求补充材料或授权"
+      ],
+      "forbidden_actions": [
+        "用猜测补齐缺口",
+        "生成业务结论"
+      ],
+      "human_review_required": true,
+      "auto_fill_shadow_entry": false,
+      "write_target_entry": false,
+      "formal_capability_claim": false,
+      "release_form": false,
+      "redline_status": "pass"
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-006",
+      "material_id": "VIRTUAL-P2S5-CASE-006",
+      "target_line": "pause",
+      "target_entry": "gap_or_redline_record",
+      "seal_bucket": "blocked_redline_archive",
+      "review_questions": [
+        "红线命中是否准确",
+        "是否需要升级给总管或人工确认",
+        "是否必须保持阻断"
+      ],
+      "allowed_actions": [
+        "记录阻断事实",
+        "进入问题回收"
+      ],
+      "forbidden_actions": [
+        "绕过红线继续推进",
+        "转入任何业务入口"
+      ],
+      "human_review_required": true,
+      "auto_fill_shadow_entry": false,
+      "write_target_entry": false,
+      "formal_capability_claim": false,
+      "release_form": false,
+      "redline_status": "blocked"
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-007",
+      "material_id": "VIRTUAL-P2S5-CASE-007",
+      "target_line": "pause",
+      "target_entry": "gap_or_redline_record",
+      "seal_bucket": "pause_gap_archive",
+      "review_questions": [
+        "缺口是否真实存在",
+        "是否可以通过补充脱敏材料解决",
+        "是否需要继续暂停"
+      ],
+      "allowed_actions": [
+        "记录缺口",
+        "请求补充材料或授权"
+      ],
+      "forbidden_actions": [
+        "用猜测补齐缺口",
+        "生成业务结论"
+      ],
+      "human_review_required": true,
+      "auto_fill_shadow_entry": false,
+      "write_target_entry": false,
+      "formal_capability_claim": false,
+      "release_form": false,
+      "redline_status": "pass"
+    }
+  ]
+}

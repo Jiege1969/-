@@ -1,0 +1,138 @@
+{
+  "name": "股票线第六批统一影子验收总表",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 13:01:25",
+  "asset_identity": "W2第六批统一影子验收总表",
+  "status": "shadow_acceptance_summary",
+  "purpose": "汇总第六批低风险施工资产验收状态，确认前台标准格式、财报资金缺口约束、新增样本、前后台分层均已形成影子闭环。",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_score_write": true,
+  "not_formal_rule_update": true,
+  "records": [
+    {
+      "check_id": "AUTO6-ACCEPT-001",
+      "name": "标准股票分析格式前台短答范本样例验收",
+      "result_file": "标准股票分析格式前台短答范本样例验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "sample_count": 5,
+        "included_new_samples": [
+          "正丹股份",
+          "浙商中拓"
+        ],
+        "forbidden_word_count": 0
+      }
+    },
+    {
+      "check_id": "AUTO6-ACCEPT-002",
+      "name": "财报资金缺口到前台结论约束样例验收",
+      "result_file": "财报资金缺口到前台结论约束样例验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "sample_count": 5,
+        "rules_count": 4,
+        "forbidden_word_count": 0
+      }
+    },
+    {
+      "check_id": "AUTO6-ACCEPT-003",
+      "name": "新增样本股票浙商中拓与正丹股份验收补齐验收",
+      "result_file": "新增样本股票浙商中拓与正丹股份验收补齐验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "sample_count": 2,
+        "expected_count": 2
+      }
+    },
+    {
+      "check_id": "AUTO6-ACCEPT-004",
+      "name": "前后台分层报告字段对照样例验收",
+      "result_file": "前后台分层报告字段对照样例验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "mapping_count": 8,
+        "sample_count": 2,
+        "backend_only_count": 2
+      }
+    },
+    {
+      "check_id": "AUTO6-ACCEPT-005",
+      "name": "第六批低风险续建队列验收",
+      "result_file": "股票线第六批低风险续建队列验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "queue_count": 5,
+        "completed_count": 5,
+        "queued_count": 0,
+        "blocked_count": 2
+      }
+    }
+  ],
+  "queue_summary": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "blocked_register_only": [
+    {
+      "id": "STOCK-AUTO6-BLOCK-001",
+      "title": "把前台短答范本接入企业微信真实发送",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "真实外发、企业微信路由和正式入口属于红线事项，本业务线只登记阻断，不实施。"
+    },
+    {
+      "id": "STOCK-AUTO6-BLOCK-002",
+      "title": "把样本结论改写为买入卖出或仓位建议",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "股票系统定位为研究分析系统，不新增买卖、下单、仓位调整或自动交易能力。"
+    }
+  ],
+  "summary": {
+    "check_count": 5,
+    "exists_count": 5,
+    "passed_count": 5,
+    "failed_count": 0,
+    "queue_completed_count": 5,
+    "queue_count": 5,
+    "allow_shadow_acceptance_claim": true,
+    "allow_real_wecom_send": false,
+    "allow_formal_entry": false,
+    "allow_formal_score_update": false,
+    "allow_auto_trade": false
+  },
+  "user_value": [
+    "前台回答格式固定为对象、结论、主因、缺口、复核提醒。",
+    "财报资金缺口会约束结论强度，避免缺证据仍输出强结论。",
+    "浙商中拓、正丹股份已进入新增样本验收矩阵。",
+    "后台分数和指标不直接堆到企业微信前台回答里。"
+  ],
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "asset_id": "VIDEO_AGENT_VAI_030_041_TOTAL_ASSET_LIST_001",
+  "name": "VAI030至VAI041总资产清单",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:35:00 +08:00",
+  "risk_level": "低风险",
+  "assets": [
+    {"id": "VAI030", "prefix": "VIDEO_AGENT_CONTINUATION_STATE_CARD_001", "purpose": "连续施工状态卡", "real_system_triggered": false},
+    {"id": "VAI031", "prefix": "VIDEO_AGENT_REDLINE_BLOCK_REGISTER_001", "purpose": "红线阻断登记簿模板", "real_system_triggered": false},
+    {"id": "VAI032", "prefix": "VIDEO_AGENT_ASSET_MAP_UPDATE_RULE_001", "purpose": "影子资产地图更新规则", "real_system_triggered": false},
+    {"id": "VAI033", "prefix": "VIDEO_AGENT_PUBLISH_GATE_GAP_CARD_001", "purpose": "发布前门禁缺口卡", "real_system_triggered": false},
+    {"id": "VAI034", "prefix": "VIDEO_AGENT_RENDER_RELEASE_GAP_CARD_001", "purpose": "真实渲染放行缺口卡", "real_system_triggered": false},
+    {"id": "VAI035", "prefix": "VIDEO_AGENT_WECOM_REPLY_DRAFT_TEMPLATE_001", "purpose": "企业微信回执草案模板", "real_system_triggered": false},
+    {"id": "VAI036", "prefix": "VIDEO_AGENT_RELEASE_STATE_CONSISTENCY_CHECK_001", "purpose": "放行状态一致性检查清单", "real_system_triggered": false},
+    {"id": "VAI037", "prefix": "VIDEO_AGENT_REVIEW_PRIORITY_RULE_001", "purpose": "人工复核问题优先级规则", "real_system_triggered": false},
+    {"id": "VAI038", "prefix": "VIDEO_AGENT_SHADOW_TASK_CLOSE_CONDITION_001", "purpose": "影子任务关闭条件清单", "real_system_triggered": false},
+    {"id": "VAI039", "prefix": "VIDEO_AGENT_SHADOW_STATE_ENUM_001", "purpose": "影子任务状态枚举对照表", "real_system_triggered": false},
+    {"id": "VAI040", "prefix": "VIDEO_AGENT_COMMAND_STATE_CHANGE_REHEARSAL_001", "purpose": "命令到状态变更预演表", "real_system_triggered": false},
+    {"id": "VAI041", "prefix": "VIDEO_AGENT_STAGE_COMPLETION_REPORT_001", "purpose": "本阶段资产补齐收口报告", "real_system_triggered": false}
+  ],
+  "boundary": {
+    "claim_formal_capability": false,
+    "real_system_triggered": false
+  }
+}

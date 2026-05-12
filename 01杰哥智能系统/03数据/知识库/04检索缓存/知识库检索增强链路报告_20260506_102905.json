@@ -1,0 +1,118 @@
+{
+  "生成时间": "2026-05-06 10:29:05",
+  "阶段": "知识库检索增强链路",
+  "执行模式": "retrieval_enhancement_dry_run",
+  "系统根目录": "D:\\杰哥智能化系统",
+  "规则文件": "D:\\杰哥智能化系统\\01杰哥智能系统\\01配置\\知识库检索增强链路规则.json",
+  "模型分工": {
+    "主向量模型": "bge-m3",
+    "备用向量模型": "qwen3-embedding:4b",
+    "重排序模型": "sam860/qwen3-reranker:0.6b-Q8_0",
+    "回答模型": "qwen3:14b",
+    "回答兜底模型": "qwen3:30b"
+  },
+  "Ollama只读状态": {
+    "状态": "可访问",
+    "查询方式": "docker exec jiege_v3_ollama ollama list",
+    "返回码": 0,
+    "模型列表": [
+      "sam860/qwen3-reranker:0.6b-Q8_0",
+      "qwen3-embedding:4b",
+      "bge-m3:latest",
+      "gemma3:27b",
+      "qwen3-coder:30b",
+      "deepseek-r1:32b",
+      "qwen3:14b",
+      "qwen3:30b",
+      "tinyllama:latest",
+      "mychen76/Fin-R1:Q5",
+      "martain7r/finance-llama-8b:q4_k_m",
+      "glm4:latest",
+      "deepseek-r1:7b",
+      "qwen2.5:7b"
+    ],
+    "规范化模型列表": [
+      "bge-m3",
+      "deepseek-r1:32b",
+      "deepseek-r1:7b",
+      "gemma3:27b",
+      "glm4",
+      "martain7r/finance-llama-8b:q4_k_m",
+      "mychen76/Fin-R1:Q5",
+      "qwen2.5:7b",
+      "qwen3-coder:30b",
+      "qwen3-embedding:4b",
+      "qwen3:14b",
+      "qwen3:30b",
+      "sam860/qwen3-reranker:0.6b-Q8_0",
+      "tinyllama"
+    ],
+    "模型数量": 14,
+    "错误输出": "",
+    "尝试记录": [
+      {
+        "查询方式": "docker exec jiege_v3_ollama ollama list",
+        "返回码": 0,
+        "模型列表": [
+          "sam860/qwen3-reranker:0.6b-Q8_0",
+          "qwen3-embedding:4b",
+          "bge-m3:latest",
+          "gemma3:27b",
+          "qwen3-coder:30b",
+          "deepseek-r1:32b",
+          "qwen3:14b",
+          "qwen3:30b",
+          "tinyllama:latest",
+          "mychen76/Fin-R1:Q5",
+          "martain7r/finance-llama-8b:q4_k_m",
+          "glm4:latest",
+          "deepseek-r1:7b",
+          "qwen2.5:7b"
+        ],
+        "错误输出": ""
+      }
+    ]
+  },
+  "模型就绪检查": {
+    "主向量模型可见": true,
+    "备用向量模型可见": true,
+    "重排序模型可见": true
+  },
+  "处理链路": [
+    "用户问题归一化",
+    "bge-m3向量检索",
+    "qwen3-embedding备用检索",
+    "qwen3-reranker重排序",
+    "证据片段组装",
+    "回答模型生成",
+    "引用证据与不确定性标注",
+    "日志记录与进化提炼"
+  ],
+  "路径边界": {
+    "原始文档目录": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\01原始文档",
+    "清洗文本目录": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\02清洗文本",
+    "索引清单目录": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\03索引清单",
+    "检索缓存目录": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\04检索缓存",
+    "日志目录": "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库"
+  },
+  "路径统计": {
+    "原始文档数量": 20,
+    "清洗文本数量": 20,
+    "索引清单数量": 13,
+    "检索缓存数量": 7
+  },
+  "默认开关": {
+    "允许调用本地模型生成向量": false,
+    "允许写入正式向量库": false,
+    "允许写入正式数据库": false,
+    "允许真实联网": false,
+    "允许触发n8n": false,
+    "允许企业微信真实发送": false,
+    "允许税收业务": false,
+    "允许旧系统写入": false
+  },
+  "是否调用模型生成向量": false,
+  "是否写入正式向量库": false,
+  "是否触发n8n": false,
+  "当前结论": "知识库检索增强链路dry-run报告已生成；模型已进入链路设计，正式向量生成和写库仍关闭。"
+}

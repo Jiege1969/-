@@ -1,0 +1,207 @@
+﻿{
+    "generated_at":  "2026-04-28 23:23:10",
+    "phase":  "all",
+    "repair_requested":  false,
+    "decision":  "degraded",
+    "summary":  {
+                    "total_steps":  10,
+                    "error_count":  0,
+                    "warning_count":  1,
+                    "v3_ollama_model_count":  14,
+                    "temp_total_mb":  5.51
+                },
+    "steps":  [
+                  {
+                      "layer":  "mount",
+                      "action":  "D drive accessible",
+                      "ok":  true,
+                      "level":  "info",
+                      "detail":  "free_gb=241.31"
+                  },
+                  {
+                      "layer":  "mount",
+                      "action":  "new system root accessible",
+                      "ok":  true,
+                      "level":  "info",
+                      "detail":  "D:\\杰哥智能化系统"
+                  },
+                  {
+                      "layer":  "mount",
+                      "action":  "WSL2 observable",
+                      "ok":  true,
+                      "level":  "info",
+                      "detail":  "NAME              STATE           VERSION\r\n* docker-desktop    Running         2\r\n  Ubuntu-24.04      Running         2"
+                  },
+                  {
+                      "layer":  "startup",
+                      "action":  "Docker available",
+                      "ok":  true,
+                      "level":  "info",
+                      "detail":  "29.3.1"
+                  },
+                  {
+                      "layer":  "startup",
+                      "action":  "v3 isolated n8n healthy",
+                      "ok":  true,
+                      "level":  "info",
+                      "detail":  "ok"
+                  },
+                  {
+                      "layer":  "guard",
+                      "action":  "v3 Ollama models visible",
+                      "ok":  true,
+                      "level":  "info",
+                      "detail":  "model_count=14; "
+                  },
+                  {
+                      "layer":  "guard",
+                      "action":  "v3 Redis responds",
+                      "ok":  true,
+                      "level":  "info",
+                      "detail":  "redis=PONG"
+                  },
+                  {
+                      "layer":  "guard",
+                      "action":  "protected stock Ollama observable",
+                      "ok":  true,
+                      "level":  "info",
+                      "detail":  "model_count=11"
+                  },
+                  {
+                      "layer":  "guard",
+                      "action":  "old base Ollama candidate observable",
+                      "ok":  true,
+                      "level":  "warn",
+                      "detail":  "model_count=9"
+                  },
+                  {
+                      "layer":  "close",
+                      "action":  "temp directory scan",
+                      "ok":  true,
+                      "level":  "info",
+                      "detail":  "temp_dirs=23; total_mb=5.51; suggestion only"
+                  }
+              ],
+    "command_results":  {
+                            "wsl_list":  {
+                                             "ok":  false,
+                                             "exit_code":  null,
+                                             "output":  "  NAME              STATE           VERSION\r\n* docker-desktop    Running         2\r\n  Ubuntu-24.04      Running         2\r\n",
+                                             "stderr":  ""
+                                         },
+                            "docker_version":  {
+                                                   "ok":  false,
+                                                   "exit_code":  null,
+                                                   "output":  "29.3.1\n",
+                                                   "stderr":  ""
+                                               }
+                        },
+    "temp_summary":  [
+                         {
+                             "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\06临时",
+                             "size_mb":  0.55
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时",
+                             "size_mb":  1.19
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\06入库前复核",
+                             "size_mb":  0.01
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06临时",
+                             "size_mb":  0
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统",
+                             "size_mb":  0.32
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\06临时",
+                             "size_mb":  0
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\06临时",
+                             "size_mb":  0
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\06公开数据探测",
+                             "size_mb":  0.02
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时",
+                             "size_mb":  0
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\06分镜素材匹配",
+                             "size_mb":  0.05
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统\\06临时",
+                             "size_mb":  0
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\06临时",
+                             "size_mb":  0
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\06临时",
+                             "size_mb":  0
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\03数据\\06依据过滤",
+                             "size_mb":  0.02
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\06临时",
+                             "size_mb":  0
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\03数据\\06沙箱回环门禁",
+                             "size_mb":  0.01
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\03杰哥进化系统\\06临时",
+                             "size_mb":  0
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\03杰哥进化系统\\01反馈提炼\\06临时",
+                             "size_mb":  0
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\03杰哥进化系统\\02提示词管理\\06临时",
+                             "size_mb":  0
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\06巡检经验候选",
+                             "size_mb":  0.69
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\06清理闸口",
+                             "size_mb":  2.65
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\03杰哥进化系统\\03模型评测\\06临时",
+                             "size_mb":  0
+                         },
+                         {
+                             "path":  "D:\\杰哥智能化系统\\03杰哥进化系统\\04系统复盘\\06临时",
+                             "size_mb":  0
+                         }
+                     ],
+    "state_env":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\运行状态\\system_health.env",
+    "safety":  {
+                   "delete_files":  false,
+                   "overwrite":  false,
+                   "disable_scheduled_task":  false,
+                   "edit_wsl_crontab":  false,
+                   "edit_systemd":  false,
+                   "stop_protected_old_jiege":  false,
+                   "trigger_n8n":  false,
+                   "send_wework":  false,
+                   "write_formal_db":  false,
+                   "broker_api":  false,
+                   "auto_trade":  false
+               }
+}

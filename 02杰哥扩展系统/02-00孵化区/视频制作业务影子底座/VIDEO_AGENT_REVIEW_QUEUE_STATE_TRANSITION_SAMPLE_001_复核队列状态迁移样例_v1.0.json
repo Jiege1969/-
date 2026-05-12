@@ -1,0 +1,31 @@
+{
+  "asset_id": "VIDEO_AGENT_REVIEW_QUEUE_STATE_TRANSITION_SAMPLE_001",
+  "version": "v1.0",
+  "asset_type": "state_transition_sample",
+  "construction_level": "W1/R0",
+  "scope": "video_shadow_review_queues",
+  "status": "draft_sample",
+  "purpose": "Define shadow review queue state transitions so queued or reviewed items are not mistaken for real release.",
+  "transitions": [
+    {"from": "pending_intake", "trigger": "gap_card_created", "to": "queued", "output": "queue_intake_record", "real_execution": false},
+    {"from": "queued", "trigger": "human_claimed", "to": "in_review", "output": "review_in_progress_record", "real_execution": false},
+    {"from": "in_review", "trigger": "human_requests_more_input", "to": "waiting_human_input", "output": "supplement_question_list", "real_execution": false},
+    {"from": "waiting_human_input", "trigger": "supplement_arrived", "to": "in_review", "output": "supplement_note", "real_execution": false},
+    {"from": "in_review", "trigger": "human_review_passed", "to": "review_passed_shadow", "output": "review_pass_receipt_draft", "real_execution": false},
+    {"from": "in_review", "trigger": "human_review_rejected", "to": "rejected_shadow", "output": "rejection_reason_receipt_draft", "real_execution": false},
+    {"from": "review_passed_shadow", "trigger": "three_gates_incomplete", "to": "gate_pending", "output": "release_gap_card", "real_execution": false},
+    {"from": "gate_pending", "trigger": "manager_redline_appears", "to": "blocked_by_redline", "output": "redline_block_record", "real_execution": false},
+    {"from": "review_passed_shadow", "trigger": "shadow_close_conditions_met", "to": "shadow_closed", "output": "close_receipt", "real_execution": false}
+  ],
+  "fixed_rules": [
+    "review_passed_shadow does not equal real generation, real render, or real publishing release.",
+    "Any redline moves the item to blocked_by_redline.",
+    "shadow_closed only closes the shadow task and is not a formal system conclusion.",
+    "Queue state does not trigger tool calls."
+  ],
+  "boundary": {
+    "connect_task_system": false,
+    "create_real_ticket": false,
+    "assign_real_people": false
+  }
+}

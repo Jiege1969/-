@@ -1,0 +1,102 @@
+{
+  "system_name": "税收业务系统",
+  "system_dir": "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统",
+  "generated_at": "2026-05-12 07:35:02",
+  "overall_status": "pass",
+  "score": 100,
+  "entry_scripts": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\02脚本\\生成税收企业微信正式入口消息预演.py",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\02脚本\\生成税收企业微信待复核草案骨架批量预演.py",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\02脚本\\生成税收系统当前阶段收口验收与下一步队列.py"
+  ],
+  "checks": {
+    "timeliness": {
+      "ok": true,
+      "task_name": "�ܸ����ܻ�ϵͳ_ÿ�ջ���_˰��ҵ��ϵͳ",
+      "exists": true,
+      "state": "Running",
+      "last_run_time": "2026-05-12 07:35:01",
+      "last_task_result": 267009,
+      "next_run_time": "2026-05-13 07:35:00"
+    },
+    "output_completeness": {
+      "ok": true,
+      "checks": [
+        {
+          "name": "税收正式入口/草案",
+          "ok": true,
+          "required": true,
+          "latest_file": {
+            "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\03数据\\32税收企业微信正式入口\\税收企业微信待复核草案骨架批量预演_最新.json",
+            "exists": true,
+            "size": 21168,
+            "modified_at": "2026-05-12 07:35:01",
+            "updated_today": true
+          }
+        },
+        {
+          "name": "税收分析契约/证据",
+          "ok": true,
+          "required": true,
+          "latest_file": {
+            "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\03数据\\29涉税业务分析契约影子样例\\涉税业务分析契约影子样例_最新.json",
+            "exists": true,
+            "size": 9890,
+            "modified_at": "2026-05-12 07:35:02",
+            "updated_today": true
+          }
+        }
+      ]
+    },
+    "template_compliance": {
+      "ok": true,
+      "hits": [],
+      "scanned_files": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\03数据\\32税收企业微信正式入口\\税收企业微信待复核草案骨架批量预演_最新.json",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\03数据\\29涉税业务分析契约影子样例\\涉税业务分析契约影子样例_最新.json",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\03数据\\31研发费用分析准备度门禁\\研发费用分析准备度门禁_最新.json"
+      ]
+    },
+    "universal_laws": {
+      "ok": true,
+      "total_penalty": 0,
+      "rules": [
+        {
+          "id": "silence_is_gold",
+          "name": "沉默是金：数据缺失却强行生成结论",
+          "severity": "defect",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        },
+        {
+          "id": "traceable_conclusions",
+          "name": "可追溯：关键结论必须找到计算来源",
+          "severity": "deduct",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        },
+        {
+          "id": "human_sovereignty",
+          "name": "人的主权：进化系统不得擅自修改业务规则",
+          "severity": "highest_alert",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        }
+      ],
+      "scanned_files": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\03数据\\32税收企业微信正式入口\\税收企业微信待复核草案骨架批量预演_最新.json",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\03数据\\29涉税业务分析契约影子样例\\涉税业务分析契约影子样例_最新.json",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\03数据\\31研发费用分析准备度门禁\\研发费用分析准备度门禁_最新.json"
+      ]
+    }
+  },
+  "safety": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_business_db": false,
+    "call_trade_or_external_execute_api": false
+  }
+}

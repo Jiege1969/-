@@ -1,0 +1,43 @@
+{
+  "contract_id": "VIDEO_AGENT_PARTIAL_REVISION_CONTRACT_001",
+  "name": "局部修正契约草案",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:30:00 +08:00",
+  "asset_identity": "视频创作智能体 W1/R0 局部修正字段契约草案",
+  "risk_level": "W1/R0",
+  "scope": "只输出局部修正建议，不修改正式草案，不触发真实执行",
+  "revision_targets": ["标题", "开头", "正文", "结尾", "分镜", "旁白", "配音", "封面", "标签"],
+  "required_fields": [
+    "任务ID",
+    "修改对象",
+    "修改范围",
+    "锁定内容",
+    "变更理由",
+    "修正前",
+    "修正后",
+    "影响范围",
+    "需人工确认项"
+  ],
+  "change_reasons": ["用户指令", "合规要求", "原创性要求", "平台规则要求"],
+  "constraints": {
+    "locked_content_can_be_overwritten": false,
+    "unclear_scope_requires_clarification": true,
+    "real_asset_generation": false,
+    "output_is_final_script": false,
+    "release_status_can_change": false
+  },
+  "boundary": {
+    "modify_formal_draft": false,
+    "call_model_api": false,
+    "call_engine": false,
+    "generate_video": false,
+    "release_generation": false,
+    "release_render": false,
+    "release_publish": false,
+    "read_real_assets": false,
+    "trigger_n8n": false,
+    "wecom_real_send": false,
+    "modify_19310_or_19302": false
+  },
+  "formal_capability_claim": false
+}

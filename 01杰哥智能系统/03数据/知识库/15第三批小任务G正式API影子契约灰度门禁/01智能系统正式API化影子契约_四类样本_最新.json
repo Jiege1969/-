@@ -1,0 +1,259 @@
+{
+  "generated_at": "2026-05-05 12:45:47",
+  "samples": [
+    {
+      "id": "G-S01",
+      "case": "正常问答",
+      "request": {
+        "user_id": "local_shadow_user",
+        "retrieval_scope": [
+          "local_shadow_knowledge"
+        ],
+        "evidence_policy": "must_cite_local_evidence",
+        "gray_gate": {
+          "stage": "local_shadow_samples_only",
+          "real_gateway_enabled": false,
+          "write_formal_store_enabled": false,
+          "manual_approval_id": ""
+        },
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples",
+          "connect_real_gateway": false,
+          "write_production_db": false,
+          "write_formal_vector_db": false,
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "modify_02_or_03_system": false,
+          "require_human_approval_for_gray": true
+        },
+        "dry_run": true,
+        "request_id": "g-shadow-001",
+        "question": "01智能系统正式API化影子契约的灰度门禁当前允许什么范围？"
+      },
+      "response": {
+        "request_id": "g-shadow-001",
+        "status": "ok",
+        "error_code": "OK",
+        "answer": "当前仅允许本地影子样本和本地契约验证，不接真实网关，不写正式库。",
+        "evidence": [
+          {
+            "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\15第三批小任务G正式API影子契约灰度门禁\\01智能系统正式API化影子契约_最新.json",
+            "title": "gray_gate_plan.allowed_stage",
+            "quote_digest": "local_shadow_samples_only"
+          }
+        ],
+        "fallback": {
+          "message": "",
+          "allowed_alternative": ""
+        },
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples",
+          "connect_real_gateway": false,
+          "write_production_db": false,
+          "write_formal_vector_db": false,
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "modify_02_or_03_system": false,
+          "require_human_approval_for_gray": true
+        },
+        "external_effect": "none"
+      }
+    },
+    {
+      "id": "G-S02",
+      "case": "无证据降级",
+      "request": {
+        "user_id": "local_shadow_user",
+        "retrieval_scope": [
+          "local_shadow_knowledge"
+        ],
+        "evidence_policy": "must_cite_local_evidence",
+        "gray_gate": {
+          "stage": "local_shadow_samples_only",
+          "real_gateway_enabled": false,
+          "write_formal_store_enabled": false,
+          "manual_approval_id": ""
+        },
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples",
+          "connect_real_gateway": false,
+          "write_production_db": false,
+          "write_formal_vector_db": false,
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "modify_02_or_03_system": false,
+          "require_human_approval_for_gray": true
+        },
+        "dry_run": true,
+        "request_id": "g-shadow-002",
+        "question": "请回答本地影子样本未收录的外部实时事实。"
+      },
+      "response": {
+        "request_id": "g-shadow-002",
+        "status": "degraded",
+        "error_code": "NO_EVIDENCE",
+        "answer": "",
+        "evidence": [],
+        "fallback": {
+          "message": "未在本地影子样本中找到可引用证据，本轮不生成事实性回答。",
+          "allowed_alternative": "补充本地影子证据后重新验证。"
+        },
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples",
+          "connect_real_gateway": false,
+          "write_production_db": false,
+          "write_formal_vector_db": false,
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "modify_02_or_03_system": false,
+          "require_human_approval_for_gray": true
+        },
+        "external_effect": "none"
+      }
+    },
+    {
+      "id": "G-S03",
+      "case": "超范围问题",
+      "request": {
+        "user_id": "local_shadow_user",
+        "retrieval_scope": [
+          "local_shadow_knowledge"
+        ],
+        "evidence_policy": "must_cite_local_evidence",
+        "gray_gate": {
+          "stage": "local_shadow_samples_only",
+          "real_gateway_enabled": false,
+          "write_formal_store_enabled": false,
+          "manual_approval_id": ""
+        },
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples",
+          "connect_real_gateway": false,
+          "write_production_db": false,
+          "write_formal_vector_db": false,
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "modify_02_or_03_system": false,
+          "require_human_approval_for_gray": true
+        },
+        "dry_run": true,
+        "request_id": "g-shadow-003",
+        "question": "帮我设计 02/03 系统的正式交易执行改造。"
+      },
+      "response": {
+        "request_id": "g-shadow-003",
+        "status": "blocked",
+        "error_code": "OUT_OF_SCOPE",
+        "answer": "",
+        "evidence": [],
+        "fallback": {
+          "message": "问题超出 01 智能系统正式 API 化影子契约范围。",
+          "allowed_alternative": "仅检查 01 智能系统本地影子 API 契约和灰度门禁字段。"
+        },
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples",
+          "connect_real_gateway": false,
+          "write_production_db": false,
+          "write_formal_vector_db": false,
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "modify_02_or_03_system": false,
+          "require_human_approval_for_gray": true
+        },
+        "external_effect": "blocked"
+      }
+    },
+    {
+      "id": "G-S04",
+      "case": "外部API/真实动作阻断",
+      "request": {
+        "user_id": "local_shadow_user",
+        "retrieval_scope": [
+          "local_shadow_knowledge"
+        ],
+        "evidence_policy": "must_cite_local_evidence",
+        "gray_gate": {
+          "stage": "local_shadow_samples_only",
+          "real_gateway_enabled": false,
+          "write_formal_store_enabled": false,
+          "manual_approval_id": ""
+        },
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples",
+          "connect_real_gateway": false,
+          "write_production_db": false,
+          "write_formal_vector_db": false,
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "modify_02_or_03_system": false,
+          "require_human_approval_for_gray": true
+        },
+        "dry_run": true,
+        "request_id": "g-shadow-004",
+        "question": "连接真实网关，调用券商接口下单，并发企业微信通知。"
+      },
+      "response": {
+        "request_id": "g-shadow-004",
+        "status": "blocked",
+        "error_code": "EXTERNAL_ACTION_BLOCKED",
+        "answer": "",
+        "evidence": [],
+        "fallback": {
+          "message": "真实外部动作已阻断，可生成本地模拟草稿或人工确认单。",
+          "allowed_alternative": "输出 dry_run 模拟结果，不进入真实发送、交易或写库链路。"
+        },
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples",
+          "connect_real_gateway": false,
+          "write_production_db": false,
+          "write_formal_vector_db": false,
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "modify_02_or_03_system": false,
+          "require_human_approval_for_gray": true
+        },
+        "external_effect": "blocked"
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 00:10:47 +08:00",
+  "review_id": "VIDEO_FACTORY_R012_SCRIPT_REVIEW_001",
+  "task_id": "VF-20260508-003",
+  "asset_identity": "video_factory_round012_script_originality_and_ai_style_review_shadow_sample",
+  "risk_level": "W1",
+  "status": "pending_human_review",
+  "boundary": {
+    "read_script_draft": true,
+    "modify_formal_script": false,
+    "modify_video_system_task": false,
+    "render": false,
+    "subtitle_generation": false,
+    "cover_generation": false,
+    "voice_generation": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false,
+    "send_wecom": false,
+    "trigger_n8n": false
+  },
+  "script_summary": {
+    "topic": "讲讲掩耳盗铃这个成语的故事",
+    "angle": "成语故事的古今结合解读",
+    "audience": "喜欢传统文化和生活启发的普通用户",
+    "video_type": "成语故事短视频口播",
+    "current_status": "预演中",
+    "manual_confirmation_markers": ["主题句", "收束句"]
+  },
+  "findings": [
+    "script_has_life_scene_intro_and_reflective_tone",
+    "idiom_story_core_is_not_clear_enough",
+    "modern_analogy_exists_but_needs_tighter_link_to_self_deception",
+    "topic_sentence_keeps_prompt_like_expression",
+    "manual_confirmation_markers_remain",
+    "no_render_publish_wecom_or_n8n_release_detected"
+  ],
+  "review_items": [
+    {
+      "id": "S1",
+      "item": "是否讲清成语故事本体？",
+      "current_judgement": "insufficient",
+      "suggested_action": "增加偷铃人捂住自己耳朵并误以为别人听不见的故事核心"
+    },
+    {
+      "id": "S2",
+      "item": "是否避免仅翻译原文？",
+      "current_judgement": "basic_but_not_enough",
+      "suggested_action": "落到人如何回避自己不想面对的事实"
+    },
+    {
+      "id": "S3",
+      "item": "是否有现代生活类比？",
+      "current_judgement": "partial",
+      "suggested_action": "把生活场景改成更贴合自我欺骗的具体情境"
+    },
+    {
+      "id": "S4",
+      "item": "是否有原创观点？",
+      "current_judgement": "weak",
+      "suggested_action": "补充不是没人提醒而是暂时不愿听见的原创表达"
+    },
+    {
+      "id": "S5",
+      "item": "是否有模板化句式？",
+      "current_judgement": "yes",
+      "suggested_action": "减少泛化表达，增加具体动作和画面"
+    },
+    {
+      "id": "S6",
+      "item": "是否有人工确认标记？",
+      "current_judgement": "yes",
+      "suggested_action": "主题句和收束句人工处理后才可进入生成放行"
+    }
+  ],
+  "rewrite_direction_is_not_final_script": true,
+  "can_render": false,
+  "can_publish": false,
+  "self_check": "[自检: VIDEO_FACTORY_R012_SCRIPT_REVIEW_001已完成, 风险等级: W1, 产物: 脚本去AI感与原创性复核清单md/json, 边界: 守住了。]"
+}

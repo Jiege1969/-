@@ -1,0 +1,164 @@
+{
+  "id": "P2S6_REAL_MATERIAL_INTAKE_RECEIPT_TEMPLATE_READONLY_CHECK",
+  "generated_at": "2026-05-09 11:52:32",
+  "status": "pass",
+  "summary": {
+    "field_count": 19,
+    "missing_field_count": 0,
+    "allowed_target_count": 5,
+    "redline_false_check_count": 12,
+    "index_warning_count": 0
+  },
+  "field_checks": [
+    {
+      "field": "authorization_status",
+      "present": true
+    },
+    {
+      "field": "can_enter_shadow",
+      "present": true
+    },
+    {
+      "field": "desensitized_status",
+      "present": true
+    },
+    {
+      "field": "formal_capability_claim",
+      "present": true
+    },
+    {
+      "field": "human_review_required",
+      "present": true
+    },
+    {
+      "field": "human_review_status",
+      "present": true
+    },
+    {
+      "field": "material_id",
+      "present": true
+    },
+    {
+      "field": "next_allowed_action",
+      "present": true
+    },
+    {
+      "field": "pause_reasons",
+      "present": true
+    },
+    {
+      "field": "receipt_id",
+      "present": true
+    },
+    {
+      "field": "receipt_status",
+      "present": true
+    },
+    {
+      "field": "received_at",
+      "present": true
+    },
+    {
+      "field": "redline_reasons",
+      "present": true
+    },
+    {
+      "field": "redline_status",
+      "present": true
+    },
+    {
+      "field": "sensitivity",
+      "present": true
+    },
+    {
+      "field": "source_path_or_url",
+      "present": true
+    },
+    {
+      "field": "source_type",
+      "present": true
+    },
+    {
+      "field": "target_entry",
+      "present": true
+    },
+    {
+      "field": "target_line",
+      "present": true
+    }
+  ],
+  "redline_checks": [
+    {
+      "key": "claim_formal_capability",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "connect_real_office_system",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "copy_sensitive_material",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "invoice_action",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "render_upload_or_publish_video",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "scan_unspecified_directory",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "send_wecom",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "tax_filing",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "tax_refund_action",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "trade",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "trigger_n8n",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "write_formal_database",
+      "value": false,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "conclusion": "真实材料接入分流回执模板字段、路由、默认复核状态和红线状态完整；可用于后续真实脱敏材料接入留痕。",
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

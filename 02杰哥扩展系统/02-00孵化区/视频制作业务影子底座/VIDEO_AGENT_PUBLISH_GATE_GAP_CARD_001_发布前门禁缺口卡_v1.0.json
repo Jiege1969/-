@@ -1,0 +1,33 @@
+{
+  "asset_id": "VIDEO_AGENT_PUBLISH_GATE_GAP_CARD_001",
+  "name": "发布前门禁缺口卡",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:02:00 +08:00",
+  "risk_level": "低风险",
+  "purpose": "把发布意图转为发布前缺口检查，不执行发布",
+  "gap_fields": [
+    "任务ID",
+    "成品版本",
+    "成品预览回执",
+    "发布放行清单",
+    "平台列表",
+    "AI标识确认",
+    "素材授权结论",
+    "标题标签检查",
+    "账号授权状态"
+  ],
+  "conclusions": [
+    "发布前门禁通过，等待总管判断是否进入真实发布链路",
+    "发布前门禁未通过，保持发布待确认",
+    "命中一票阻断，退回人工复核"
+  ],
+  "boundary": {
+    "call_postbot": false,
+    "login_platform": false,
+    "upload": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "real_system_triggered": false
+  }
+}

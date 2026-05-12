@@ -1,0 +1,52 @@
+{
+  "asset_id": "VIDEO_PLATFORM_AND_ASSET_AUTH_COMPLETION_CHECK_20260508",
+  "generated_at": "2026-05-08 06:53:18 +08:00",
+  "asset_identity": "视频制作业务影子底座 W1/R0 队列项完成核对记录",
+  "status": "只读核对记录，不是正式视频制作系统开工申请，不是生成或发布放行",
+  "source_queue_item": "补平台规范来源卡、素材授权字段模板",
+  "checked_files": {
+    "platform_source_template": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\视频平台规范来源卡模板_v1.0.md",
+    "asset_authorization_template": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\视频素材授权字段模板_v1.0.md",
+    "five_questions": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\视频制作_开工五问校准_v1.0.md",
+    "requirement_draft": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\视频制作需求草案_v1.0.md"
+  },
+  "conclusion": "视频制作业务队列第三项已补齐，不需要重复生成模板。",
+  "covered_fields": {
+    "platform_source_template": [
+      "平台名称",
+      "来源类型",
+      "来源链接或文件",
+      "采集日期",
+      "适用内容类型",
+      "时长限制",
+      "分辨率要求",
+      "画幅比例",
+      "字幕要求",
+      "封面要求",
+      "发布风险",
+      "复核说明"
+    ],
+    "asset_authorization_template": [
+      "素材编号",
+      "素材类型",
+      "来源",
+      "授权范围",
+      "权利方或来源方",
+      "使用限制",
+      "隐私风险",
+      "授权期限",
+      "人工复核意见"
+    ]
+  },
+  "next_recommendation": "下一步可转向总管策略检索队列项：将预研草案整理成实现前检查清单。",
+  "boundary": {
+    "read_real_assets": false,
+    "transcode": false,
+    "edit": false,
+    "render": false,
+    "subtitle_cover_voice_generation": false,
+    "connect_platform_or_cloud_account": false,
+    "upload_publish_or_external_send": false,
+    "trigger_n8n_or_wecom": false
+  }
+}

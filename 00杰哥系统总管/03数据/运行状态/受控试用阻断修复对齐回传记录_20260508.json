@@ -1,0 +1,31 @@
+{
+  "id": "CONTROLLED_TRIAL_BLOCKER_FIX_ALIGNMENT_RETURN_20260508",
+  "generated_at": "2026-05-08",
+  "asset_identity": "manager_side_w1_r0_alignment_return",
+  "source": "enterprise_wechat_controlled_trial_validation",
+  "created_files": [
+    "受控试用阻断修复清单_20260508.md",
+    "受控试用阻断修复清单_20260508.json",
+    "税收事项匹配纠偏卡_软件产品即征即退_20260508.md",
+    "税收事项匹配纠偏卡_软件产品即征即退_20260508.json",
+    "VIDEO_SCRIPT_QUALITY_FIX_CARD_001_成语故事内容质量纠偏卡_v1.0.md",
+    "VIDEO_SCRIPT_QUALITY_FIX_CARD_001_成语故事内容质量纠偏卡_v1.0.json",
+    "受控试用阻断修复R0自检_20260508.md",
+    "受控试用阻断修复R0自检_20260508.json"
+  ],
+  "next_auto_candidates": [
+    "tax_software_refund_vs_rd_super_deduction_comparison",
+    "tax_work_secretary_mapping_acceptance_samples",
+    "video_idiom_story_script_quality_acceptance_table",
+    "video_idiom_story_high_quality_shadow_sample"
+  ],
+  "boundary": {
+    "modify_wecom_service_script": false,
+    "restart_service": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "write_formal_database": false,
+    "formal_tax_opinion": false,
+    "video_render_upload_publish": false
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "name": "n8n政策证据调配前置条件评估",
+  "asset_identity": "n8n_policy_evidence_coordination_prerequisite_shadow_assessment",
+  "risk_level": "R0/W1",
+  "boundary": {
+    "create_n8n_workflow": false,
+    "import_n8n_config": false,
+    "trigger_automation": false,
+    "connect_wecom": false,
+    "external_send": false
+  },
+  "conclusion": {
+    "n8n_ready": false,
+    "recommended_strategy": "扩展系统内部轻量只读调配优先，总管只登记能力和边界，n8n后置。"
+  },
+  "prerequisite_checks": [
+    {
+      "condition": "至少3个业务系统有稳定重复调用",
+      "current_status": "有4条样例，但未证明稳定重复",
+      "passed": false
+    },
+    {
+      "condition": "调用字段稳定",
+      "current_status": "已有模板，但未多轮验证",
+      "passed": false
+    },
+    {
+      "condition": "每条样例通过3轮人工复核",
+      "current_status": "0轮人工填写",
+      "passed": false
+    },
+    {
+      "condition": "用户明确要求自动化编排",
+      "current_status": "用户倾向轻量，不要求立即n8n",
+      "passed": false
+    },
+    {
+      "condition": "W3确认和验收",
+      "current_status": "未进入",
+      "passed": false
+    }
+  ],
+  "recommendations": [
+    "不创建n8n工作流",
+    "不导入n8n配置",
+    "不接企业微信、外发、自动调度",
+    "继续补只读样例和人工复核",
+    "三轮复核后再重新评估"
+  ]
+}

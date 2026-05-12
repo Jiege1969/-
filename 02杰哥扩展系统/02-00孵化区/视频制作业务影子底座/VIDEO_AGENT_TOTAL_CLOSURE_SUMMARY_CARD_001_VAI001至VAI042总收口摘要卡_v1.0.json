@@ -1,0 +1,23 @@
+{
+  "id": "VIDEO_AGENT_TOTAL_CLOSURE_SUMMARY_CARD_001",
+  "name": "VAI001至VAI042总收口摘要卡",
+  "asset_identity": "video_creation_agent_total_closure_summary_card",
+  "stage": "W1_R0",
+  "status": "summary_card_not_launch_report",
+  "one_sentence": "VAI-001 to VAI-042 connect the shadow intake, check, clarification, three-option draft, review, state, redline, trial and closure flow to manual shadow trial readiness only.",
+  "allowed": [
+    "receive_user_provided_desensitized_video_idea",
+    "manual_shadow_trial",
+    "clarification_question_three_option_text_draft_review_question_list",
+    "human_receipt_and_state_log",
+    "redline_block_and_evolution_candidate_record"
+  ],
+  "forbidden": [
+    "real_wechat_integration",
+    "model_tts_renderer_or_publisher_call",
+    "real_asset_path_read",
+    "generate_upload_publish_or_external_send",
+    "formal_rule_or_task_database_write"
+  ],
+  "next_step": "wait_for_user_provided_desensitized_video_idea_then_run_one_manual_shadow_trial_sample"
+}

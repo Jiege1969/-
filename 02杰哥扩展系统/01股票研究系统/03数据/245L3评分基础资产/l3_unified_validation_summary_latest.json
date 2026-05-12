@@ -1,0 +1,67 @@
+{
+  "name": "l3_unified_validation_summary",
+  "generated_at": "2026-05-08 06:55:37",
+  "status": "passed",
+  "step_count": 10,
+  "passed_count": 10,
+  "failed_count": 0,
+  "steps": [
+    {
+      "step_id": "market_style_update",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "step_id": "industry_price_card_update",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "step_id": "industry_price_ledger_validation",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "step_id": "policy_event_validation",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "step_id": "l3_scoring_contract_validation",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "step_id": "review_loop_validation",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "step_id": "l3_sample_coverage_validation",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "step_id": "l3_wecom_short_answer_validation",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "step_id": "l3_front_evidence_wording_validation",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "step_id": "l3_wecom_bridge_dry_run",
+      "status": "passed",
+      "returncode": 0
+    }
+  ],
+  "failed_steps": [],
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

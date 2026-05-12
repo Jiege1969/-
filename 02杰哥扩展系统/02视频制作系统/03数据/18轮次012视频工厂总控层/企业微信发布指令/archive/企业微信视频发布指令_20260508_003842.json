@@ -1,0 +1,71 @@
+{
+  "生成时间": "2026-05-08 00:38:42",
+  "状态": "完成",
+  "输入": "发布预检 VF-20260508-001",
+  "路由": "杰哥视频助理发布指令",
+  "目标系统": "02杰哥扩展系统/02视频制作系统",
+  "回复": "发布桥梁预检已完成。\n任务ID：VF-20260508-001\n总体状态：pass\n真实发布启用：False\n桥梁命令：D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\n阻断项：无\n提醒项：VF-20260508-001：未填写账号，将使用默认账号；真实发布当前关闭；这是默认安全状态。",
+  "reply_text": "发布桥梁预检已完成。\n任务ID：VF-20260508-001\n总体状态：pass\n真实发布启用：False\n桥梁命令：D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\n阻断项：无\n提醒项：VF-20260508-001：未填写账号，将使用默认账号；真实发布当前关闭；这是默认安全状态。",
+  "real_send": false,
+  "n8n": false,
+  "企业微信模拟回复": {
+    "msgtype": "markdown",
+    "markdown": {
+      "content": "【杰哥视频助理】\n发布桥梁预检已完成。\n任务ID：VF-20260508-001\n总体状态：pass\n真实发布启用：False\n桥梁命令：D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\n阻断项：无\n提醒项：VF-20260508-001：未填写账号，将使用默认账号；真实发布当前关闭；这是默认安全状态。"
+    }
+  },
+  "安全边界": {
+    "真实发送企业微信": false,
+    "触发n8n": false,
+    "绕过发布放行清单": false,
+    "自动发布": false
+  },
+  "publish_bridge_check": {
+    "returncode": 0,
+    "stdout": "{\n  \"生成时间\": \"2026-05-08 00:38:42\",\n  \"总体状态\": \"pass\",\n  \"任务ID过滤\": \"VF-20260508-001\",\n  \"真实发布启用\": false,\n  \"桥梁命令\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\social-auto-upload\\\\.venv\\\\Scripts\\\\sau.exe\",\n  \"命令检查\": {\n    \"命令\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\social-auto-upload\\\\.venv\\\\Scripts\\\\sau.exe\",\n    \"路径\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\social-auto-upload\\\\.venv\\\\Scripts\\\\sau.exe\",\n    \"可用\": true,\n    \"stdout\": \"usage: sau [-h] {douyin,kuaishou,xiaohongshu,bilibili} ...\\n\\nCLI for social-auto-upload.\\n\\npositional arguments:\\n  {douyin,kuaishou,xiaohongshu,bilibili}\\n    douyin              Douyin operations\\n    kuaishou            Kuaishou operations\\n    xiaohongshu         Xiaohongshu operations\\n    bilibili            Bilibili operations\\n\\noptions:\\n  -h, --help            show this help message and exit\\n\",\n    \"stderr\": \"\",\n    \"错误\": \"\",\n    \"returncode\": 0\n  },\n  \"发布清单行\": [\n    {\n      \"任务ID\": \"VF-20260508-001\",\n      \"生成状态\": \"待生成\",\n      \"发布放行状态\": \"放行\",\n      \"放行时间\": \"2026-05-08 00:30:36\",\n      \"放行人\": \"杰哥视频助理企业微信确认\",\n      \"视频文件\": \"-\",\n      \"标题\": \"-\",\n      \"简介\": \"-\",\n      \"标签\": \"-\",\n      \"平台\": \"B站\",\n      \"账号\": \"-\",\n      \"B站分区ID\": \"-\",\n      \"发布结果\": \"-\"\n    }\n  ],\n  \"阻断项\": [],\n  \"提醒项\": [\n    \"VF-20260508-001：未填写账号，将使用默认账号\",\n    \"真实发布当前关闭；这是默认安全状态。\"\n  ],\n  \"安全边界\": {\n    \"真实发布\": false,\n    \"触发n8n\": false,\n    \"企业微信真实发送\": false\n  }\n}\n",
+    "stderr": "",
+    "report": {
+      "生成时间": "2026-05-08 00:38:42",
+      "总体状态": "pass",
+      "任务ID过滤": "VF-20260508-001",
+      "真实发布启用": false,
+      "桥梁命令": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+      "命令检查": {
+        "命令": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+        "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+        "可用": true,
+        "stdout": "usage: sau [-h] {douyin,kuaishou,xiaohongshu,bilibili} ...\n\nCLI for social-auto-upload.\n\npositional arguments:\n  {douyin,kuaishou,xiaohongshu,bilibili}\n    douyin              Douyin operations\n    kuaishou            Kuaishou operations\n    xiaohongshu         Xiaohongshu operations\n    bilibili            Bilibili operations\n\noptions:\n  -h, --help            show this help message and exit\n",
+        "stderr": "",
+        "错误": "",
+        "returncode": 0
+      },
+      "发布清单行": [
+        {
+          "任务ID": "VF-20260508-001",
+          "生成状态": "待生成",
+          "发布放行状态": "放行",
+          "放行时间": "2026-05-08 00:30:36",
+          "放行人": "杰哥视频助理企业微信确认",
+          "视频文件": "-",
+          "标题": "-",
+          "简介": "-",
+          "标签": "-",
+          "平台": "B站",
+          "账号": "-",
+          "B站分区ID": "-",
+          "发布结果": "-"
+        }
+      ],
+      "阻断项": [],
+      "提醒项": [
+        "VF-20260508-001：未填写账号，将使用默认账号",
+        "真实发布当前关闭；这是默认安全状态。"
+      ],
+      "安全边界": {
+        "真实发布": false,
+        "触发n8n": false,
+        "企业微信真实发送": false
+      }
+    }
+  }
+}

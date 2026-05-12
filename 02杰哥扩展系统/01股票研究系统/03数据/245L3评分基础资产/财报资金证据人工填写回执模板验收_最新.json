@@ -1,0 +1,15 @@
+{
+  "name": "财报资金证据人工填写回执模板验收",
+  "generated_at": "2026-05-08 09:55:26",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\财报资金证据人工填写回执模板_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "receipt_count": 25,
+    "stock_count": 5,
+    "ready_count": 0,
+    "score_allowed_count": 0
+  },
+  "next_step": "继续生成行业价格观测人工填报回执模板；仍不得抓取真实数据或写正式库。"
+}

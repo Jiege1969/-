@@ -1,0 +1,80 @@
+{
+  "report_id": "01智能系统_轻量任务契约适配回收报告_最新",
+  "task": "本轮并行小任务A：01智能系统轻量任务契约适配",
+  "checked_at": "2026-05-05 13:55:06 +08:00",
+  "scope": {
+    "write_scope": [
+      "D:\\杰哥智能化系统\\01杰哥智能系统 新增文件",
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\01智能系统_轻量任务契约适配回收报告_最新.md",
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\01智能系统_轻量任务契约适配回收报告_最新.json"
+    ],
+    "untouched_parallel_workers": [
+      "D:\\杰哥智能化系统\\02杰哥扩展系统",
+      "D:\\杰哥智能化系统\\03杰哥进化系统"
+    ]
+  },
+  "artifacts": [
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\API契约\\01智能系统轻量任务契约适配包_最新.md",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\API契约\\light_task_contract_adapter_latest.md",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\任务契约适配\\01智能系统轻量任务契约适配包_最新.json",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\任务契约适配\\adapter_package_latest.json",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\任务契约适配\\标准任务单样例_最新.json",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\任务契约适配\\standard_task_sample_latest.json",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\任务契约适配\\receipt样例_最新.json",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\任务契约适配\\receipt_sample_latest.json",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\任务契约适配\\验收结果_最新.json",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\验证01智能系统轻量任务契约适配包.ps1"
+  ],
+  "validation": {
+    "command": "powershell -ExecutionPolicy Bypass -File \"D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\验证01智能系统轻量任务契约适配包.ps1\"",
+    "mode": "read_only_local_parse",
+    "result": "PASS",
+    "total_checks": 42,
+    "failed_checks": 0,
+    "external_services_touched": false
+  },
+  "checks": [
+    "标准任务单字段完整且dry_run=true",
+    "safety.real_action_allowed=false",
+    "模型路由invocation=disabled",
+    "中台能力仅做标签/计划路由",
+    "SQLite影子台账shadow_only且不写正式库",
+    "Redis影子映射shadow_only且不连真实Redis",
+    "n8n mode=dry_run且trigger_allowed=false",
+    "receipt字段齐全且external_calls为空",
+    "文档覆盖OpenClaw/Hermes逻辑参考、dry_run、receipt、SQLite、Redis、n8n"
+  ],
+  "blocked_actions": [
+    "真实模型接口调用",
+    "n8n真实触发",
+    "企业微信真实发送",
+    "正式库/正式向量库写入",
+    "真实Redis写入",
+    "券商接口调用",
+    "自动交易",
+    "下单",
+    "外部网络请求"
+  ],
+  "safety_boundary": {
+    "allowed": [
+      "读取本地JSON/Markdown",
+      "本地解析和字段校验",
+      "生成影子计划",
+      "生成receipt和验收证据"
+    ],
+    "forbidden": [
+      "触发n8n",
+      "调用企业微信",
+      "写正式库",
+      "调用真实模型接口",
+      "调用券商接口",
+      "自动交易或下单",
+      "外部网络请求"
+    ]
+  },
+  "blockers": {
+    "delivery_blockers": [],
+    "safety_blockers": [],
+    "parallel_conflict_risk": "low"
+  }
+}

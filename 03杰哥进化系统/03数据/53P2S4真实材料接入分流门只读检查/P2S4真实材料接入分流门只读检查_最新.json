@@ -1,0 +1,123 @@
+{
+  "id": "P2S4_REAL_MATERIAL_INTAKE_ROUTING_GATE_READONLY_CHECK",
+  "generated_at": "2026-05-09 09:35:53",
+  "status": "pass",
+  "summary": {
+    "route_count": 5,
+    "redline_false_check_count": 12,
+    "missing_field_count": 0,
+    "missing_route_count": 0,
+    "missing_pause_term_count": 0
+  },
+  "route_checks": [
+    {
+      "target_line": "tax",
+      "entry": "TAX_DAILY_INTAKE_002",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\TAX_DAILY_INTAKE_002_脱敏问题接入空白卡_20260509.json",
+      "entry_exists": true,
+      "rule": "税收政策或涉税业务分析材料进入税收影子入口，不得直接生成正式税务意见"
+    },
+    {
+      "target_line": "office_work",
+      "entry": "OFFICE_SHADOW_002",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\本职工作业务影子底座\\OFFICE_SHADOW_002_流程资料登记_空白影子样例_v1.0.json",
+      "entry_exists": true,
+      "rule": "制度、流程、台账字段、办公资料进入本职工作影子入口，不得连接真实办公系统"
+    },
+    {
+      "target_line": "video_production",
+      "entry": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_P2_REVIEW_CHAIN_NEXT_001_脚本分镜素材授权发布门禁续建卡_20260509.json",
+      "entry_exists": true,
+      "rule": "脚本、分镜、素材授权、平台规范进入视频复核链，发布门禁保持关闭"
+    },
+    {
+      "target_line": "shared_policy_evidence",
+      "entry": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\P2_SHARED_POLICY_READONLY_NEXT_001_共享政策证据只读调用下一步卡_20260509.json",
+      "entry_exists": true,
+      "rule": "政策依据候选或公开政策来源进入共享政策证据只读入口，不得替代业务线判断"
+    },
+    {
+      "target_line": "pause",
+      "entry": "gap_or_redline_record",
+      "entry_path": "none",
+      "entry_exists": true,
+      "rule": "未授权、未脱敏、来源不清或命中真实执行请求时暂停，只记录缺口或红线阻断"
+    }
+  ],
+  "redline_checks": [
+    {
+      "key": "claim_formal_capability",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "connect_real_office_system",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "copy_sensitive_material",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "invoice_action",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "render_upload_or_publish_video",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "scan_unspecified_directory",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "send_wecom",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "tax_filing",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "tax_refund_action",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "trade",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "trigger_n8n",
+      "value": false,
+      "pass": true
+    },
+    {
+      "key": "write_formal_database",
+      "value": false,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "conclusion": "真实材料接入分流门完整且红线关闭；真实材料进入前可先走分流门，再进入对应影子入口。",
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

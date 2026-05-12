@@ -1,0 +1,357 @@
+{
+  "名称": "视频真实渲染环境候选路径只读核对",
+  "generated_at": "2026-05-08 17:59:38",
+  "source_package": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\真实渲染环境候选路径矩阵与安装缺口清单\\视频真实渲染环境候选路径矩阵与安装缺口清单_最新.json",
+  "error_count": 0,
+  "真实渲染状态": "blocked",
+  "real_render_status": "blocked",
+  "真实发布状态": "blocked",
+  "real_publish_status": "blocked",
+  "当前阶段": "仅候选路径矩阵与安装缺口清单只读核对",
+  "current_stage": "candidate_path_gap_readonly_check_only",
+  "是否已接入真实渲染": false,
+  "is_real_render_integrated": false,
+  "是否已接入真实发布": false,
+  "is_real_publish_integrated": false,
+  "readonly_flags": {
+    "真实渲染": false,
+    "生成真实视频": false,
+    "上传发布": false,
+    "调用MoneyPrinterTurbo": false,
+    "执行magick": false,
+    "执行magick_version": false,
+    "触发n8n": false,
+    "修改企业微信公共配置": false,
+    "修改总管面板": false,
+    "修改一键接续包": false,
+    "重载服务": false,
+    "安装软件": false,
+    "写入系统环境变量": false
+  },
+  "readonly_flags_ascii": {
+    "real_render": false,
+    "generate_real_video": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false,
+    "install_software": false,
+    "write_system_environment": false
+  },
+  "复核矩阵": {
+    "MoneyPrinterTurbo": [
+      {
+        "对象": "MoneyPrinterTurbo",
+        "candidate_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\MoneyPrinterTurbo",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "app.py": false,
+          "main.py": false,
+          "webui.py": false,
+          "start.py": false,
+          "requirements.txt": false,
+          "pyproject.toml": false,
+          "config.toml": false,
+          "MoneyPrinterTurbo.py": false
+        },
+        "包含任一候选入口文件_复核": false,
+        "本轮是否调用": false,
+        "本轮是否渲染": false
+      },
+      {
+        "对象": "MoneyPrinterTurbo",
+        "candidate_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\MoneyPrinterTurbo",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "app.py": false,
+          "main.py": false,
+          "webui.py": false,
+          "start.py": false,
+          "requirements.txt": false,
+          "pyproject.toml": false,
+          "config.toml": false,
+          "MoneyPrinterTurbo.py": false
+        },
+        "包含任一候选入口文件_复核": false,
+        "本轮是否调用": false,
+        "本轮是否渲染": false
+      },
+      {
+        "对象": "MoneyPrinterTurbo",
+        "candidate_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\01工具\\MoneyPrinterTurbo",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "app.py": false,
+          "main.py": false,
+          "webui.py": false,
+          "start.py": false,
+          "requirements.txt": false,
+          "pyproject.toml": false,
+          "config.toml": false,
+          "MoneyPrinterTurbo.py": false
+        },
+        "包含任一候选入口文件_复核": false,
+        "本轮是否调用": false,
+        "本轮是否渲染": false
+      },
+      {
+        "对象": "MoneyPrinterTurbo",
+        "candidate_path": "D:\\杰哥智能化系统\\MoneyPrinterTurbo",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "app.py": false,
+          "main.py": false,
+          "webui.py": false,
+          "start.py": false,
+          "requirements.txt": false,
+          "pyproject.toml": false,
+          "config.toml": false,
+          "MoneyPrinterTurbo.py": false
+        },
+        "包含任一候选入口文件_复核": false,
+        "本轮是否调用": false,
+        "本轮是否渲染": false
+      },
+      {
+        "对象": "MoneyPrinterTurbo",
+        "candidate_path": "D:\\MoneyPrinterTurbo",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "app.py": false,
+          "main.py": false,
+          "webui.py": false,
+          "start.py": false,
+          "requirements.txt": false,
+          "pyproject.toml": false,
+          "config.toml": false,
+          "MoneyPrinterTurbo.py": false
+        },
+        "包含任一候选入口文件_复核": false,
+        "本轮是否调用": false,
+        "本轮是否渲染": false
+      },
+      {
+        "对象": "MoneyPrinterTurbo",
+        "candidate_path": "C:\\MoneyPrinterTurbo",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "app.py": false,
+          "main.py": false,
+          "webui.py": false,
+          "start.py": false,
+          "requirements.txt": false,
+          "pyproject.toml": false,
+          "config.toml": false,
+          "MoneyPrinterTurbo.py": false
+        },
+        "包含任一候选入口文件_复核": false,
+        "本轮是否调用": false,
+        "本轮是否渲染": false
+      }
+    ],
+    "ImageMagick": [
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "C:\\Program Files\\ImageMagick",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "C:\\Program Files\\ImageMagick-7.1.1-Q16-HDRI",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "C:\\Program Files\\ImageMagick-7.1.0-Q16-HDRI",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "C:\\Program Files\\ImageMagick-7.0.11-Q16-HDRI",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "C:\\Program Files\\ImageMagick-6.9.13-Q16",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "C:\\Program Files (x86)\\ImageMagick",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "C:\\Program Files (x86)\\ImageMagick-7.1.2-Q16-HDRI",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "C:\\Program Files (x86)\\ImageMagick-7.1.1-Q16-HDRI",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "C:\\Program Files (x86)\\ImageMagick-7.1.0-Q16-HDRI",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "C:\\Program Files (x86)\\ImageMagick-7.0.11-Q16-HDRI",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "C:\\Program Files (x86)\\ImageMagick-6.9.13-Q16",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "D:\\ImageMagick",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\ImageMagick",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      },
+      {
+        "对象": "ImageMagick",
+        "candidate_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\01工具\\ImageMagick",
+        "目录存在_复核": false,
+        "候选入口文件存在性_复核": {
+          "magick.exe": false,
+          "convert.exe": false
+        },
+        "包含magick.exe_复核": false,
+        "本轮是否执行magick": false,
+        "本轮是否执行magick_version": false
+      }
+    ]
+  },
+  "readback_summary": {
+    "moneyprinter_candidate_count": 6,
+    "moneyprinter_existing_dir_count": 0,
+    "moneyprinter_entry_count": 0,
+    "imagemagick_candidate_count": 15,
+    "imagemagick_existing_dir_count": 0,
+    "imagemagick_magick_exe_count": 0
+  },
+  "当前阻断原因": [
+    "MoneyPrinterTurbo 本轮未调用，真实渲染入口、依赖和配置仍未验证。",
+    "ImageMagick 本轮未执行，未运行 magick 或 magick -version，版本与可运行性仍未验证。",
+    "本轮仅复核目录和入口文件存在性，不构成真实渲染接入。",
+    "真实发布链路未放行，仍 blocked。",
+    "MoneyPrinterTurbo 未发现可确认入口文件，需人工补充或确认根目录。",
+    "ImageMagick 未发现 magick.exe，需人工安装或确认路径。"
+  ],
+  "核对结论": "只读核对完成；真实渲染仍 blocked，真实发布仍 blocked，当前仅候选路径/缺口清单，不得伪装已接入。"
+}

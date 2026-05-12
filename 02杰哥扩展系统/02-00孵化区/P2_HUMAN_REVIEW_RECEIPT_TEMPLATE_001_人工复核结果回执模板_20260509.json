@@ -1,0 +1,60 @@
+{
+  "template_id": "P2_HUMAN_REVIEW_RECEIPT_TEMPLATE_001",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S11",
+  "status": "human_review_receipt_template_not_release_form",
+  "purpose": "规定人工复核结果如何回执，防止人工复核通过被误解成自动填写入口或正式业务放行",
+  "required_fields": [
+    "review_receipt_id",
+    "source_receipt_id",
+    "material_id",
+    "target_line",
+    "target_entry",
+    "seal_bucket",
+    "human_review_result",
+    "reviewed_by_human",
+    "entry_fill_candidate",
+    "auto_fill_shadow_entry",
+    "write_target_entry",
+    "release_form",
+    "formal_capability_claim",
+    "next_gate"
+  ],
+  "allowed_results": {
+    "ready_shadow_preview": {
+      "results": ["review_pass_fill_candidate", "needs_more_info", "review_reject"],
+      "candidate_result": "review_pass_fill_candidate",
+      "candidate_next_gate": "shadow_entry_fill_candidate_gate"
+    },
+    "pause_gap_archive": {
+      "results": ["continue_pause", "gap_resolved_return_to_intake_gate"],
+      "candidate_result": "gap_resolved_return_to_intake_gate",
+      "candidate_next_gate": "real_material_intake_gate"
+    },
+    "blocked_redline_archive": {
+      "results": ["maintain_block", "escalate_to_supervisor"],
+      "candidate_result": null,
+      "candidate_next_gate": "problem_recovery_or_supervisor_confirmation"
+    }
+  },
+  "hard_rules": {
+    "review_receipt_is_release_form": false,
+    "auto_fill_shadow_entry": false,
+    "write_target_entry": false,
+    "formal_capability_claim": false,
+    "entry_fill_candidate_is_not_write_permission": true,
+    "blocked_can_enter_business_entry": false
+  },
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

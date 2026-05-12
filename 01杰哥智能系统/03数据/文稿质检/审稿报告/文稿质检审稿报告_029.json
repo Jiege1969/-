@@ -1,0 +1,125 @@
+{
+  "id": "029",
+  "created_at": "2026-05-03 23:44:13",
+  "doc_type": "stock_single_report",
+  "draft_source": "命令行文本",
+  "draft_sha256": "1ea71ee300f19392606033cefe783775fd4ee8cf9a09c4b8c36acead667f9ea5",
+  "draft": "股票分析报告\n正丹股份(sz300641)\n【结论】强烈推荐，马上买入。\n说明：研究信息参考，不构成自动交易指令。",
+  "rule_review": {
+    "pass": false,
+    "score": 0.0,
+    "char_count": 54,
+    "word_budget": {
+      "min": 300,
+      "ideal_min": 500,
+      "ideal_max": 800,
+      "max": 800,
+      "label": "单股深度分析"
+    },
+    "issues": [
+      {
+        "type": "format",
+        "position": "全文",
+        "description": "文稿过短，可能不是完整报告。"
+      },
+      {
+        "type": "format",
+        "position": "标题",
+        "description": "股票报告标题应包含股票名称和代码，建议采用“股票名称(代码)：核心结论/核心逻辑”的结构。",
+        "suggestion": "标题即结论，避免只写“股票分析报告”。"
+      },
+      {
+        "type": "missing_section",
+        "position": "全文",
+        "description": "单股深度分析约54字，低于300字下限，需检查是否缺少必备栏目。",
+        "suggestion": "确认是否包含结论、策略、关键位置、风险提示和免责声明。"
+      },
+      {
+        "type": "risk_warning",
+        "position": "全文",
+        "description": "疑似把研究建议表达成交易指令。"
+      },
+      {
+        "type": "risk_warning",
+        "position": "全文",
+        "description": "存在情绪化或交易指令化措辞：强烈推荐、马上买入。",
+        "suggestion": "改为客观研究口径，例如“提高研究优先级”“进入观察池”“需继续核验”。"
+      },
+      {
+        "type": "logic",
+        "position": "全文",
+        "description": "股票报告未看到明确来源标注，建议区分数据计算、模型推断、人工判断、财报、行情、公告或行业来源。",
+        "suggestion": "关键结论后补充来源标签，帮助用户判断可信程度。"
+      },
+      {
+        "type": "format",
+        "position": "全文",
+        "description": "换行较少，企业微信阅读可能拥挤。"
+      }
+    ],
+    "mobile_layout_advice": []
+  },
+  "model": "",
+  "model_call": {
+    "status": "skipped",
+    "reason": "skip_model=true"
+  },
+  "review": {
+    "pass": false,
+    "total_score": 0.0,
+    "issues": [
+      {
+        "type": "format",
+        "position": "全文",
+        "description": "文稿过短，可能不是完整报告。"
+      },
+      {
+        "type": "format",
+        "position": "标题",
+        "description": "股票报告标题应包含股票名称和代码，建议采用“股票名称(代码)：核心结论/核心逻辑”的结构。",
+        "suggestion": "标题即结论，避免只写“股票分析报告”。"
+      },
+      {
+        "type": "missing_section",
+        "position": "全文",
+        "description": "单股深度分析约54字，低于300字下限，需检查是否缺少必备栏目。",
+        "suggestion": "确认是否包含结论、策略、关键位置、风险提示和免责声明。"
+      },
+      {
+        "type": "risk_warning",
+        "position": "全文",
+        "description": "疑似把研究建议表达成交易指令。"
+      },
+      {
+        "type": "risk_warning",
+        "position": "全文",
+        "description": "存在情绪化或交易指令化措辞：强烈推荐、马上买入。",
+        "suggestion": "改为客观研究口径，例如“提高研究优先级”“进入观察池”“需继续核验”。"
+      },
+      {
+        "type": "logic",
+        "position": "全文",
+        "description": "股票报告未看到明确来源标注，建议区分数据计算、模型推断、人工判断、财报、行情、公告或行业来源。",
+        "suggestion": "关键结论后补充来源标签，帮助用户判断可信程度。"
+      },
+      {
+        "type": "format",
+        "position": "全文",
+        "description": "换行较少，企业微信阅读可能拥挤。"
+      }
+    ],
+    "suggested_revision": "股票分析报告\n正丹股份(sz300641)\n【结论】强烈推荐，马上买入。\n说明：研究信息参考，不构成自动交易指令。",
+    "review_summary": "仅完成规则质检，未调用本地模型。"
+  },
+  "forbidden_modified": [],
+  "status": "reviewed",
+  "adopted_revision_path": "",
+  "safety_boundary": {
+    "是否替换原文": false,
+    "是否发送企业微信": false,
+    "是否触发n8n": false,
+    "是否写正式模板": false,
+    "是否调用券商接口": false,
+    "是否自动交易": false
+  }
+}

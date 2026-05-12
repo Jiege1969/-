@@ -1,0 +1,33 @@
+{
+  "id": "P2-S5-REAL-MATERIAL-INTAKE-GATE-SCENARIO-DRYRUN-20260509",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S5",
+  "status": "executed_pass",
+  "purpose": "用内置脱敏虚拟样例验证 P2-S4 分流门的典型路由和暂停路径",
+  "script": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S5真实材料接入分流门场景干跑.py",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\54P2S5真实材料接入分流门场景干跑\\P2S5真实材料接入分流门场景干跑_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\54P2S5真实材料接入分流门场景干跑\\P2S5真实材料接入分流门场景干跑_最新.json"
+  ],
+  "latest_receipt": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\稳定版正式收口_20260509\\P2_S5_真实材料接入分流门场景干跑回执_20260509.json",
+  "scenario_coverage": [
+    "脱敏涉税问题 -> tax",
+    "制度流程资料 -> office_work",
+    "视频脚本分镜素材 -> video_production",
+    "公开政策来源 -> shared_policy_evidence",
+    "未脱敏财务资料 -> pause",
+    "真实执行请求 -> pause",
+    "来源不清材料 -> pause"
+  ],
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

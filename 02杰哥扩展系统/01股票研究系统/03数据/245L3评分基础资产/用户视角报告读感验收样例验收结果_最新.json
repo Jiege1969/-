@@ -1,0 +1,10 @@
+{
+  "name": "用户视角报告读感验收样例验收结果",
+  "generated_at": "2026-05-08 12:40:26",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "check_count": 5,
+    "sample_count": 5
+  }
+}

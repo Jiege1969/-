@@ -1,0 +1,110 @@
+{
+  "package_name": "内容与视频可交付前联合只读验收包",
+  "batch": "第七批并行小任务AF",
+  "generated_date": "2026-05-05",
+  "scope": {
+    "content_system": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统",
+    "video_system": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统",
+    "nature": "只读验收字段包；不代表真实输出、真实渲染或发布放行"
+  },
+  "readonly_boundaries": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_output_file_generation": false,
+    "allow_transcode": false,
+    "allow_editing": false,
+    "allow_render": false,
+    "allow_subtitle_generation": false,
+    "allow_cover_generation": false,
+    "allow_publish": false,
+    "allow_delete_move_overwrite": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_wecom_real_message": false,
+    "allow_formal_library_write": false,
+    "allow_broker_api": false,
+    "allow_auto_trade": false,
+    "allow_touch_primary_work_system": false
+  },
+  "confirmation_package": {
+    "confirm_required": true,
+    "confirm_status": "pending_manual_confirmation",
+    "confirmer": null,
+    "confirm_time": null,
+    "confirm_scope": [
+      "内容影子输出包清单字段",
+      "内容真实输出前最终确认包字段",
+      "视频影子成片清单字段",
+      "视频真实渲染前最终确认包字段",
+      "禁出与禁渲染条件",
+      "回滚字段",
+      "人工确认字段"
+    ],
+    "confirm_result": "not_released",
+    "signature_required": true,
+    "manual_release_allowed_in_this_batch": false
+  },
+  "shadow_manifest": {
+    "content_shadow_manifest": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\07输出包影子清单\\内容处理单样本输出包影子清单_20260505_小任务R.json",
+    "content_final_confirmation": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\08真实输出前最终确认包\\内容处理单样本真实输出前最终确认包_20260505_小任务Y.json",
+    "video_shadow_manifest": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\11影子成片清单",
+    "video_final_confirmation": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\12渲染前最终确认包",
+    "manifest_read_mode": "path_reference_only",
+    "real_source_read_performed": false,
+    "real_media_read_performed": false
+  },
+  "block_conditions": {
+    "content_block_if_input_missing": true,
+    "content_block_if_no_manual_confirmation": true,
+    "content_block_if_risk_not_cleared": true,
+    "content_block_if_real_output_requested": true,
+    "content_block_if_batch_or_external_action": true,
+    "video_block_if_material_missing": true,
+    "video_block_if_script_not_matched": true,
+    "video_block_if_license_unconfirmed": true,
+    "video_block_if_no_manual_confirmation": true,
+    "video_block_if_real_render_requested": true,
+    "video_block_if_transcode_edit_subtitle_cover_publish_requested": true,
+    "joint_block_if_any_external_or_formal_write_requested": true,
+    "block_action": "hold_and_require_manual_review"
+  },
+  "rollback_fields": {
+    "rollback_required": true,
+    "rollback_scope": "仅限本AF联合只读验收包、影子清单引用字段和报告字段",
+    "rollback_mode": "mark_invalid_or_replace_shadow_fields_after_manual_review",
+    "rollback_action": "不得覆盖、删除、移动、还原或改写用户真实文档、真实素材、真实媒体、正式库记录",
+    "rollback_trigger_conditions": [
+      "字段缺失",
+      "引用路径越界",
+      "任一真实转换或真实渲染开关被置为true",
+      "人工确认字段被误当作真实输出或真实渲染放行",
+      "出现n8n、企业微信、正式库、券商接口、自动交易或本职工作系统触发意图"
+    ],
+    "rollback_confirm_required": true,
+    "rollback_owner": null
+  },
+  "human_confirmation_fields": {
+    "content_reviewer": null,
+    "video_reviewer": null,
+    "joint_reviewer": null,
+    "review_time": null,
+    "content_shadow_manifest_confirmed": false,
+    "video_shadow_manifest_confirmed": false,
+    "content_output_release_confirmed": false,
+    "video_render_release_confirmed": false,
+    "risk_clearance_confirmed": false,
+    "final_decision": "blocked_until_manual_confirmation"
+  },
+  "acceptance_result": {
+    "field_package_created": true,
+    "shadow_manifest_referenced": true,
+    "block_conditions_created": true,
+    "rollback_fields_created": true,
+    "human_confirmation_fields_created": true,
+    "real_conversion_performed": false,
+    "real_render_performed": false,
+    "external_action_performed": false,
+    "result": "pass_as_readonly_acceptance_package"
+  }
+}

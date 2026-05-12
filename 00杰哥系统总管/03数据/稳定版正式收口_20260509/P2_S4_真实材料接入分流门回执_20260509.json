@@ -1,0 +1,37 @@
+{
+  "id": "P2-S4-REAL-MATERIAL-INTAKE-ROUTING-GATE-RECEIPT-20260509",
+  "executed_at": "2026-05-09 09:36:01 +08:00",
+  "execution_type": "readonly_check",
+  "status": "pass",
+  "command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S4真实材料接入分流门只读检查.py'",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\53P2S4真实材料接入分流门只读检查\\P2S4真实材料接入分流门只读检查_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\53P2S4真实材料接入分流门只读检查\\P2S4真实材料接入分流门只读检查_最新.json"
+  ],
+  "summary": {
+    "errors": 0,
+    "warnings": 0,
+    "route_count": 5,
+    "redline_false_check_count": 12,
+    "missing_field_count": 0,
+    "missing_route_count": 0,
+    "missing_pause_term_count": 0
+  },
+  "routes": [
+    "tax -> TAX_DAILY_INTAKE_002",
+    "office_work -> OFFICE_SHADOW_002",
+    "video_production -> VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+    "shared_policy_evidence -> P2_SHARED_POLICY_READONLY_NEXT_001",
+    "pause -> gap_or_redline_record"
+  ],
+  "conclusion": "真实材料接入分流门完整且红线关闭；真实脱敏材料进入前应先走分流门，再进入对应影子入口。",
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

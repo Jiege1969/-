@@ -1,0 +1,35 @@
+﻿# Full Cycle Guard
+
+Generated at: 2026-04-29 00:18:34
+
+Phase: all
+
+Decision: degraded
+
+## Summary
+
+- Total steps: 10
+- Errors: 0
+- Warnings: 1
+- V3 Ollama models: 14
+- Temp total MB: 5.6
+
+## Steps
+
+- [mount] D drive accessible: True free_gb=177.29
+- [mount] new system root accessible: True D:\杰哥智能化系统
+- [mount] WSL2 observable: True NAME              STATE           VERSION
+* docker-desktop    Running         2
+  Ubuntu-24.04      Running         2
+- [startup] Docker available: True 29.3.1
+- [startup] v3 isolated n8n healthy: True ok
+- [guard] v3 Ollama models visible: True model_count=14; 
+- [guard] v3 Redis responds: True redis=PONG
+- [guard] protected stock Ollama observable: True model_count=11
+- [guard] old base Ollama candidate observable: True model_count=9
+- [close] temp directory scan: True temp_dirs=23; total_mb=5.6; suggestion only
+
+
+## Safety
+
+This controller does not delete, overwrite, disable scheduled tasks, edit WSL2 crontab/systemd, stop protected old jiege services, trigger n8n, send WeWork messages, write formal DB, call broker APIs, or trade.

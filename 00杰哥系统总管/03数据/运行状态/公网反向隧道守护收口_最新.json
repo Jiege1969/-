@@ -1,0 +1,49 @@
+{
+  "report_name": "公网反向隧道守护收口",
+  "record_time": "2026-05-06 05:46:00 +08:00",
+  "target": "second_round_gap_D2-P0-01",
+  "status": "completed",
+  "created_scripts": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\探测股票公网反向隧道.ps1",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\守护股票公网反向隧道.ps1",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\guard_stock_public_tunnel.ps1",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\隐藏启动公网反向隧道守护.vbs",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\注册公网反向隧道守护计划任务.ps1"
+  ],
+  "scheduled_task": {
+    "name": "杰哥智能化系统_公网反向隧道守护",
+    "state": "Ready",
+    "last_task_result": 0,
+    "interval_minutes": 3,
+    "action": "wscript.exe hidden launcher",
+    "hidden_window": true,
+    "multiple_instances": "IgnoreNew",
+    "run_only_if_network_available": true
+  },
+  "latest_guard_status": {
+    "status": "ready",
+    "mode": "Repair",
+    "action": "probe_only",
+    "reason": "tunnel_ready",
+    "ssh_process_id": 12332,
+    "ssh_process_count": 1,
+    "tcp_to_cloud_22_ok": true,
+    "pid_record_matches_process": true
+  },
+  "validation": {
+    "ps1_parse_errors": 0,
+    "business_post_pattern_hit": false,
+    "wecom_message_sent": false,
+    "n8n_triggered": false,
+    "business_services_restarted": false,
+    "broker_api_called": false,
+    "auto_trade": false
+  },
+  "next_queue": [
+    "D盘资源增长监控日报",
+    "全系统版本锁定表",
+    "Docker旧卷旧镜像清理预案",
+    "目录README与角色索引补齐"
+  ]
+}
+

@@ -1,0 +1,38 @@
+{
+  "asset_name": "日常版与稳定版完成口径确认",
+  "generated_at": "2026-05-08",
+  "asset_identity": "总管侧交付进度口径确认",
+  "status": {
+    "daily_delivery": {
+      "state": "completed",
+      "remaining_hours": "0",
+      "completed_at": "2026-05-08"
+    },
+    "stable_candidate_delivery": {
+      "state": "completed",
+      "remaining_hours": "0",
+      "completed_at": "2026-05-08"
+    },
+    "formal_stable_delivery": {
+      "state": "pending_final_confirmation",
+      "remaining_work": "3-5 次真实脱敏/只读试用，红线为 0",
+      "estimated_time_if_inputs_ready": "2-4 小时",
+      "estimated_time_if_observation_needed": "0.5-1 天"
+    }
+  },
+  "evidence": [
+    "受控试用版交付收口记录_20260508.md/json",
+    "SR_03_ALL_001_稳定交付候选确认记录_20260508.md/json",
+    "ABCD并行回传吸收记录_20260508.md/json",
+    "PAR_DELIVERY_20260508_INDEX.json"
+  ],
+  "boundaries": {
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "modify_service_script_or_restart": false,
+    "write_formal_db": false,
+    "formal_tax_action": false,
+    "broker_trade_action": false,
+    "video_render_upload_publish": false
+  }
+}

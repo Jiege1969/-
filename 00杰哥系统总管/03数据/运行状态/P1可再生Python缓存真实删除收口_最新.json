@@ -1,0 +1,24 @@
+﻿{
+    "report":  "P1可再生Python缓存真实删除收口",
+    "generated_at":  "2026-05-06 14:50:27",
+    "source":  "P1可清理候选引用检查与影子删除清单_最新.json",
+    "pre_delete_existing_safe_count":  154,
+    "post_delete_existing_safe_count":  0,
+    "deleted_bytes":  3110638,
+    "current_site_packages_pyc_count":  204,
+    "conclusion":  "P1清单中当前仍存在的无引用、无保护命中、可再生.pyc缓存已删除；剩余.pyc不属于本批安全候选，不混删。",
+    "rule":  "只删除P1已判定可进入影子删除清单且当前存在的.pyc可再生缓存；不删除源码、配置、模型、数据库、n8n、工作流、凭据或业务数据。",
+    "safety":  {
+                   "called_broker_api":  false,
+                   "deleted_config":  false,
+                   "deleted_n8n":  false,
+                   "deleted_model":  false,
+                   "deleted_database":  false,
+                   "triggered_n8n":  false,
+                   "auto_trade":  false,
+                   "deleted_business_data":  false,
+                   "deleted_source":  false,
+                   "sent_wecom":  false,
+                   "stopped_services":  false
+               }
+}

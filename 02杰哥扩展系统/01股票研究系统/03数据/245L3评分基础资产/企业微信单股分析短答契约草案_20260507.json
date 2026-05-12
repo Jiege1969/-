@@ -1,0 +1,129 @@
+{
+  "asset_identity": "wecom_single_stock_short_answer_contract_draft",
+  "version": "2026-05-07",
+  "system": "股票研究系统",
+  "status": "draft",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "purpose": "定义企业微信单股分析短答的用户视角输出结构。该草案不改正式企业微信入口，不触发发送。",
+  "positioning": "前台回答给用户看结论、观察策略、关键条件和风险线；后台保留完整分析过程、评分、证据链和复盘字段。",
+  "shadow_data_dependencies": {
+    "l3_score_report": "03数据/245L3评分基础资产/单股L3评分/",
+    "fundamental_evidence_card_schema": "03数据/245L3评分基础资产/财报基本面证据卡_schema_v1.0.json",
+    "fundamental_evidence_card_example": "03数据/245L3评分基础资产/云南锗业_财报基本面证据卡_20260507.json",
+    "rule": "基本面/资金不得默认写财报未接入。若存在财报基本面证据卡，前台必须压缩为一句结论；若证据卡不存在，再显式列为关键缺口并降低置信度。"
+  },
+  "front_output_rules": [
+    "第一行必须是分析对象：股票名称（代码）。",
+    "先给结论，不先讲指标。",
+    "不堆技术分析过程，只保留一句技术理由。",
+    "政策、市场风格、财报只作为结论依据，不展开长篇分析。",
+    "证据不足时直接写缺口，并降低结论等级和置信度。",
+    "不得输出买入、卖出、下单、仓位、目标收益。",
+    "不得把政策利好单独作为强结论依据。",
+    "不得使用空值、横杠或缺失价格生成观察条件。",
+    "如果已有财报基本面证据卡，基本面/资金一句话必须使用证据卡的front_output_compression字段。"
+  ],
+  "required_sections": [
+    {
+      "name": "analysis_object",
+      "display_name": "分析对象",
+      "required": true,
+      "format": "分析对象：股票名称（代码）"
+    },
+    {
+      "name": "conclusion",
+      "display_name": "结论",
+      "required": true,
+      "allowed_values": [
+        "重点关注",
+        "可纳入观察",
+        "暂不建议关注",
+        "风险复核"
+      ],
+      "rule": "必须来自L3总分、置信度和关键缺口综合判断，不能只由单项指标决定。"
+    },
+    {
+      "name": "one_sentence_reason",
+      "display_name": "一句话原因",
+      "required": true,
+      "max_sentences": 1,
+      "rule": "用用户能理解的话解释为什么是这个结论。"
+    },
+    {
+      "name": "action_view",
+      "display_name": "现在怎么处理",
+      "required": true,
+      "allowed_tone": "观察策略，不是交易指令",
+      "forbidden_words": [
+        "买入",
+        "卖出",
+        "下单",
+        "加仓",
+        "减仓",
+        "满仓",
+        "止盈",
+        "目标价"
+      ]
+    },
+    {
+      "name": "watch_conditions",
+      "display_name": "观察条件",
+      "required": true,
+      "rule": "必须包含明确价格条件、成交条件和时间条件；数据缺失时写无法给出，不得用横杠占位。"
+    },
+    {
+      "name": "risk_line",
+      "display_name": "风险线",
+      "required": true,
+      "rule": "必须给出明确降级条件；缺风险线时不得输出强结论。"
+    },
+    {
+      "name": "why",
+      "display_name": "为什么这样判断",
+      "required": true,
+      "sub_items": [
+        "技术一句话",
+        "基本面/资金一句话",
+        "政策/行业一句话",
+        "市场环境一句话"
+      ],
+      "rule": "每项最多一句话，不展开后台计算过程。"
+    },
+    {
+      "name": "key_missing",
+      "display_name": "证据缺口",
+      "required": true,
+      "max_items": 3,
+      "rule": "只列影响结论等级的关键缺口。"
+    },
+    {
+      "name": "safety_note",
+      "display_name": "说明",
+      "required": true,
+      "text": "仅供研究参考，不构成投资建议，不作为买卖指令。"
+    }
+  ],
+  "compression_rules": {
+    "technical_detail": "后台保留完整技术指标，前台只说是否站上转强线、是否守住风险线、成交是否达标。",
+    "policy_detail": "后台保留政策事件、强度、暴露度、时效，前台只说政策是否支撑以及是否足以形成强结论。",
+    "market_style_detail": "后台保留风险偏好、板块、大小盘、流动性，前台只说市场环境是否配合。",
+    "fundamental_detail": "后台保留财报字段，前台只说财报是否支撑、是否缺关键指标。"
+  },
+  "example": {
+    "stock": "云南锗业",
+    "code": "sz002428",
+    "short_answer": [
+      "分析对象：云南锗业（sz002428）",
+      "结论：暂不建议关注。",
+      "一句话：政策主题有支撑，但价格和成交还没确认转强，财报和行业价格证据也没补齐。",
+      "现在怎么处理：当前不追，先放观察池；只看能否守住78.79-79.58元、能否站上86.83元、成交能否明显活跃。",
+      "观察条件：价格回到78.79-79.58元附近后不跌破75.58元；若要转强，需站上86.83元，更稳妥看连续2个交易日收在86.83元上方；成交活跃度至少达到近5日平时水平的1.10倍。",
+      "风险线：跌破75.58元，或跌回78.79元下方且成交仍不活跃，本轮观察降级。",
+      "为什么这样判断：技术上仍是观察等待；基本面上财报关键指标未完整接入；政策上锗出口管制有支撑但不能单独形成强结论；市场环境仍是低置信参考。",
+      "证据缺口：财报关键指标未完整接入；锗价格、公告、解禁减持待核验；全市场风格数据未达到confirmed。",
+      "说明：仅供研究参考，不构成投资建议，不作为买卖指令。"
+    ]
+  }
+}

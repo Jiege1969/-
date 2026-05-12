@@ -1,0 +1,45 @@
+{
+  "asset_id": "VIDEO_AGENT_FINAL_CONFIRMATION_MISSING_MATERIAL_CHECKLIST_001",
+  "version": "v1.0",
+  "asset_type": "missing_material_checklist_template",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "before_final_human_confirmation_material_gap_check",
+  "status": "draft_template",
+  "purpose": "List missing materials, review queues, owner roles, and close conditions when final human confirmation quality check fails.",
+  "fields": [
+    "gap_id",
+    "task_id",
+    "missing_material",
+    "related_gate",
+    "review_queue",
+    "owner_role",
+    "required_output",
+    "close_condition",
+    "blocker_level",
+    "real_system_triggered"
+  ],
+  "blank_row": {
+    "gap_id": "to_be_filled",
+    "task_id": "to_be_filled",
+    "missing_material": "to_be_filled",
+    "related_gate": "to_be_filled",
+    "review_queue": "to_be_filled",
+    "owner_role": "to_be_filled",
+    "required_output": "to_be_filled",
+    "close_condition": "to_be_filled",
+    "blocker_level": "normal_gap",
+    "real_system_triggered": false
+  },
+  "fixed_rules": [
+    "Each gap must trace to a gate.",
+    "Each gap must have a review queue and required output.",
+    "Redline gaps cannot be closed by the video line itself.",
+    "Completing the gap list does not equal real publishing."
+  ],
+  "boundaries": {
+    "create_real_ticket": false,
+    "assign_real_people": false,
+    "wecom_real_send": false,
+    "trigger_publish_tool": false
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "trial_id": "TAX_ADVISOR_TRIAL_004",
+  "name": "软件产品即征即退资料清单影子试运行",
+  "asset_identity": "tax_policy_advisor_shadow_trial_run_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "run_script": false,
+    "download_attachment": false,
+    "write_formal_tax_database": false,
+    "formal_tax_opinion": false,
+    "tax_filing": false,
+    "tax_refund_execution": false,
+    "invoice_execution": false,
+    "external_send": false,
+    "trigger_n8n": false
+  },
+  "trial_input": {
+    "business_question": "如果企业想判断软件产品增值税即征即退，需要先准备哪些资料？",
+    "requested_output": ["待收集资料清单", "地方口径缺口", "人工复核问题"],
+    "tax_type": "增值税",
+    "business_scenario": "软件产品增值税即征即退资料准备",
+    "entity_profile": "软件企业或销售软件产品的一般纳税人，具体身份待补",
+    "region": "待补",
+    "period": "待补",
+    "provided_materials": [
+      "税收政策元数据卡_财税2011_100_v1.0",
+      "税收政策指引卡_软件产品即征即退_20241025_v1.0",
+      "税收适用条件字段化样例_软件产品即征即退_v1.0"
+    ],
+    "known_policy": ["财税〔2011〕100号", "国家税务总局2024-10-25公开指引"]
+  },
+  "analysis_object": {
+    "tax_type": "增值税",
+    "policy_topic": "软件产品增值税即征即退",
+    "output_type": "资料清单待复核草案",
+    "status": "draft"
+  },
+  "evidence_sources": [
+    {
+      "name": "财税〔2011〕100号元数据卡",
+      "level": "国家级主管机关政策文件候选",
+      "current_use": "政策依据线索，仍需以官方原文和有效状态复核为准"
+    },
+    {
+      "name": "国家税务总局2024-10-25软件产品即征即退指引卡",
+      "level": "国家级官方公开指引",
+      "current_use": "解释政策事项和常见口径，不单独支撑最终判断"
+    },
+    {
+      "name": "税收适用条件字段化样例_软件产品即征即退_v1.0",
+      "level": "影子字段化样例",
+      "current_use": "拆解主体、产品、销售、税负、材料、期间、地区条件"
+    }
+  ],
+  "material_checklist": [
+    {"group": "主体资料", "item": "增值税一般纳税人身份资料或可核验证明", "purpose": "判断主体条件", "status": "missing"},
+    {"group": "主体资料", "item": "企业基本信息、纳税人识别号、主管税务机关", "purpose": "确定地区和主管口径", "status": "missing"},
+    {"group": "软件产品资料", "item": "软件著作权、软件产品登记、检测证明或当地替代材料", "purpose": "判断软件产品条件和资料完整性", "status": "missing"},
+    {"group": "软件产品资料", "item": "软件产品名称、版本、销售对象、交付方式", "purpose": "判断是否属于软件产品销售", "status": "missing"},
+    {"group": "研发生产资料", "item": "自行开发生产说明、研发流程、源代码或研发资料目录", "purpose": "判断自研或本地化改造属性", "status": "missing"},
+    {"group": "销售收入资料", "item": "合同、发票、收入明细、会计科目归集", "purpose": "判断软件产品销售收入", "status": "missing"},
+    {"group": "收入拆分资料", "item": "软件、硬件、服务、维护、培训、第三方软件收入拆分表", "purpose": "防止混同收入导致误判", "status": "missing"},
+    {"group": "税额资料", "item": "销项税额、可抵扣进项税额、应纳税额", "purpose": "仅用于后续测算前置，不在本样例中计算", "status": "missing"},
+    {"group": "期间资料", "item": "所属期、申报期、收入确认期间、政策适用期间", "purpose": "判断期间匹配", "status": "missing"},
+    {"group": "地方口径资料", "item": "当地备案、资料清单、办理程序或主管机关要求", "purpose": "判断地方执行差异", "status": "missing"},
+    {"group": "复核资料", "item": "人工复核回执、专业人员意见、主管机关沟通记录", "purpose": "承接后续修正和复盘", "status": "missing"}
+  ],
+  "local_practice_gaps": [
+    "主管税务机关资料要求不明",
+    "软件产品材料是否仍需登记或可用替代材料不明",
+    "办理程序、备案节点、留存备查要求不明",
+    "企业所属期和业务发生地不明"
+  ],
+  "can_output": ["待用户补充的资料清单", "资料对应的判断字段", "地方口径和主管机关待补项", "人工复核问题"],
+  "cannot_output": ["确定适用结论", "退税金额", "申报金额", "办理建议", "主管税务机关最终资料口径", "正式税务意见", "可外发文本"],
+  "review_questions": [
+    "企业是否已经确认为增值税一般纳税人？",
+    "软件产品收入是否能与硬件、服务、维护、培训收入分开核算？",
+    "软件著作权、检测证明、登记材料或当地替代材料是否齐备？",
+    "当前所属期、申报期和政策有效期间是否一致？",
+    "主管税务机关是否有额外资料、备案或留存备查要求？",
+    "是否涉及嵌入式软件、受托开发、代理销售或进口软件本地化改造？"
+  ],
+  "trial_record": {
+    "topic": "软件产品即征即退资料清单",
+    "status": "draft",
+    "main_gaps": ["企业资料", "软件材料", "收入拆分", "期间地区", "地方口径"],
+    "boundary_violation": false,
+    "next_step": "由用户补资料或人工填写地方口径资料登记卡"
+  },
+  "standard_disclaimer": "本输出为影子版待复核分析草案，不是正式税务意见。涉及申报、退税、开票、外发或正式采用前，必须由人工和专业人员复核。"
+}

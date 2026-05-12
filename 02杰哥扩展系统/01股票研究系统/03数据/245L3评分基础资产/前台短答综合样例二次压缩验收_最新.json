@@ -1,0 +1,71 @@
+{
+  "name": "前台短答综合样例二次压缩验收",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 12:20:14",
+  "asset_identity": "W1前台短答综合样例二次压缩验收",
+  "status": "shadow_front_answer_acceptance",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "records": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "002428"
+      },
+      "compressed_answer": "云南锗业（002428）\n结论：可纳入观察。\n主因：锗主题和资源属性有催化，但财报、锗价连续观测和资金证据还没补齐。\n缺口/置信度：关键缺口未清，置信度medium；下一步看锗价、政策暴露度和资金承接。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "002466"
+      },
+      "compressed_answer": "天齐锂业（002466）\n结论：可纳入观察。\n主因：锂资源弹性明确，但行业价格企稳、盈利修复和资金趋势仍需确认。\n缺口/置信度：锂价和财报证据待补，置信度medium；下一步看锂价、库存和板块热度。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "688347"
+      },
+      "compressed_answer": "华虹公司（688347）\n结论：可纳入观察。\n主因：半导体国产化方向有研究价值，但景气、毛利率和机构资金证据还不足。\n缺口/置信度：市场风格和财报质量待补，置信度medium；下一步看产能利用率和半导体板块热度。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "000906"
+      },
+      "compressed_answer": "浙商中拓（000906）\n结论：暂不建议强结论。\n主因：供应链周期属性强，经营现金流、商品周期和资金承接证据不足。\n缺口/置信度：关键证据缺口较多，置信度low；下一步看现金流、负债结构和商品价格。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "300641"
+      },
+      "compressed_answer": "正丹股份（300641）\n结论：可纳入观察。\n主因：化工品价格弹性是核心变量，但产品价格、利润弹性和资金承接仍需连续确认。\n缺口/置信度：价格序列和财报弹性待补，置信度medium；下一步看核心产品价格和价差。"
+    }
+  ],
+  "format_contract": {
+    "max_lines": 4,
+    "line_1": "股票名称和代码",
+    "line_2": "结论",
+    "line_3": "主因",
+    "line_4": "缺口/置信度/下一步复核"
+  },
+  "summary": {
+    "sample_count": 5,
+    "front_answer_lines_max": 4,
+    "real_wecom_send_allowed": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

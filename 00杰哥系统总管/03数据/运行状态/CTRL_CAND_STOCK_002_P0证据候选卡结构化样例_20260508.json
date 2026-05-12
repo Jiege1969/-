@@ -1,0 +1,140 @@
+{
+  "task_id": "CTRL-CAND-STOCK-002",
+  "asset_id": "CTRL_CAND_STOCK_002_20260508",
+  "asset_name": "P0证据候选卡结构化样例",
+  "created_at": "2026-05-08 09:33:44 +08:00",
+  "asset_identity": "总管侧W1/R0股票L3 P0证据候选卡结构化样例",
+  "source_candidate_list": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\受控试用第二批候选清单_20260508.md",
+  "source_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\L3五样本证据缺口优先级报告_最新.md",
+  "source_route": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_TRIAL_STOCK_001_L3五样本证据缺口P0补齐路线_20260508.md",
+  "risk_level": "W1/R0",
+  "task_status": "completed",
+  "is_trade_advice": false,
+  "is_formal_frontend_entry": false,
+  "can_update_score": false,
+  "can_generate_trade_action": false,
+  "common_card_fields": [
+    "card_id",
+    "stock_name",
+    "stock_code",
+    "evidence_type",
+    "priority",
+    "source_name",
+    "source_url_or_path",
+    "observation_date",
+    "collected_at",
+    "value_fields",
+    "evidence_status",
+    "l3_missing_link",
+    "confidence_effect",
+    "can_update_score",
+    "can_generate_trade_action",
+    "review_questions",
+    "boundary_note"
+  ],
+  "sample_cards": [
+    {
+      "card_id": "STOCK_P0_YNGY_INDUSTRY_PRICE_001",
+      "stock_name": "云南锗业",
+      "stock_code": "sz002428",
+      "evidence_type": "industry_price",
+      "priority": "P0",
+      "evidence_status": "source_registered_to_needs_more_observations",
+      "l3_missing_link": "行业价格尚未形成可用观测",
+      "can_update_score": false,
+      "can_generate_trade_action": false
+    },
+    {
+      "card_id": "STOCK_P0_TQLY_INDUSTRY_PRICE_001",
+      "stock_name": "天齐锂业",
+      "stock_code": "sz002466",
+      "evidence_type": "industry_price",
+      "priority": "P0",
+      "evidence_status": "single_observation_to_needs_more_observations",
+      "l3_missing_link": "行业价格不足5个连续观测点",
+      "can_update_score": false,
+      "can_generate_trade_action": false
+    },
+    {
+      "card_id": "STOCK_P0_HHGS_INDUSTRY_PRICE_001",
+      "stock_name": "华虹公司",
+      "stock_code": "sh688347",
+      "evidence_type": "industry_price",
+      "priority": "P0",
+      "evidence_status": "missing",
+      "l3_missing_link": "行业价格或景气观测缺失",
+      "can_update_score": false,
+      "can_generate_trade_action": false
+    },
+    {
+      "card_id": "STOCK_P0_ZSZT_INDUSTRY_PRICE_001",
+      "stock_name": "浙商中拓",
+      "stock_code": "sz000906",
+      "evidence_type": "industry_price",
+      "priority": "P0",
+      "evidence_status": "missing",
+      "l3_missing_link": "行业价格或业务景气观测缺失",
+      "can_update_score": false,
+      "can_generate_trade_action": false
+    },
+    {
+      "card_id": "STOCK_P0_ZDGF_INDUSTRY_PRICE_001",
+      "stock_name": "正丹股份",
+      "stock_code": "sz300641",
+      "evidence_type": "industry_price",
+      "priority": "P0",
+      "evidence_status": "source_registered_to_needs_more_observations",
+      "l3_missing_link": "行业价格尚未形成可用观测",
+      "can_update_score": false,
+      "can_generate_trade_action": false
+    }
+  ],
+  "generic_evidence_types": [
+    {
+      "evidence_type": "fund_flow",
+      "value_fields": ["net_inflow", "period", "rank", "source_label"],
+      "can_update_score": false,
+      "can_generate_trade_action": false
+    },
+    {
+      "evidence_type": "institution_holding",
+      "value_fields": ["holder_name", "holding_ratio", "change", "period"],
+      "can_update_score": false,
+      "can_generate_trade_action": false
+    },
+    {
+      "evidence_type": "reduction_unlock",
+      "value_fields": ["share_count", "ratio", "date", "holder", "plan_status"],
+      "can_update_score": false,
+      "can_generate_trade_action": false
+    }
+  ],
+  "stock_line_return_requirements": [
+    "新增候选卡文件路径",
+    "每张卡的card_id、stock_code、evidence_type、evidence_status",
+    "仍然missing的字段",
+    "是否达到人工复核条件",
+    "边界确认：不交易、不接券商、不改正式入口、不生成买卖/仓位动作"
+  ],
+  "boundary_flags": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_db": false,
+    "modify_service_script": false,
+    "restart_19310_or_19302": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "trade_advice": false,
+    "modify_stock_formal_config": false,
+    "modify_stock_formal_script": false,
+    "modify_stock_frontend_entry": false,
+    "fetch_new_market_data": false
+  },
+  "self_check": {
+    "risk_level": "W1/R0",
+    "json_parse_required": true,
+    "candidate_list_update_required": true,
+    "panel_package_update_required": true,
+    "boundary_kept": true
+  }
+}

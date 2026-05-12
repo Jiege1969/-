@@ -1,0 +1,104 @@
+{
+  "名称": "天齐锂业行业价格证据卡",
+  "版本": "2026-05-07-shadow-price-observation-v1",
+  "生成日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子证据卡",
+  "状态": "evidence_ready",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "stock": {
+    "name": "天齐锂业",
+    "code": "002466",
+    "display_code": "sz002466",
+    "industry": "锂资源/锂化工",
+    "stock_type": "锂资源/锂化工"
+  },
+  "tracked_products": [
+    {
+      "product_name": "电池级碳酸锂",
+      "product_code": "battery_grade_lithium_carbonate",
+      "relevance_to_stock": "天齐锂业利润和估值预期与锂盐价格周期高度相关，碳酸锂价格趋势会影响财报修复是否可持续。",
+      "exposure_weight": 0.9,
+      "direction_rule": "碳酸锂价格企稳或上行通常增强利润修复预期；价格持续下行会削弱财报修复持续性。"
+    }
+  ],
+  "source_status": {
+    "source_registered": true,
+    "price_value_available": true,
+    "trend_available": false,
+    "spread_available": false,
+    "formal_chain_status": "shadow_integrated"
+  },
+  "sources": [
+    {
+      "source_name": "上海有色网SMM-新能源材料价格页",
+      "source_url": "https://newenergy.smm.cn/",
+      "source_type": "公开价格页",
+      "coverage": "电池级碳酸锂、工业级碳酸锂等新能源材料价格展示",
+      "source_role": "行情线索",
+      "checked_at": "2026-05-07"
+    },
+    {
+      "source_name": "SMM Battery-Grade Lithium Carbonate Spot Price Standard",
+      "source_url": "https://static.smm.cn/comp.smm.cn/2.0.12/static/comp.smm.cn/pdf/v3/en/SMM%20Battery-grade%20Lithium%20Carbonate%20Price.pdf",
+      "source_type": "价格方法论",
+      "coverage": "电池级碳酸锂现货价格评估口径和历史价格说明",
+      "source_role": "方法论核验",
+      "checked_at": "2026-05-07"
+    }
+  ],
+  "price_observations": [
+    {
+      "product_name": "电池级碳酸锂",
+      "price_date": "2026-05-07",
+      "price_low": null,
+      "price_high": null,
+      "price_mid": 187500,
+      "unit": "元/吨",
+      "currency": "CNY",
+      "change_abs": 10500,
+      "change_pct": 0.0593,
+      "trend_5d": "unknown",
+      "trend_20d": "unknown",
+      "source_name": "上海有色网SMM-新能源材料价格页"
+    }
+  ],
+  "industry_price_shadow_score": {
+    "score": 4,
+    "max_score": 10,
+    "score_reason": "已获得公开页面展示的单点价格和当日涨跌，但尚未形成5日/20日连续趋势，也未拆分锂价对公司利润和现金流的弹性，因此最高按单点价格样例给4分。",
+    "positive_evidence": [
+      "SMM新能源材料页展示电池级碳酸锂价格为187500元/吨，涨跌为10500元/吨，涨跌幅为5.93%。",
+      "SMM方法论说明该价格用于反映电池级碳酸锂现货市场交易价格水平。"
+    ],
+    "negative_evidence": [
+      "目前只有单点价格，尚未形成5日和20日趋势。",
+      "尚未拆分天齐锂业利润修复中锂价、SQM投资收益、现金流和库存重估的贡献。",
+      "该价格仍作为影子证据样例，尚未接入正式链路。"
+    ],
+    "confidence": "medium"
+  },
+  "front_output_compression": {
+    "one_sentence": "碳酸锂价格单点数据偏积极，但还缺连续趋势和利润弹性拆分，只能弱支撑天齐锂业的观察结论。",
+    "user_facing_reason": "锂价有当日上涨线索，但还不能证明周期已经持续反转。",
+    "do_not_say": [
+      "锂价已经确认反转",
+      "锂价足以单独提高关注等级",
+      "天齐锂业可以因为锂价直接转强"
+    ]
+  },
+  "missing": [
+    "电池级碳酸锂5日和20日连续历史趋势未入账。",
+    "锂价与天齐锂业毛利、现金流、SQM投资收益的弹性拆分未完成。",
+    "工业级碳酸锂、氢氧化锂、锂矿价格尚未作为交叉验证纳入。"
+  ],
+  "safety_boundary": {
+    "only_for_research": true,
+    "not_investment_advice": true,
+    "not_buy_sell_signal": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

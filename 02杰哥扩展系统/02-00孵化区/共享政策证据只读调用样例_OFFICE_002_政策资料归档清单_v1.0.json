@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "sample_id": "SHARED_POLICY_READONLY_OFFICE_002",
+  "name": "政策资料归档清单只读调用样例",
+  "asset_identity": "office_work_system_readonly_policy_archive_list_shadow_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "replace_approval": false,
+    "formal_policy_interpretation": false,
+    "formal_tax_conclusion": false,
+    "write_formal_database": false,
+    "external_send": false,
+    "trigger_n8n": false,
+    "connect_oa_or_erp": false
+  },
+  "call_input": {
+    "requesting_system": "office_work_system",
+    "query_intent": "policy_document_archive_list_and_evidence_trace",
+    "topic_keywords": ["软件产品", "增值税", "即征即退", "政策归档", "资料留痕"],
+    "expected_evidence_level": "national_policy_or_official_guide_with_local_items_pending",
+    "source": "SHARED-POLICY-EVIDENCE-001",
+    "business_context": "pending_user_internal_archive_process"
+  },
+  "readonly_evidence": {
+    "evidence_id": "TAX-DOC-2011-100",
+    "title": "财政部 国家税务总局关于软件产品增值税政策的通知",
+    "document_number": "财税〔2011〕100号",
+    "issuing_authority": "财政部、国家税务总局",
+    "evidence_level": "国家级主管机关规范性文件",
+    "validity_status": "现行有效状态需以官方政策法规库展示为准",
+    "source_url": "https://fgk.chinatax.gov.cn/zcfgk/c102416/c5204304/content.html",
+    "source_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收政策元数据卡_财税2011_100_v1.0.md",
+    "extracted_conditions": ["软件产品", "自行开发生产", "增值税一般纳税人", "即征即退", "具体材料要求待复核"],
+    "topic_tags": ["软件产品", "增值税", "即征即退", "政策归档"],
+    "risk_flags": ["有效状态待人工复核", "地方口径待补", "资料材料待补", "收入拆分待核验", "内部归档流程待用户提供"]
+  },
+  "archive_draft_items": [
+    {
+      "item": "政策原文留痕",
+      "draft_content": "记录标题、文号、发文机关、官方链接、本地元数据卡路径",
+      "status": "draft"
+    },
+    {
+      "item": "依据层级记录",
+      "draft_content": "标注国家级主管机关规范性文件，不提升为法律或行政法规",
+      "status": "draft"
+    },
+    {
+      "item": "有效状态记录",
+      "draft_content": "写以官方政策法规库展示为准，不写confirmed",
+      "status": "pending_review"
+    },
+    {
+      "item": "适用条件摘录",
+      "draft_content": "摘录软件产品、一般纳税人、自行开发生产等关键词",
+      "status": "pending_review"
+    },
+    {
+      "item": "材料缺口",
+      "draft_content": "地方资料要求、检测证明、软件著作权或登记材料、收入拆分资料",
+      "status": "pending_review"
+    },
+    {
+      "item": "内部归档位置",
+      "draft_content": "待用户提供内部目录、编号规则和审批流",
+      "status": "missing"
+    }
+  ],
+  "allowed_use": ["归档草案", "资料留痕提示", "待复核清单"],
+  "forbidden_use": [
+    "正式归档完成声明",
+    "审批通过声明",
+    "税务适用结论",
+    "可外发正式意见",
+    "真实办公流程触发"
+  ],
+  "review_questions": [
+    "本单位内部归档目录和编号规则是什么？",
+    "政策原文、政策解读、地方口径和业务资料是否需要分层归档？",
+    "当前政策在官方政策法规库展示的有效状态是什么？",
+    "是否已有本单位软件产品、收入拆分、著作权或检测证明等资料？",
+    "涉税资料归档是否需要法务、财务、税务或办公室复核？"
+  ],
+  "next_action": "用户提供内部归档流程后补充business_context；真实办公流程接入必须重新确认。"
+}

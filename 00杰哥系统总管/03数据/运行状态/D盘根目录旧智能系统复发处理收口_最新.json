@@ -1,0 +1,39 @@
+{
+  "report_name": "D盘根目录旧智能系统复发处理收口",
+  "record_time": "2026-05-06 06:15:00 +08:00",
+  "status": "completed",
+  "legacy_path": "D:\\01杰哥智能系统",
+  "formal_path": "D:\\杰哥智能化系统\\01杰哥智能系统",
+  "decision": "legacy_path_deleted_as_interference",
+  "deleted": true,
+  "pre_delete_summary": {
+    "size_mb": 0.036,
+    "content": ["03数据\\ollama", "03数据\\qdrant", "03数据\\redis"],
+    "has_wsl2": false,
+    "has_formal_business_data": false
+  },
+  "validation": {
+    "legacy_path_exists_after": false,
+    "formal_path_exists_after": true,
+    "docker_old_mount_hits": 0,
+    "standard_cleanup_status": "通过",
+    "standard_validation_passed": "9/9"
+  },
+  "parallel_verification": {
+    "directory_probe": "completed",
+    "source_trace": "completed",
+    "active_runtime_old_path_source_found": false
+  },
+  "future_work_mode": "本地关键路径核实 + 并行只读核实窗口 + 判断执行 + 收口报告",
+  "safety": {
+    "deleted_formal_system": false,
+    "deleted_docker_volumes": false,
+    "deleted_docker_images": false,
+    "stopped_or_restarted_containers": false,
+    "triggered_n8n": false,
+    "sent_wecom": false,
+    "called_broker_api": false,
+    "auto_trade": false
+  }
+}
+

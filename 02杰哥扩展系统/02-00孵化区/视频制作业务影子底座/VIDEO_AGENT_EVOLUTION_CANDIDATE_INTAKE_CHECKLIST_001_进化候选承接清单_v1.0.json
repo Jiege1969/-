@@ -1,0 +1,30 @@
+{
+  "id": "VIDEO_AGENT_EVOLUTION_CANDIDATE_INTAKE_CHECKLIST_001",
+  "name": "进化候选承接清单",
+  "asset_identity": "video_creation_agent_shadow_evolution_candidate_intake_checklist",
+  "stage": "W1_R0",
+  "status": "candidate_checklist_not_formal_rule_upgrade",
+  "boundary": {
+    "formal_rule_database_write": false,
+    "overwrite_old_experience": false,
+    "cross_business_direct_reuse": false,
+    "automatic_upgrade": false
+  },
+  "fields": {
+    "candidate_id": "VAI-EVO-CAND-0000",
+    "source_type": "to_be_filled",
+    "source_file": "to_be_filled_shadow_file_only",
+    "reusable_experience_summary": "to_be_filled",
+    "applicable_scenarios": [],
+    "non_applicable_scenarios": [],
+    "evidence_count": "to_be_filled",
+    "human_review_status": "pending_review",
+    "multi_case_validation_status": "not_started",
+    "upgrade_recommendation": "keep_as_candidate"
+  },
+  "upgrade_limits": [
+    "single_case_experience_candidate_only",
+    "no_formal_rule_upgrade_without_multi_case_validation",
+    "no_direct_reuse_across_tax_stock_or_other_business_lines"
+  ]
+}

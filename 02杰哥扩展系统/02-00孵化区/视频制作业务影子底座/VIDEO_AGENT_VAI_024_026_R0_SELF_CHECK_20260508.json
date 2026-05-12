@@ -1,0 +1,46 @@
+{
+  "id": "VIDEO_AGENT_VAI_024_026_R0_SELF_CHECK_20260508",
+  "asset_identity": "video_production_shadow_base_self_check",
+  "stage": "W1_R0",
+  "date": "2026-05-08",
+  "result": "passed",
+  "checked_assets": [
+    {
+      "id": "VAI-024",
+      "name": "desensitized_trial_sample_template",
+      "result": "passed",
+      "note": "blank template only, no fabricated real demand"
+    },
+    {
+      "id": "VAI-025",
+      "name": "shadow_asset_gap_list",
+      "result": "passed",
+      "note": "gap list only, no formal system change"
+    },
+    {
+      "id": "VAI-026",
+      "name": "trial_human_review_question_list",
+      "result": "passed",
+      "note": "review questions only, no production approval"
+    }
+  ],
+  "boundary_check": {
+    "invent_real_video_idea": false,
+    "modify_formal_video_scripts": false,
+    "call_real_model_api": false,
+    "read_real_assets": false,
+    "generate_image_audio_subtitle_cover_video": false,
+    "upload_publish_external_send": false,
+    "trigger_n8n": false,
+    "real_wechat_send": false,
+    "read_or_save_wechat_credentials": false,
+    "start_or_restart_service": false,
+    "modify_19310_or_19302": false,
+    "write_formal_rule_database": false
+  },
+  "next_shadow_queue": [
+    "video_agent_shadow_trial_operation_card",
+    "vai_001_026_total_asset_list",
+    "video_line_alignment_return_summary_card"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SAMPLE_001_HUMAN_REVIEW_RECEIPT_TEMPLATE_001",
+  "asset_name": "掩耳盗铃样例人工复核回执模板",
+  "business_line": "视频制作业务影子底座",
+  "created_at": "2026-05-08 12:24:00 +08:00",
+  "risk_level": "W1/R0",
+  "asset_identity": "人工复核承接模板，不是正式脚本、任务单、生成放行、发布放行或外发许可",
+  "bound_sample": "VIDEO_SCRIPT_SAMPLE_001",
+  "source_assets": [
+    "VIDEO_SCRIPT_SAMPLE_001_掩耳盗铃高质量脚本影子样例_v1.0.md/json",
+    "VIDEO_SCRIPT_SAMPLE_001_质量验收记录_20260508.md/json",
+    "VIDEO_SCRIPT_QUALITY_ACCEPTANCE_TABLE_001_成语故事脚本质量验收表_v1.0.md/json",
+    "VIDEO_SCRIPT_DURATION_VARIANT_CHECK_001_成语故事30秒60秒版本差异检查卡_v1.0.md/json"
+  ],
+  "receipt_status": "blank_pending_human_fill",
+  "basic_fields": {
+    "review_target": "掩耳盗铃高质量脚本影子样例",
+    "sample_id": "VIDEO_SCRIPT_SAMPLE_001",
+    "reviewer": "待填写",
+    "review_time": "待填写",
+    "target_audience": "待填写",
+    "target_duration": "待填写",
+    "target_platform": "待填写",
+    "review_result": "待填写"
+  },
+  "human_review_items": [
+    {
+      "id": "HR-001",
+      "item": "成语释义是否准确",
+      "human_judgement": "待填写",
+      "revision_note": "待填写"
+    },
+    {
+      "id": "HR-002",
+      "item": "故事是否具体、不空泛",
+      "human_judgement": "待填写",
+      "revision_note": "待填写"
+    },
+    {
+      "id": "HR-003",
+      "item": "小学生是否能听懂",
+      "human_judgement": "待填写",
+      "revision_note": "待填写"
+    },
+    {
+      "id": "HR-004",
+      "item": "开头钩子是否自然",
+      "human_judgement": "待填写",
+      "revision_note": "待填写"
+    },
+    {
+      "id": "HR-005",
+      "item": "现实启发是否不过度说教",
+      "human_judgement": "待填写",
+      "revision_note": "待填写"
+    },
+    {
+      "id": "HR-006",
+      "item": "30秒/60秒目标版本是否明确",
+      "human_judgement": "待填写",
+      "revision_note": "待填写"
+    },
+    {
+      "id": "HR-007",
+      "item": "画面风格是否明确",
+      "human_judgement": "待填写",
+      "revision_note": "待填写"
+    },
+    {
+      "id": "HR-008",
+      "item": "AI生成标识是否需要保留",
+      "human_judgement": "待填写",
+      "revision_note": "待填写"
+    },
+    {
+      "id": "HR-009",
+      "item": "素材、配乐、字体、音效授权是否待补",
+      "human_judgement": "待填写",
+      "revision_note": "待填写"
+    },
+    {
+      "id": "HR-010",
+      "item": "是否允许进入下一步影子修正",
+      "human_judgement": "待填写",
+      "revision_note": "待填写"
+    }
+  ],
+  "allowed_conclusions": [
+    "继续修改文本",
+    "文本样例可作为参照",
+    "可进入30秒版本影子改写",
+    "可进入60秒版本影子改写",
+    "驳回并记录原因"
+  ],
+  "not_to_be_interpreted_as": [
+    "生成放行",
+    "剪辑放行",
+    "渲染放行",
+    "发布放行",
+    "企业微信外发许可",
+    "正式视频系统配置变更"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "generate_audio_subtitle_cover_video": false,
+    "call_model_renderer_publisher": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "write_formal_database": false,
+    "modify_formal_video_system": false,
+    "release_for_generation_render_publish": false
+  },
+  "self_check": {
+    "risk_level": "W1/R0",
+    "boundary_kept": true
+  }
+}

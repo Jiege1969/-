@@ -1,0 +1,15 @@
+{
+  "name": "五样本财报资金证据补齐路线图验收",
+  "generated_at": "2026-05-08 09:35:05",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本财报资金证据补齐路线图_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "sample_count": 5,
+    "global_group_count": 5,
+    "total_route_items": 25,
+    "warning_count": 0
+  },
+  "next_step": "继续生成财报资金证据采集模板草案；仍不得抓取真实数据或写正式库。"
+}

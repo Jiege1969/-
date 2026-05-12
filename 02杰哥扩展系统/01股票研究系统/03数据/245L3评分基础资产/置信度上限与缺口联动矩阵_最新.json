@@ -1,0 +1,104 @@
+{
+  "name": "置信度上限与缺口联动矩阵",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:17:49",
+  "asset_identity": "W1置信度上限与缺口联动影子规则矩阵",
+  "status": "shadow_gate_matrix",
+  "not_formal_config": true,
+  "not_formal_scoring_rule": true,
+  "not_entrypoint": true,
+  "rules": [
+    {
+      "rule_id": "CONF-MISS-001",
+      "condition": "stock_object_unresolved",
+      "confidence_cap": "low",
+      "conclusion_cap": "不输出单股判断",
+      "front_output_requirement": "先要求用户明确股票名称或代码。",
+      "backend_requirement": "记录object_missing，不进入L3评分。"
+    },
+    {
+      "rule_id": "CONF-MISS-002",
+      "condition": "latest_financial_report_missing",
+      "confidence_cap": "medium",
+      "conclusion_cap": "可纳入观察",
+      "front_output_requirement": "短答必须写明财报证据缺口，不能把技术信号说成全面判断。",
+      "backend_requirement": "missing中登记财报摘要、盈利质量、现金流、负债结构待补。"
+    },
+    {
+      "rule_id": "CONF-MISS-003",
+      "condition": "policy_event_unverified",
+      "confidence_cap": "medium",
+      "conclusion_cap": "可纳入观察",
+      "front_output_requirement": "政策只可表述为待核实线索，不得作为确定性加分依据。",
+      "backend_requirement": "policy_events分项不得凭空补分；保留source_url、impact_strength、exposure待补。"
+    },
+    {
+      "rule_id": "CONF-MISS-004",
+      "condition": "market_style_missing",
+      "confidence_cap": "medium",
+      "conclusion_cap": "可纳入观察",
+      "front_output_requirement": "必须提示市场环境适配度未确认。",
+      "backend_requirement": "market_style_fit分项不得超过中性区间，记录市场宽度、板块热度、流动性待补。"
+    },
+    {
+      "rule_id": "CONF-MISS-005",
+      "condition": "industry_price_series_missing",
+      "confidence_cap": "medium",
+      "conclusion_cap": "可纳入观察",
+      "front_output_requirement": "资源/化工等强价格驱动股票必须提示行业价格连续观测缺口。",
+      "backend_requirement": "登记价格品种、来源、频率、最近观察日待补。"
+    },
+    {
+      "rule_id": "CONF-MISS-006",
+      "condition": "capital_and_institution_missing",
+      "confidence_cap": "medium",
+      "conclusion_cap": "可纳入观察",
+      "front_output_requirement": "资金承接不足时，只能给研究观察结论。",
+      "backend_requirement": "登记资金流、机构持仓、减持解禁、公告变化待补。"
+    },
+    {
+      "rule_id": "CONF-MISS-007",
+      "condition": "two_or_more_critical_missing",
+      "confidence_cap": "low",
+      "conclusion_cap": "暂不建议强结论",
+      "front_output_requirement": "前台以缺口和复核重点为主，弱化结论强度。",
+      "backend_requirement": "missing_summary必须解释为什么不能给更高分。"
+    },
+    {
+      "rule_id": "CONF-MISS-008",
+      "condition": "all_core_evidence_ready",
+      "confidence_cap": "high",
+      "conclusion_cap": "按L3总分阈值输出",
+      "front_output_requirement": "可以输出结论型短答，但仍需保留关键依据和复核日期。",
+      "backend_requirement": "必须保留evidence、missing、confidence_reason和next_review_date。"
+    }
+  ],
+  "global_constraints": {
+    "missing_must_be_explicit": true,
+    "critical_missing_blocks_high_confidence": true,
+    "llm_may_explain_not_fill_score": true,
+    "front_answer_must_be_conclusion_first": true,
+    "backend_must_keep_evidence_chain": true
+  },
+  "summary": {
+    "rule_count": 8,
+    "high_confidence_allowed_conditions": [
+      "all_core_evidence_ready"
+    ],
+    "object_unresolved_blocks_report": true,
+    "critical_missing_max_confidence": "medium",
+    "two_or_more_critical_missing_max_confidence": "low"
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

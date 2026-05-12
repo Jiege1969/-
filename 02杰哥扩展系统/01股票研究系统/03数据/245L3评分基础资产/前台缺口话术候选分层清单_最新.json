@@ -1,0 +1,296 @@
+{
+  "名称": "前台缺口话术候选分层清单",
+  "generated_at": "2026-05-08 08:25:07",
+  "asset_identity": "W1候选分层清单",
+  "status": "ready",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "candidates": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "candidate_text": "可在下一版短答缺口压缩中加入“资金/机构/解禁证据仍待采集，不能强化结论”。",
+      "layer": "W1_rule_draft",
+      "action_type": "front_wording_rule_candidate",
+      "reason": "该项只固化前台缺口表达，不补数据、不改评分、不改入口。",
+      "can_implement_now": true,
+      "next_gate": "可进入W1话术规则草案；若要写入适配器代码则升级为W3阻断。"
+    },
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "candidate_text": "可把“行业价未入账/单点”统一成“价格/景气观测点不足，不能写趋势确认”。",
+      "layer": "W1_rule_draft",
+      "action_type": "industry_price_wording_rule_candidate",
+      "reason": "该项统一行业价格/景气缺口表达，不写观测账本、不生成趋势结论。",
+      "can_implement_now": true,
+      "next_gate": "可进入W1话术规则草案；真实补价格点需另走行业价格观测入账闸口。"
+    },
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "candidate_text": "把差异话术写入L3企业微信短答适配器属于正式候选脚本变更，应按正式脚本/W3闸口处理，本轮只登记不实施。",
+      "layer": "W3_blocked",
+      "action_type": "formal_change_blocked",
+      "reason": "涉及正式候选脚本、企业微信入口或服务刷新，本轮只能登记阻断。",
+      "can_implement_now": false,
+      "next_gate": "回到总管判断，按正式脚本/正式入口变更处理。"
+    },
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "candidate_text": "把差异话术接入真实企业微信入口或服务刷新属于红线事项，本轮只登记不实施。",
+      "layer": "W3_blocked",
+      "action_type": "formal_change_blocked",
+      "reason": "涉及正式候选脚本、企业微信入口或服务刷新，本轮只能登记阻断。",
+      "can_implement_now": false,
+      "next_gate": "回到总管判断，按正式脚本/正式入口变更处理。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "candidate_text": "可在下一版短答缺口压缩中加入“资金/机构/解禁证据仍待采集，不能强化结论”。",
+      "layer": "W1_rule_draft",
+      "action_type": "front_wording_rule_candidate",
+      "reason": "该项只固化前台缺口表达，不补数据、不改评分、不改入口。",
+      "can_implement_now": true,
+      "next_gate": "可进入W1话术规则草案；若要写入适配器代码则升级为W3阻断。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "candidate_text": "可把无匹配政策的前台口径从“政策不强”收紧为“未匹配直接政策，政策项不能加分”。",
+      "layer": "W1_rule_draft",
+      "action_type": "policy_wording_rule_candidate",
+      "reason": "该项收紧政策缺口表达，防止无结构化政策时凭空加分。",
+      "can_implement_now": true,
+      "next_gate": "可进入W1话术规则草案；如需入库政策事件或改L3政策分则另走政策事件闸口。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "candidate_text": "可把“行业价未入账/单点”统一成“价格/景气观测点不足，不能写趋势确认”。",
+      "layer": "W1_rule_draft",
+      "action_type": "industry_price_wording_rule_candidate",
+      "reason": "该项统一行业价格/景气缺口表达，不写观测账本、不生成趋势结论。",
+      "can_implement_now": true,
+      "next_gate": "可进入W1话术规则草案；真实补价格点需另走行业价格观测入账闸口。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "candidate_text": "把差异话术写入L3企业微信短答适配器属于正式候选脚本变更，应按正式脚本/W3闸口处理，本轮只登记不实施。",
+      "layer": "W3_blocked",
+      "action_type": "formal_change_blocked",
+      "reason": "涉及正式候选脚本、企业微信入口或服务刷新，本轮只能登记阻断。",
+      "can_implement_now": false,
+      "next_gate": "回到总管判断，按正式脚本/正式入口变更处理。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "candidate_text": "把差异话术接入真实企业微信入口或服务刷新属于红线事项，本轮只登记不实施。",
+      "layer": "W3_blocked",
+      "action_type": "formal_change_blocked",
+      "reason": "涉及正式候选脚本、企业微信入口或服务刷新，本轮只能登记阻断。",
+      "can_implement_now": false,
+      "next_gate": "回到总管判断，按正式脚本/正式入口变更处理。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "candidate_text": "可在下一版短答缺口压缩中加入“资金/机构/解禁证据仍待采集，不能强化结论”。",
+      "layer": "W1_rule_draft",
+      "action_type": "front_wording_rule_candidate",
+      "reason": "该项只固化前台缺口表达，不补数据、不改评分、不改入口。",
+      "can_implement_now": true,
+      "next_gate": "可进入W1话术规则草案；若要写入适配器代码则升级为W3阻断。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "candidate_text": "可对候选政策型股票写“政策背景存在，但尚未结构化到单股事件”。",
+      "layer": "W1_rule_draft",
+      "action_type": "policy_wording_rule_candidate",
+      "reason": "该项收紧政策缺口表达，防止无结构化政策时凭空加分。",
+      "can_implement_now": true,
+      "next_gate": "可进入W1话术规则草案；如需入库政策事件或改L3政策分则另走政策事件闸口。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "candidate_text": "可把“行业价未入账/单点”统一成“价格/景气观测点不足，不能写趋势确认”。",
+      "layer": "W1_rule_draft",
+      "action_type": "industry_price_wording_rule_candidate",
+      "reason": "该项统一行业价格/景气缺口表达，不写观测账本、不生成趋势结论。",
+      "can_implement_now": true,
+      "next_gate": "可进入W1话术规则草案；真实补价格点需另走行业价格观测入账闸口。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "candidate_text": "把差异话术写入L3企业微信短答适配器属于正式候选脚本变更，应按正式脚本/W3闸口处理，本轮只登记不实施。",
+      "layer": "W3_blocked",
+      "action_type": "formal_change_blocked",
+      "reason": "涉及正式候选脚本、企业微信入口或服务刷新，本轮只能登记阻断。",
+      "can_implement_now": false,
+      "next_gate": "回到总管判断，按正式脚本/正式入口变更处理。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "candidate_text": "把差异话术接入真实企业微信入口或服务刷新属于红线事项，本轮只登记不实施。",
+      "layer": "W3_blocked",
+      "action_type": "formal_change_blocked",
+      "reason": "涉及正式候选脚本、企业微信入口或服务刷新，本轮只能登记阻断。",
+      "can_implement_now": false,
+      "next_gate": "回到总管判断，按正式脚本/正式入口变更处理。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "candidate_text": "可在下一版短答缺口压缩中加入“资金/机构/解禁证据仍待采集，不能强化结论”。",
+      "layer": "W1_rule_draft",
+      "action_type": "front_wording_rule_candidate",
+      "reason": "该项只固化前台缺口表达，不补数据、不改评分、不改入口。",
+      "can_implement_now": true,
+      "next_gate": "可进入W1话术规则草案；若要写入适配器代码则升级为W3阻断。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "candidate_text": "可把“行业价未入账/单点”统一成“价格/景气观测点不足，不能写趋势确认”。",
+      "layer": "W1_rule_draft",
+      "action_type": "industry_price_wording_rule_candidate",
+      "reason": "该项统一行业价格/景气缺口表达，不写观测账本、不生成趋势结论。",
+      "can_implement_now": true,
+      "next_gate": "可进入W1话术规则草案；真实补价格点需另走行业价格观测入账闸口。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "candidate_text": "把差异话术写入L3企业微信短答适配器属于正式候选脚本变更，应按正式脚本/W3闸口处理，本轮只登记不实施。",
+      "layer": "W3_blocked",
+      "action_type": "formal_change_blocked",
+      "reason": "涉及正式候选脚本、企业微信入口或服务刷新，本轮只能登记阻断。",
+      "can_implement_now": false,
+      "next_gate": "回到总管判断，按正式脚本/正式入口变更处理。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "candidate_text": "把差异话术接入真实企业微信入口或服务刷新属于红线事项，本轮只登记不实施。",
+      "layer": "W3_blocked",
+      "action_type": "formal_change_blocked",
+      "reason": "涉及正式候选脚本、企业微信入口或服务刷新，本轮只能登记阻断。",
+      "can_implement_now": false,
+      "next_gate": "回到总管判断，按正式脚本/正式入口变更处理。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "candidate_text": "可把无匹配政策的前台口径从“政策不强”收紧为“未匹配直接政策，政策项不能加分”。",
+      "layer": "W1_rule_draft",
+      "action_type": "policy_wording_rule_candidate",
+      "reason": "该项收紧政策缺口表达，防止无结构化政策时凭空加分。",
+      "can_implement_now": true,
+      "next_gate": "可进入W1话术规则草案；如需入库政策事件或改L3政策分则另走政策事件闸口。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "candidate_text": "可把“行业价未入账/单点”统一成“价格/景气观测点不足，不能写趋势确认”。",
+      "layer": "W1_rule_draft",
+      "action_type": "industry_price_wording_rule_candidate",
+      "reason": "该项统一行业价格/景气缺口表达，不写观测账本、不生成趋势结论。",
+      "can_implement_now": true,
+      "next_gate": "可进入W1话术规则草案；真实补价格点需另走行业价格观测入账闸口。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "candidate_text": "把差异话术写入L3企业微信短答适配器属于正式候选脚本变更，应按正式脚本/W3闸口处理，本轮只登记不实施。",
+      "layer": "W3_blocked",
+      "action_type": "formal_change_blocked",
+      "reason": "涉及正式候选脚本、企业微信入口或服务刷新，本轮只能登记阻断。",
+      "can_implement_now": false,
+      "next_gate": "回到总管判断，按正式脚本/正式入口变更处理。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "candidate_text": "把差异话术接入真实企业微信入口或服务刷新属于红线事项，本轮只登记不实施。",
+      "layer": "W3_blocked",
+      "action_type": "formal_change_blocked",
+      "reason": "涉及正式候选脚本、企业微信入口或服务刷新，本轮只能登记阻断。",
+      "can_implement_now": false,
+      "next_gate": "回到总管判断，按正式脚本/正式入口变更处理。"
+    }
+  ],
+  "summary": {
+    "candidate_count": 22,
+    "w1_rule_draft_count": 12,
+    "w3_blocked_count": 10,
+    "review_needed_count": 0
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_adapter_write": true,
+    "not_score_write": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

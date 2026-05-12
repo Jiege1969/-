@@ -1,0 +1,88 @@
+{
+  "asset_identity": "policy_event_candidate_admission_gate",
+  "version": "2026-05-07",
+  "system": "股票研究系统",
+  "status": "draft_gate",
+  "not_for_scoring": true,
+  "purpose": "约束政策事件候选从草案进入正式政策事件库前的人工复核条件。",
+  "safety_boundary": {
+    "only_stock_research_system": true,
+    "read_only_evidence_preparation": true,
+    "no_enterprise_wechat": true,
+    "no_n8n": true,
+    "no_service_restart": true,
+    "no_external_send": true,
+    "no_broker_api": true,
+    "no_auto_trading": true
+  },
+  "admission_checks": [
+    {
+      "check_id": "POL-GATE-001",
+      "name": "官方来源核验",
+      "required": true,
+      "pass_condition": "source_url可打开，标题、发布时间、实施日期与官方页面一致。",
+      "fail_action": "保持draft，不得入正式库。"
+    },
+    {
+      "check_id": "POL-GATE-002",
+      "name": "影响方向核验",
+      "required": true,
+      "pass_condition": "明确区分利好、利空、中性、不确定，并说明价格弹性、出口约束、合规成本、订单扰动等具体机制。",
+      "fail_action": "不得给impact_strength。"
+    },
+    {
+      "check_id": "POL-GATE-003",
+      "name": "影响强度核验",
+      "required": true,
+      "pass_condition": "impact_strength必须有可复核理由，不能只依据新闻热度或题材热度。",
+      "fail_action": "impact_strength上限0.30，且不得进入高置信评分。"
+    },
+    {
+      "check_id": "POL-GATE-004",
+      "name": "股票暴露度核验",
+      "required": true,
+      "pass_condition": "每条stock_exposure必须有业务、产品、收入占比、产量、公告或公开资料支持。",
+      "fail_action": "股票暴露度不得写入stock_policy_exposures_v1.0.json。"
+    },
+    {
+      "check_id": "POL-GATE-005",
+      "name": "重复计分核验",
+      "required": true,
+      "pass_condition": "若与已有政策事件相关，必须说明新增边际影响；不能重复给同一政策主题加分。",
+      "fail_action": "只能作为背景证据，不得作为独立政策事件计分。"
+    },
+    {
+      "check_id": "POL-GATE-006",
+      "name": "时效与状态核验",
+      "required": true,
+      "pass_condition": "明确effective_date、valid_until或长期有效逻辑，状态从draft改为active/superseded_active必须有人工作业记录。",
+      "fail_action": "保持draft。"
+    },
+    {
+      "check_id": "POL-GATE-007",
+      "name": "人工复核记录",
+      "required": true,
+      "pass_condition": "记录reviewer、reviewed_at、review_conclusion、remaining_missing。",
+      "fail_action": "不得入正式库。"
+    }
+  ],
+  "candidate_status_rules": {
+    "draft": "候选草案，不能评分。",
+    "evidence_ready": "官方来源和基础字段已核验，但股票暴露度仍需人工确认，不能评分。",
+    "exposure_reviewed": "股票暴露度已人工复核，可准备入正式库，但尚未写入正式评分表。",
+    "admitted_to_formal_library": "已拆分写入policy_events_v1.0.json和stock_policy_exposures_v1.0.json，才允许参与L3评分。"
+  },
+  "manual_review_template": {
+    "candidate_id": "",
+    "reviewer": "",
+    "reviewed_at": "",
+    "source_verified": false,
+    "impact_direction_verified": false,
+    "impact_strength_verified": false,
+    "stock_exposure_verified": false,
+    "duplicate_scoring_checked": false,
+    "time_window_checked": false,
+    "review_conclusion": "keep_draft / evidence_ready / exposure_reviewed / reject",
+    "remaining_missing": []
+  }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "report":  "本机工具运行时版本来源台账收口",
+    "generated_at":  "2026-05-06 08:54:49 +08:00",
+    "ledger_md":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\本机工具运行时\\资产台账\\本机工具运行时版本来源台账_最新.md",
+    "ledger_json":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\本机工具运行时\\资产台账\\本机工具运行时版本来源台账_最新.json",
+    "decision":  "活动工具资产已完成台账化，剩余差距从“待核实”改为“按资产保留”。",
+    "safety":  {
+                   "deleted_files":  0,
+                   "modified_runtime_files":  0,
+                   "stopped_services":  false,
+                   "stopped_wsl":  false,
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false
+               }
+}

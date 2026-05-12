@@ -1,0 +1,64 @@
+{
+  "名称": "轻量任务契约层规则",
+  "版本": "2026-05-05",
+  "所属系统": "00杰哥系统总管",
+  "定位": "吸收OpenClaw/Hermes的底层逻辑，以标准任务单、SQLite权威台账、Redis Streams影子队列和n8n干跑编排承接任务流转；不引入OpenClaw/Hermes原件，不新增第二中枢。",
+  "核心原则": [
+    "学逻辑，不搬壳子。",
+    "总管控权，不新增第二个调度中枢。",
+    "入口统一，任务标准，调度轻量，执行可控，结果可验，失败可回滚。",
+    "SQLite先作为权威台账，Redis Streams先作为影子增强，不直接接管正式主链。",
+    "n8n只做编排和外部连接，默认干跑，不抢总管职责。"
+  ],
+  "安全边界": {
+    "不触发n8n正式执行": true,
+    "不发送企业微信真实消息": true,
+    "不写正式业务库": true,
+    "不做真实媒体转换或发布": true,
+    "不调用券商接口": true,
+    "不自动交易": true,
+    "不引入OpenClaw原件": true,
+    "不引入Hermes原件": true
+  },
+  "标准任务单必填字段": [
+    "task_id",
+    "source",
+    "created_at",
+    "user_intent",
+    "target_system",
+    "task_type",
+    "risk_level",
+    "dry_run",
+    "real_action_allowed",
+    "inputs",
+    "expected_output",
+    "rollback_plan",
+    "audit",
+    "human_confirm_required",
+    "timeout_seconds",
+    "idempotency_key",
+    "status",
+    "receipt"
+  ],
+  "风险等级": {
+    "L0只读巡检": "读取、检查、生成报告和草稿，不写正式链路。",
+    "L1低风险影子": "生成影子文件、样例、缓存、台账，不触发外部真实动作。",
+    "L2受控服务动作": "服务重载、n8n沙箱、Webhook灰度等，必须有许可令和回滚点。",
+    "L3真实外部动作": "真实发送、正式库写入、真实转换、自动发布、券商接口、交易动作，默认禁止。"
+  },
+  "当前落地层级": {
+    "标准任务单JSON": "启用",
+    "SQLite权威台账": "影子启用",
+    "RedisStreams": "影子映射，不作为正式主链",
+    "n8n编排": "干跑草案，不触发正式执行",
+    "19302/FastAPI入口": "可作为薄入口适配任务单，不接管调度权",
+    "Ollama/模型路由": "通过任务单读取risk_level和dry_run后再路由"
+  },
+  "正式升级门槛": [
+    "任务单schema稳定并通过总管验收。",
+    "SQLite台账能记录任务全生命周期。",
+    "Redis影子队列能验证重复消费、ACK、pending、重试和失败回收。",
+    "所有执行器必须支持idempotency_key。",
+    "L3真实动作仍需单线许可令、回滚点和人工白名单。"
+  ]
+}

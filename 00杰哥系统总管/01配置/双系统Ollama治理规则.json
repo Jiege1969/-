@@ -1,0 +1,59 @@
+﻿{
+  "名称": "双系统Ollama治理规则",
+  "作用": "统一治理 Windows/Docker 与 WSL2 两层 Ollama 启动、健康检查和迁移状态。",
+  "所属系统": "00杰哥系统总管",
+  "创建记录": "2026-04-28 创建。根据用户纠正，Ollama治理必须同时覆盖Windows和WSL2。",
+  "核心原则": [
+    "Windows计划任务、Docker容器重启策略、WSL2 cron、WSL2 systemd、WSL2启动脚本必须一起审计",
+    "只停Docker容器不等于完成治理，WSL2或Windows计划任务仍可能再次拉起",
+    "新系统优先使用jiege_v3_ollama与jiege_v3_redis",
+    "旧股票操作系统jiege_*容器属于保护态，未交付前不自动停止",
+    "老基础 Docker 容器 ollama/n8n/redis 属于下线候选；WSL 127.0.0.1:11434 Ollama 已登记为 OpenClaw 当前依赖，不得按旧容器候选自动删除"
+  ],
+  "目标状态": {
+    "新系统Ollama": {
+      "容器": "jiege_v3_ollama",
+      "端口": 29134,
+      "数据目录": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\ollama",
+      "状态": "主用"
+    },
+    "新系统Redis": {
+      "容器": "jiege_v3_redis",
+      "端口": 26379,
+      "数据目录": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\redis",
+      "状态": "主用"
+    },
+    "旧股票系统Ollama": {
+      "容器": "jiege_ollama",
+      "端口": 19134,
+      "状态": "保护态"
+    },
+    "WSL_OpenClaw依赖Ollama": {
+      "类型": "WSL进程服务",
+      "进程": "/usr/local/bin/ollama serve",
+      "端口": 11434,
+      "绑定地址": "127.0.0.1",
+      "状态": "OpenClaw当前依赖",
+      "治理口径": "禁止按旧Ollama候选自动删除；如需迁移，必须先修改OpenClaw baseUrl并验收。",
+      "证据": "OpenClaw openclaw.json baseUrl=http://localhost:11434；WSL 127.0.0.1:11434 listening。"
+    }
+  },
+  "风险动作": {
+    "禁用Windows计划任务": "需人工确认",
+    "修改WSL2 crontab": "需人工确认",
+    "修改systemd服务": "需人工确认",
+    "删除老容器或目录": "需人工确认",
+    "停止旧股票系统jiege_*容器": "需人工确认"
+  },
+  "允许自动执行": {
+    "只读审计": true,
+    "生成治理报告": true,
+    "更新新系统配置": true,
+    "启动或轻修复新系统jiege_v3_ollama和jiege_v3_redis": true
+  },
+  "当前Ollama治理口径": "Current Ollama surfaces are v3 Docker on 29134 and WSL OpenClaw dependency on 11434. Retired local Ollama 19134 is not a current health target.",
+  "退役本地Ollama禁止复发对象": [
+    "jiege_ollama:19134"
+  ]
+}
+

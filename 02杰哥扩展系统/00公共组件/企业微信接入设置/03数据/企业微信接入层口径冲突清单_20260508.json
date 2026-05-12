@@ -1,0 +1,58 @@
+{
+  "asset_id": "WECOM_TERMINOLOGY_CONFLICT_LIST_20260508",
+  "generated_at": "2026-05-08 06:40:35 +08:00",
+  "asset_identity": "企业微信接入层 W1/R0 口径冲突登记清单",
+  "status": "只读登记，不是修脚本许可，不是改配置许可，不是删除旧债许可",
+  "main_conclusion": "待桥接/已接入主冲突已基本收口；当前剩余问题主要是历史命名、latest日志、生成放行与真实渲染放行区分、缓存残留等歧义。",
+  "current_authoritative_phrase": "系统管家、工作秘书、视频助理已登记公网回调，本机统一路由可预演/查询，真实发送禁用。",
+  "items": [
+    {
+      "id": "WECOM-CONFLICT-001",
+      "issue": "企业微信助手系统旧名称仍出现在部分文件名、历史报告或日志路径中",
+      "risk": "容易让后续施工者误以为它仍是独立业务系统",
+      "recommendation": "W1 可在新增文档中统一说明旧名称为历史别名；不批量改名、不移动文件"
+    },
+    {
+      "id": "WECOM-CONFLICT-002",
+      "issue": "公网回调已登记/统一路由可用容易被误读成真实发送已放开",
+      "risk": "可能把入口可用误判为外发可用",
+      "recommendation": "固定表述：已登记公网回调、本机统一路由可预演/查询、真实发送禁用"
+    },
+    {
+      "id": "WECOM-CONFLICT-003",
+      "issue": "服务日志里的最新文件会随本机预演覆盖",
+      "risk": "后续只看 latest 可能漏掉历史口径",
+      "recommendation": "只把 latest 当当前样本；需要追溯时读 archive 或 access.log"
+    },
+    {
+      "id": "WECOM-CONFLICT-004",
+      "issue": "视频线存在生成放行和真实渲染 blocked 并存",
+      "risk": "容易把生成放行误判成真实渲染/发布放行",
+      "recommendation": "固定区分企业微信生成放行、渲染适配器门禁、发布放行三者互不替代"
+    },
+    {
+      "id": "WECOM-CONFLICT-005",
+      "issue": "__pycache__ 可能残留旧路径或旧字符串",
+      "risk": "清理缓存属于删除/清理动作，可能触发不必要风险",
+      "recommendation": "只登记为缓存债；不自动删除，必要时走清债许可"
+    }
+  ],
+  "closed_items": [
+    "旧 06企业微信助手系统 README 已声明兼容保留目录",
+    "新权威机制文档待桥接口径已修正",
+    "多助手统一路由影子预案规则已显示三通用助手公网回调登记和安全禁用态",
+    "企业微信接入层定位已统一为通讯适配层/路由登记层/安全闸门层"
+  ],
+  "boundary": {
+    "batch_rename_history_files": false,
+    "delete_pycache_or_legacy_files": false,
+    "modify_service_script": false,
+    "modify_config_json": false,
+    "restart_service_19310": false,
+    "real_send_wecom": false,
+    "trigger_n8n": false,
+    "real_video_render_or_publish": false,
+    "real_tax_filing": false,
+    "broker_or_trading": false
+  }
+}

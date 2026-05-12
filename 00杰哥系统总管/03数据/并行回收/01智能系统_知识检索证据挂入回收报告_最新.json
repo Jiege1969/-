@@ -1,0 +1,106 @@
+{
+  "report_id": "01智能系统_知识检索证据挂入回收报告_最新",
+  "task_id": "并行小任务U",
+  "task_name": "01智能知识检索联动证据路径挂入最终签收包",
+  "generated_at": "2026-05-05 15:08:29 +08:00",
+  "owner_scope": "01杰哥智能系统",
+  "write_scope": {
+    "新增01智能系统文件": true,
+    "固定回收报告": true,
+    "直接修改00总管最终签收包": false,
+    "直接修改00总管进度口径": false,
+    "修改其他worker文件": false
+  },
+  "source_gap": {
+    "source_task": "并行小任务R",
+    "source_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\最终缺口压缩交付确认\\final_gap_compression_delivery_confirmation_latest.json",
+    "remaining_gap_before_u": "知识检索联动证据路径需挂入最终签收包；正式模型调用继续disabled，不作为本轮开启项。",
+    "resolution": "已在01智能系统侧生成只读证据索引，并在本固定回收报告中引用；不直接改00总管最终签收包。"
+  },
+  "created_files": [
+    {
+      "type": "json_index",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\最终签收知识检索证据挂入\\knowledge_retrieval_final_acceptance_evidence_index_latest.json"
+    },
+    {
+      "type": "markdown_doc",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\API契约\\01智能系统知识检索联动证据路径挂入最终签收包_最新.md"
+    },
+    {
+      "type": "readonly_validator",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\验证01智能系统知识检索证据挂入最终签收包.ps1"
+    },
+    {
+      "type": "fixed_recycle_report_json",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\01智能系统_知识检索证据挂入回收报告_最新.json"
+    },
+    {
+      "type": "fixed_recycle_report_markdown",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\01智能系统_知识检索证据挂入回收报告_最新.md"
+    }
+  ],
+  "final_acceptance_reference": {
+    "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\00总管_最终验收签收包_最新.json",
+    "mode": "read_only_reference_index",
+    "write_to_package": false,
+    "progress_recalculation": false
+  },
+  "coverage": {
+    "api_contract": {
+      "status": "linked",
+      "evidence": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\delivery_candidate_api_model_route_dry_run_package_latest.json"
+    },
+    "model_routing": {
+      "status": "linked",
+      "evidence": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\standard_task_to_receipt_trace_latest.json",
+      "gate": "invocation=disabled; real_model_call=false"
+    },
+    "failure_fallback": {
+      "status": "linked",
+      "evidence": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\failure_fallback_matrix_latest.json"
+    },
+    "receipt": {
+      "status": "linked",
+      "evidence": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\standard_task_to_receipt_trace_latest.json",
+      "gate": "external_calls=[]"
+    },
+    "knowledge_retrieval_readonly_evidence_path": {
+      "status": "linked",
+      "evidence": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\16第五批小任务PAPI影子契约证据索引联动\\01智能系统第五批小任务P_知识库证据索引联动样本_最新.json",
+      "degradation": "fresh/stale/no_evidence三类口径已挂入只读索引"
+    }
+  },
+  "safety_boundary": {
+    "network_touched": false,
+    "real_model_invocation_touched": false,
+    "external_service_touched": false,
+    "n8n_touched": false,
+    "wecom_send_touched": false,
+    "formal_database_write_touched": false,
+    "formal_knowledge_db_write_touched": false,
+    "formal_vector_db_write_touched": false,
+    "real_redis_write_touched": false,
+    "broker_api_touched": false,
+    "auto_trade_touched": false
+  },
+  "validation": {
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\验证01智能系统知识检索证据挂入最终签收包.ps1\"",
+    "mode": "read_only_local_parse",
+    "final_result": {
+      "result": "PASS",
+      "passed_checks": 99,
+      "failed_checks": 0,
+      "network_touched": false,
+      "real_model_invocation_touched": false,
+      "external_service_touched": false
+    }
+  },
+  "acceptance_result": {
+    "result": "PASS",
+    "remaining_gap_after_u": 0,
+    "delivery_blockers": [],
+    "safety_blockers_added": [],
+    "ready_for_final_acceptance_reference": true,
+    "note": "U任务完成为只读证据索引；00最终签收包只被引用，未被改写。"
+  }
+}

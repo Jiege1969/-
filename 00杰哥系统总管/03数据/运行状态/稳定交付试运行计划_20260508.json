@@ -1,0 +1,61 @@
+{
+  "asset_name": "稳定交付试运行计划",
+  "generated_at": "2026-05-08 19:05:00 +08:00",
+  "asset_identity": "总管侧 W1/R0 稳定交付准备资产",
+  "status": "stable_delivery_trial_plan_ready",
+  "formal_launch_approval": false,
+  "real_actions_enabled": false,
+  "batches": [
+    {
+      "id": "SR-01",
+      "date": "2026-05-08",
+      "scope": ["税收", "股票", "视频"],
+      "goal": "验证三条业务线可按受控试用口径稳定输出",
+      "pass_condition": "每条线均有回执；无红线命中；无正式结论越界"
+    },
+    {
+      "id": "SR-02",
+      "date": "2026-05-09",
+      "scope": ["企业微信接入层", "总管协调层"],
+      "goal": "验证入口、路由、边界提示和回传吸收",
+      "pass_condition": "不真实发送；不触发 n8n；回传能进入总管记录"
+    },
+    {
+      "id": "SR-03",
+      "date": "2026-05-10",
+      "scope": ["五条线组合复核"],
+      "goal": "验证连续试用后是否具备稳定交付候选状态",
+      "pass_condition": "连续回执完整；阻断项为 0；待补项可解释且不阻断试用"
+    }
+  ],
+  "stable_candidate_conditions": [
+    "SR-01 至 SR-03 均完成",
+    "每个试运行任务都有回执",
+    "所有回执中红线命中为 0",
+    "税收不输出正式税务意见、金额或申报建议",
+    "股票不输出交易指令或券商动作",
+    "视频不渲染、上传或发布",
+    "企业微信不真实发送，不触发 n8n",
+    "总管面板、接续包和交付口径保持一致"
+  ],
+  "pause_conditions": [
+    "真实企业微信发送",
+    "n8n 正式触发",
+    "修改或重启 19310/19302",
+    "写正式库、正式知识库、正式规则库或向量库",
+    "登录电子税务局、财税软件、券商或视频平台账号",
+    "输出正式税务意见、交易指令、视频发布放行",
+    "删除、移动、归档旧系统目录",
+    "业务线越权修改总管、企业微信接入层或其他业务线正式配置"
+  ],
+  "boundaries": {
+    "trigger_n8n": false,
+    "wecom_real_send": false,
+    "write_formal_db": false,
+    "modify_service_script": false,
+    "restart_19310_19302": false,
+    "login_real_systems": false,
+    "video_render_upload_publish": false,
+    "delete_move_archive_old_dirs": false
+  }
+}

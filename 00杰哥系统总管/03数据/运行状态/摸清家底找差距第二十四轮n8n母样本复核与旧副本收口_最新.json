@@ -1,0 +1,160 @@
+﻿{
+    "生成时间":  "2026-05-06 16:04:47",
+    "轮次":  "第二十四轮n8n母样本复核与旧副本收口",
+    "当前结论":  "5个n8n workflow均可作为母样本保留；29个已删除旧workflow完整导出、旧SQLite回滚库、临时导出脚本和旧详细快照已删除，只保留当前母样本与删除摘要。",
+    "当前n8n数据库":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\n8n\\database.sqlite",
+    "当前容器":  "jiege_v3_n8n",
+    "当前端口":  "127.0.0.1:28679 -\u003e 5678",
+    "母样本数量":  5,
+    "母样本":  [
+                {
+                    "id":  "h0xpxp9rPrUSqk1G",
+                    "name":  "股票主动研究闭环_桥接未激活",
+                    "active":  false,
+                    "triggerCount":  0,
+                    "node_count":  4,
+                    "node_types":  [
+                                       "n8n-nodes-base.manualTrigger",
+                                       "n8n-nodes-base.executeCommand",
+                                       "n8n-nodes-base.set",
+                                       "n8n-nodes-base.stickyNote"
+                                   ],
+                    "node_names":  [
+                                       "手动触发",
+                                       "调用宿主机股票研究桥接入口",
+                                       "输出本地结果路径",
+                                       "安全边界说明"
+                                   ],
+                    "export_file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\exports_keep\\股票主动研究闭环_桥接未激活__h0xpxp9rPrUSqk1G.json",
+                    "sha256":  "47CF9CAA8F0B414E5B5405E869280E1BCDCE5FEB98FE6B01787D2F92D8E35ABD"
+                },
+                {
+                    "id":  "ZkzsB6MdxlC3VMxY",
+                    "name":  "股票主动研究闭环_文件桥接未激活",
+                    "active":  false,
+                    "triggerCount":  0,
+                    "node_count":  4,
+                    "node_types":  [
+                                       "n8n-nodes-base.manualTrigger",
+                                       "n8n-nodes-base.executeCommand",
+                                       "n8n-nodes-base.set",
+                                       "n8n-nodes-base.stickyNote"
+                                   ],
+                    "node_names":  [
+                                       "手动触发",
+                                       "写入宿主机股票研究触发文件",
+                                       "输出本地结果路径",
+                                       "安全边界说明"
+                                   ],
+                    "export_file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\exports_keep\\股票主动研究闭环_文件桥接未激活__ZkzsB6MdxlC3VMxY.json",
+                    "sha256":  "5116C4C5D4A8BC4E248AD50616DD8D6FC7FE0C325A3F99EA9F700C7D360FF7EE"
+                },
+                {
+                    "id":  "JBVQ8osGXlHoSJfR",
+                    "name":  "股票助手n8n本地执行回环测试",
+                    "active":  false,
+                    "triggerCount":  0,
+                    "node_count":  2,
+                    "node_types":  [
+                                       "n8n-nodes-base.executeWorkflowTrigger",
+                                       "n8n-nodes-base.set"
+                                   ],
+                    "node_names":  [
+                                       "本地执行触发器",
+                                       "生成本地回环响应"
+                                   ],
+                    "export_file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\exports_keep\\股票助手n8n本地执行回环测试__JBVQ8osGXlHoSJfR.json",
+                    "sha256":  "73800AE5F023E0D9E3D37412E181540388E8AA36EAAEE478092C043C46C3F698"
+                },
+                {
+                    "id":  "un0S6SrQSCIsjuhn",
+                    "name":  "股票助手企业微信Webhook桥接入口未激活v2",
+                    "active":  false,
+                    "triggerCount":  0,
+                    "node_count":  4,
+                    "node_types":  [
+                                       "n8n-nodes-base.webhook",
+                                       "n8n-nodes-base.httpRequest",
+                                       "n8n-nodes-base.respondToWebhook",
+                                       "n8n-nodes-base.stickyNote"
+                                   ],
+                    "node_names":  [
+                                       "股票桥接Webhook入口",
+                                       "调用股票桥接入口19302",
+                                       "返回桥接结果",
+                                       "安全边界说明"
+                                   ],
+                    "export_file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\exports_keep\\股票助手企业微信Webhook桥接入口未激活v2__un0S6SrQSCIsjuhn.json",
+                    "sha256":  "CE39D25465D8CA6B3F01DEC96761A3ED5FC1979B55ECE0179784232A017344FD"
+                },
+                {
+                    "id":  "urKB3BwGfDWQMKb5",
+                    "name":  "股票助手企业微信查询适配器未激活导入件",
+                    "active":  false,
+                    "triggerCount":  0,
+                    "node_count":  4,
+                    "node_types":  [
+                                       "n8n-nodes-base.manualTrigger",
+                                       "n8n-nodes-base.set",
+                                       "n8n-nodes-base.code",
+                                       "n8n-nodes-base.stickyNote"
+                                   ],
+                    "node_names":  [
+                                       "手动触发禁用态",
+                                       "构造契约输入",
+                                       "安全占位输出",
+                                       "安全边界说明"
+                                   ],
+                    "export_file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\exports_keep\\股票助手企业微信查询适配器未激活导入件__urKB3BwGfDWQMKb5.json",
+                    "sha256":  "8365483E785502BD900FDC8D3B147E2276F007270B9831B8F76AE7595BAC4314"
+                }
+            ],
+    "删除旧workflow完整导出数量":  29,
+    "旧项检查":  [
+                 {
+                     "路径":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\exports_delete",
+                     "仍存在":  false
+                 },
+                 {
+                     "路径":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\database.before.sqlite",
+                     "仍存在":  false
+                 },
+                 {
+                     "路径":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\export_workflows.py",
+                     "仍存在":  false
+                 },
+                 {
+                     "路径":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\keep_delete_plan.json",
+                     "仍存在":  false
+                 },
+                 {
+                     "路径":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\prune_result.json",
+                     "仍存在":  false
+                 },
+                 {
+                     "路径":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\workflows.before.detail.json",
+                     "仍存在":  false
+                 }
+             ],
+    "证据摘要":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\n8n母样本保留与旧副本删除摘要_最新.md",
+    "清债规则":  "当前母样本保留；旧workflow可导入完整副本不保留，避免旧债通过备份复活。",
+    "安全边界":  {
+                 "触发n8n":  false,
+                 "启用workflow":  false,
+                 "调用Webhook":  false,
+                 "发送企业微信":  false,
+                 "调用券商接口":  false,
+                 "自动交易":  false
+             },
+    "下一步":  "继续扫描 n8n 数据目录与工作流相关脚本，删除无依赖的旧接入包、重复真实发送清点报告或历史长连接评估残留。",
+    "验收结果":  {
+                 "JSON可读":  "通过",
+                 "RequiredHTTP":  "4/4",
+                 "历史注册HTTP":  "7/7",
+                 "n8nTCP":  true,
+                 "n8nHealth":  true,
+                 "Redis":  "PONG",
+                 "开工上下文缺失":  0
+             }
+}
+

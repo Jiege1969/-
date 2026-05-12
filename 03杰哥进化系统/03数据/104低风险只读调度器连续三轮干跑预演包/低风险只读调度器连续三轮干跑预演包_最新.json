@@ -1,0 +1,42 @@
+{
+  "name": "低风险只读调度器连续三轮干跑预演包",
+  "generated_at": "2026-05-08 20:12:40",
+  "status": "generated_preview_only",
+  "round_count": 3,
+  "task_count": 9,
+  "preview_only": true,
+  "auto_execute": false,
+  "actual_execution": false,
+  "external_call": false,
+  "reload_service": false,
+  "write_formal_rule": false,
+  "hard_red_line_confirmation": {
+    "preview_only": true,
+    "auto_execute": false,
+    "actual_execution": false,
+    "external_call": false,
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "write_formal_rule": false,
+    "auto_promote_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false
+  },
+  "outputs": {
+    "config_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\104低风险只读调度器连续三轮干跑预演包\\三轮干跑配置_最新.json",
+    "config_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\104低风险只读调度器连续三轮干跑预演包\\三轮干跑配置_最新.md",
+    "run_result_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\104低风险只读调度器连续三轮干跑预演包\\三轮干跑结果_最新.json",
+    "run_result_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\104低风险只读调度器连续三轮干跑预演包\\三轮干跑结果_最新.md",
+    "continuity_summary_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\104低风险只读调度器连续三轮干跑预演包\\连续性汇总_最新.json",
+    "continuity_summary_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\104低风险只读调度器连续三轮干跑预演包\\连续性汇总_最新.md",
+    "package_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\104低风险只读调度器连续三轮干跑预演包\\低风险只读调度器连续三轮干跑预演包_最新.json",
+    "package_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\104低风险只读调度器连续三轮干跑预演包\\低风险只读调度器连续三轮干跑预演包_最新.md",
+    "verify_log_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器连续三轮干跑预演包验收\\low-risk-readonly-scheduler-three-round-dryrun-verify-最新.json"
+  }
+}

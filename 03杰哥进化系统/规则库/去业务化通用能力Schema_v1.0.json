@@ -1,0 +1,237 @@
+{
+  "version": "1.0",
+  "status": "active",
+  "name": "去业务化通用能力Schema",
+  "purpose": "把股票母本中可复用的能力剥离为通用能力，避免后续业务线机械复制股票外壳、行情语境或交易语境",
+  "source": {
+    "mother_sample": "股票研究系统",
+    "source_report": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\股票母本回收\\股票母本只读提取报告_v1.0.md",
+    "source_capability_list": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\股票母本回收\\股票母本可复用能力清单_v1.0.json"
+  },
+  "hard_rules": [
+    "后续业务线不得直接复制股票母本能力清单作为实现模板",
+    "必须先映射到本通用Schema，再按业务线重写字段和输出语言",
+    "股票专有词、行情语境、交易语境不得迁移到税收、内容、视频、本职工作等业务线",
+    "所有业务输出默认待复核草案，不自动执行外部动作",
+    "高风险动作必须设置人工闸口和回滚或禁用路径"
+  ],
+  "generic_capabilities": [
+    {
+      "id": "GEN-CAP-001",
+      "generic_capability_name": "可信输入",
+      "business_adaptation_required": true,
+      "applicability_conditions": ["所有需要依据、数据、素材或事实输入的业务线"],
+      "forbidden_transfer_examples": ["把股票行情时效要求复制给税收政策资料", "把盘中刷新模式复制给内容处理"],
+      "risk_level": "medium",
+      "human_gate_required": false,
+      "input_contract": {
+        "must_record": ["来源", "可信等级", "时间", "状态", "是否人工核验"],
+        "cannot_use_when": ["来源不明", "状态待核实但被当成正式依据"]
+      },
+      "output_contract": {
+        "must_include": ["来源说明", "可信等级", "待核实项"],
+        "forbidden": ["来源不明仍输出确定结论"]
+      },
+      "acceptance_tests": ["输入资料必须能追溯来源", "待核资料只能进入待核事项"],
+      "business_line_mapping": {
+        "tax": "政策文件、文号、有效状态、地方口径",
+        "content": "原文、授权、发布场景",
+        "video": "素材、授权、脚本来源",
+        "work": "任务材料、目标、约束、时限"
+      },
+      "rollback_or_disable_plan": "发现来源不可信时降级为待核，不输出正式草案",
+      "maturity_level": "schema"
+    },
+    {
+      "id": "GEN-CAP-002",
+      "generic_capability_name": "只读预检",
+      "business_adaptation_required": false,
+      "applicability_conditions": ["正式动作前", "高风险操作前", "状态判断前"],
+      "forbidden_transfer_examples": ["用会写状态的脚本冒充验收", "预检时触发外部服务"],
+      "risk_level": "low",
+      "human_gate_required": false,
+      "input_contract": {
+        "must_record": ["检查对象", "检查范围", "是否只读"],
+        "cannot_use_when": ["脚本会写状态", "脚本会触发外部动作"]
+      },
+      "output_contract": {
+        "must_include": ["检查结果", "异常项", "未覆盖范围"],
+        "forbidden": ["只写通过不说明范围"]
+      },
+      "acceptance_tests": ["R0脚本不得写状态", "检查结果必须包含范围"],
+      "business_line_mapping": {
+        "tax": "政策来源和元数据卡只读检查",
+        "content": "原文和授权只读检查",
+        "video": "素材和任务参数只读检查",
+        "work": "任务材料完整性只读检查"
+      },
+      "rollback_or_disable_plan": "预检失败时暂停正式动作",
+      "maturity_level": "schema"
+    },
+    {
+      "id": "GEN-CAP-003",
+      "generic_capability_name": "候选判断",
+      "business_adaptation_required": true,
+      "applicability_conditions": ["存在多个可能依据、方案、素材、路径时"],
+      "forbidden_transfer_examples": ["把候选条件写成最终动作", "把股票买卖观察语境迁移到税收结论"],
+      "risk_level": "medium",
+      "human_gate_required": false,
+      "input_contract": {
+        "must_record": ["候选项", "入选理由", "排除理由"],
+        "cannot_use_when": ["没有依据支撑候选项"]
+      },
+      "output_contract": {
+        "must_include": ["候选依据", "初步判断", "待核事项"],
+        "forbidden": ["直接输出最终执行动作"]
+      },
+      "acceptance_tests": ["候选项必须有理由", "候选判断必须带待复核标签"],
+      "business_line_mapping": {
+        "tax": "候选政策依据和适用条件",
+        "content": "候选改写方向",
+        "video": "候选分镜和素材需求",
+        "work": "候选行动路径"
+      },
+      "rollback_or_disable_plan": "候选依据不足时降级为资料待补",
+      "maturity_level": "schema"
+    },
+    {
+      "id": "GEN-CAP-004",
+      "generic_capability_name": "风险边界",
+      "business_adaptation_required": true,
+      "applicability_conditions": ["所有业务输出"],
+      "forbidden_transfer_examples": ["省略风险点", "把风险提示写成免责空话"],
+      "risk_level": "medium",
+      "human_gate_required": false,
+      "input_contract": {
+        "must_record": ["不确定来源", "潜在影响", "待补材料"],
+        "cannot_use_when": ["风险无法识别但输出确定结论"]
+      },
+      "output_contract": {
+        "must_include": ["风险点", "影响", "缓解方式"],
+        "forbidden": ["没有风险段落的业务草案"]
+      },
+      "acceptance_tests": ["每份草案至少包含风险点或说明未发现风险的依据"],
+      "business_line_mapping": {
+        "tax": "地方口径、材料、政策有效状态风险",
+        "content": "授权、敏感表达、发布风险",
+        "video": "素材授权、渲染失败、平台规则风险",
+        "work": "时限、材料缺失、执行偏差风险"
+      },
+      "rollback_or_disable_plan": "风险过高时输出待核清单，不给行动建议",
+      "maturity_level": "schema"
+    },
+    {
+      "id": "GEN-CAP-005",
+      "generic_capability_name": "人工闸口",
+      "business_adaptation_required": true,
+      "applicability_conditions": ["外发", "写正式库", "上线", "服务变更", "业务执行", "高风险判断"],
+      "forbidden_transfer_examples": ["自动发送企业微信", "自动写正式税收库", "自动发布视频", "自动交易"],
+      "risk_level": "high",
+      "human_gate_required": true,
+      "input_contract": {
+        "must_record": ["动作类型", "影响范围", "回滚路径", "确认人"],
+        "cannot_use_when": ["没有人工确认", "没有回滚或禁用路径"]
+      },
+      "output_contract": {
+        "must_include": ["待确认动作", "风险", "确认入口"],
+        "forbidden": ["绕过确认直接执行"]
+      },
+      "acceptance_tests": ["高风险动作必须被红灯拦住", "确认记录必须可追溯"],
+      "business_line_mapping": {
+        "tax": "正式入库、外发税务草案、对外申报建议",
+        "content": "发布、覆盖原文",
+        "video": "真实渲染、发布、外发",
+        "work": "提交、发送、归档正式文件"
+      },
+      "rollback_or_disable_plan": "确认失败或超时则保持禁用态",
+      "maturity_level": "schema"
+    },
+    {
+      "id": "GEN-CAP-006",
+      "generic_capability_name": "复核沉淀",
+      "business_adaptation_required": false,
+      "applicability_conditions": ["用户确认、修正、补充、否决后"],
+      "forbidden_transfer_examples": ["单次人工修正直接升级为正式规则"],
+      "risk_level": "medium",
+      "human_gate_required": true,
+      "input_contract": {
+        "must_record": ["原草案", "人工修正", "修正原因", "确定性等级"],
+        "cannot_use_when": ["没有原草案或修正来源"]
+      },
+      "output_contract": {
+        "must_include": ["样本状态", "复用限制", "进化建议条件"],
+        "forbidden": ["自动覆盖正式规则"]
+      },
+      "acceptance_tests": ["人工修正样本JSON可解析", "reuse_guidance.can_be_used_as_final_rule=false"],
+      "business_line_mapping": {
+        "tax": "复核地方口径和材料要求",
+        "content": "复核改写风格和事实偏差",
+        "video": "复核脚本、分镜、素材要求",
+        "work": "复核行动建议和执行结果"
+      },
+      "rollback_or_disable_plan": "样本错误时归档，不进入规则",
+      "maturity_level": "schema"
+    },
+    {
+      "id": "GEN-CAP-007",
+      "generic_capability_name": "灰度回滚",
+      "business_adaptation_required": true,
+      "applicability_conditions": ["从影子样例进入真实动作前"],
+      "forbidden_transfer_examples": ["影子样例直接宣布上线", "没有回滚方案就启用外部入口"],
+      "risk_level": "high",
+      "human_gate_required": true,
+      "input_contract": {
+        "must_record": ["灰度范围", "退出条件", "回滚路径"],
+        "cannot_use_when": ["无法关闭或回滚"]
+      },
+      "output_contract": {
+        "must_include": ["灰度范围", "验收条件", "回滚方式"],
+        "forbidden": ["直接全量上线"]
+      },
+      "acceptance_tests": ["灰度范围可控", "失败后可禁用"],
+      "business_line_mapping": {
+        "tax": "税收问答灰度入口",
+        "content": "发布前小样本",
+        "video": "小样本渲染",
+        "work": "低风险任务试用"
+      },
+      "rollback_or_disable_plan": "灰度失败立即回到影子样例",
+      "maturity_level": "schema"
+    },
+    {
+      "id": "GEN-CAP-008",
+      "generic_capability_name": "禁用态工作流草案",
+      "business_adaptation_required": true,
+      "applicability_conditions": ["任何n8n或自动编排工作流准备阶段"],
+      "forbidden_transfer_examples": ["新工作流直接激活", "用禁用态草案冒充可用功能"],
+      "risk_level": "high",
+      "human_gate_required": true,
+      "input_contract": {
+        "must_record": ["触发条件", "输入输出", "禁用态状态", "激活条件"],
+        "cannot_use_when": ["触发条件不清", "外部动作未确认"]
+      },
+      "output_contract": {
+        "must_include": ["禁用态声明", "激活前置条件", "验收条件"],
+        "forbidden": ["默认激活"]
+      },
+      "acceptance_tests": ["工作流默认禁用", "无人工确认不得激活"],
+      "business_line_mapping": {
+        "tax": "税收问答或资料入库工作流",
+        "content": "内容改写或发布工作流",
+        "video": "渲染和发布工作流",
+        "work": "任务提醒和材料归档工作流"
+      },
+      "rollback_or_disable_plan": "保持禁用态或移出激活队列",
+      "maturity_level": "schema"
+    }
+  ],
+  "schema_acceptance": {
+    "must_have_generic_name": true,
+    "must_have_input_contract": true,
+    "must_have_output_contract": true,
+    "must_have_acceptance_tests": true,
+    "must_have_business_line_mapping": true,
+    "must_have_rollback_or_disable_plan": true,
+    "must_have_maturity_level": true
+  }
+}

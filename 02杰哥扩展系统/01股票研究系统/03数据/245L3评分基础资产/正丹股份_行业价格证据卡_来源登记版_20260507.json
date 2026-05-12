@@ -1,0 +1,96 @@
+{
+  "名称": "正丹股份行业价格证据卡",
+  "版本": "2026-05-07-shadow-v1",
+  "生成日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子证据卡",
+  "状态": "source_registered",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "stock": {
+    "name": "正丹股份",
+    "code": "300641",
+    "display_code": "sz300641",
+    "industry": "化工",
+    "stock_type": "化工高波动"
+  },
+  "tracked_products": [
+    {
+      "product_name": "偏苯三酸酐/TMA",
+      "product_code": "trimellitic_anhydride_tma",
+      "relevance_to_stock": "正丹股份业绩弹性与TMA产品价格和价差高度相关，TMA价格变化会影响收入利润和景气判断。",
+      "exposure_weight": 0.9,
+      "direction_rule": "TMA价格和价差上行通常增强业绩弹性预期；价格下行或价差收窄会削弱关注等级。"
+    }
+  ],
+  "source_status": {
+    "source_registered": true,
+    "price_value_available": false,
+    "trend_available": false,
+    "spread_available": false,
+    "formal_chain_status": "not_integrated"
+  },
+  "sources": [
+    {
+      "source_name": "百川盈孚-TMA价格行情",
+      "source_url": "https://www.baiinfo.com/juzhishuzhiyuanliao/TMA",
+      "source_type": "行业数据平台",
+      "coverage": "偏苯三酸酐/TMA价格线索",
+      "source_role": "行情线索",
+      "checked_at": "2026-05-07"
+    },
+    {
+      "source_name": "隆众资讯-TMA行情",
+      "source_url": "https://list.oilchem.net/2946/17.html",
+      "source_type": "行业数据平台",
+      "coverage": "偏苯三酸酐/TMA行情线索",
+      "source_role": "辅助交叉验证",
+      "checked_at": "2026-05-07"
+    },
+    {
+      "source_name": "生意社化工频道-偏苯三酸酐商品价格",
+      "source_url": "https://chem.100ppi.com/price/plist-7850--4.html",
+      "source_type": "商品价格平台",
+      "coverage": "偏苯三酸酐/TMA公开报价线索",
+      "source_role": "辅助交叉验证",
+      "checked_at": "2026-05-07"
+    }
+  ],
+  "price_observations": [],
+  "industry_price_shadow_score": {
+    "score": 2,
+    "max_score": 10,
+    "score_reason": "来源入口已登记，但尚未形成合法TMA价格观测、价差和趋势，只能作为待入账线索。",
+    "positive_evidence": [
+      "已明确正丹股份需要跟踪TMA价格。",
+      "已登记百川盈孚、隆众资讯和生意社候选来源。"
+    ],
+    "negative_evidence": [
+      "尚未写入具体价格、单位、日期和趋势。",
+      "尚未形成TMA价差、原材料价格和库存的结构化映射。"
+    ],
+    "confidence": "low"
+  },
+  "front_output_compression": {
+    "one_sentence": "TMA价格来源已登记但价格和价差尚未入账，暂不能用行业价格提高关注等级。",
+    "user_facing_reason": "正丹股份需要看TMA价格和价差，但系统还没有形成可复核的行业价格证据。",
+    "do_not_say": [
+      "TMA价格已经确认景气",
+      "行业价格已经支持强结论",
+      "核心产品价格足以支撑重点关注"
+    ]
+  },
+  "missing": [
+    "TMA具体价格、日期、单位尚未入账。",
+    "TMA 5日和20日趋势尚未计算。",
+    "TMA价差、原材料价格、库存和出口数据尚未结构化。"
+  ],
+  "safety_boundary": {
+    "only_for_research": true,
+    "not_investment_advice": true,
+    "not_buy_sell_signal": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

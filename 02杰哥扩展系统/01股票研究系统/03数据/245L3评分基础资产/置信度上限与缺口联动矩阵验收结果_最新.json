@@ -1,0 +1,10 @@
+{
+  "name": "置信度上限与缺口联动矩阵验收结果",
+  "generated_at": "2026-05-08 11:18:07",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "rule_count": 8,
+    "condition_count": 8
+  }
+}

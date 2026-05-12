@@ -1,0 +1,34 @@
+{
+  "name": "低风险自主命令白名单与红线静态扫描包",
+  "generated_at": "2026-05-08 19:57:08",
+  "status": "ready_for_static_scan",
+  "commands_executed": false,
+  "external_call": false,
+  "reload_service": false,
+  "violation_count": 0,
+  "hard_red_line_confirmation": {
+    "commands_executed": false,
+    "external_call": false,
+    "reload_service": false,
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "connect_broker": false,
+    "trade_order": false,
+    "login_tax_bureau": false,
+    "connect_finance_tax_software": false,
+    "real_render_publish": false,
+    "write_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false
+  },
+  "outputs": {
+    "whitelist_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\101低风险自主命令白名单与红线静态扫描包\\低风险自主命令白名单_最新.json",
+    "whitelist_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\101低风险自主命令白名单与红线静态扫描包\\低风险自主命令白名单_最新.md",
+    "redline_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\101低风险自主命令白名单与红线静态扫描包\\低风险自主命令红线静态扫描规则_最新.json",
+    "redline_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\101低风险自主命令白名单与红线静态扫描包\\低风险自主命令红线静态扫描规则_最新.md",
+    "sample_commands_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\101低风险自主命令白名单与红线静态扫描包\\本包样例候选命令_最新.json",
+    "sample_commands_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\101低风险自主命令白名单与红线静态扫描包\\本包样例候选命令_最新.md",
+    "package_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\101低风险自主命令白名单与红线静态扫描包\\低风险自主命令白名单与红线静态扫描包_最新.json",
+    "package_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\101低风险自主命令白名单与红线静态扫描包\\低风险自主命令白名单与红线静态扫描包_最新.md"
+  }
+}

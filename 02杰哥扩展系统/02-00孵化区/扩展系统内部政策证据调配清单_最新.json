@@ -1,0 +1,81 @@
+{
+  "version": "1.1",
+  "updated_at": "2026-05-07 23:56:33 +08:00",
+  "name": "扩展系统内部政策证据调配清单",
+  "asset_identity": "extension_internal_lightweight_readonly_policy_evidence_coordination_list",
+  "risk_level": "W1",
+  "boundary": {
+    "production_config": false,
+    "trigger_n8n": false,
+    "wecom_send": false,
+    "external_send": false,
+    "cross_system_write": false
+  },
+  "current_strategy": "扩展系统内部轻量只读调配优先；总管只登记能力和边界；n8n后置。",
+  "shared_sources": [
+    {
+      "source_id": "SHARED-POLICY-EVIDENCE-001",
+      "name": "税收政策知识库/政策证据底座",
+      "owning_system": "tax_business_system",
+      "asset_identity": "shadow_policy_evidence_candidate_layer",
+      "index_md": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收影子底座索引_最新.md",
+      "index_json": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收影子底座索引_最新.json",
+      "returns": ["title", "document_number", "source", "validity_status", "evidence_level", "extracted_conditions", "review_required_items"]
+    },
+    {
+      "source_id": "SHARED-POLICY-EVENT-001",
+      "name": "股票政策事件库",
+      "owning_system": "stock_research_system",
+      "asset_identity": "formal_research_evidence_data",
+      "index_json": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\policy_events_v1.0.json",
+      "returns": ["event_id", "title", "industry_tags", "impact_direction", "evidence_summary", "risk_counterpoint"]
+    }
+  ],
+  "allowed_calls": [
+    {
+      "requesting_system": "tax_business_analysis_assistant",
+      "allowed_sources": ["SHARED-POLICY-EVIDENCE-001"],
+      "purpose": "涉税业务政策依据、适用条件、资料缺口",
+      "output_boundary": "待复核分析草案"
+    },
+    {
+      "requesting_system": "stock_research_system",
+      "allowed_sources": ["SHARED-POLICY-EVIDENCE-001", "SHARED-POLICY-EVENT-001"],
+      "purpose": "行业政策、税费政策、监管事件对公司/行业的研究证据",
+      "output_boundary": "投资研究草案，不生成税务结论"
+    },
+    {
+      "requesting_system": "office_work_system",
+      "allowed_sources": ["SHARED-POLICY-EVIDENCE-001"],
+      "purpose": "合规依据、制度依据、资料清单",
+      "output_boundary": "待复核工作草案，不替代审批"
+    },
+    {
+      "requesting_system": "video_production_system",
+      "allowed_sources": ["SHARED-POLICY-EVIDENCE-001"],
+      "purpose": "版权、平台、经营合规政策线索",
+      "output_boundary": "内容制作草案，不自动发布"
+    },
+    {
+      "requesting_system": "video_factory_round012",
+      "allowed_sources": ["VIDEO-EVIDENCE-001", "VIDEO-EVIDENCE-002", "SHARED-EVIDENCE-VIDEO-002"],
+      "purpose": "本地预演任务单、脚本/分镜风险提示、发布前待复核问题",
+      "output_boundary": "安全预演层，不渲染、不发布、不企业微信真实外发"
+    }
+  ],
+  "forbidden": [
+    "其他系统写入税收政策知识库",
+    "视频工厂写回共享证据或平台规范来源卡",
+    "税收政策库直接返回业务结论",
+    "调用方省略validity_status",
+    "调用方省略evidence_level",
+    "用n8n自动转发查询结果",
+    "企业微信或外发调用共享证据"
+  ],
+  "first_samples": [
+    "共享政策证据只读调用样例_TAX_001_软件产品即征即退_v1.0.md/json",
+    "共享政策证据只读调用样例_STOCK_001_锗出口管制政策事件_v1.0.md/json",
+    "共享政策证据只读调用样例_OFFICE_001_涉税资料清单_v1.0.md",
+    "视频制作业务影子底座/视频工厂轮次012共享证据只读对接清单_v1.0.md/json"
+  ]
+}

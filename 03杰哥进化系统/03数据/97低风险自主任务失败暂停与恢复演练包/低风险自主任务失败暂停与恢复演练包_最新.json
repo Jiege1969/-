@@ -1,0 +1,35 @@
+{
+  "name": "低风险自主任务失败暂停与恢复演练包",
+  "generated_at": "2026-05-08 19:46:57",
+  "status": "readonly_failure_pause_recovery_drill_ready",
+  "readonly_drill_only": true,
+  "scenario_count": 6,
+  "recovery_template_defaults": {
+    "recovery_requested": false,
+    "recovery_executed": false,
+    "requires_supervisor_confirmation": true
+  },
+  "safety_confirmation": {
+    "auto_continue_after_failure": false,
+    "recovery_executed": false,
+    "external_call": false,
+    "reload_service": false,
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "connect_broker": false,
+    "trade": false,
+    "login_tax_bureau": false,
+    "connect_finance_tax_software": false,
+    "promote_to_formal_rule": false,
+    "modify_master_panel": false,
+    "modify_one_click_continuation_package": false
+  },
+  "outputs": {
+    "失败暂停场景矩阵JSON": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\97低风险自主任务失败暂停与恢复演练包\\失败暂停场景矩阵_最新.json",
+    "失败暂停场景矩阵Markdown": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\97低风险自主任务失败暂停与恢复演练包\\失败暂停场景矩阵_最新.md",
+    "恢复申请模板JSON": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\97低风险自主任务失败暂停与恢复演练包\\恢复申请模板_最新.json",
+    "恢复申请模板Markdown": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\97低风险自主任务失败暂停与恢复演练包\\恢复申请模板_最新.md",
+    "演练包JSON": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\97低风险自主任务失败暂停与恢复演练包\\低风险自主任务失败暂停与恢复演练包_最新.json",
+    "演练包Markdown": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\97低风险自主任务失败暂停与恢复演练包\\低风险自主任务失败暂停与恢复演练包_最新.md"
+  }
+}

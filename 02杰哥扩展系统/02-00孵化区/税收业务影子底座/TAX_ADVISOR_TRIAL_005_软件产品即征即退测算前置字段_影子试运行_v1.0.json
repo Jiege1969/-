@@ -1,0 +1,84 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "trial_id": "TAX_ADVISOR_TRIAL_005",
+  "name": "软件产品即征即退测算前置字段影子试运行",
+  "asset_identity": "tax_policy_advisor_shadow_trial_run_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "run_script": false,
+    "download_attachment": false,
+    "write_formal_tax_database": false,
+    "formal_tax_opinion": false,
+    "tax_filing": false,
+    "tax_refund_execution": false,
+    "invoice_execution": false,
+    "external_send": false,
+    "trigger_n8n": false,
+    "generate_amount": false
+  },
+  "trial_input": {
+    "business_question": "如果企业想估算软件产品增值税即征即退金额，系统应先让用户补哪些字段？",
+    "requested_output": ["字段", "公式口径", "缺口", "不给金额"],
+    "tax_type": "增值税",
+    "business_scenario": "软件产品增值税即征即退测算前置",
+    "entity_profile": "软件产品销售企业，具体主体和资料待补",
+    "region": "待补",
+    "period": "待补",
+    "provided_materials": [
+      "软件产品即征即退_测算前置字段清单_v1.0",
+      "税收适用条件字段化样例_软件产品即征即退_v1.0",
+      "税收政策指引卡_软件产品即征即退_20241025_v1.0"
+    ],
+    "known_policy": ["财税〔2011〕100号", "国家税务总局2024-10-25公开指引"]
+  },
+  "analysis_object": {
+    "tax_type": "增值税",
+    "policy_topic": "软件产品增值税即征即退",
+    "output_type": "测算前置字段待复核草案",
+    "status": "draft"
+  },
+  "prerequisite_fields": [
+    {"group": "期间地区", "field": "tax_period", "description": "纳税所属期/申报期", "missing_action": "列入待核实事项"},
+    {"group": "期间地区", "field": "local_tax_authority", "description": "主管税务机关及地区", "missing_action": "不判断地方口径"},
+    {"group": "税率口径", "field": "applicable_vat_rate", "description": "现行适用税率及依据", "missing_action": "不直接测算"},
+    {"group": "收入口径", "field": "software_sales_amount_excl_vat", "description": "软件产品不含税销售额", "missing_action": "列为待补字段，不假设"},
+    {"group": "税额口径", "field": "output_vat", "description": "当期软件产品销项税额", "missing_action": "不能得出准确退税额"},
+    {"group": "税额口径", "field": "input_vat_creditable", "description": "可抵扣进项税额", "missing_action": "不能得出准确退税额"},
+    {"group": "税额口径", "field": "vat_payable", "description": "当期软件产品应纳税额", "missing_action": "只能给测算公式"},
+    {"group": "收入拆分", "field": "income_split", "description": "软件、服务、硬件、第三方软件收入拆分", "missing_action": "提示拆分风险"},
+    {"group": "进项分摊", "field": "input_vat_allocation_method", "description": "进项税额分摊方式", "missing_action": "提示核算风险"},
+    {"group": "材料条件", "field": "software_certificate_status", "description": "软件著作权、检测证明、登记材料或当地替代材料", "missing_action": "提示条件风险"},
+    {"group": "特殊情形", "field": "embedded_software_flag", "description": "是否嵌入式软件", "missing_action": "提示适用差异"},
+    {"group": "特殊情形", "field": "commissioned_development_flag", "description": "是否受托开发或转让著作权", "missing_action": "提示定性风险"},
+    {"group": "地方口径", "field": "local_filing_requirement", "description": "当地备案、留存备查或办理要求", "missing_action": "提示咨询主管机关"}
+  ],
+  "formula_note": "软件产品增值税即征即退测算应先确认当期软件产品实际税负；政策线索中提到实际税负超过3%的部分作为候选口径；字段缺失时只能列字段和公式思路，不能给具体金额。",
+  "current_gaps": [
+    "缺所属期和地区",
+    "缺软件产品收入拆分",
+    "缺销项、进项、应纳税额",
+    "缺进项分摊方法",
+    "缺软件产品材料",
+    "缺主管税务机关要求"
+  ],
+  "can_output": ["测算前置字段清单", "公式口径和测算思路", "缺口和风险提示", "面向用户的补资料问题"],
+  "cannot_output": ["具体退税金额", "申报建议", "正式税务意见", "对主管税务机关口径的替代判断"],
+  "review_questions": [
+    "本次测算对应哪个纳税所属期和申报期？",
+    "软件产品不含税销售额是否已经独立核算？",
+    "当期软件产品销项税额、可抵扣进项税额、应纳税额分别是多少？",
+    "软件、硬件、服务、维护、培训收入是否已经拆分？",
+    "进项税额分摊方法是否有内部资料或主管机关认可依据？",
+    "是否存在嵌入式软件、受托开发、代理销售等特殊情形？",
+    "当地主管税务机关对测算口径和材料是否有补充要求？"
+  ],
+  "trial_record": {
+    "topic": "软件产品即征即退测算前置字段",
+    "status": "draft",
+    "main_gaps": ["期间地区", "收入拆分", "销项进项应纳", "分摊方法", "地方口径"],
+    "boundary_violation": false,
+    "next_step": "收集测算字段并交人工复核，不输出金额"
+  },
+  "standard_disclaimer": "本输出为影子版待复核分析草案，不是正式税务意见。涉及申报、退税、开票、外发或正式采用前，必须由人工和专业人员复核。"
+}

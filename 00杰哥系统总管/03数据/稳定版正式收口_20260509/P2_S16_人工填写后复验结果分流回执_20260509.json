@@ -1,0 +1,39 @@
+{
+  "id": "P2-S16-POST-MANUAL-FILL-RECHECK-ROUTING-RECEIPT-20260509",
+  "executed_at": "2026-05-09 13:26:07 +08:00",
+  "execution_type": "readonly_preview",
+  "status": "pass",
+  "command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S16人工填写后复验结果分流只读检查.py'",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\65P2S16人工填写后复验结果分流只读检查\\P2S16人工填写后复验结果分流只读检查_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\65P2S16人工填写后复验结果分流只读检查\\P2S16人工填写后复验结果分流只读检查_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\65P2S16人工填写后复验结果分流只读检查\\P2S16人工填写后复验结果分流预演样例_20260509.json"
+  ],
+  "summary": {
+    "receipt_count": 4,
+    "passed": 4,
+    "failed": 0,
+    "waiting_manual_fill": 4,
+    "problem_recovery": 0,
+    "blocked_redline_recovery": 0,
+    "shadow_draft_candidate_discussion": 0,
+    "write_target_entry": 0,
+    "auto_generate_business_conclusion": 0,
+    "release_forms": 0,
+    "formal_capability_claim": 0
+  },
+  "conclusion": "人工填写后复验结果分流检查通过；4 份空白回执均继续等待人工填写，0 份进入影子草案候选讨论，0 项写入口或业务结论。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}
+

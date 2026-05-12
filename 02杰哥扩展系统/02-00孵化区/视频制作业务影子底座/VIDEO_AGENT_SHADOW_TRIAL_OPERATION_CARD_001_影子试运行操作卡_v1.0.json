@@ -1,0 +1,88 @@
+{
+  "id": "VIDEO_AGENT_SHADOW_TRIAL_OPERATION_CARD_001",
+  "name": "影子试运行操作卡",
+  "asset_identity": "video_creation_agent_shadow_trial_operation_card",
+  "stage": "W1_R0",
+  "status": "operation_card_not_runner_script",
+  "boundary": {
+    "wechat_integration": false,
+    "call_model": false,
+    "media_generation": false,
+    "read_real_assets": false,
+    "formal_task_write": false
+  },
+  "steps": [
+    {
+      "order": 1,
+      "operation": "register_desensitized_input",
+      "file": "VIDEO_AGENT_DESENSITIZED_TRIAL_SAMPLE_TEMPLATE_001",
+      "output": "desensitized_video_idea_sample"
+    },
+    {
+      "order": 2,
+      "operation": "fill_trial_packet",
+      "file": "VIDEO_AGENT_SHADOW_TRIAL_IO_PACKET_001",
+      "output": "trial_input_output_packet"
+    },
+    {
+      "order": 3,
+      "operation": "run_field_check_manually",
+      "file": "VIDEO_AGENT_SHADOW_RUN_CHECKLIST_001",
+      "output": "pass_clarification_or_block"
+    },
+    {
+      "order": 4,
+      "operation": "fill_clarification_question",
+      "file": "VIDEO_AGENT_CLARIFICATION_TEMPLATE_001",
+      "output": "one_clarification_question"
+    },
+    {
+      "order": 5,
+      "operation": "update_conversation_state",
+      "file": "VIDEO_AGENT_CLARIFICATION_STATE_MAPPING_001",
+      "output": "shadow_state_change"
+    },
+    {
+      "order": 6,
+      "operation": "create_text_candidate_structure",
+      "file": "VIDEO_AGENT_THREE_OPTION_SAMPLE_001",
+      "output": "up_to_three_review_text_drafts"
+    },
+    {
+      "order": 7,
+      "operation": "intake_human_feedback",
+      "file": "VIDEO_AGENT_HUMAN_RECEIPT_INTAKE_TEMPLATE_001",
+      "output": "human_receipt"
+    },
+    {
+      "order": 8,
+      "operation": "record_state_change",
+      "file": "VIDEO_AGENT_STATE_CHANGE_LOG_TEMPLATE_001",
+      "output": "state_change_log"
+    },
+    {
+      "order": 9,
+      "operation": "judge_evolution_candidate",
+      "file": "VIDEO_AGENT_EVOLUTION_CANDIDATE_INTAKE_CHECKLIST_001",
+      "output": "candidate_or_pending_review"
+    },
+    {
+      "order": 10,
+      "operation": "redline_alternative_handling",
+      "file": "VIDEO_AGENT_REDLINE_ALTERNATIVE_ACTION_TEMPLATE_001",
+      "output": "shadow_alternative_action"
+    }
+  ],
+  "pre_checks": [
+    "user_idea_must_be_desensitized",
+    "do_not_read_real_asset_path",
+    "do_not_fill_account_secret_webhook_or_wechat_credential",
+    "do_not_treat_candidate_as_formal_script"
+  ],
+  "closure": [
+    "record_shadow_files_used",
+    "record_missing_fields_and_review_questions",
+    "create_alignment_return",
+    "do_not_generate_render_publish_or_external_send"
+  ]
+}

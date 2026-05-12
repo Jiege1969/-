@@ -1,0 +1,138 @@
+{
+  "名称": "日常可用交付版一键只读总回归",
+  "生成时间": "2026-05-09 13:41:44",
+  "总体状态": "pass",
+  "汇总": {
+    "总数": 11,
+    "通过": 11,
+    "失败": 0
+  },
+  "任务结果": [
+    {
+      "id": "DUR-001",
+      "name": "企业微信公共入口日常巡检",
+      "category": "wecom",
+      "script": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\02脚本\\执行企业微信公共接入层日常只读巡检.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\"总体状态\": \"pass\", \"通过\": 15, \"失败\": 0, \"输出\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\00公共组件\\\\企业微信接入设置\\\\03数据\\\\15日常可用版只读巡检包\\\\企业微信公共接入层日常只读巡检_最新.json\", \"报告\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\00公共组件\\\\企业微信接入设置\\\\03数据\\\\15日常可用版只读巡检包\\\\企业微信公共接入层日常只读巡检_最新.md\"}",
+      "stderr": ""
+    },
+    {
+      "id": "DUR-002",
+      "name": "股票展示口径一致性",
+      "category": "stock",
+      "script": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本\\验证股票展示口径一致性.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "����\": [], \"����ļ���\": 10, \"�����\": [{\"path\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\01��Ʊ�о�ϵͳ\\\\03����\\\\185ר���г�����\\\\��Ʊר���г�����_����.md\", \"exists\": true, \"forbidden_hits\": [], \"recommendation_hits\": [], \"risk_hits\": [\"���ո���\", \"�ر�\"], \"has_conflict\": false, \"replacement_hits\": [\"�о���ֵ����\", \"��ǰ��������\"], \"expert_replacement_ready\": true}, {\"path\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\01��Ʊ�о�ϵͳ\\\\03����\\\\185ר���г�����\\\\��Ʊר���г�����_����.json\", \"exists\": true, \"forbidden_hits\": [], \"recommendation_hits\": [], \"risk_hits\": [\"���ո���\", \"�ر�\"], \"has_conflict\": false, \"replacement_hits\": [\"�о���ֵ����\", \"��ǰ��������\"], \"expert_replacement_ready\": true}, {\"path\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\01��Ʊ�о�ϵͳ\\\\03����\\\\86ͼ�α���\\\\��Ʊͼ�α���_����.json\", \"exists\": true, \"forbidden_hits\": [], \"recommendation_hits\": [], \"risk_hits\": [], \"has_conflict\": false, \"replacement_hits\": [], \"expert_replacement_ready\": true}, {\"path\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\01��Ʊ�о�ϵͳ\\\\03����\\\\86ͼ�α���\\\\��Ʊͼ�α���_����.svg\", \"exists\": true, \"forbidden_hits\": [], \"recommendation_hits\": [], \"risk_hits\": [\"���ո���\", \"�ر�\"], \"has_conflict\": false, \"replacement_hits\": [], \"expert_replacement_ready\": true}, {\"path\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\01��Ʊ�о�ϵͳ\\\\03����\\\\86ͼ�α���\\\\sz002466_����_png����.json\", \"exists\": true, \"forbidden_hits\": [], \"recommendation_hits\": [], \"risk_hits\": [\"���ո���\", \"�ر�\"], \"has_conflict\": false, \"replacement_hits\": [\"�о���ֵ����\"], \"expert_replacement_ready\": true}, {\"path\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\01��Ʊ�о�ϵͳ\\\\03����\\\\86ͼ�α���\\\\sz002466_����.svg\", \"exists\": true, \"forbidden_hits\": [], \"recommendation_hits\": [], \"risk_hits\": [\"���ո���\", \"�ر�\"], \"has_conflict\": false, \"replacement_hits\": [], \"expert_replacement_ready\": true}, {\"path\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\01��Ʊ�о�ϵͳ\\\\03����\\\\135�ֲ��ձ�\\\\���ɱ�׼����v2_�����ҵ_sz002466_����.md\", \"exists\": true, \"forbidden_hits\": [], \"recommendation_hits\": [], \"risk_hits\": [\"���ո���\", \"�����ر�\", \"�ر�\"], \"has_conflict\": false, \"replacement_hits\": [], \"expert_replacement_ready\": true}, {\"path\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\01��Ʊ�о�ϵͳ\\\\03����\\\\135�ֲ��ձ�\\\\���ɱ�׼����v2_����.md\", \"exists\": true, \"forbidden_hits\": [], \"recommendation_hits\": [], \"risk_hits\": [\"���ո���\", \"�����ر�\", \"�ر�\"], \"has_conflict\": false, \"replacement_hits\": [], \"expert_replacement_ready\": true}, {\"path\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\01��Ʊ�о�ϵͳ\\\\03����\\\\24��ҵ΢�Ŷ̻ظ�\\\\��ҵ΢�ŵ��ɶ̻ظ�_����.md\", \"exists\": true, \"forbidden_hits\": [], \"recommendation_hits\": [], \"risk_hits\": [\"�ر�\"], \"has_conflict\": false, \"replacement_hits\": [], \"expert_replacement_ready\": true}, {\"path\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\01��Ʊ�о�ϵͳ\\\\03����\\\\24��ҵ΢�Ŷ̻ظ�\\\\��ҵ΢�ŵ��ɶ̻ظ�_����.json\", \"exists\": true, \"forbidden_hits\": [], \"recommendation_hits\": [], \"risk_hits\": [\"�ر�\"], \"has_conflict\": false, \"replacement_hits\": [], \"expert_replacement_ready\": true}], \"��ȫ�߽�\": {\"����ȯ��\": true, \"������\": true, \"����������ָ��\": true, \"���޸ĺ�����������\": true, \"����n8n\": true, \"������ҵ΢�Ź�������\": true, \"����ʵ������ҵ΢��\": true}}",
+      "stderr": ""
+    },
+    {
+      "id": "DUR-003",
+      "name": "股票第九批影子验收",
+      "category": "stock",
+      "script": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本\\验证股票线第九批统一影子验收总表.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\"name\": \"��Ʊ�ߵھ���ͳһӰ�������ܱ����ս��\", \"generated_at\": \"2026-05-09 13:41:43\", \"passed\": true, \"errors\": [], \"metrics\": {\"check_count\": 5, \"passed_count\": 5, \"failed_count\": 0, \"queue_completed_count\": 5, \"queue_count\": 5, \"real_system_triggered\": false}}",
+      "stderr": ""
+    },
+    {
+      "id": "DUR-004",
+      "name": "视频制作系统状态摘要验收",
+      "category": "video",
+      "script": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\验证视频制作系统状态摘要.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\"ͨ��\": 11, \"ʧ��\": 0, \"���\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\02��Ƶ����ϵͳ\\\\04��־\\\\video-production-system-status-summary-verify-����.json\"}",
+      "stderr": ""
+    },
+    {
+      "id": "DUR-005",
+      "name": "视频真实渲染禁用态检查",
+      "category": "video",
+      "script": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\执行视频真实渲染禁用态检查.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\"ִ����״̬\": \"����̬\", \"�Ƿ���ü�������\": false, \"���\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\02��Ƶ����ϵͳ\\\\03����\\\\08���������Ž�\\\\��Ƶ��ʵ��Ⱦ����̬���_20260509_134144.json\"}",
+      "stderr": ""
+    },
+    {
+      "id": "DUR-006",
+      "name": "视频P0人工回执影子样例验收",
+      "category": "video",
+      "script": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\验证视频P0人工回执影子样例.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\"ͨ��\": 10, \"ʧ��\": 0, \"���\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\02��Ƶ����ϵͳ\\\\04��־\\\\video-p0-human-receipt-shadow-samples-verify-����.json\"}",
+      "stderr": ""
+    },
+    {
+      "id": "DUR-007",
+      "name": "视频任务ID与放行链一致性复核卡",
+      "category": "video",
+      "script": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\生成视频任务ID与放行链一致性复核卡.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\"����ID\": \"VF-20260508-006\", \"���˹��˶�\": 2, \"�������\": 5, \"���\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\02�ܸ���չϵͳ\\\\02��Ƶ����ϵͳ\\\\03����\\\\18�ִ�012��Ƶ�����ܿز�\\\\���������\\\\��Ƶ����ID�������һ���Ը��˿�_����.json\"}",
+      "stderr": ""
+    },
+    {
+      "id": "DUR-008",
+      "name": "阶段性多业务联调封版候选验收",
+      "category": "evolution",
+      "script": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\验证阶段性多业务联调通过封版候选.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\"ͨ��\": 39, \"ʧ��\": 0, \"���\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\03�ܸ����ϵͳ\\\\04��־\\\\�׶��Զ�ҵ������ͨ������ѡ����\\\\multi-business-integration-passed-freeze-candidate-verify-20260509-134144.json\"}",
+      "stderr": ""
+    },
+    {
+      "id": "DUR-009",
+      "name": "阶段性封版候选回归建议拆单验收",
+      "category": "evolution",
+      "script": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\验证阶段性封版候选回归建议拆单.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\"����\": \"�׶��Է���ѡ�ع齨�������\", \"����ʱ��\": \"2026-05-09 13:41:44\", \"ͨ��\": true, \"����\": [], \"ָ��\": {\"�ع鿨����\": 8, \"������\": 0}}",
+      "stderr": ""
+    },
+    {
+      "id": "DUR-010",
+      "name": "日常可用交付版状态包生成",
+      "category": "evolution",
+      "script": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\生成日常可用交付版状态包.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\"����״̬\": \"daily_usable_candidate_passed\", \"���\": \"D:\\\\�ܸ����ܻ�ϵͳ\\\\03�ܸ����ϵͳ\\\\03����\\\\43�ճ����ý�����״̬��\\\\�ճ����ý�����״̬��_����.json\"}",
+      "stderr": ""
+    },
+    {
+      "id": "DUR-011",
+      "name": "日常可用交付版状态包验收",
+      "category": "evolution",
+      "script": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\验证日常可用交付版状态包.py",
+      "returncode": 0,
+      "passed": true,
+      "stdout": "{\"����\": \"�ճ����ý�����״̬������\", \"����ʱ��\": \"2026-05-09 13:41:44\", \"ͨ��\": true, \"����\": [], \"ָ��\": {\"��������\": 8, \"���������\": 10, \"�����ع鿨\": 8, \"������\": 0}}",
+      "stderr": ""
+    }
+  ],
+  "安全边界": {
+    "重载19310": false,
+    "重载19302": false,
+    "请求19302业务接口": false,
+    "真实发送企业微信": false,
+    "触发n8n": false,
+    "接券商": false,
+    "交易": false,
+    "登录电子税务局": false,
+    "接财税软件": false,
+    "真实渲染视频": false,
+    "自动发布视频": false,
+    "写正式规则": false,
+    "修改总管面板": false,
+    "修改一键接续包": false
+  }
+}

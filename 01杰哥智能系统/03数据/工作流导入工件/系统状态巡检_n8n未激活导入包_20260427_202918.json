@@ -1,0 +1,123 @@
+{
+  "生成时间": "2026-04-27 20:29:18",
+  "阶段": "第2层-未激活导入工件生成",
+  "目标工作流": "系统状态巡检",
+  "准备包来源": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\灰度接入\\系统状态巡检未激活导入准备包_最新.json",
+  "备份清单来源": "F:\\系统备份\\灰度接入备份_20260427_193136\\备份清单.json",
+  "导入目标容器": "jiege_n8n",
+  "导入目标地址": "http://127.0.0.1:18679",
+  "工作流工件": {
+    "name": "系统状态巡检",
+    "active": false,
+    "nodes": [
+      {
+        "parameters": {},
+        "id": "de16997c-1ae3-479b-9ef6-3e507370df1b",
+        "name": "手动触发",
+        "type": "n8n-nodes-base.manualTrigger",
+        "typeVersion": 1,
+        "position": [
+          260,
+          260
+        ]
+      },
+      {
+        "parameters": {
+          "mode": "manual",
+          "duplicateItem": false,
+          "assignments": {
+            "assignments": [
+              {
+                "id": "a9154a19-d3d5-4472-82a8-e55da67b775a",
+                "name": "状态",
+                "value": "dry_run_only",
+                "type": "string"
+              },
+              {
+                "id": "52c61a08-d093-49d6-81f1-74ab4d09ac3d",
+                "name": "工作流名",
+                "value": "系统状态巡检",
+                "type": "string"
+              },
+              {
+                "id": "cf85f4fa-8824-4d2a-b0e3-548c62549046",
+                "name": "执行摘要",
+                "value": "未激活导入验证工件，仅用于确认n8n导入链路，不执行真实巡检。",
+                "type": "string"
+              },
+              {
+                "id": "87f5b169-d6cb-411b-a6f7-c136131249b5",
+                "name": "是否需要人工复核",
+                "value": true,
+                "type": "boolean"
+              }
+            ]
+          }
+        },
+        "id": "9b4c3628-5637-492c-8ef7-f8895b5c5190",
+        "name": "生成只读状态",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          520,
+          260
+        ]
+      },
+      {
+        "parameters": {
+          "content": "系统状态巡检未激活导入工件\\n生成时间：2026-04-27 20:29:18\\n安全边界：无Webhook、无凭据、无自动触发、无外发。",
+          "height": 220,
+          "width": 320,
+          "color": 4
+        },
+        "id": "f39d07ac-f475-4a9e-a917-2955271ec5d9",
+        "name": "安全边界说明",
+        "type": "n8n-nodes-base.stickyNote",
+        "typeVersion": 1,
+        "position": [
+          260,
+          20
+        ]
+      }
+    ],
+    "connections": {
+      "手动触发": {
+        "main": [
+          [
+            {
+              "node": "生成只读状态",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "settings": {
+      "executionOrder": "v1",
+      "saveManualExecutions": true
+    },
+    "staticData": null,
+    "pinData": {},
+    "tags": [],
+    "meta": {
+      "jiege_v3_gray_import": true,
+      "target": "jiege_n8n",
+      "must_remain_inactive": true,
+      "generated_at": "2026-04-27 20:29:18"
+    }
+  },
+  "安全检查": {
+    "active": false,
+    "包含Webhook节点": false,
+    "包含凭据": false,
+    "允许自动触发": false,
+    "是否调用n8nAPI": false,
+    "是否执行导入": false
+  },
+  "是否调用n8nAPI": false,
+  "是否执行导入": false,
+  "是否启用Webhook": false,
+  "是否触发真实工作流": false,
+  "是否发送企业微信": false
+}

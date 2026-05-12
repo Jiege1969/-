@@ -1,0 +1,516 @@
+{
+  "name": "市场风格单股适配人工复核回执模板",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:02:03",
+  "asset_identity": "W1市场风格单股适配复核模板",
+  "status": "blank_template",
+  "style_daily_snapshot": {
+    "date": "2026-05-07",
+    "status": "confirmed",
+    "risk_appetite_score": 0.73,
+    "top_sectors": [
+      {
+        "name": "通信线缆及配套",
+        "change_pct": 6.65,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "国际工程",
+        "change_pct": 5.35,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "机床工具",
+        "change_pct": 5.27,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "激光设备",
+        "change_pct": 5.27,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "文字媒体",
+        "change_pct": 4.9,
+        "source": "东方财富公开板块行情"
+      }
+    ],
+    "bottom_sectors": [
+      {
+        "name": "教育运营及其他",
+        "change_pct": -7.97,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "氨纶",
+        "change_pct": -5.54,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "氮肥",
+        "change_pct": -4.57,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "动力煤",
+        "change_pct": -4.5,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "煤化工",
+        "change_pct": -4.28,
+        "source": "东方财富公开板块行情"
+      }
+    ],
+    "size_style_dominant": "small",
+    "liquidity_percentile": 0.9833,
+    "final_adaptation_score": 16,
+    "moderate_coefficient": 1.06,
+    "missing_summary": "无关键缺口，可作为confirmed市场风格证据。"
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "not_formal_database_write": true,
+  "receipts": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "stock_type_tags": [
+        "资源股",
+        "稀有金属",
+        "半导体材料",
+        "小盘弹性"
+      ],
+      "style_focus": [
+        "风险偏好",
+        "有色/稀有金属板块热度",
+        "小盘风格",
+        "成交活跃度"
+      ],
+      "daily_style_source": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\market_style_daily_latest.json",
+      "daily_style_status": "confirmed",
+      "receipt_status": "blank",
+      "review_fields": {
+        "risk_appetite_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "sector_heat_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "size_style_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "liquidity_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "stock_style_fit_score": {
+          "value": null,
+          "range": [
+            0,
+            20
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        }
+      },
+      "ready_review": {
+        "style_fit_ready": false,
+        "score_ready": false,
+        "ready_condition": "市场风格日表有效，且四个单股适配字段均有证据和人工复核后，才可进入L3市场风格适配分。",
+        "blocking_reason": "缺少单股风格适配复核，不能仅凭市场整体强弱提高个股结论。"
+      },
+      "front_output_rule": {
+        "when_missing": "市场风格日表可作背景，但该股风格适配尚未复核，前台只能写环境参考，不能写强适配结论。",
+        "when_ready": "输出一句结论型环境适配判断，并保留后台证据链。"
+      }
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "stock_type_tags": [
+        "资源股",
+        "新能源材料",
+        "锂盐",
+        "周期弹性"
+      ],
+      "style_focus": [
+        "风险偏好",
+        "新能源材料板块热度",
+        "资源周期热度",
+        "成交活跃度"
+      ],
+      "daily_style_source": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\market_style_daily_latest.json",
+      "daily_style_status": "confirmed",
+      "receipt_status": "blank",
+      "review_fields": {
+        "risk_appetite_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "sector_heat_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "size_style_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "liquidity_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "stock_style_fit_score": {
+          "value": null,
+          "range": [
+            0,
+            20
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        }
+      },
+      "ready_review": {
+        "style_fit_ready": false,
+        "score_ready": false,
+        "ready_condition": "市场风格日表有效，且四个单股适配字段均有证据和人工复核后，才可进入L3市场风格适配分。",
+        "blocking_reason": "缺少单股风格适配复核，不能仅凭市场整体强弱提高个股结论。"
+      },
+      "front_output_rule": {
+        "when_missing": "市场风格日表可作背景，但该股风格适配尚未复核，前台只能写环境参考，不能写强适配结论。",
+        "when_ready": "输出一句结论型环境适配判断，并保留后台证据链。"
+      }
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "stock_type_tags": [
+        "半导体",
+        "晶圆代工",
+        "科创板",
+        "成长风格"
+      ],
+      "style_focus": [
+        "科技成长热度",
+        "半导体板块热度",
+        "大小盘风格",
+        "风险偏好"
+      ],
+      "daily_style_source": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\market_style_daily_latest.json",
+      "daily_style_status": "confirmed",
+      "receipt_status": "blank",
+      "review_fields": {
+        "risk_appetite_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "sector_heat_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "size_style_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "liquidity_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "stock_style_fit_score": {
+          "value": null,
+          "range": [
+            0,
+            20
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        }
+      },
+      "ready_review": {
+        "style_fit_ready": false,
+        "score_ready": false,
+        "ready_condition": "市场风格日表有效，且四个单股适配字段均有证据和人工复核后，才可进入L3市场风格适配分。",
+        "blocking_reason": "缺少单股风格适配复核，不能仅凭市场整体强弱提高个股结论。"
+      },
+      "front_output_rule": {
+        "when_missing": "市场风格日表可作背景，但该股风格适配尚未复核，前台只能写环境参考，不能写强适配结论。",
+        "when_ready": "输出一句结论型环境适配判断，并保留后台证据链。"
+      }
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "stock_type_tags": [
+        "大宗供应链",
+        "周期服务",
+        "低估值",
+        "国企"
+      ],
+      "style_focus": [
+        "大宗商品景气",
+        "低估值风格",
+        "成交活跃度",
+        "市场风险偏好"
+      ],
+      "daily_style_source": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\market_style_daily_latest.json",
+      "daily_style_status": "confirmed",
+      "receipt_status": "blank",
+      "review_fields": {
+        "risk_appetite_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "sector_heat_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "size_style_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "liquidity_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "stock_style_fit_score": {
+          "value": null,
+          "range": [
+            0,
+            20
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        }
+      },
+      "ready_review": {
+        "style_fit_ready": false,
+        "score_ready": false,
+        "ready_condition": "市场风格日表有效，且四个单股适配字段均有证据和人工复核后，才可进入L3市场风格适配分。",
+        "blocking_reason": "缺少单股风格适配复核，不能仅凭市场整体强弱提高个股结论。"
+      },
+      "front_output_rule": {
+        "when_missing": "市场风格日表可作背景，但该股风格适配尚未复核，前台只能写环境参考，不能写强适配结论。",
+        "when_ready": "输出一句结论型环境适配判断，并保留后台证据链。"
+      }
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "stock_type_tags": [
+        "化工",
+        "TMA",
+        "周期弹性",
+        "主题弹性"
+      ],
+      "style_focus": [
+        "化工板块热度",
+        "TMA主题热度",
+        "小盘风格",
+        "风险偏好"
+      ],
+      "daily_style_source": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\market_style_daily_latest.json",
+      "daily_style_status": "confirmed",
+      "receipt_status": "blank",
+      "review_fields": {
+        "risk_appetite_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "sector_heat_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "size_style_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "liquidity_fit": {
+          "value": null,
+          "allowed_values": [
+            "positive",
+            "neutral",
+            "negative"
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "stock_style_fit_score": {
+          "value": null,
+          "range": [
+            0,
+            20
+          ],
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        }
+      },
+      "ready_review": {
+        "style_fit_ready": false,
+        "score_ready": false,
+        "ready_condition": "市场风格日表有效，且四个单股适配字段均有证据和人工复核后，才可进入L3市场风格适配分。",
+        "blocking_reason": "缺少单股风格适配复核，不能仅凭市场整体强弱提高个股结论。"
+      },
+      "front_output_rule": {
+        "when_missing": "市场风格日表可作背景，但该股风格适配尚未复核，前台只能写环境参考，不能写强适配结论。",
+        "when_ready": "输出一句结论型环境适配判断，并保留后台证据链。"
+      }
+    }
+  ],
+  "review_rules": [
+    "市场风格日表只能说明市场环境，不能自动推出单股适配结论。",
+    "单股适配必须同时看风险偏好、板块热度、大小盘风格和成交活跃度。",
+    "任一核心适配字段缺证据时，stock_style_fit_score不得填写。",
+    "前台输出应给结论性短答；证据和缺口保留在后台，不堆指标。",
+    "本模板不改正式评分、不接企业微信、不触发n8n、不外发。"
+  ],
+  "summary": {
+    "receipt_count": 5,
+    "stock_count": 5,
+    "daily_style_status": "confirmed",
+    "style_fit_ready_count": 0,
+    "score_allowed_count": 0
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_adapter_write": true,
+    "not_score_write": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

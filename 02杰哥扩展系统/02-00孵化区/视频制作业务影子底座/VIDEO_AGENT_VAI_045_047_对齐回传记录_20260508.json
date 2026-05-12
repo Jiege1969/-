@@ -1,0 +1,47 @@
+{
+  "record_id": "VIDEO_AGENT_VAI_045_047_HANDOFF_20260508",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "work_scope": "W1/R0 low-risk shadow construction",
+  "round_summary": [
+    "Created an index merge precheck checklist.",
+    "Created a next-round continuous construction queue.",
+    "Created a no-stop execution rule card."
+  ],
+  "changed_files": [
+    "VIDEO_AGENT_INDEX_MERGE_PRECHECK_001_索引合并前检查清单_v1.0.md",
+    "VIDEO_AGENT_INDEX_MERGE_PRECHECK_001_索引合并前检查清单_v1.0.json",
+    "VIDEO_AGENT_CONTINUOUS_QUEUE_NEXT_001_连续施工下一轮候选队列_v1.0.md",
+    "VIDEO_AGENT_CONTINUOUS_QUEUE_NEXT_001_连续施工下一轮候选队列_v1.0.json",
+    "VIDEO_AGENT_NO_STOP_EXECUTION_RULE_001_不停止执行规则卡_v1.0.md",
+    "VIDEO_AGENT_NO_STOP_EXECUTION_RULE_001_不停止执行规则卡_v1.0.json",
+    "VIDEO_AGENT_VAI_045_047_对齐回传记录_20260508.md",
+    "VIDEO_AGENT_VAI_045_047_对齐回传记录_20260508.json"
+  ],
+  "risk_level": "low",
+  "real_system_triggered": {
+    "model_api": false,
+    "material_read": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "service_or_port_change": false,
+    "manager_or_public_component_change": false
+  },
+  "requires_manager_integration": false,
+  "manager_integration_note": "Only needed if the precheck checklist is promoted to a general incubation rule.",
+  "next_suggestions": [
+    "Create shadow task trace fields.",
+    "Create release conflict sample card.",
+    "Create WeCom command reply placeholder sample."
+  ],
+  "self_check": {
+    "read_panel_and_start_package_first": true,
+    "write_scope_limited_to_video_shadow_base": true,
+    "json_validated_by_convertfrom_json": true,
+    "redline_terms_are_boundary_statements": true,
+    "no_real_execution": true,
+    "no_manager_public_service_formal_or_other_line_changes": true
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "packet_id": "P2_SHADOW_ENTRY_HUMAN_REVIEW_PACKET_001",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S10",
+  "status": "human_review_packet_template_not_release_form",
+  "purpose": "把 P2-S9 封存项转成人工复核工作包，明确复核问题、允许动作和禁止动作",
+  "input_dependency": "P2-S9 影子入口封存回收预演样例",
+  "groups": {
+    "ready_shadow_preview": {
+      "review_questions": [
+        "材料是否已脱敏或授权",
+        "目标业务线是否正确",
+        "目标入口是否仍为空白或待复核状态",
+        "是否只生成待复核草案或预填建议",
+        "是否仍保持不写正式库、不外发、不触发 n8n"
+      ],
+      "allowed_actions": ["人工读取脱敏材料", "人工决定是否填写影子入口", "人工补充缺口字段"],
+      "forbidden_actions": ["自动填写影子入口", "自动生成正式业务结论", "自动发送、上传、申报、交易、渲染或发布"]
+    },
+    "pause_gap_archive": {
+      "review_questions": ["缺口是否真实存在", "是否可以通过补充脱敏材料解决", "是否需要继续暂停"],
+      "allowed_actions": ["记录缺口", "请求补充材料或授权"],
+      "forbidden_actions": ["用猜测补齐缺口", "生成业务结论"]
+    },
+    "blocked_redline_archive": {
+      "review_questions": ["红线命中是否准确", "是否需要升级给总管或人工确认", "是否必须保持阻断"],
+      "allowed_actions": ["记录阻断事实", "进入问题回收"],
+      "forbidden_actions": ["绕过红线继续推进", "转入任何业务入口"]
+    }
+  },
+  "hard_rules": {
+    "packet_is_release_form": false,
+    "auto_fill_shadow_entry": false,
+    "human_review_required": true,
+    "formal_capability_claim": false,
+    "blocked_can_enter_business_entry": false
+  },
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

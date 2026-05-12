@@ -1,0 +1,137 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SERIES_TOPIC_REGISTER_001",
+  "asset_name": "成语故事系列栏目首批选题登记表",
+  "business_line": "视频制作业务影子底座",
+  "created_at": "2026-05-08 13:28:00 +08:00",
+  "risk_level": "W1/R0",
+  "asset_identity": "选题登记草案，不是正式脚本、生成放行、发布放行或外发许可",
+  "scope": "成语故事系列栏目首批候选选题登记、状态跟踪和人工复核",
+  "source_assets": [
+    "VIDEO_SCRIPT_SERIES_STRUCTURE_001_成语故事系列栏目统一结构草案_v1.0.md/json",
+    "VIDEO_SCRIPT_QUALITY_ACCEPTANCE_TABLE_001_成语故事脚本质量验收表_v1.0.md/json",
+    "VIDEO_SCRIPT_DURATION_VARIANT_CHECK_001_成语故事30秒60秒版本差异检查卡_v1.0.md/json",
+    "VIDEO_SCRIPT_SAMPLE_001_掩耳盗铃高质量脚本影子样例_v1.0.md/json"
+  ],
+  "register_fields": [
+    "选题ID",
+    "成语",
+    "核心含义",
+    "默认受众",
+    "推荐时长",
+    "推荐结构",
+    "当前状态",
+    "风险提示",
+    "下一步影子动作"
+  ],
+  "topics": [
+    {
+      "topic_id": "IDIOM-001",
+      "idiom": "掩耳盗铃",
+      "core_meaning": "自欺欺人，骗不了别人",
+      "default_audience": "小学生及家长",
+      "recommended_duration": "30秒/60秒均可",
+      "status": "已有样例，30秒任务卡待填写",
+      "risk_note": "不能把质量通过误读为发布放行",
+      "next_shadow_action": "可填写30秒影子改写"
+    },
+    {
+      "topic_id": "IDIOM-002",
+      "idiom": "亡羊补牢",
+      "core_meaning": "出错后及时补救，仍然有意义",
+      "default_audience": "小学生及家长",
+      "recommended_duration": "60秒优先",
+      "status": "候选",
+      "risk_note": "结尾避免过度说教",
+      "next_shadow_action": "待写影子草案"
+    },
+    {
+      "topic_id": "IDIOM-003",
+      "idiom": "画蛇添足",
+      "core_meaning": "多此一举，反而坏事",
+      "default_audience": "小学生及家长",
+      "recommended_duration": "30秒优先",
+      "status": "候选",
+      "risk_note": "需讲清多画脚为什么坏事",
+      "next_shadow_action": "待写影子草案"
+    },
+    {
+      "topic_id": "IDIOM-004",
+      "idiom": "守株待兔",
+      "core_meaning": "不能只靠侥幸等待",
+      "default_audience": "小学生及家长",
+      "recommended_duration": "60秒优先",
+      "status": "候选",
+      "risk_note": "避免嘲笑人物，强调方法",
+      "next_shadow_action": "待写影子草案"
+    },
+    {
+      "topic_id": "IDIOM-005",
+      "idiom": "刻舟求剑",
+      "core_meaning": "情况变了，方法也要变",
+      "default_audience": "小学生及家长",
+      "recommended_duration": "60秒优先",
+      "status": "候选",
+      "risk_note": "需讲清船在动、剑在水中",
+      "next_shadow_action": "待写影子草案"
+    },
+    {
+      "topic_id": "IDIOM-006",
+      "idiom": "拔苗助长",
+      "core_meaning": "急于求成反而坏事",
+      "default_audience": "小学生及家长",
+      "recommended_duration": "60秒优先",
+      "status": "候选",
+      "risk_note": "避免只喊口号，要有具体动作",
+      "next_shadow_action": "待写影子草案"
+    },
+    {
+      "topic_id": "IDIOM-007",
+      "idiom": "滥竽充数",
+      "core_meaning": "没有真本领混在队伍里",
+      "default_audience": "小学生及家长",
+      "recommended_duration": "60秒优先",
+      "status": "候选",
+      "risk_note": "表达要避免羞辱感",
+      "next_shadow_action": "待写影子草案"
+    },
+    {
+      "topic_id": "IDIOM-008",
+      "idiom": "狐假虎威",
+      "core_meaning": "借别人的威风吓人",
+      "default_audience": "小学生及家长",
+      "recommended_duration": "30秒/60秒均可",
+      "status": "候选",
+      "risk_note": "动物拟人表达需温和",
+      "next_shadow_action": "待写影子草案"
+    }
+  ],
+  "status_flow": [
+    "候选",
+    "待写草案",
+    "待质量验收",
+    "待人工复核",
+    "进化候选/继续修改/驳回"
+  ],
+  "usage_rules": [
+    "选题只能作为影子草案入口",
+    "每个选题必须先写具体故事，不能只写道理",
+    "每个选题必须经过质量验收表",
+    "每个选题必须保留人工复核问题",
+    "通过质量验收不等于进入生成或发布"
+  ],
+  "next_w1_r0_candidates": [
+    "成语故事系列栏目人工复核问题通用模板",
+    "亡羊补牢影子草案空白任务卡",
+    "首批选题状态快照"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "edit_formal_script": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_video_system": false,
+    "release_for_generation_render_publish": false
+  }
+}

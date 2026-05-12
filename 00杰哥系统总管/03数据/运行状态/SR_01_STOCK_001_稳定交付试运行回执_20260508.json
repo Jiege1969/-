@@ -1,0 +1,25 @@
+{
+  "task_id": "SR-01-STOCK-001",
+  "batch": "SR-01",
+  "execution_time": "2026-05-08 19:12:00 +08:00",
+  "business_line": "股票 L3 研究",
+  "risk_level": "W1/R0",
+  "input_summary": "P0 证据候选卡结构化样例",
+  "source_asset": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_STOCK_002_P0证据候选卡结构化样例_20260508.md",
+  "status": "completed",
+  "redline_hit": false,
+  "output_summary": "股票 L3 研究线具备 P0 证据候选卡结构化样例，不改正式评分，不生成交易建议。",
+  "evidence": ["P0 证据候选卡字段、样例卡和边界扫描均已建立"],
+  "missing": ["公开可复核来源", "连续观测点", "人工复核"],
+  "confidence": "结构化候选卡置信度高；股票结论和交易动作不评价",
+  "boundary_flags": {
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "write_formal_db": false,
+    "modify_service_script": false,
+    "restart_19310_19302": false,
+    "broker_api_or_trade": false,
+    "trade_advice": false
+  },
+  "needs_manager_ruling": false
+}

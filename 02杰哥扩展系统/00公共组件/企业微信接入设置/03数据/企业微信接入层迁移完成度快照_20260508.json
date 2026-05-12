@@ -1,0 +1,73 @@
+{
+  "asset_id": "WECOM_ACCESS_MIGRATION_SNAPSHOT_20260508",
+  "generated_at": "2026-05-08 06:44:29 +08:00",
+  "asset_identity": "企业微信接入层 W1/R0 迁移完成度快照",
+  "status": "只读统计快照，不是旧目录删除许可，不是服务切换许可，不是真实发送许可",
+  "conclusion": "企业微信能力已完成系统身份降级和新权威位置确立；旧目录仍为兼容入口和历史证据追溯位置，不得自动删除、移动或归档。",
+  "paths": {
+    "legacy": {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统",
+      "identity": "兼容保留目录，历史证据追溯位置",
+      "exists": true,
+      "file_count": 102,
+      "dir_count": 28,
+      "json_count": 47,
+      "md_count": 25,
+      "py_count": 24,
+      "log_count": 3,
+      "total_bytes": 755866,
+      "top_dirs": [
+        "01配置",
+        "02脚本",
+        "03数据",
+        "04日志",
+        "05备份",
+        "06临时",
+        "07文档"
+      ]
+    },
+    "authoritative": {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置",
+      "identity": "企业微信通讯适配层、路由登记层、安全闸门层",
+      "exists": true,
+      "file_count": 153,
+      "dir_count": 30,
+      "json_count": 63,
+      "md_count": 44,
+      "py_count": 27,
+      "log_count": 3,
+      "total_bytes": 1648282,
+      "top_dirs": [
+        "01配置",
+        "02脚本",
+        "03数据",
+        "04日志",
+        "05备份",
+        "06临时",
+        "07文档"
+      ],
+      "json_parse_failure_count": 0
+    }
+  },
+  "completion": {
+    "authoritative_path_exists": "done",
+    "legacy_compatibility_identity_clear": "done",
+    "authoritative_mechanism_doc_fixed": "done",
+    "communication_path_registry_exists": "done",
+    "authoritative_json_parse_ok": "done",
+    "legacy_delete_or_archive": "not_executed_w3_pause_required",
+    "service_script_switch_or_restart": "not_executed_w2_w3_pause_required",
+    "real_send_or_n8n_release": "not_executed_w3_pause_required"
+  },
+  "boundary": {
+    "copy_files": false,
+    "move_files": false,
+    "delete_files": false,
+    "overwrite_legacy_readme": false,
+    "modify_service_script": false,
+    "modify_config_json": false,
+    "restart_service_19310": false,
+    "real_send_wecom": false,
+    "trigger_n8n": false
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "contract_id": "VIDEO_AGENT_CONVERSATION_STATE_CONTRACT_001",
+  "name": "会话状态契约草案",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:30:00 +08:00",
+  "asset_identity": "视频创作智能体 W1/R0 会话状态字段契约草案",
+  "risk_level": "W1/R0",
+  "scope": "只定义多轮创作会话状态字段，不执行真实能力",
+  "required_fields": [
+    "会话ID",
+    "会话来源",
+    "用户原始想法",
+    "当前任务ID",
+    "当前创作目标",
+    "目标平台",
+    "目标受众",
+    "风格基调",
+    "已确认内容",
+    "可修改内容",
+    "等待用户确认项",
+    "合规阻断项",
+    "生成放行状态",
+    "真实渲染放行状态",
+    "发布放行状态",
+    "最近指令"
+  ],
+  "state_constraints": {
+    "confirmed_content_locked": true,
+    "generation_release_separate_from_render_release": true,
+    "render_release_separate_from_publish_release": true,
+    "blank_or_uncertain_items_go_to_human_review": true,
+    "compliance_blockers_override_continue_commands": true
+  },
+  "allowed_status_values": {
+    "生成放行状态": ["not_requested", "pending_human_gate", "human_released_for_generation"],
+    "真实渲染放行状态": ["not_requested", "pending_human_gate", "human_released_for_render"],
+    "发布放行状态": ["not_requested", "pending_human_gate", "human_released_for_publish"]
+  },
+  "boundary": {
+    "connect_real_llm": false,
+    "write_vector_db": false,
+    "modify_video_factory_chat": false,
+    "read_real_assets": false,
+    "render": false,
+    "upload": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "modify_19310_or_19302": false
+  },
+  "formal_capability_claim": false
+}

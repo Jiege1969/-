@@ -1,0 +1,296 @@
+﻿{
+    "generated_at":  "2026-05-06 16:03:09",
+    "conclusion":  "当前运行 n8n 仅保留 5 个 inactive 母样本；旧 workflow 完整副本和旧 SQLite 回滚库已转为摘要后删除。",
+    "current_database":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\n8n\\database.sqlite",
+    "current_container":  "jiege_v3_n8n",
+    "current_port":  "127.0.0.1:28679 -\u003e 5678",
+    "keep_count":  5,
+    "keep_workflows":  [
+                           {
+                               "id":  "h0xpxp9rPrUSqk1G",
+                               "name":  "股票主动研究闭环_桥接未激活",
+                               "active":  false,
+                               "triggerCount":  0,
+                               "node_count":  4,
+                               "node_types":  [
+                                                  "n8n-nodes-base.manualTrigger",
+                                                  "n8n-nodes-base.executeCommand",
+                                                  "n8n-nodes-base.set",
+                                                  "n8n-nodes-base.stickyNote"
+                                              ],
+                               "node_names":  [
+                                                  "手动触发",
+                                                  "调用宿主机股票研究桥接入口",
+                                                  "输出本地结果路径",
+                                                  "安全边界说明"
+                                              ],
+                               "export_file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\exports_keep\\股票主动研究闭环_桥接未激活__h0xpxp9rPrUSqk1G.json",
+                               "sha256":  "47CF9CAA8F0B414E5B5405E869280E1BCDCE5FEB98FE6B01787D2F92D8E35ABD"
+                           },
+                           {
+                               "id":  "ZkzsB6MdxlC3VMxY",
+                               "name":  "股票主动研究闭环_文件桥接未激活",
+                               "active":  false,
+                               "triggerCount":  0,
+                               "node_count":  4,
+                               "node_types":  [
+                                                  "n8n-nodes-base.manualTrigger",
+                                                  "n8n-nodes-base.executeCommand",
+                                                  "n8n-nodes-base.set",
+                                                  "n8n-nodes-base.stickyNote"
+                                              ],
+                               "node_names":  [
+                                                  "手动触发",
+                                                  "写入宿主机股票研究触发文件",
+                                                  "输出本地结果路径",
+                                                  "安全边界说明"
+                                              ],
+                               "export_file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\exports_keep\\股票主动研究闭环_文件桥接未激活__ZkzsB6MdxlC3VMxY.json",
+                               "sha256":  "5116C4C5D4A8BC4E248AD50616DD8D6FC7FE0C325A3F99EA9F700C7D360FF7EE"
+                           },
+                           {
+                               "id":  "JBVQ8osGXlHoSJfR",
+                               "name":  "股票助手n8n本地执行回环测试",
+                               "active":  false,
+                               "triggerCount":  0,
+                               "node_count":  2,
+                               "node_types":  [
+                                                  "n8n-nodes-base.executeWorkflowTrigger",
+                                                  "n8n-nodes-base.set"
+                                              ],
+                               "node_names":  [
+                                                  "本地执行触发器",
+                                                  "生成本地回环响应"
+                                              ],
+                               "export_file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\exports_keep\\股票助手n8n本地执行回环测试__JBVQ8osGXlHoSJfR.json",
+                               "sha256":  "73800AE5F023E0D9E3D37412E181540388E8AA36EAAEE478092C043C46C3F698"
+                           },
+                           {
+                               "id":  "un0S6SrQSCIsjuhn",
+                               "name":  "股票助手企业微信Webhook桥接入口未激活v2",
+                               "active":  false,
+                               "triggerCount":  0,
+                               "node_count":  4,
+                               "node_types":  [
+                                                  "n8n-nodes-base.webhook",
+                                                  "n8n-nodes-base.httpRequest",
+                                                  "n8n-nodes-base.respondToWebhook",
+                                                  "n8n-nodes-base.stickyNote"
+                                              ],
+                               "node_names":  [
+                                                  "股票桥接Webhook入口",
+                                                  "调用股票桥接入口19302",
+                                                  "返回桥接结果",
+                                                  "安全边界说明"
+                                              ],
+                               "export_file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\exports_keep\\股票助手企业微信Webhook桥接入口未激活v2__un0S6SrQSCIsjuhn.json",
+                               "sha256":  "CE39D25465D8CA6B3F01DEC96761A3ED5FC1979B55ECE0179784232A017344FD"
+                           },
+                           {
+                               "id":  "urKB3BwGfDWQMKb5",
+                               "name":  "股票助手企业微信查询适配器未激活导入件",
+                               "active":  false,
+                               "triggerCount":  0,
+                               "node_count":  4,
+                               "node_types":  [
+                                                  "n8n-nodes-base.manualTrigger",
+                                                  "n8n-nodes-base.set",
+                                                  "n8n-nodes-base.code",
+                                                  "n8n-nodes-base.stickyNote"
+                                              ],
+                               "node_names":  [
+                                                  "手动触发禁用态",
+                                                  "构造契约输入",
+                                                  "安全占位输出",
+                                                  "安全边界说明"
+                                              ],
+                               "export_file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本导出_当前\\exports_keep\\股票助手企业微信查询适配器未激活导入件__urKB3BwGfDWQMKb5.json",
+                               "sha256":  "8365483E785502BD900FDC8D3B147E2276F007270B9831B8F76AE7595BAC4314"
+                           }
+                       ],
+    "deleted_old_export_count":  29,
+    "deleted_old_export_manifest":  [
+                                        {
+                                            "file":  "股票主动研究闭环_未激活__YK0jbeHXjRWP6G8M.json",
+                                            "length":  652,
+                                            "sha256":  "1DD01A681C213894B7C546CC509EAAE5F105515E227538BC4A76A28EB06676AF"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__4P4ldgMzZ8nRNaDd.json",
+                                            "length":  532,
+                                            "sha256":  "35016A2B572C44957538497189269DC310D967C56BE5E25D09777665041FC75D"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__8qwseYsm9EEB9KoQ.json",
+                                            "length":  532,
+                                            "sha256":  "48C547C9A9E06847E24864BA869A2AB0F763218CF7C41D2E63024A3D957661E0"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__8y3ZfyX7JNV4IEzh.json",
+                                            "length":  532,
+                                            "sha256":  "855F59DF12366D7339545779B8593CED429BB36AC913710C98C7DF72F352A1E0"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__9HjJzF44n8jcPvy4.json",
+                                            "length":  532,
+                                            "sha256":  "22358D0FAEF7210F162846D98FAAE67D47B3213CCF73E97EEF1ADA7ABBA517D2"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__BE8M52u8vssadSuI.json",
+                                            "length":  532,
+                                            "sha256":  "73DC3EEB7D3605B11BAB97CF3A2F714002D4A214A11247F6BC618BC79D7BF79D"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__BZi2lI4seytDqyq0.json",
+                                            "length":  532,
+                                            "sha256":  "37881FE11147DDA22A1EADB5FD18343D438B6663697968F54D32435E3C23A941"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__c9ji6XTTiEQoTXgY.json",
+                                            "length":  532,
+                                            "sha256":  "F166B13BE7D8D1685AABD811A575D667DC982D494DA2C8A2A48AE98E500A7267"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__eAY2y1kLFm3Gyrcy.json",
+                                            "length":  532,
+                                            "sha256":  "8401E8ED18267E33224AB828F0CEFC513E355376E86261C2715A77466F3E0A0C"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__EWRYw9uNGQm1mQIz.json",
+                                            "length":  532,
+                                            "sha256":  "A23207C65064BCD3B1F5BF4A79BDFB0D84655BB9B9F64A46F4275A8DD91AFDEA"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__fAFFV8rDTjpLDvjx.json",
+                                            "length":  532,
+                                            "sha256":  "4411F90FE7E7831A4AD075EDBEAB41BCEEF7D1127A3DB82FF40D7E131124B71C"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__FGUU7TdHB5QeIS9q.json",
+                                            "length":  532,
+                                            "sha256":  "8631F0A447FD7B1019EC1BD77276562333FA4B81304260E7A4333CF5606BDC89"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__FK0r0xYn2nPQgCPx.json",
+                                            "length":  532,
+                                            "sha256":  "B374E5022044D4D2BCAF0B907396A59DD3CFEA6FE8A6594D6F1C4397CAD0D96F"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__HyIjOwirlmCeWyCC.json",
+                                            "length":  532,
+                                            "sha256":  "5DF675D3F47DB468ED428D5C033321ED03A65B3D8051C7C52F7D3D07BDB19764"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__j0vZweUirm8VMfzG.json",
+                                            "length":  532,
+                                            "sha256":  "99C1D04C98C7E40A1159A3220CA4DD9D298BCAD0704F0E7AED82CF7252B361C6"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__K906i24mfbVGxumb.json",
+                                            "length":  532,
+                                            "sha256":  "3C0388C33E6244CAF28A150804EF1F50EEAA54F21D0D4E4E2EB5189B1E58EE91"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__LkCRi7aHvc7dZJea.json",
+                                            "length":  532,
+                                            "sha256":  "5FD4FB7223F468A04936392DC1DC69A34F466AB331305A5A629C6D940929E10F"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__OeyaknVZSA2RABFt.json",
+                                            "length":  532,
+                                            "sha256":  "5E4FBD18D36C86C4FAC83FD714DA07087DE5C9ED0935C230840070D2D9F69EA1"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__OXKmXiUCTEB68a5W.json",
+                                            "length":  532,
+                                            "sha256":  "AA96F1972544527A425330CA250A2F3F766260C247752025F19BB575C847D28D"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__piLx0WXS5hWQpvZy.json",
+                                            "length":  532,
+                                            "sha256":  "641D7FEE92F25564097509DC6DBC025F019775763BFFA3A107270F70BD5AE289"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__qfkOojY6toxoBQNy.json",
+                                            "length":  532,
+                                            "sha256":  "2C218B78510C844C1D7056235A8CF1AF6B6D163FA36601BEA08AA469E5E29CAC"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__QiENCDaj78FNsaXx.json",
+                                            "length":  532,
+                                            "sha256":  "718B2009CFAAE9069956BF984F2FD18CAB0D01E80FDB637D371D547F6C874324"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__RF534hTCj7N6m6vy.json",
+                                            "length":  532,
+                                            "sha256":  "2807D62374CAC589F836AFD30BECA7A43BBE41F0A510A610CEFC77A5F458E157"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__rfHx3FHMV2DVz4lz.json",
+                                            "length":  532,
+                                            "sha256":  "5FE48A1A8EF18EFA0916F2A377D21981A06FC3DEE7A62CD763C0D20A4068E0AB"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__Tg5HWL7JKS2GO3qX.json",
+                                            "length":  532,
+                                            "sha256":  "896298896F1E8D000BC97AF7DEA3A5F862139201765BE8062D3FC2DA77114A31"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__TR328sYx1M8Bf880.json",
+                                            "length":  532,
+                                            "sha256":  "5242FCEA9FCB6F33D4B38A8279C55E688BA130D6D2E309940165D9A8BF18B105"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__uZE65L1gO7GWLB4h.json",
+                                            "length":  532,
+                                            "sha256":  "F32E1CE1254D172EDADC89F72F80300A7BBA1EE0AD513D78E0784507C6964E9D"
+                                        },
+                                        {
+                                            "file":  "股票助手n8n本地执行回环测试__VA7aiQ9gs1hGchpo.json",
+                                            "length":  532,
+                                            "sha256":  "B100544B6BE499E0CFF3A920463749E4BA12149B8E9A5F01C25BDB240F6A8252"
+                                        },
+                                        {
+                                            "file":  "股票助手企业微信Webhook灰度入口未激活__UwmWRz52D4qadUYd.json",
+                                            "length":  657,
+                                            "sha256":  "C85CF49C66FA8B468A4AFD28820E50EA07A7E00653015AA9A917684D6A63D888"
+                                        }
+                                    ],
+    "deleted_old_evidence_files":  [
+                                       {
+                                           "file":  "database.before.sqlite",
+                                           "length":  991232,
+                                           "sha256":  "511FAD25130AA4FCB7E4D33AE3B8BC6E71A7120592EFD6D38FA8D8ECFEE638CF"
+                                       },
+                                       {
+                                           "file":  "export_workflows.py",
+                                           "length":  979,
+                                           "sha256":  "5E0B90455E53CC7C96F3BFAE4BFC6D8B24E977B752C229E7EDA89AD0C07FD512"
+                                       },
+                                       {
+                                           "file":  "keep_delete_plan.json",
+                                           "length":  10409,
+                                           "sha256":  "FFF5609DD0F6CAE1733AB74E7DD7CB9F277E0D7E238E76DB54508342E50CE564"
+                                       },
+                                       {
+                                           "file":  "prune_result.json",
+                                           "length":  2191,
+                                           "sha256":  "FDBC39F790D9881A7D5ED402BCABE768F306F4D6EC8FF8FE5878DEBB9F728C57"
+                                       },
+                                       {
+                                           "file":  "workflows.before.detail.json",
+                                           "length":  20508,
+                                           "sha256":  "AEB625454521C767B07B036A0CFEEDE6526CD6E6F1094B3FB9DF6A904F67F702"
+                                       }
+                                   ],
+    "reusable_structures":  [
+                                "Manual Trigger -\u003e Execute Command -\u003e Set -\u003e Sticky Note",
+                                "Manual Trigger -\u003e Execute Command(HTTP bridge) -\u003e Set -\u003e Sticky Note",
+                                "Execute Workflow Trigger -\u003e Set",
+                                "Webhook -\u003e HTTP Request -\u003e Respond to Webhook -\u003e Sticky Note",
+                                "Manual Trigger -\u003e Set -\u003e Code -\u003e Sticky Note"
+                            ],
+    "safety":  "5 个母样本保持 inactive；不触发 n8n，不启用 workflow，不调用企业微信，不调用券商接口，不自动交易。",
+    "debt_rule":  "旧 workflow 可导入完整副本不长期保留；只保留当前母样本 JSON 与删除摘要，防止旧债通过备份复活。"
+}
+

@@ -1,0 +1,56 @@
+{
+  "名称": "政策事件库验收",
+  "generated_at": "2026-05-08 06:55:30",
+  "asset_identity": "自动验收报告",
+  "status": "passed",
+  "source_files": {
+    "policy_events": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\policy_events_v1.0.json",
+    "stock_policy_exposures": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\stock_policy_exposures_v1.0.json"
+  },
+  "summary": {
+    "event_count": 1,
+    "exposure_count": 2,
+    "events_with_exposure_count": 1,
+    "blocking_count": 0,
+    "warning_count": 0
+  },
+  "events": [
+    {
+      "event_id": "POL-2023-001",
+      "title": "商务部 海关总署公告2023年第23号 关于对镓、锗相关物项实施出口管制的公告",
+      "status": "superseded_active",
+      "publish_date": "2023-07-03",
+      "source_level": "official",
+      "impact_direction": "利好",
+      "impact_strength": 0.85,
+      "event_confidence": 0.95
+    }
+  ],
+  "exposures": [
+    {
+      "event_id": "POL-2023-001",
+      "stock_code": "002428",
+      "stock_name": "云南锗业",
+      "exposure": 0.95,
+      "exposure_direction": "受益",
+      "last_reviewed_at": "2026-05-07"
+    },
+    {
+      "event_id": "POL-2023-001",
+      "stock_code": "600497",
+      "stock_name": "驰宏锌锗",
+      "exposure": 0.55,
+      "exposure_direction": "受益",
+      "last_reviewed_at": "2026-05-07"
+    }
+  ],
+  "blocking": [],
+  "warnings": [],
+  "safety_boundary": {
+    "not_external_fetch": true,
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

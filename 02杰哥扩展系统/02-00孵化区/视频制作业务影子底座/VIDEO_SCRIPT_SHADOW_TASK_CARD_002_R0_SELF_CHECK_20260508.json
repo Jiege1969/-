@@ -1,0 +1,27 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SHADOW_TASK_CARD_002_R0_SELF_CHECK",
+  "created_at": "2026-05-08 14:07:00 +08:00",
+  "risk_level": "W1/R0",
+  "target_asset": "VIDEO_SCRIPT_SHADOW_TASK_CARD_002",
+  "status": "passed",
+  "checks": {
+    "asset_identity_clear": true,
+    "source_assets_clear": true,
+    "blank_fields_complete": true,
+    "minimum_acceptance_clear": true,
+    "redline_boundary_clear": true,
+    "json_parse_passed": true,
+    "index_updated": true
+  },
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "auto_generate_script": false,
+    "edit_formal_script": false,
+    "create_real_video_task": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_video_system": false
+  }
+}

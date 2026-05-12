@@ -1,0 +1,81 @@
+{
+  "id": "VIDEO_AGENT_INPUT_TO_THREE_OPTION_REHEARSAL_001",
+  "name": "影子输入到三候选链路预演",
+  "asset_identity": "video_creation_agent_shadow_input_to_three_option_rehearsal",
+  "stage": "W1_R0",
+  "status": "text_flow_rehearsal_not_real_execution_flow",
+  "boundary": {
+    "call_model": false,
+    "media_generation": false,
+    "read_real_assets": false,
+    "publish": false,
+    "wechat_integration": false,
+    "n8n": false
+  },
+  "flow": [
+    {
+      "step": 1,
+      "input": "manual_shadow_input",
+      "uses": "VIDEO_AGENT_SHADOW_INPUT_INTAKE_SAMPLE_001",
+      "output": "desensitized_input_record"
+    },
+    {
+      "step": 2,
+      "input": "desensitized_input_record",
+      "uses": "VIDEO_AGENT_SHADOW_RUN_CHECKLIST_001",
+      "output": "pass_clarification_or_block"
+    },
+    {
+      "step": 3,
+      "input": "missing_clarification_fields",
+      "uses": "VIDEO_AGENT_CLARIFICATION_TEMPLATE_001",
+      "output": "one_clarification_question"
+    },
+    {
+      "step": 4,
+      "input": "clarification_answer",
+      "uses": "VIDEO_AGENT_CLARIFICATION_STATE_MAPPING_001",
+      "output": "updated_shadow_conversation_state"
+    },
+    {
+      "step": 5,
+      "input": "conversation_state",
+      "uses": "VIDEO_AGENT_CONVERSATION_STATE_SAMPLE_001",
+      "output": "ready_for_output_state"
+    },
+    {
+      "step": 6,
+      "input": "ready_for_output_state",
+      "uses": "VIDEO_AGENT_THREE_OPTION_OUTPUT_TEMPLATE_001",
+      "output": "three_option_text_draft_structure"
+    },
+    {
+      "step": 7,
+      "input": "three_option_structure",
+      "uses": "VIDEO_AGENT_THREE_OPTION_SAMPLE_001",
+      "output": "pending_human_selection_and_review"
+    }
+  ],
+  "exit_states": [
+    {
+      "exit": "continue_clarification",
+      "condition": "fields_missing_without_redline",
+      "next": "ask_one_clarification_question"
+    },
+    {
+      "exit": "three_option_draft",
+      "condition": "fields_enough_and_no_redline",
+      "next": "text_candidates_to_human_selection"
+    },
+    {
+      "exit": "blocked",
+      "condition": "generation_publish_external_send_credential_or_real_asset_redline",
+      "next": "redline_sample_or_block_record"
+    }
+  ],
+  "forbidden_interpretations": [
+    "not_real_automation_online",
+    "three_option_draft_not_final_script",
+    "human_option_selection_not_generation_render_or_publish_approval"
+  ]
+}

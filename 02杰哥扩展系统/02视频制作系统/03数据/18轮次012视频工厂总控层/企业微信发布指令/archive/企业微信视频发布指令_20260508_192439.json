@@ -1,0 +1,164 @@
+{
+  "生成时间": "2026-05-08 19:24:39",
+  "状态": "完成",
+  "输入": "生成预检 VF-20260508-005",
+  "路由": "杰哥视频助理发布指令",
+  "目标系统": "02杰哥扩展系统/02视频制作系统",
+  "回复": "视频生成桥梁预检已完成。\n任务ID：VF-20260508-005\n总体状态：blocked\n真实渲染启用：False\nMoneyPrinterTurbo根目录：未找到\n阻断项：未找到可识别的 MoneyPrinterTurbo 本地目录或启动入口；ImageMagick 不可用或未完成人工版本确认；不得进入真实渲染\n提醒项：真实渲染当前关闭，这是默认安全状态；需人工提供可识别的 MoneyPrinterTurbo 根目录和启动入口。；需人工安装 ImageMagick 并让 magick 命令进入 PATH。；真实渲染配置仍为 false；如未来启用需走最终启用门禁。",
+  "reply_text": "视频生成桥梁预检已完成。\n任务ID：VF-20260508-005\n总体状态：blocked\n真实渲染启用：False\nMoneyPrinterTurbo根目录：未找到\n阻断项：未找到可识别的 MoneyPrinterTurbo 本地目录或启动入口；ImageMagick 不可用或未完成人工版本确认；不得进入真实渲染\n提醒项：真实渲染当前关闭，这是默认安全状态；需人工提供可识别的 MoneyPrinterTurbo 根目录和启动入口。；需人工安装 ImageMagick 并让 magick 命令进入 PATH。；真实渲染配置仍为 false；如未来启用需走最终启用门禁。",
+  "real_send": false,
+  "n8n": false,
+  "企业微信模拟回复": {
+    "msgtype": "markdown",
+    "markdown": {
+      "content": "【杰哥视频助理】\n视频生成桥梁预检已完成。\n任务ID：VF-20260508-005\n总体状态：blocked\n真实渲染启用：False\nMoneyPrinterTurbo根目录：未找到\n阻断项：未找到可识别的 MoneyPrinterTurbo 本地目录或启动入口；ImageMagick 不可用或未完成人工版本确认；不得进入真实渲染\n提醒项：真实渲染当前关闭，这是默认安全状态；需人工提供可识别的 MoneyPrinterTurbo 根目录和启动入口。；需人工安装 ImageMagick 并让 magick 命令进入 PATH。；真实渲染配置仍为 false；如未来启用需走最终启用门禁。"
+    }
+  },
+  "安全边界": {
+    "真实发送企业微信": false,
+    "触发n8n": false,
+    "绕过发布放行清单": false,
+    "自动发布": false
+  },
+  "render_bridge_check": {
+    "returncode": 2,
+    "stdout": "\\Users\\\\Administrator\\\\Documents\\\\Codex\\\\2026-05-07\\\\30-moneyprinterturbo-windows-imagemagick-chrome-1\\\\webui\\\\Main.py\",\n            \"启动方式\": \"python \\\"C:\\\\Users\\\\Administrator\\\\Documents\\\\Codex\\\\2026-05-07\\\\30-moneyprinterturbo-windows-imagemagick-chrome-1\\\\webui\\\\Main.py\\\"\",\n            \"存在\": false\n          }\n        ],\n        \"依赖条件\": [\n          \"需要先人工确认 MoneyPrinterTurbo 根目录和启动入口。\",\n          \"需要人工确认 Python/虚拟环境、项目依赖、模型或素材配置。\",\n          \"需要生成放行、真实渲染放行和最终启用门禁全部独立通过。\"\n        ],\n        \"可识别\": false,\n        \"识别说明\": \"目录存在但未识别入口\"\n      },\n      {\n        \"路径\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\MoneyPrinterTurbo\",\n        \"存在\": false,\n        \"入口候选\": [\n          {\n            \"入口类型\": \"Windows批处理\",\n            \"入口路径\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\MoneyPrinterTurbo\\\\start.bat\",\n            \"启动方式\": \"cmd /c \\\"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\MoneyPrinterTurbo\\\\start.bat\\\"\",\n            \"存在\": false\n          },\n          {\n            \"入口类型\": \"Python应用入口\",\n            \"入口路径\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\MoneyPrinterTurbo\\\\app\\\\main.py\",\n            \"启动方式\": \"python \\\"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\MoneyPrinterTurbo\\\\app\\\\main.py\\\"\",\n            \"存在\": false\n          },\n          {\n            \"入口类型\": \"WebUI入口\",\n            \"入口路径\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\MoneyPrinterTurbo\\\\webui\\\\Main.py\",\n            \"启动方式\": \"python \\\"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\MoneyPrinterTurbo\\\\webui\\\\Main.py\\\"\",\n            \"存在\": false\n          }\n        ],\n        \"依赖条件\": [\n          \"需要先人工确认 MoneyPrinterTurbo 根目录和启动入口。\",\n          \"需要人工确认 Python/虚拟环境、项目依赖、模型或素材配置。\",\n          \"需要生成放行、真实渲染放行和最终启用门禁全部独立通过。\"\n        ],\n        \"可识别\": false,\n        \"识别说明\": \"目录不存在\"\n      }\n    ],\n    \"识别结论\": \"未识别，不得伪造已接入\"\n  },\n  \"ImageMagick检查\": {\n    \"命令\": \"magick\",\n    \"检查方式\": \"只做 PATH 识别，不执行 ImageMagick 命令\",\n    \"可识别\": false,\n    \"可用\": false,\n    \"环境状态\": \"环境不可用\",\n    \"路径\": \"\",\n    \"版本\": \"\",\n    \"错误\": \"未在 PATH 中找到 ImageMagick magick 命令\",\n    \"缺失原因\": \"PATH 中无可识别 magick 命令；本轮按红线要求未调用 ImageMagick。\"\n  },\n  \"Chrome检查\": {\n    \"可用\": true,\n    \"路径\": \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\",\n    \"候选检查\": [\n      {\n        \"路径\": \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\",\n        \"存在\": true\n      }\n    ]\n  },\n  \"生成放行清单行\": [\n    {\n      \"任务ID\": \"VF-20260508-005\",\n      \"放行状态\": \"放行\",\n      \"放行时间\": \"2026-05-08 06:13:59\",\n      \"放行人\": \"杰哥视频助理企业微信确认\",\n      \"备注\": \"企业微信生成放行；真实渲染适配器仍为独立门禁\"\n    }\n  ],\n  \"阻断项\": [\n    \"未找到可识别的 MoneyPrinterTurbo 本地目录或启动入口\",\n    \"ImageMagick 不可用或未完成人工版本确认；不得进入真实渲染\"\n  ],\n  \"提醒项\": [\n    \"真实渲染当前关闭，这是默认安全状态\",\n    \"需人工提供可识别的 MoneyPrinterTurbo 根目录和启动入口。\",\n    \"需人工安装 ImageMagick 并让 magick 命令进入 PATH。\",\n    \"真实渲染配置仍为 false；如未来启用需走最终启用门禁。\"\n  ],\n  \"需人工配置\": [\n    \"需人工提供可识别的 MoneyPrinterTurbo 根目录和启动入口。\",\n    \"需人工安装 ImageMagick 并让 magick 命令进入 PATH。\",\n    \"真实渲染配置仍为 false；如未来启用需走最终启用门禁。\"\n  ],\n  \"安全边界\": {\n    \"执行渲染\": false,\n    \"调用外部素材API\": false,\n    \"触发发布\": false,\n    \"企业微信真实外发\": false\n  }\n}\n",
+    "stderr": "",
+    "report": {
+      "生成时间": "2026-05-08 19:24:39",
+      "任务ID过滤": "VF-20260508-005",
+      "总体状态": "blocked",
+      "环境状态": "环境不可用",
+      "可进入真实渲染": false,
+      "真实渲染启用": false,
+      "MoneyPrinterTurbo检查": {
+        "可识别": false,
+        "可用": false,
+        "环境状态": "环境不可用",
+        "根目录": "",
+        "可调用入口路径": "",
+        "启动方式": "",
+        "依赖条件": [
+          "未识别 MoneyPrinterTurbo 本地入口，不得伪造已接入。",
+          "需人工提供正确根目录、启动入口和依赖安装方式。"
+        ],
+        "候选检查": [
+          {
+            "路径": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-07\\30-moneyprinterturbo-windows-imagemagick-chrome-1",
+            "存在": true,
+            "入口候选": [
+              {
+                "入口类型": "Windows批处理",
+                "入口路径": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-07\\30-moneyprinterturbo-windows-imagemagick-chrome-1\\start.bat",
+                "启动方式": "cmd /c \"C:\\Users\\Administrator\\Documents\\Codex\\2026-05-07\\30-moneyprinterturbo-windows-imagemagick-chrome-1\\start.bat\"",
+                "存在": false
+              },
+              {
+                "入口类型": "Python应用入口",
+                "入口路径": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-07\\30-moneyprinterturbo-windows-imagemagick-chrome-1\\app\\main.py",
+                "启动方式": "python \"C:\\Users\\Administrator\\Documents\\Codex\\2026-05-07\\30-moneyprinterturbo-windows-imagemagick-chrome-1\\app\\main.py\"",
+                "存在": false
+              },
+              {
+                "入口类型": "WebUI入口",
+                "入口路径": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-07\\30-moneyprinterturbo-windows-imagemagick-chrome-1\\webui\\Main.py",
+                "启动方式": "python \"C:\\Users\\Administrator\\Documents\\Codex\\2026-05-07\\30-moneyprinterturbo-windows-imagemagick-chrome-1\\webui\\Main.py\"",
+                "存在": false
+              }
+            ],
+            "依赖条件": [
+              "需要先人工确认 MoneyPrinterTurbo 根目录和启动入口。",
+              "需要人工确认 Python/虚拟环境、项目依赖、模型或素材配置。",
+              "需要生成放行、真实渲染放行和最终启用门禁全部独立通过。"
+            ],
+            "可识别": false,
+            "识别说明": "目录存在但未识别入口"
+          },
+          {
+            "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\MoneyPrinterTurbo",
+            "存在": false,
+            "入口候选": [
+              {
+                "入口类型": "Windows批处理",
+                "入口路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\MoneyPrinterTurbo\\start.bat",
+                "启动方式": "cmd /c \"D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\MoneyPrinterTurbo\\start.bat\"",
+                "存在": false
+              },
+              {
+                "入口类型": "Python应用入口",
+                "入口路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\MoneyPrinterTurbo\\app\\main.py",
+                "启动方式": "python \"D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\MoneyPrinterTurbo\\app\\main.py\"",
+                "存在": false
+              },
+              {
+                "入口类型": "WebUI入口",
+                "入口路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\MoneyPrinterTurbo\\webui\\Main.py",
+                "启动方式": "python \"D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\MoneyPrinterTurbo\\webui\\Main.py\"",
+                "存在": false
+              }
+            ],
+            "依赖条件": [
+              "需要先人工确认 MoneyPrinterTurbo 根目录和启动入口。",
+              "需要人工确认 Python/虚拟环境、项目依赖、模型或素材配置。",
+              "需要生成放行、真实渲染放行和最终启用门禁全部独立通过。"
+            ],
+            "可识别": false,
+            "识别说明": "目录不存在"
+          }
+        ],
+        "识别结论": "未识别，不得伪造已接入"
+      },
+      "ImageMagick检查": {
+        "命令": "magick",
+        "检查方式": "只做 PATH 识别，不执行 ImageMagick 命令",
+        "可识别": false,
+        "可用": false,
+        "环境状态": "环境不可用",
+        "路径": "",
+        "版本": "",
+        "错误": "未在 PATH 中找到 ImageMagick magick 命令",
+        "缺失原因": "PATH 中无可识别 magick 命令；本轮按红线要求未调用 ImageMagick。"
+      },
+      "Chrome检查": {
+        "可用": true,
+        "路径": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "候选检查": [
+          {
+            "路径": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+            "存在": true
+          }
+        ]
+      },
+      "生成放行清单行": [
+        {
+          "任务ID": "VF-20260508-005",
+          "放行状态": "放行",
+          "放行时间": "2026-05-08 06:13:59",
+          "放行人": "杰哥视频助理企业微信确认",
+          "备注": "企业微信生成放行；真实渲染适配器仍为独立门禁"
+        }
+      ],
+      "阻断项": [
+        "未找到可识别的 MoneyPrinterTurbo 本地目录或启动入口",
+        "ImageMagick 不可用或未完成人工版本确认；不得进入真实渲染"
+      ],
+      "提醒项": [
+        "真实渲染当前关闭，这是默认安全状态",
+        "需人工提供可识别的 MoneyPrinterTurbo 根目录和启动入口。",
+        "需人工安装 ImageMagick 并让 magick 命令进入 PATH。",
+        "真实渲染配置仍为 false；如未来启用需走最终启用门禁。"
+      ],
+      "需人工配置": [
+        "需人工提供可识别的 MoneyPrinterTurbo 根目录和启动入口。",
+        "需人工安装 ImageMagick 并让 magick 命令进入 PATH。",
+        "真实渲染配置仍为 false；如未来启用需走最终启用门禁。"
+      ],
+      "安全边界": {
+        "执行渲染": false,
+        "调用外部素材API": false,
+        "触发发布": false,
+        "企业微信真实外发": false
+      }
+    }
+  }
+}

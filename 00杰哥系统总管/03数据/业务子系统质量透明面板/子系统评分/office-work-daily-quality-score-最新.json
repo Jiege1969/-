@@ -1,0 +1,102 @@
+{
+  "system_name": "本职工作系统",
+  "system_dir": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统",
+  "generated_at": "2026-05-12 07:25:02",
+  "overall_status": "pass",
+  "score": 100,
+  "entry_scripts": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统\\02脚本\\生成本职工作系统状态摘要.py",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统\\02脚本\\执行R03办公材料草稿预演器.py",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统\\02脚本\\生成办公材料计划.py"
+  ],
+  "checks": {
+    "timeliness": {
+      "ok": true,
+      "task_name": "�ܸ����ܻ�ϵͳ_ÿ�ջ���_��ְ����ϵͳ",
+      "exists": true,
+      "state": "Running",
+      "last_run_time": "2026-05-12 07:25:01",
+      "last_task_result": 267009,
+      "next_run_time": "2026-05-13 07:25:00"
+    },
+    "output_completeness": {
+      "ok": true,
+      "checks": [
+        {
+          "name": "状态摘要",
+          "ok": true,
+          "required": true,
+          "latest_file": {
+            "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统\\03数据\\05状态摘要\\本职工作系统状态摘要_最新.md",
+            "exists": true,
+            "size": 445,
+            "modified_at": "2026-05-12 07:25:02",
+            "updated_today": true
+          }
+        },
+        {
+          "name": "办公材料草稿",
+          "ok": true,
+          "required": true,
+          "latest_file": {
+            "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统\\03数据\\03输出草稿\\办公材料草稿框架_最新.json",
+            "exists": true,
+            "size": 934,
+            "modified_at": "2026-05-12 07:25:01",
+            "updated_today": true
+          }
+        }
+      ]
+    },
+    "template_compliance": {
+      "ok": true,
+      "hits": [],
+      "scanned_files": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统\\03数据\\05状态摘要\\本职工作系统状态摘要_最新.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统\\03数据\\03输出草稿\\办公材料草稿框架_最新.json",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统\\03数据\\02任务计划\\办公材料计划_最新.json"
+      ]
+    },
+    "universal_laws": {
+      "ok": true,
+      "total_penalty": 0,
+      "rules": [
+        {
+          "id": "silence_is_gold",
+          "name": "沉默是金：数据缺失却强行生成结论",
+          "severity": "defect",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        },
+        {
+          "id": "traceable_conclusions",
+          "name": "可追溯：关键结论必须找到计算来源",
+          "severity": "deduct",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        },
+        {
+          "id": "human_sovereignty",
+          "name": "人的主权：进化系统不得擅自修改业务规则",
+          "severity": "highest_alert",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        }
+      ],
+      "scanned_files": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统\\03数据\\05状态摘要\\本职工作系统状态摘要_最新.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统\\03数据\\03输出草稿\\办公材料草稿框架_最新.json",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统\\03数据\\02任务计划\\办公材料计划_最新.json"
+      ]
+    }
+  },
+  "safety": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_business_db": false,
+    "call_trade_or_external_execute_api": false
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "package_id": "01智能系统_知识检索联动证据路径挂入最终签收包",
+  "task_id": "并行小任务U",
+  "scope": "01杰哥智能系统",
+  "generated_at": "2026-05-05 15:08:29 +08:00",
+  "mode": "read_only_evidence_index",
+  "purpose": "把上一轮R剩余的“知识检索联动证据路径挂入最终签收包”完成为只读引用索引；不改写00总管最终签收包，不触发服务，不联网，不调用真实模型。",
+  "target_final_acceptance_package_reference": {
+    "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\00总管_最终验收签收包_最新.json",
+    "reference_mode": "read_only_reference_only",
+    "write_to_00_manager_package": false,
+    "sha256": "C789A2F0860618CBE8AA2FF5E9EA9B7EFAAA9424182306E807D2FE5EF4CC4278"
+  },
+  "runtime_boundary": {
+    "dry_run": true,
+    "read_only_local_parse": true,
+    "network_enabled": false,
+    "real_model_invocation_enabled": false,
+    "external_service_trigger_enabled": false,
+    "n8n_trigger_enabled": false,
+    "wecom_send_enabled": false,
+    "formal_database_write_enabled": false,
+    "formal_knowledge_db_write_enabled": false,
+    "formal_vector_db_write_enabled": false,
+    "real_redis_write_enabled": false,
+    "broker_api_enabled": false,
+    "auto_trade_enabled": false
+  },
+  "source_gap": {
+    "source_package": "01智能系统_最终缺口压缩与交付确认前清单",
+    "source_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\最终缺口压缩交付确认\\final_gap_compression_delivery_confirmation_latest.json",
+    "source_sha256": "26A3297FA6163C751FCB6B95FED66D71779CC79100C26A5867A5038217100DF6",
+    "remaining_gap_before_u": "知识检索联动证据路径需挂入最终签收包；正式模型调用继续disabled，不作为本轮开启项。",
+    "u_resolution": "已改为01侧只读证据索引和固定回收报告引用，不直接改00总管最终签收包进度口径。"
+  },
+  "acceptance_mapping": [
+    {
+      "area": "api_contract",
+      "status": "linked",
+      "final_acceptance_index_label": "01U.API_CONTRACT",
+      "evidence_paths": [
+        "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\delivery_candidate_api_model_route_dry_run_package_latest.json",
+        "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\API契约\\delivery_candidate_api_model_route_dry_run_acceptance_latest.md"
+      ],
+      "evidence_summary": "LOCAL_DRY_RUN_ONLY、标准任务单必填字段、请求/响应契约和安全硬闸已由H包90/90只读验收覆盖。",
+      "required_gate": "dry_run=true; real_action_allowed=false; receipt_required=true"
+    },
+    {
+      "area": "model_routing",
+      "status": "linked",
+      "final_acceptance_index_label": "01U.MODEL_ROUTING",
+      "evidence_paths": [
+        "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\delivery_candidate_api_model_route_dry_run_package_latest.json",
+        "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\standard_task_to_receipt_trace_latest.json"
+      ],
+      "evidence_summary": "模型路由保持invocation=disabled、selection_mode=label_only，candidate_routes均real_model_call=false。",
+      "required_gate": "real_model_invocation_enabled=false; selected_route.real_model_call=false"
+    },
+    {
+      "area": "failure_fallback",
+      "status": "linked",
+      "final_acceptance_index_label": "01U.FAILURE_FALLBACK",
+      "evidence_paths": [
+        "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\failure_fallback_matrix_latest.json",
+        "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+        "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\18第七批小任务AC基础服务可交付前健康检查包\\01智能系统第七批小任务AC_基础服务可交付前健康检查包_最新.json"
+      ],
+      "evidence_summary": "覆盖schema无效、无安全路由、真实模型禁用、外部触发禁用、正式写入禁用，以及知识检索证据不足降级。",
+      "required_gate": "所有失败路径输出receipt或固定降级语，不外扩重试真实服务。"
+    },
+    {
+      "area": "receipt",
+      "status": "linked",
+      "final_acceptance_index_label": "01U.RECEIPT",
+      "evidence_paths": [
+        "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\standard_task_to_receipt_trace_latest.json"
+      ],
+      "evidence_summary": "receipt_id、task_id、selected_route、middleware_plan、fallback、external_calls、blocked_actions、evidence字段齐全；external_calls为空。",
+      "required_gate": "external_calls=[]; formal_writes=[]; blocked_actions保留。"
+    },
+    {
+      "area": "knowledge_retrieval_readonly_evidence_path",
+      "status": "linked",
+      "final_acceptance_index_label": "01U.KNOWLEDGE_RETRIEVAL",
+      "evidence_paths": [
+        "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\16第五批小任务PAPI影子契约证据索引联动\\01智能系统第五批小任务P_API影子契约_最新.json",
+        "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\16第五批小任务PAPI影子契约证据索引联动\\01智能系统第五批小任务P_知识库证据索引联动样本_最新.json",
+        "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\18第七批小任务AC基础服务可交付前健康检查包\\01智能系统第七批小任务AC_基础服务可交付前健康检查包_最新.json",
+        "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\13知识检索中台异常闭环\\智能系统知识检索中台异常闭环_最新.json"
+      ],
+      "evidence_summary": "只挂本地影子证据路径；fresh可引用，stale只能历史参考，no_evidence必须降级并人工复核。",
+      "required_gate": "knowledge_query_id/evidence_ids/evidence_count/degrade_reason可见；不补写正式知识库或向量库。"
+    }
+  ],
+  "knowledge_retrieval_degradation_policy": {
+    "fresh": "允许作为本地只读影子证据引用，仍不得触发真实模型或外部检索。",
+    "stale": "仅可作为历史参考，不得当作当前事实；输出降级说明并要求人工复核。",
+    "no_evidence": "不得编造事实，不新增真实检索，不补写正式索引；输出no_evidence降级说明。",
+    "safety_violation": "硬阻断；保留本地trace，不触发n8n、企业微信、Redis、正式库、券商或交易链路。"
+  },
+  "readonly_evidence_files": [
+    {
+      "label": "api_model_route_package",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\delivery_candidate_api_model_route_dry_run_package_latest.json",
+      "sha256": "CDEC770294551AB933AC88765BB288D1DADC1F467513D6C418BBA867B3EF7B3C"
+    },
+    {
+      "label": "standard_task_to_receipt_trace",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\standard_task_to_receipt_trace_latest.json",
+      "sha256": "4EE7F26065970A77FEB9FCB903828CA66FF7BB18BC33FDA45404859BE18E4135"
+    },
+    {
+      "label": "failure_fallback_matrix",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\failure_fallback_matrix_latest.json",
+      "sha256": "BBF7FB5DF8D7D9FB2377D6EC935F313839B3A9C3C2281BE121407EA8D2B1D0F5"
+    },
+    {
+      "label": "final_gap_compression_source",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\最终缺口压缩交付确认\\final_gap_compression_delivery_confirmation_latest.json",
+      "sha256": "26A3297FA6163C751FCB6B95FED66D71779CC79100C26A5867A5038217100DF6"
+    },
+    {
+      "label": "knowledge_link_contract",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\16第五批小任务PAPI影子契约证据索引联动\\01智能系统第五批小任务P_API影子契约_最新.json",
+      "sha256": "D7AAD01069DB76FEFFFDE604F8C0A33A77948647A14CE1DA9901C36B215CA9A3"
+    },
+    {
+      "label": "knowledge_link_sample",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\16第五批小任务PAPI影子契约证据索引联动\\01智能系统第五批小任务P_知识库证据索引联动样本_最新.json",
+      "sha256": "8081F748E9FC4684266C74ACBDF8AA2C334D5B8EC7AB500AF140A5320E7C3628"
+    },
+    {
+      "label": "error_degradation_standard",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+      "sha256": "43BC2663D44365C713F75A7A5CC44F77FD0F827573BF420DDBDCB0AB618AF837"
+    },
+    {
+      "label": "knowledge_health_check_package",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\18第七批小任务AC基础服务可交付前健康检查包\\01智能系统第七批小任务AC_基础服务可交付前健康检查包_最新.json",
+      "sha256": "41FD25C88E18DAF4951BF648010556C7C5535A1D44ABCCE678C03378C0A81A88"
+    }
+  ],
+  "acceptance_result": {
+    "remaining_gap_after_u": 0,
+    "delivery_blockers": [],
+    "safety_blockers_added": [],
+    "final_model_call_status": "disabled",
+    "network_touched": false,
+    "services_touched": false,
+    "writes_outside_allowed_scope": false,
+    "ready_for_final_acceptance_reference": true
+  }
+}

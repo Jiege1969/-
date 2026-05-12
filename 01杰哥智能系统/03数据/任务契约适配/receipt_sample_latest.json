@@ -1,0 +1,52 @@
+{
+  "receipt_id": "receipt-01-light-contract-20260505-001",
+  "task_id": "task-01-light-contract-20260505-001",
+  "dry_run": true,
+  "status": "DRY_RUN_PLANNED",
+  "selected_route": {
+    "model_route": "shadow_model_router",
+    "middleware_route": "local_contract_parser",
+    "fallback_route": "n8n_dry_run_shadow",
+    "real_invocation": false
+  },
+  "shadow_writes": {
+    "sqlite": {
+      "mode": "shadow_only",
+      "planned_table": "task_shadow_ledger",
+      "formal_db_write": false
+    },
+    "redis": {
+      "mode": "shadow_only",
+      "planned_key": "shadow:task:task-01-light-contract-20260505-001",
+      "real_redis_write": false
+    }
+  },
+  "external_calls": [],
+  "blocked_actions": [
+    {
+      "action": "call_real_model_api",
+      "reason": "真实动作关闭"
+    },
+    {
+      "action": "trigger_n8n",
+      "reason": "n8n仅允许干跑计划"
+    },
+    {
+      "action": "send_enterprise_wechat",
+      "reason": "禁止真实外发"
+    },
+    {
+      "action": "write_formal_database",
+      "reason": "仅允许SQLite影子台账计划"
+    },
+    {
+      "action": "broker_api_or_auto_trade",
+      "reason": "券商接口、自动交易、下单硬关闭"
+    }
+  ],
+  "evidence": {
+    "validation": "read_only_local_parse",
+    "external_services_touched": false
+  },
+  "created_at": "2026-05-05 14:00:00 +08:00"
+}

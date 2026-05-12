@@ -1,0 +1,20 @@
+{
+  "asset_name": "税收入口映射验收样例R0自检",
+  "generated_at": "2026-05-08 18:50:07 +08:00",
+  "target": "税收入口映射验收样例_软件产品即征即退_20260508.md/json",
+  "risk_level": "W1/R0",
+  "checks": {
+    "read_matching_fix_card": "passed",
+    "read_comparison_table": "passed",
+    "case_coverage": "passed",
+    "software_vat_refund_not_routed_to_rd_deduction": "passed",
+    "ambiguous_question_requires_clarification": "passed",
+    "json_parse": "passed",
+    "login_tax_system": false,
+    "read_real_finance_system": false,
+    "write_formal_tax_db": false,
+    "modify_wecom_service_script": false,
+    "trigger_n8n": false
+  },
+  "conclusion": "P0 税收事项匹配阻断在 W1/R0 受控试用交付口径下已关闭；正式税务链路仍保持关闭。"
+}

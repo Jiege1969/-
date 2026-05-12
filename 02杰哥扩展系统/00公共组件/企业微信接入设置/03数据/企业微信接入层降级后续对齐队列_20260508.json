@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 06:30:57 +08:00",
+  "asset_identity": "wecom_access_layer_demotion_followup_alignment_queue",
+  "risk_level": "W1/R0",
+  "status": "queue_not_service_change_not_delete_permission",
+  "source_record": "企业微信接入层降级对齐核实_20260508.md",
+  "w1_r0_auto_items": [
+    {
+      "id": "WECOM-DEGRADE-W1-001",
+      "item": "update_authoritative_mechanism_document_wording",
+      "output": "document wording aligned to connected callback plus real send disabled",
+      "boundary": "documentation_only_no_config_no_script"
+    },
+    {
+      "id": "WECOM-DEGRADE-W1-002",
+      "item": "draft_legacy_compatibility_entry_notice",
+      "output": "legacy README compatibility wording draft",
+      "boundary": "draft_only_do_not_overwrite_legacy_readme"
+    },
+    {
+      "id": "WECOM-DEGRADE-W1-003",
+      "item": "create_access_layer_responsibility_card",
+      "output": "communication routing safety logging responsibility card",
+      "boundary": "no_business_logic_change"
+    },
+    {
+      "id": "WECOM-DEGRADE-W1-004",
+      "item": "create_wording_conflict_list",
+      "output": "wait_bridge_vs_connected_and_unified_assistant_conflict_list",
+      "boundary": "record_only_no_service_script_change"
+    },
+    {
+      "id": "WECOM-DEGRADE-W1-005",
+      "item": "create_migration_completion_snapshot",
+      "output": "readonly new_old_path_file_status_snapshot",
+      "boundary": "no_copy_no_move_no_cleanup"
+    }
+  ],
+  "w2_pause_items": [
+    {
+      "id": "WECOM-DEGRADE-W2-001",
+      "item": "change_unified_local_service_reply_prefix",
+      "reason": "formal service entry script may affect 19310 responses"
+    },
+    {
+      "id": "WECOM-DEGRADE-W2-002",
+      "item": "change_shadow_plan_rule_wait_bridge_status",
+      "reason": "configuration change affects acceptance wording"
+    },
+    {
+      "id": "WECOM-DEGRADE-W2-003",
+      "item": "fix_stock_assistant_output_template_verification_failure",
+      "reason": "stock formal output template and terminal verification scope"
+    },
+    {
+      "id": "WECOM-DEGRADE-W2-004",
+      "item": "overwrite_legacy_06_readme",
+      "reason": "legacy path may still be referenced"
+    }
+  ],
+  "w3_pause_items": [
+    "delete_move_or_archive_legacy_06_wecom_assistant_system",
+    "start_or_restart_19310_unified_command_service",
+    "enable_real_wecom_send",
+    "trigger_n8n_or_real_external_automation",
+    "connect_real_tax_filing_auto_video_publish_or_broker_interface"
+  ],
+  "recommended_next_step": "WECOM-DEGRADE-W1-001",
+  "boundary": {
+    "modify_service_script": false,
+    "modify_config_json": false,
+    "delete_legacy_path": false,
+    "restart_service_19310": false,
+    "real_send_wecom": false,
+    "trigger_n8n": false
+  },
+  "self_check": "[自检: 企业微信接入层降级后续对齐队列已完成, 风险等级: W1/R0, 产物: 企业微信接入层降级后续对齐队列_20260508.md/json, 边界: 守住了。]"
+}

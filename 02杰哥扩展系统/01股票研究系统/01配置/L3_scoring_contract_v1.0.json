@@ -1,0 +1,118 @@
+{
+  "version": "1.0",
+  "effective_date": "2026-05-07",
+  "description": "L3级股票分析评分契约。单股报告必须基于此结构输出可量化的分数、证据、缺口和置信度。",
+  "scoring_items": [
+    {
+      "name": "technical_structure",
+      "display_name": "技术结构",
+      "weight": 40,
+      "description": "基于K线、均线、MACD、RSI、量比、承接区、转强线、风险线等技术指标的综合评分。"
+    },
+    {
+      "name": "fundamentals_capital",
+      "display_name": "基本面/资金",
+      "weight": 20,
+      "description": "基于估值、盈利质量、财报变化、机构持仓、主力资金、北向资金、公告质量等证据的综合评分。"
+    },
+    {
+      "name": "policy_events",
+      "display_name": "政策事件",
+      "weight": 20,
+      "description": "从结构化政策事件库中匹配政策事件，并按政策强度、股票暴露度、时效衰减和证据置信度计算得分。"
+    },
+    {
+      "name": "market_style_fit",
+      "display_name": "市场风格适配",
+      "weight": 20,
+      "description": "结合市场风险偏好、板块热度、大小盘风格、成交活跃度，评估当前市场环境对个股的适配程度。"
+    }
+  ],
+  "score_range": {
+    "min": 0,
+    "max": 100
+  },
+  "conclusion_thresholds": {
+    "重点关注": {
+      "min": 80,
+      "max": 100,
+      "description": "证据充分，多因素共振，具备明确的关注价值。"
+    },
+    "可纳入观察": {
+      "min": 60,
+      "max": 79,
+      "description": "有一定积极信号，但缺少部分关键证据或市场环境配合不足，需等待进一步确认。"
+    },
+    "暂不建议关注": {
+      "min": 0,
+      "max": 59,
+      "description": "证据偏弱或存在明显风险，当前不具备关注条件。"
+    }
+  },
+  "output_fields": {
+    "total_score": "综合得分，范围0-100。",
+    "item_scores": [
+      {
+        "item": "技术结构",
+        "score": "实际得分",
+        "max_score": 40,
+        "evidence": [
+          "证据1",
+          "证据2"
+        ],
+        "missing": [
+          "缺失项1"
+        ],
+        "confidence": "high/medium/low"
+      },
+      {
+        "item": "基本面/资金",
+        "score": "实际得分",
+        "max_score": 20,
+        "evidence": [],
+        "missing": [],
+        "confidence": "high/medium/low"
+      },
+      {
+        "item": "政策事件",
+        "score": "实际得分",
+        "max_score": 20,
+        "evidence": [],
+        "missing": [],
+        "confidence": "high/medium/low"
+      },
+      {
+        "item": "市场风格适配",
+        "score": "实际得分",
+        "max_score": 20,
+        "evidence": [],
+        "missing": [],
+        "confidence": "high/medium/low"
+      }
+    ],
+    "evidence_summary": "总体证据的简要总结。",
+    "missing_summary": "总体缺口的简要总结，必须解释为什么不是更高分。",
+    "confidence": {
+      "level": "high/medium/low",
+      "reason": "置信度解释。"
+    },
+    "conclusion_text": "后台保留评分结论词；前台必须经统一口径映射为研究等级和当前状态后展示。",
+    "frontend_research_level": "前台研究等级：重点研究、常规研究、观察。",
+    "frontend_current_status": "前台当前状态：等待承接、等待转强、风险复核、回避。",
+    "next_review_date": "建议下一次复核日期，可选，格式YYYY-MM-DD。"
+  },
+  "scoring_rules": {
+    "technical_structure_scoring": "按技术结构证据给0-40分。强趋势、低追高风险、量价配合、支撑有效、风险线清晰时得分较高；若关键价格、成交量或均线数据缺失，不得给高置信度。",
+    "fundamentals_capital_scoring": "按基本面和资金证据给0-20分。估值合理、盈利改善、现金流健康、资金流入、公告质量高时得分较高；财报、资金或公告缺失时必须写入missing。",
+    "policy_event_scoring": "单个政策事件分 = 20 * impact_strength * stock_exposure * decay_factor * event_confidence。多个事件可加权汇总但总分不得超过20。impact_strength、event_confidence来自政策事件主表，stock_exposure来自暴露度映射表，decay_factor按事件时效计算。",
+    "policy_decay_rule": "默认有效期内decay_factor=1。若已超过valid_until且status仍允许观察，则按decay_days线性衰减至0；若status=retired，则decay_factor=0；若status=draft，则不得进入正式评分。",
+    "market_style_scoring": "先计算原始市场风格适配分0-20，再允许使用温和调权系数0.85-1.15进行修正，最终限制在0-20。第一版建议优先采用小幅加减分，避免市场风格噪声主导个股判断。",
+    "missing_handling": "每个分项必须明确列出missing字段。如果missing中有关键证据缺失，整体confidence不能为high；若政策或市场风格关键证据缺失，总分可以超过60但前台不得输出'研究等级=重点研究'。",
+    "evidence_source_rule": "进入正式评分的政策事件必须具备官方或高可信来源URL。LLM搜索结果只能生成draft事件，不得直接写入正式事件库。"
+  },
+  "confidence_rules": {
+    "high": "四个分项均有可核验证据，且无关键missing。",
+    "medium": "核心技术证据完整，但至少一个非技术分项存在缺口或仅有间接证据。",
+    "low": "关键行情、财报、政策或市场风格数据缺失，或证据之间冲突明显。"
+  }
+}

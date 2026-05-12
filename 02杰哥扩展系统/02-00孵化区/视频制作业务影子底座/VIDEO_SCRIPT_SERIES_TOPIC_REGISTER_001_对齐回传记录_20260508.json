@@ -1,0 +1,35 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SERIES_TOPIC_REGISTER_001_ALIGNMENT_RETURN",
+  "created_at": "2026-05-08 13:28:00 +08:00",
+  "risk_level": "W1/R0",
+  "source": "continuous_auto_construction",
+  "completed": [
+    "建立成语故事系列栏目首批选题登记表",
+    "登记8个候选成语",
+    "明确选题状态流转",
+    "登记下一步W1/R0候选"
+  ],
+  "impact": {
+    "series_topic_pool": "available",
+    "initial_topic_count": 8,
+    "status_flow_defined": true,
+    "generation_render_publish": "forbidden",
+    "wecom_real_send_or_n8n": "forbidden",
+    "formal_video_system_modified": false
+  },
+  "next_w1_r0_candidates": [
+    "成语故事系列栏目人工复核问题通用模板",
+    "亡羊补牢影子草案空白任务卡",
+    "首批选题状态快照"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "edit_formal_script": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_video_system": false,
+    "release_for_generation_render_publish": false
+  }
+}

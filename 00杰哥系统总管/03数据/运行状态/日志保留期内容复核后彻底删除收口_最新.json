@@ -1,0 +1,74 @@
+﻿{
+    "report":  "日志保留期内容复核后彻底删除收口",
+    "generated_at":  "2026-05-06 08:22:51 +08:00",
+    "source_candidate":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\日志保留期候选清单_最新.json",
+    "former_archive_dir":  "D:\\杰哥智能化系统\\00杰哥系统总管\\05备份\\真实归档\\日志保留期压缩归档\\20260506_081742",
+    "reviewed_files":  229,
+    "reviewed_bytes":  557512,
+    "reviewed_mb":  0.532,
+    "former_zip_bytes":  206402,
+    "former_zip_sha256":  "8CA45369C59D7A7E5DB670E6DC9121D8499C94EBFF223E7F04C6BC386F316BD0",
+    "former_manifest_sha256":  "01C8672FC8771A4D8BC2E2D37E7278A2A450007AF0CCCBAE058308BE7485BA22",
+    "categories":  [
+                       {
+                           "category":  "日常运行",
+                           "count":  128
+                       },
+                       {
+                           "category":  "开机施工准备",
+                           "count":  66
+                       },
+                       {
+                           "category":  "双系统Ollama治理",
+                           "count":  11
+                       },
+                       {
+                           "category":  "状态检查",
+                           "count":  7
+                       },
+                       {
+                           "category":  "稳定中台",
+                           "count":  6
+                       },
+                       {
+                           "category":  "企业微信响应URL回传演练",
+                           "count":  4
+                       },
+                       {
+                           "category":  "日常可用版",
+                           "count":  4
+                       },
+                       {
+                           "category":  "n8nWebhook本地受控启用测试",
+                           "count":  2
+                       },
+                       {
+                           "category":  "企业微信桥接入口",
+                           "count":  1
+                       }
+                   ],
+    "content_review":  {
+                           "ok_false":  0,
+                           "conclusion":  "229个候选日志均为旧轮询/演练/状态检查/本地受控测试类普通运行痕迹；无当前依赖、无唯一资产、无真实外发/券商/交易动作，按清债不添新债原则彻底删除，不保留压缩副本。",
+                           "real_external_action":  0,
+                           "secret_like":  0,
+                           "pass_false":  0,
+                           "nonzero_failure":  0
+                       },
+    "deletion":  {
+                     "deleted_archive_stage":  true,
+                     "deleted_archive_dir":  true,
+                     "deleted_original_files":  229,
+                     "deleted_archive_manifest":  true,
+                     "deleted_archive_zip":  true
+                 },
+    "safety":  {
+                   "deleted_backup":  false,
+                   "stopped_services":  false,
+                   "called_broker_api":  false,
+                   "sent_wecom":  false,
+                   "auto_trade":  false,
+                   "deleted_database":  false,
+                   "triggered_n8n":  false
+               }
+}

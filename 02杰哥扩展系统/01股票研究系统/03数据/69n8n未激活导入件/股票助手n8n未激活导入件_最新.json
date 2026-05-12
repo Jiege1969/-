@@ -1,0 +1,134 @@
+{
+  "name": "股票助手企业微信查询适配器未激活导入件",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "733f45cb-8009-4bd6-b053-aa6be149d670",
+      "name": "手动触发禁用态",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        220,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "72a5f8c2-9062-4d58-981c-077721e1d83a",
+              "name": "trace_id",
+              "value": "stock-disabled-import-demo",
+              "type": "string"
+            },
+            {
+              "id": "1b93a7d7-8f4f-4e47-991e-2d10a1be9ab9",
+              "name": "message_type",
+              "value": "text",
+              "type": "string"
+            },
+            {
+              "id": "05d943a1-5ddb-4665-904a-5fc135e85851",
+              "name": "text",
+              "value": "分析新易盛",
+              "type": "string"
+            },
+            {
+              "id": "126a3b75-59d0-4e97-a412-4cca19366bec",
+              "name": "voice_text",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "45b05e52-8f6d-4426-bdca-60d815a022a7",
+              "name": "dry_run",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "id": "2af5b79b-c886-4898-93d7-ad86e591530c",
+      "name": "构造契约输入",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        500,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { mode: 'inactive_import_only', message: $json.text, dry_run: true, real_send: false, trade: false, note: 'This workflow is imported inactive. It does not call local scripts, WeWork, databases, broker APIs, or trading interfaces.' } }];"
+      },
+      "id": "881cfd31-6046-47e4-b571-b303b721525b",
+      "name": "安全占位输出",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        780,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "股票助手企业微信查询适配器未激活导入件\\n生成时间：2026-04-28 23:48:15\\n安全边界：active=false；不启用；不触发；不发送企业微信；不写正式库；不调用券商接口；不自动交易。",
+        "height": 260,
+        "width": 460,
+        "color": 5
+      },
+      "id": "e19d6db6-a238-4cf1-b2b3-16858a43408b",
+      "name": "安全边界说明",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        220,
+        -60
+      ]
+    }
+  ],
+  "connections": {
+    "手动触发禁用态": {
+      "main": [
+        [
+          {
+            "node": "构造契约输入",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "构造契约输入": {
+      "main": [
+        [
+          {
+            "node": "安全占位输出",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "staticData": null,
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "jiege_stock_wework_n8n_adapter": true,
+    "stage": "inactive_import_only",
+    "must_remain_inactive": true,
+    "generated_at": "2026-04-28 23:48:15",
+    "real_send": false,
+    "broker_api": false,
+    "auto_trade": false
+  }
+}

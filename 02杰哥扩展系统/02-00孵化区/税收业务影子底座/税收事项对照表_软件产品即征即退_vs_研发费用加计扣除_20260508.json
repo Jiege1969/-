@@ -1,0 +1,69 @@
+{
+  "id": "TAX_MATTER_COMPARISON_SOFTWARE_VAT_REFUND_VS_RD_SUPER_DEDUCTION_20260508",
+  "generated_at": "2026-05-08",
+  "asset_identity": "tax_shadow_w1_r0_matter_comparison_table",
+  "formal_tax_rule": false,
+  "source_assets": [
+    "受控试用阻断修复清单_20260508.md/json",
+    "税收事项匹配纠偏卡_软件产品即征即退_20260508.md/json"
+  ],
+  "core_rule": "Do not route software product VAT immediate refund to R&D expense super deduction just because both contain software-related terms.",
+  "comparison": {
+    "software_product_vat_immediate_refund": {
+      "tax_type": "VAT",
+      "object": "software product sales revenue and actual VAT burden",
+      "keywords": ["软件产品", "即征即退", "增值税", "税负超过3%", "退税", "软件产品证书", "嵌入式软件"],
+      "expected_outputs": ["policy_basis", "applicable_conditions", "material_list", "measurement_fields", "missing", "human_review_questions"],
+      "blocked_outputs": ["deterministic_refund_amount", "filing_conclusion", "formal_handling_advice"]
+    },
+    "rd_expense_super_deduction": {
+      "tax_type": "enterprise_income_tax",
+      "object": "R&D activities and R&D expense collection",
+      "keywords": ["研发费用", "加计扣除", "研发项目", "人员人工", "直接投入", "费用归集", "辅助账"],
+      "expected_outputs": ["policy_basis", "R&D_activity_assessment", "expense_scope", "collection_materials", "missing", "human_review_questions"],
+      "blocked_outputs": ["deterministic_deduction_amount", "enterprise_income_tax_filing_conclusion", "formal_handling_advice"]
+    }
+  },
+  "routing_rules": [
+    {
+      "input_feature": "软件产品即征即退",
+      "route_to": "software_product_vat_immediate_refund",
+      "status": "direct_match"
+    },
+    {
+      "input_feature": "软件产品退税",
+      "route_to": "software_product_vat_immediate_refund",
+      "status": "direct_match_with_review"
+    },
+    {
+      "input_feature": "软件产品税负超过3%",
+      "route_to": "software_product_vat_immediate_refund_measurement_fields",
+      "status": "draft_no_amount"
+    },
+    {
+      "input_feature": "研发费用加计扣除",
+      "route_to": "rd_expense_super_deduction",
+      "status": "direct_match"
+    },
+    {
+      "input_feature": "软件企业有什么税收优惠",
+      "route_to": "clarification_required",
+      "status": "ambiguous"
+    }
+  ],
+  "clarification_questions": [
+    "你问的是软件产品销售相关的增值税即征即退，还是研发支出相关的企业所得税加计扣除？",
+    "当前问题关注的是销售收入、增值税税负，还是研发费用支出？",
+    "你需要政策依据、资料清单、适用条件，还是测算前置字段？"
+  ],
+  "boundary": {
+    "login_e_tax_bureau": false,
+    "read_real_tax_system": false,
+    "formal_tax_opinion": false,
+    "deterministic_refund_or_deduction_amount": false,
+    "filing_advice": false,
+    "write_formal_tax_database": false,
+    "modify_wecom_service_script": false
+  },
+  "next_auto_candidate": "tax_work_secretary_mapping_acceptance_samples"
+}

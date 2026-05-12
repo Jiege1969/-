@@ -1,0 +1,28 @@
+{
+  "asset_id": "VIDEO_AGENT_STATUS_QUERY_REPLY_QUALITY_CHECK_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_quality_check_not_real_presend_review",
+  "purpose": "Check whether status-query placeholder replies are clear, traceable, and within boundaries.",
+  "quality_items": [
+    {"item": "task_identifiable", "pass_standard": "has_shadow_task_id_or_clear_gap_note"},
+    {"item": "status_traceable", "pass_standard": "current_status_points_to_shadow_status_record"},
+    {"item": "gaps_clear", "pass_standard": "missing_fields_are_listed_without_fabrication"},
+    {"item": "review_clear", "pass_standard": "human_review_items_are_clear"},
+    {"item": "redline_clear", "pass_standard": "real_generation_publish_external_send_requests_are_blocked"},
+    {"item": "wording_compliant", "pass_standard": "does_not_use_formal_completion_or_send_wording"},
+    {"item": "next_step_actionable", "pass_standard": "next_step_is_shadow_action_or_human_review_only"}
+  ],
+  "failure_handling": [
+    {"condition": "missing_task_id", "action": "route_to_status_query_gap_card"},
+    {"condition": "formal_completion_wording", "action": "route_to_receipt_field_consistency_check"},
+    {"condition": "real_execution_request", "action": "route_to_redline_block_register"}
+  ],
+  "real_system_triggered": {
+    "wecom_real_send": false,
+    "wecom_real_message_read": false,
+    "real_service_call": false
+  }
+}

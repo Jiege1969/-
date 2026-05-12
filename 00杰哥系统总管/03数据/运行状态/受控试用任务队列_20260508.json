@@ -1,0 +1,133 @@
+{
+  "asset_id": "CONTROLLED_TRIAL_TASK_QUEUE_20260508",
+  "asset_name": "受控试用任务队列",
+  "created_at": "2026-05-08",
+  "asset_identity": "总管侧 W1/R0 受控试用任务队列",
+  "source_asset": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\受控试用版交付清单_20260508.md",
+  "is_formal_launch_schedule": false,
+  "principles": [
+    "只做W1/R0影子试用、草案、复核记录和回传吸收",
+    "不触发企业微信真实发送、n8n、服务重启、正式库、交易、税务办理、视频渲染或发布",
+    "每条业务线只在自己的目录内施工；总管侧只收回传、做裁定、更新索引",
+    "本职工作业务线当前暂停，不进入本队列",
+    "任一任务出现W2/W3、真实接入、外发、删除/移动、规则冲突或需求硬分叉，立即暂停并交回总管裁定"
+  ],
+  "tasks": [
+    {
+      "task_id": "CTRL-TRIAL-TAX-001",
+      "business_line": "税收政策顾问",
+      "task_name": "脱敏真实问题试用登记",
+      "construction_identity": "W1/R0影子试用",
+      "input_requirement": "1个脱敏涉税问题，含税种、期间、地区、主体、问题背景",
+      "expected_artifact": "待复核草案或试用回执",
+      "pause_triggers": [
+        "需要登录电子税务局",
+        "读取真实财税系统",
+        "输出确定税务意见或金额"
+      ],
+      "status": "completed",
+      "completion_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_TRIAL_TAX_001_脱敏真实问题试用登记回执_20260508.md"
+    },
+    {
+      "task_id": "CTRL-TRIAL-STOCK-001",
+      "business_line": "股票L3研究",
+      "task_name": "五样本证据缺口P0补齐路线",
+      "construction_identity": "W1/R0草案/回传吸收",
+      "input_requirement": "股票线最新五样本证据缺口报告",
+      "expected_artifact": "P0缺口拆解和下一步只读数据补齐建议",
+      "pause_triggers": [
+        "涉及券商接口",
+        "交易指令",
+        "自动调仓",
+        "修改正式前台入口"
+      ],
+      "status": "completed",
+      "completion_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_TRIAL_STOCK_001_L3五样本证据缺口P0补齐路线_20260508.md"
+    },
+    {
+      "task_id": "CTRL-TRIAL-VIDEO-001",
+      "business_line": "视频影子工厂",
+      "task_name": "单个视频任务复核闭环试用",
+      "construction_identity": "W1/R0影子试用",
+      "input_requirement": "1个视频选题或脚本草案，含平台、素材来源、AI标识",
+      "expected_artifact": "脚本/分镜/素材授权/平台规则复核包",
+      "pause_triggers": [
+        "涉及真实渲染",
+        "上传",
+        "发布",
+        "平台登录",
+        "复用旧放行"
+      ],
+      "status": "completed",
+      "completion_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_TRIAL_VIDEO_001_视频影子工厂单任务复核闭环试用记录_20260508.md"
+    },
+    {
+      "task_id": "CTRL-TRIAL-WECOM-001",
+      "business_line": "企业微信接入层",
+      "task_name": "机器人入口边界回归检查",
+      "construction_identity": "W1/R0只读核查",
+      "input_requirement": "机器人名称、入口路径、路由目标、安全禁令",
+      "expected_artifact": "只读回归检查记录",
+      "pause_triggers": [
+        "修改服务脚本",
+        "重启19310/19302",
+        "真实发送",
+        "n8n"
+      ],
+      "status": "completed",
+      "completion_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_TRIAL_WECOM_001_机器人入口边界回归检查记录_20260508.md"
+    },
+    {
+      "task_id": "CTRL-TRIAL-MGR-001",
+      "business_line": "总管协调层",
+      "task_name": "并行回传统一接收口径试用",
+      "construction_identity": "W1/R0总管协调",
+      "input_requirement": "税收/股票/视频/企业微信任一回传记录",
+      "expected_artifact": "回传吸收记录和是否需裁定清单",
+      "pause_triggers": [
+        "需要总管直接改业务线正式配置",
+        "替业务线做业务判断"
+      ],
+      "status": "completed",
+      "completion_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_TRIAL_MGR_001_并行回传统一接收口径试用记录_20260508.md"
+    }
+  ],
+  "recommended_order": [
+    "CTRL-TRIAL-MGR-001",
+    "CTRL-TRIAL-TAX-001",
+    "CTRL-TRIAL-STOCK-001",
+    "CTRL-TRIAL-VIDEO-001",
+    "CTRL-TRIAL-WECOM-001"
+  ],
+  "receipt_required_fields": [
+    "任务ID",
+    "执行日期",
+    "执行窗口",
+    "输入摘要",
+    "新增/修改文件",
+    "风险等级",
+    "是否触及真实接入",
+    "是否需要总管裁定",
+    "输出结论",
+    "边界确认"
+  ],
+  "boundary_flags": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_db": false,
+    "run_business_script": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "login_tax_system": false,
+    "video_render_upload_publish": false,
+    "modify_service_script": false,
+    "restart_19310_or_19302": false,
+    "delete_move_archive_old_directory": false
+  },
+  "self_check": {
+    "risk_level": "W1/R0",
+    "json_parse_required": true,
+    "panel_package_update_required": true,
+    "boundary_kept": true
+  }
+}

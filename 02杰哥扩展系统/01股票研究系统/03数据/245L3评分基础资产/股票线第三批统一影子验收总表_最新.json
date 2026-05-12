@@ -1,0 +1,107 @@
+{
+  "name": "股票线第三批统一影子验收总表",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:27:13",
+  "asset_identity": "W2第三批统一影子验收总表",
+  "status": "shadow_acceptance_summary",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_score_write": true,
+  "records": [
+    {
+      "check_id": "AUTO3-ACCEPT-001",
+      "name": "股票提问对象识别与别名映射验收",
+      "result_file": "股票提问对象识别与别名映射验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "sample_count": 5,
+        "object_clear_count": 5,
+        "ambiguous_count": 0,
+        "formal_route_write_allowed": false,
+        "real_wecom_send_allowed": false
+      }
+    },
+    {
+      "check_id": "AUTO3-ACCEPT-002",
+      "name": "企业微信前台短答模拟输入输出样例验收",
+      "result_file": "企业微信前台短答模拟输入输出样例验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "sample_count": 5,
+        "object_clear_count": 5,
+        "shadow_output_count": 5
+      }
+    },
+    {
+      "check_id": "AUTO3-ACCEPT-003",
+      "name": "置信度上限与缺口联动矩阵验收",
+      "result_file": "置信度上限与缺口联动矩阵验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "rule_count": 8,
+        "condition_count": 8
+      }
+    },
+    {
+      "check_id": "AUTO3-ACCEPT-004",
+      "name": "下一次复核日期与复核重点模板验收",
+      "result_file": "下一次复核日期与复核重点模板验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "rule_count": 4,
+        "sample_count": 5
+      }
+    },
+    {
+      "check_id": "AUTO3-ACCEPT-005",
+      "name": "第三批低风险续建队列验收",
+      "result_file": "股票线第三批低风险续建队列验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "queue_count": 5,
+        "completed_count": 5,
+        "queued_count": 0,
+        "blocked_count": 2
+      }
+    }
+  ],
+  "queue_summary": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "summary": {
+    "check_count": 5,
+    "exists_count": 5,
+    "passed_count": 5,
+    "failed_count": 0,
+    "allow_shadow_acceptance_claim": true,
+    "allow_real_wecom_send": false,
+    "allow_formal_entry": false,
+    "allow_formal_score_update": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

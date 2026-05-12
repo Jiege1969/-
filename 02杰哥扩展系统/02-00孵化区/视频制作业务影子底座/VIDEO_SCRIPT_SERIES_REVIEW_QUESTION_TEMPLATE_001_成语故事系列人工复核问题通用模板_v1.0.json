@@ -1,0 +1,112 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SERIES_REVIEW_QUESTION_TEMPLATE_001",
+  "created_at": "2026-05-08 13:42:00 +08:00",
+  "asset_identity": "W1/R0_shadow_review_question_template",
+  "scope": "idiom_story_series_script_draft_manual_review",
+  "not_permission_for": [
+    "script_generation",
+    "rendering",
+    "publishing",
+    "wecom_outbound",
+    "n8n_trigger",
+    "formal_video_system_change"
+  ],
+  "prerequisite_assets": [
+    "VIDEO_SCRIPT_SERIES_TOPIC_REGISTER_001",
+    "VIDEO_SCRIPT_SERIES_STRUCTURE_001",
+    "VIDEO_SCRIPT_QUALITY_ACCEPTANCE_TABLE_001",
+    "VIDEO_SCRIPT_DURATION_VARIANT_CHECK_001"
+  ],
+  "review_questions": [
+    {
+      "id": "QR-001",
+      "dimension": "idiom_story_accuracy",
+      "question": "草案是否准确讲清成语原始故事，而不是只套通用人生道理？",
+      "pass_condition": "有明确人物、冲突、关键动作、结果",
+      "blocking_condition": "没有故事，只讲抽象道理"
+    },
+    {
+      "id": "QR-002",
+      "dimension": "moral_extraction",
+      "question": "寓意是否来自故事本身，且与成语常见解释一致？",
+      "pass_condition": "寓意能回扣故事关键动作",
+      "blocking_condition": "寓意跑题或强行鸡汤化"
+    },
+    {
+      "id": "QR-003",
+      "dimension": "modern_mapping",
+      "question": "现代场景是否贴近日常生活，且不歪曲原意？",
+      "pass_condition": "现代例子能帮助理解成语",
+      "blocking_condition": "现代例子喧宾夺主或价值观偏移"
+    },
+    {
+      "id": "QR-004",
+      "dimension": "structure_integrity",
+      "question": "是否包含开场、故事、转折、寓意、收束？",
+      "pass_condition": "结构完整，节奏清楚",
+      "blocking_condition": "缺少故事段或结尾无回扣"
+    },
+    {
+      "id": "QR-005",
+      "dimension": "language_quality",
+      "question": "文案是否自然、有画面感、适合口播？",
+      "pass_condition": "句子短、画面清楚、可朗读",
+      "blocking_condition": "机械、空泛、像模板填空"
+    },
+    {
+      "id": "QR-006",
+      "dimension": "duration_fit",
+      "question": "当前草案是30秒还是60秒版本，是否符合对应节奏？",
+      "pass_condition": "30秒抓主线，60秒补细节",
+      "blocking_condition": "30秒塞太多或60秒仍空泛"
+    },
+    {
+      "id": "QR-007",
+      "dimension": "storyboard_usability",
+      "question": "每段是否能转成可执行分镜描述？",
+      "pass_condition": "画面对象、动作、情绪明确",
+      "blocking_condition": "只有概念，无法画面化"
+    },
+    {
+      "id": "QR-008",
+      "dimension": "compliance_risk",
+      "question": "是否含夸大、引战、低俗、侵权或不适合儿童观看内容？",
+      "pass_condition": "无明显风险，风险点已标注",
+      "blocking_condition": "命中明显合规风险"
+    },
+    {
+      "id": "QR-009",
+      "dimension": "ai_label_and_originality",
+      "question": "如使用AI生成，是否保留人工复核、原创性和AI标识待确认？",
+      "pass_condition": "待确认项明确",
+      "blocking_condition": "把AI草案冒充已人工定稿"
+    },
+    {
+      "id": "QR-010",
+      "dimension": "release_boundary",
+      "question": "复核通过是否仍明确不等于渲染、发布或外发放行？",
+      "pass_condition": "复核结论只到文本层",
+      "blocking_condition": "把文本复核等同发布许可"
+    }
+  ],
+  "required_output_fields": [
+    "topic_id",
+    "idiom_name",
+    "draft_version",
+    "question_results",
+    "key_missing_items",
+    "human_reviewer",
+    "review_time",
+    "next_step"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "edit_formal_script": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "connect_platform": false,
+    "modify_formal_video_system": false
+  }
+}

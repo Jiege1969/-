@@ -1,0 +1,57 @@
+{
+  "asset_id": "VIDEO_AGENT_PRE_PUBLISH_FOUR_PIECE_CHECK_001",
+  "version": "v1.0",
+  "asset_type": "pre_publish_completeness_checklist",
+  "construction_level": "W1/R0",
+  "scope": "video_shadow_pre_publish_human_review_chain",
+  "status": "draft",
+  "purpose": "Require preview review, AI label confirmation, material authorization proof, and publishing release confirmation before any publishing command can pass.",
+  "four_piece_items": [
+    {
+      "id": "PPC-001",
+      "material": "final_preview_review",
+      "corresponding_template": "VIDEO_AGENT_PREVIEW_REVIEW_RECEIPT_TEMPLATE_001",
+      "missing_action": "route_to_preview_review_queue",
+      "independently_releases_publish": false
+    },
+    {
+      "id": "PPC-002",
+      "material": "ai_label_confirmation",
+      "corresponding_template": "VIDEO_AGENT_AI_LABEL_CONFIRMATION_RECEIPT_TEMPLATE_001",
+      "missing_action": "route_to_publishing_compliance_review_queue",
+      "independently_releases_publish": false
+    },
+    {
+      "id": "PPC-003",
+      "material": "material_authorization_proof",
+      "corresponding_template": "VIDEO_AGENT_MATERIAL_AUTHORIZATION_PROOF_RECEIPT_TEMPLATE_001",
+      "missing_action": "route_to_material_authorization_review_queue",
+      "independently_releases_publish": false
+    },
+    {
+      "id": "PPC-004",
+      "material": "publishing_release_confirmation",
+      "corresponding_template": "publishing_release_list_or_receipt",
+      "missing_action": "route_to_gate_consistency_review_queue",
+      "independently_releases_publish": false
+    }
+  ],
+  "minimum_pass_conditions": [
+    "All four items have record ids.",
+    "All four items are human confirmed and not system inferred.",
+    "No redline blocker appears in the four items.",
+    "Generation, real render, and publishing gates are consistent and not substituted for each other.",
+    "If manager or formal integration is still needed, output pending-integration notice only and do not publish."
+  ],
+  "refusal_template": {
+    "conclusion": "pre_publish_four_piece_incomplete_cannot_real_publish",
+    "missing_items": "list_missing_materials",
+    "next_action": "route_to_corresponding_human_review_queue",
+    "real_system_triggered": false
+  },
+  "boundaries": {
+    "connect_platform": false,
+    "call_publish_tool": false,
+    "wecom_real_send": false
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "名称": "影子闭环可用版状态面板",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子状态面板",
+  "状态": "shadow_usable_partial",
+  "definition": "影子闭环可用版指后台能完整生成接近正式效果的股票分析短答和证据链，但不接企业微信正式入口、不真实发送、不影响线上使用。",
+  "current_capabilities": [
+    {
+      "capability": "对象识别和第一行明确股票",
+      "status": "available_in_shadow",
+      "evidence": "L3企业微信短答影子dry_run总包包含云南锗业、天齐锂业、华虹公司、浙商中拓、正丹股份五只样本。"
+    },
+    {
+      "capability": "L3分项评分",
+      "status": "available_in_shadow",
+      "evidence": "已存在L3评分契约和两只股票的财报补证影子评分。"
+    },
+    {
+      "capability": "财报基本面证据卡",
+      "status": "available_in_shadow",
+      "evidence": "已覆盖云南锗业、天齐锂业、华虹公司、浙商中拓、正丹股份，并有证据卡schema。"
+    },
+    {
+      "capability": "政策事件结构化证据",
+      "status": "partial",
+      "evidence": "云南锗业已有锗出口管制政策事件匹配；天齐锂业暂无政策事件暴露度。"
+    },
+    {
+      "capability": "市场风格适配",
+      "status": "partial",
+      "evidence": "market_style_daily_latest已存在，但仍缺正式全市场宽度、正式板块数据、大小盘相对强弱和流动性分位。"
+    },
+    {
+      "capability": "企业微信前台结论型短答",
+      "status": "available_in_shadow",
+      "evidence": "已生成五只股票短答样例，并通过dry-run总包验收。"
+    },
+    {
+      "capability": "经营快照与人工核验台账差异发现",
+      "status": "available_in_shadow",
+      "evidence": "已发现天齐锂业191台账已核验但166快照待接入，并生成回流预览。"
+    }
+  ],
+  "not_done": [
+    {
+      "item": "正式企业微信入口接入",
+      "reason": "属于W3，需暂停确认。",
+      "status": "not_started"
+    },
+    {
+      "item": "正式生成脚本或自动同步规则",
+      "reason": "正式脚本/配置属于W3，需暂停确认。",
+      "status": "not_started"
+    },
+    {
+      "item": "市场风格正式全量数据",
+      "reason": "当前仍为partial，不能作为高置信正式评分。",
+      "status": "partial"
+    }
+  ],
+  "shadow_acceptance": {
+    "minimum_cases_required": 3,
+    "current_cases": 5,
+    "case_gap": 0,
+    "can_user_review_now": true,
+    "can_formalize_now": false,
+    "estimated_remaining_shadow_hours": "0-1",
+    "estimated_formalization_hours_after_confirmation": "10-16"
+  },
+  "next_action": "影子闭环最低3样本已完成；下一步应做正式化前W3改动清单、回滚方案和人工确认申请，或继续扩展更多样本。",
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_service_restart": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

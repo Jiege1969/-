@@ -1,0 +1,73 @@
+{
+  "生成时间": "2026-05-08 05:54:32",
+  "任务ID": "VF-20260508-003",
+  "总体状态": "blocked",
+  "配置已启用真实发布": false,
+  "AI标识已确认": true,
+  "发布清单行": {
+    "任务ID": "VF-20260508-003",
+    "生成状态": "已生成待预览",
+    "发布放行状态": "待确认",
+    "放行时间": "-",
+    "放行人": "-",
+    "视频文件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\成品库\\VF-20260508-003_demo_placeholder.mp4",
+    "标题": "掩耳盗铃：听不见问题，不等于问题不存在",
+    "简介": "这期聊：讲讲掩耳盗铃这个成语的故事。角度：成语故事的古今结合解读。适合：喜欢传统文化和生活启发的普通用户。 本期包含古今结合的原创解读。 内容由AI辅助生成，发布前已人工复核。",
+    "标签": "AI生成，杰哥视频工厂，成语故事，传统文化，人生启发",
+    "平台": "B站",
+    "账号": "creator",
+    "B站分区ID": "249",
+    "发布结果": "-"
+  },
+  "发布放行状态": "待确认",
+  "平台": "B站",
+  "账号": "creator",
+  "视频文件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\成品库\\VF-20260508-003_demo_placeholder.mp4",
+  "标题": "掩耳盗铃：听不见问题，不等于问题不存在",
+  "简介": "这期聊：讲讲掩耳盗铃这个成语的故事。角度：成语故事的古今结合解读。适合：喜欢传统文化和生活启发的普通用户。 本期包含古今结合的原创解读。 内容由AI辅助生成，发布前已人工复核。",
+  "命令检查": {
+    "命令": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+    "可用": true,
+    "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+    "错误": "",
+    "returncode": 0,
+    "stdout": "usage: sau [-h] {douyin,kuaishou,xiaohongshu,bilibili} ...\n\nCLI for social-auto-upload.\n\npositional arguments:\n  {douyin,kuaishou,xiaohongshu,bilibili}\n    douyin              Douyin operations\n    kuaishou            Kuaishou operations\n    xiaohongshu         Xiaohongshu operations\n    bilibili            Bilibili operations\n\noptions:\n  -h, --help            show this help message and exit\n",
+    "stderr": ""
+  },
+  "视频文件检查": {
+    "视频文件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\成品库\\VF-20260508-003_demo_placeholder.mp4",
+    "存在": true,
+    "扩展名": ".mp4",
+    "文件大小": 36,
+    "有效": false,
+    "阻断原因": [
+      "视频文件小于 1000000 字节，疑似占位文件或非真实成品"
+    ]
+  },
+  "账号检查": {
+    "平台": "bilibili",
+    "账号": "creator",
+    "命令": [
+      "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+      "bilibili",
+      "check",
+      "--account",
+      "creator"
+    ],
+    "总体状态": "blocked",
+    "returncode": 1,
+    "stdout": "invalid\n",
+    "stderr": ""
+  },
+  "阻断项": [
+    "发布放行状态不是“放行”：待确认",
+    "视频文件小于 1000000 字节，疑似占位文件或非真实成品",
+    "发布账号未通过登录检查：B站/creator"
+  ],
+  "安全边界": {
+    "执行上传": false,
+    "执行发布": false,
+    "触发n8n": false,
+    "企业微信真实外发": false
+  }
+}

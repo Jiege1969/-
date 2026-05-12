@@ -1,0 +1,253 @@
+{
+  "task": "01智能系统第五批小任务P_四类联动样本",
+  "samples": [
+    {
+      "id": "P-S01",
+      "case": "证据命中",
+      "request": {
+        "request_id": "p-shadow-001",
+        "question": "01智能API影子契约当前安全边界是什么？",
+        "evidence_query": {
+          "scope": "local_shadow_evidence_index",
+          "candidate_evidence_ids": [
+            "P-EV-001"
+          ]
+        },
+        "evidence_policy": "must_cite_fresh_local_evidence",
+        "staleness_threshold_days": 30,
+        "dry_run": true,
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples_and_local_evidence_index",
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "write_production_db": false,
+          "write_formal_knowledge_db": false,
+          "write_formal_vector_db": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "touch_primary_work_system": false,
+          "dry_run_required": true
+        }
+      },
+      "response": {
+        "request_id": "p-shadow-001",
+        "status": "ok",
+        "error_code": "OK",
+        "answer": "当前仅允许本地 dry_run 影子联动，不调用真实外部 API，不写正式库。",
+        "evidence_hits": [
+          {
+            "evidence_id": "P-EV-001",
+            "title": "01智能API影子契约本地执行边界",
+            "source_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\16第五批小任务PAPI影子契约证据索引联动\\01智能系统第五批小任务P_API影子契约_最新.json",
+            "source_type": "local_shadow_contract",
+            "updated_at": "2026-05-05",
+            "age_days": 0,
+            "freshness": "fresh",
+            "claim_digest": "影子契约只允许本地 dry_run，不调用真实外部 API，不写正式库。"
+          }
+        ],
+        "degrade_message": "",
+        "external_effect": "none",
+        "formal_store_write": false,
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples_and_local_evidence_index",
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "write_production_db": false,
+          "write_formal_knowledge_db": false,
+          "write_formal_vector_db": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "touch_primary_work_system": false,
+          "dry_run_required": true
+        }
+      }
+    },
+    {
+      "id": "P-S02",
+      "case": "证据过旧降级",
+      "request": {
+        "request_id": "p-shadow-002",
+        "question": "能否把旧版证据当作当前事实直接回答？",
+        "evidence_query": {
+          "scope": "local_shadow_evidence_index",
+          "candidate_evidence_ids": [
+            "P-EV-002"
+          ]
+        },
+        "evidence_policy": "must_cite_fresh_local_evidence",
+        "staleness_threshold_days": 30,
+        "dry_run": true,
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples_and_local_evidence_index",
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "write_production_db": false,
+          "write_formal_knowledge_db": false,
+          "write_formal_vector_db": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "touch_primary_work_system": false,
+          "dry_run_required": true
+        }
+      },
+      "response": {
+        "request_id": "p-shadow-002",
+        "status": "degraded",
+        "error_code": "STALE_EVIDENCE",
+        "answer": "",
+        "evidence_hits": [
+          {
+            "evidence_id": "P-EV-002",
+            "title": "旧版知识库证据索引说明",
+            "source_path": "D:/杰哥智能化系统/01杰哥智能系统/03数据/知识库/历史影子证据/旧版索引样本.md",
+            "source_type": "local_shadow_legacy_note",
+            "updated_at": "2026-03-01",
+            "age_days": 65,
+            "freshness": "stale",
+            "claim_digest": "旧索引样本仅可作为历史参考，不能当作当前事实。"
+          }
+        ],
+        "degrade_message": "命中的本地证据已超过时效阈值，本轮只返回降级说明，不把旧证据当作当前事实。",
+        "external_effect": "none",
+        "formal_store_write": false,
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples_and_local_evidence_index",
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "write_production_db": false,
+          "write_formal_knowledge_db": false,
+          "write_formal_vector_db": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "touch_primary_work_system": false,
+          "dry_run_required": true
+        }
+      }
+    },
+    {
+      "id": "P-S03",
+      "case": "无证据降级",
+      "request": {
+        "request_id": "p-shadow-003",
+        "question": "请回答本地证据索引没有收录的实时外部事实。",
+        "evidence_query": {
+          "scope": "local_shadow_evidence_index",
+          "candidate_evidence_ids": []
+        },
+        "evidence_policy": "must_cite_fresh_local_evidence",
+        "staleness_threshold_days": 30,
+        "dry_run": true,
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples_and_local_evidence_index",
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "write_production_db": false,
+          "write_formal_knowledge_db": false,
+          "write_formal_vector_db": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "touch_primary_work_system": false,
+          "dry_run_required": true
+        }
+      },
+      "response": {
+        "request_id": "p-shadow-003",
+        "status": "degraded",
+        "error_code": "NO_EVIDENCE",
+        "answer": "",
+        "evidence_hits": [],
+        "degrade_message": "未在本地证据索引中找到可引用证据，本轮不生成事实性回答。",
+        "external_effect": "none",
+        "formal_store_write": false,
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples_and_local_evidence_index",
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "write_production_db": false,
+          "write_formal_knowledge_db": false,
+          "write_formal_vector_db": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "touch_primary_work_system": false,
+          "dry_run_required": true
+        }
+      }
+    },
+    {
+      "id": "P-S04",
+      "case": "越权真实外部API阻断",
+      "request": {
+        "request_id": "p-shadow-004",
+        "question": "调用真实外部API、触发n8n并写入正式知识库。",
+        "evidence_query": {
+          "scope": "local_shadow_evidence_index",
+          "candidate_evidence_ids": [
+            "P-EV-001"
+          ]
+        },
+        "evidence_policy": "must_cite_fresh_local_evidence",
+        "staleness_threshold_days": 30,
+        "dry_run": true,
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples_and_local_evidence_index",
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "write_production_db": false,
+          "write_formal_knowledge_db": false,
+          "write_formal_vector_db": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "touch_primary_work_system": false,
+          "dry_run_required": true
+        }
+      },
+      "response": {
+        "request_id": "p-shadow-004",
+        "status": "blocked",
+        "error_code": "EXTERNAL_API_BLOCKED",
+        "answer": "",
+        "evidence_hits": [],
+        "degrade_message": "真实外部 API 或真实动作已被阻断，仅允许输出本地 dry_run 影子结果。",
+        "external_effect": "blocked",
+        "formal_store_write": false,
+        "safety_boundary": {
+          "mode": "local_shadow_only",
+          "allowed_input_source": "local_shadow_samples_and_local_evidence_index",
+          "call_external_api": false,
+          "trigger_n8n": false,
+          "send_wecom_real_message": false,
+          "write_production_db": false,
+          "write_formal_knowledge_db": false,
+          "write_formal_vector_db": false,
+          "call_broker_api": false,
+          "auto_trade": false,
+          "place_order": false,
+          "touch_primary_work_system": false,
+          "dry_run_required": true
+        }
+      }
+    }
+  ]
+}

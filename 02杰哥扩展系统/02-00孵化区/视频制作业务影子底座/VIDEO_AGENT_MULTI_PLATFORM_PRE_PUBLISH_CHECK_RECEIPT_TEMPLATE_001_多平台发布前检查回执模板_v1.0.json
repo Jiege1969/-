@@ -1,0 +1,52 @@
+{
+  "asset_id": "VIDEO_AGENT_MULTI_PLATFORM_PRE_PUBLISH_CHECK_RECEIPT_TEMPLATE_001",
+  "version": "v1.0",
+  "asset_type": "human_check_receipt_template",
+  "construction_level": "W1/R0",
+  "scope": "multi_platform_pre_publish_difference_review",
+  "status": "draft_template",
+  "purpose": "Record platform-specific pre-publish review results without connecting platforms, reading accounts, or publishing.",
+  "fields": [
+    "receipt_id",
+    "task_id",
+    "platform",
+    "title_check",
+    "tag_check",
+    "cover_check",
+    "ai_label_check",
+    "aspect_duration_check",
+    "material_note_check",
+    "platform_rule_check",
+    "review_result",
+    "blocker_reason",
+    "reviewer",
+    "real_system_triggered"
+  ],
+  "blank_receipt": {
+    "receipt_id": "to_be_filled",
+    "task_id": "to_be_filled",
+    "platform": "to_be_filled",
+    "title_check": "pending_confirmation",
+    "tag_check": "pending_confirmation",
+    "cover_check": "pending_confirmation",
+    "ai_label_check": "pending_confirmation",
+    "aspect_duration_check": "pending_confirmation",
+    "material_note_check": "pending_confirmation",
+    "platform_rule_check": "pending_confirmation",
+    "review_result": "pending_confirmation",
+    "blocker_reason": "to_be_filled",
+    "reviewer": "to_be_filled",
+    "real_system_triggered": false
+  },
+  "fixed_rules": [
+    "Each platform must have a separate check result.",
+    "One platform passing does not imply other platforms pass.",
+    "If platform rules or AI label are unconfirmed, that platform remains blocked.",
+    "This template must not trigger platform connection, account read, upload, or publishing."
+  ],
+  "boundaries": {
+    "connect_platform": false,
+    "read_account": false,
+    "upload_or_publish": false
+  }
+}

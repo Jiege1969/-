@@ -1,0 +1,39 @@
+{
+  "id": "VIDEO_AGENT_CONTINUOUS_CONSTRUCTION_RULE_001",
+  "name": "不等待确认施工口径",
+  "asset_identity": "video_production_shadow_base_continuous_construction_rule",
+  "stage": "W1_R0",
+  "status": "business_line_continuation_rule_not_manager_rule_not_formal_service_change",
+  "core_rule": "Low-risk shadow tasks inside the video production shadow base proceed automatically without repeatedly waiting for the user to say continue.",
+  "auto_proceed_conditions": [
+    "readonly_manager_panel_and_kickoff_package",
+    "write_text_or_json_draft_only_inside_video_shadow_base",
+    "no_real_system_trigger",
+    "no_formal_entry_change",
+    "no_credential_read_or_save",
+    "json_parse_and_boundary_scan_can_be_run",
+    "manager_absorption_needed_only_as_readonly_return_record"
+  ],
+  "redline_blockers": [
+    "real_wechat_n8n_platform_or_external_engine_integration",
+    "account_secret_or_wechat_credential_read_or_save",
+    "service_start_restart_or_port_19310_19302_change",
+    "formal_video_script_entry_or_public_component_config_change",
+    "real_asset_read_media_generation_transcode_render_or_publish"
+  ],
+  "round_actions": [
+    "read_manager_panel_kickoff_package_and_latest_video_closure",
+    "select_next_low_risk_shadow_task",
+    "write_assets_inside_video_shadow_base_only",
+    "run_json_parse_and_boundary_scan",
+    "update_index_self_check_and_alignment_return",
+    "continue_from_latest_shadow_queue_if_no_redline"
+  ],
+  "reporting_rule": "Report completed construction and next queue; do not ask whether to continue unless a redline is hit.",
+  "boundary": {
+    "modify_manager_rule": false,
+    "modify_formal_service": false,
+    "modify_public_wechat_config": false,
+    "trigger_real_system": false
+  }
+}

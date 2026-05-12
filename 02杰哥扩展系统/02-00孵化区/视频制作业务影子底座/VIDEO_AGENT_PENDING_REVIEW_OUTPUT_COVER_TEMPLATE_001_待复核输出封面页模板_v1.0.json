@@ -1,0 +1,31 @@
+{
+  "asset_id": "VIDEO_AGENT_PENDING_REVIEW_OUTPUT_COVER_TEMPLATE_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_cover_template_not_formal_delivery_cover",
+  "purpose": "Add a pending-review cover to shadow drafts so they are not mistaken for formal video outputs, publish opinions, or real WeCom replies.",
+  "fields": [
+    "output_id",
+    "output_type",
+    "related_shadow_task_id",
+    "review_status",
+    "formal_execution_allowed",
+    "redline_status",
+    "missing_fields",
+    "human_review_items",
+    "boundary_statement"
+  ],
+  "fixed_values": {
+    "review_status": "pending_human_review",
+    "formal_execution_allowed": false,
+    "boundary_statement": "This output is a pending-review draft from the video production shadow base. It does not represent real generation, render, publish, upload, external send, WeCom real send, or formal business conclusion."
+  },
+  "real_system_triggered": {
+    "formal_document_generated": false,
+    "external_send": false,
+    "wecom_real_send": false,
+    "n8n": false
+  }
+}

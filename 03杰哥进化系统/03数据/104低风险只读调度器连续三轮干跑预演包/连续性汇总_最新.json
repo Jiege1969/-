@@ -1,0 +1,55 @@
+{
+  "name": "低风险只读调度器连续三轮干跑连续性汇总",
+  "generated_at": "2026-05-08 20:12:45",
+  "round_count": 3,
+  "task_count": 9,
+  "planned_task_count_consistent": true,
+  "order_stable": true,
+  "actual_execution": false,
+  "external_call": false,
+  "reload_service": false,
+  "write_formal_rule": false,
+  "auto_execute": false,
+  "preview_only": true,
+  "task_counts_by_round": [
+    9,
+    9,
+    9
+  ],
+  "order_hashes_by_round": [
+    "a80f1fe89a956c76f6c76a467416e6cd9232205d77d8fd1ec88d715663054a72",
+    "a80f1fe89a956c76f6c76a467416e6cd9232205d77d8fd1ec88d715663054a72",
+    "a80f1fe89a956c76f6c76a467416e6cd9232205d77d8fd1ec88d715663054a72"
+  ],
+  "evidence_index_counts_by_round": [
+    9,
+    9,
+    9
+  ],
+  "command_scan": {
+    "commands_executed": false,
+    "redline_hit_count_total": 0,
+    "blocked_count_total": 0,
+    "external_call": false,
+    "reload_service": false,
+    "write_formal_rule": false
+  },
+  "hard_red_line_confirmation": {
+    "preview_only": true,
+    "auto_execute": false,
+    "actual_execution": false,
+    "external_call": false,
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "write_formal_rule": false,
+    "auto_promote_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false
+  }
+}

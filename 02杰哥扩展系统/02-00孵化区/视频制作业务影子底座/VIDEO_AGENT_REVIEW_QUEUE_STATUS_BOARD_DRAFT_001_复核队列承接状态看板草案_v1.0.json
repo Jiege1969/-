@@ -1,0 +1,37 @@
+{
+  "asset_id": "VIDEO_AGENT_REVIEW_QUEUE_STATUS_BOARD_DRAFT_001",
+  "version": "v1.0",
+  "asset_type": "status_board_draft",
+  "construction_level": "W1/R0",
+  "scope": "video_shadow_review_queues",
+  "status": "draft_not_connected_to_real_board_or_database",
+  "purpose": "Show how gap-to-review queue intake status can be tracked in shadow form.",
+  "board_fields": [
+    {"name": "queue_id", "description": "Review queue id."},
+    {"name": "queue_name", "description": "Review queue name."},
+    {"name": "primary_owner", "description": "Primary owner role."},
+    {"name": "pending_count", "description": "Placeholder pending count."},
+    {"name": "blocked_count", "description": "Placeholder redline blocker count."},
+    {"name": "latest_task_id", "description": "Latest task id placeholder."},
+    {"name": "latest_gap_type", "description": "Latest gap type."},
+    {"name": "next_shadow_action", "description": "Next shadow action."},
+    {"name": "real_system_triggered", "description": "Must be false."}
+  ],
+  "initial_queues": [
+    {"queue_id": "VRQ-001", "queue_name": "content_review_queue", "primary_owner": "human_editor", "current_state": "real_intake_not_established"},
+    {"queue_id": "VRQ-002", "queue_name": "originality_review_queue", "primary_owner": "human_editor", "current_state": "real_intake_not_established"},
+    {"queue_id": "VRQ-003", "queue_name": "platform_rule_review_queue", "primary_owner": "publishing_owner", "current_state": "real_intake_not_established"},
+    {"queue_id": "VRQ-004", "queue_name": "material_authorization_review_queue", "primary_owner": "material_owner", "current_state": "real_intake_not_established"},
+    {"queue_id": "VRQ-005", "queue_name": "publishing_compliance_review_queue", "primary_owner": "publishing_owner", "current_state": "real_intake_not_established"},
+    {"queue_id": "VRQ-006", "queue_name": "preview_review_queue", "primary_owner": "human_reviewer", "current_state": "real_intake_not_established"},
+    {"queue_id": "VRQ-007", "queue_name": "gate_consistency_review_queue", "primary_owner": "control_reviewer", "current_state": "real_intake_not_established"},
+    {"queue_id": "VRQ-008", "queue_name": "redline_block_register", "primary_owner": "manager_decision", "current_state": "register_only_do_not_execute"}
+  ],
+  "boundaries": {
+    "create_real_board": false,
+    "connect_database": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "assign_real_people_tasks": false
+  }
+}

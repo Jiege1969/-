@@ -1,0 +1,104 @@
+{
+  "system_name": "企业微信助手系统",
+  "system_dir": "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统",
+  "generated_at": "2026-05-11 07:40:42",
+  "overall_status": "pass",
+  "score": 100,
+  "entry_scripts": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\02脚本\\企业微信统一指令本地服务入口.py",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\02脚本\\生成企业微信助手系统状态摘要.py",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\02脚本\\生成企业微信统一指令本地调用预演.py"
+  ],
+  "checks": {
+    "timeliness": {
+      "ok": true,
+      "task_name": "�ܸ����ܻ�ϵͳ_ÿ�ջ���_��ҵ΢������ϵͳ",
+      "exists": true,
+      "state": "Running",
+      "last_run_time": "2026-05-11 07:40:01",
+      "last_task_result": 267009,
+      "next_run_time": "2026-05-12 07:40:00"
+    },
+    "output_completeness": {
+      "ok": true,
+      "checks": [
+        {
+          "name": "状态摘要",
+          "ok": true,
+          "required": true,
+          "latest_file": {
+            "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\03数据\\07状态摘要\\企业微信助手系统状态摘要_最新.md",
+            "exists": true,
+            "size": 786,
+            "modified_at": "2026-05-11 07:40:41",
+            "updated_today": true
+          }
+        },
+        {
+          "name": "统一指令预演/速查",
+          "ok": true,
+          "required": true,
+          "latest_file": {
+            "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\03数据\\09统一指令本地调用预演\\企业微信统一指令本地调用预演_最新.md",
+            "exists": true,
+            "size": 2793,
+            "modified_at": "2026-05-11 07:40:42",
+            "updated_today": true
+          }
+        }
+      ]
+    },
+    "template_compliance": {
+      "ok": true,
+      "hits": [],
+      "scanned_files": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\03数据\\07状态摘要\\企业微信助手系统状态摘要_最新.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\03数据\\09统一指令本地调用预演\\企业微信统一指令本地调用预演_最新.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\03数据\\08统一指令路由预演\\企业微信统一指令路由预演_最新.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\03数据\\11统一指令使用速查卡\\企业微信统一指令使用速查卡_最新.md"
+      ]
+    },
+    "universal_laws": {
+      "ok": true,
+      "total_penalty": 0,
+      "rules": [
+        {
+          "id": "silence_is_gold",
+          "name": "沉默是金：数据缺失却强行生成结论",
+          "severity": "defect",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        },
+        {
+          "id": "traceable_conclusions",
+          "name": "可追溯：关键结论必须找到计算来源",
+          "severity": "deduct",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        },
+        {
+          "id": "human_sovereignty",
+          "name": "人的主权：进化系统不得擅自修改业务规则",
+          "severity": "highest_alert",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        }
+      ],
+      "scanned_files": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\03数据\\07状态摘要\\企业微信助手系统状态摘要_最新.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\03数据\\09统一指令本地调用预演\\企业微信统一指令本地调用预演_最新.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\03数据\\08统一指令路由预演\\企业微信统一指令路由预演_最新.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\03数据\\11统一指令使用速查卡\\企业微信统一指令使用速查卡_最新.md"
+      ]
+    }
+  },
+  "safety": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_business_db": false,
+    "call_trade_or_external_execute_api": false
+  }
+}

@@ -1,0 +1,137 @@
+﻿{
+    "施工轮次":  "第36轮",
+    "施工名":  "无人值守规范开机时间戳流水清债",
+    "删除判定":  "已将可复用结论压缩为最新文件；历史timestamp为重复验证/开机流水，无当前链路必须依赖。相关源头已改为只写最新。",
+    "结果":  [
+               {
+                   "目录":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\无人值守守护",
+                   "删除文件数":  1050,
+                   "删除大小MB":  6.33,
+                   "删除后文件数":  8,
+                   "删除后时间戳文件数":  0,
+                   "保留文件":  [
+                                "unattended-guardian-permission-tier-verify-最新.json",
+                                "unattended-patrol-failure-diagnosis-template-verify-最新.json",
+                                "unattended-patrol-user-summary-template-verify-最新.json",
+                                "unattended-readonly-patrol-run-record-template-verify-最新.json",
+                                "unattended-readonly-patrol-schedule-draft-verify-最新.json",
+                                "unattended-task-executor-skeleton-verify-最新.json",
+                                "unattended-task-queue-seed-verify-最新.json",
+                                "unattended-task-state-machine-verify-最新.json"
+                            ],
+                   "删除模式":  [
+                                {
+                                    "Count":  299,
+                                    "Name":  "unattended-readonly-patrol-schedule-draft-verify-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  256,
+                                    "Name":  "unattended-readonly-patrol-run-record-template-verify-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  213,
+                                    "Name":  "unattended-patrol-failure-diagnosis-template-verify-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  146,
+                                    "Name":  "unattended-task-executor-skeleton-verify-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  133,
+                                    "Name":  "unattended-patrol-user-summary-template-verify-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "unattended-task-state-machine-verify-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "unattended-task-queue-seed-verify-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "unattended-guardian-permission-tier-verify-\u003cts\u003e.json"
+                                }
+                            ]
+               },
+               {
+                   "目录":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\规范检查",
+                   "删除文件数":  876,
+                   "删除大小MB":  60.72,
+                   "删除后文件数":  1,
+                   "删除后时间戳文件数":  0,
+                   "保留文件":  "annotation-check-最新.json",
+                   "删除模式":  {
+                                "Count":  876,
+                                "Name":  "annotation-check-\u003cts\u003e.json"
+                            }
+               },
+               {
+                   "目录":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\开机施工准备",
+                   "删除文件数":  608,
+                   "删除大小MB":  0.51,
+                   "删除后文件数":  2,
+                   "删除后时间戳文件数":  0,
+                   "保留文件":  [
+                                "startup-construction-preflight-latest.log",
+                                "startup-construction-preflight-verify-最新.json"
+                            ],
+                   "删除模式":  [
+                                {
+                                    "Count":  115,
+                                    "Name":  "startup-construction-preflight-verify-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  104,
+                                    "Name":  "stock-status-summary-\u003cts\u003e.out.log"
+                                },
+                                {
+                                    "Count":  104,
+                                    "Name":  "annotation-check-\u003cts\u003e.out.log"
+                                },
+                                {
+                                    "Count":  103,
+                                    "Name":  "current-progress-report-\u003cts\u003e.out.log"
+                                },
+                                {
+                                    "Count":  90,
+                                    "Name":  "startup-construction-preflight-\u003cts\u003e.log"
+                                },
+                                {
+                                    "Count":  45,
+                                    "Name":  "v3-ai-base-healthcheck-\u003cts\u003e.out.log"
+                                },
+                                {
+                                    "Count":  40,
+                                    "Name":  "readonly-status-check-\u003cts\u003e.out.log"
+                                },
+                                {
+                                    "Count":  7,
+                                    "Name":  "readonly-status-check-\u003cts\u003e.err.log"
+                                }
+                            ]
+               },
+               {
+                   "目录":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\开机施工准备",
+                   "删除文件数":  180,
+                   "删除大小MB":  1.77,
+                   "删除后文件数":  2,
+                   "删除后时间戳文件数":  0,
+                   "保留文件":  [
+                                "startup_construction_preflight_latest.json",
+                                "startup_construction_preflight_latest.md"
+                            ],
+                   "删除模式":  [
+                                {
+                                    "Count":  90,
+                                    "Name":  "startup_construction_preflight_\u003cts\u003e.md"
+                                },
+                                {
+                                    "Count":  90,
+                                    "Name":  "startup_construction_preflight_\u003cts\u003e.json"
+                                }
+                            ]
+               }
+           ],
+    "生成时间":  "2026-05-06 18:13:05"
+}

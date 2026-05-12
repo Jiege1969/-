@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "sample_id": "SHARED_POLICY_READONLY_VIDEO_001",
+  "name": "平台规范与素材授权待补只读调用样例",
+  "asset_identity": "video_system_readonly_policy_or_rule_evidence_call_shadow_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "read_real_materials": false,
+    "connect_platform": false,
+    "edit_video": false,
+    "render_video": false,
+    "publish": false,
+    "external_send": false,
+    "trigger_n8n": false
+  },
+  "call_input": {
+    "requesting_system": "video_production_system",
+    "query_intent": "platform_rule_material_authorization_copyright_risk_evidence",
+    "topic_keywords": ["平台规范", "素材授权", "版权", "发布风险"],
+    "expected_evidence_level": "official_platform_rule_user_authorization_human_review",
+    "source": ["视频平台规范来源卡模板_v1.0.md", "视频素材授权字段模板_v1.0.md"]
+  },
+  "readonly_evidence_status": [
+    {
+      "evidence": "平台规范来源卡",
+      "current_status": "template_only_no_real_platform_registered",
+      "handling": "return_missing_do_not_generate_platform_rule_conclusion"
+    },
+    {
+      "evidence": "素材授权字段",
+      "current_status": "template_only_no_real_material_authorization_registered",
+      "handling": "return_missing_do_not_generate_authorization_conclusion"
+    },
+    {
+      "evidence": "官方版权政策",
+      "current_status": "not_registered",
+      "handling": "return_missing_do_not_generate_copyright_safe_conclusion"
+    }
+  ],
+  "call_output": {
+    "evidence_id": "VIDEO-EVIDENCE-PENDING-001",
+    "title": "视频平台规范与素材授权证据待补",
+    "evidence_level": "pending",
+    "validity_status": "pending_review",
+    "source_path": [
+      "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\视频平台规范来源卡模板_v1.0.md",
+      "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\视频素材授权字段模板_v1.0.md"
+    ],
+    "risk_flags": [
+      "未登记真实平台规范",
+      "未登记素材授权",
+      "未登记版权政策"
+    ],
+    "allowed_use": [
+      "生成待补资料清单",
+      "生成人工复核问题"
+    ],
+    "forbidden_use": [
+      "可发布结论",
+      "版权安全结论",
+      "平台合规结论",
+      "可商用结论"
+    ]
+  },
+  "review_questions": [
+    "目标发布平台是什么？",
+    "是否已有官方平台规范链接或用户提供规范文件？",
+    "素材来源分别是什么？",
+    "哪些素材可剪辑、可发布、仅参考或禁止使用？",
+    "是否含个人、客户、地址、账号等敏感信息？",
+    "授权期限和使用范围是什么？"
+  ]
+}

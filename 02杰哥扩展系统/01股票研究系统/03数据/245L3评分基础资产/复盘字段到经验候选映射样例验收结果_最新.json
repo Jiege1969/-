@@ -1,0 +1,10 @@
+{
+  "name": "复盘字段到经验候选映射样例验收结果",
+  "generated_at": "2026-05-08 12:37:08",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "mapping_rule_count": 4,
+    "sample_count": 5
+  }
+}

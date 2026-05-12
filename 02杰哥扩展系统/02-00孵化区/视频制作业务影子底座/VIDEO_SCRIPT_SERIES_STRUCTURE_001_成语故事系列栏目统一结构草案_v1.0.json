@@ -1,0 +1,132 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SERIES_STRUCTURE_001",
+  "asset_name": "成语故事系列栏目统一结构草案",
+  "business_line": "视频制作业务影子底座",
+  "created_at": "2026-05-08 12:56:00 +08:00",
+  "risk_level": "W1/R0",
+  "asset_identity": "栏目结构影子草案，不是正式脚本、生成放行、发布放行或外发许可",
+  "scope": "成语故事短视频系列的文本结构、分镜结构和人工复核结构",
+  "default_positioning": {
+    "possible_column_names": [
+      "成语一分钟",
+      "小故事大智慧",
+      "今天讲个成语"
+    ],
+    "default_audience": "小学生及家长",
+    "default_duration": [
+      "30秒",
+      "60秒"
+    ],
+    "default_style": "通俗、具体、有故事、有启发，不过度说教",
+    "output_identity": "待复核文本草案，不是可发布脚本"
+  },
+  "unified_modules": [
+    {
+      "order": 1,
+      "module": "问题钩子",
+      "purpose": "让观众立刻知道冲突",
+      "thirty_second": "1句问题",
+      "sixty_second": "1句问题 + 1个反常动作"
+    },
+    {
+      "order": 2,
+      "module": "成语点名",
+      "purpose": "明确今天讲哪个成语",
+      "thirty_second": "直接点名",
+      "sixty_second": "点名并给一句生活化解释"
+    },
+    {
+      "order": 3,
+      "module": "故事进入",
+      "purpose": "交代人物、地点、目标",
+      "thirty_second": "1个场景",
+      "sixty_second": "1个场景 + 人物心理"
+    },
+    {
+      "order": 4,
+      "module": "冲突发生",
+      "purpose": "写出具体动作和错误判断",
+      "thirty_second": "1个关键动作",
+      "sixty_second": "关键动作 + 错误想法"
+    },
+    {
+      "order": 5,
+      "module": "结果揭示",
+      "purpose": "让观众看到后果",
+      "thirty_second": "1个结果",
+      "sixty_second": "结果 + 人物反应"
+    },
+    {
+      "order": 6,
+      "module": "现实启发",
+      "purpose": "把故事和生活连接",
+      "thirty_second": "1句启发",
+      "sixty_second": "1句启发 + 1个生活例子"
+    },
+    {
+      "order": 7,
+      "module": "人工复核问题",
+      "purpose": "保留人工判断入口",
+      "thirty_second": "3项",
+      "sixty_second": "5项"
+    }
+  ],
+  "storyboard_fields": {
+    "shot_id": "从1开始连续编号",
+    "visual": "必须能被人工理解，不写画面好看",
+    "voiceover": "对应当前镜头，不重复大段正文",
+    "material_status": "默认待授权",
+    "ai_label": "默认待确认",
+    "platform_rule": "默认待复核"
+  },
+  "duration_structures": {
+    "30s": {
+      "opening_hook": "1句",
+      "idiom_meaning": "1句",
+      "story_body": "3段",
+      "ending_insight": "1句",
+      "human_questions_min": 3,
+      "storyboard_shots": "4到5个镜头",
+      "rule": "必须保留完整故事冲突，不得只保留结论"
+    },
+    "60s": {
+      "opening_hook": "1到2句",
+      "idiom_meaning": "1到2句",
+      "story_body": "5段",
+      "ending_insight": "1到2句",
+      "human_questions_min": 5,
+      "storyboard_shots": "6到8个镜头",
+      "rule": "应补人物心理、错误判断和生活类比，不得机械扩写套话"
+    }
+  },
+  "veto_items": [
+    "没有具体成语",
+    "没有成语释义",
+    "没有人物、动作、冲突、结果",
+    "分镜只有空话",
+    "直接声称可发布",
+    "请求读取真实素材、调用渲染器、触发发布器、发送企业微信或n8n"
+  ],
+  "reuse_flow": [
+    "先确认成语、受众、目标时长",
+    "按本结构写影子文本草案",
+    "用VIDEO_SCRIPT_QUALITY_ACCEPTANCE_TABLE_001做质量验收",
+    "用VIDEO_SCRIPT_DURATION_VARIANT_CHECK_001检查30秒/60秒差异",
+    "用人工复核回执承接人工意见",
+    "如出现可复用经验，只能进入进化候选，不得直接写正式规则"
+  ],
+  "next_w1_r0_candidates": [
+    "掩耳盗铃30秒影子改写空白任务卡",
+    "成语故事系列栏目首批选题登记表",
+    "成语故事系列栏目人工复核问题通用模板"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_video_system": false,
+    "release_for_generation_render_publish": false
+  }
+}

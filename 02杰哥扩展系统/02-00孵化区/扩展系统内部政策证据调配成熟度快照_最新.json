@@ -1,0 +1,63 @@
+{
+  "version": "1.1",
+  "updated_at": "2026-05-07 21:49:21 +08:00",
+  "name": "扩展系统内部政策证据调配成熟度快照",
+  "asset_identity": "extension_internal_policy_evidence_coordination_maturity_snapshot",
+  "risk_level": "W1",
+  "boundary": {
+    "formal_start_permission": false,
+    "trigger_n8n": false,
+    "formal_shared_query_config": false
+  },
+  "overall_maturity": "L2",
+  "strategy": "扩展系统内部轻量只读调配优先，总管只登记能力和边界，n8n后置。",
+  "business_lines": [
+    {
+      "business_line": "tax_business_analysis",
+      "sample": "TAX 001/002/003",
+      "source_preserved": true,
+      "level_status_preserved": true,
+      "forbidden_use_preserved": true,
+      "maturity": "L2+"
+    },
+    {
+      "business_line": "stock_research",
+      "sample": "STOCK 001/002",
+      "source_preserved": true,
+      "level_status_preserved": true,
+      "forbidden_use_preserved": true,
+      "maturity": "L2+"
+    },
+    {
+      "business_line": "office_work",
+      "sample": "OFFICE 001/002",
+      "source_preserved": true,
+      "level_status_preserved": true,
+      "forbidden_use_preserved": true,
+      "maturity": "L2"
+    },
+    {
+      "business_line": "video_production",
+      "sample": "VIDEO 001/002",
+      "source_preserved": true,
+      "level_status_preserved": true,
+      "forbidden_use_preserved": true,
+      "maturity": "L2-",
+      "gap": "已补真实平台规范来源候选卡；当前投稿规格、分区规则和素材授权仍待补"
+    }
+  ],
+  "n8n_readiness": {
+    "ready": false,
+    "reason": [
+      "样例尚未经过三轮人工复核",
+      "调用频率尚未证明高频稳定",
+      "视频当前投稿规格、分区规则和素材授权仍待补",
+      "当前轻量只读调配已经足够"
+    ]
+  },
+  "next_actions": [
+    "补视频当前投稿规范、分区规则和素材授权来源",
+    "为每条样例建立人工复核回执映射",
+    "累积三轮复核后再评估L3"
+  ]
+}

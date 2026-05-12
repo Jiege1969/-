@@ -1,0 +1,63 @@
+{
+  "生成日期": "2026-05-05",
+  "任务": "第四批并行小任务K-真实批量转换阻断",
+  "样本类型": "真实批量转换阻断",
+  "阻断编号": "K-BLOCK-BATCH-001",
+  "引用路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\06人工复核\\真实批量转换阻断样本_20260505_小任务K.json",
+  "触发条件": [
+    "请求批量转换真实业务文档",
+    "请求覆盖、删除、移动或改写用户文档",
+    "请求跳过人工复核",
+    "请求调用 n8n、Webhook、企业微信真实发送或外部接口",
+    "请求写正式库、数据库、旧系统或向量库"
+  ],
+  "阻断结果": {
+    "block_real_conversion": true,
+    "block_batch_conversion": true,
+    "block_source_file_write": true,
+    "block_delete_move_overwrite": true,
+    "block_external_send": true,
+    "block_n8n": true,
+    "block_wecom_real_message": true,
+    "block_formal_library_write": true,
+    "block_broker_api": true,
+    "block_auto_trade": true
+  },
+  "执行开关": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_output_file_generation": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_wecom_real_message": false,
+    "allow_formal_library_write": false,
+    "allow_broker_api": false,
+    "allow_auto_trade": false
+  },
+  "人工复核字段": {
+    "review_required": true,
+    "review_status": "blocked_before_review",
+    "review_reason": "真实批量转换请求不进入本轮复核，仅登记阻断",
+    "review_result": "not_approved_for_real_conversion",
+    "manual_override_allowed_in_this_task": false
+  },
+  "回滚字段": {
+    "rollback_required": true,
+    "rollback_mode": "block_all_real_actions",
+    "rollback_action": "停止真实转换链路，只保留阻断样本和验收记录",
+    "rollback_target": "无真实文件变更，因此无需文件级回滚",
+    "rollback_owner": "人工复核人",
+    "rollback_confirm_required": true
+  },
+  "安全边界": [
+    "不触发 n8n",
+    "不发送企业微信真实消息",
+    "不写正式库",
+    "不批量转换真实业务文档",
+    "不覆盖、删除、移动用户文档",
+    "不调用券商接口",
+    "不自动交易"
+  ],
+  "降级语": "真实批量转换在本轮被阻断；本文件仅为阻断样本，不代表任何真实转换已执行。"
+}

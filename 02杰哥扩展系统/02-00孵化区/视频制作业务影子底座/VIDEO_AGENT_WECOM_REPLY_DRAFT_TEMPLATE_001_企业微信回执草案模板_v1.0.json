@@ -1,0 +1,34 @@
+{
+  "asset_id": "VIDEO_AGENT_WECOM_REPLY_DRAFT_TEMPLATE_001",
+  "name": "企业微信回执草案模板",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:02:00 +08:00",
+  "risk_level": "低风险",
+  "purpose": "整理未来给杰哥视频助理展示的本地回执草案，不真实发送",
+  "reply_types": [
+    "任务已接收",
+    "草案已生成",
+    "需要澄清",
+    "命中阻断",
+    "待人工复核",
+    "完成影子演练"
+  ],
+  "reply_fields": [
+    "会话ID",
+    "任务ID",
+    "回执类型",
+    "摘要",
+    "待确认项",
+    "阻断项",
+    "本地文件路径",
+    "是否触发真实系统",
+    "下一步可选指令"
+  ],
+  "boundary": {
+    "wecom_real_send": false,
+    "modify_public_wecom_config": false,
+    "modify_route_service": false,
+    "trigger_n8n": false,
+    "real_system_triggered": false
+  }
+}

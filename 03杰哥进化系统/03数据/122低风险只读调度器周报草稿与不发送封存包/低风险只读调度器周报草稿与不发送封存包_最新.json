@@ -1,0 +1,89 @@
+{
+  "name": "低风险只读调度器周报草稿与不发送封存包",
+  "generated_at": "2026-05-08 21:37:01",
+  "target_data_dir": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\122低风险只读调度器周报草稿与不发送封存包",
+  "log_dir": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周报草稿与不发送封存包验收",
+  "file_count": 6,
+  "report_count": 1,
+  "artifacts": [
+    {
+      "name": "周报草稿模板_最新.json",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\122低风险只读调度器周报草稿与不发送封存包\\周报草稿模板_最新.json",
+      "sha256": "20ff37ce7408a3e9fa0ce4ff938d742558579fbcf22aee5b9e995bd8cfea1739"
+    },
+    {
+      "name": "周报草稿模板_最新.md",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\122低风险只读调度器周报草稿与不发送封存包\\周报草稿模板_最新.md",
+      "sha256": "ff8ea12044f9a1eceb41e16526fcb0407fe2883c7c1e5a150ec6b5c663f36311"
+    },
+    {
+      "name": "周报草稿样本_最新.json",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\122低风险只读调度器周报草稿与不发送封存包\\周报草稿样本_最新.json",
+      "sha256": "f3e30e0c36e31106b8712c4bddc3e326da7b5bb991d5e28530d1950e59acc486"
+    },
+    {
+      "name": "周报草稿样本_最新.md",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\122低风险只读调度器周报草稿与不发送封存包\\周报草稿样本_最新.md",
+      "sha256": "5371a6bfcb2569189869994127525a68795ef0319d73b2ee3bc87e98d10fcb26"
+    },
+    {
+      "name": "不发送封存证明_最新.json",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\122低风险只读调度器周报草稿与不发送封存包\\不发送封存证明_最新.json",
+      "sha256": "d8ba3f0fa1cdc49f9c7e6079b7311ccc59d2bec73e3fcd4a9de29779fab12ef7"
+    },
+    {
+      "name": "不发送封存证明_最新.md",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\122低风险只读调度器周报草稿与不发送封存包\\不发送封存证明_最新.md",
+      "sha256": "29f01c81b11df9c29373646c1f9ceab66130c7cc9e4dadaf2dddd4675209fd70"
+    }
+  ],
+  "template_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\122低风险只读调度器周报草稿与不发送封存包\\周报草稿模板_最新.json",
+  "sample_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\122低风险只读调度器周报草稿与不发送封存包\\周报草稿样本_最新.json",
+  "proof_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\122低风险只读调度器周报草稿与不发送封存包\\不发送封存证明_最新.json",
+  "hard_red_line_confirmation": {
+    "preview_only": true,
+    "local_file_only": true,
+    "readonly_scheduler": true,
+    "send_allowed": false,
+    "real_send": false,
+    "real_wecom_send": false,
+    "network_request": false,
+    "no_network_request": true,
+    "connect_n8n": false,
+    "trigger_n8n": false,
+    "no_n8n_trigger": true,
+    "no_wecom_send": true,
+    "sealed_locally": true,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "auto_promote_formal_rule": false,
+    "write_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false
+  },
+  "preview_only": true,
+  "local_file_only": true,
+  "readonly_scheduler": true,
+  "send_allowed": false,
+  "real_send": false,
+  "real_wecom_send": false,
+  "network_request": false,
+  "no_network_request": true,
+  "connect_n8n": false,
+  "trigger_n8n": false,
+  "no_n8n_trigger": true,
+  "no_wecom_send": true,
+  "sealed_locally": true,
+  "broker_connection": false,
+  "trade_order": false,
+  "tax_bureau_login": false,
+  "finance_tax_software_connection": false,
+  "auto_promote_formal_rule": false,
+  "write_formal_rule": false,
+  "modify_supervisor_panel": false,
+  "modify_one_click_continuation_package": false,
+  "reload_service": false
+}

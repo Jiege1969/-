@@ -1,0 +1,55 @@
+{
+  "名称": "五样本资金机构解禁证据卡候选验收",
+  "validated_at": "2026-05-08 07:29:15",
+  "status": "passed",
+  "card_count": 5,
+  "errors": [],
+  "cards": [
+    {
+      "stock": "云南锗业",
+      "code": "002428.SZ",
+      "status": "source_requirements_ready",
+      "score_status": "not_scored",
+      "missing_count": 2
+    },
+    {
+      "stock": "天齐锂业",
+      "code": "002466.SZ",
+      "status": "source_requirements_ready",
+      "score_status": "not_scored",
+      "missing_count": 2
+    },
+    {
+      "stock": "华虹公司",
+      "code": "688347.SH",
+      "status": "source_requirements_ready",
+      "score_status": "not_scored",
+      "missing_count": 2
+    },
+    {
+      "stock": "浙商中拓",
+      "code": "000906.SZ",
+      "status": "source_requirements_ready",
+      "score_status": "not_scored",
+      "missing_count": 1
+    },
+    {
+      "stock": "正丹股份",
+      "code": "300641.SZ",
+      "status": "source_requirements_ready",
+      "score_status": "not_scored",
+      "missing_count": 2
+    }
+  ],
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_delete_or_move_old_assets": true,
+    "not_formal_database_write": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

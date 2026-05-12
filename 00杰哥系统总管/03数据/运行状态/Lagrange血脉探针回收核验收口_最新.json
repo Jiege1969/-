@@ -1,0 +1,55 @@
+{
+  "report_name": "Lagrange血脉探针回收核验收口",
+  "record_time": "2026-05-06 06:20:26 +08:00",
+  "conclusion": "pass",
+  "accepted_into_continuation": true,
+  "task_name": "杰哥智能化系统_血脉分钟级只读探针",
+  "task_state": "Ready",
+  "last_run_time": "2026-05-06 06:19:01",
+  "last_task_result": 0,
+  "next_run_time": "2026-05-06 06:20:00",
+  "missed_runs": 0,
+  "latest_ready": true,
+  "failed_count": 0,
+  "checked_ports": [19300, 19302, 19310, 28100, 26379, 28679, 29134],
+  "parallel_verification_notes": {
+    "old_root_exists": false,
+    "official_path": "D:\\杰哥智能化系统\\01杰哥智能系统",
+    "active_old_path_config_found": false,
+    "legacy_disabled_records": [
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置\\服务注册表.json",
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置\\machine\\service_registry.json"
+    ],
+    "note": "Old Ollama source fields still mention D:\\01杰哥智能系统, but they are disabled or non-running records, not active runtime/output/mount paths."
+  },
+  "artifacts": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\blood_probe_minutely.ps1",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\hidden_start_blood_probe.vbs",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\register_blood_probe_task.ps1",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\血脉分钟级探针_最新.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\血脉分钟级探针_最新.json",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\血脉分钟级探针收口_最新.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\血脉分钟级探针收口_最新.json",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\自治总纲九条建议吸收落实计划_20260506.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\施工安全规则.md"
+  ],
+  "safety": {
+    "http_method": "GET only",
+    "redis_action": "PING or TCP connect only",
+    "trigger_n8n": false,
+    "post_wecom": false,
+    "send_wecom": false,
+    "repair_service": false,
+    "restart_service": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "delete_data": false
+  },
+  "next_queue": [
+    "骨架周检探针",
+    "基因资源探针",
+    "事件链台账",
+    "人工超控入口",
+    "业务线交付契约"
+  ]
+}

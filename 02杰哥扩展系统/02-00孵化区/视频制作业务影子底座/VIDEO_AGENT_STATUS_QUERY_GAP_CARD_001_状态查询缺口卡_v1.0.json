@@ -1,0 +1,38 @@
+{
+  "asset_id": "VIDEO_AGENT_STATUS_QUERY_GAP_CARD_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_gap_card_not_real_query_api",
+  "purpose": "Record missing fields when a status query cannot be answered from traceable shadow records.",
+  "fields": [
+    "shadow_task_id",
+    "query_text",
+    "requested_status_type",
+    "known_status",
+    "missing_status_fields",
+    "evidence_pointer",
+    "reply_boundary",
+    "next_shadow_action"
+  ],
+  "requested_status_type_enum": [
+    "progress",
+    "gap",
+    "human_review",
+    "release_gate",
+    "close_status"
+  ],
+  "gap_handling_rules": [
+    "if_shadow_task_id_missing_request_identifier_or_context",
+    "if_status_record_missing_return_no_traceable_status_and_create_gap",
+    "if_publish_permission_requested_return_gate_status_without_permission_wording",
+    "if_real_wecom_send_status_requested_return_shadow_not_connected_status"
+  ],
+  "real_system_triggered": {
+    "real_service_query": false,
+    "wecom_real_message_read": false,
+    "real_task_database_read": false,
+    "n8n": false
+  }
+}

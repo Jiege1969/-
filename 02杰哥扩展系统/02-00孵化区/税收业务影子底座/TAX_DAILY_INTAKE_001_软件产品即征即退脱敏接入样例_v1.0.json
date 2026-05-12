@@ -1,0 +1,83 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-05-07 23:10:53 +08:00",
+  "intake_id": "TAX_DAILY_INTAKE_001",
+  "name": "软件产品即征即退脱敏接入样例",
+  "asset_identity": "tax_policy_advisor_daily_shadow_trial_desensitized_intake_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "read_real_tax_materials": false,
+    "formal_tax_opinion": false,
+    "tax_filing": false,
+    "tax_refund_execution": false,
+    "invoice_execution": false,
+    "external_send": false,
+    "trigger_n8n": false,
+    "connect_tax_system": false,
+    "write_formal_tax_database": false
+  },
+  "purpose": "演示真实涉税咨询进入日常影子试用前的脱敏、字段补齐、输出目标确认和红线检查。",
+  "desensitized_input_card": {
+    "business_question": "某软件企业销售自行开发的软件产品，想先判断是否可能适用软件产品增值税即征即退，并了解需要准备哪些资料",
+    "requested_output": ["适用条件初筛", "资料清单", "测算前置字段"],
+    "tax_type": "增值税",
+    "business_scenario": "软件产品销售及即征即退政策咨询",
+    "entity_profile": "某软件企业；是否一般纳税人待补",
+    "region": "省市待补",
+    "period": "所属期/申报期待补",
+    "amount_or_scale": "具体金额不进入样例；只标注涉及软件产品收入，金额待用户脱敏后确认范围",
+    "provided_materials": ["软件著作权或登记材料待补", "合同待补", "发票待补", "收入明细待补", "销项税额待补", "进项税额待补"],
+    "known_policy": ["财税〔2011〕100号", "国家税务总局软件产品增值税即征即退公开指引"],
+    "special_risk": ["收入拆分", "嵌入式软件", "外购转售", "地方口径"]
+  },
+  "precheck_result": {
+    "desensitization": "pass",
+    "requested_output": "pass",
+    "minimum_input": "pass",
+    "evidence_source": "pass",
+    "amount_boundary": "pass",
+    "external_send_boundary": "pass",
+    "real_system_connection": "pass"
+  },
+  "allowed_shadow_outputs": [
+    "政策依据摘要",
+    "适用条件初筛",
+    "资料清单",
+    "测算前置字段"
+  ],
+  "forbidden_outputs": [
+    "正式税务意见",
+    "申报",
+    "退税",
+    "开票",
+    "外发客户或税局",
+    "退税金额"
+  ],
+  "daily_ledger_suggestion": {
+    "trial_id": "TAX-DAILY-001",
+    "intake_date": "2026-05-07",
+    "question_summary": "软件产品即征即退条件初筛、资料清单和测算前置",
+    "requested_output": "适用条件初筛 + 资料清单 + 测算前置字段",
+    "desensitization_status": "已脱敏",
+    "draft_status": "draft",
+    "main_evidence": ["财税〔2011〕100号元数据卡", "税收政策指引卡", "适用条件字段化样例", "测算前置字段清单"],
+    "main_gaps": ["一般纳税人身份", "地区", "期间", "收入拆分", "软件材料", "销项税额", "进项税额", "地方口径"],
+    "review_handoff": "待人工复核回执",
+    "boundary_violation": false,
+    "status": "输入可接入"
+  },
+  "must_not_keep": [
+    "企业真实名称",
+    "统一社会信用代码",
+    "纳税人识别号",
+    "人员姓名和证件号码",
+    "电子税务局账号密码",
+    "短信验证码",
+    "税控盘信息",
+    "完整合同编号",
+    "发票号码",
+    "银行账号",
+    "未经授权的交易明细"
+  ],
+  "conclusion": "本样例满足日常影子试用接入条件。下一步只能进入待复核草案生成，不得输出正式税务意见、退税金额、申报建议或外发文本。"
+}

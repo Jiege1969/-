@@ -1,0 +1,39 @@
+{
+  "id": "P2-S7-REAL-MATERIAL-INTAKE-RECEIPT-SAMPLE-DRYRUN-RECEIPT-20260509",
+  "executed_at": "2026-05-09 11:57:06 +08:00",
+  "execution_type": "readonly_dryrun",
+  "status": "pass",
+  "command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S7真实材料接入分流回执样例干跑.py'",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\56P2S7真实材料接入分流回执样例干跑\\P2S7真实材料接入分流回执样例干跑_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\56P2S7真实材料接入分流回执样例干跑\\P2S7真实材料接入分流回执样例干跑_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\56P2S7真实材料接入分流回执样例干跑\\P2S7真实材料接入分流虚拟回执样例_20260509.json"
+  ],
+  "summary": {
+    "receipt_count": 7,
+    "passed": 7,
+    "failed": 0,
+    "source_case_count": 7
+  },
+  "sample_routes": [
+    {"receipt_id": "P2S7-RECEIPT-001", "target_line": "tax", "redline_status": "pass"},
+    {"receipt_id": "P2S7-RECEIPT-002", "target_line": "office_work", "redline_status": "pass"},
+    {"receipt_id": "P2S7-RECEIPT-003", "target_line": "video_production", "redline_status": "pass"},
+    {"receipt_id": "P2S7-RECEIPT-004", "target_line": "shared_policy_evidence", "redline_status": "pass"},
+    {"receipt_id": "P2S7-RECEIPT-005", "target_line": "pause", "redline_status": "pass"},
+    {"receipt_id": "P2S7-RECEIPT-006", "target_line": "pause", "redline_status": "blocked"},
+    {"receipt_id": "P2S7-RECEIPT-007", "target_line": "pause", "redline_status": "pass"}
+  ],
+  "conclusion": "分流回执样例干跑通过；7 个虚拟场景均可生成字段完整、路线一致、红线关闭或阻断明确的分流回执。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

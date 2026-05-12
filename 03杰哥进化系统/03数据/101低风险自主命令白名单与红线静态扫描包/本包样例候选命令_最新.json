@@ -1,0 +1,53 @@
+{
+  "name": "本包样例候选命令",
+  "generated_at": "2026-05-08 19:57:08",
+  "source_strategy": "scan_local_safe_samples_referencing_99_100_96_97_packages",
+  "commands_executed": false,
+  "external_call": false,
+  "reload_service": false,
+  "candidate_count": 6,
+  "candidates": [
+    {
+      "id": "CMD-SAMPLE-096-VERIFY",
+      "source_hint": "96低风险自主任务本地只读调度预演包",
+      "category": "python_readonly_acceptance_script",
+      "draft_command": "python \"D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\验证低风险自主任务本地只读调度预演包.py\"",
+      "expected_decision": "allow"
+    },
+    {
+      "id": "CMD-SAMPLE-097-VERIFY",
+      "source_hint": "97低风险自主任务失败暂停与恢复演练包",
+      "category": "python_readonly_acceptance_script",
+      "draft_command": "python \"D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\验证低风险自主任务失败暂停与恢复演练包.py\"",
+      "expected_decision": "allow"
+    },
+    {
+      "id": "CMD-SAMPLE-099-VERIFY",
+      "source_hint": "99稳定交付版本地试运行达标复核与签收完成包",
+      "category": "python_readonly_acceptance_script",
+      "draft_command": "python \"D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\验证稳定交付版本地试运行达标复核与签收完成包.py\"",
+      "expected_decision": "allow"
+    },
+    {
+      "id": "CMD-SAMPLE-100-VERIFY",
+      "source_hint": "100稳定版样本等待期低风险保活巡检包",
+      "category": "python_readonly_acceptance_script",
+      "draft_command": "python \"D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\验证稳定版样本等待期低风险保活巡检包.py\"",
+      "expected_decision": "allow"
+    },
+    {
+      "id": "CMD-SAMPLE-SNAPSHOT",
+      "source_hint": "本包内样例命令",
+      "category": "python_snapshot_generator",
+      "draft_command": "python \"D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\生成日常可用版自主巡检快照.py\"",
+      "expected_decision": "allow"
+    },
+    {
+      "id": "CMD-SAMPLE-STATUS",
+      "source_hint": "本包内样例命令",
+      "category": "python_status_package_generator",
+      "draft_command": "python \"D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\生成日常可用交付版状态包.py\"",
+      "expected_decision": "allow"
+    }
+  ]
+}

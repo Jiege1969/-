@@ -1,0 +1,119 @@
+{
+  "name": "证据留存样本清单",
+  "generated_at": "2026-05-08 21:18:26",
+  "source_summary": {
+    "source_dir": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包",
+    "source_package_exists": true,
+    "source_archive_report_exists": true,
+    "source_ledger_exists": true,
+    "source_package": {
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\低风险只读调度运行台账与证据归档预演包_最新.json",
+      "top_level_keys": [
+        "actual_execution",
+        "archive_report",
+        "copy_source_files",
+        "error_count",
+        "external_call",
+        "field_definition",
+        "generated_at",
+        "hard_red_line_confirmation",
+        "ledger",
+        "move_source_files",
+        "name",
+        "pass",
+        "reload_service"
+      ],
+      "type": "dict"
+    },
+    "source_archive_report": {
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\证据归档预演报告_最新.json",
+      "top_level_keys": [
+        "actual_execution",
+        "archive_item_count",
+        "archive_items",
+        "copy_source_files",
+        "external_call",
+        "generated_at",
+        "hard_red_line_confirmation",
+        "move_source_files",
+        "name",
+        "reload_service",
+        "summary"
+      ],
+      "type": "dict"
+    },
+    "source_ledger": {
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\调度预演台账_最新.json",
+      "top_level_keys": [
+        "actual_execution",
+        "copy_source_files",
+        "external_call",
+        "generated_at",
+        "hard_red_line_confirmation",
+        "move_source_files",
+        "name",
+        "preview_status_default",
+        "record_count",
+        "records",
+        "reload_service"
+      ],
+      "type": "dict"
+    }
+  },
+  "sample_count": 4,
+  "delete_allowed": false,
+  "readonly_dry_run_only": true,
+  "samples": [
+    {
+      "id": "RET-SAMPLE-001",
+      "source": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\低风险只读调度运行台账与证据归档预演包_最新.json",
+      "source_exists": true,
+      "retention_status": "到期候选-需人工复核",
+      "delete_allowed": false,
+      "planned_action": "保留原件，仅记录到期候选。",
+      "reason": "源包为调度运行台账与证据归档预演总包，属于证据链入口。"
+    },
+    {
+      "id": "RET-SAMPLE-002",
+      "source": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\证据归档预演报告_最新.json",
+      "source_exists": true,
+      "retention_status": "到期候选-需人工复核",
+      "delete_allowed": false,
+      "planned_action": "保留原件，仅记录到期候选。",
+      "reason": "归档预演报告可证明证据链生成过程，不做删除预演外的动作。"
+    },
+    {
+      "id": "RET-SAMPLE-003",
+      "source": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\调度预演台账_最新.json",
+      "source_exists": true,
+      "retention_status": "到期候选-需人工复核",
+      "delete_allowed": false,
+      "planned_action": "保留原件，仅记录到期候选。",
+      "reason": "调度预演台账是后续只读调度复核来源。"
+    },
+    {
+      "id": "RET-SAMPLE-004",
+      "source": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\114并行自主施工分片护栏与抢占处理包",
+      "source_exists": true,
+      "retention_status": "历史包编号保护",
+      "delete_allowed": false,
+      "planned_action": "不删除、不覆盖、不迁移，只在 118 包中记录边界。",
+      "reason": "114 已被历史包占用，必须视为只读历史内容。"
+    }
+  ],
+  "safety_confirmation": {
+    "read_only": true,
+    "delete_file": false,
+    "remove_directory": false,
+    "move_history_package": false,
+    "overwrite_history_package": false,
+    "external_call": false,
+    "send_notification": false,
+    "connect_n8n": false,
+    "reload_service": false,
+    "promote_to_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "write_scope_is_118_only": true
+  }
+}

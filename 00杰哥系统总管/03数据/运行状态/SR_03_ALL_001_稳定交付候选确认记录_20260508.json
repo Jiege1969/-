@@ -1,0 +1,73 @@
+{
+  "task_id": "SR-03-ALL-001",
+  "batch": "SR-03",
+  "execution_time": "2026-05-08 19:28:00 +08:00",
+  "asset_identity": "总管侧 W1/R0 稳定交付候选确认记录",
+  "status": "stable_delivery_candidate_confirmed",
+  "formal_launch_approval": false,
+  "real_actions_enabled": false,
+  "receipt_coverage": [
+    {
+      "task_id": "SR-01-TAX-001",
+      "business_line": "税收政策顾问",
+      "receipt": "SR_01_TAX_001_稳定交付试运行回执_20260508.md/json",
+      "status": "completed",
+      "redline_count": 0
+    },
+    {
+      "task_id": "SR-01-STOCK-001",
+      "business_line": "股票 L3 研究",
+      "receipt": "SR_01_STOCK_001_稳定交付试运行回执_20260508.md/json",
+      "status": "completed",
+      "redline_count": 0
+    },
+    {
+      "task_id": "SR-01-VIDEO-001",
+      "business_line": "视频影子工厂",
+      "receipt": "SR_01_VIDEO_001_稳定交付试运行回执_20260508.md/json",
+      "status": "completed",
+      "redline_count": 0
+    },
+    {
+      "task_id": "SR-02-WECOM-001",
+      "business_line": "企业微信接入层",
+      "receipt": "SR_02_WECOM_001_稳定交付试运行回执_20260508.md/json",
+      "status": "completed",
+      "redline_count": 0
+    },
+    {
+      "task_id": "SR-02-MGR-001",
+      "business_line": "总管协调层",
+      "receipt": "SR_02_MGR_001_稳定交付试运行回执_20260508.md/json",
+      "status": "completed",
+      "redline_count": 0
+    }
+  ],
+  "candidate_capabilities": {
+    "tax_advisor": "可受控稳定试用",
+    "stock_l3": "可受控稳定试用",
+    "video_shadow_factory": "可受控稳定试用",
+    "wecom_access_layer": "可受控稳定试用",
+    "manager_coordination": "可受控稳定试用"
+  },
+  "requires_user_confirmation_for_formal_stable_delivery": [
+    "企业微信真实发送",
+    "n8n 正式执行",
+    "修改或重启 19310/19302",
+    "写正式库、正式知识库、正式规则库或向量库",
+    "税务正式意见、申报、退税、开票",
+    "视频真实渲染、上传或发布",
+    "券商接口、下单或自动交易"
+  ],
+  "boundaries": {
+    "trigger_n8n": false,
+    "wecom_real_send": false,
+    "write_formal_db": false,
+    "modify_service_script": false,
+    "restart_19310_19302": false,
+    "login_real_systems": false,
+    "video_render_upload_publish": false,
+    "delete_move_archive_old_dirs": false,
+    "formal_tax_trade_publish_action": false
+  }
+}

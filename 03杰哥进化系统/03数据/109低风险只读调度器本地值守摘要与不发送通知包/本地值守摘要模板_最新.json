@@ -1,0 +1,99 @@
+{
+  "name": "低风险只读调度器本地值守摘要模板",
+  "generated_at": "2026-05-08 20:29:09",
+  "template_version": "v1-local-readonly-no-send",
+  "summary_scope": "本地值守摘要模板，仅用于总管本地查看和下一轮人工确认参考",
+  "readonly_scheduler": true,
+  "template_only": true,
+  "sections": {
+    "今日总览": {
+      "section_order": 1,
+      "items": [
+        "只读调度器处于本地值守摘要预演状态",
+        "本包仅登记摘要字段、通知草稿和不发送证明",
+        "全部外部通知与接口触发保持禁用"
+      ]
+    },
+    "通过项": {
+      "section_order": 2,
+      "items": [
+        "本地摘要模板已生成",
+        "通知草稿仅保存为本地文件",
+        "不发送证明已显式记录 no_wecom_send/no_n8n_trigger/no_network_request"
+      ]
+    },
+    "暂停项": {
+      "section_order": 3,
+      "items": [
+        "企业微信真实发送暂停",
+        "n8n 触发和消息接口接入暂停",
+        "任何交易、税局登录、财税软件连接和正式规则自动生效均暂停"
+      ]
+    },
+    "需总管确认项": {
+      "section_order": 4,
+      "items": [
+        "是否允许下一轮继续只读本地值守摘要完善",
+        "是否需要人工补充今日总览中的业务口径",
+        "是否仍保持企业微信与 n8n 的不发送/不触发状态"
+      ]
+    },
+    "下一轮建议": {
+      "section_order": 5,
+      "items": [
+        "继续只读汇总调度器本地值守结果",
+        "仅在总管明确授权后再讨论通知通道接入",
+        "下一轮优先补齐异常分级口径和人工确认清单"
+      ]
+    }
+  },
+  "section_names_required": [
+    "今日总览",
+    "通过项",
+    "暂停项",
+    "需总管确认项",
+    "下一轮建议"
+  ],
+  "hard_red_line_confirmation": {
+    "preview_only": true,
+    "local_file_only": true,
+    "send_allowed": false,
+    "real_send": false,
+    "real_wecom_send": false,
+    "network_request": false,
+    "no_network_request": true,
+    "connect_n8n": false,
+    "trigger_n8n": false,
+    "no_n8n_trigger": true,
+    "no_wecom_send": true,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "auto_promote_formal_rule": false,
+    "write_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false
+  },
+  "preview_only": true,
+  "local_file_only": true,
+  "send_allowed": false,
+  "real_send": false,
+  "real_wecom_send": false,
+  "network_request": false,
+  "no_network_request": true,
+  "connect_n8n": false,
+  "trigger_n8n": false,
+  "no_n8n_trigger": true,
+  "no_wecom_send": true,
+  "broker_connection": false,
+  "trade_order": false,
+  "tax_bureau_login": false,
+  "finance_tax_software_connection": false,
+  "auto_promote_formal_rule": false,
+  "write_formal_rule": false,
+  "modify_supervisor_panel": false,
+  "modify_one_click_continuation_package": false,
+  "reload_service": false
+}

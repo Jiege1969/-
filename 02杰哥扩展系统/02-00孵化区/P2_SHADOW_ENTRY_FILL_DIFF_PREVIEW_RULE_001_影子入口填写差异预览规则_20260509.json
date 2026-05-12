@@ -1,0 +1,51 @@
+{
+  "rule_id": "P2_SHADOW_ENTRY_FILL_DIFF_PREVIEW_RULE_001",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S13",
+  "status": "readonly_diff_preview_rule_not_writer",
+  "purpose": "为通过 P2-S12 的填写候选生成影子入口填写差异预览，不写目标入口",
+  "input_dependency": "P2-S12 影子入口填写候选闸口预演样例",
+  "diff_types": ["candidate_placeholder", "must_remain_false", "must_remain_pending", "must_not_change"],
+  "candidate_field_plan": {
+    "tax": {
+      "candidate_paths": ["fields.business_question", "fields.taxpayer_profile", "fields.tax_item_or_scenario", "fields.target_output", "fields.known_basis", "fields.missing_materials", "precheck.desensitized", "precheck.can_enter_shadow_analysis"],
+      "must_remain_false_paths": ["precheck.involves_real_tax_filing", "precheck.requests_external_tax_action", "forbidden_actions.formal_tax_opinion", "forbidden_actions.tax_filing", "forbidden_actions.invoice_action", "forbidden_actions.tax_refund_action", "forbidden_actions.external_send", "forbidden_actions.trigger_n8n", "forbidden_actions.send_wecom", "forbidden_actions.write_formal_database"],
+      "must_not_change_paths": ["intake_id", "business_line", "nature", "not_formal_tax_opinion"]
+    },
+    "office_work": {
+      "candidate_paths": ["source_materials", "input_summary", "output_draft", "basis_or_reference", "risk_flags", "missing_items", "human_review_result"],
+      "must_remain_false_paths": ["forbidden_actions.connect_oa", "forbidden_actions.connect_erp", "forbidden_actions.connect_finance_system", "forbidden_actions.connect_hr_system", "forbidden_actions.submit_approval", "forbidden_actions.external_send", "forbidden_actions.trigger_n8n", "forbidden_actions.send_wecom", "forbidden_actions.write_formal_database"],
+      "must_not_change_paths": ["sample_id", "business_line", "scenario", "not_formal_work_material"]
+    },
+    "video_production": {
+      "candidate_paths": ["review_object.related_project", "review_object.script_source", "review_object.storyboard_source", "review_object.asset_source", "review_object.platform_rule_source", "review_object.release_target"],
+      "must_remain_false_paths": ["forbidden_actions.render_final_video", "forbidden_actions.upload_video", "forbidden_actions.publish_video", "forbidden_actions.call_platform_api", "forbidden_actions.trigger_n8n", "forbidden_actions.send_wecom", "forbidden_actions.write_formal_database"],
+      "must_remain_pending_paths": ["review_chain.0.status", "review_chain.1.status", "review_chain.2.status", "review_chain.3.status", "review_chain.4.status"],
+      "must_not_change_paths": ["card_id", "business_line", "nature", "not_release_ready"]
+    },
+    "shared_policy_evidence": {
+      "candidate_paths": ["fields.target_business_line", "fields.policy_source", "fields.query_purpose", "fields.expected_use"],
+      "must_remain_false_paths": ["forbidden_actions.trigger_n8n", "forbidden_actions.send_wecom", "forbidden_actions.write_formal_database", "forbidden_actions.replace_business_line_judgment", "forbidden_actions.claim_formal_capability"],
+      "must_not_change_paths": ["card_id", "layer", "nature", "not_formal_business_conclusion"]
+    }
+  },
+  "hard_rules": {
+    "preview_only": true,
+    "write_target_entry": false,
+    "auto_fill_shadow_entry": false,
+    "formal_capability_claim": false,
+    "release_form": false
+  },
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "VIDEO_AGENT_VAI_017_020_R0_SELF_CHECK_20260508",
+  "asset_identity": "video_production_shadow_base_self_check",
+  "stage": "W1_R0",
+  "date": "2026-05-08",
+  "result": "passed",
+  "checked_assets": [
+    {
+      "id": "VAI-017",
+      "name": "selection_revision_flow_sample",
+      "result": "passed",
+      "note": "text state flow only, no formal script edit"
+    },
+    {
+      "id": "VAI-018",
+      "name": "state_change_log_template",
+      "result": "passed",
+      "note": "state log only, no database"
+    },
+    {
+      "id": "VAI-019",
+      "name": "evolution_candidate_intake_checklist",
+      "result": "passed",
+      "note": "candidate intake only, no formal rule upgrade"
+    },
+    {
+      "id": "VAI-020",
+      "name": "redline_alternative_action_template",
+      "result": "passed",
+      "note": "shadow alternative only, no redline exception"
+    }
+  ],
+  "boundary_check": {
+    "modify_formal_video_scripts": false,
+    "call_real_model_api": false,
+    "call_external_video_voice_cover_publish_engine": false,
+    "read_real_assets": false,
+    "generate_image_audio_subtitle_cover_video": false,
+    "render_transcode_edit_compose": false,
+    "upload_publish_external_send": false,
+    "trigger_n8n": false,
+    "real_wechat_send": false,
+    "read_or_save_wechat_credentials": false,
+    "start_or_restart_service": false,
+    "modify_19310_or_19302": false,
+    "write_formal_rule_database": false
+  },
+  "next_shadow_queue": [
+    "vai_001_020_asset_relationship_map",
+    "video_agent_shadow_trial_input_output_packet",
+    "video_agent_phase_maturity_snapshot"
+  ]
+}

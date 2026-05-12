@@ -1,0 +1,26 @@
+{
+  "asset_id": "VIDEO_AGENT_REPLY_QUALITY_SCORECARD_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_scorecard_not_real_performance_or_publish_review",
+  "purpose": "Score placeholder replies and human receipt drafts for clarity, traceability, and boundary compliance.",
+  "score_items": [
+    {"item": "task_identification", "points": "0-2", "standard": "identifies_shadow_task_or_clear_gap"},
+    {"item": "status_clarity", "points": "0-2", "standard": "current_shadow_status_is_clear"},
+    {"item": "evidence_traceability", "points": "0-2", "standard": "points_to_shadow_asset_or_desensitized_input"},
+    {"item": "gap_clarity", "points": "0-2", "standard": "missing_fields_are_listed"},
+    {"item": "boundary_compliance", "points": "0-2", "standard": "avoids_formal_generation_publish_or_send_wording"}
+  ],
+  "decision_bands": [
+    {"score": "8-10", "decision": "can_enter_human_review"},
+    {"score": "5-7", "decision": "needs_field_completion"},
+    {"score": "0-4", "decision": "return_to_gap_card_or_redline_block_register"}
+  ],
+  "real_system_triggered": {
+    "real_send_permission": false,
+    "publish_permission": false,
+    "formal_review_conclusion": false
+  }
+}

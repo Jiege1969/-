@@ -1,0 +1,49 @@
+{
+  "asset_id": "VIDEO_AGENT_WECOM_FINAL_CONFIRMATION_GAPS_COMPLETE_REPLY_001",
+  "name": "企业微信最终确认缺口已补齐但需人工确认回执样例",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "视频制作系统",
+  "layer": "W1/W2 影子回执样例",
+  "status": "draft",
+  "terminal_role": "杰哥视频助理",
+  "input_example": "VF-20260508-003 最终确认材料已补齐，请继续。",
+  "reply_example": [
+    "杰哥，收到。",
+    "我已按影子检查口径登记：任务 VF-20260508-003 的最终确认缺口材料显示为“已补齐待人工确认”。",
+    "当前仍不能自动发布，原因是：缺口补齐只代表材料进入最终确认队列；生成放行、渲染放行、发布放行必须拆开；发布前还需要人工确认 AI 标识、平台规范、素材授权和最终成片预览。",
+    "下一步可做的是：生成“最终人工确认待签字清单”或登记“需交回总管判断”的阻断项。",
+    "本次没有触发真实渲染、真实发布、企业微信真实外发或 n8n。"
+  ],
+  "state_fields": {
+    "任务ID": "VF-20260508-003",
+    "当前状态": "最终确认缺口已补齐待人工确认",
+    "下一步允许动作": "生成最终人工确认待签字清单",
+    "自动发布": false,
+    "真实外发": false,
+    "是否需要总管判断": "仅在命中红线或请求真实执行时需要"
+  },
+  "allowed_next_actions": [
+    "生成最终人工确认待签字清单",
+    "登记需交回总管判断的阻断项",
+    "保持发布待确认状态"
+  ],
+  "blocked_actions": [
+    "真实渲染",
+    "真实发布",
+    "企业微信真实外发",
+    "触发n8n",
+    "修改企业微信公共接入配置",
+    "连接真实账号或平台"
+  ],
+  "boundary": {
+    "send_wecom": false,
+    "call_real_model": false,
+    "read_real_material": false,
+    "render_video": false,
+    "publish_video": false,
+    "trigger_n8n": false,
+    "modify_public_component": false
+  }
+}
+

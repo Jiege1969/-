@@ -1,0 +1,69 @@
+{
+  "名称": "低风险只读调度器未完成项继承清单",
+  "生成时间": "2026-05-08 21:17:36",
+  "继承项数量": 4,
+  "低风险只读可继续项数量": 1,
+  "需总管确认项数量": 3,
+  "继承项": [
+    {
+      "编号": "HI-001",
+      "未完成项": "跨日值守样本后续复核",
+      "来源": "第十五轮跨日值守样本并行调度索引包",
+      "继承方式": "登记为下一轮只读待办",
+      "当前动作": "仅生成本地继承记录",
+      "允许自动恢复": false,
+      "需总管确认": true
+    },
+    {
+      "编号": "HI-002",
+      "未完成项": "异常升级草案人工确认队列复查",
+      "来源": "低风险只读调度器异常升级草案与总管确认队列包",
+      "继承方式": "保留人工确认队列入口",
+      "当前动作": "仅记录需复查字段",
+      "允许自动恢复": false,
+      "需总管确认": true
+    },
+    {
+      "编号": "HI-003",
+      "未完成项": "本地值守摘要补充人工口径",
+      "来源": "低风险只读调度器本地值守摘要与不发送通知包",
+      "继承方式": "生成接班备注",
+      "当前动作": "只读补充摘要，不发送通知",
+      "允许自动恢复": false,
+      "需总管确认": false
+    },
+    {
+      "编号": "HI-004",
+      "未完成项": "证据留存到期检查预演",
+      "来源": "第十五轮 AS 待执行项",
+      "继承方式": "登记后续只读检查",
+      "当前动作": "不删除、不移动、不压缩业务产物",
+      "允许自动恢复": false,
+      "需总管确认": true
+    }
+  ],
+  "readonly_only": true,
+  "local_file_only": true,
+  "handoff_summary_only": true,
+  "inheritance_preview_only": true,
+  "send_allowed": false,
+  "real_send": false,
+  "real_wecom_send": false,
+  "network_request": false,
+  "no_network_request": true,
+  "connect_n8n": false,
+  "trigger_n8n": false,
+  "no_n8n_trigger": true,
+  "auto_resume_task": false,
+  "auto_schedule_task": false,
+  "write_formal_rule": false,
+  "auto_promote_formal_rule": false,
+  "modify_supervisor_panel": false,
+  "modify_one_click_continuation_package": false,
+  "reload_service": false,
+  "delete_business_artifact": false,
+  "broker_connection": false,
+  "trade_order": false,
+  "tax_bureau_login": false,
+  "finance_tax_software_connection": false
+}

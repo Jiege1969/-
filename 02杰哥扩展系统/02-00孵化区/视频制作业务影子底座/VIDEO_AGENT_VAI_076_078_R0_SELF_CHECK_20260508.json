@@ -1,0 +1,26 @@
+{
+  "self_check_id": "VIDEO_AGENT_VAI_076_078_R0_SELF_CHECK_20260508",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "scope": "VAI-076_to_VAI-078",
+  "status": "passed_shadow_self_check",
+  "checks": {
+    "write_scope_limited_to_video_shadow_base": true,
+    "no_manager_public_n8n_service_formal_entry_change": true,
+    "no_service_start_restart_or_port_change": true,
+    "no_wecom_real_send": true,
+    "no_real_material_account_credential_or_message_read": true,
+    "no_external_material_api_or_download": true,
+    "pre_publish_check_remains_shadow_gate": true
+  },
+  "real_system_triggered": {
+    "model_api": false,
+    "material_read": false,
+    "external_material_api_or_download": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "formal_database_write": false
+  }
+}

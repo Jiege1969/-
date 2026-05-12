@@ -1,0 +1,30 @@
+{
+  "asset_id": "VIDEO_AGENT_REVIEW_QUEUE_ESCALATION_RULE_001",
+  "version": "v1.0",
+  "asset_type": "review_rule",
+  "construction_level": "W1/R0",
+  "scope": "video_shadow_review_queues",
+  "status": "draft",
+  "purpose": "Escalate redline, cross-system, real-execution, or unclear-ownership cases instead of continuing inside the business line.",
+  "escalation_rules": [
+    {"scenario": "real_account_cookie_or_api_key", "from_queue": "any", "to": "redline_block_register", "handling": "record_block_reason", "real_action": false},
+    {"scenario": "requires_wecom_public_route", "from_queue": "any", "to": "manager_decision", "handling": "create_alignment_request", "real_action": false},
+    {"scenario": "requires_n8n", "from_queue": "any", "to": "manager_decision", "handling": "create_block_register", "real_action": false},
+    {"scenario": "requires_real_render_or_publish", "from_queue": "any", "to": "gate_consistency_review_queue", "handling": "check_three_gates", "real_action": false},
+    {"scenario": "platform_rules_unclear", "from_queue": "platform_rule_review_queue", "to": "publishing_compliance_review_queue", "handling": "complete_rule_gap", "real_action": false},
+    {"scenario": "material_authorization_unclear", "from_queue": "material_authorization_review_queue", "to": "redline_block_register", "handling": "keep_non_executable", "real_action": false},
+    {"scenario": "ai_label_missing", "from_queue": "publishing_compliance_review_queue", "to": "ai_label_confirmation_pending", "handling": "create_confirmation_receipt_template", "real_action": false},
+    {"scenario": "owner_unclear", "from_queue": "any", "to": "control_reviewer", "handling": "define_primary_queue", "real_action": false}
+  ],
+  "fixed_principles": [
+    "Escalation is not release.",
+    "Manager decision does not mean the business line may modify manager files.",
+    "Redline block registration is not execution permission.",
+    "Every escalation result must create a handoff or gap record."
+  ],
+  "boundaries": {
+    "create_real_ticket": false,
+    "assign_real_people": false,
+    "trigger_real_system": false
+  }
+}

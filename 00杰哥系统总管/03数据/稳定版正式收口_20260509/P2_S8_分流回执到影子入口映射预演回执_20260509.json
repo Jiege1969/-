@@ -1,0 +1,40 @@
+{
+  "id": "P2-S8-RECEIPT-TO-SHADOW-ENTRY-MAPPING-PREVIEW-RECEIPT-20260509",
+  "executed_at": "2026-05-09 12:02:28 +08:00",
+  "execution_type": "readonly_preview",
+  "status": "pass",
+  "command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S8分流回执到影子入口映射预演.py'",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\57P2S8分流回执到影子入口映射预演\\P2S8分流回执到影子入口映射预演_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\57P2S8分流回执到影子入口映射预演\\P2S8分流回执到影子入口映射预演_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\57P2S8分流回执到影子入口映射预演\\P2S8分流回执到影子入口映射预演样例_20260509.json"
+  ],
+  "summary": {
+    "mapping_count": 7,
+    "passed": 7,
+    "failed": 0,
+    "target_status_failed": 0
+  },
+  "routes": [
+    "P2S7-RECEIPT-001 -> TAX_DAILY_INTAKE_002",
+    "P2S7-RECEIPT-002 -> OFFICE_SHADOW_002",
+    "P2S7-RECEIPT-003 -> VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+    "P2S7-RECEIPT-004 -> P2_SHARED_POLICY_READONLY_NEXT_001",
+    "P2S7-RECEIPT-005 -> gap_or_redline_record",
+    "P2S7-RECEIPT-006 -> gap_or_redline_record",
+    "P2S7-RECEIPT-007 -> gap_or_redline_record"
+  ],
+  "conclusion": "分流回执到影子入口映射预演通过；7 份虚拟回执均可生成入口预填建议或暂停缺口建议，且未改写目标入口。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

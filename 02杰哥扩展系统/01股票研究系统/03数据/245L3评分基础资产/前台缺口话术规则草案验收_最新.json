@@ -1,0 +1,23 @@
+{
+  "name": "前台缺口话术规则草案验收",
+  "generated_at": "2026-05-08 08:39:17",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\前台缺口话术规则草案_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "rule_count": 4,
+    "required_rule_count": 4,
+    "formalization_blocker_count": 3
+  },
+  "safety_boundary_confirmed": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  },
+  "next_step": "可继续生成前台结论型短答样例验收清单；不得直接写正式适配器或企业微信入口。"
+}

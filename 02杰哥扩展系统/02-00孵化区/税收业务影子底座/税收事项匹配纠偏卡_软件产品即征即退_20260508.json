@@ -1,0 +1,56 @@
+{
+  "id": "TAX_MATCH_FIX_SOFTWARE_PRODUCT_VAT_REFUND_20260508",
+  "generated_at": "2026-05-08",
+  "asset_identity": "tax_shadow_w1_r0_matter_matching_fix_card",
+  "source": "enterprise_wechat_controlled_trial_validation",
+  "formal_tax_rule": false,
+  "problem": {
+    "input_intent": "software product VAT immediate refund",
+    "wrong_match": "R&D expense super deduction",
+    "severity": "P0_delivery_blocker"
+  },
+  "correct_mapping": [
+    {
+      "keywords": ["软件产品即征即退", "软件产品退税", "即征即退资料", "软件产品税负超过3%", "软件产品增值税"],
+      "route_to": "software_product_vat_immediate_refund",
+      "do_not_route_to": ["R&D expense super deduction", "enterprise income tax preferential treatment"]
+    }
+  ],
+  "clarification_required_when": [
+    "软件税收优惠",
+    "软件企业优惠",
+    "研发软件怎么减税"
+  ],
+  "clarification_questions": [
+    "你问的是增值税即征即退，还是企业所得税研发费用加计扣除？",
+    "涉及的是软件产品销售收入，还是研发费用支出？",
+    "你需要政策依据、资料清单、适用条件，还是测算前置字段？"
+  ],
+  "acceptance_examples": [
+    {
+      "input": "软件产品即征即退需要什么资料？",
+      "expected_route": "software_product_vat_immediate_refund_material_list"
+    },
+    {
+      "input": "软件产品税负超过3%怎么退？",
+      "expected_route": "software_product_vat_immediate_refund_measurement_fields"
+    },
+    {
+      "input": "软件企业研发费用怎么扣除？",
+      "expected_route": "R&D expense super deduction"
+    },
+    {
+      "input": "软件税收优惠有哪些？",
+      "expected_route": "clarification_first"
+    }
+  ],
+  "boundary": {
+    "login_e_tax_bureau": false,
+    "read_real_tax_software": false,
+    "formal_tax_opinion": false,
+    "deterministic_refund_amount": false,
+    "filing_advice": false,
+    "write_formal_tax_database": false,
+    "wecom_service_change": false
+  }
+}

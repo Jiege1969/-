@@ -1,0 +1,132 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "sample_id": "TAX_ANALYSIS_SHADOW_001",
+  "name": "软件产品即征即退待复核分析样例",
+  "asset_identity": "tax_business_analysis_contract_shadow_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "formal_tax_opinion": false,
+    "determined_amount": false,
+    "external_send": false,
+    "tax_execution": false
+  },
+  "source_contract": "涉税业务分析契约草案_v1.0",
+  "analysis_object": {
+    "tax_type": "增值税",
+    "business_scenario": "软件产品销售收入",
+    "policy_topic": "软件产品增值税即征即退",
+    "entity_profile": "增值税一般纳税人；自行开发软件；已取得软件著作权证书",
+    "period": "本月，具体纳税所属期待补",
+    "region": "主管税务机关及地区待补",
+    "requested_output": "适用条件判断、测算前置字段、待复核分析结论"
+  },
+  "policy_match": [
+    {
+      "title": "财政部 国家税务总局关于软件产品增值税政策的通知",
+      "document_number": "财税〔2011〕100号",
+      "evidence_level": "国家级主管机关政策/规范性文件",
+      "validity_status": "以官方政策法规库展示为准，已登记候选依据",
+      "role": "候选适用依据"
+    },
+    {
+      "title": "一文了解：软件产品增值税即征即退政策",
+      "evidence_level": "国家级官方公开指引",
+      "validity_status": "已登记，待逐项复核",
+      "role": "解释材料"
+    }
+  ],
+  "business_fact_breakdown": {
+    "taxpayer_type": {
+      "value": "增值税一般纳税人",
+      "status": "provided_pending_document_check"
+    },
+    "product_nature": {
+      "value": "自行开发企业管理软件",
+      "status": "provided_pending_scope_check"
+    },
+    "certificate": {
+      "value": "软件著作权证书",
+      "status": "partially_provided"
+    },
+    "sales_amount_excl_vat": {
+      "value": 1000000,
+      "unit": "CNY",
+      "status": "provided"
+    },
+    "region": {
+      "value": null,
+      "status": "missing"
+    }
+  },
+  "applicability_analysis": {
+    "possibly_met": [
+      "增值税一般纳税人",
+      "自行开发并销售软件产品",
+      "存在软件著作权证书",
+      "存在软件产品销售收入"
+    ],
+    "pending_proof": [
+      "按现行税率征收增值税",
+      "实际税负超过规定比例",
+      "收入可独立核算",
+      "产品范围符合政策要求",
+      "地方办理材料要求"
+    ],
+    "not_applicable_risks": [
+      "收入混合且未拆分",
+      "包含第三方软件、硬件、维护、培训或受托开发收入",
+      "当地材料要求未满足"
+    ]
+  },
+  "calculation_prerequisites": {
+    "provided": [
+      "software_sales_amount_excl_vat"
+    ],
+    "missing": [
+      "tax_period",
+      "local_tax_authority",
+      "applicable_vat_rate",
+      "output_vat",
+      "input_vat_creditable",
+      "vat_payable",
+      "income_split",
+      "local_filing_requirement"
+    ],
+    "rule": "字段不足时不输出确定金额，只输出测算字段、公式口径和缺口。"
+  },
+  "missing": [
+    "纳税所属期/申报期",
+    "主管税务机关及地区",
+    "现行适用税率及依据",
+    "销项税额、可抵扣进项税额、实际应纳税额",
+    "软件、服务、硬件、第三方软件收入拆分",
+    "软件检测证明、登记材料或当地现行替代材料",
+    "地方办理材料和流程口径",
+    "政策原文条款逐项适用复核"
+  ],
+  "risk_points": [
+    "材料不完整导致适用条件无法确认",
+    "收入混合导致软件产品收入口径不清",
+    "地方材料和流程差异导致办理口径不同",
+    "政策有效状态和条款适用仍需以官方来源及人工复核为准",
+    "仅凭100万元销售收入无法计算具体可退金额"
+  ],
+  "confidence": "draft",
+  "review_questions": [
+    "该企业主管税务机关和地区是什么？",
+    "该收入所属期是什么？",
+    "软件著作权证书、检测证明、产品登记或当地要求材料是否齐全？",
+    "100万元收入是否全部为自行开发软件产品收入？",
+    "是否包含安装、维护、培训、硬件、第三方软件或受托开发收入？",
+    "当期销项税额、可抵扣进项税额、实际应纳税额分别是多少？",
+    "当地税务机关对该事项是否有补充材料或备案要求？"
+  ],
+  "next_action": [
+    "补齐测算前置字段",
+    "补主管税务机关及地区口径",
+    "对财税〔2011〕100号条文做逐项适用复核",
+    "用人工复核回执记录专业人员意见",
+    "复核后再进入人工修正样本或进化候选"
+  ]
+}

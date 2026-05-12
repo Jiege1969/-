@@ -1,0 +1,607 @@
+{
+  "名称": "视频真实渲染环境候选路径矩阵与安装缺口清单包",
+  "生成时间": "2026-05-08 17:52:03",
+  "阶段": "候选路径矩阵与安装缺口只读结构化",
+  "error_count": 0,
+  "可进入真实渲染": false,
+  "can_enter_real_render": false,
+  "候选路径矩阵": {
+    "MoneyPrinterTurbo": [
+      {
+        "序号": 1,
+        "工具": "MoneyPrinterTurbo",
+        "候选目录": "D:\\杰哥智能化系统\\MoneyPrinterTurbo",
+        "目录存在": false,
+        "入口文件检查": [
+          {
+            "relative_path": "start.bat",
+            "候选入口文件": "start.bat",
+            "absolute_path": "D:\\杰哥智能化系统\\MoneyPrinterTurbo\\start.bat",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "app/main.py",
+            "候选入口文件": "app/main.py",
+            "absolute_path": "D:\\杰哥智能化系统\\MoneyPrinterTurbo\\app\\main.py",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "webui/Main.py",
+            "候选入口文件": "webui/Main.py",
+            "absolute_path": "D:\\杰哥智能化系统\\MoneyPrinterTurbo\\webui\\Main.py",
+            "存在": false,
+            "是文件": false
+          }
+        ],
+        "包含任一入口文件": false,
+        "缺失入口文件": [
+          "start.bat",
+          "app/main.py",
+          "webui/Main.py"
+        ],
+        "只读识别方式": "Path.exists/Path.is_file，仅检查 start.bat、app/main.py、webui/Main.py 是否存在",
+        "调用MoneyPrinterTurbo": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未调用 MoneyPrinterTurbo，无法确认工程运行状态、依赖状态或渲染链路可用性",
+          "候选目录不存在，需人工确认 MoneyPrinterTurbo 安装位置"
+        ]
+      },
+      {
+        "序号": 2,
+        "工具": "MoneyPrinterTurbo",
+        "候选目录": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\MoneyPrinterTurbo",
+        "目录存在": false,
+        "入口文件检查": [
+          {
+            "relative_path": "start.bat",
+            "候选入口文件": "start.bat",
+            "absolute_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\MoneyPrinterTurbo\\start.bat",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "app/main.py",
+            "候选入口文件": "app/main.py",
+            "absolute_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\MoneyPrinterTurbo\\app\\main.py",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "webui/Main.py",
+            "候选入口文件": "webui/Main.py",
+            "absolute_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\MoneyPrinterTurbo\\webui\\Main.py",
+            "存在": false,
+            "是文件": false
+          }
+        ],
+        "包含任一入口文件": false,
+        "缺失入口文件": [
+          "start.bat",
+          "app/main.py",
+          "webui/Main.py"
+        ],
+        "只读识别方式": "Path.exists/Path.is_file，仅检查 start.bat、app/main.py、webui/Main.py 是否存在",
+        "调用MoneyPrinterTurbo": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未调用 MoneyPrinterTurbo，无法确认工程运行状态、依赖状态或渲染链路可用性",
+          "候选目录不存在，需人工确认 MoneyPrinterTurbo 安装位置"
+        ]
+      },
+      {
+        "序号": 3,
+        "工具": "MoneyPrinterTurbo",
+        "候选目录": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\05外部工具\\MoneyPrinterTurbo",
+        "目录存在": false,
+        "入口文件检查": [
+          {
+            "relative_path": "start.bat",
+            "候选入口文件": "start.bat",
+            "absolute_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\05外部工具\\MoneyPrinterTurbo\\start.bat",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "app/main.py",
+            "候选入口文件": "app/main.py",
+            "absolute_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\05外部工具\\MoneyPrinterTurbo\\app\\main.py",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "webui/Main.py",
+            "候选入口文件": "webui/Main.py",
+            "absolute_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\05外部工具\\MoneyPrinterTurbo\\webui\\Main.py",
+            "存在": false,
+            "是文件": false
+          }
+        ],
+        "包含任一入口文件": false,
+        "缺失入口文件": [
+          "start.bat",
+          "app/main.py",
+          "webui/Main.py"
+        ],
+        "只读识别方式": "Path.exists/Path.is_file，仅检查 start.bat、app/main.py、webui/Main.py 是否存在",
+        "调用MoneyPrinterTurbo": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未调用 MoneyPrinterTurbo，无法确认工程运行状态、依赖状态或渲染链路可用性",
+          "候选目录不存在，需人工确认 MoneyPrinterTurbo 安装位置"
+        ]
+      },
+      {
+        "序号": 4,
+        "工具": "MoneyPrinterTurbo",
+        "候选目录": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06渲染工具\\MoneyPrinterTurbo",
+        "目录存在": false,
+        "入口文件检查": [
+          {
+            "relative_path": "start.bat",
+            "候选入口文件": "start.bat",
+            "absolute_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06渲染工具\\MoneyPrinterTurbo\\start.bat",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "app/main.py",
+            "候选入口文件": "app/main.py",
+            "absolute_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06渲染工具\\MoneyPrinterTurbo\\app\\main.py",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "webui/Main.py",
+            "候选入口文件": "webui/Main.py",
+            "absolute_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06渲染工具\\MoneyPrinterTurbo\\webui\\Main.py",
+            "存在": false,
+            "是文件": false
+          }
+        ],
+        "包含任一入口文件": false,
+        "缺失入口文件": [
+          "start.bat",
+          "app/main.py",
+          "webui/Main.py"
+        ],
+        "只读识别方式": "Path.exists/Path.is_file，仅检查 start.bat、app/main.py、webui/Main.py 是否存在",
+        "调用MoneyPrinterTurbo": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未调用 MoneyPrinterTurbo，无法确认工程运行状态、依赖状态或渲染链路可用性",
+          "候选目录不存在，需人工确认 MoneyPrinterTurbo 安装位置"
+        ]
+      },
+      {
+        "序号": 5,
+        "工具": "MoneyPrinterTurbo",
+        "候选目录": "D:\\杰哥智能化系统\\02杰哥扩展系统\\MoneyPrinterTurbo",
+        "目录存在": false,
+        "入口文件检查": [
+          {
+            "relative_path": "start.bat",
+            "候选入口文件": "start.bat",
+            "absolute_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\MoneyPrinterTurbo\\start.bat",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "app/main.py",
+            "候选入口文件": "app/main.py",
+            "absolute_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\MoneyPrinterTurbo\\app\\main.py",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "webui/Main.py",
+            "候选入口文件": "webui/Main.py",
+            "absolute_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\MoneyPrinterTurbo\\webui\\Main.py",
+            "存在": false,
+            "是文件": false
+          }
+        ],
+        "包含任一入口文件": false,
+        "缺失入口文件": [
+          "start.bat",
+          "app/main.py",
+          "webui/Main.py"
+        ],
+        "只读识别方式": "Path.exists/Path.is_file，仅检查 start.bat、app/main.py、webui/Main.py 是否存在",
+        "调用MoneyPrinterTurbo": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未调用 MoneyPrinterTurbo，无法确认工程运行状态、依赖状态或渲染链路可用性",
+          "候选目录不存在，需人工确认 MoneyPrinterTurbo 安装位置"
+        ]
+      },
+      {
+        "序号": 6,
+        "工具": "MoneyPrinterTurbo",
+        "候选目录": "D:\\MoneyPrinterTurbo",
+        "目录存在": false,
+        "入口文件检查": [
+          {
+            "relative_path": "start.bat",
+            "候选入口文件": "start.bat",
+            "absolute_path": "D:\\MoneyPrinterTurbo\\start.bat",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "app/main.py",
+            "候选入口文件": "app/main.py",
+            "absolute_path": "D:\\MoneyPrinterTurbo\\app\\main.py",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "webui/Main.py",
+            "候选入口文件": "webui/Main.py",
+            "absolute_path": "D:\\MoneyPrinterTurbo\\webui\\Main.py",
+            "存在": false,
+            "是文件": false
+          }
+        ],
+        "包含任一入口文件": false,
+        "缺失入口文件": [
+          "start.bat",
+          "app/main.py",
+          "webui/Main.py"
+        ],
+        "只读识别方式": "Path.exists/Path.is_file，仅检查 start.bat、app/main.py、webui/Main.py 是否存在",
+        "调用MoneyPrinterTurbo": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未调用 MoneyPrinterTurbo，无法确认工程运行状态、依赖状态或渲染链路可用性",
+          "候选目录不存在，需人工确认 MoneyPrinterTurbo 安装位置"
+        ]
+      },
+      {
+        "序号": 7,
+        "工具": "MoneyPrinterTurbo",
+        "候选目录": "C:\\MoneyPrinterTurbo",
+        "目录存在": false,
+        "入口文件检查": [
+          {
+            "relative_path": "start.bat",
+            "候选入口文件": "start.bat",
+            "absolute_path": "C:\\MoneyPrinterTurbo\\start.bat",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "app/main.py",
+            "候选入口文件": "app/main.py",
+            "absolute_path": "C:\\MoneyPrinterTurbo\\app\\main.py",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "webui/Main.py",
+            "候选入口文件": "webui/Main.py",
+            "absolute_path": "C:\\MoneyPrinterTurbo\\webui\\Main.py",
+            "存在": false,
+            "是文件": false
+          }
+        ],
+        "包含任一入口文件": false,
+        "缺失入口文件": [
+          "start.bat",
+          "app/main.py",
+          "webui/Main.py"
+        ],
+        "只读识别方式": "Path.exists/Path.is_file，仅检查 start.bat、app/main.py、webui/Main.py 是否存在",
+        "调用MoneyPrinterTurbo": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未调用 MoneyPrinterTurbo，无法确认工程运行状态、依赖状态或渲染链路可用性",
+          "候选目录不存在，需人工确认 MoneyPrinterTurbo 安装位置"
+        ]
+      },
+      {
+        "序号": 8,
+        "工具": "MoneyPrinterTurbo",
+        "候选目录": "C:\\Users\\Administrator\\MoneyPrinterTurbo",
+        "目录存在": false,
+        "入口文件检查": [
+          {
+            "relative_path": "start.bat",
+            "候选入口文件": "start.bat",
+            "absolute_path": "C:\\Users\\Administrator\\MoneyPrinterTurbo\\start.bat",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "app/main.py",
+            "候选入口文件": "app/main.py",
+            "absolute_path": "C:\\Users\\Administrator\\MoneyPrinterTurbo\\app\\main.py",
+            "存在": false,
+            "是文件": false
+          },
+          {
+            "relative_path": "webui/Main.py",
+            "候选入口文件": "webui/Main.py",
+            "absolute_path": "C:\\Users\\Administrator\\MoneyPrinterTurbo\\webui\\Main.py",
+            "存在": false,
+            "是文件": false
+          }
+        ],
+        "包含任一入口文件": false,
+        "缺失入口文件": [
+          "start.bat",
+          "app/main.py",
+          "webui/Main.py"
+        ],
+        "只读识别方式": "Path.exists/Path.is_file，仅检查 start.bat、app/main.py、webui/Main.py 是否存在",
+        "调用MoneyPrinterTurbo": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未调用 MoneyPrinterTurbo，无法确认工程运行状态、依赖状态或渲染链路可用性",
+          "候选目录不存在，需人工确认 MoneyPrinterTurbo 安装位置"
+        ]
+      }
+    ],
+    "ImageMagick": [
+      {
+        "序号": 1,
+        "工具": "ImageMagick",
+        "候选目录": "C:\\Program Files",
+        "目录存在": true,
+        "magick.exe候选路径": "C:\\Program Files\\magick.exe",
+        "包含magick.exe": false,
+        "shutil.which_magick_path": "",
+        "PATH命令名可解析": false,
+        "只读识别方式": "shutil.which('magick') 与候选目录文件存在性检查；未执行 magick 或 magick -version",
+        "执行magick": false,
+        "执行magick_version": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未执行 magick -version，无法确认 ImageMagick 真实版本、策略文件或运行可用性",
+          "PATH 中未解析到 magick 命令名，需人工安装 ImageMagick 或配置 PATH",
+          "该候选目录未识别到 magick.exe 文件"
+        ]
+      },
+      {
+        "序号": 2,
+        "工具": "ImageMagick",
+        "候选目录": "C:\\Program Files (x86)",
+        "目录存在": true,
+        "magick.exe候选路径": "C:\\Program Files (x86)\\magick.exe",
+        "包含magick.exe": false,
+        "shutil.which_magick_path": "",
+        "PATH命令名可解析": false,
+        "只读识别方式": "shutil.which('magick') 与候选目录文件存在性检查；未执行 magick 或 magick -version",
+        "执行magick": false,
+        "执行magick_version": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未执行 magick -version，无法确认 ImageMagick 真实版本、策略文件或运行可用性",
+          "PATH 中未解析到 magick 命令名，需人工安装 ImageMagick 或配置 PATH",
+          "该候选目录未识别到 magick.exe 文件"
+        ]
+      },
+      {
+        "序号": 3,
+        "工具": "ImageMagick",
+        "候选目录": "C:\\ImageMagick",
+        "目录存在": false,
+        "magick.exe候选路径": "C:\\ImageMagick\\magick.exe",
+        "包含magick.exe": false,
+        "shutil.which_magick_path": "",
+        "PATH命令名可解析": false,
+        "只读识别方式": "shutil.which('magick') 与候选目录文件存在性检查；未执行 magick 或 magick -version",
+        "执行magick": false,
+        "执行magick_version": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未执行 magick -version，无法确认 ImageMagick 真实版本、策略文件或运行可用性",
+          "PATH 中未解析到 magick 命令名，需人工安装 ImageMagick 或配置 PATH",
+          "该候选目录未识别到 magick.exe 文件"
+        ]
+      },
+      {
+        "序号": 4,
+        "工具": "ImageMagick",
+        "候选目录": "D:\\ImageMagick",
+        "目录存在": false,
+        "magick.exe候选路径": "D:\\ImageMagick\\magick.exe",
+        "包含magick.exe": false,
+        "shutil.which_magick_path": "",
+        "PATH命令名可解析": false,
+        "只读识别方式": "shutil.which('magick') 与候选目录文件存在性检查；未执行 magick 或 magick -version",
+        "执行magick": false,
+        "执行magick_version": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未执行 magick -version，无法确认 ImageMagick 真实版本、策略文件或运行可用性",
+          "PATH 中未解析到 magick 命令名，需人工安装 ImageMagick 或配置 PATH",
+          "该候选目录未识别到 magick.exe 文件"
+        ]
+      },
+      {
+        "序号": 5,
+        "工具": "ImageMagick",
+        "候选目录": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\05外部工具\\ImageMagick",
+        "目录存在": false,
+        "magick.exe候选路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\05外部工具\\ImageMagick\\magick.exe",
+        "包含magick.exe": false,
+        "shutil.which_magick_path": "",
+        "PATH命令名可解析": false,
+        "只读识别方式": "shutil.which('magick') 与候选目录文件存在性检查；未执行 magick 或 magick -version",
+        "执行magick": false,
+        "执行magick_version": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未执行 magick -version，无法确认 ImageMagick 真实版本、策略文件或运行可用性",
+          "PATH 中未解析到 magick 命令名，需人工安装 ImageMagick 或配置 PATH",
+          "该候选目录未识别到 magick.exe 文件"
+        ]
+      },
+      {
+        "序号": 6,
+        "工具": "ImageMagick",
+        "候选目录": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06渲染工具\\ImageMagick",
+        "目录存在": false,
+        "magick.exe候选路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06渲染工具\\ImageMagick\\magick.exe",
+        "包含magick.exe": false,
+        "shutil.which_magick_path": "",
+        "PATH命令名可解析": false,
+        "只读识别方式": "shutil.which('magick') 与候选目录文件存在性检查；未执行 magick 或 magick -version",
+        "执行magick": false,
+        "执行magick_version": false,
+        "不得进入真实渲染原因": [
+          "本轮任务仅做候选路径矩阵与安装缺口清单，不包含真实渲染放行授权",
+          "未执行 magick -version，无法确认 ImageMagick 真实版本、策略文件或运行可用性",
+          "PATH 中未解析到 magick 命令名，需人工安装 ImageMagick 或配置 PATH",
+          "该候选目录未识别到 magick.exe 文件"
+        ]
+      }
+    ]
+  },
+  "安装缺口清单": {
+    "名称": "视频真实渲染环境安装缺口清单",
+    "生成时间": "2026-05-08 17:52:03",
+    "error_count": 0,
+    "缺口数量": 5,
+    "缺口清单": [
+      {
+        "对象": "MoneyPrinterTurbo",
+        "缺口": "未发现候选安装目录存在",
+        "人工处理": "确认安装目录，并将目录放入候选路径或后续受控配置",
+        "自动动作": "无"
+      },
+      {
+        "对象": "MoneyPrinterTurbo",
+        "缺口": "未发现 start.bat、app/main.py、webui/Main.py 任一入口文件",
+        "人工处理": "确认 MoneyPrinterTurbo 工程是否完整，入口文件位置是否符合预期",
+        "自动动作": "无"
+      },
+      {
+        "对象": "ImageMagick",
+        "缺口": "shutil.which('magick') 未解析到命令名",
+        "人工处理": "安装 ImageMagick 或将安装目录加入 PATH；由人工另行执行版本核对",
+        "自动动作": "无"
+      },
+      {
+        "对象": "ImageMagick",
+        "缺口": "候选目录未识别到 magick.exe",
+        "人工处理": "确认 ImageMagick 安装目录，补充受控候选路径",
+        "自动动作": "无"
+      },
+      {
+        "对象": "真实渲染放行链",
+        "缺口": "本包没有真实渲染授权、素材授权、人审回执、发布放行的全链验收",
+        "人工处理": "如需真实渲染，必须由总管另行下发明确放行任务",
+        "自动动作": "无"
+      }
+    ],
+    "可进入真实渲染": false,
+    "readonly_flags": {
+      "真实渲染": false,
+      "生成真实视频": false,
+      "上传发布": false,
+      "调用MoneyPrinterTurbo": false,
+      "执行magick": false,
+      "执行magick_version": false,
+      "触发n8n": false,
+      "修改企业微信公共配置": false,
+      "修改总管面板": false,
+      "修改一键接续包": false,
+      "重载服务": false
+    },
+    "readonly_flags_ascii": {
+      "real_render": false,
+      "generate_real_video": false,
+      "upload_publish": false,
+      "call_money_printer_turbo": false,
+      "execute_magick": false,
+      "execute_magick_version": false,
+      "trigger_n8n": false,
+      "modify_wecom_public_config": false,
+      "modify_supervisor_panel": false,
+      "modify_one_click_continuation_pack": false,
+      "reload_service": false
+    }
+  },
+  "下一步人工安装配置核对卡": {
+    "名称": "视频真实渲染环境下一步人工安装配置核对卡",
+    "生成时间": "2026-05-08 17:52:03",
+    "用途": "供人工在安全窗口核对安装路径、命令 PATH 与放行材料；本卡不替代真实渲染放行",
+    "核对项": [
+      "人工确认 MoneyPrinterTurbo 实际安装目录，并确认 start.bat、app/main.py、webui/Main.py 中的有效入口",
+      "人工确认 ImageMagick 安装目录是否包含 magick.exe",
+      "人工确认 PATH 中 magick 命令名是否可解析；版本核对只能在另行授权窗口手工执行",
+      "人工补齐素材授权、人审回执、任务单、发布放行链和真实渲染前最终确认记录",
+      "总管未另行下发明确放行任务前，不得触发真实渲染、上传发布、n8n、企业微信公共配置或服务重载"
+    ],
+    "来自缺口数量": 5,
+    "可进入真实渲染": false,
+    "readonly_flags": {
+      "真实渲染": false,
+      "生成真实视频": false,
+      "上传发布": false,
+      "调用MoneyPrinterTurbo": false,
+      "执行magick": false,
+      "执行magick_version": false,
+      "触发n8n": false,
+      "修改企业微信公共配置": false,
+      "修改总管面板": false,
+      "修改一键接续包": false,
+      "重载服务": false
+    },
+    "readonly_flags_ascii": {
+      "real_render": false,
+      "generate_real_video": false,
+      "upload_publish": false,
+      "call_money_printer_turbo": false,
+      "execute_magick": false,
+      "execute_magick_version": false,
+      "trigger_n8n": false,
+      "modify_wecom_public_config": false,
+      "modify_supervisor_panel": false,
+      "modify_one_click_continuation_pack": false,
+      "reload_service": false
+    }
+  },
+  "readonly_flags": {
+    "真实渲染": false,
+    "生成真实视频": false,
+    "上传发布": false,
+    "调用MoneyPrinterTurbo": false,
+    "执行magick": false,
+    "执行magick_version": false,
+    "触发n8n": false,
+    "修改企业微信公共配置": false,
+    "修改总管面板": false,
+    "修改一键接续包": false,
+    "重载服务": false
+  },
+  "readonly_flags_ascii": {
+    "real_render": false,
+    "generate_real_video": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false
+  },
+  "安全边界": [
+    "不真实渲染",
+    "不发布",
+    "不接 n8n",
+    "不改企业微信公共配置",
+    "不改总管面板",
+    "不改一键接续包",
+    "不重载服务",
+    "不调用 MoneyPrinterTurbo",
+    "不执行 magick",
+    "不执行 magick -version"
+  ]
+}

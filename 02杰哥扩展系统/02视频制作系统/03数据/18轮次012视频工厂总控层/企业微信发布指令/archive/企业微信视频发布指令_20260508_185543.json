@@ -1,0 +1,73 @@
+{
+  "生成时间": "2026-05-08 18:55:43",
+  "状态": "完成",
+  "输入": "发布预检",
+  "路由": "杰哥视频助理发布指令",
+  "目标系统": "02杰哥扩展系统/02视频制作系统",
+  "回复": "发布桥梁预检已完成。\n任务ID：VF-20260508-006\n总体状态：blocked\n真实发布启用：False\n桥梁命令：D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\n阻断项：未找到匹配的发布清单任务行\n提醒项：真实发布当前关闭；这是默认安全状态。",
+  "reply_text": "发布桥梁预检已完成。\n任务ID：VF-20260508-006\n总体状态：blocked\n真实发布启用：False\n桥梁命令：D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\n阻断项：未找到匹配的发布清单任务行\n提醒项：真实发布当前关闭；这是默认安全状态。",
+  "real_send": false,
+  "n8n": false,
+  "企业微信模拟回复": {
+    "msgtype": "markdown",
+    "markdown": {
+      "content": "【杰哥视频助理】\n发布桥梁预检已完成。\n任务ID：VF-20260508-006\n总体状态：blocked\n真实发布启用：False\n桥梁命令：D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\n阻断项：未找到匹配的发布清单任务行\n提醒项：真实发布当前关闭；这是默认安全状态。"
+    }
+  },
+  "安全边界": {
+    "真实发送企业微信": false,
+    "触发n8n": false,
+    "绕过发布放行清单": false,
+    "自动发布": false
+  },
+  "publish_bridge_check": {
+    "returncode": 0,
+    "stdout": "{\n  \"生成时间\": \"2026-05-08 18:55:43\",\n  \"总体状态\": \"blocked\",\n  \"任务ID过滤\": \"VF-20260508-006\",\n  \"真实发布启用\": false,\n  \"可进入真实发布\": false,\n  \"桥梁命令\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\social-auto-upload\\\\.venv\\\\Scripts\\\\sau.exe\",\n  \"命令检查\": {\n    \"命令\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\social-auto-upload\\\\.venv\\\\Scripts\\\\sau.exe\",\n    \"路径\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\social-auto-upload\\\\.venv\\\\Scripts\\\\sau.exe\",\n    \"可用\": true,\n    \"stdout\": \"usage: sau [-h] {douyin,kuaishou,xiaohongshu,bilibili} ...\\n\\nCLI for social-auto-upload.\\n\\npositional arguments:\\n  {douyin,kuaishou,xiaohongshu,bilibili}\\n    douyin              Douyin operations\\n    kuaishou            Kuaishou operations\\n    xiaohongshu         Xiaohongshu operations\\n    bilibili            Bilibili operations\\n\\noptions:\\n  -h, --help            show this help message and exit\\n\",\n    \"stderr\": \"\",\n    \"错误\": \"\",\n    \"returncode\": 0\n  },\n  \"浏览器运行时检查\": {\n    \"浏览器目录\": \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\ms-playwright\",\n    \"chromium\": [\n      \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\ms-playwright\\\\chromium-1208\"\n    ],\n    \"chromium_headless_shell\": [\n      \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\ms-playwright\\\\chromium_headless_shell-1208\"\n    ],\n    \"ffmpeg\": [\n      \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\ms-playwright\\\\ffmpeg-1011\"\n    ],\n    \"可用\": true\n  },\n  \"发布清单行\": [],\n  \"阻断项\": [\n    \"未找到匹配的发布清单任务行\"\n  ],\n  \"提醒项\": [\n    \"真实发布当前关闭；这是默认安全状态。\"\n  ],\n  \"安全边界\": {\n    \"真实发布\": false,\n    \"执行上传\": false,\n    \"执行发布\": false,\n    \"调用外部账号\": false,\n    \"触发n8n\": false,\n    \"企业微信真实发送\": false\n  }\n}\n",
+    "stderr": "",
+    "report": {
+      "生成时间": "2026-05-08 18:55:43",
+      "总体状态": "blocked",
+      "任务ID过滤": "VF-20260508-006",
+      "真实发布启用": false,
+      "可进入真实发布": false,
+      "桥梁命令": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+      "命令检查": {
+        "命令": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+        "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+        "可用": true,
+        "stdout": "usage: sau [-h] {douyin,kuaishou,xiaohongshu,bilibili} ...\n\nCLI for social-auto-upload.\n\npositional arguments:\n  {douyin,kuaishou,xiaohongshu,bilibili}\n    douyin              Douyin operations\n    kuaishou            Kuaishou operations\n    xiaohongshu         Xiaohongshu operations\n    bilibili            Bilibili operations\n\noptions:\n  -h, --help            show this help message and exit\n",
+        "stderr": "",
+        "错误": "",
+        "returncode": 0
+      },
+      "浏览器运行时检查": {
+        "浏览器目录": "C:\\Users\\Administrator\\AppData\\Local\\ms-playwright",
+        "chromium": [
+          "C:\\Users\\Administrator\\AppData\\Local\\ms-playwright\\chromium-1208"
+        ],
+        "chromium_headless_shell": [
+          "C:\\Users\\Administrator\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208"
+        ],
+        "ffmpeg": [
+          "C:\\Users\\Administrator\\AppData\\Local\\ms-playwright\\ffmpeg-1011"
+        ],
+        "可用": true
+      },
+      "发布清单行": [],
+      "阻断项": [
+        "未找到匹配的发布清单任务行"
+      ],
+      "提醒项": [
+        "真实发布当前关闭；这是默认安全状态。"
+      ],
+      "安全边界": {
+        "真实发布": false,
+        "执行上传": false,
+        "执行发布": false,
+        "调用外部账号": false,
+        "触发n8n": false,
+        "企业微信真实发送": false
+      }
+    }
+  }
+}

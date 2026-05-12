@@ -1,0 +1,677 @@
+{
+  "sample_only": true,
+  "diff_items": [
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-001",
+      "target_line": "tax",
+      "target_entry": "TAX_DAILY_INTAKE_002",
+      "target_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\TAX_DAILY_INTAKE_002_脱敏问题接入空白卡_20260509.json",
+      "target_status": "blank_waiting_for_desensitized_input",
+      "preview_only": true,
+      "write_target_entry": false,
+      "auto_fill_shadow_entry": false,
+      "formal_capability_claim": false,
+      "release_form": false,
+      "diffs": [
+        {
+          "path": "fields.business_question",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "fields.taxpayer_profile",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写，仅限脱敏描述",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "fields.tax_item_or_scenario",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "fields.target_output",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "fields.known_basis",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "fields.missing_materials",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "precheck.desensitized",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待确认",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "precheck.can_enter_shadow_analysis",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待人工确认",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "precheck.involves_real_tax_filing",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "precheck.requests_external_tax_action",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.formal_tax_opinion",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.tax_filing",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.invoice_action",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.tax_refund_action",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.external_send",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.trigger_n8n",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.send_wecom",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.write_formal_database",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "intake_id",
+          "diff_type": "must_not_change",
+          "current_value": "TAX_DAILY_INTAKE_002",
+          "preview_value": "TAX_DAILY_INTAKE_002",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "business_line",
+          "diff_type": "must_not_change",
+          "current_value": "tax_policy_advisor",
+          "preview_value": "tax_policy_advisor",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "nature",
+          "diff_type": "must_not_change",
+          "current_value": "shadow_trial_intake",
+          "preview_value": "shadow_trial_intake",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "not_formal_tax_opinion",
+          "diff_type": "must_not_change",
+          "current_value": true,
+          "preview_value": true,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        }
+      ]
+    },
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-002",
+      "target_line": "office_work",
+      "target_entry": "OFFICE_SHADOW_002",
+      "target_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\本职工作业务影子底座\\OFFICE_SHADOW_002_流程资料登记_空白影子样例_v1.0.json",
+      "target_status": "blank_shadow_sample",
+      "preview_only": true,
+      "write_target_entry": false,
+      "auto_fill_shadow_entry": false,
+      "formal_capability_claim": false,
+      "release_form": false,
+      "diffs": [
+        {
+          "path": "source_materials",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待用户提供",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "input_summary",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待补",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "output_draft",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待复核",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "basis_or_reference",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待补",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "risk_flags",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待补",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "missing_items",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待补",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "human_review_result",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.connect_oa",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.connect_erp",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.connect_finance_system",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.connect_hr_system",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.submit_approval",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.external_send",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.trigger_n8n",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.send_wecom",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.write_formal_database",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "sample_id",
+          "diff_type": "must_not_change",
+          "current_value": "OFFICE_SHADOW_002",
+          "preview_value": "OFFICE_SHADOW_002",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "business_line",
+          "diff_type": "must_not_change",
+          "current_value": "office_work",
+          "preview_value": "office_work",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "scenario",
+          "diff_type": "must_not_change",
+          "current_value": "流程资料登记",
+          "preview_value": "流程资料登记",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "not_formal_work_material",
+          "diff_type": "must_not_change",
+          "current_value": true,
+          "preview_value": true,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        }
+      ]
+    },
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-003",
+      "target_line": "video_production",
+      "target_entry": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "target_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_P2_REVIEW_CHAIN_NEXT_001_脚本分镜素材授权发布门禁续建卡_20260509.json",
+      "target_status": "blank_waiting_for_review_materials",
+      "preview_only": true,
+      "write_target_entry": false,
+      "auto_fill_shadow_entry": false,
+      "formal_capability_claim": false,
+      "release_form": false,
+      "diffs": [
+        {
+          "path": "review_object.related_project",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "review_object.script_source",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "review_object.storyboard_source",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "review_object.asset_source",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "review_object.platform_rule_source",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "review_object.release_target",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.render_final_video",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.upload_video",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.publish_video",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.call_platform_api",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.trigger_n8n",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.send_wecom",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.write_formal_database",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "review_chain.0.status",
+          "diff_type": "must_remain_pending",
+          "current_value": "待复核",
+          "preview_value": "待复核",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "review_chain.1.status",
+          "diff_type": "must_remain_pending",
+          "current_value": "待复核",
+          "preview_value": "待复核",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "review_chain.2.status",
+          "diff_type": "must_remain_pending",
+          "current_value": "待复核",
+          "preview_value": "待复核",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "review_chain.3.status",
+          "diff_type": "must_remain_pending",
+          "current_value": "待复核",
+          "preview_value": "待复核",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "review_chain.4.status",
+          "diff_type": "must_remain_pending",
+          "current_value": "closed",
+          "preview_value": "closed",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "card_id",
+          "diff_type": "must_not_change",
+          "current_value": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+          "preview_value": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "business_line",
+          "diff_type": "must_not_change",
+          "current_value": "video_production_shadow",
+          "preview_value": "video_production_shadow",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "nature",
+          "diff_type": "must_not_change",
+          "current_value": "shadow_review_chain_continuation",
+          "preview_value": "shadow_review_chain_continuation",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "not_release_ready",
+          "diff_type": "must_not_change",
+          "current_value": true,
+          "preview_value": true,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        }
+      ]
+    },
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-004",
+      "target_line": "shared_policy_evidence",
+      "target_entry": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "target_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\P2_SHARED_POLICY_READONLY_NEXT_001_共享政策证据只读调用下一步卡_20260509.json",
+      "target_status": "blank_waiting_for_readonly_validation",
+      "preview_only": true,
+      "write_target_entry": false,
+      "auto_fill_shadow_entry": false,
+      "formal_capability_claim": false,
+      "release_form": false,
+      "diffs": [
+        {
+          "path": "fields.target_business_line",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "fields.policy_source",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "fields.query_purpose",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "fields.expected_use",
+          "diff_type": "candidate_placeholder",
+          "current_value": "待填写",
+          "preview_value": "待人工基于真实脱敏或授权材料填写",
+          "requires_real_desensitized_or_authorized_material": true,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.trigger_n8n",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.send_wecom",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.write_formal_database",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.replace_business_line_judgment",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "forbidden_actions.claim_formal_capability",
+          "diff_type": "must_remain_false",
+          "current_value": false,
+          "preview_value": false,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "card_id",
+          "diff_type": "must_not_change",
+          "current_value": "P2_SHARED_POLICY_READONLY_NEXT_001",
+          "preview_value": "P2_SHARED_POLICY_READONLY_NEXT_001",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "layer",
+          "diff_type": "must_not_change",
+          "current_value": "extension_incubation_shared_capability",
+          "preview_value": "extension_incubation_shared_capability",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "nature",
+          "diff_type": "must_not_change",
+          "current_value": "readonly_policy_evidence_call",
+          "preview_value": "readonly_policy_evidence_call",
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        },
+        {
+          "path": "not_formal_business_conclusion",
+          "diff_type": "must_not_change",
+          "current_value": true,
+          "preview_value": true,
+          "requires_real_desensitized_or_authorized_material": false,
+          "write_target_entry": false
+        }
+      ]
+    }
+  ]
+}

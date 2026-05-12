@@ -1,0 +1,57 @@
+{
+  "rule": "股票样本提纯复用矩阵",
+  "created_at": "2026-05-06",
+  "core_judgment": "stock_analysis_system_as_base_and_sample_is_valid_but_must_be_distilled_before_reuse",
+  "reuse_principle": [
+    "absorb_successful_genes",
+    "correct_debt_lessons",
+    "do_not_treat_stock_specific_business_as_general_template",
+    "state_what_to_reuse_what_not_to_reuse_and_what_to_correct_before_construction"
+  ],
+  "successful_genes": [
+    "layered_delivery",
+    "read_only_analysis_first",
+    "quality_panel",
+    "acceptance_closeout",
+    "human_gate",
+    "sample_to_gray_to_formal"
+  ],
+  "debt_lessons": [
+    "directory_numbering_must_be_locked_before_construction",
+    "logs_need_level_event_id_retention",
+    "workflows_need_ownership_risk_rollback_disabled_state_ledger",
+    "guards_probes_logs_acceptance_rollback_must_arrive_with_launch"
+  ],
+  "forbidden_to_copy": [
+    "old_paths",
+    "dead_tasks",
+    "dead_config",
+    "stock_market_and_trading_semantics_into_non_stock_systems",
+    "function_only_without_governance"
+  ],
+  "system_mapping": {
+    "tax": {
+      "reuse": ["evidence_chain", "layered_material_pool", "report_generation", "human_confirmation"],
+      "correct": ["no_trading_semantics", "no_auto_submission", "knowledge_must_have_source_version_region_validity"]
+    },
+    "manager": {
+      "reuse": ["status_panel", "probe", "acceptance", "event_chain"],
+      "correct": ["manager_coordinates_but_does_not_hold_business_main_logic"]
+    },
+    "evolution": {
+      "reuse": ["retrospective", "experience_cards", "anti_regression_checks"],
+      "correct": ["rules_must_block_construction_not_only_document"]
+    },
+    "intelligence": {
+      "reuse": ["model_routing", "prompt_templates", "read_only_qa", "quality_evaluation"],
+      "correct": ["prompts_versioned", "models_dependencies_manifested", "no_external_action_without_human_gate"]
+    }
+  },
+  "required_before_new_system_reuses_stock_sample": [
+    "successful_gene_reuse_list",
+    "debt_avoidance_list",
+    "stock_specific_do_not_copy_list",
+    "dryrun_route",
+    "ledger_log_acceptance_rollback_entry"
+  ]
+}

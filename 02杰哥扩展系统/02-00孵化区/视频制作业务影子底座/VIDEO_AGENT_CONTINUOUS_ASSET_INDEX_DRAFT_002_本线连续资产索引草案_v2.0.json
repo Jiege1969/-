@@ -1,0 +1,25 @@
+{
+  "asset_id": "VIDEO_AGENT_CONTINUOUS_ASSET_INDEX_DRAFT_002",
+  "version": "v2.0",
+  "asset_type": "shadow_index_draft",
+  "construction_level": "W1/R0",
+  "scope": "video_production_shadow_base",
+  "status": "draft_not_written_to_formal_index",
+  "included_groups": [
+    {"group": "VAI030-032", "topic": "continuous_state_redline_asset_map", "handoff": true},
+    {"group": "VAI033-035", "topic": "publish_gap_render_gap_wecom_reply_draft", "handoff": true},
+    {"group": "VAI036-038", "topic": "release_consistency_review_priority_close_condition", "handoff": true},
+    {"group": "VAI039-041", "topic": "state_enum_command_state_rehearsal_stage_close_report", "handoff": true},
+    {"group": "VAI042-044", "topic": "index_update_total_asset_list_r0_self_check", "handoff": true},
+    {"group": "VAI045-047", "topic": "index_merge_precheck_continuous_queue_no_stop_rule", "handoff": true},
+    {"group": "VAI048-050", "topic": "task_trace_fields_release_conflict_wecom_placeholder", "handoff": true},
+    {"group": "VAI051-053", "topic": "maturity_snapshot_missing_input_rule_index_draft_v2", "handoff": "current_round"}
+  ],
+  "not_replaced_by_this_index": [
+    "incubation_zone_shadow_base_total_index",
+    "current_construction_panel",
+    "latest_startup_package",
+    "formal_video_production_system_index"
+  ],
+  "next_handling": "Run VIDEO_AGENT_INDEX_MERGE_PRECHECK_001 before any formal index integration and return to manager decision."
+}

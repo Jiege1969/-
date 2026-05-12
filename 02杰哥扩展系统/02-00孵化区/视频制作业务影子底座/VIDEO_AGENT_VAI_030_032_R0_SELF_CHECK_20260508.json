@@ -1,0 +1,47 @@
+{
+  "id": "VIDEO_AGENT_VAI_030_032_R0_SELF_CHECK_20260508",
+  "asset_identity": "video_production_shadow_base_self_check",
+  "stage": "W1_R0",
+  "date": "2026-05-08",
+  "result": "passed",
+  "checked_assets": [
+    {
+      "id": "VAI-030",
+      "name": "manual_trial_record_table",
+      "result": "passed",
+      "note": "manual shadow trial record only, no real entry"
+    },
+    {
+      "id": "VAI-031",
+      "name": "trial_output_quality_checklist",
+      "result": "passed",
+      "note": "text draft quality check only, no media generation"
+    },
+    {
+      "id": "VAI-032",
+      "name": "asset_archive_naming_checklist",
+      "result": "passed",
+      "note": "naming check only, no move or delete"
+    }
+  ],
+  "boundary_check": {
+    "modify_formal_video_scripts": false,
+    "modify_public_wechat_config": false,
+    "call_real_model_api": false,
+    "read_real_assets": false,
+    "generate_image_audio_subtitle_cover_video": false,
+    "upload_publish_external_send": false,
+    "trigger_n8n": false,
+    "real_wechat_send": false,
+    "read_or_save_wechat_credentials": false,
+    "start_or_restart_service": false,
+    "modify_19310_or_19302": false,
+    "write_formal_rule_database": false,
+    "move_or_delete_old_assets": false
+  },
+  "next_shadow_queue": [
+    "vai_001_032_stage_directory_navigation_card",
+    "manual_trial_minimum_loop_acceptance_table",
+    "video_agent_redline_block_register"
+  ]
+}

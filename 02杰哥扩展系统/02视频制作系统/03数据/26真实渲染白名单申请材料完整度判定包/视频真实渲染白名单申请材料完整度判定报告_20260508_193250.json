@@ -1,0 +1,136 @@
+{
+  "名称": "视频真实渲染白名单申请材料完整度判定报告",
+  "package_id": "VIDEO-REAL-RENDER-WHITELIST-APPLICATION-COMPLETENESS-20260508-001",
+  "判定模式": "readonly_completeness_only",
+  "完整度结论": "待人工补齐或确认；白名单未生效，不能进入真实渲染。",
+  "检查结果": [
+    {
+      "item_id": "environment_identification",
+      "name": "环境识别",
+      "status": "pending",
+      "pass": false,
+      "pending": true,
+      "block": false,
+      "human_confirm_required": true,
+      "判定说明": "已有部分材料，但仍需人工确认或补齐。"
+    },
+    {
+      "item_id": "material_authorization",
+      "name": "素材授权",
+      "status": "pending",
+      "pass": false,
+      "pending": true,
+      "block": false,
+      "human_confirm_required": true,
+      "判定说明": "已有部分材料，但仍需人工确认或补齐。"
+    },
+    {
+      "item_id": "output_directory_isolation",
+      "name": "输出目录隔离",
+      "status": "pending",
+      "pass": false,
+      "pending": true,
+      "block": false,
+      "human_confirm_required": true,
+      "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+    },
+    {
+      "item_id": "failure_rollback",
+      "name": "失败回滚",
+      "status": "pending",
+      "pass": false,
+      "pending": true,
+      "block": false,
+      "human_confirm_required": true,
+      "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+    },
+    {
+      "item_id": "evidence_retention",
+      "name": "证据留存",
+      "status": "pending",
+      "pass": false,
+      "pending": true,
+      "block": false,
+      "human_confirm_required": true,
+      "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+    },
+    {
+      "item_id": "manual_signoff",
+      "name": "人工签收",
+      "status": "pending",
+      "pass": false,
+      "pending": true,
+      "block": false,
+      "human_confirm_required": true,
+      "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+    },
+    {
+      "item_id": "trial_scope",
+      "name": "试运行范围",
+      "status": "pending",
+      "pass": false,
+      "pending": true,
+      "block": false,
+      "human_confirm_required": true,
+      "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+    },
+    {
+      "item_id": "publish_isolation",
+      "name": "发布隔离",
+      "status": "pending",
+      "pass": false,
+      "pending": true,
+      "block": false,
+      "human_confirm_required": true,
+      "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+    }
+  ],
+  "统计": {
+    "pass_count": 0,
+    "pending_count": 8,
+    "block_count": 0
+  },
+  "decision": {
+    "whitelist_effective": false,
+    "can_enter_real_render": false,
+    "reason": "本包只做申请材料完整度判定，不代表批准，不自动补齐材料，不启用白名单。"
+  },
+  "生成时间": "2026-05-08 19:32:50",
+  "error_count": 0,
+  "whitelist_effective": false,
+  "can_enter_real_render": false,
+  "real_render": false,
+  "publish": false,
+  "requires_supervisor_confirmation": true,
+  "白名单已生效": false,
+  "可进入真实渲染": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "触发n8n": false,
+  "修改企业微信公共配置": false,
+  "修改总管面板": false,
+  "修改一键接续包": false,
+  "重载服务": false,
+  "需要总管人工确认": true,
+  "readonly_flags_ascii": {
+    "whitelist_effective": false,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "publish": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false,
+    "requires_supervisor_confirmation": true
+  }
+}

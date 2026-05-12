@@ -1,0 +1,40 @@
+{
+  "rule": "施工者自约束规则",
+  "created_at": "2026-05-06",
+  "applies_to": [
+    "Codex",
+    "总管",
+    "后台并行窗口",
+    "后续智能体"
+  ],
+  "principle": "cleanup logic must not create new debt",
+  "classification_required": [
+    "closed",
+    "requires_window",
+    "requires_more_evidence",
+    "preserve_as_current_dependency"
+  ],
+  "must_not_push_to_user": [
+    "whether_referenced_path_exists",
+    "whether_scheduled_task_has_runtime_dependency",
+    "whether_firewall_rule_program_exists",
+    "whether_environment_variable_points_to_dead_path",
+    "whether_workflow_is_active",
+    "whether_backup_covers_key_assets"
+  ],
+  "self_constraints": [
+    "fix_self_introduced_side_effects_in_same_round",
+    "reports_and_ledgers_must_reduce_pending_items",
+    "defer_only_for_shutdown_window_consistency_gate_or_insufficient_evidence",
+    "do_not_use_rigor_to_hide_over_caution",
+    "do_not_use_safety_to_hide_inaction"
+  ],
+  "closeout_questions": [
+    "what_was_deleted",
+    "what_was_fixed",
+    "what_backup_was_added",
+    "what_rule_was_added",
+    "what_true_gap_remains",
+    "why_remaining_gap_cannot_be_closed_now"
+  ]
+}

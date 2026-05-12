@@ -1,0 +1,52 @@
+{
+  "asset_id": "DESKTOP_CONTINUE_COMMAND_INTAKE_20260508",
+  "asset_name": "桌面继续工作命令吸收记录",
+  "created_at": "2026-05-08 12:08:40 +08:00",
+  "asset_identity": "总管侧W1/R0外部续工命令吸收记录",
+  "source_file": "C:\\Users\\Administrator\\Desktop\\继续工作命令.txt",
+  "source_command": "请继续搭建，不用停下来问我。开启计划模式继续搭建",
+  "intake_judgement": {
+    "continue_construction": true,
+    "avoid_repeated_confirmation": true,
+    "plan_like_continuous_progress": true,
+    "authorizes_w2_w3_or_redlines": false,
+    "authorizes_real_integration_external_send_n8n_trade_tax_video_publish": false
+  },
+  "execution_policy_for_this_thread": [
+    "每轮先读当前施工面板和一键接续施工包",
+    "自动选择下一项W1/R0影子、草案、核查、回执、索引或样例类任务",
+    "每轮至少完成一个可验收小任务",
+    "命中红线时只登记阻断，不实施",
+    "不把继续工作命令解释为高风险授权"
+  ],
+  "paused_actions": [
+    "W2/W3",
+    "真实系统接入",
+    "企业微信真实发送",
+    "n8n触发或导入",
+    "服务重启",
+    "写正式库",
+    "删除移动覆盖风险",
+    "股票交易",
+    "税务办理或正式税务意见",
+    "视频真实渲染上传发布",
+    "规则冲突或需求硬分叉"
+  ],
+  "selected_next_task": {
+    "task": "建立成语故事30秒/60秒版本差异检查卡",
+    "risk_level": "W1/R0",
+    "reason": "它是文本质量资产，不触发真实制作链路"
+  },
+  "boundary_flags": {
+    "modify_rules_base": false,
+    "modify_service": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_db": false,
+    "delete_move_overwrite": false
+  },
+  "self_check": {
+    "risk_level": "W1/R0",
+    "boundary_kept": true
+  }
+}

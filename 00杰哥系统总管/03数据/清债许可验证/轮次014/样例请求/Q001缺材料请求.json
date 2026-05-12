@@ -1,0 +1,18 @@
+{
+  "task_id": "Q-001",
+  "batch_id": "Q-001-sample-missing",
+  "cleanup_target": "总管与股票系统双写源头收口样例",
+  "documents": {
+    "source_audit_report": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\清债许可验证\\轮次014\\前置材料\\源头审计_Q001_样例.md",
+    "asset_identity_classification": "",
+    "write_risk_assessment": ""
+  },
+  "scan_boundary": {
+    "scan_scope": [],
+    "hit_count": 0
+  },
+  "requested_actions": [
+    "W3_MODIFY_SOURCE_SCRIPT_CANDIDATE"
+  ],
+  "self_certification": false
+}

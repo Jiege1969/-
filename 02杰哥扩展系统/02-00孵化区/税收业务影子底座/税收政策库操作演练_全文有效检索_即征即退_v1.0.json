@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "time": "2026-05-07",
+  "status": "R0_readonly_rehearsal_completed",
+  "purpose": "固化国家税务总局政策法规库先筛选全文有效再登记影子知识库的方法",
+  "search_portal": "https://fgk.chinatax.gov.cn/zcfgk/c100028/search.html",
+  "api_endpoint": "https://www.chinatax.gov.cn/search5/search/s",
+  "search_word": "即征即退",
+  "validity_filter": "全文有效",
+  "total": 8,
+  "returned_count": 8,
+  "r0_script": "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\R0只读工具\\R0_国家税务总局政策库_全文有效检索.ps1",
+  "representative_candidates": [
+    {
+      "title": "国家税务总局关于调整增值税即征即退优惠政策管理措施有关问题的公告",
+      "document_number": "国家税务总局公告2011年第60号",
+      "aging": "全文有效",
+      "url": "http://fgk.chinatax.gov.cn/zcfgk/c100012/c5194260/content.html"
+    },
+    {
+      "title": "国家税务总局关于纳税人既享受增值税即征即退、先征后退政策又享受免抵退税政策有关问题的公告",
+      "document_number": "国家税务总局公告2011年第69号",
+      "aging": "全文有效",
+      "url": "http://fgk.chinatax.gov.cn/zcfgk/c100012/c5194269/content.html"
+    },
+    {
+      "title": "国家税务总局关于进一步优化增值税优惠政策办理程序及服务有关事项的公告",
+      "document_number": "国家税务总局公告2021年第4号",
+      "aging": "全文有效",
+      "url": "http://fgk.chinatax.gov.cn/zcfgk/c100012/c5194964/content.html"
+    }
+  ],
+  "green_light_rule": "官方公开政策库的只读检索、有效状态筛选、元数据登记、影子知识库建设属于绿灯动作",
+  "not_formal_tax_system": true,
+  "write_formal_tax_db": false,
+  "download_attachment": false,
+  "generate_final_tax_conclusion": false
+}
+

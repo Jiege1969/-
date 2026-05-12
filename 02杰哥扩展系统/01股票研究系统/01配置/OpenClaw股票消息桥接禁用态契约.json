@@ -1,0 +1,58 @@
+{
+  "名称": "OpenClaw股票消息桥接禁用态契约",
+  "作用": "定义企业微信股票消息经OpenClaw转发到n8n、再由股票助手生成回复的禁用态桥接边界。",
+  "触发方式": "由生成OpenClaw股票消息桥接禁用态契约.py读取。",
+  "依赖": "企业微信股票消息统一路由规则.json；股票企业微信n8n路由契约.json；股票企业微信n8n适配器禁用态规则.json。",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "创建修改记录": "2026-04-28 创建第一版OpenClaw股票消息桥接禁用态契约。",
+  "定位": {
+    "OpenClaw": "南北向消息代理，只负责接收企业微信消息、转发n8n、接收n8n回复、返回企业微信。",
+    "n8n": "唯一逻辑编排中心，负责业务路由、调用股票助手、调用统一消息出口。",
+    "股票助手": "只提供股票识别、研究报告、短回复和禁用态响应包。",
+    "统一消息出口": "后续唯一企业微信发送出口，当前只生成禁用态发送包。"
+  },
+  "禁止事项": [
+    "OpenClaw内不得写if...else业务判断。",
+    "OpenClaw不得直接调用股票分析脚本。",
+    "OpenClaw不得直接调用大模型。",
+    "OpenClaw不得直接写股票正式库。",
+    "OpenClaw不得直接写旧系统。",
+    "当前契约不得触发真实企业微信发送。",
+    "当前契约不得启用n8n Webhook。"
+  ],
+  "入站消息字段": {
+    "source": "wecom",
+    "message_id": "企业微信原始消息ID或禁用态模拟ID",
+    "sender": "用户或群成员标识",
+    "message_type": "text|voice|voice_confirm",
+    "text": "文本内容或语音转写文本",
+    "voice_text": "语音确认场景的原语音文本",
+    "timestamp": "消息时间"
+  },
+  "OpenClaw转发到n8n字段": {
+    "gateway": "openclaw",
+    "business": "stock",
+    "mode": "disabled_contract",
+    "payload": "入站消息字段原样承载",
+    "safety": {
+      "real_send": false,
+      "trade": false,
+      "write_official_db": false
+    }
+  },
+  "n8n返回OpenClaw字段": {
+    "reply_text": "待发送回复文本",
+    "need_clarification": "是否需要追问",
+    "confidence": "理解置信度",
+    "real_send": false,
+    "trade": false,
+    "trace_id": "链路追踪ID"
+  },
+  "禁用态验收标准": [
+    "契约必须明确OpenClaw只做代理，不承载业务判断。",
+    "契约必须明确n8n是唯一逻辑编排中心。",
+    "契约必须明确real_send=false和trade=false。",
+    "契约必须明确当前不启用Webhook、不调用真实OpenClaw、不发送企业微信。",
+    "契约必须有本地Markdown报告和JSON报告。"
+  ]
+}

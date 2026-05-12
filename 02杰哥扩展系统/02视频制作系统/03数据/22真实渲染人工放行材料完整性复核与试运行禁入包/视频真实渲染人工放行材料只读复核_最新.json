@@ -1,0 +1,233 @@
+{
+  "名称": "视频真实渲染人工放行材料只读复核",
+  "生成时间": "2026-05-08 18:17:31",
+  "来源": {
+    "第21人工放行申请草案": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\21真实渲染启用前总闸口与人工放行申请包\\视频真实渲染人工放行申请草案_最新.json",
+    "第22总包": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\22真实渲染人工放行材料完整性复核与试运行禁入包\\视频真实渲染人工放行材料完整性复核与试运行禁入包_最新.json",
+    "材料完整性复核": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\22真实渲染人工放行材料完整性复核与试运行禁入包\\视频真实渲染人工放行材料完整性复核_最新.json",
+    "试运行禁入清单": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\22真实渲染人工放行材料完整性复核与试运行禁入包\\视频真实渲染试运行禁入清单_最新.json"
+  },
+  "error_count": 0,
+  "试运行禁入": true,
+  "trial_run_forbidden": true,
+  "可进入真实渲染": false,
+  "can_enter_real_render": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "readonly_flags": {
+    "试运行禁入": true,
+    "可进入真实渲染": false,
+    "真实渲染": false,
+    "生成真实视频": false,
+    "上传发布": false,
+    "调用MoneyPrinterTurbo": false,
+    "执行magick": false,
+    "执行magick_version": false,
+    "触发n8n": false,
+    "修改企业微信公共配置": false,
+    "修改总管面板": false,
+    "修改一键接续包": false,
+    "重载服务": false
+  },
+  "readonly_flags_ascii": {
+    "trial_run_forbidden": true,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false
+  },
+  "检查结果": [
+    {
+      "检查项": "第21包人工放行申请草案存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\21真实渲染启用前总闸口与人工放行申请包\\视频真实渲染人工放行申请草案_最新.json"
+    },
+    {
+      "检查项": "第22包总包存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\22真实渲染人工放行材料完整性复核与试运行禁入包\\视频真实渲染人工放行材料完整性复核与试运行禁入包_最新.json"
+    },
+    {
+      "检查项": "材料完整性复核存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\22真实渲染人工放行材料完整性复核与试运行禁入包\\视频真实渲染人工放行材料完整性复核_最新.json"
+    },
+    {
+      "检查项": "试运行禁入清单存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\22真实渲染人工放行材料完整性复核与试运行禁入包\\视频真实渲染试运行禁入清单_最新.json"
+    },
+    {
+      "检查项": "package: 试运行禁入=true",
+      "通过": true,
+      "详情": true
+    },
+    {
+      "检查项": "package: 可进入真实渲染/真实动作均为 false",
+      "通过": true,
+      "详情": {
+        "可进入真实渲染": false,
+        "真实渲染": false,
+        "生成真实视频": false,
+        "上传发布": false,
+        "调用MoneyPrinterTurbo": false,
+        "执行magick": false,
+        "执行magick_version": false
+      }
+    },
+    {
+      "检查项": "package: 英文红线动作均为 false",
+      "通过": true,
+      "详情": {
+        "trial_run_forbidden": true,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false
+      }
+    },
+    {
+      "检查项": "package: error_count=0",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查项": "material_review: 试运行禁入=true",
+      "通过": true,
+      "详情": true
+    },
+    {
+      "检查项": "material_review: 可进入真实渲染/真实动作均为 false",
+      "通过": true,
+      "详情": {
+        "可进入真实渲染": false,
+        "真实渲染": false,
+        "生成真实视频": false,
+        "上传发布": false,
+        "调用MoneyPrinterTurbo": false,
+        "执行magick": false,
+        "执行magick_version": false
+      }
+    },
+    {
+      "检查项": "material_review: 英文红线动作均为 false",
+      "通过": true,
+      "详情": {
+        "trial_run_forbidden": true,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false
+      }
+    },
+    {
+      "检查项": "material_review: error_count=0",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查项": "trial_ban: 试运行禁入=true",
+      "通过": true,
+      "详情": true
+    },
+    {
+      "检查项": "trial_ban: 可进入真实渲染/真实动作均为 false",
+      "通过": true,
+      "详情": {
+        "可进入真实渲染": false,
+        "真实渲染": false,
+        "生成真实视频": false,
+        "上传发布": false,
+        "调用MoneyPrinterTurbo": false,
+        "执行magick": false,
+        "执行magick_version": false
+      }
+    },
+    {
+      "检查项": "trial_ban: 英文红线动作均为 false",
+      "通过": true,
+      "详情": {
+        "trial_run_forbidden": true,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false
+      }
+    },
+    {
+      "检查项": "trial_ban: error_count=0",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查项": "材料完整性复核项齐全",
+      "通过": true,
+      "详情": [
+        "MoneyPrinterTurbo入口",
+        "ImageMagick可用性",
+        "测试素材",
+        "输出目录",
+        "生成放行清单",
+        "发布阻断保持",
+        "回滚方案",
+        "人工确认签收"
+      ]
+    },
+    {
+      "检查项": "第21申请草案保持 blocked",
+      "通过": true,
+      "详情": "blocked"
+    },
+    {
+      "检查项": "第21申请草案未放行真实渲染",
+      "通过": true,
+      "详情": {
+        "可进入真实渲染": false,
+        "真实渲染": false,
+        "生成真实视频": false,
+        "上传发布": false,
+        "调用MoneyPrinterTurbo": false,
+        "执行magick": false,
+        "执行magick_version": false
+      }
+    }
+  ],
+  "错误项": [],
+  "复核结论": "只读复核通过；材料仍待人工补齐，试运行禁入保持 true。"
+}

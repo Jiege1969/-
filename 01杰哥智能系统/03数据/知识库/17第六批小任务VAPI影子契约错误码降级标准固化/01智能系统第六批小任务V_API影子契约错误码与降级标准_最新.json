@@ -1,0 +1,199 @@
+{
+  "task": "01智能系统第六批小任务V_API影子契约错误码与降级标准固化",
+  "version": "shadow-v-2026-05-05",
+  "generated_at": "2026-05-05 13:11:29",
+  "execution_mode": "local_shadow_only",
+  "api_shadow_contract": {
+    "endpoint_shadow": "POST /shadow/v1/intelligence/contract-safe-answer",
+    "request_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "caller",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "question",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "evidence_ids",
+        "type": "array[string]",
+        "required": true
+      },
+      {
+        "name": "dry_run",
+        "type": "boolean",
+        "required": true,
+        "must_be": true
+      },
+      {
+        "name": "safety_boundary",
+        "type": "object",
+        "required": true
+      }
+    ],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "status",
+        "type": "enum",
+        "required": true,
+        "allowed": [
+          "ok",
+          "degraded",
+          "blocked"
+        ]
+      },
+      {
+        "name": "error_code",
+        "type": "enum",
+        "required": true,
+        "allowed": [
+          "OK",
+          "INSUFFICIENT_EVIDENCE",
+          "UNAUTHORIZED_EXTERNAL_API",
+          "SYSTEM_EXCEPTION_DEGRADED",
+          "CONTRACT_FIELD_MISSING",
+          "SAFETY_FIELD_VIOLATION"
+        ]
+      },
+      {
+        "name": "answer",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "evidence",
+        "type": "array[object]",
+        "required": true
+      },
+      {
+        "name": "degrade_message",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "safe_to_show_user",
+        "type": "boolean",
+        "required": true
+      },
+      {
+        "name": "requires_human_review",
+        "type": "boolean",
+        "required": true
+      },
+      {
+        "name": "external_effect",
+        "type": "string",
+        "required": true,
+        "allowed": [
+          "none",
+          "blocked"
+        ]
+      },
+      {
+        "name": "formal_store_write",
+        "type": "boolean",
+        "required": true,
+        "must_be": false
+      },
+      {
+        "name": "safety_boundary",
+        "type": "object",
+        "required": true
+      }
+    ],
+    "error_codes": {
+      "OK": {
+        "status": "ok",
+        "severity": "info",
+        "desc": "请求命中本地影子契约与本地允许证据，安全字段闭合，可以返回本地影子结果。",
+        "degrade_message": "",
+        "external_effect": "none"
+      },
+      "INSUFFICIENT_EVIDENCE": {
+        "status": "degraded",
+        "severity": "warning",
+        "desc": "证据缺失、证据不足或证据不能支撑结论，不得生成事实性回答。",
+        "degrade_message": "本地证据不足以支撑结论，本轮只返回降级说明，不生成事实性回答。",
+        "external_effect": "none"
+      },
+      "UNAUTHORIZED_EXTERNAL_API": {
+        "status": "blocked",
+        "severity": "critical",
+        "desc": "请求越权调用真实外部 API、n8n、企业微信真实消息、券商接口或真实动作，必须硬阻断。",
+        "degrade_message": "真实外部 API 或真实动作已被安全边界阻断，本轮仅保留本地 dry_run 影子记录。",
+        "external_effect": "blocked"
+      },
+      "SYSTEM_EXCEPTION_DEGRADED": {
+        "status": "degraded",
+        "severity": "error",
+        "desc": "本地影子处理出现可恢复系统异常，禁止外扩重试真实服务，按固定降级语返回。",
+        "degrade_message": "本地影子处理出现系统异常，本轮已降级为人工复核提示，不触发任何外部动作。",
+        "external_effect": "none"
+      },
+      "CONTRACT_FIELD_MISSING": {
+        "status": "blocked",
+        "severity": "error",
+        "desc": "请求或响应缺少 API 影子契约必需字段，必须阻断进入后续处理。",
+        "degrade_message": "影子契约字段不完整，本轮不继续处理，请补齐必需字段后重新本地验证。",
+        "external_effect": "none"
+      },
+      "SAFETY_FIELD_VIOLATION": {
+        "status": "blocked",
+        "severity": "critical",
+        "desc": "安全字段声明与执行边界不一致，或存在真实动作开关打开的迹象。",
+        "degrade_message": "安全字段未闭合，本轮阻断处理并要求人工复核。",
+        "external_effect": "blocked"
+      }
+    },
+    "degradation_standards": {
+      "evidence_required": "所有事实性回答必须绑定本地影子证据；无证据、证据不足、证据不匹配均返回 INSUFFICIENT_EVIDENCE。",
+      "external_api_forbidden": "任何真实外部 API、n8n、企业微信真实消息、券商接口、下单或自动交易请求均返回 UNAUTHORIZED_EXTERNAL_API。",
+      "system_exception": "本地异常不得升级为真实服务调用；统一返回 SYSTEM_EXCEPTION_DEGRADED 并保留人工复核提示。",
+      "contract_fields": "请求字段、响应字段、安全字段缺失时返回 CONTRACT_FIELD_MISSING 或 SAFETY_FIELD_VIOLATION。",
+      "formal_store": "正式库、正式知识库、正式向量库、正式数据库写入全部保持 False。"
+    }
+  },
+  "safe_fields": {
+    "safe_to_show_user": "仅表示本地影子降级语或本地影子答案可展示，不代表可执行真实动作。",
+    "requires_human_review": "证据不足、系统异常、越权外部动作、安全字段异常必须进入人工复核。",
+    "external_effect": "只能为 none 或 blocked，不得出现 sent、called、written、traded 等真实效果。",
+    "formal_store_write": false
+  },
+  "formal_store_policy": {
+    "write_production_db": false,
+    "write_formal_knowledge_db": false,
+    "write_formal_vector_db": false,
+    "write_formal_database": false,
+    "allowed_write_targets": [
+      "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化",
+      "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\API契约\\01智能系统第六批小任务V_API影子契约错误码与降级标准固化_最新.md"
+    ]
+  },
+  "safety_boundary": {
+    "mode": "local_shadow_only",
+    "allowed_input_source": "local_shadow_contract_samples",
+    "call_external_api": false,
+    "trigger_n8n": false,
+    "send_wecom_real_message": false,
+    "write_production_db": false,
+    "write_formal_knowledge_db": false,
+    "write_formal_vector_db": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "place_order": false,
+    "touch_primary_work_system": false,
+    "dry_run_required": true
+  }
+}

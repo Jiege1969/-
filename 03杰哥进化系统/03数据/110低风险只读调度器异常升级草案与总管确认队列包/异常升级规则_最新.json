@@ -1,0 +1,145 @@
+{
+  "name": "低风险只读调度器异常升级规则草案",
+  "generated_at": "2026-05-08 20:28:39",
+  "source_package": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\106低风险只读调度红线失败注入与自动暂停演练包",
+  "readonly_draft_only": true,
+  "rule_count": 6,
+  "required_categories": [
+    "红线命中",
+    "服务重载需求",
+    "正式规则影响",
+    "外部接口需求",
+    "证据缺失",
+    "连续失败"
+  ],
+  "safety_confirmation": {
+    "executed": false,
+    "auto_resume": false,
+    "commands_executed": false,
+    "external_call": false,
+    "reload_service": false,
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "connect_broker": false,
+    "trade": false,
+    "login_tax_bureau": false,
+    "connect_finance_tax_software": false,
+    "promote_to_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false
+  },
+  "rules": [
+    {
+      "id": "ESC-RULE-001",
+      "category": "红线命中",
+      "trigger": "第106包任一失败注入样例命中红线词或红线动作意图。",
+      "source_evidence": [
+        "19310重载",
+        "n8n webhook",
+        "企业微信真实发送",
+        "券商交易",
+        "正式规则写入",
+        "视频真实发布"
+      ],
+      "draft_action": "登记异常升级草案并进入总管确认队列。",
+      "pause_required": true,
+      "continue_allowed": false,
+      "requires_supervisor_confirmation": true,
+      "executed": false,
+      "auto_resume": false,
+      "external_call": false,
+      "reload_service": false,
+      "only_draft": true
+    },
+    {
+      "id": "ESC-RULE-002",
+      "category": "服务重载需求",
+      "trigger": "出现重载、reload、19310重载、刷新服务状态等请求。",
+      "source_evidence": [
+        "19310重载"
+      ],
+      "draft_action": "仅标记为服务重载需求异常，不重载任何服务。",
+      "pause_required": true,
+      "continue_allowed": false,
+      "requires_supervisor_confirmation": true,
+      "executed": false,
+      "auto_resume": false,
+      "external_call": false,
+      "reload_service": false,
+      "only_draft": true
+    },
+    {
+      "id": "ESC-RULE-003",
+      "category": "正式规则影响",
+      "trigger": "出现自动写入正式规则、自动生效、自动固化等影响正式规则的请求。",
+      "source_evidence": [
+        "正式规则写入"
+      ],
+      "draft_action": "改写为正式规则影响确认事项，等待人工签收。",
+      "pause_required": true,
+      "continue_allowed": false,
+      "requires_supervisor_confirmation": true,
+      "executed": false,
+      "auto_resume": false,
+      "external_call": false,
+      "reload_service": false,
+      "only_draft": true
+    },
+    {
+      "id": "ESC-RULE-004",
+      "category": "外部接口需求",
+      "trigger": "出现企业微信真实发送、n8n webhook、券商连接、税局登录、财税软件连接等外部接口需求。",
+      "source_evidence": [
+        "企业微信真实发送",
+        "n8n webhook",
+        "券商交易"
+      ],
+      "draft_action": "登记外部接口需求异常，禁止外呼与连接。",
+      "pause_required": true,
+      "continue_allowed": false,
+      "requires_supervisor_confirmation": true,
+      "executed": false,
+      "auto_resume": false,
+      "external_call": false,
+      "reload_service": false,
+      "only_draft": true
+    },
+    {
+      "id": "ESC-RULE-005",
+      "category": "证据缺失",
+      "trigger": "调度器无法找到来源证据、验收报告、暂停记录或确认队列证据。",
+      "source_evidence": [
+        "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\106低风险只读调度红线失败注入与自动暂停演练包\\失败注入样例_最新.json",
+        "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\106低风险只读调度红线失败注入与自动暂停演练包\\自动暂停演练报告_最新.json"
+      ],
+      "draft_action": "登记证据缺失异常，暂停续跑并请求总管确认补证。",
+      "pause_required": true,
+      "continue_allowed": false,
+      "requires_supervisor_confirmation": true,
+      "executed": false,
+      "auto_resume": false,
+      "external_call": false,
+      "reload_service": false,
+      "only_draft": true
+    },
+    {
+      "id": "ESC-RULE-006",
+      "category": "连续失败",
+      "trigger": "同类低风险只读调度连续失败、连续暂停或重复命中红线。",
+      "source_evidence": {
+        "source_injection_count": 6,
+        "pause_required_count": 6,
+        "continue_allowed_count": 0
+      },
+      "draft_action": "登记连续失败异常，禁止自动恢复，等待总管确认。",
+      "pause_required": true,
+      "continue_allowed": false,
+      "requires_supervisor_confirmation": true,
+      "executed": false,
+      "auto_resume": false,
+      "external_call": false,
+      "reload_service": false,
+      "only_draft": true
+    }
+  ]
+}

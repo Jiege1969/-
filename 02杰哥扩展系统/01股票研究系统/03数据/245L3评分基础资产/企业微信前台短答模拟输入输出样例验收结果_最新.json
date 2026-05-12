@@ -1,0 +1,11 @@
+{
+  "name": "企业微信前台短答模拟输入输出样例验收结果",
+  "generated_at": "2026-05-08 11:04:49",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "sample_count": 5,
+    "object_clear_count": 5,
+    "shadow_output_count": 5
+  }
+}

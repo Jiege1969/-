@@ -1,0 +1,197 @@
+﻿{
+    "report":  "摸清家底找差距第四轮收口",
+    "generated_at":  "2026-05-06 09:43:24 +08:00",
+    "principle":  "清债不添新债：可证实无依赖的旧项同轮收口；只把停机窗口、高价值一致性、外部硬闸门或证据不足项留作真实差距",
+    "completed":  [
+                      "n8n 34个工作流提纯为5个母样本，并补母样本复用/导入回滚说明",
+                      "06临时真实清理：删除旧临时文件247个，股票系统06临时清空，仅保留有效_latest入口",
+                      "Docker低风险旧资产真实清理：删除旧卷5个、旧镜像/旧标签16个，n8n旧卷先备份",
+                      "日志重复副本真实清理：删除哈希证实重复旧日志5个",
+                      "系统依赖与恢复清单更新到F盘",
+                      "交付手册旧待办口径已修正，面板和接续包已同步",
+                      "本机工具运行时核实已收口：Git在PATH中，Claude Code/OpenClaw运行时和18789活动端口存在，本轮不删除",
+                      "日志保留期内容复核后彻底删除：逐个读取229个旧轮询/演练/状态检查/本地受控测试日志，确认无效后删除原散文件、zip、stage、manifest和归档目录",
+                      "Ollama旧Docker卷真实清理：删除无容器引用的 ollama/ollama_data，主线Ollama继续使用D盘bind mount，最终Docker卷为0",
+                      "本机工具运行时版本/来源台账已落地，活动工具资产不再列为待核实差距",
+                      "WSL2一致性备份执行前核验已落地：F盘空间足够，运行态VHDX不热拷",
+                      "WSL2一致性备份受控执行器已落地并验证无硬开关时拒绝执行",
+                      "WSL2 VHDX一致性备份已在受控停机窗口完成：F盘备份、SHA256匹配、Docker重启后二次验收通过"
+                  ],
+    "validation":  {
+                       "docker_ps":  [
+                                         "jiege_v3_ollama|ollama/ollama:0.20.5|Up 11 hours",
+                                         "jiege_v3_redis|redis:7.2.5-alpine|Up 11 hours",
+                                         "jiege_v3_n8n|n8nio/n8n:1.123.30|Up 23 minutes"
+                                     ],
+                       "docker_images":  [
+                                             "ollama/ollama:0.20.5|662109db8037|9.89GB",
+                                             "docker.m.daocloud.io/ollama/ollama:0.20.5|662109db8037|9.89GB",
+                                             "n8nio/n8n:1.123.30|fb8b8f908d26|1.78GB",
+                                             "redis:7.2.5-alpine|6aaf3f5e6bc8|60MB"
+                                         ],
+                       "docker_volumes":  [
+
+                                          ],
+                       "n8n_healthz":  200,
+                       "blood_probe":  {
+                                           "record_time":  "2026-05-06 08:04:01",
+                                           "ready":  true,
+                                           "failed_count":  0
+                                       },
+                       "temp_stats":  [
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\06临时",
+                                              "files":  1,
+                                              "bytes":  616
+                                          },
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时",
+                                              "files":  6,
+                                              "bytes":  22607
+                                          },
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\06临时",
+                                              "files":  0,
+                                              "bytes":  0
+                                          }
+                                      ],
+                       "valid_json":  [
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\n8n工作流母样本提纯收口_最新.json",
+                                              "valid":  true
+                                          },
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\06临时真实清理收口_最新.json",
+                                              "valid":  true
+                                          },
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\Docker低风险旧资产真实清理收口_最新.json",
+                                              "valid":  true
+                                          },
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\日志重复副本真实清理收口_最新.json",
+                                              "valid":  true
+                                          },
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n母样本复用说明_最新.json",
+                                              "valid":  true
+                                          },
+                                          {
+                                              "path":  "F:\\系统备份\\依赖清单\\系统依赖与恢复清单_最新.json",
+                                              "valid":  true
+                                          },
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\日志保留期内容复核后彻底删除收口_最新.json",
+                                              "valid":  true
+                                          }
+                                      ],
+                       "final_acceptance":  {
+                                                "report":  "摸清家底找差距第四轮最终验收",
+                                                "generated_at":  "2026-05-06 08:31:55 +08:00",
+                                                "docker":  {
+                                                               "images":  [
+                                                                              "ollama/ollama:0.20.5",
+                                                                              "docker.m.daocloud.io/ollama/ollama:0.20.5",
+                                                                              "n8nio/n8n:1.123.30",
+                                                                              "redis:7.2.5-alpine"
+                                                                          ],
+                                                               "volume_count":  0,
+                                                               "containers":  [
+                                                                                  "jiege_v3_ollama|ollama/ollama:0.20.5|127.0.0.1:29134",
+                                                                                  "jiege_v3_redis|redis:7.2.5-alpine|127.0.0.1:26379",
+                                                                                  "jiege_v3_n8n|n8nio/n8n:1.123.30|127.0.0.1:28679"
+                                                                              ]
+                                                           },
+                                                "service_health":  {
+                                                                       "blood_probe_failed_count":  0,
+                                                                       "blood_probe_ready":  true,
+                                                                       "ollama":  200,
+                                                                       "redis_tcp":  true,
+                                                                       "n8n":  200
+                                                                   },
+                                                "n8n":  {
+                                                            "workflow_active":  0,
+                                                            "workflow_total":  5,
+                                                            "sqlite_integrity":  "ok"
+                                                        },
+                                                "scheduled_tasks":  {
+                                                                        "old_deleted":  7,
+                                                                        "new_tasks_ready":  true,
+                                                                        "new_named_tasks":  8
+                                                                    },
+                                                "temp_dirs":  {
+                                                                  "intelligence_files":  6,
+                                                                  "manager_files":  1,
+                                                                  "stock_temp_files":  0
+                                                              },
+                                                "log_cleanup":  {
+                                                                    "archive_copy_exists":  false,
+                                                                    "reviewed_deleted_bytes":  557512,
+                                                                    "reviewed_deleted_files":  229
+                                                                },
+                                                "ollama_volume_cleanup":  {
+                                                                              "final_docker_volume_count":  0,
+                                                                              "main_ollama_uses_D_bind_mount":  true,
+                                                                              "deleted_volumes":  [
+                                                                                                      "ollama",
+                                                                                                      "ollama_data"
+                                                                                                  ]
+                                                                          },
+                                                "valid_json":  true,
+                                                "remaining_true_gaps":  [
+                                                                            "WSL2 VHDX一致性备份执行窗口：需要停止Docker/WSL，不能热拷冒充可靠备份",
+                                                                            "本机工具运行时属活动工具资产，后续只做版本/来源登记，不作为普通缓存删除"
+                                                                        ],
+                                                "safety":  {
+                                                               "stopped_wsl":  false,
+                                                               "auto_trade":  false,
+                                                               "sent_wecom":  false,
+                                                               "triggered_n8n":  false,
+                                                               "stopped_services":  false,
+                                                               "used_prune":  false,
+                                                               "deleted_F_backup":  false,
+                                                               "deleted_D_models":  false,
+                                                               "called_broker_api":  false
+                                                           }
+                                            }
+                   },
+    "additional_reports":  [
+                               "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\日志保留期候选清单_最新.md/json",
+                               "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\本机工具运行时核实收口_最新.md/json",
+                               "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\日志保留期内容复核后彻底删除收口_最新.md/json",
+                               "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\Ollama旧Docker卷真实清理收口_最新.md/json",
+                               "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\摸清家底找差距第四轮最终验收_最新.md/json",
+                               "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\本机工具运行时版本来源台账收口_最新.md/json",
+                               "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\WSL2一致性备份执行前核验_最新.md/json",
+                               "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\WSL2一致性备份执行器收口_最新.md/json",
+                               "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\WSL2一致性备份执行收口_最新.md/json",
+                               "F:\\系统备份\\WSL2一致性备份_20260506_090045\\backup_manifest.json",
+                               "F:\\系统备份\\备份总台账_最新.md/json"
+                           ],
+    "remaining_true_gaps":  [
+
+                            ],
+    "safety":  {
+                   "triggered_n8n":  false,
+                   "called_webhook":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false,
+                   "stopped_services":  false,
+                   "stopped_wsl":  false,
+                   "deleted_main_docker_assets":  false,
+                   "deleted_wsl_vhdx":  false,
+                   "deleted_models":  false,
+                   "deleted_backup":  false
+               },
+    "wsl2_backup_completed":  {
+                                  "target":  "F:\\系统备份\\WSL2一致性备份_20260506_090045",
+                                  "manifest":  "F:\\系统备份\\WSL2一致性备份_20260506_090045\\backup_manifest.json",
+                                  "all_hashes_match":  true,
+                                  "n8n":  200,
+                                  "ollama":  200,
+                                  "redis_tcp":  true,
+                                  "blood_probe_ready":  true,
+                                  "blood_probe_failed_count":  0
+                              }
+}

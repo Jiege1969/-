@@ -1,0 +1,239 @@
+{
+  "名称": "五样本行业价格连续观测补数队列",
+  "generated_at": "2026-05-08 07:32:31",
+  "asset_identity": "W1补数任务队列",
+  "status": "ready",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_external_fetch": true,
+  "not_formal_database_write": true,
+  "tasks": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "product_code": "germanium_ingot",
+      "product_name": "锗锭",
+      "indicator_type": "metal_price",
+      "current_observation_count": 0,
+      "target_min_observation_count": 5,
+      "missing_observation_count": 5,
+      "current_status": "source_registered",
+      "priority": "P0",
+      "preferred_sources": [
+        "上海有色网SMM锗价格页",
+        "百川盈孚锗价格页",
+        "上市公司公告中的锗产品价格说明"
+      ],
+      "minimum_fields": [
+        "price_date",
+        "price_mid或price_range",
+        "unit",
+        "source_name",
+        "source_url",
+        "checked_at"
+      ],
+      "entry_boundary": [
+        "只允许登记公开可复核或授权允许内部研究使用的数据。",
+        "每条观测必须保留日期、数值或方向、单位或口径、来源名称、来源URL和采集时间。",
+        "媒体摘要只能作线索，不能替代原始价格源。",
+        "不足5个连续观测点前不得生成trend_ready结论。",
+        "本队列不写入观测账本，只提供补数任务。"
+      ],
+      "front_usage": "不足5个连续观测点前，只能写锗价尚未形成可用趋势证据。",
+      "linked_gap": [
+        "公告、行业价格、解禁减持和财报正文仍待核验",
+        "锗现货价格、产品售价和成本变化尚未进入可回测字段。",
+        "锗锭具体价格、日期、单位尚未入账。",
+        "锗锭尚未形成5个连续观测点。",
+        "锗锭尚未形成20个连续观测点。",
+        "价格与公司毛利、现金流和产品暴露度的量化映射尚未完成。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "product_code": "battery_grade_lithium_carbonate",
+      "product_name": "电池级碳酸锂",
+      "indicator_type": "chemical_material_price",
+      "current_observation_count": 1,
+      "target_min_observation_count": 5,
+      "missing_observation_count": 4,
+      "current_status": "single_observation",
+      "priority": "P0",
+      "preferred_sources": [
+        "上海有色网SMM新能源材料页",
+        "公开锂盐价格页面",
+        "上市公司公告中的锂盐价格说明"
+      ],
+      "minimum_fields": [
+        "price_date",
+        "price_mid或price_range",
+        "unit",
+        "source_name",
+        "source_url",
+        "checked_at"
+      ],
+      "entry_boundary": [
+        "只允许登记公开可复核或授权允许内部研究使用的数据。",
+        "每条观测必须保留日期、数值或方向、单位或口径、来源名称、来源URL和采集时间。",
+        "媒体摘要只能作线索，不能替代原始价格源。",
+        "不足5个连续观测点前不得生成trend_ready结论。",
+        "本队列不写入观测账本，只提供补数任务。"
+      ],
+      "front_usage": "1-4个观测点只能写单点或弱参考，不得写趋势反转。",
+      "linked_gap": [
+        "公告、行业价格、解禁减持和财报正文仍待核验",
+        "锂盐现货价格和产品价差未接入统一字段。",
+        "电池级碳酸锂尚未形成5个连续观测点。",
+        "电池级碳酸锂尚未形成20个连续观测点。",
+        "价格与公司毛利、现金流和产品暴露度的量化映射尚未完成。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "product_code": "wafer_foundry_cycle_indicator",
+      "product_name": "晶圆代工景气指标",
+      "indicator_type": "industry_cycle_indicator",
+      "current_observation_count": 0,
+      "target_min_observation_count": 5,
+      "missing_observation_count": 5,
+      "current_status": "source_registered",
+      "priority": "P0",
+      "preferred_sources": [
+        "公司公告中的产能利用率/ASP说明",
+        "半导体行业协会或公开研究摘要",
+        "公开晶圆代工价格/稼动率报道"
+      ],
+      "minimum_fields": [
+        "indicator_date",
+        "indicator_name",
+        "value或direction",
+        "unit或口径",
+        "source_name",
+        "source_url",
+        "checked_at"
+      ],
+      "entry_boundary": [
+        "只允许登记公开可复核或授权允许内部研究使用的数据。",
+        "每条观测必须保留日期、数值或方向、单位或口径、来源名称、来源URL和采集时间。",
+        "媒体摘要只能作线索，不能替代原始价格源。",
+        "不足5个连续观测点前不得生成trend_ready结论。",
+        "本队列不写入观测账本，只提供补数任务。"
+      ],
+      "front_usage": "未结构化前只能写晶圆代工景气未接入，不能写半导体景气已经验证。",
+      "linked_gap": []
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "product_code": "bulk_supply_chain_cycle_indicator",
+      "product_name": "大宗商品/供应链景气指标",
+      "indicator_type": "business_cycle_indicator",
+      "current_observation_count": 0,
+      "target_min_observation_count": 5,
+      "missing_observation_count": 5,
+      "current_status": "source_registered",
+      "priority": "P0",
+      "preferred_sources": [
+        "公司公告中的主营品类价格/库存周转说明",
+        "公开大宗商品价格指数",
+        "公开供应链景气或物流指标"
+      ],
+      "minimum_fields": [
+        "indicator_date",
+        "indicator_name",
+        "value或direction",
+        "unit或口径",
+        "source_name",
+        "source_url",
+        "checked_at"
+      ],
+      "entry_boundary": [
+        "只允许登记公开可复核或授权允许内部研究使用的数据。",
+        "每条观测必须保留日期、数值或方向、单位或口径、来源名称、来源URL和采集时间。",
+        "媒体摘要只能作线索，不能替代原始价格源。",
+        "不足5个连续观测点前不得生成trend_ready结论。",
+        "本队列不写入观测账本，只提供补数任务。"
+      ],
+      "front_usage": "未结构化前只能写供应链景气未接入，不能用泛化大宗上涨强化结论。",
+      "linked_gap": [
+        "大宗商品价格和供应链景气未接入。",
+        "大宗商品价格和供应链景气未接入市场风格/行业价格字段。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "product_code": "trimellitic_anhydride_tma",
+      "product_name": "偏苯三酸酐/TMA",
+      "indicator_type": "chemical_product_price",
+      "current_observation_count": 0,
+      "target_min_observation_count": 5,
+      "missing_observation_count": 5,
+      "current_status": "source_registered",
+      "priority": "P0",
+      "preferred_sources": [
+        "百川盈孚TMA价格页",
+        "卓创资讯公开化工品价格摘要",
+        "上市公司公告中的TMA/偏苯三酸酐价格说明"
+      ],
+      "minimum_fields": [
+        "price_date",
+        "price_mid或price_range",
+        "unit",
+        "source_name",
+        "source_url",
+        "checked_at"
+      ],
+      "entry_boundary": [
+        "只允许登记公开可复核或授权允许内部研究使用的数据。",
+        "每条观测必须保留日期、数值或方向、单位或口径、来源名称、来源URL和采集时间。",
+        "媒体摘要只能作线索，不能替代原始价格源。",
+        "不足5个连续观测点前不得生成trend_ready结论。",
+        "本队列不写入观测账本，只提供补数任务。"
+      ],
+      "front_usage": "不足5个连续观测点前，只能写TMA价格未形成可用趋势证据。",
+      "linked_gap": [
+        "核心化工产品价格和价差未结构化。",
+        "产能、库存、出口和原材料价格未接入。",
+        "化工品价格、化学制品板块热度和产品景气未结构化接入。",
+        "更高分受制于价格低于修复区、成交不足、业绩下滑、产品价格和资金证据缺失。",
+        "偏苯三酸酐、TMA/TOTM等核心产品价格和价差未结构化接入。",
+        "产能、库存、出口和原材料价格未进入行业价格字段。",
+        "偏苯三酸酐/TMA具体价格、日期、单位尚未入账。",
+        "偏苯三酸酐/TMA尚未形成5个连续观测点。",
+        "偏苯三酸酐/TMA尚未形成20个连续观测点。",
+        "价格与公司毛利、现金流和产品暴露度的量化映射尚未完成。"
+      ]
+    }
+  ],
+  "rule": {
+    "trend_ready_min_observations": 5,
+    "single_observation_range": "1-4",
+    "zero_observation_status": "source_registered"
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_external_fetch": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_delete_or_move_old_assets": true,
+    "not_formal_database_write": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

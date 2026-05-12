@@ -1,0 +1,166 @@
+{
+  "name": "低风险只读任务一键调度入口本地预演报告",
+  "generated_at": "2026-05-08 19:57:05",
+  "pass": true,
+  "error_count": 0,
+  "errors": [],
+  "confirmation": "只做入口解析和计划生成，未执行任务，未调用外部系统。",
+  "parsed_entry": true,
+  "generated_plan_only": true,
+  "preview_only": true,
+  "tasks_executed": false,
+  "executed_task_count": 0,
+  "adapter_invoked": false,
+  "auto_execute": false,
+  "external_call": false,
+  "real_send": false,
+  "reload_service": false,
+  "modify_supervisor_panel": false,
+  "modify_one_click_pack": false,
+  "generated_plan": {
+    "planned_task_count": 0,
+    "skipped_disabled_count": 8,
+    "items": [
+      {
+        "preview_order": 1,
+        "id": "LRRO-ENTRY-001",
+        "name": "读取第93包候选队列快照",
+        "enabled": false,
+        "planned": false,
+        "depends_on": [],
+        "dependency_ready": true,
+        "task_executed": false,
+        "plan_action": "not_planned_because_enabled_false",
+        "adapter_invoked": false
+      },
+      {
+        "preview_order": 2,
+        "id": "LRRO-ENTRY-002",
+        "name": "扫描只读安全字段",
+        "enabled": false,
+        "planned": false,
+        "depends_on": [
+          "LRRO-ENTRY-001"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "plan_action": "not_planned_because_enabled_false",
+        "adapter_invoked": false
+      },
+      {
+        "preview_order": 3,
+        "id": "LRRO-ENTRY-003",
+        "name": "预演暂停闸口检查",
+        "enabled": false,
+        "planned": false,
+        "depends_on": [
+          "LRRO-ENTRY-002"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "plan_action": "not_planned_because_enabled_false",
+        "adapter_invoked": false
+      },
+      {
+        "preview_order": 4,
+        "id": "LRRO-ENTRY-004",
+        "name": "整理证据需求清单",
+        "enabled": false,
+        "planned": false,
+        "depends_on": [
+          "LRRO-ENTRY-003"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "plan_action": "not_planned_because_enabled_false",
+        "adapter_invoked": false
+      },
+      {
+        "preview_order": 5,
+        "id": "LRRO-ENTRY-005",
+        "name": "预演候选排序",
+        "enabled": false,
+        "planned": false,
+        "depends_on": [
+          "LRRO-ENTRY-004"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "plan_action": "not_planned_because_enabled_false",
+        "adapter_invoked": false
+      },
+      {
+        "preview_order": 6,
+        "id": "LRRO-ENTRY-006",
+        "name": "预演依赖链",
+        "enabled": false,
+        "planned": false,
+        "depends_on": [
+          "LRRO-ENTRY-005"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "plan_action": "not_planned_because_enabled_false",
+        "adapter_invoked": false
+      },
+      {
+        "preview_order": 7,
+        "id": "LRRO-ENTRY-007",
+        "name": "预演冲突与红线复核",
+        "enabled": false,
+        "planned": false,
+        "depends_on": [
+          "LRRO-ENTRY-006"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "plan_action": "not_planned_because_enabled_false",
+        "adapter_invoked": false
+      },
+      {
+        "preview_order": 8,
+        "id": "LRRO-ENTRY-008",
+        "name": "汇总预演报告输入",
+        "enabled": false,
+        "planned": false,
+        "depends_on": [
+          "LRRO-ENTRY-007"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "plan_action": "not_planned_because_enabled_false",
+        "adapter_invoked": false
+      }
+    ],
+    "dependency_edges": [
+      {
+        "from": "LRRO-ENTRY-001",
+        "to": "LRRO-ENTRY-002"
+      },
+      {
+        "from": "LRRO-ENTRY-002",
+        "to": "LRRO-ENTRY-003"
+      },
+      {
+        "from": "LRRO-ENTRY-003",
+        "to": "LRRO-ENTRY-004"
+      },
+      {
+        "from": "LRRO-ENTRY-004",
+        "to": "LRRO-ENTRY-005"
+      },
+      {
+        "from": "LRRO-ENTRY-005",
+        "to": "LRRO-ENTRY-006"
+      },
+      {
+        "from": "LRRO-ENTRY-006",
+        "to": "LRRO-ENTRY-007"
+      },
+      {
+        "from": "LRRO-ENTRY-007",
+        "to": "LRRO-ENTRY-008"
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "asset_id": "VIDEO_SCRIPT_QUALITY_PARALLEL_HANDOFF_CARD_001_ALIGNMENT_RETURN",
+  "created_at": "2026-05-08 12:39:00 +08:00",
+  "risk_level": "W1/R0",
+  "source": "continuous_auto_construction_after_stop_correction",
+  "completed": [
+    "建立成语故事质量参照给并行视频线回传短卡",
+    "压缩成语故事脚本最低质量线为P-001至P-007",
+    "明确质量通过不等于生成、渲染、发布、企业微信外发或n8n放行",
+    "更新视频制作影子底座索引"
+  ],
+  "impact": {
+    "parallel_video_quality_alignment": "available",
+    "minimum_quality_line": "P-001_to_P-007",
+    "return_format": "available",
+    "generation_render_publish": "forbidden",
+    "wecom_real_send_or_n8n": "forbidden",
+    "formal_video_system_modified": false
+  },
+  "next_w1_r0_candidates": [
+    "成语故事系列栏目统一结构草案",
+    "掩耳盗铃30秒影子改写空白任务卡",
+    "并行视频线回传内容质量抽检清单"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_video_system": false,
+    "release_for_generation_render_publish": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "record_id": "VIDEO_AGENT_VAI_112_114",
+  "date": "2026-05-08",
+  "scope": "视频制作业务影子底座",
+  "construction_level": "W1/W2 低风险影子施工",
+  "summary": "补齐VAI106至VAI111小阶段收口、VAI001至VAI111索引v9、判断结果信息不完整退回缺口卡。",
+  "did": [
+    "新增VAI106至VAI111小阶段收口记录",
+    "新增VAI001至VAI111本线资产索引草案v9",
+    "新增判断结果信息不完整退回缺口卡"
+  ],
+  "changed_files": [
+    "VIDEO_AGENT_VAI_106_111_MINI_ROLLUP_001_VAI106至VAI111小阶段收口记录_v1.0.md",
+    "VIDEO_AGENT_VAI_106_111_MINI_ROLLUP_001_VAI106至VAI111小阶段收口记录_v1.0.json",
+    "VIDEO_AGENT_LINE_ASSET_INDEX_DRAFT_009_VAI001至VAI111本线资产索引草案_v9.0.md",
+    "VIDEO_AGENT_LINE_ASSET_INDEX_DRAFT_009_VAI001至VAI111本线资产索引草案_v9.0.json",
+    "VIDEO_AGENT_MANAGER_DECISION_INCOMPLETE_RETURN_GAP_CARD_001_判断结果信息不完整退回缺口卡_v1.0.md",
+    "VIDEO_AGENT_MANAGER_DECISION_INCOMPLETE_RETURN_GAP_CARD_001_判断结果信息不完整退回缺口卡_v1.0.json",
+    "VIDEO_AGENT_VAI_112_114_对齐回传记录_20260508.md",
+    "VIDEO_AGENT_VAI_112_114_对齐回传记录_20260508.json"
+  ],
+  "risk_level": "低",
+  "real_system_triggered": {
+    "real_model": false,
+    "real_material_read": false,
+    "real_render": false,
+    "real_publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "real_account_cookie_api_key": false,
+    "manager_file_read_or_modified": false,
+    "platform_upload_or_publish": false,
+    "service_port_manager_public_component_formal_repo": false
+  },
+  "need_manager_integration": {
+    "current": false,
+    "future_condition": "若未来要把判断结果信息不完整退回缺口卡接入真实总管回传机制，必须由总管侧决定格式和写入位置。"
+  },
+  "next_suggestions": [
+    "企业微信判断结果信息不完整需补充回执样例",
+    "人工复核后仍不同意执行的拒绝回执样例",
+    "VAI001至VAI114本线资产索引草案v10"
+  ],
+  "self_check": {
+    "read_manager_panel_and_startup_package_first": true,
+    "write_scope_limited_to_video_shadow_base": true,
+    "json_convert_from_json_passed": true,
+    "scan_hits_are_boundary_statements": true,
+    "no_real_system_called": true,
+    "no_manager_public_service_formal_or_other_line_modified": true
+  }
+}
+

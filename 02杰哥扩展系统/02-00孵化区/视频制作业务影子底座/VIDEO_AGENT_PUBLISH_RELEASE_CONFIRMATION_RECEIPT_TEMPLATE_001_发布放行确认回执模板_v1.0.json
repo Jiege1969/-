@@ -1,0 +1,32 @@
+{
+  "asset_id": "VIDEO_AGENT_PUBLISH_RELEASE_CONFIRMATION_RECEIPT_TEMPLATE_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_receipt_template_not_real_publish_permission",
+  "purpose": "Reserve a shadow receipt format for future human discussion about whether pre-publish conditions are ready.",
+  "fields": [
+    "release_receipt_id",
+    "related_shadow_task_id",
+    "four_piece_check_reference",
+    "human_reviewer",
+    "review_time",
+    "release_decision_type",
+    "blocking_items",
+    "not_real_publish_statement"
+  ],
+  "release_decision_type_enum": [
+    "ready_for_human_publish_discussion",
+    "not_ready",
+    "blocked"
+  ],
+  "fixed_boundary_statement": "This receipt only indicates whether shadow pre-publish conditions can enter human discussion. It is not real publish permission and does not execute upload, publish, external send, group send, or platform operations.",
+  "real_system_triggered": {
+    "platform_connection": false,
+    "account_connection": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "publish": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "P2-S7-REAL-MATERIAL-INTAKE-RECEIPT-SAMPLE-DRYRUN-20260509",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S7",
+  "status": "executed_pass",
+  "purpose": "用 P2-S5 的 7 个虚拟场景生成 7 份分流回执样例，验证 P2-S6 回执模板可承接每条路线",
+  "script": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S7真实材料接入分流回执样例干跑.py",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\56P2S7真实材料接入分流回执样例干跑\\P2S7真实材料接入分流回执样例干跑_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\56P2S7真实材料接入分流回执样例干跑\\P2S7真实材料接入分流回执样例干跑_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\56P2S7真实材料接入分流回执样例干跑\\P2S7真实材料接入分流虚拟回执样例_20260509.json"
+  ],
+  "latest_receipt": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\稳定版正式收口_20260509\\P2_S7_真实材料接入分流回执样例干跑回执_20260509.json",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

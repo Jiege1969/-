@@ -1,0 +1,9 @@
+{
+  "name": "财报资金证据到前台短答压缩映射验收结果",
+  "generated_at": "2026-05-08 11:31:14",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "sample_count": 5
+  }
+}

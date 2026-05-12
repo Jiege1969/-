@@ -1,0 +1,35 @@
+{
+  "asset_id": "VIDEO_AGENT_WECOM_COMMAND_REPLY_SAMPLE_001",
+  "version": "v1.0",
+  "asset_type": "reply_placeholder_sample",
+  "construction_level": "W1/R0",
+  "scope": "wecom_as_future_input_output_terminal_shadow_design",
+  "status": "draft",
+  "positioning": "Describe possible future text replies for JieGe Video Assistant without connecting WeCom, sending messages, or triggering n8n.",
+  "input_sample": "发布 VF-20260508-003 到小红书和视频号",
+  "reply_sample": {
+    "received_instruction": "VF-20260508-003 publish instruction draft received.",
+    "current_result": "Shadow check only; real publishing is blocked.",
+    "blockers": [
+      "Publishing release list is not confirmed.",
+      "AI-generated content label is not manually confirmed.",
+      "Material authorization proof is not archived.",
+      "Final preview has not passed human review."
+    ],
+    "next_action": "Complete publishing release, AI label confirmation, material authorization, and preview review first."
+  },
+  "command_placeholders": [
+    {"command_type": "generate_video", "shadow_reply_action": "return_generation_release_gap", "real_execution": false},
+    {"command_type": "render_video", "shadow_reply_action": "return_real_render_release_gap", "real_execution": false},
+    {"command_type": "publish_video", "shadow_reply_action": "return_publishing_release_gap", "real_execution": false},
+    {"command_type": "view_status", "shadow_reply_action": "return_shadow_task_status_summary_draft", "real_execution": false},
+    {"command_type": "revise_script", "shadow_reply_action": "return_partial_revision_draft_and_review_items", "real_execution": false}
+  ],
+  "boundaries": {
+    "call_wecom_api": false,
+    "send_real_message": false,
+    "connect_n8n": false,
+    "connect_real_publishing_tool": false,
+    "read_real_account_or_cookie": false
+  }
+}

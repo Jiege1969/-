@@ -1,0 +1,101 @@
+{
+  "name": "低风险自主任务队列只读准入检查报告",
+  "generated_at": "2026-05-08 19:33:20",
+  "pass": true,
+  "error_count": 0,
+  "errors": [],
+  "safety_confirmation": {
+    "auto_execute": false,
+    "external_call": false,
+    "write_formal_rule": false,
+    "reload_service": false,
+    "real_send": false
+  },
+  "candidate_count": 9,
+  "admitted_count": 9,
+  "paused_count": 0,
+  "candidate_checks": [
+    {
+      "id": "LRQ-001",
+      "name": "本地脚本清单只读巡检",
+      "category": "只读巡检",
+      "admitted": true,
+      "pause_required": false,
+      "pause_reasons": [],
+      "errors": []
+    },
+    {
+      "id": "LRQ-002",
+      "name": "数据产物完整性检查",
+      "category": "产物完整性检查",
+      "admitted": true,
+      "pause_required": false,
+      "pause_reasons": [],
+      "errors": []
+    },
+    {
+      "id": "LRQ-003",
+      "name": "验收日志完整性检查",
+      "category": "产物完整性检查",
+      "admitted": true,
+      "pause_required": false,
+      "pause_reasons": [],
+      "errors": []
+    },
+    {
+      "id": "LRQ-004",
+      "name": "本地回归验收只读复核",
+      "category": "回归验收",
+      "admitted": true,
+      "pause_required": false,
+      "pause_reasons": [],
+      "errors": []
+    },
+    {
+      "id": "LRQ-005",
+      "name": "证据索引归档候选",
+      "category": "证据归档",
+      "admitted": true,
+      "pause_required": false,
+      "pause_reasons": [],
+      "errors": []
+    },
+    {
+      "id": "LRQ-006",
+      "name": "状态包刷新候选",
+      "category": "状态包刷新",
+      "admitted": true,
+      "pause_required": false,
+      "pause_reasons": [],
+      "errors": []
+    },
+    {
+      "id": "LRQ-007",
+      "name": "暂停词静态扫描候选",
+      "category": "只读巡检",
+      "admitted": true,
+      "pause_required": false,
+      "pause_reasons": [],
+      "errors": []
+    },
+    {
+      "id": "LRQ-008",
+      "name": "候选队列字段一致性检查",
+      "category": "产物完整性检查",
+      "admitted": true,
+      "pause_required": false,
+      "pause_reasons": [],
+      "errors": []
+    },
+    {
+      "id": "LRQ-009",
+      "name": "本地 Markdown 摘要刷新候选",
+      "category": "证据归档",
+      "admitted": true,
+      "pause_required": false,
+      "pause_reasons": [],
+      "errors": []
+    }
+  ],
+  "scope_statement": "仅限只读候选登记，不执行任务，不调用外部接口，不写正式规则，不重载服务，不真实发送。"
+}

@@ -1,0 +1,55 @@
+{
+  "version": "shadow_finance_patch_1.0",
+  "generated_at": "2026-05-07",
+  "stock_code": "sz002428",
+  "stock_name": "云南锗业",
+  "asset_identity": "单股L3评分影子补证结果",
+  "source_base_report": "03数据/245L3评分基础资产/单股L3评分/云南锗业_sz002428_最新.json",
+  "finance_evidence_card": "03数据/245L3评分基础资产/云南锗业_财报基本面证据卡_20260507.json",
+  "total_score": 59.3,
+  "conclusion_text": "暂不建议关注",
+  "confidence": {
+    "level": "medium",
+    "reason": "财报证据已补入2025年年报摘要和2026年一季报方向性说明，基本面不再为空白；但利润质量、经营现金流、市场风格和一季报数值结构化仍有缺口。"
+  },
+  "item_scores": [
+    {
+      "item": "技术结构",
+      "score": 25,
+      "max_score": 40,
+      "inherit_from_base_report": true
+    },
+    {
+      "item": "基本面/资金",
+      "score": 8,
+      "max_score": 20,
+      "evidence": [
+        "2025年营业收入10.66亿元，同比增长38.89%。",
+        "公司具备锗资源和锗产品产业链辨识度，是锗主题核心标的之一。",
+        "2025年归母净利润同比下降62.06%，扣非净利润为负，经营现金流为负，ROE偏低。",
+        "2026年一季度公告显示收入同比增加但利润端下降，基本面仍不能给强支撑。"
+      ],
+      "missing": [
+        "2026年一季报核心数值尚未结构化。",
+        "锗现货价格、产品售价和成本变化未接入。",
+        "资金流、机构持仓和减持解禁未合并。"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "item": "政策事件",
+      "score": 15.3,
+      "max_score": 20,
+      "inherit_from_base_report": true
+    },
+    {
+      "item": "市场风格适配",
+      "score": 11,
+      "max_score": 20,
+      "inherit_from_base_report": true
+    }
+  ],
+  "evidence_summary": "技术和政策沿用原L3样例；基本面已由公开公告补证，不再写成财报完全未接入。",
+  "missing_summary": "更高分仍受制于利润质量、现金流、一季报结构化、行业价格。",
+  "safety_boundary": "仅供研究参考，不构成投资建议，不作为买卖指令；不调用券商接口，不自动交易。"
+}

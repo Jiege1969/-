@@ -1,0 +1,19 @@
+{
+  "name": "股票线第二批统一影子验收总表验收",
+  "generated_at": "2026-05-08 10:45:28",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票线第二批统一影子验收总表_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "check_count": 6,
+    "exists_count": 6,
+    "passed_count": 6,
+    "failed_count": 0,
+    "allow_shadow_acceptance_claim": true,
+    "allow_real_wecom_send": false,
+    "allow_formal_entry": false,
+    "allow_formal_score_update": false
+  },
+  "auto_continue_policy": "通过后由heartbeat检查是否生成第三批W1/W2低风险续建队列；不等待用户确认。"
+}

@@ -1,0 +1,37 @@
+{
+  "asset_id": "VIDEO_SCRIPT_DURATION_VARIANT_CHECK_001_ALIGNMENT_RETURN_20260508",
+  "asset_name": "VIDEO_SCRIPT_DURATION_VARIANT_CHECK_001对齐回传记录",
+  "created_at": "2026-05-08 12:08:40 +08:00",
+  "asset_identity": "视频制作影子底座W1/R0对齐回传记录",
+  "source": "桌面继续工作命令吸收后的本轮自动施工",
+  "completed": [
+    "建立成语故事30秒60秒版本差异检查卡",
+    "明确短版保留主冲突",
+    "明确长版保留心理变化和现实类比",
+    "防止机械删字或机械扩写"
+  ],
+  "video_line_impact": {
+    "idiom_story_quality": "已有质量表、合格样例、时长差异检查",
+    "duration_variant_selection": "已可按文本规则预验收",
+    "real_generation_render_publish": "仍禁止",
+    "wecom_real_send_n8n": "仍禁止"
+  },
+  "next_w1_r0_candidates": [
+    "建立掩耳盗铃样例进入人工复核回执空白模板",
+    "建立质量参照给并行视频线的回传短卡",
+    "建立成语故事系列栏目统一结构草案"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "generate_subtitle_audio_cover_video": false,
+    "render_video": false,
+    "publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_script_or_service": false
+  },
+  "self_check": {
+    "risk_level": "W1/R0",
+    "boundary_kept": true
+  }
+}

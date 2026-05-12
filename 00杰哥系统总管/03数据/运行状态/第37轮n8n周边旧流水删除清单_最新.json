@@ -1,0 +1,205 @@
+﻿{
+    "施工轮次":  "第37轮",
+    "施工名":  "n8n周边旧流水清债",
+    "判定":  "实际n8n数据库仅剩5个inactive母样本；本轮只清周边旧流水、空轮转日志和非venv pycache，不触发、不启用、不删除母样本。",
+    "结果":  [
+               {
+                   "目录":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\灰度接入验收",
+                   "删除文件数":  134,
+                   "删除大小MB":  1.05,
+                   "删除后文件数":  25,
+                   "删除后时间戳文件数":  0,
+                   "保留文件":  [
+                                "kb-enabled-observation-最新.json",
+                                "n8n-controlled-enable-status-export-最新.json",
+                                "n8n-controlled-enable-status-最新.json",
+                                "n8n-first-batch-batch-rollback-最新.json",
+                                "n8n-first-batch-inactive-status-最新.json",
+                                "n8n-inactive-import-execute-最新.json",
+                                "n8n-inactive-import-rollback-最新.json",
+                                "n8n-kb-controlled-enable-最新.json",
+                                "n8n-kb-inactive-import-execute-最新.json",
+                                "n8n-kb-inactive-import-rollback-最新.json",
+                                "n8n-kb-local-manual-execute-最新.json",
+                                "n8n-local-manual-execute-最新.json",
+                                "n8n-office-controlled-enable-最新.json",
+                                "n8n-office-inactive-import-execute-最新.json",
+                                "n8n-office-inactive-import-rollback-最新.json",
+                                "n8n-office-local-manual-execute-最新.json",
+                                "n8n-system-status-controlled-enable-最新.json",
+                                "n8n-video-controlled-enable-最新.json",
+                                "n8n-video-inactive-import-execute-最新.json",
+                                "n8n-video-inactive-import-rollback-最新.json",
+                                "n8n-video-local-manual-execute-最新.json",
+                                "office-enabled-observation-最新.json",
+                                "system-status-enabled-observation-最新.json",
+                                "system-status-on-demand-rollback-最新.json",
+                                "video-enabled-observation-最新.json"
+                            ],
+                   "删除模式":  [
+                                {
+                                    "Count":  39,
+                                    "Name":  "n8n-controlled-enable-status-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  25,
+                                    "Name":  "low-risk-gray-access-verify-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  19,
+                                    "Name":  "n8n-controlled-enable-status-export-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  7,
+                                    "Name":  "system-status-enabled-observation-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  6,
+                                    "Name":  "kb-enabled-observation-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  5,
+                                    "Name":  "first-batch-n8n-controlled-verify-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  4,
+                                    "Name":  "n8n-first-batch-inactive-status-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  4,
+                                    "Name":  "system-status-on-demand-rollback-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  4,
+                                    "Name":  "office-enabled-observation-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  3,
+                                    "Name":  "n8n-first-batch-batch-rollback-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  2,
+                                    "Name":  "video-enabled-observation-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-video-inactive-import-rollback-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-video-local-manual-execute-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-video-controlled-enable-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-video-inactive-import-execute-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-inactive-import-execute-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-local-manual-execute-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-kb-controlled-enable-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-inactive-import-rollback-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-kb-inactive-import-execute-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-office-controlled-enable-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-kb-inactive-import-rollback-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-kb-local-manual-execute-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-office-local-manual-execute-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-system-status-controlled-enable-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-office-inactive-import-execute-\u003cts\u003e.json"
+                                },
+                                {
+                                    "Count":  1,
+                                    "Name":  "n8n-office-inactive-import-rollback-\u003cts\u003e.json"
+                                }
+                            ]
+               },
+               {
+                   "目录":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\n8n",
+                   "删除文件数":  4,
+                   "删除大小MB":  0,
+                   "删除后文件数":  4,
+                   "删除后时间戳文件数":  0,
+                   "保留文件":  [
+                                "config",
+                                "database.sqlite",
+                                "n8nEventLog.log",
+                                "目录说明.md"
+                            ],
+                   "删除模式":  [
+                                {
+                                    "file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\n8n\\n8nEventLog-1.log",
+                                    "length":  0
+                                },
+                                {
+                                    "file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\n8n\\n8nEventLog-2.log",
+                                    "length":  0
+                                },
+                                {
+                                    "file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\n8n\\n8nEventLog-3.log",
+                                    "length":  0
+                                },
+                                {
+                                    "file":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\n8n\\crash.journal",
+                                    "length":  0
+                                }
+                            ]
+               },
+               {
+                   "目录":  "非venv脚本__pycache__",
+                   "删除文件数":  25,
+                   "删除大小MB":  0.27,
+                   "删除后文件数":  0,
+                   "删除后时间戳文件数":  0,
+                   "保留文件":  [
+
+                            ],
+                   "删除模式":  [
+                                {
+                                    "dir":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02脚本\\__pycache__",
+                                    "files":  1,
+                                    "sizeKB":  15.43
+                                },
+                                {
+                                    "dir":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\02脚本\\__pycache__",
+                                    "files":  24,
+                                    "sizeKB":  262.51
+                                }
+                            ]
+               }
+           ],
+    "生成时间":  "2026-05-06 18:22:49"
+}

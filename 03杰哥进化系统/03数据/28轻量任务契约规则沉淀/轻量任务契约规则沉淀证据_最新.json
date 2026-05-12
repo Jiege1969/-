@@ -1,0 +1,78 @@
+{
+  "名称": "03进化系统轻量任务契约规则沉淀证据",
+  "创建日期": "2026-05-05",
+  "所属系统": "03杰哥进化系统",
+  "任务标识": "parallel-C-03-light-task-contract-rule-deposit",
+  "证据类型": "本地JSON与Markdown规则证据",
+  "产物路径": {
+    "规则卡JSON": "D:/杰哥智能化系统/03杰哥进化系统/03数据/28轻量任务契约规则沉淀/轻量任务契约规则卡_最新.json",
+    "规则卡Markdown": "D:/杰哥智能化系统/03杰哥进化系统/03数据/28轻量任务契约规则沉淀/轻量任务契约规则卡_最新.md",
+    "审计清单JSON": "D:/杰哥智能化系统/03杰哥进化系统/03数据/28轻量任务契约规则沉淀/轻量任务契约审计清单_最新.json",
+    "审计清单Markdown": "D:/杰哥智能化系统/03杰哥进化系统/03数据/28轻量任务契约规则沉淀/轻量任务契约审计清单_最新.md",
+    "验证脚本": "D:/杰哥智能化系统/03杰哥进化系统/02脚本/验证轻量任务契约规则沉淀.py"
+  },
+  "影子链路声明": {
+    "center_role": "rule_deposit_only",
+    "second_center_created": false,
+    "task_order_json": {
+      "required_fields": [
+        "task_id",
+        "source_system",
+        "target_system",
+        "intent",
+        "scope",
+        "inputs",
+        "expected_outputs",
+        "safety_boundary",
+        "dry_run",
+        "real_action_requested",
+        "acceptance"
+      ],
+      "dry_run": true,
+      "real_action_requested": false
+    },
+    "sqlite": {
+      "role": "shadow_authoritative_ledger",
+      "official_db_write": false,
+      "drives_real_action": false
+    },
+    "redis": {
+      "role": "shadow_mapping_enhancement",
+      "real_action_queue": false,
+      "permission_release": false
+    },
+    "n8n": {
+      "mode": "dry_run_only",
+      "triggered": false,
+      "webhook_called": false,
+      "workflow_enabled": false,
+      "production_credential_write": false
+    },
+    "gate": {
+      "real_actions_enabled": false,
+      "mode": "single_line_manual_gate",
+      "multi_gate_release": false
+    },
+    "stock_scope": "analysis_only"
+  },
+  "安全边界": {
+    "触发n8n": false,
+    "发送企业微信": false,
+    "写入正式库": false,
+    "调用券商接口": false,
+    "自动交易": false,
+    "下单": false,
+    "生产凭据读取": false,
+    "外部网络调用": false
+  },
+  "验收快照": {
+    "状态": "通过",
+    "检查项总数": 23,
+    "通过": 23,
+    "失败": 0,
+    "阻断项": 0,
+    "验证方式": "只读本地JSON解析脚本",
+    "验证命令": "python D:/杰哥智能化系统/03杰哥进化系统/02脚本/验证轻量任务契约规则沉淀.py",
+    "安全声明": "未触发n8n、企业微信、正式库、券商接口、下单或自动交易"
+  }
+}

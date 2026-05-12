@@ -1,0 +1,84 @@
+{
+  "system_name": "知识库系统",
+  "system_dir": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统",
+  "generated_at": "2026-05-13 07:50:01",
+  "overall_status": "warning",
+  "score": 60,
+  "entry_scripts": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\02脚本\\执行知识库系统内生能力只读检查.py"
+  ],
+  "checks": {
+    "timeliness": {
+      "ok": true,
+      "task_name": "�ܸ����ܻ�ϵͳ_��������_֪ʶ��ϵͳ",
+      "exists": true,
+      "state": "Running",
+      "last_run_time": "2026-05-13 07:50:01",
+      "last_task_result": 267009,
+      "next_run_time": "2026-05-14 07:50:00"
+    },
+    "output_completeness": {
+      "ok": false,
+      "checks": [
+        {
+          "name": "知识库只读检查/证据索引",
+          "ok": false,
+          "required": true,
+          "latest_file": {
+            "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\08可追溯问答框归集验收\\可追溯问答框归集验收_最新.md",
+            "exists": true,
+            "size": 2002,
+            "modified_at": "2026-05-11 13:08:00",
+            "updated_today": false
+          }
+        }
+      ]
+    },
+    "template_compliance": {
+      "ok": true,
+      "hits": [],
+      "scanned_files": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\08可追溯问答框归集验收\\可追溯问答框归集验收_最新.md"
+      ]
+    },
+    "universal_laws": {
+      "ok": true,
+      "total_penalty": 0,
+      "rules": [
+        {
+          "id": "silence_is_gold",
+          "name": "沉默是金：数据缺失却强行生成结论",
+          "severity": "defect",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        },
+        {
+          "id": "traceable_conclusions",
+          "name": "可追溯：关键结论必须找到计算来源",
+          "severity": "deduct",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        },
+        {
+          "id": "human_sovereignty",
+          "name": "人的主权：进化系统不得擅自修改业务规则",
+          "severity": "highest_alert",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        }
+      ],
+      "scanned_files": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\08可追溯问答框归集验收\\可追溯问答框归集验收_最新.md"
+      ]
+    }
+  },
+  "safety": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_business_db": false,
+    "call_trade_or_external_execute_api": false
+  }
+}

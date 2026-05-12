@@ -1,0 +1,123 @@
+# -*- coding: utf-8 -*-
+"""生成前台结论型短答压缩回归样例。"""
+
+from __future__ import annotations
+
+import json
+from datetime import datetime
+from pathlib import Path
+
+
+BASE_DIR = Path(r"D:\杰哥智能化系统\02杰哥扩展系统\01股票研究系统")
+DATA_DIR = BASE_DIR / "03数据" / "245L3评分基础资产"
+JSON_OUT = DATA_DIR / "前台结论型短答压缩回归样例_最新.json"
+MD_OUT = DATA_DIR / "前台结论型短答压缩回归样例_最新.md"
+
+
+SAMPLES = [
+    {
+        "stock_name": "云南锗业",
+        "stock_code": "002428",
+        "conclusion": "可纳入观察",
+        "frontend_answer": "云南锗业（002428）：可纳入观察，但暂不能给强结论。核心原因是锗政策和资源属性有研究价值；主要缺口是锗价连续数据、最新财报资金和真实市场风格日表还没补齐。下次复核重点看锗价、资金流和政策来源是否完成核验。",
+        "backend_reason_tags": ["policy_events_partial", "industry_price_missing", "fundamentals_capital_missing", "market_style_missing"],
+        "must_not_expand": ["MACD细节", "RSI细节", "逐项技术指标堆叠", "买入卖出话术"],
+    },
+    {
+        "stock_name": "正丹股份",
+        "stock_code": "300641",
+        "conclusion": "可纳入观察",
+        "frontend_answer": "正丹股份（300641）：可纳入观察，关键看产品价格和业绩弹性是否继续兑现。当前积极点是化工弹性样本已纳入；主要缺口是产品价格连续观测、财报资金和市场风格适配仍未形成真实日度证据。",
+        "backend_reason_tags": ["industry_price_missing", "fundamentals_capital_missing", "market_style_missing"],
+        "must_not_expand": ["短线涨跌替代产品价格", "强推荐", "仓位建议"],
+    },
+    {
+        "stock_name": "浙商中拓",
+        "stock_code": "000906",
+        "conclusion": "可纳入观察",
+        "frontend_answer": "浙商中拓（000906）：可纳入观察，但属于低置信观察。它更依赖大宗商品景气、现金流和负债质量，当前关键缺口是这些证据还没结构化补齐；在缺少财报质量和商品景气连续数据前，不适合抬高结论。",
+        "backend_reason_tags": ["fundamentals_capital_missing", "industry_cycle_missing", "policy_events_missing"],
+        "must_not_expand": ["供应链概念空泛表述", "无证据强结论", "交易动作"],
+    },
+    {
+        "stock_name": "三花智控",
+        "stock_code": "002050",
+        "conclusion": "可纳入观察",
+        "frontend_answer": "三花智控（002050）：可纳入观察，重点看业绩兑现和制造成长风格是否配合。当前产业逻辑可以作为背景，但机构资金、最新财报和真实市场风格证据未补齐前，结论保持克制。",
+        "backend_reason_tags": ["fundamentals_capital_partial", "industry_theme_partial", "market_style_missing"],
+        "must_not_expand": ["只讲机器人概念", "忽略财报缺口", "买卖建议"],
+    },
+    {
+        "stock_name": "上纬新材",
+        "stock_code": "688585",
+        "conclusion": "暂不建议关注",
+        "frontend_answer": "上纬新材（688585）：暂不建议关注。不是说公司没有研究价值，而是当前财报资金、产品价格、政策暴露度和市场风格证据缺口都偏多，前台结论应先提示等待证据补齐。",
+        "backend_reason_tags": ["fundamentals_capital_missing", "industry_price_missing", "policy_events_missing", "market_style_missing"],
+        "must_not_expand": ["概念标签抬结论", "无依据推荐", "交易动作"],
+    },
+]
+
+
+def main() -> None:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    asset = {
+        "name": "前台结论型短答压缩回归样例",
+        "version": "v1.0",
+        "generated_at": now,
+        "asset_identity": "W1 前台结论型短答压缩回归样例",
+        "status": "shadow_frontend_regression",
+        "purpose": "把后台证据链压缩为使用者在企业微信里更容易直接吸收的结论型短答。",
+        "not_formal_entry": True,
+        "not_external_send": True,
+        "not_formal_config": True,
+        "not_trade": True,
+        "compression_contract": {
+            "line_1": "必须明确股票名称、代码和结论词。",
+            "body": "只保留主要原因、关键缺口和复核重点，不展开后台分析过程。",
+            "missing": "证据缺口必须显式出现，但用使用者能读懂的话说。",
+            "prohibited": ["买入", "卖出", "下单", "仓位调整", "自动交易", "保证收益"],
+        },
+        "samples": SAMPLES,
+        "summary": {
+            "sample_count": len(SAMPLES),
+            "all_samples_have_name_code": True,
+            "all_samples_have_missing_hint": True,
+            "real_external_send_allowed": False,
+            "trade_action_allowed": False,
+        },
+        "safety_boundary": {
+            "not_n8n": True,
+            "not_external_send": True,
+            "not_service_restart": True,
+            "not_19310": True,
+            "not_real_account": True,
+            "not_formal_database_write": True,
+            "not_formal_config": True,
+            "not_entrypoint": True,
+            "not_broker_interface": True,
+            "not_auto_trade": True,
+            "not_order": True,
+            "not_position_adjustment": True,
+        },
+    }
+    JSON_OUT.write_text(json.dumps(asset, ensure_ascii=False, indent=2), encoding="utf-8")
+    lines = [
+        "# 前台结论型短答压缩回归样例",
+        "",
+        f"- 生成时间：{now}",
+        "- 资产身份：W1 前台结论型短答压缩回归样例",
+        "- 企业微信真实外发：否",
+        "- 交易能力：否",
+        "",
+        "## 样例",
+        "",
+    ]
+    for sample in SAMPLES:
+        lines.extend([f"### {sample['stock_name']}（{sample['stock_code']}）", "", sample["frontend_answer"], ""])
+    MD_OUT.write_text("\n".join(lines), encoding="utf-8")
+    print(json.dumps({"status": "ok", "summary": asset["summary"]}, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

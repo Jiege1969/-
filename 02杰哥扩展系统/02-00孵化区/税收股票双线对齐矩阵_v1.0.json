@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "name": "税收股票双线对齐矩阵",
+  "asset_identity": "cross_business_shadow_alignment_draft",
+  "risk_level": "W1",
+  "boundary": {
+    "modify_stock_formal_config": false,
+    "tax_system_online": false,
+    "write_formal_database": false,
+    "trigger_n8n": false,
+    "external_send": false
+  },
+  "alignment_conclusion": "应该对齐；共享对象识别、证据分层、结论前置、缺口显式、人工复核、复盘进化等方法链，不迁移股票行情、交易、价位和券商接口等专用逻辑。",
+  "tax_system_positioning": "税务业务系统定位为政策顾问和涉税业务分析专家助手，依据国家政策分析具体税收业务。",
+  "shared_method_chain": [
+    {
+      "generic_step": "对象先明确",
+      "stock_current_method": "识别股票名称、代码、别名，前台首行显示分析对象",
+      "tax_shadow_mapping": "识别政策文号、税种、业务事项、企业事实口径",
+      "tax_status": "pending_workflow_draft"
+    },
+    {
+      "generic_step": "证据先于判断",
+      "stock_current_method": "行情、技术指标、候选池、财报、政策事件、市场风格",
+      "tax_shadow_mapping": "法律、行政法规、政策文件、地方口径、企业资料、人工复核",
+      "tax_status": "policy_cards_and_sources_exist"
+    },
+    {
+      "generic_step": "依据分层",
+      "stock_current_method": "结构化证据优先，缺口显式展示",
+      "tax_shadow_mapping": "宪法/法律/行政法规/部门规章/地方口径/企业资料分层",
+      "tax_status": "basis_hierarchy_rule_linked"
+    },
+    {
+      "generic_step": "前台业务语言",
+      "stock_current_method": "先给结论、策略、条件、风险线",
+      "tax_shadow_mapping": "先给待复核结论、适用条件、缺口、需人工确认事项",
+      "tax_status": "pending_frontend_fields_draft"
+    },
+    {
+      "generic_step": "人工复核与复盘进化",
+      "stock_current_method": "修正进入经验候选，不自动改正式规则",
+      "tax_shadow_mapping": "复核意见进入税收人工修正样本或进化候选",
+      "tax_status": "review_receipt_exists"
+    }
+  ],
+  "stock_specific_do_not_transfer": [
+    "行情实时刷新",
+    "转强线",
+    "承接价",
+    "成交活跃",
+    "量比",
+    "交易时段保护",
+    "券商接口",
+    "下单语义",
+    "单股代码语义"
+  ],
+  "tax_replacement_terms": [
+    "政策有效性",
+    "适用期间",
+    "政策文号",
+    "税种",
+    "业务事实",
+    "地方口径待核实",
+    "企业资料缺口",
+    "人工复核事项"
+  ],
+  "tax_target_functions": [
+    "涉税业务分析",
+    "政策顾问式问答",
+    "政策依据整理",
+    "适用条件判断",
+    "业务事实拆解",
+    "资料清单生成",
+    "测算前置字段梳理",
+    "待复核分析报告生成",
+    "人工修正沉淀"
+  ],
+  "tax_non_goals": [
+    "申报",
+    "退税执行",
+    "开票",
+    "登录电子税务局",
+    "连接财税软件",
+    "外发正式意见"
+  ],
+  "created_outputs": [
+    {
+      "name": "税收业务报告工作流草案",
+      "markdown": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收业务报告工作流草案_v1.0.md",
+      "json": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收业务报告工作流草案_v1.0.json",
+      "asset_identity": "tax_shadow_report_workflow_draft"
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "asset_identity": "policy_event_candidate_draft",
+  "version": "2026-05-07-draft",
+  "created_at": "2026-05-07",
+  "scope": "股票分析系统政策事件库候选补证",
+  "risk_boundary": {
+    "risk_level": "W1/W2-draft-data",
+    "not_for_scoring": true,
+    "not_formal_config": true,
+    "not_formal_script": true,
+    "not_entrypoint": true,
+    "not_external_send": true,
+    "not_trading": true,
+    "review_required_before_formal_use": true
+  },
+  "usage_rule": "本文件只作为政策事件库候选草案。候选事件不得进入L3正式评分；需人工复核影响方向、影响强度、股票暴露度和时效后，才能拆分写入policy_events_v1.0.json与stock_policy_exposures_v1.0.json。",
+  "candidate_events": [
+    {
+      "candidate_id": "POL-CAND-20260507-001",
+      "suggested_event_id": "POL-2023-002",
+      "candidate_status": "draft",
+      "not_for_scoring": true,
+      "title": "商务部 海关总署公告2023年第39号 关于优化调整石墨物项临时出口管制措施的公告",
+      "publish_date": "2023-10-20",
+      "effective_date": "2023-12-01",
+      "source_name": "商务部、海关总署",
+      "source_level": "official",
+      "source_url": "https://dcj.mofcom.gov.cn/article/zcfb/zcdwmy/202310/20231003447368.shtml",
+      "policy_type": "出口管制",
+      "industry_tags": [
+        "石墨",
+        "新能源材料",
+        "锂电负极",
+        "两用物项",
+        "出口管制"
+      ],
+      "draft_impact_direction": "不确定偏利好上游合规龙头",
+      "draft_impact_strength": 0.65,
+      "draft_reason": "公告将符合高纯度、高强度、高密度条件的人造石墨材料及其制品等纳入出口管制。对具备石墨材料产能、合规能力和客户资质的企业可能提升战略属性，但出口许可约束也可能增加合规成本和交付不确定性。",
+      "candidate_stock_exposures": [
+        {
+          "stock_code": "603659",
+          "stock_name": "璞泰来",
+          "draft_exposure": 0.45,
+          "reason_to_review": "负极材料业务与石墨材料相关，但需复核产品是否落入管制参数、出口占比和客户结构。"
+        },
+        {
+          "stock_code": "300035",
+          "stock_name": "中科电气",
+          "draft_exposure": 0.35,
+          "reason_to_review": "具备锂电负极材料业务，需复核产品参数、出口占比和政策传导。"
+        },
+        {
+          "stock_code": "600884",
+          "stock_name": "杉杉股份",
+          "draft_exposure": 0.35,
+          "reason_to_review": "负极材料相关业务需复核与公告列管物项的直接匹配度。"
+        }
+      ],
+      "missing_before_formal_use": [
+        "需核对公司产品是否满足公告列管技术参数。",
+        "需补出口收入占比、海外客户结构和许可证执行情况。",
+        "需确认影响方向是价格弹性、合规成本还是订单扰动。"
+      ]
+    },
+    {
+      "candidate_id": "POL-CAND-20260507-002",
+      "suggested_event_id": "POL-2024-001",
+      "candidate_status": "draft",
+      "not_for_scoring": true,
+      "title": "商务部 海关总署公告2024年第33号 关于对锑等物项实施出口管制的公告",
+      "publish_date": "2024-08-15",
+      "effective_date": "2024-09-15",
+      "source_name": "商务部、海关总署",
+      "source_level": "official",
+      "source_url": "https://www.mofcom.gov.cn/zcfb/zc/art/2024/art_8d1d0c07124e4c01b69339c275c69cbe.html",
+      "policy_type": "出口管制",
+      "industry_tags": [
+        "锑",
+        "超硬材料",
+        "稀有金属",
+        "出口管制"
+      ],
+      "draft_impact_direction": "不确定偏利好资源端",
+      "draft_impact_strength": 0.75,
+      "draft_reason": "公告对锑矿及原料、金属锑及制品、锑氧化物等相关物项，以及超硬材料相关物项实施出口管制。对锑资源和冶炼加工企业可能提升资源战略属性，但也可能带来出口许可和交付约束。",
+      "candidate_stock_exposures": [
+        {
+          "stock_code": "002155",
+          "stock_name": "湖南黄金",
+          "draft_exposure": 0.55,
+          "reason_to_review": "市场通常将其归入锑资源相关标的，但需复核锑业务收入、产量、权益资源和出口占比。"
+        },
+        {
+          "stock_code": "601020",
+          "stock_name": "华钰矿业",
+          "draft_exposure": 0.45,
+          "reason_to_review": "需复核锑资源权益、产销结构、海外项目和政策映射强度。"
+        }
+      ],
+      "missing_before_formal_use": [
+        "需补公司锑业务占比和产量数据。",
+        "需核对是否直接涉及出口或仅为国内价格预期映射。",
+        "需评估超硬材料链条与A股标的的直接暴露度。"
+      ]
+    },
+    {
+      "candidate_id": "POL-CAND-20260507-003",
+      "suggested_event_id": "POL-2024-002",
+      "candidate_status": "draft",
+      "not_for_scoring": true,
+      "title": "稀土管理条例（中华人民共和国国务院令 第785号）",
+      "publish_date": "2024-06-22",
+      "effective_date": "2024-10-01",
+      "source_name": "国务院、司法部法规库、工业和信息化部转载",
+      "source_level": "official",
+      "source_url": "https://xzfg.moj.gov.cn/law/download?LawID=1726&type=pdf",
+      "policy_type": "资源管理条例",
+      "industry_tags": [
+        "稀土",
+        "资源安全",
+        "产业安全",
+        "开采",
+        "冶炼分离"
+      ],
+      "draft_impact_direction": "中长期利好合规稀土资源与分离龙头",
+      "draft_impact_strength": 0.70,
+      "draft_reason": "条例覆盖稀土开采、冶炼分离、金属冶炼、综合利用、产品流通、进出口等活动，强调资源安全、产业安全、生态保护和高质量发展。对合规稀土龙头可能形成长期制度约束和供给秩序改善预期。",
+      "candidate_stock_exposures": [
+        {
+          "stock_code": "600111",
+          "stock_name": "北方稀土",
+          "draft_exposure": 0.75,
+          "reason_to_review": "稀土资源和分离加工龙头属性明显，但需复核资源、配额、产品结构和价格敏感度。"
+        },
+        {
+          "stock_code": "000831",
+          "stock_name": "中国稀土",
+          "draft_exposure": 0.65,
+          "reason_to_review": "稀土产业链相关度高，需复核具体资源和业务环节暴露。"
+        },
+        {
+          "stock_code": "600392",
+          "stock_name": "盛和资源",
+          "draft_exposure": 0.60,
+          "reason_to_review": "需复核稀土资源、冶炼分离、境内外业务和政策约束影响。"
+        }
+      ],
+      "missing_before_formal_use": [
+        "需补各公司稀土资源/冶炼分离/贸易业务占比。",
+        "需结合年度总量控制指标、价格数据和配额变化复核。",
+        "需区分长期制度利好与短期股价催化。"
+      ]
+    },
+    {
+      "candidate_id": "POL-CAND-20260507-004",
+      "suggested_event_id": "POL-2024-003",
+      "candidate_status": "draft",
+      "not_for_scoring": true,
+      "title": "商务部 工业和信息化部 海关总署 国家密码局公告2024年第51号 关于发布《中华人民共和国两用物项出口管制清单》的公告",
+      "publish_date": "2024-11-15",
+      "effective_date": "2024-12-01",
+      "source_name": "商务部、工业和信息化部、海关总署、国家密码局",
+      "source_level": "official",
+      "source_url": "https://www.mofcom.gov.cn/zcfb/zc/art/2024/art_461aafbb5e974f47b1c23866643cb71c.html",
+      "policy_type": "两用物项出口管制清单",
+      "industry_tags": [
+        "两用物项",
+        "出口管制",
+        "商用密码",
+        "高端制造",
+        "新材料"
+      ],
+      "draft_impact_direction": "行业合规约束增强",
+      "draft_impact_strength": 0.55,
+      "draft_reason": "公告公布统一的两用物项出口管制清单，并自2024年12月1日起实施。该事件更适合作为跨行业合规背景，不宜直接给单股高政策分，除非能匹配到具体列管物项和公司产品。",
+      "candidate_stock_exposures": [],
+      "missing_before_formal_use": [
+        "需解析清单附件并拆分具体物项。",
+        "需建立物项-产业链-公司产品映射。",
+        "未拆分前不得直接给任何单股政策加分。"
+      ]
+    },
+    {
+      "candidate_id": "POL-CAND-20260507-005",
+      "suggested_event_id": "POL-2024-004",
+      "candidate_status": "draft",
+      "not_for_scoring": true,
+      "title": "商务部公告2024年第46号 关于加强相关两用物项对美国出口管制的公告",
+      "publish_date": "2024-12-03",
+      "effective_date": "2024-12-03",
+      "source_name": "商务部",
+      "source_level": "official",
+      "source_url": "https://www.mofcom.gov.cn/zfxxgk/gkml/art/2024/art_99f5d51bbe6a412ca309d5818c4dee52.html",
+      "policy_type": "特定目的地出口管制",
+      "industry_tags": [
+        "两用物项",
+        "出口管制",
+        "镓",
+        "锗",
+        "锑",
+        "超硬材料",
+        "石墨"
+      ],
+      "draft_impact_direction": "不确定，偏战略属性提升与出口约束并存",
+      "draft_impact_strength": 0.60,
+      "draft_reason": "公告加强相关两用物项对美国出口管制，涉及范围与既有镓、锗、锑、超硬材料、石墨等出口管制政策存在交集。对相关资源和材料公司可能强化战略属性，但也可能对出口业务形成约束。",
+      "candidate_stock_exposures": [
+        {
+          "stock_code": "002428",
+          "stock_name": "云南锗业",
+          "draft_exposure": 0.50,
+          "reason_to_review": "锗相关物项已在既有政策中高暴露，本事件需复核是否构成新增边际影响，而不是重复加分。"
+        }
+      ],
+      "missing_before_formal_use": [
+        "需避免与POL-2023-001重复计分。",
+        "需确认公司对美国出口占比和实际许可影响。",
+        "需拆分本公告对不同物项的边际影响。"
+      ]
+    }
+  ],
+  "stock_system_note": "本草案仅服务股票研究系统的政策事件候选补证。不得进入交易、外发、自动执行或正式评分；候选事件必须经人工复核后才能进入正式政策事件库。"
+}

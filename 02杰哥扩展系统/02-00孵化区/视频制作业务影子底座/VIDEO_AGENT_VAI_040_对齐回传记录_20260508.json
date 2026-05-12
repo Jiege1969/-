@@ -1,0 +1,30 @@
+{
+  "record_id": "VIDEO_AGENT_VAI_040",
+  "name": "对齐回传记录",
+  "generated_at": "2026-05-08 13:12:00 +08:00",
+  "work_scope": "视频制作业务影子底座",
+  "mode": "continuous_auto_construction_W1_R0_shadow",
+  "source_closure": "VIDEO_AGENT_VAI_001_039_阶段总收口验收_20260508.md/json",
+  "created_files": [
+    "VIDEO_AGENT_MANUAL_TRIAL_READINESS_CHECK_001_手工试运行准备度核对卡_v1.0.md",
+    "VIDEO_AGENT_MANUAL_TRIAL_READINESS_CHECK_001_手工试运行准备度核对卡_v1.0.json",
+    "VIDEO_AGENT_VAI_040_R0_SELF_CHECK_20260508.md",
+    "VIDEO_AGENT_VAI_040_R0_SELF_CHECK_20260508.json",
+    "VIDEO_AGENT_VAI_001_040_阶段总收口验收_20260508.md",
+    "VIDEO_AGENT_VAI_001_040_阶段总收口验收_20260508.json"
+  ],
+  "risk_level": "low",
+  "real_system_triggered": false,
+  "next_auto_candidates": [
+    "backfill_desensitized_idea_intake_prompt_to_latest_closure",
+    "shadow_status_enum_mapping_table",
+    "manual_trial_io_sample_index"
+  ],
+  "self_check": {
+    "read_manager_panel": true,
+    "read_continuation_package": true,
+    "read_latest_total_closure": true,
+    "write_scope_ok": true,
+    "real_system_triggered": false
+  }
+}

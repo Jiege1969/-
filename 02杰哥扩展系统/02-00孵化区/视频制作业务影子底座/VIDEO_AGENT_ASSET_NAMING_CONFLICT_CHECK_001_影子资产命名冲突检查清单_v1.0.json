@@ -1,0 +1,26 @@
+{
+  "asset_id": "VIDEO_AGENT_ASSET_NAMING_CONFLICT_CHECK_001",
+  "version": "v1.0",
+  "asset_type": "naming_checklist",
+  "construction_level": "W1/R0",
+  "scope": "new_assets_in_video_production_shadow_base",
+  "status": "draft",
+  "purpose": "Avoid duplicate numbering, semantic duplicates, overwritten assets, and shadow drafts being mistaken for formal files during continuous construction.",
+  "check_items": [
+    {"id": "NC-001", "item": "unique_prefix", "standard": "New file prefix does not conflict with existing files.", "failure_action": "Use new number; do not overwrite old files."},
+    {"id": "NC-002", "item": "md_json_consistency", "standard": "Asset id, version, and topic match between md and json.", "failure_action": "Revise pair."},
+    {"id": "NC-003", "item": "stage_number_continuity", "standard": "VAI numbering does not go backwards or reuse an existing number.", "failure_action": "Use next available number."},
+    {"id": "NC-004", "item": "shadow_marker", "standard": "Title or status includes shadow, draft, or W1/R0 marker.", "failure_action": "Add marker."},
+    {"id": "NC-005", "item": "not_formal_entry", "standard": "Filename does not imply formal launch, publish, or entry.", "failure_action": "Rename as shadow draft."},
+    {"id": "NC-006", "item": "no_overwrite", "standard": "No delete, move, or rewrite of old assets.", "failure_action": "Create new revision or handoff note."},
+    {"id": "NC-007", "item": "paired_outputs", "standard": "Key assets preferably have md/json pairs.", "failure_action": "Add paired file."},
+    {"id": "NC-008", "item": "encoding_readability", "standard": "Files are readable UTF-8 text.", "failure_action": "Create correction record; do not move old file."}
+  ],
+  "conflict_output_fields": [
+    "conflict_filename",
+    "conflict_type",
+    "suggested_new_filename",
+    "requires_manager_decision"
+  ],
+  "never_delete_or_move_old_assets": true
+}

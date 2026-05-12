@@ -1,0 +1,135 @@
+{
+  "name": "政策事件库字段化补齐样例",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 13:30:36",
+  "asset_identity": "W1政策事件字段化样例",
+  "status": "shadow_field_sample",
+  "purpose": "把政策事件库中的来源、方向、强度、暴露度、时效、置信度和前台影响拆成可验收字段。",
+  "not_real_policy_database": true,
+  "not_external_send": true,
+  "not_formal_entry": true,
+  "not_score_write": true,
+  "field_schema": [
+    {
+      "field": "event_id",
+      "required": true
+    },
+    {
+      "field": "source_name",
+      "required": true
+    },
+    {
+      "field": "source_url_status",
+      "required": true
+    },
+    {
+      "field": "publish_date",
+      "required": true
+    },
+    {
+      "field": "impact_direction",
+      "required": true
+    },
+    {
+      "field": "impact_strength",
+      "required": true
+    },
+    {
+      "field": "stock_exposure",
+      "required": true
+    },
+    {
+      "field": "decay_status",
+      "required": true
+    },
+    {
+      "field": "confidence",
+      "required": true
+    },
+    {
+      "field": "frontend_effect",
+      "required": true
+    },
+    {
+      "field": "missing_reason",
+      "required": true
+    }
+  ],
+  "samples": [
+    {
+      "stock_name": "云南锗业",
+      "stock_code": "002428",
+      "policy_event": {
+        "event_id": "POL-GE-EXPORT-CONTROL-SHADOW-001",
+        "title": "锗相关物项出口管制政策事件候选",
+        "source_name": "商务部/海关总署候选来源",
+        "source_url_status": "pending_real_url_review",
+        "publish_date": "shadow_sample",
+        "impact_direction": "positive",
+        "impact_strength": 0.85,
+        "stock_exposure": 0.95,
+        "decay_status": "pending_valid_until_review",
+        "confidence": "medium",
+        "frontend_effect": "可作为政策主因候选，但来源链接和有效期未复核前不得单独支撑重点关注。",
+        "missing_reason": "真实来源链接、有效期、衰减窗口和政策原文摘要待复核。"
+      }
+    },
+    {
+      "stock_name": "正丹股份",
+      "stock_code": "300641",
+      "policy_event": {
+        "event_id": "POL-CHEM-SUPPLY-SHADOW-001",
+        "title": "化工品供需与安全监管政策候选",
+        "source_name": "行业监管/产业政策候选来源",
+        "source_url_status": "missing",
+        "publish_date": "shadow_sample",
+        "impact_direction": "neutral_watch",
+        "impact_strength": 0.35,
+        "stock_exposure": 0.55,
+        "decay_status": "not_started",
+        "confidence": "low",
+        "frontend_effect": "只能作为行业背景线索，不进入强政策加分。",
+        "missing_reason": "缺少可复核政策原文、影响方向和公司暴露度证据。"
+      }
+    },
+    {
+      "stock_name": "三花智控",
+      "stock_code": "002050",
+      "policy_event": {
+        "event_id": "POL-ADV-MFG-SHADOW-001",
+        "title": "先进制造/节能设备政策背景候选",
+        "source_name": "产业政策候选来源",
+        "source_url_status": "partial",
+        "publish_date": "shadow_sample",
+        "impact_direction": "positive_watch",
+        "impact_strength": 0.45,
+        "stock_exposure": 0.6,
+        "decay_status": "pending_event_match",
+        "confidence": "medium",
+        "frontend_effect": "只作为产业背景辅助，不替代财报、订单和资金证据。",
+        "missing_reason": "政策事件与具体业务暴露度匹配待复核。"
+      }
+    }
+  ],
+  "summary": {
+    "field_count": 11,
+    "sample_count": 3,
+    "all_have_frontend_effect": true,
+    "all_have_missing_reason": true,
+    "ready_source_count": 0
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  }
+}

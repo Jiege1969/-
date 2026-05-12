@@ -1,0 +1,33 @@
+{
+  "id": "P2-S9-SHADOW-ENTRY-SEAL-AND-RECOVERY-RECEIPT-20260509",
+  "executed_at": "2026-05-09 12:07:25 +08:00",
+  "execution_type": "readonly_preview",
+  "status": "pass",
+  "command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S9影子入口封存回收只读检查.py'",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\58P2S9影子入口封存回收只读检查\\P2S9影子入口封存回收只读检查_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\58P2S9影子入口封存回收只读检查\\P2S9影子入口封存回收只读检查_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\58P2S9影子入口封存回收只读检查\\P2S9影子入口封存回收预演样例_20260509.json"
+  ],
+  "summary": {
+    "input_mapping_count": 7,
+    "passed": 7,
+    "failed": 0,
+    "ready_shadow_preview": 4,
+    "pause_gap_archive": 2,
+    "blocked_redline_archive": 1
+  },
+  "conclusion": "入口封存与问题回收预演通过；业务线映射进入待复核封存，缺口进入缺口封存，真实执行请求进入红线阻断封存，且未改写任何影子入口。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

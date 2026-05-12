@@ -1,0 +1,10 @@
+{
+  "name": "政策事件候选到前台表述约束验收结果",
+  "generated_at": "2026-05-08 12:12:54",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "constraint_count": 3,
+    "sample_count": 5
+  }
+}

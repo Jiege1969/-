@@ -1,0 +1,112 @@
+{
+  "名称": "华虹公司财报基本面证据卡",
+  "版本": "shadow_v1.0",
+  "生成日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子证据卡",
+  "状态": "shadow_only",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "stock": {
+    "name": "华虹公司",
+    "code": "sh688347",
+    "display_code": "688347.SH"
+  },
+  "source_status": {
+    "local_company_snapshot": "available",
+    "external_public_disclosure_used": true,
+    "structured_into_l3_shadow": true,
+    "formal_chain_status": "not_integrated"
+  },
+  "sources": [
+    {
+      "source_name": "本地公司经营快照",
+      "source_url": "03数据/166公司经营快照/公司经营快照_最新.json",
+      "source_type": "本地结构化快照",
+      "evidence_scope": "2025年年报财务字段、公司概况和证据状态",
+      "checked_at": "2026-05-07"
+    },
+    {
+      "source_name": "本地191单股证据核验人工填写台账",
+      "source_url": "03数据/191单股证据核验人工填写台账/单股证据核验人工填写台账_sh688347_20260503_090105.json",
+      "source_type": "人工核验台账",
+      "evidence_scope": "公司概况、事件风险、行业景气均已核验",
+      "checked_at": "2026-05-07"
+    },
+    {
+      "source_name": "华虹公司2025年年度报告",
+      "source_url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12025390&stockid=688347",
+      "source_type": "上市公司公告",
+      "evidence_scope": "公司业务、年度财务、风险因素",
+      "checked_at": "2026-05-07"
+    },
+    {
+      "source_name": "SIA全球半导体销售数据",
+      "source_url": "https://www.semiconductors.org/global-annual-semiconductor-sales-increase-25-6-to-791-7-billion-in-2025/",
+      "source_type": "行业协会公开数据",
+      "evidence_scope": "全球半导体行业景气背景",
+      "checked_at": "2026-05-07"
+    }
+  ],
+  "financial_metrics": {
+    "annual_2025": {
+      "revenue_yuan": 17291450000.0,
+      "revenue_yoy_pct": 20.177098,
+      "net_profit_parent_yuan": 376610000.0,
+      "profit_yoy_pct": -1.041782,
+      "deducted_net_profit_yuan": 228940000.0,
+      "gross_margin_pct": 18.723947,
+      "net_margin_pct": -4.667873,
+      "roe_pct": 0.85,
+      "operating_cashflow_yuan": 5065420000.0,
+      "cash_quality_description": "经营现金流/归母净利润约13.45"
+    }
+  },
+  "business_evidence": [
+    "公司主要从事晶圆代工业务，聚焦嵌入式/独立式非易失性存储器、功率器件、模拟与电源管理、逻辑与射频等特色工艺平台。",
+    "公司具备8英寸和12英寸产线布局，是国内特色工艺晶圆代工代表企业之一。",
+    "下游覆盖IC设计公司、IDM厂商、功率半导体企业以及消费电子、工业控制、汽车电子、通信、物联网、新能源等应用。",
+    "2025年营收同比增长，但归母净利润同比小幅下滑，ROE偏低，净利率口径承压。",
+    "经营现金流较强，但晶圆代工仍受半导体周期、产能利用率、价格压力、资本开支和重组整合影响。"
+  ],
+  "fundamental_capital_shadow_score": {
+    "score": 11,
+    "max_score": 20,
+    "score_reason": "公司业务和行业地位证据完整，营收增长、经营现金流较强，半导体行业景气改善提供研究背景；但利润增速偏弱、ROE低、净利率承压，且晶圆代工具有周期和资本开支压力，因此基本面只能给中性偏积极，不构成强支撑。",
+    "positive_evidence": [
+      "2025年营业收入172.91亿元，同比增长20.18%。",
+      "经营现金流净额50.65亿元，现金流覆盖归母净利润较充分。",
+      "公司具备8英寸和12英寸特色工艺晶圆代工平台。",
+      "SIA与国内集成电路产量数据支持半导体行业整体景气改善。"
+    ],
+    "negative_evidence": [
+      "2025年归母净利润3.77亿元，同比小幅下降。",
+      "加权ROE仅0.85%，盈利效率偏低。",
+      "净利率口径为负，提示利润质量和费用/折旧压力仍需核验。",
+      "重大资产重组、产能利用率、资本开支和行业价格竞争仍是关键风险。"
+    ],
+    "missing": [
+      "2026年一季报财务字段尚未接入本证据卡。",
+      "产能利用率、晶圆ASP、折旧和资本开支拆分未进入结构化字段。",
+      "机构持仓、资金流、解禁减持和重组进度未合并到本证据卡。"
+    ],
+    "confidence": "medium"
+  },
+  "front_output_compression": {
+    "one_sentence": "基本面不是空白：营收和现金流有支撑、半导体景气改善，但利润率和ROE偏弱，晶圆代工周期压力还在。",
+    "user_facing_reason": "华虹公司更适合作为半导体景气修复观察股，不能只看行业热度就给强结论。",
+    "do_not_say": [
+      "财报未接入",
+      "半导体景气所以直接重点关注",
+      "晶圆代工业务等同于AI芯片高弹性"
+    ]
+  },
+  "safety_boundary": {
+    "only_for_research": true,
+    "not_investment_advice": true,
+    "not_buy_sell_signal": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

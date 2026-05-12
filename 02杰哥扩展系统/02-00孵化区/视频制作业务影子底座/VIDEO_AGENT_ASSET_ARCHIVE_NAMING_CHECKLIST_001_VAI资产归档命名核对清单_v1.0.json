@@ -1,0 +1,33 @@
+{
+  "id": "VIDEO_AGENT_ASSET_ARCHIVE_NAMING_CHECKLIST_001",
+  "name": "VAI资产归档命名核对清单",
+  "asset_identity": "video_creation_agent_shadow_asset_archive_naming_checklist",
+  "stage": "W1_R0",
+  "status": "naming_checklist_no_old_asset_move",
+  "naming_rules": {
+    "prefix": "VIDEO_AGENT_",
+    "numbering": "three_digit_sequence_or_vai_range",
+    "chinese_description": "keep_business_meaning",
+    "version": "v1.0_for_drafts_and_templates",
+    "date": "20260508_for_self_check_return_and_closure",
+    "json_pairing": "key_assets_prefer_json_pair"
+  },
+  "checks": [
+    "inside_video_shadow_base_directory",
+    "uses_video_agent_prefix",
+    "distinguishes_template_sample_checklist_selfcheck_return_closure",
+    "avoids_misleading_formal_launch_publish_terms",
+    "does_not_move_or_delete_old_assets",
+    "paired_json_parseable"
+  ],
+  "principles": [
+    "record_gap_first_when_naming_inconsistent",
+    "create_migration_plan_before_renaming",
+    "keep_old_file_references_in_index_to_avoid_broken_links"
+  ],
+  "boundary": {
+    "move_old_assets": false,
+    "delete_old_assets": false,
+    "rename_without_plan": false
+  }
+}

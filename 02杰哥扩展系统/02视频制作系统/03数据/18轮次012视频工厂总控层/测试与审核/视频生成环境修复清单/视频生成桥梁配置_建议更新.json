@@ -1,0 +1,35 @@
+{
+  "名称": "视频生成桥梁配置",
+  "版本": "2026-05-08",
+  "所属系统": "02杰哥扩展系统/02视频制作系统",
+  "推荐方案": "MoneyPrinterTurbo 本地执行器",
+  "生成桥梁": {
+    "启用真实渲染": false,
+    "工具": "MoneyPrinterTurbo",
+    "根目录": "",
+    "启动脚本": "",
+    "命令": "",
+    "默认输出目录": "03数据/18轮次012视频工厂总控层/成品库",
+    "节奏控制秒数": {
+      "最小": 30,
+      "最大": 120
+    },
+    "候选根目录": [
+      "C:/Users/Administrator/Documents/Codex/2026-05-07/30-moneyprinterturbo-windows-imagemagick-chrome-1",
+      "D:/杰哥智能化系统/02杰哥扩展系统/02视频制作系统/06临时/MoneyPrinterTurbo"
+    ]
+  },
+  "依赖检查": {
+    "ImageMagick命令": "magick",
+    "Chrome候选路径": [
+      "C:/Program Files/Google/Chrome/Application/chrome.exe",
+      "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+    ]
+  },
+  "安全约束": [
+    "真实渲染默认关闭，必须通过最终生成启用门禁后才可执行。",
+    "必须先在视频生成放行清单中将放行状态改为放行。",
+    "MoneyPrinterTurbo 只作为本地执行器，不允许绕过轮次012任务单、草案、人工复核和放行清单。",
+    "未找到真实可执行入口时，只允许输出预检报告，不得假装生成成品。"
+  ]
+}

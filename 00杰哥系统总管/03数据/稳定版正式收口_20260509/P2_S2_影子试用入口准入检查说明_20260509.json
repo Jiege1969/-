@@ -1,0 +1,31 @@
+{
+  "id": "P2-S2-SHADOW-TRIAL-ENTRY-ADMISSION-20260509",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S2",
+  "status": "executed_pass",
+  "purpose": "为 P2-S1 新增影子试用入口补充填卡前只读准入检查能力",
+  "script": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S2影子试用入口只读准入检查.py",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\51P2S2影子试用入口只读准入检查\\P2S2影子试用入口只读准入检查_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\51P2S2影子试用入口只读准入检查\\P2S2影子试用入口只读准入检查_最新.json"
+  ],
+  "latest_receipt": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\稳定版正式收口_20260509\\P2_S2_影子试用入口准入检查回执_20260509.json",
+  "admission_conditions": [
+    "P2-S1 执行包和 5 个入口卡文件均存在",
+    "6 个 JSON 均可解析",
+    "入口卡已挂入对应线内索引和孵化区总索引",
+    "红线字段全部保持 false",
+    "税收、本职工作、视频、共享政策证据入口均保留人工复核要求",
+    "视频发布门禁保持 closed",
+    "三条业务线索引均不声明正式能力"
+  ],
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

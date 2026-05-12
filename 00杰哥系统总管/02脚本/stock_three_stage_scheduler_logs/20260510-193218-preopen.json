@@ -1,0 +1,8 @@
+﻿{
+    "status":  "locked_by_global_scheduler",
+    "stage":  "preopen",
+    "audit_only":  true,
+    "global_lock_acquired":  false,
+    "lock_acquired":  false,
+    "time":  "2026-05-10 19:32:18"
+}

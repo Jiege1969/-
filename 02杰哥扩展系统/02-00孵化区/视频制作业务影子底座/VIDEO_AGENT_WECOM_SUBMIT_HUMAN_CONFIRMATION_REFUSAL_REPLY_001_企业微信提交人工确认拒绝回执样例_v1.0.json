@@ -1,0 +1,37 @@
+{
+  "asset_id": "VIDEO_AGENT_WECOM_SUBMIT_HUMAN_CONFIRMATION_REFUSAL_REPLY_001",
+  "version": "v1.0",
+  "asset_type": "wecom_placeholder_reply_sample",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "user_submits_final_human_confirmation_but_gate_materials_are_incomplete",
+  "status": "draft_sample_no_real_send",
+  "input_command_sample": "我确认 VF-20260508-003 可以发布",
+  "reply_sample": {
+    "task_id": "VF-20260508-003",
+    "received": "final_human_confirmation_draft",
+    "decision": "cannot_accept_as_valid_final_confirmation",
+    "reasons": [
+      "pre_publish_gate_overview_missing_or_failed",
+      "pre_publish_blocker_summary_missing",
+      "multi_platform_checks_incomplete",
+      "material_authorization_proof_not_archived"
+    ],
+    "system_handling": [
+      "keep_publishing_blocked",
+      "route_to_gate_consistency_review_queue",
+      "do_not_trigger_real_publish"
+    ],
+    "next_action": "complete gate overview, blocker summary, multi-platform checks, and material authorization proof first",
+    "real_system_triggered": false
+  },
+  "fixed_rules": [
+    "Verbal confirmation cannot replace structured receipts.",
+    "If gate materials are incomplete, final confirmation must be refused.",
+    "Refusal reply must explain which materials are missing.",
+    "This sample does not send real WeCom messages or publish."
+  ],
+  "boundaries": {
+    "wecom_real_send": false,
+    "trigger_publish": false
+  }
+}

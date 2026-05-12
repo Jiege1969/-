@@ -1,0 +1,94 @@
+{
+  "asset_id": "VIDEO_AGENT_FINAL_CONFIRMATION_GAP_CLOSE_CONDITION_001",
+  "name": "最终确认缺口关闭条件清单",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "视频制作系统",
+  "layer": "W1/W2 影子契约层",
+  "status": "draft",
+  "purpose": "定义发布前最终人工确认缺口在影子层的关闭条件，避免缺材料时误入生成或发布链路。",
+  "close_principles": [
+    "缺口关闭必须有可追溯证据",
+    "红线阻断项不能由视频制作线自行关闭",
+    "任何缺口未关闭时最终确认状态保持待补材料或待人工复核",
+    "缺口全部关闭后只能进入等待最终人工确认，不能自动进入发布"
+  ],
+  "close_conditions": [
+    {
+      "gap_type": "门禁总览缺失",
+      "close_condition": "已有任务门禁总览，且生成、预览、发布三类门禁均拆开",
+      "evidence_required": "门禁总览记录编号或文件名",
+      "shadow_state_after_close": "gate_overview_ready_shadow",
+      "allow_auto_publish": false
+    },
+    {
+      "gap_type": "阻断项摘要缺失",
+      "close_condition": "阻断项已列出，且每项都有处理状态",
+      "evidence_required": "阻断项摘要记录",
+      "shadow_state_after_close": "blocker_summary_ready_shadow",
+      "allow_auto_publish": false
+    },
+    {
+      "gap_type": "多平台规范核对缺失",
+      "close_condition": "每个平台单独列出规范、待补项和人工确认状态",
+      "evidence_required": "平台核对回执或待补清单",
+      "shadow_state_after_close": "platform_checks_ready_shadow",
+      "allow_auto_publish": false
+    },
+    {
+      "gap_type": "素材授权缺失",
+      "close_condition": "素材来源、授权类型、可商用状态、隐私风险均已记录",
+      "evidence_required": "素材授权核对记录",
+      "shadow_state_after_close": "material_ready_shadow",
+      "allow_auto_publish": false
+    },
+    {
+      "gap_type": "AI标识确认缺失",
+      "close_condition": "已提醒发布前勾选内容由AI生成，并保留人工确认位",
+      "evidence_required": "AI标识确认记录",
+      "shadow_state_after_close": "ai_label_ready_shadow",
+      "allow_auto_publish": false
+    },
+    {
+      "gap_type": "最终人工确认缺失",
+      "close_condition": "人工确认表已填写，且确认人、时间、确认范围完整",
+      "evidence_required": "最终确认记录",
+      "shadow_state_after_close": "final_confirmation_ready_for_manager_review_shadow",
+      "allow_auto_publish": false
+    },
+    {
+      "gap_type": "命中红线阻断",
+      "close_condition": "已交回总管或人工裁定，不由视频线自行关闭",
+      "evidence_required": "总管裁定或阻断登记",
+      "shadow_state_after_close": "manager_review_required",
+      "allow_auto_publish": false
+    }
+  ],
+  "never_close_when": [
+    "只有口头说可以发但没有记录任务ID、确认范围和确认人",
+    "只有生成放行没有单独发布放行",
+    "只有素材候选没有素材授权证明或来源说明",
+    "平台规范未按平台拆开核对",
+    "需要真实模型、真实素材、真实渲染、真实发布、n8n、企业微信真实外发或真实账号配置才能确认"
+  ],
+  "output_fields": [
+    "任务ID",
+    "缺口编号",
+    "是否关闭",
+    "关闭依据",
+    "仍需人工确认项",
+    "是否触发红线",
+    "下一步允许状态"
+  ],
+  "boundary": {
+    "call_real_model": false,
+    "read_real_material": false,
+    "render_video": false,
+    "publish_video": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "use_real_account": false,
+    "modify_manager_or_public_component": false
+  }
+}
+

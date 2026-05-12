@@ -1,0 +1,77 @@
+{
+  "name": "到期不删除处理队列",
+  "generated_at": "2026-05-08 21:18:26",
+  "queue_count": 4,
+  "default_decision": "不删除",
+  "delete_allowed": false,
+  "readonly_dry_run_only": true,
+  "items": [
+    {
+      "id": "RET-Q-001",
+      "sample_id": "RET-SAMPLE-001",
+      "source": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\低风险只读调度运行台账与证据归档预演包_最新.json",
+      "status": "待总管人工复核",
+      "decision": "不删除",
+      "delete_allowed": false,
+      "dry_run_only": true,
+      "requires_supervisor_confirmation": true,
+      "planned_action": "保留原件，仅记录到期候选。",
+      "evidence_retained": true,
+      "history_content_untouched": true
+    },
+    {
+      "id": "RET-Q-002",
+      "sample_id": "RET-SAMPLE-002",
+      "source": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\证据归档预演报告_最新.json",
+      "status": "待总管人工复核",
+      "decision": "不删除",
+      "delete_allowed": false,
+      "dry_run_only": true,
+      "requires_supervisor_confirmation": true,
+      "planned_action": "保留原件，仅记录到期候选。",
+      "evidence_retained": true,
+      "history_content_untouched": true
+    },
+    {
+      "id": "RET-Q-003",
+      "sample_id": "RET-SAMPLE-003",
+      "source": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\调度预演台账_最新.json",
+      "status": "待总管人工复核",
+      "decision": "不删除",
+      "delete_allowed": false,
+      "dry_run_only": true,
+      "requires_supervisor_confirmation": true,
+      "planned_action": "保留原件，仅记录到期候选。",
+      "evidence_retained": true,
+      "history_content_untouched": true
+    },
+    {
+      "id": "RET-Q-004",
+      "sample_id": "RET-SAMPLE-004",
+      "source": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\114并行自主施工分片护栏与抢占处理包",
+      "status": "待总管人工复核",
+      "decision": "不删除",
+      "delete_allowed": false,
+      "dry_run_only": true,
+      "requires_supervisor_confirmation": true,
+      "planned_action": "不删除、不覆盖、不迁移，只在 118 包中记录边界。",
+      "evidence_retained": true,
+      "history_content_untouched": true
+    }
+  ],
+  "safety_confirmation": {
+    "read_only": true,
+    "delete_file": false,
+    "remove_directory": false,
+    "move_history_package": false,
+    "overwrite_history_package": false,
+    "external_call": false,
+    "send_notification": false,
+    "connect_n8n": false,
+    "reload_service": false,
+    "promote_to_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "write_scope_is_118_only": true
+  }
+}

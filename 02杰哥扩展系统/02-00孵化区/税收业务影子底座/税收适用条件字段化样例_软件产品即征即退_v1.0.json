@@ -1,0 +1,118 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "sample_id": "TAX_CONDITION_FIELDS_SOFTWARE_VAT_REFUND_001",
+  "name": "软件产品即征即退适用条件字段化样例",
+  "asset_identity": "tax_applicability_condition_fieldization_shadow_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "write_formal_tax_database": false,
+    "formal_tax_conclusion": false,
+    "tax_filing_or_refund_execution": false,
+    "external_send": false,
+    "trigger_n8n": false
+  },
+  "source_evidence": {
+    "policy_id": "TAX-DOC-2011-100",
+    "policy_title": "财政部 国家税务总局关于软件产品增值税政策的通知",
+    "document_number": "财税〔2011〕100号",
+    "guide_id": "TAX-GUIDE-SOFTWARE-VAT-REFUND-20241025",
+    "guide_title": "一文了解：软件产品增值税即征即退政策",
+    "evidence_level": "国家级主管机关规范性文件 + 国家级官方公开指引",
+    "validity_status": "现行有效状态需以官方政策法规库展示为准",
+    "source_urls": [
+      "https://fgk.chinatax.gov.cn/zcfgk/c102416/c5204304/content.html",
+      "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5235447/content.html"
+    ]
+  },
+  "condition_fields": [
+    {
+      "group": "subject",
+      "field": "taxpayer_type",
+      "candidate_requirement": "增值税一般纳税人",
+      "status": "pending_review",
+      "review_note": "需用户提供纳税人身份或主管税务机关认定材料"
+    },
+    {
+      "group": "product",
+      "field": "product_type",
+      "candidate_requirement": "软件产品",
+      "status": "pending_review",
+      "review_note": "需确认是否属于政策所称软件产品"
+    },
+    {
+      "group": "development",
+      "field": "development_mode",
+      "candidate_requirement": "自行开发生产，或进口软件本地化改造后对外销售",
+      "status": "pending_review",
+      "review_note": "需区分自研、外购、代理、嵌入式软件、本地化改造"
+    },
+    {
+      "group": "transaction",
+      "field": "transaction_type",
+      "candidate_requirement": "销售软件产品",
+      "status": "pending_review",
+      "review_note": "需收入合同、发票、收入科目或业务说明"
+    },
+    {
+      "group": "tax_burden",
+      "field": "actual_vat_burden",
+      "candidate_requirement": "实际税负超过3%的部分可作为候选测算对象",
+      "status": "pending_review",
+      "review_note": "需销项、进项、税率、收入拆分等测算字段"
+    },
+    {
+      "group": "materials",
+      "field": "supporting_documents",
+      "candidate_requirement": "软件著作权、检测证明、登记材料或当地要求材料待核实",
+      "status": "missing",
+      "review_note": "地方口径和材料清单未补齐"
+    },
+    {
+      "group": "period",
+      "field": "applicable_period",
+      "candidate_requirement": "所属期与政策有效期间需匹配",
+      "status": "pending_review",
+      "review_note": "需确认业务发生期间、申报期、政策时效"
+    },
+    {
+      "group": "region",
+      "field": "local_practice",
+      "candidate_requirement": "地方执行口径待补",
+      "status": "missing",
+      "review_note": "不得用经验口径替代官方或主管税务机关要求"
+    }
+  ],
+  "risk_fields": [
+    "非一般纳税人",
+    "非软件产品收入",
+    "硬件、服务、维护、培训收入混同",
+    "外购转售",
+    "嵌入式软件价值拆分",
+    "地方材料差异",
+    "有效状态未复核"
+  ],
+  "contract_mapping": {
+    "extracted_conditions": ["subject", "product", "development", "transaction", "tax_burden", "materials", "period", "region"],
+    "evidence_gap": ["纳税人身份", "收入拆分", "软件材料", "地方口径", "有效状态", "测算字段"],
+    "applicability_analysis": "只能写候选匹配、待证明、风险项，不得写确定适用",
+    "calculation_prerequisites": "只列字段和公式口径，不给未经复核金额",
+    "confidence": ["draft", "pending_review"]
+  },
+  "review_questions": [
+    "企业是否为增值税一般纳税人？",
+    "收入是否来自自行开发生产的软件产品？",
+    "软件产品收入、硬件收入、服务收入、维护培训收入是否已拆分？",
+    "是否具备软件著作权、检测证明、登记材料或当地要求材料？",
+    "所属期、申报期和政策有效期间是否匹配？",
+    "当地主管税务机关对材料、流程、口径是否有补充要求？",
+    "是否涉及嵌入式软件、进口软件本地化改造或代理销售等复杂情形？"
+  ],
+  "forbidden_outputs": [
+    "可以享受即征即退",
+    "应退金额为某数",
+    "替代申报退税开票审批",
+    "替代主管税务机关口径",
+    "写入正式规则库"
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "package_id": "redis_streams_low_risk_formal_precheck_20260505",
+  "name": "Redis Streams低风险正式队列前评估包",
+  "version": "2026-05-05",
+  "owner": "00总管",
+  "current_state": "shadow_mapping_only",
+  "target_state": "low_risk_formal_candidate",
+  "evaluation_mode": "offline_static_assessment_only",
+  "hard_safety_boundary": {
+    "connect_real_redis": false,
+    "start_service": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "external_network": false,
+    "allowed_actions": [
+      "读取本地JSON/Markdown",
+      "生成静态评估文档",
+      "运行只读字段校验脚本"
+    ]
+  },
+  "queue_candidate": {
+    "stream_name": "jiego:task:formal:low_risk:candidate",
+    "stream_status": "candidate_only_not_enabled",
+    "consumer_group": "jiego-low-risk-formal-workers",
+    "consumer_name_pattern": "worker-{system}-{slot}",
+    "producer_policy": {
+      "xadd_enabled": false,
+      "maxlen_strategy": "approximate_maxlen_after_formal_gate",
+      "suggested_maxlen": 10000,
+      "id_strategy": "server_generated_stream_id",
+      "idempotency_required_before_xadd": true
+    }
+  },
+  "stream_fields": {
+    "required": [
+      "task_id",
+      "schema_version",
+      "task_type",
+      "risk_level",
+      "source_system",
+      "target_system",
+      "priority",
+      "created_at",
+      "deadline_at",
+      "idempotency_key",
+      "payload_json",
+      "safety_flags_json",
+      "sqlite_ledger_key",
+      "trace_id"
+    ],
+    "optional": [
+      "gpu_required",
+      "gpu_queue_hint",
+      "retry_count",
+      "last_error_code",
+      "last_error_message",
+      "dead_letter_reason",
+      "human_confirm_ticket",
+      "shadow_receipt_id"
+    ],
+    "field_rules": {
+      "risk_level": [
+        "L0_READONLY",
+        "L1_LOW_RISK"
+      ],
+      "safety_flags_json": {
+        "dry_run": false,
+        "real_action_allowed": true,
+        "n8n_trigger_allowed": false,
+        "wecom_send_allowed": false,
+        "broker_api_allowed": false,
+        "auto_trade_allowed": false,
+        "formal_db_write_allowed": false
+      },
+      "payload_json": "必须为标准任务单JSON字符串；不得内嵌密钥、券商凭据、企业微信发送目标或n8n webhook执行地址。",
+      "idempotency_key": "source_system + task_id + task_type + payload_hash；正式入队前必须唯一。"
+    }
+  },
+  "consumer_group_plan": {
+    "group_creation": "XGROUP CREATE仅允许在正式升级门槛全部满足后由人工变更单执行",
+    "read_policy": {
+      "command": "XREADGROUP",
+      "count": 1,
+      "block_ms": 5000,
+      "parallelism_initial_limit": 2,
+      "parallelism_growth_condition": "连续2小时无pending积压且CPU/内存/GPU排队均低于阈值"
+    },
+    "ack_policy": {
+      "ack_after": [
+        "幂等锁已确认",
+        "SQLite落账状态已写为completed或failed_recoverable",
+        "任务输出已生成本地receipt",
+        "禁止动作审计通过"
+      ],
+      "ack_never_before": [
+        "真实业务动作执行前",
+        "SQLite落账前",
+        "幂等检查前"
+      ]
+    },
+    "pending_policy": {
+      "inspect_interval_seconds": 60,
+      "claim_after_idle_ms": 300000,
+      "max_pending_per_group": 100,
+      "operator_alert_threshold": 50,
+      "use_xpending": true,
+      "use_xautoclaim_candidate": true
+    }
+  },
+  "retry_and_dead_letter": {
+    "retry_policy": {
+      "max_attempts": 3,
+      "backoff_seconds": [
+        30,
+        120,
+        600
+      ],
+      "retryable_errors": [
+        "worker_timeout",
+        "temporary_local_resource_busy",
+        "sqlite_busy",
+        "gpu_queue_busy"
+      ],
+      "non_retryable_errors": [
+        "schema_invalid",
+        "idempotency_conflict",
+        "forbidden_action_detected",
+        "missing_required_field",
+        "risk_level_above_L1"
+      ]
+    },
+    "dead_letter_stream": "jiego:task:formal:low_risk:dead_letter",
+    "dead_letter_enabled_after_gate": true,
+    "dead_letter_payload": [
+      "original_stream_id",
+      "task_id",
+      "idempotency_key",
+      "retry_count",
+      "last_error_code",
+      "last_error_message",
+      "dead_letter_reason",
+      "failed_at",
+      "sqlite_ledger_key",
+      "trace_id"
+    ],
+    "manual_recovery": {
+      "required": true,
+      "allowed_recovery": [
+        "修正字段后重新生成新task_id",
+        "保持原task_id但追加人工确认ticket并重放到候选流",
+        "标记为cancelled并归档receipt"
+      ],
+      "forbidden_recovery": [
+        "直接修改Redis消息内容",
+        "跳过SQLite落账",
+        "跳过幂等检查",
+        "绕过风险等级门槛"
+      ]
+    }
+  },
+  "idempotency_and_sqlite_ledger": {
+    "idempotency_store": "SQLite本地台账优先；Redis仅作为队列，不作为唯一事实源。",
+    "sqlite_table_candidate": "task_queue_ledger",
+    "ledger_required_columns": [
+      "ledger_id",
+      "task_id",
+      "stream_name",
+      "stream_id",
+      "consumer_group",
+      "idempotency_key",
+      "status",
+      "attempt_count",
+      "created_at",
+      "updated_at",
+      "completed_at",
+      "last_error_code",
+      "last_error_message",
+      "receipt_path",
+      "payload_hash"
+    ],
+    "status_flow": [
+      "queued",
+      "processing",
+      "completed",
+      "failed_recoverable",
+      "dead_lettered",
+      "cancelled"
+    ],
+    "dedupe_rule": "同一idempotency_key处于queued/processing/completed时，不允许重复执行业务动作；重复消息只补充审计receipt。",
+    "transaction_rule": "状态变更与receipt路径写入必须在同一个SQLite事务中完成。"
+  },
+  "failure_recovery": {
+    "worker_crash": "pending消息超过claim_after_idle_ms后由同组健康worker接管；接管前重新读SQLite状态。",
+    "sqlite_busy": "按retry_policy退避；超过上限进入dead_letter，不允许改写正式库。",
+    "forbidden_action_detected": "立即NACK语义处理为dead_letter候选，并写入安全阻断receipt；不重试。",
+    "partial_output": "保留本地receipt草稿，SQLite状态标为failed_recoverable，禁止ACK直到恢复流程完成。",
+    "redis_unavailable": "保持shadow_mapping_only，不升级；正式队列入口关闭。"
+  },
+  "gpu_queueing": {
+    "gpu_required_default": false,
+    "gpu_task_policy": "低风险正式队列只允许非交易、非外发、非正式库写入的本地推理辅助任务进入GPU排队。",
+    "queue_hint_values": [
+      "none",
+      "low_priority_local_inference",
+      "batch_after_cpu_idle"
+    ],
+    "limits": {
+      "max_gpu_tasks_pending": 2,
+      "max_gpu_memory_percent": 70,
+      "cpu_fallback_required": true
+    },
+    "backpressure": "GPU队列超过阈值时，Redis消息保持pending但不扩容consumer；超过重试上限进入dead_letter并等待人工重放。"
+  },
+  "resource_assessment": {
+    "initial_consumer_count": 1,
+    "max_consumer_count_before_reassessment": 2,
+    "cpu_threshold_percent": 60,
+    "memory_threshold_percent": 70,
+    "disk_free_min_gb": 20,
+    "sqlite_busy_rate_max_percent": 1,
+    "pending_growth_threshold_per_10min": 20,
+    "expected_low_risk_volume": {
+      "tasks_per_hour_initial": 30,
+      "burst_tasks_per_10min": 20,
+      "payload_size_max_kb": 64
+    },
+    "operator_metrics_required": [
+      "stream_length",
+      "pending_count",
+      "oldest_pending_idle_ms",
+      "ack_latency_p95_seconds",
+      "retry_count",
+      "dead_letter_count",
+      "sqlite_write_latency_p95_ms",
+      "gpu_pending_count"
+    ]
+  },
+  "formal_upgrade_gates": [
+    {
+      "gate": "G1_static_contract_complete",
+      "required": true,
+      "criteria": "stream字段、消费组、ACK/PENDING/重试/死信、幂等、SQLite落账、失败回收、GPU排队、资源评估均有文档化规则。"
+    },
+    {
+      "gate": "G2_no_real_side_effects_in_precheck",
+      "required": true,
+      "criteria": "评估阶段未连接Redis、未启动服务、未触发n8n/企业微信/正式库/券商/自动交易。"
+    },
+    {
+      "gate": "G3_shadow_replay_pass",
+      "required": true,
+      "criteria": "使用本地样例任务完成不少于100条shadow replay，重复idempotency_key不重复执行业务动作。"
+    },
+    {
+      "gate": "G4_pending_and_dead_letter_drill",
+      "required": true,
+      "criteria": "离线演练pending接管、三次重试、dead_letter归档、人工回收路径，失败项为0。"
+    },
+    {
+      "gate": "G5_sqlite_ledger_audit",
+      "required": true,
+      "criteria": "SQLite台账字段、事务边界、状态流转、receipt路径可追溯，抽样审计通过。"
+    },
+    {
+      "gate": "G6_resource_budget_confirmed",
+      "required": true,
+      "criteria": "CPU/内存/磁盘/GPU/PENDING增长阈值已确认，初始consumer数不超过1。"
+    },
+    {
+      "gate": "G7_manual_change_ticket",
+      "required": true,
+      "criteria": "正式创建stream/group和放开XADD前，需要人工变更单与回滚计划签字。"
+    }
+  ],
+  "current_assessment": {
+    "candidate_level": "low_risk_formal_candidate",
+    "can_connect_redis_now": false,
+    "can_start_service_now": false,
+    "can_enable_formal_queue_now": false,
+    "reason": "本包仅完成正式队列前静态评估；仍需shadow replay、pending/dead-letter演练、资源观测和人工变更单。",
+    "delivery_blockers": [],
+    "safety_blockers": []
+  }
+}

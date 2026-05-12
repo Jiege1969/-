@@ -1,0 +1,77 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-05-07 23:56:33 +08:00",
+  "asset_identity": "video_factory_round012_shared_evidence_readonly_integration_list",
+  "risk_level": "W1",
+  "status": "readonly_integration_ready_not_production_interface",
+  "boundary": {
+    "modify_video_system_config": false,
+    "modify_video_system_script": false,
+    "read_real_assets": false,
+    "render": false,
+    "publish": false,
+    "external_send": false,
+    "trigger_n8n": false,
+    "send_wecom": false
+  },
+  "readonly_evidence": [
+    {
+      "evidence_id": "VIDEO-EVIDENCE-001",
+      "name": "B站用户协议与活动规则来源卡",
+      "source_file": "视频平台规范来源卡_B站用户协议与活动规则_20260507_v1.0.md/json",
+      "allowed_use": ["平台规则线索", "原创性风险提示", "版权风险提示", "活动有效期风险提示"],
+      "forbidden_use": ["平台合规结论", "可发布结论"]
+    },
+    {
+      "evidence_id": "VIDEO-EVIDENCE-002",
+      "name": "视频投稿规格与素材授权待补字段清单",
+      "source_file": "视频投稿规格与素材授权待补字段清单_v1.0.md/json",
+      "allowed_use": ["投稿规格待补字段", "分区规则待补字段", "素材授权待补字段", "隐私风险待补字段"],
+      "forbidden_use": ["自动发布", "版权安全结论"]
+    },
+    {
+      "evidence_id": "SHARED-EVIDENCE-VIDEO-002",
+      "name": "平台规范真实来源调用样例",
+      "source_file": "共享政策证据只读调用样例_VIDEO_002_平台规范真实来源调用_v1.0.md/json",
+      "allowed_use": ["发布风险前置检查样例"],
+      "forbidden_use": ["生产调用", "平台账号连接"]
+    },
+    {
+      "evidence_id": "VIDEO-ROUND012-ALIGNMENT",
+      "name": "视频工厂轮次012总控层对齐记录",
+      "source_file": "视频工厂轮次012总控层对齐记录_v1.0.md/json",
+      "allowed_use": ["判断轮次012是否仍处于安全预演层"],
+      "forbidden_use": ["放行真实渲染", "放行发布"]
+    }
+  ],
+  "allowed_outputs": [
+    "视频工厂任务单",
+    "视频工厂对话草案",
+    "平台规范待复核清单",
+    "素材授权待补清单",
+    "脚本或分镜风险提示"
+  ],
+  "forbidden_outputs": [
+    "平台合规结论",
+    "版权安全结论",
+    "真实渲染",
+    "自动发布",
+    "企业微信真实外发",
+    "n8n自动调配"
+  ],
+  "handoff_steps": [
+    "视频工厂本地任务单",
+    "读取合规规则默认边界和任务状态",
+    "读取平台规范来源卡或共享证据样例",
+    "生成平台规范/素材授权待复核问题",
+    "写入本地对话草案或待复核清单",
+    "等待人工复核"
+  ],
+  "impact": {
+    "tax_policy_advisor": "no_impact",
+    "shared_policy_evidence": "readonly_positive_interface",
+    "write_back_shared_evidence": false,
+    "n8n_coordination": false
+  },
+  "conclusion": "视频工厂轮次012可以与共享政策证据建立只读对接关系，但当前只服务本地预演、合规提示和人工复核问题生成。"
+}

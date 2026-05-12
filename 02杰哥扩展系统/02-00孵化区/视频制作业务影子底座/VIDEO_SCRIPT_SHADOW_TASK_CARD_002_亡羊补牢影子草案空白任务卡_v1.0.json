@@ -1,0 +1,108 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SHADOW_TASK_CARD_002",
+  "created_at": "2026-05-08 14:07:00 +08:00",
+  "risk_level": "W1/R0",
+  "asset_identity": "single_idiom_story_shadow_draft_blank_task_card",
+  "topic": {
+    "topic_id": "IDIOM-002",
+    "idiom": "亡羊补牢",
+    "core_meaning": "出错后及时补救，仍然有意义",
+    "default_audience": "小学生及家长",
+    "recommended_duration": "60秒优先",
+    "status_transition": "候选 -> 待写草案",
+    "current_blocker": "需要先明确故事主线和现代映射"
+  },
+  "source_assets": [
+    "VIDEO_SCRIPT_SERIES_TOPIC_STATUS_SNAPSHOT_001",
+    "VIDEO_SCRIPT_SERIES_STRUCTURE_001",
+    "VIDEO_SCRIPT_QUALITY_ACCEPTANCE_TABLE_001",
+    "VIDEO_SCRIPT_SERIES_REVIEW_QUESTION_TEMPLATE_001",
+    "VIDEO_SCRIPT_DURATION_VARIANT_CHECK_001"
+  ],
+  "blank_fields": [
+    {
+      "field": "original_story_line",
+      "requirement": "写清人物、羊丢失、邻居提醒、补牢、结果",
+      "status": "to_be_filled"
+    },
+    {
+      "field": "main_conflict",
+      "requirement": "主人第一次为什么没有补羊圈",
+      "status": "to_be_filled"
+    },
+    {
+      "field": "turning_point",
+      "requirement": "主人什么时候意识到需要补救",
+      "status": "to_be_filled"
+    },
+    {
+      "field": "core_moral",
+      "requirement": "出错后及时补救，仍可减少损失",
+      "status": "to_be_filled"
+    },
+    {
+      "field": "modern_mapping",
+      "requirement": "学习、工作、家庭生活中的补救场景",
+      "status": "to_be_filled"
+    },
+    {
+      "field": "opening_hook",
+      "requirement": "一句话引出做错了还来得及吗",
+      "status": "to_be_filled"
+    },
+    {
+      "field": "ending_wrap",
+      "requirement": "回扣成语，不空喊口号",
+      "status": "to_be_filled"
+    },
+    {
+      "field": "storyboard_direction",
+      "requirement": "至少列出3个可画面化镜头",
+      "status": "to_be_filled"
+    },
+    {
+      "field": "compliance_risk",
+      "requirement": "是否存在吓唬儿童、过度责备、错误价值引导",
+      "status": "pending_review"
+    },
+    {
+      "field": "ai_label_and_originality",
+      "requirement": "是否为AI草案，是否需人工改写确认",
+      "status": "pending_review"
+    }
+  ],
+  "minimum_acceptance": [
+    "has_specific_story",
+    "has_turning_point",
+    "moral_comes_from_story",
+    "has_modern_mapping",
+    "has_visual_actions",
+    "has_boundary_statement"
+  ],
+  "next_step_after_filling": "run_idiom_story_quality_acceptance_then_manual_review_question_template",
+  "not_permission_for": [
+    "auto_script_generation",
+    "model_call",
+    "real_media_reading",
+    "real_video_task_creation",
+    "formal_video_script_change",
+    "rendering",
+    "editing",
+    "voiceover",
+    "subtitle_or_cover_generation",
+    "publishing",
+    "uploading",
+    "wecom_or_n8n_trigger"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "auto_generate_script": false,
+    "edit_formal_script": false,
+    "create_real_video_task": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_video_system": false
+  }
+}

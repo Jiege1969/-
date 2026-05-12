@@ -1,0 +1,34 @@
+{
+  "名称": "行业价格趋势证据卡本地观测生成结果",
+  "generated_at": "2026-05-08 06:55:30",
+  "status": "completed",
+  "cards": [
+    {
+      "stock": "云南锗业",
+      "product": "锗锭",
+      "level": "source_registered",
+      "score": 2,
+      "front_sentence": "锗锭来源已登记但价格尚未入账，暂不能作为提高关注等级的依据。"
+    },
+    {
+      "stock": "天齐锂业",
+      "product": "电池级碳酸锂",
+      "level": "single_observation",
+      "score": 4,
+      "front_sentence": "电池级碳酸锂已有单点价格观测，但还缺连续趋势，只能弱参考。"
+    },
+    {
+      "stock": "正丹股份",
+      "product": "偏苯三酸酐/TMA",
+      "level": "source_registered",
+      "score": 2,
+      "front_sentence": "偏苯三酸酐/TMA来源已登记但价格尚未入账，暂不能作为提高关注等级的依据。"
+    }
+  ],
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

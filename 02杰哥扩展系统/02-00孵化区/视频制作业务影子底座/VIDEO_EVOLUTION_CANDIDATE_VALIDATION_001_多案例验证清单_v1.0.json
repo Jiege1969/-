@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 05:50:19 +08:00",
+  "validation_id": "VIDEO_EVOLUTION_CANDIDATE_VALIDATION_001",
+  "linked_candidate_id": "VIDEO_EVOLUTION_CANDIDATE_001",
+  "asset_identity": "video_evolution_candidate_multi_case_validation_shadow_checklist",
+  "risk_level": "W1",
+  "status": "shadow_checklist_pending_multi_case_fill",
+  "boundary": {
+    "write_formal_rule_library": false,
+    "modify_formal_video_system": false,
+    "modify_formal_script_generator": false,
+    "modify_video_system_task": false,
+    "modify_release_lists": false,
+    "read_real_assets": false,
+    "render": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false,
+    "send_wecom": false,
+    "trigger_n8n": false
+  },
+  "linked_files": {
+    "candidate_record": "VIDEO_EVOLUTION_CANDIDATE_001_掩耳盗铃复核经验空白候选记录_v1.0.md",
+    "mapping_draft": "VIDEO_FACTORY_R012_EVOLUTION_MAPPING_001_复核经验到进化候选映射草案_v1.0.md",
+    "revision_receipt_template": "VIDEO_FACTORY_R012_REVISION_RECEIPT_001_脚本分镜修正验收回执模板_v1.0.md"
+  },
+  "validation_dimensions": {
+    "minimum_case_count": 3,
+    "minimum_topic_categories": 2,
+    "human_receipt_required_for_each_case": true,
+    "minimum_effective_case_ratio": "2/3",
+    "major_risk_must_be_clear": true,
+    "transferable_and_non_transferable_scope_required": true
+  },
+  "validation_ledger": [
+    {
+      "case_id": "VF-20260508-003",
+      "topic_category": "成语故事",
+      "source_task": "掩耳盗铃",
+      "human_receipt": "待填写",
+      "experience_applicable": "待填写",
+      "effect_conclusion": "待填写",
+      "risk_conclusion": "待填写",
+      "note": "首个候选来源"
+    },
+    {
+      "case_id": "待填写",
+      "topic_category": "待填写",
+      "source_task": "待填写",
+      "human_receipt": "待填写",
+      "experience_applicable": "待填写",
+      "effect_conclusion": "待填写",
+      "risk_conclusion": "待填写",
+      "note": "待后续案例"
+    },
+    {
+      "case_id": "待填写",
+      "topic_category": "待填写",
+      "source_task": "待填写",
+      "human_receipt": "待填写",
+      "experience_applicable": "待填写",
+      "effect_conclusion": "待填写",
+      "risk_conclusion": "待填写",
+      "note": "待后续案例"
+    }
+  ],
+  "current_upgrade_judgement": {
+    "has_three_cases": false,
+    "has_two_topic_categories": false,
+    "all_cases_have_human_receipt": false,
+    "major_risks_clear": false,
+    "recommend_formal_rule_library": false,
+    "conclusion": "keep_as_candidate"
+  },
+  "can_generate_upgrade_discussion_draft": false,
+  "self_check": "[自检: VIDEO_EVOLUTION_CANDIDATE_VALIDATION_001已完成, 风险等级: W1, 产物: 多案例验证清单md/json, 边界: 守住了。]"
+}

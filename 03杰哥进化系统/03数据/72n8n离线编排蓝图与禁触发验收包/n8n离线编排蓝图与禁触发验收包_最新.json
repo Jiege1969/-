@@ -1,0 +1,245 @@
+{
+  "name": "n8n离线编排蓝图与禁触发验收包",
+  "generated_at": "2026-05-08 17:39:42",
+  "status": "offline_blueprint_ready",
+  "blueprint": {
+    "name": "n8n离线编排蓝图与禁触发验收包",
+    "version": "offline-blueprint-v1",
+    "generated_at": "2026-05-08 17:39:42",
+    "scope": "低风险实际能力前置；仅离线蓝图；不接 n8n。",
+    "global_guard": {
+      "mode": "dry_run/offline",
+      "real_trigger": false,
+      "webhook_enabled": false,
+      "network_call_enabled": false,
+      "n8n_connection_enabled": false,
+      "external_delivery_enabled": false,
+      "production_rule_enabled": false
+    },
+    "workflow": {
+      "flow": [
+        "收到消息",
+        "分类",
+        "只读脚本",
+        "生成候选回传",
+        "总管确认闸口"
+      ],
+      "nodes": [
+        {
+          "id": "N01",
+          "name": "收到消息",
+          "type": "offline_blueprint_node",
+          "purpose": "登记来自企业微信或人工转录的消息样本，但只使用离线文本副本。",
+          "read_only_input": [
+            "离线消息样本",
+            "人工复制的只读文本"
+          ],
+          "output_candidate": [
+            "标准化消息对象候选"
+          ],
+          "allowed_operation": "只读读取、离线分类、离线候选文本生成、等待总管确认",
+          "blocked_operation": [
+            "接 n8n",
+            "触发 webhook",
+            "调用网络",
+            "改企业微信配置",
+            "改运行配置",
+            "重载服务",
+            "真实发送企业微信",
+            "接券商",
+            "接税局",
+            "接财税软件",
+            "真实渲染/发布",
+            "转正式规则"
+          ],
+          "mode": "dry_run/offline",
+          "real_trigger": false,
+          "webhook_enabled": false
+        },
+        {
+          "id": "N02",
+          "name": "分类",
+          "type": "offline_blueprint_node",
+          "purpose": "按业务线、风险等级、是否触碰红线进行离线分类。",
+          "read_only_input": [
+            "标准化消息对象候选"
+          ],
+          "output_candidate": [
+            "分类结果候选",
+            "红线命中说明候选"
+          ],
+          "allowed_operation": "只读读取、离线分类、离线候选文本生成、等待总管确认",
+          "blocked_operation": [
+            "接 n8n",
+            "触发 webhook",
+            "调用网络",
+            "改企业微信配置",
+            "改运行配置",
+            "重载服务",
+            "真实发送企业微信",
+            "接券商",
+            "接税局",
+            "接财税软件",
+            "真实渲染/发布",
+            "转正式规则"
+          ],
+          "mode": "dry_run/offline",
+          "real_trigger": false,
+          "webhook_enabled": false
+        },
+        {
+          "id": "N03",
+          "name": "只读脚本",
+          "type": "offline_blueprint_node",
+          "purpose": "仅指向本地只读核对脚本的执行设计，不实际调度、不连接外部服务。",
+          "read_only_input": [
+            "分类结果候选",
+            "本地只读资料路径"
+          ],
+          "output_candidate": [
+            "只读核对摘要候选",
+            "异常阻断说明候选"
+          ],
+          "allowed_operation": "只读读取、离线分类、离线候选文本生成、等待总管确认",
+          "blocked_operation": [
+            "接 n8n",
+            "触发 webhook",
+            "调用网络",
+            "改企业微信配置",
+            "改运行配置",
+            "重载服务",
+            "真实发送企业微信",
+            "接券商",
+            "接税局",
+            "接财税软件",
+            "真实渲染/发布",
+            "转正式规则"
+          ],
+          "mode": "dry_run/offline",
+          "real_trigger": false,
+          "webhook_enabled": false
+        },
+        {
+          "id": "N04",
+          "name": "生成候选回传",
+          "type": "offline_blueprint_node",
+          "purpose": "生成可供人工审阅的回传草稿，保持候选态。",
+          "read_only_input": [
+            "只读核对摘要候选"
+          ],
+          "output_candidate": [
+            "候选回传文本",
+            "禁止自动发送说明"
+          ],
+          "allowed_operation": "只读读取、离线分类、离线候选文本生成、等待总管确认",
+          "blocked_operation": [
+            "接 n8n",
+            "触发 webhook",
+            "调用网络",
+            "改企业微信配置",
+            "改运行配置",
+            "重载服务",
+            "真实发送企业微信",
+            "接券商",
+            "接税局",
+            "接财税软件",
+            "真实渲染/发布",
+            "转正式规则"
+          ],
+          "mode": "dry_run/offline",
+          "real_trigger": false,
+          "webhook_enabled": false
+        },
+        {
+          "id": "N05",
+          "name": "总管确认闸口",
+          "type": "offline_blueprint_node",
+          "purpose": "所有候选回传必须停在总管确认闸口，不自动放行。",
+          "read_only_input": [
+            "候选回传文本",
+            "红线命中说明候选"
+          ],
+          "output_candidate": [
+            "待总管确认记录",
+            "人工处理建议"
+          ],
+          "allowed_operation": "只读读取、离线分类、离线候选文本生成、等待总管确认",
+          "blocked_operation": [
+            "接 n8n",
+            "触发 webhook",
+            "调用网络",
+            "改企业微信配置",
+            "改运行配置",
+            "重载服务",
+            "真实发送企业微信",
+            "接券商",
+            "接税局",
+            "接财税软件",
+            "真实渲染/发布",
+            "转正式规则"
+          ],
+          "mode": "dry_run/offline",
+          "real_trigger": false,
+          "webhook_enabled": false
+        }
+      ],
+      "edges": [
+        {
+          "from": "N01",
+          "to": "N02",
+          "mode": "dry_run/offline",
+          "real_trigger": false,
+          "webhook_enabled": false
+        },
+        {
+          "from": "N02",
+          "to": "N03",
+          "mode": "dry_run/offline",
+          "real_trigger": false,
+          "webhook_enabled": false
+        },
+        {
+          "from": "N03",
+          "to": "N04",
+          "mode": "dry_run/offline",
+          "real_trigger": false,
+          "webhook_enabled": false
+        },
+        {
+          "from": "N04",
+          "to": "N05",
+          "mode": "dry_run/offline",
+          "real_trigger": false,
+          "webhook_enabled": false
+        }
+      ]
+    },
+    "forbidden_actions": [
+      "接 n8n",
+      "触发 webhook",
+      "调用网络",
+      "改企业微信配置",
+      "改运行配置",
+      "重载服务",
+      "真实发送企业微信",
+      "接券商",
+      "接税局",
+      "接财税软件",
+      "真实渲染/发布",
+      "转正式规则"
+    ],
+    "acceptance_rules": [
+      "每个节点必须 mode=dry_run/offline。",
+      "每个节点必须 real_trigger=false。",
+      "每个节点必须 webhook_enabled=false。",
+      "蓝图不得包含 URL、token、credential、active=true、真实发送、真实触发配置。",
+      "所有输出保持候选态，必须停在总管确认闸口。"
+    ]
+  },
+  "outputs": {
+    "blueprint_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\72n8n离线编排蓝图与禁触发验收包\\n8n离线编排蓝图_最新.json",
+    "blueprint_markdown": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\72n8n离线编排蓝图与禁触发验收包\\n8n离线编排蓝图说明_最新.md",
+    "acceptance_markdown": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\72n8n离线编排蓝图与禁触发验收包\\n8n禁触发验收清单_最新.md",
+    "package_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\72n8n离线编排蓝图与禁触发验收包\\n8n离线编排蓝图与禁触发验收包_最新.json"
+  }
+}

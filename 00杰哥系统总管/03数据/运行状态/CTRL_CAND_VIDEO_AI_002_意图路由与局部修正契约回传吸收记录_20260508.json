@@ -1,0 +1,74 @@
+{
+  "record_id": "CTRL_CAND_VIDEO_AI_002_ABSORPTION_20260508",
+  "generated_at": "2026-05-08 10:05:00 +08:00",
+  "candidate_id": "CTRL-CAND-VIDEO-AI-002",
+  "asset_identity": "总管侧W1/R0视频创作智能体意图路由与局部修正契约回传吸收记录",
+  "business_line": "video_production_shadow",
+  "risk_level": "W1/R0",
+  "status": "completed",
+  "source_files": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_INTENT_ROUTING_001_意图路由分类表草案_v1.0.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_INTENT_ROUTING_001_意图路由分类表草案_v1.0.json",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_PARTIAL_REVISION_CONTRACT_001_局部修正契约草案_v1.0.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_PARTIAL_REVISION_CONTRACT_001_局部修正契约草案_v1.0.json",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_VAI_001_005_R0_SELF_CHECK_20260508.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_VAI_001_005_对齐回传记录_20260508.md"
+  ],
+  "intent_routes_absorbed": [
+    "新建任务",
+    "改文案",
+    "改分镜",
+    "改风格",
+    "改受众",
+    "改配音",
+    "改封面",
+    "生成预检",
+    "发布预检",
+    "人工复核",
+    "复盘进化",
+    "无法判断"
+  ],
+  "partial_revision_fields_absorbed": [
+    "修改对象",
+    "修改范围",
+    "锁定内容",
+    "变更理由",
+    "修正前",
+    "修正后",
+    "影响范围",
+    "需人工确认项"
+  ],
+  "absorbed_constraints": {
+    "one_input_max_one_primary_intent_and_two_auxiliary_intents": true,
+    "unclear_input_clarify_once": true,
+    "routing_result_is_draft_not_real_action": true,
+    "locked_content_cannot_be_overwritten": true,
+    "unclear_revision_scope_requires_clarification": true,
+    "revision_output_is_review_draft_not_final_script": true,
+    "generation_gate_not_publish_gate": true
+  },
+  "boundary_flags": {
+    "replace_task_generator": false,
+    "modify_wecom_route_service": false,
+    "call_model_api": false,
+    "auto_modify_formal_draft": false,
+    "read_real_assets": false,
+    "generate_real_image_voice_subtitle_cover_or_video": false,
+    "release_generation": false,
+    "release_publish": false,
+    "platform_login_upload_or_publish": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "write_formal_rule_base": false
+  },
+  "next_recommended_candidates": [
+    "CTRL-CAND-VIDEO-AI-003",
+    "CTRL-CAND-WECOM-002"
+  ],
+  "self_check": {
+    "source_json_parse_passed": true,
+    "intent_route_count": 12,
+    "partial_revision_field_count": 8,
+    "boundary_kept": true
+  }
+}

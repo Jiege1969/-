@@ -1,0 +1,337 @@
+﻿{
+  "名称": "视频真实渲染白名单申请材料清单",
+  "package_id": "VIDEO-REAL-RENDER-WHITELIST-APPLICATION-COMPLETENESS-20260508-001",
+  "材料项数量": 8,
+  "材料清单": [
+    {
+      "item_id": "environment_identification",
+      "name": "环境识别",
+      "required_evidence": "只读识别真实渲染候选环境、依赖、路径、未启用状态和风险说明。",
+      "human_requirement": "人工确认候选环境与当前机器/账号范围一致。",
+      "status": "pending",
+      "completion_status": "pending",
+      "auto_fill": false,
+      "human_confirm_required": true,
+      "source_candidates": [
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\19真实渲染环境只读识别增强包\\视频真实渲染环境只读识别增强包_最新.json",
+          "exists": true,
+          "sha256": "697ddf25063a2a8a496735571d43e0a4634976d514ce53da74f0eb9f589fcafa",
+          "error_count": null,
+          "whitelist_effective": null,
+          "can_enter_real_render": null,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        },
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\20真实渲染环境候选路径矩阵与安装缺口清单\\视频真实渲染环境候选路径矩阵与安装缺口清单包_最新.json",
+          "exists": false,
+          "sha256": "",
+          "error_count": null,
+          "whitelist_effective": null,
+          "can_enter_real_render": null,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        },
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\21真实渲染启用前总闸口与人工放行申请包\\视频真实渲染启用前总闸口与人工放行申请包_最新.json",
+          "exists": true,
+          "sha256": "2036f8161686ee0ec5ab2b5b2af1145c0ff3cc974a4159ba180f486180c22c7f",
+          "error_count": 0,
+          "whitelist_effective": null,
+          "can_enter_real_render": false,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        }
+      ],
+      "判定说明": "已有部分材料，但仍需人工确认或补齐。"
+    },
+    {
+      "item_id": "material_authorization",
+      "name": "素材授权",
+      "required_evidence": "素材来源、授权边界、可用于试运行的低风险素材说明。",
+      "human_requirement": "人工提供或签收授权证明，不由脚本补齐。",
+      "status": "pending",
+      "completion_status": "pending",
+      "auto_fill": false,
+      "human_confirm_required": true,
+      "source_candidates": [
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\22真实渲染人工放行材料完整性复核与试运行禁入包\\视频真实渲染人工放行材料完整性复核_最新.json",
+          "exists": true,
+          "sha256": "55f01aeed52f470e4eacb5f08650fccb60c3a0820869c04eb4e1cbc5e60bb14b",
+          "error_count": 0,
+          "whitelist_effective": null,
+          "can_enter_real_render": false,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        },
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\23真实渲染试运行白名单与回滚预案草案包\\视频真实渲染试运行白名单申请草案_最新.json",
+          "exists": false,
+          "sha256": "",
+          "error_count": null,
+          "whitelist_effective": null,
+          "can_enter_real_render": null,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        }
+      ],
+      "判定说明": "已有部分材料，但仍需人工确认或补齐。"
+    },
+    {
+      "item_id": "output_directory_isolation",
+      "name": "输出目录隔离",
+      "required_evidence": "试运行输出目录与生产/发布目录隔离，且不覆盖既有产物。",
+      "human_requirement": "人工确认隔离目录和清理规则。",
+      "status": "pending",
+      "completion_status": "pending",
+      "auto_fill": false,
+      "human_confirm_required": true,
+      "source_candidates": [
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\21真实渲染启用前总闸口与人工放行申请包\\视频真实渲染启用前总闸口与人工放行申请包_最新.json",
+          "exists": true,
+          "sha256": "2036f8161686ee0ec5ab2b5b2af1145c0ff3cc974a4159ba180f486180c22c7f",
+          "error_count": 0,
+          "whitelist_effective": null,
+          "can_enter_real_render": false,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        },
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次预检_最新.json",
+          "exists": true,
+          "sha256": "facb7ee0ed88e52b4b8a445db079719b436dfcb1c1ff4d421af7ca24f459beba",
+          "error_count": 0,
+          "whitelist_effective": false,
+          "can_enter_real_render": false,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        }
+      ],
+      "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+    },
+    {
+      "item_id": "failure_rollback",
+      "name": "失败回滚",
+      "required_evidence": "失败场景、只读回滚动作、禁止删除和禁止重试真实渲染说明。",
+      "human_requirement": "人工确认回滚边界和责任人。",
+      "status": "pending",
+      "completion_status": "pending",
+      "auto_fill": false,
+      "human_confirm_required": true,
+      "source_candidates": [
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\25真实渲染试运行批次失败回滚与证据留存包\\视频真实渲染试运行批次失败回滚动作清单_最新.json",
+          "exists": true,
+          "sha256": "1e002aaa09cd83979c4d0efb531e90e2012e090b76d629af42648620feccd9de",
+          "error_count": 0,
+          "whitelist_effective": false,
+          "can_enter_real_render": false,
+          "real_render": false,
+          "publish": false,
+          "requires_supervisor_confirmation": null
+        },
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\23真实渲染试运行白名单与回滚预案草案包\\视频真实渲染试运行回滚预案草案_最新.json",
+          "exists": true,
+          "sha256": "87866a47438f860a54d8403899778e26f0379ab127287d228cb95abee2e1e552",
+          "error_count": 0,
+          "whitelist_effective": false,
+          "can_enter_real_render": false,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        }
+      ],
+      "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+    },
+    {
+      "item_id": "evidence_retention",
+      "name": "证据留存",
+      "required_evidence": "材料快照、检查报告、签收状态、留存期限和索引。",
+      "human_requirement": "人工确认留存期限与审计口径。",
+      "status": "pending",
+      "completion_status": "pending",
+      "auto_fill": false,
+      "human_confirm_required": true,
+      "source_candidates": [
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\25真实渲染试运行批次失败回滚与证据留存包\\视频真实渲染试运行批次失败证据留存索引_最新.json",
+          "exists": true,
+          "sha256": "a961afcd4639926a3f20fc9c3e30f6e533f29dfe74b8df51e906d2a49a1f8f35",
+          "error_count": 0,
+          "whitelist_effective": false,
+          "can_enter_real_render": false,
+          "real_render": false,
+          "publish": false,
+          "requires_supervisor_confirmation": null
+        },
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次只读预检报告_最新.json",
+          "exists": true,
+          "sha256": "8a57e2c1247ce3cbb6edfe10b7bc2c890a2ae27cea5566018ef252a80a510e1e",
+          "error_count": 0,
+          "whitelist_effective": false,
+          "can_enter_real_render": false,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        }
+      ],
+      "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+    },
+    {
+      "item_id": "manual_signoff",
+      "name": "人工签收",
+      "required_evidence": "审批人、签收动作、拒绝/待补齐状态和不可自动生效说明。",
+      "human_requirement": "人工最终签收；当前不得让白名单生效。",
+      "status": "pending",
+      "completion_status": "pending",
+      "auto_fill": false,
+      "human_confirm_required": true,
+      "source_candidates": [
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\22真实渲染人工放行材料完整性复核与试运行禁入包\\视频真实渲染下一步人工补齐卡_最新.json",
+          "exists": true,
+          "sha256": "63f619bcf054d1f22716037e1f90b727931455295d425b72ec9bc90228babaa1",
+          "error_count": 0,
+          "whitelist_effective": null,
+          "can_enter_real_render": false,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        },
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次人工签收清单_最新.json",
+          "exists": true,
+          "sha256": "36679210fbdd127ce2641276866649c1fdc7771018b3dc0595747c3dded9d1bf",
+          "error_count": 0,
+          "whitelist_effective": false,
+          "can_enter_real_render": false,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        }
+      ],
+      "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+    },
+    {
+      "item_id": "trial_scope",
+      "name": "试运行范围",
+      "required_evidence": "试运行批次、任务、素材范围、数量上限和禁入条件。",
+      "human_requirement": "人工确认试运行范围，不默认扩展。",
+      "status": "pending",
+      "completion_status": "pending",
+      "auto_fill": false,
+      "human_confirm_required": true,
+      "source_candidates": [
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次预检_最新.json",
+          "exists": true,
+          "sha256": "facb7ee0ed88e52b4b8a445db079719b436dfcb1c1ff4d421af7ca24f459beba",
+          "error_count": 0,
+          "whitelist_effective": false,
+          "can_enter_real_render": false,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        },
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\23真实渲染试运行白名单与回滚预案草案包\\视频真实渲染试运行白名单草案_最新.json",
+          "exists": true,
+          "sha256": "8cfe1d3177303bb411ba98e3177019fabf1cab2fa25762e238b58c675eda40c8",
+          "error_count": 0,
+          "whitelist_effective": false,
+          "can_enter_real_render": false,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        }
+      ],
+      "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+    },
+    {
+      "item_id": "publish_isolation",
+      "name": "发布隔离",
+      "required_evidence": "上传、发布、n8n、企业微信公共配置和总管面板均保持隔离关闭。",
+      "human_requirement": "人工确认发布链路仍关闭。",
+      "status": "pending",
+      "completion_status": "pending",
+      "auto_fill": false,
+      "human_confirm_required": true,
+      "source_candidates": [
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\22真实渲染人工放行材料完整性复核与试运行禁入包\\视频真实渲染试运行禁入清单_最新.json",
+          "exists": true,
+          "sha256": "7267d7f4e75892f92f0731d575c53979e5bb2f8b07b1a96c0c46db7c9ac69217",
+          "error_count": 0,
+          "whitelist_effective": null,
+          "can_enter_real_render": false,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        },
+        {
+          "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染白名单未生效闸口_最新.json",
+          "exists": true,
+          "sha256": "920cc3dcab10671ce6eeecd805e46846169a8e6e73f7abe88f7a536304df1eff",
+          "error_count": 0,
+          "whitelist_effective": false,
+          "can_enter_real_render": false,
+          "real_render": null,
+          "publish": null,
+          "requires_supervisor_confirmation": null
+        }
+      ],
+      "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+    }
+  ],
+  "用途": "只判定白名单申请材料完整度，为未来人工决定做准备；当前不得让白名单生效。",
+  "生成时间": "2026-05-08 19:33:40",
+  "error_count": 0,
+  "whitelist_effective": false,
+  "can_enter_real_render": false,
+  "real_render": false,
+  "publish": false,
+  "requires_supervisor_confirmation": true,
+  "白名单已生效": false,
+  "可进入真实渲染": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "触发n8n": false,
+  "修改企业微信公共配置": false,
+  "修改总管面板": false,
+  "修改一键接续包": false,
+  "重载服务": false,
+  "需要总管人工确认": true,
+  "readonly_flags_ascii": {
+    "whitelist_effective": false,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "publish": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false,
+    "requires_supervisor_confirmation": true
+  }
+}

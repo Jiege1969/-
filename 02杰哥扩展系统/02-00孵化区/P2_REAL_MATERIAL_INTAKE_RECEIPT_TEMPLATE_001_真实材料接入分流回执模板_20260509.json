@@ -1,0 +1,69 @@
+{
+  "template_id": "P2_REAL_MATERIAL_INTAKE_RECEIPT_TEMPLATE_001",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S6",
+  "layer": "extension_incubation_cross_cutting_capability",
+  "status": "blank_receipt_template_not_formal_business_receipt",
+  "purpose": "记录真实脱敏材料经过 P2 分流门后的分流结论、暂停原因、下一步允许动作、人工复核状态和红线状态",
+  "required_fields": [
+    "receipt_id",
+    "material_id",
+    "received_at",
+    "source_type",
+    "source_path_or_url",
+    "authorization_status",
+    "sensitivity",
+    "desensitized_status",
+    "target_line",
+    "target_entry",
+    "can_enter_shadow",
+    "pause_reasons",
+    "next_allowed_action",
+    "human_review_required",
+    "human_review_status",
+    "redline_status",
+    "redline_reasons",
+    "formal_capability_claim",
+    "receipt_status"
+  ],
+  "allowed_target_lines": [
+    "tax",
+    "office_work",
+    "video_production",
+    "shared_policy_evidence",
+    "pause"
+  ],
+  "allowed_next_actions": [
+    "登记资料",
+    "生成待复核草案",
+    "只记录缺口",
+    "暂停"
+  ],
+  "required_defaults": {
+    "human_review_required": true,
+    "human_review_status": "待复核",
+    "formal_capability_claim": false,
+    "receipt_status": "blank_template"
+  },
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "scan_unspecified_directory": false,
+    "copy_sensitive_material": false,
+    "tax_filing": false,
+    "invoice_action": false,
+    "tax_refund_action": false,
+    "trade": false,
+    "connect_real_office_system": false,
+    "render_upload_or_publish_video": false,
+    "claim_formal_capability": false
+  },
+  "usage_rules": [
+    "没有本回执，不得把真实材料推进到影子入口卡",
+    "human_review_required 必须为 true",
+    "formal_capability_claim 必须为 false",
+    "命中暂停条件时只记录 pause_reasons 和缺口，不得生成业务草案",
+    "可进入影子的材料只能进入对应影子入口或待复核链"
+  ]
+}

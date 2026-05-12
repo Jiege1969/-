@@ -1,0 +1,28 @@
+{
+  "card_id": "P2_SHARED_POLICY_READONLY_NEXT_001",
+  "generated_at": "2026-05-09",
+  "layer": "extension_incubation_shared_capability",
+  "status": "blank_waiting_for_readonly_validation",
+  "nature": "readonly_policy_evidence_call",
+  "not_formal_business_conclusion": true,
+  "fields": {
+    "target_business_line": "待填写",
+    "policy_source": "待填写",
+    "query_purpose": "待填写",
+    "expected_use": "待填写",
+    "human_review_required": true
+  },
+  "principles": [
+    "政策证据只提供依据候选、出处、有效性线索和适用边界提示",
+    "业务结论必须由业务线结合事实、场景、人工复核和红线边界生成",
+    "全文有效、检索命中、政策存在不等于本业务适用",
+    "共享证据能力属于内部只读调配，n8n 后置"
+  ],
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "replace_business_line_judgment": false,
+    "claim_formal_capability": false
+  }
+}

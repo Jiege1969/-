@@ -1,0 +1,69 @@
+{
+  "name": "低风险任务准入规则",
+  "generated_at": "2026-05-08 19:32:20",
+  "purpose": "仅登记未来可自主执行的低风险候选任务，当前不执行任务。",
+  "auto_execute": false,
+  "default_enabled": false,
+  "dry_run_only": true,
+  "allowed_categories": [
+    {
+      "id": "readonly_inspection",
+      "name": "只读巡检",
+      "admission": "只读取本地既有产物、脚本清单、日志摘要或状态文件，不访问外部系统。"
+    },
+    {
+      "id": "artifact_integrity_check",
+      "name": "产物完整性检查",
+      "admission": "检查指定 JSON/MD/日志文件是否存在、字段是否齐全、格式是否可解析。"
+    },
+    {
+      "id": "regression_acceptance",
+      "name": "回归验收",
+      "admission": "运行本地只读验收脚本或静态校验，禁止触发真实业务动作。"
+    },
+    {
+      "id": "evidence_archive",
+      "name": "证据归档",
+      "admission": "整理本地证据索引、摘要和验收记录，只写入本包数据/日志目录。"
+    },
+    {
+      "id": "status_package_refresh",
+      "name": "状态包刷新",
+      "admission": "刷新候选状态包或只读状态摘要，不改正式规则和运行中配置。"
+    }
+  ],
+  "excluded_actions": [
+    "真实发企微",
+    "n8n触发",
+    "券商交易",
+    "税局登录",
+    "财税软件",
+    "正式规则生效",
+    "视频真实发布"
+  ],
+  "hard_red_lines": {
+    "real_wecom_send": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "write_formal_rule": false,
+    "formal_rule_effective": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false,
+    "real_video_publish": false,
+    "external_call": false
+  },
+  "admission_must_all_true": [
+    "candidate_only",
+    "enabled_is_false",
+    "dry_run_only_is_true",
+    "no_external_call",
+    "no_formal_rule_write",
+    "no_service_reload",
+    "no_real_send",
+    "scope_is_readonly"
+  ]
+}

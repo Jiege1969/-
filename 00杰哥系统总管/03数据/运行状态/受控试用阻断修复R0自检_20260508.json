@@ -1,0 +1,33 @@
+{
+  "id": "CONTROLLED_TRIAL_BLOCKER_FIX_R0_SELF_CHECK_20260508",
+  "generated_at": "2026-05-08",
+  "asset_identity": "manager_side_w1_r0_self_check",
+  "result": "passed",
+  "checked_assets": [
+    "受控试用阻断修复清单_20260508.md/json",
+    "税收事项匹配纠偏卡_软件产品即征即退_20260508.md/json",
+    "VIDEO_SCRIPT_QUALITY_FIX_CARD_001_成语故事内容质量纠偏卡_v1.0.md/json"
+  ],
+  "pre_read": {
+    "manager_panel": true,
+    "continuation_package": true,
+    "video_latest_total_closure": true,
+    "tax_shadow_index": true
+  },
+  "boundary_check": {
+    "modify_wecom_service_script": false,
+    "restart_19310_or_19302": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "write_formal_tax_database": false,
+    "write_formal_video_rules": false,
+    "formal_tax_opinion": false,
+    "video_render_upload_publish": false
+  },
+  "command_verification": {
+    "json_parse_failures": 0,
+    "tax_index_registered": true,
+    "video_index_registered": true,
+    "real_system_triggered": false
+  }
+}

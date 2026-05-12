@@ -1,0 +1,1091 @@
+{
+  "generated_at": "2026-05-06 22:30:02",
+  "root": "D:\\杰哥智能化系统",
+  "machine": {
+    "platform": "Windows-11-10.0.26100-SP0",
+    "processor": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "top_level_dirs": [
+    "00杰哥系统总管",
+    "01杰哥智能系统",
+    "02杰哥扩展系统",
+    "03杰哥进化系统"
+  ],
+  "directory_counts": {
+    "00杰哥系统总管": {
+      "exists": true,
+      "dirs": 224,
+      "files": 1910
+    },
+    "01杰哥智能系统": {
+      "exists": true,
+      "dirs": 1187,
+      "files": 12163
+    },
+    "02杰哥扩展系统": {
+      "exists": true,
+      "dirs": 627,
+      "files": 3763
+    },
+    "03杰哥进化系统": {
+      "exists": true,
+      "dirs": 108,
+      "files": 384
+    }
+  },
+  "scheduled_tasks": [
+    {
+      "TaskName": "�ܸ����ܻ�ϵͳ_D����Դ��������ձ�",
+      "State": 3,
+      "Execute": "wscript.exe",
+      "Arguments": "\"D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�\\����������Դ�������.vbs\"",
+      "WorkingDirectory": null,
+      "Hidden": false,
+      "StartWhenAvailable": true,
+      "ExecutionTimeLimit": "PT10M"
+    },
+    {
+      "TaskName": "�ܸ����ܻ�ϵͳ_v3��������Բ��Է���",
+      "State": 3,
+      "Execute": "wscript.exe",
+      "Arguments": "\"D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�\\hidden_start_v3_agent_brain.vbs\"",
+      "WorkingDirectory": "D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�",
+      "Hidden": true,
+      "StartWhenAvailable": true,
+      "ExecutionTimeLimit": "PT15M"
+    },
+    {
+      "TaskName": "�ܸ����ܻ�ϵͳ_��ҵ΢��ͳһָ��ط���",
+      "State": 3,
+      "Execute": "wscript.exe",
+      "Arguments": "\"D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�\\hidden_start_wecom_unified.vbs\"",
+      "WorkingDirectory": "D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�",
+      "Hidden": true,
+      "StartWhenAvailable": true,
+      "ExecutionTimeLimit": "PT15M"
+    },
+    {
+      "TaskName": "�ܸ����ܻ�ϵͳ_�������������ػ�",
+      "State": 3,
+      "Execute": "wscript.exe",
+      "Arguments": "\"D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�\\���������������������ػ�.vbs\"",
+      "WorkingDirectory": null,
+      "Hidden": false,
+      "StartWhenAvailable": true,
+      "ExecutionTimeLimit": "PT2M"
+    },
+    {
+      "TaskName": "�ܸ����ܻ�ϵͳ_����ʩ��׼���Լ�",
+      "State": 3,
+      "Execute": "wscript.exe",
+      "Arguments": "\"D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�\\hidden_start_startup_preflight.vbs\"",
+      "WorkingDirectory": "D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�",
+      "Hidden": true,
+      "StartWhenAvailable": true,
+      "ExecutionTimeLimit": "PT15M"
+    },
+    {
+      "TaskName": "�ܸ����ܻ�ϵͳ_ÿ��ֻ��Ѳ��",
+      "State": 4,
+      "Execute": "wscript.exe",
+      "Arguments": "\"D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�\\hidden_start_daily_readonly_audit.vbs\"",
+      "WorkingDirectory": "D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�",
+      "Hidden": true,
+      "StartWhenAvailable": true,
+      "ExecutionTimeLimit": "PT20M"
+    },
+    {
+      "TaskName": "�ܸ����ܻ�ϵͳ_��Ʊϵͳ�������л���",
+      "State": 3,
+      "Execute": "wscript.exe",
+      "Arguments": "\"D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�\\hidden_start_stock_runtime.vbs\"",
+      "WorkingDirectory": "D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�",
+      "Hidden": true,
+      "StartWhenAvailable": true,
+      "ExecutionTimeLimit": "PT15M"
+    },
+    {
+      "TaskName": "�ܸ����ܻ�ϵͳ_Ѫ�����Ӽ�ֻ��̽��",
+      "State": 3,
+      "Execute": "wscript.exe",
+      "Arguments": "\"D:\\�ܸ����ܻ�ϵͳ\\00�ܸ�ϵͳ�ܹ�\\02�ű�\\hidden_start_blood_probe.vbs\"",
+      "WorkingDirectory": null,
+      "Hidden": true,
+      "StartWhenAvailable": true,
+      "ExecutionTimeLimit": "PT2M"
+    }
+  ],
+  "listening_ports": [
+    {
+      "LocalAddress": "::",
+      "LocalPort": 135,
+      "OwningProcess": 1848
+    },
+    {
+      "LocalAddress": "0.0.0.0",
+      "LocalPort": 135,
+      "OwningProcess": 1848
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 445,
+      "OwningProcess": 4
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 4001,
+      "OwningProcess": 2180
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 4301,
+      "OwningProcess": 2180
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 4310,
+      "OwningProcess": 2180
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 4709,
+      "OwningProcess": 12736
+    },
+    {
+      "LocalAddress": "0.0.0.0",
+      "LocalPort": 5040,
+      "OwningProcess": 8872
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 5283,
+      "OwningProcess": 2180
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 5357,
+      "OwningProcess": 4
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 7890,
+      "OwningProcess": 32688
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 9210,
+      "OwningProcess": 2180
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 10000,
+      "OwningProcess": 17632
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 11434,
+      "OwningProcess": 29780
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 14013,
+      "OwningProcess": 9668
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 14016,
+      "OwningProcess": 9668
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 14019,
+      "OwningProcess": 9668
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 14022,
+      "OwningProcess": 9668
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 14023,
+      "OwningProcess": 9668
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 14122,
+      "OwningProcess": 6916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 18789,
+      "OwningProcess": 29780
+    },
+    {
+      "LocalAddress": "::1",
+      "LocalPort": 18789,
+      "OwningProcess": 29780
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 18791,
+      "OwningProcess": 29780
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 18792,
+      "OwningProcess": 29780
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 19300,
+      "OwningProcess": 23796
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 19302,
+      "OwningProcess": 29444
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 19310,
+      "OwningProcess": 23928
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 26379,
+      "OwningProcess": 25752
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 28100,
+      "OwningProcess": 17184
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 28679,
+      "OwningProcess": 25752
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 29134,
+      "OwningProcess": 25752
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 38324,
+      "OwningProcess": 6916
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 44803,
+      "OwningProcess": 29780
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 45494,
+      "OwningProcess": 5952
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 49664,
+      "OwningProcess": 1468
+    },
+    {
+      "LocalAddress": "0.0.0.0",
+      "LocalPort": 49664,
+      "OwningProcess": 1468
+    },
+    {
+      "LocalAddress": "0.0.0.0",
+      "LocalPort": 49665,
+      "OwningProcess": 1368
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 49665,
+      "OwningProcess": 1368
+    },
+    {
+      "LocalAddress": "0.0.0.0",
+      "LocalPort": 49666,
+      "OwningProcess": 2372
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 49666,
+      "OwningProcess": 2372
+    },
+    {
+      "LocalAddress": "0.0.0.0",
+      "LocalPort": 49667,
+      "OwningProcess": 3236
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 49667,
+      "OwningProcess": 3236
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 49668,
+      "OwningProcess": 4396
+    },
+    {
+      "LocalAddress": "0.0.0.0",
+      "LocalPort": 49668,
+      "OwningProcess": 4396
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 49669,
+      "OwningProcess": 1440
+    },
+    {
+      "LocalAddress": "0.0.0.0",
+      "LocalPort": 49669,
+      "OwningProcess": 1440
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 50010,
+      "OwningProcess": 18876
+    },
+    {
+      "LocalAddress": "::",
+      "LocalPort": 53196,
+      "OwningProcess": 12736
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 65062,
+      "OwningProcess": 5952
+    }
+  ],
+  "docker": {
+    "running": [
+      {
+        "Command": "\"/bin/sh -lc '\\n  mkd…\"",
+        "CreatedAt": "2026-04-28 22:23:29 +0800 CST",
+        "ID": "f268d4d900da",
+        "Image": "ollama/ollama:0.20.5",
+        "Labels": "com.docker.compose.config-hash=be30cd5796d772a381ea81ed228de66e5dea47945dec6d369af75d36bbab5373,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:662109db8037f17257cfc6e816289c0d4c9ae8a2a4ff760b653d8d410e234ba0,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=D:\\杰哥智能化系统\\01杰哥智能系统\\01配置\\docker-compose.智能底座.yml,com.docker.compose.project.working_dir=D:\\杰哥智能化系统\\01杰哥智能系统\\01配置,com.docker.compose.project=01,com.docker.compose.replace=jiege_v3_ollama,com.docker.compose.service=ollama,com.docker.compose.version=5.1.1,desktop.docker.io/binds/0/Source=D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\ollama,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/root/.ollama,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/11434/tcp=127.0.0.1:29134,org.opencontainers.image.version=24.04",
+        "LocalVolumes": "0",
+        "Mounts": "/run/desktop/m…",
+        "Names": "jiege_v3_ollama",
+        "Networks": "jiege_v3_ai_base_network",
+        "Platform": {
+          "architecture": "amd64",
+          "os": "linux"
+        },
+        "Ports": "127.0.0.1:29134->11434/tcp",
+        "RunningFor": "8 days ago",
+        "Size": "93.2MB (virtual 6.27GB)",
+        "State": "running",
+        "Status": "Up 13 hours"
+      },
+      {
+        "Command": "\"docker-entrypoint.s…\"",
+        "CreatedAt": "2026-04-28 22:22:14 +0800 CST",
+        "ID": "8af00ea6638c",
+        "Image": "redis:7.2.5-alpine",
+        "Labels": "com.docker.compose.config-hash=b97b7e6d52b6c161f8f158eddf2cd63bd715b8c4690a9d3070d7a8ad4b3b1ce5,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:6aaf3f5e6bc8a592fbfe2cccf19eb36d27c39d12dab4f4b01556b7449e7b1f44,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=D:\\杰哥智能化系统\\01杰哥智能系统\\01配置\\docker-compose.智能底座.yml,com.docker.compose.project.working_dir=D:\\杰哥智能化系统\\01杰哥智能系统\\01配置,com.docker.compose.project=01,com.docker.compose.replace=jiege_v3_redis,com.docker.compose.service=redis,com.docker.compose.version=5.1.1,desktop.docker.io/binds/0/Source=D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\redis,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/data,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/6379/tcp=127.0.0.1:26379",
+        "LocalVolumes": "0",
+        "Mounts": "/run/desktop/m…",
+        "Names": "jiege_v3_redis",
+        "Networks": "jiege_v3_ai_base_network",
+        "Platform": {
+          "architecture": "amd64",
+          "os": "linux"
+        },
+        "Ports": "127.0.0.1:26379->6379/tcp",
+        "RunningFor": "8 days ago",
+        "Size": "4.1kB (virtual 42.7MB)",
+        "State": "running",
+        "Status": "Up 13 hours"
+      },
+      {
+        "Command": "\"tini -- /docker-ent…\"",
+        "CreatedAt": "2026-04-28 17:50:03 +0800 CST",
+        "ID": "afcf2e781b18",
+        "Image": "n8nio/n8n:1.123.30",
+        "Labels": "com.docker.compose.config-hash=7a306083f071f31a1dade48a271b63b88c78ff6073a18118c03b5fee4b53d604,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:fb8b8f908d26bfa51f11ad37438cb0748d980ae7e85c7caf2e51c38336cfd9f5,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=D:\\杰哥智能化系统\\01杰哥智能系统\\01配置\\docker-compose.n8n隔离.yml,com.docker.compose.project.working_dir=D:\\杰哥智能化系统\\01杰哥智能系统\\01配置,com.docker.compose.project=01,com.docker.compose.service=n8n,com.docker.compose.version=5.1.1,com.docker.dhi.chain-id=sha256:944769358dd7f77ef0ea2ae34d07317f84e07d5449adfdb9f763ac479326f348,com.docker.dhi.compliance=cis,com.docker.dhi.created=2026-02-20T09:02:53Z,com.docker.dhi.date.end-of-life=2028-04-30,com.docker.dhi.date.release=2025-05-06,com.docker.dhi.definition=image/node/alpine-3.22/24-dev,com.docker.dhi.distro=alpine-3.22,com.docker.dhi.flavor=,com.docker.dhi.name=dhi/node,com.docker.dhi.package-manager=apk,com.docker.dhi.shell=busybox,com.docker.dhi.title=Node.js 24.x (dev),com.docker.dhi.url=https://dhi.io/catalog/node,com.docker.dhi.variant=dev,com.docker.dhi.version=24.13.1-alpine3.22-dev,desktop.docker.io/binds/0/Source=D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\n8n,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/home/node/.n8n,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/5678/tcp=127.0.0.1:28679,org.opencontainers.image.description=Workflow Automation Tool,org.opencontainers.image.source=https://github.com/n8n-io/n8n,org.opencontainers.image.title=n8n,org.opencontainers.image.url=https://n8n.io,org.opencontainers.image.version=1.123.30",
+        "LocalVolumes": "0",
+        "Mounts": "/run/desktop/m…",
+        "Names": "jiege_v3_n8n",
+        "Networks": "jiege_v3_n8n_isolated_network",
+        "Platform": {
+          "architecture": "amd64",
+          "os": "linux"
+        },
+        "Ports": "127.0.0.1:28679->5678/tcp",
+        "RunningFor": "8 days ago",
+        "Size": "79.2MB (virtual 1.57GB)",
+        "State": "running",
+        "Status": "Up 13 hours"
+      }
+    ],
+    "exited_jiege_containers": [],
+    "ps_error": null
+  },
+  "wsl": {
+    "ok": true,
+    "stdout": "\u0000 \u0000N\u0000A\u0000M\u0000E\u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000S\u0000T\u0000A\u0000T\u0000E\u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000V\u0000E\u0000R\u0000S\u0000I\u0000O\u0000N\u0000\n\u0000\n\u0000*\u0000 \u0000d\u0000o\u0000c\u0000k\u0000e\u0000r\u0000-\u0000d\u0000e\u0000s\u0000k\u0000t\u0000o\u0000p\u0000 \u0000 \u0000 \u0000 \u0000R\u0000u\u0000n\u0000n\u0000i\u0000n\u0000g\u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u00002\u0000\n\u0000\n\u0000 \u0000 \u0000U\u0000b\u0000u\u0000n\u0000t\u0000u\u0000-\u00002\u00004\u0000.\u00000\u00004\u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000R\u0000u\u0000n\u0000n\u0000i\u0000n\u0000g\u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u0000 \u00002\u0000\n\u0000\n\u0000",
+    "stderr": ""
+  },
+  "redis_ping": {
+    "ok": true,
+    "returncode": 0,
+    "stdout": "PONG",
+    "stderr": "",
+    "elapsed_sec": 0.084
+  },
+  "http_endpoints": {
+    "stock_assistant_19300": {
+      "ok": true,
+      "status": 200,
+      "body": {
+        "状态": "正常",
+        "服务": "杰哥股票研究助手",
+        "时间": "2026-05-06 22:30:04",
+        "重点关注池数量": 123,
+        "端口": 19300,
+        "旧系统写入": false,
+        "交易接口": false
+      }
+    },
+    "stock_wecom_19302": {
+      "ok": true,
+      "status": 200,
+      "body": {
+        "状态": "正常",
+        "服务": "股票企业微信桥接入口",
+        "端口": 19302,
+        "能力": [
+          "本地股票查询",
+          "n8n/OpenClaw桥接",
+          "企业微信智能机器人stream回复",
+          "response_url脱敏捕获"
+        ],
+        "边界": {
+          "写旧系统": false,
+          "调用券商接口": false,
+          "自动交易": false
+        },
+        "时间": "2026-05-06 22:30:04"
+      }
+    },
+    "wecom_unified_19310": {
+      "ok": true,
+      "status": 200,
+      "body": {
+        "状态": "正常",
+        "服务": "企业微信统一指令本地服务",
+        "地址": "http://127.0.0.1:19310",
+        "路由数量": 7,
+        "路由": [
+          "股票研究",
+          "系统状态",
+          "知识库问答",
+          "内容办公处理",
+          "视频制作",
+          "税收业务暂停",
+          "澄清一次"
+        ],
+        "调用模式": "local_preview_only",
+        "安全边界": {
+          "绑定地址": "127.0.0.1",
+          "真实发送企业微信": false,
+          "触发Webhook": false,
+          "触发n8n": false,
+          "写正式库": false,
+          "写旧系统": false,
+          "接入税收真实业务": false,
+          "交易接口": false
+        }
+      }
+    },
+    "v3_agent_brain_28100": {
+      "ok": true,
+      "status": 200,
+      "body": {
+        "状态": "正常",
+        "系统": "杰哥智能化系统v3",
+        "服务": "01智能体大脑",
+        "阶段": "第一阶段最小可运行版本",
+        "时间": "2026-05-06 22:30:04",
+        "说明": "此服务仅用于v3新系统测试，不接管旧系统生产流量。"
+      }
+    },
+    "n8n_28679": {
+      "ok": true,
+      "status": 200,
+      "body": {
+        "status": "ok"
+      }
+    },
+    "ollama_29134": {
+      "ok": true,
+      "status": 200,
+      "body": {
+        "models": [
+          {
+            "name": "sam860/qwen3-reranker:0.6b-Q8_0",
+            "model": "sam860/qwen3-reranker:0.6b-Q8_0",
+            "modified_at": "2026-04-27T15:38:29.9695718Z",
+            "size": 639152832,
+            "digest": "c9da58824943d42f581f2012013dd469bae26bbc9cc04b54fcbefdc34110e7e8",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3",
+              "families": [
+                "qwen3"
+              ],
+              "parameter_size": "595.78M",
+              "quantization_level": "Q8_0"
+            }
+          },
+          {
+            "name": "qwen3-embedding:4b",
+            "model": "qwen3-embedding:4b",
+            "modified_at": "2026-04-27T15:37:28.3518448Z",
+            "size": 2496704041,
+            "digest": "df5bd2e3c74cd8d069d21dc038f1b359fcdc9458fce1c99bd43c9eb1518ff907",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3",
+              "families": [
+                "qwen3"
+              ],
+              "parameter_size": "4.0B",
+              "quantization_level": "Q4_K_M"
+            }
+          },
+          {
+            "name": "bge-m3:latest",
+            "model": "bge-m3:latest",
+            "modified_at": "2026-04-27T15:36:35.1118063Z",
+            "size": 1157672605,
+            "digest": "7907646426070047a77226ac3e684fbbe8410524f7b4a74d02837e43f2146bab",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "bert",
+              "families": [
+                "bert"
+              ],
+              "parameter_size": "566.70M",
+              "quantization_level": "F16"
+            }
+          },
+          {
+            "name": "gemma3:27b",
+            "model": "gemma3:27b",
+            "modified_at": "2026-04-26T09:06:56.372218Z",
+            "size": 17396936941,
+            "digest": "a418f5838eaf7fe2cfe0a3046c8384b68ba43a4435542c942f9db00a5f342203",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gemma3",
+              "families": [
+                "gemma3"
+              ],
+              "parameter_size": "27.4B",
+              "quantization_level": "Q4_K_M"
+            }
+          },
+          {
+            "name": "qwen3-coder:30b",
+            "model": "qwen3-coder:30b",
+            "modified_at": "2026-04-26T08:58:28.5701277Z",
+            "size": 18556700761,
+            "digest": "06c1097efce0431c2045fe7b2e5108366e43bee1b4603a7aded8f21689e90bca",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3moe",
+              "families": [
+                "qwen3moe"
+              ],
+              "parameter_size": "30.5B",
+              "quantization_level": "Q4_K_M"
+            }
+          },
+          {
+            "name": "deepseek-r1:32b",
+            "model": "deepseek-r1:32b",
+            "modified_at": "2026-04-26T08:52:03.7187688Z",
+            "size": 19851337809,
+            "digest": "edba8017331d15236e57480eb45406c0d721db77a4cdcf234df500fc2ad3960c",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "32.8B",
+              "quantization_level": "Q4_K_M"
+            }
+          },
+          {
+            "name": "qwen3:14b",
+            "model": "qwen3:14b",
+            "modified_at": "2026-04-26T08:41:43.7485946Z",
+            "size": 9276198565,
+            "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3",
+              "families": [
+                "qwen3"
+              ],
+              "parameter_size": "14.8B",
+              "quantization_level": "Q4_K_M"
+            }
+          },
+          {
+            "name": "qwen3:30b",
+            "model": "qwen3:30b",
+            "modified_at": "2026-04-26T08:37:46.4188717Z",
+            "size": 18556699314,
+            "digest": "ad815644918f0eaab341c12b67837cc6dd4562342cdaf118f83d5d554cb37226",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3moe",
+              "families": [
+                "qwen3moe"
+              ],
+              "parameter_size": "30.5B",
+              "quantization_level": "Q4_K_M"
+            }
+          },
+          {
+            "name": "tinyllama:latest",
+            "model": "tinyllama:latest",
+            "modified_at": "2026-04-22T09:46:49Z",
+            "size": 637700138,
+            "digest": "2644915ede352ea7bdfaff0bfac0be74c719d5d5202acb63a6fb095b52f394a4",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "llama",
+              "families": [
+                "llama"
+              ],
+              "parameter_size": "1B",
+              "quantization_level": "Q4_0"
+            }
+          },
+          {
+            "name": "mychen76/Fin-R1:Q5",
+            "model": "mychen76/Fin-R1:Q5",
+            "modified_at": "2026-04-22T05:02:20Z",
+            "size": 5444833371,
+            "digest": "0769fc9307753da9b2038c282b00dd5d42ad47591e0001980cce999f44c717c8",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "7.6B",
+              "quantization_level": "Q5_K_M"
+            }
+          },
+          {
+            "name": "martain7r/finance-llama-8b:q4_k_m",
+            "model": "martain7r/finance-llama-8b:q4_k_m",
+            "modified_at": "2026-04-22T05:02:19Z",
+            "size": 4920736646,
+            "digest": "25fabdc1e7a3d198d9c7cae0f9cbdbceba34e825dad9e2493b1378a97ba730d8",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "llama",
+              "families": [
+                "llama"
+              ],
+              "parameter_size": "8.0B",
+              "quantization_level": "Q4_K_M"
+            }
+          },
+          {
+            "name": "glm4:latest",
+            "model": "glm4:latest",
+            "modified_at": "2026-04-11T22:14:10Z",
+            "size": 5455326235,
+            "digest": "5b699761eca535dc55047ad9d2dbf54e3b8697709419ef78a70503ed4bfbcf44",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "chatglm",
+              "families": [
+                "chatglm"
+              ],
+              "parameter_size": "9.4B",
+              "quantization_level": "Q4_0"
+            }
+          },
+          {
+            "name": "deepseek-r1:7b",
+            "model": "deepseek-r1:7b",
+            "modified_at": "2026-04-11T22:12:29Z",
+            "size": 4683075440,
+            "digest": "755ced02ce7befdb13b7ca74e1e4d08cddba4986afdb63a480f2c93d3140383f",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "7.6B",
+              "quantization_level": "Q4_K_M"
+            }
+          },
+          {
+            "name": "qwen2.5:7b",
+            "model": "qwen2.5:7b",
+            "modified_at": "2026-04-11T22:11:01Z",
+            "size": 4683087332,
+            "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "7.6B",
+              "quantization_level": "Q4_K_M"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "key_configs": [
+    {
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置\\系统宪法级原则落地规则.json",
+      "exists": true,
+      "name": "系统宪法级原则落地规则.json",
+      "size": 6153,
+      "mtime": "2026-05-04 09:24:53.147949",
+      "json_ok": true,
+      "top_keys": [
+        "名称",
+        "版本",
+        "定位",
+        "宪法级原则",
+        "硬件天花板",
+        "平稳运行",
+        "报告质检",
+        "施工接续边界",
+        "成品交付",
+        "单用户分时调度",
+        "四主梁",
+        "可复制搭建",
+        "搭建者职责",
+        "脚本可治理"
+      ]
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置\\真实接入总闸门规则.json",
+      "exists": true,
+      "name": "真实接入总闸门规则.json",
+      "size": 2876,
+      "mtime": "2026-05-04 18:47:07.989934",
+      "json_ok": true,
+      "top_keys": [
+        "说明",
+        "创建日期",
+        "所属系统",
+        "阶段",
+        "硬性关闭开关",
+        "准入检查",
+        "候选接入层级",
+        "优先候选场景",
+        "当前结论"
+      ]
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置\\股票分析非交易边界规则.json",
+      "exists": true,
+      "name": "股票分析非交易边界规则.json",
+      "size": 3092,
+      "mtime": "2026-05-05 11:40:31.836648",
+      "json_ok": true,
+      "top_keys": [
+        "名称",
+        "版本",
+        "定位",
+        "用户口径",
+        "分析系统标准",
+        "硬性关闭开关",
+        "允许范围",
+        "必须拦截的用户意图",
+        "允许的相近研究表达",
+        "通过标准",
+        "当前状态"
+      ]
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置\\股票自动交易屏蔽总闸门规则.json",
+      "exists": true,
+      "name": "股票自动交易屏蔽总闸门规则.json",
+      "size": 2372,
+      "mtime": "2026-05-05 11:42:29.898603",
+      "json_ok": true,
+      "top_keys": [
+        "名称",
+        "版本",
+        "所属系统",
+        "适用范围",
+        "系统定位",
+        "硬性关闭开关",
+        "默认处理",
+        "允许输出",
+        "禁止输出",
+        "验收要求",
+        "当前状态"
+      ]
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置\\并行施工容量控制规则.json",
+      "exists": true,
+      "name": "并行施工容量控制规则.json",
+      "size": 10083,
+      "mtime": "2026-05-05 12:44:55.266432",
+      "json_ok": true,
+      "top_keys": [
+        "名称",
+        "版本",
+        "所属系统",
+        "规则定位",
+        "读取依据",
+        "最大并行容量",
+        "可并行任务",
+        "必须串行任务",
+        "小队列自动调度",
+        "冲突处理规则",
+        "固定回收路径规则",
+        "用户不搬运结果规则",
+        "股票自动交易屏蔽硬闸门继承",
+        "进度口径保护",
+        "当前状态"
+      ]
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置\\轻量任务契约层规则.json",
+      "exists": true,
+      "name": "轻量任务契约层规则.json",
+      "size": 2718,
+      "mtime": "2026-05-05 13:46:08.386492",
+      "json_ok": true,
+      "top_keys": [
+        "名称",
+        "版本",
+        "所属系统",
+        "定位",
+        "核心原则",
+        "安全边界",
+        "标准任务单必填字段",
+        "风险等级",
+        "当前落地层级",
+        "正式升级门槛"
+      ]
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置\\进度口径规则.json",
+      "exists": true,
+      "name": "进度口径规则.json",
+      "size": 11483,
+      "mtime": "2026-05-05 15:31:51.473575",
+      "json_ok": true,
+      "top_keys": [
+        "名称",
+        "作用",
+        "触发方式",
+        "依赖",
+        "所属系统",
+        "创建修改记录",
+        "核心原则",
+        "当前进度口径",
+        "剩余有效工作时间口径",
+        "禁止混用",
+        "总管本轮新增口径",
+        "交付后零阻断维护口径"
+      ]
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置\\进度回答标准.json",
+      "exists": true,
+      "name": "进度回答标准.json",
+      "size": 10707,
+      "mtime": "2026-05-05 15:31:51.473575",
+      "json_ok": true,
+      "top_keys": [
+        "名称",
+        "作用",
+        "触发方式",
+        "依赖",
+        "所属系统",
+        "创建修改记录",
+        "最高原则",
+        "整体系统",
+        "最新总控口径",
+        "四大系统",
+        "重点子系统",
+        "标准回答模板"
+      ]
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置\\服务注册表.json",
+      "exists": true,
+      "name": "服务注册表.json",
+      "size": 6002,
+      "mtime": "2026-05-06 17:20:42.890716",
+      "json_ok": true,
+      "top_keys": [
+        "说明",
+        "创建日期",
+        "服务",
+        "当前防复发覆盖口径"
+      ]
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置\\端口分配表.json",
+      "exists": true,
+      "name": "端口分配表.json",
+      "size": 7269,
+      "mtime": "2026-05-06 17:20:42.883156",
+      "json_ok": true,
+      "top_keys": [
+        "说明",
+        "创建日期",
+        "端口",
+        "规划原则",
+        "当前防复发覆盖口径"
+      ]
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\01配置\\股票分析系统硬闸门配置.json",
+      "exists": true,
+      "name": "股票分析系统硬闸门配置.json",
+      "size": 2332,
+      "mtime": "2026-05-05 11:41:01.995475",
+      "json_ok": true,
+      "top_keys": [
+        "名称",
+        "版本",
+        "系统身份",
+        "总原则",
+        "硬性关闭开关",
+        "允许能力",
+        "必须拦截意图",
+        "允许相近研究表达",
+        "默认拦截回复口径",
+        "继承范围",
+        "当前状态"
+      ]
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\01配置\\股票企业微信真实灰度最终闸口规则.json",
+      "exists": true,
+      "name": "股票企业微信真实灰度最终闸口规则.json",
+      "size": 2579,
+      "mtime": "2026-04-28 10:35:49.115715",
+      "json_ok": true,
+      "top_keys": [
+        "名称",
+        "作用",
+        "触发方式",
+        "依赖",
+        "所属系统",
+        "创建修改记录",
+        "放行条件",
+        "默认阻断原因",
+        "灰度批次建议",
+        "回滚要求",
+        "安全边界"
+      ]
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\01配置\\股票企业微信真实灰度未确认拦截规则.json",
+      "exists": true,
+      "name": "股票企业微信真实灰度未确认拦截规则.json",
+      "size": 1775,
+      "mtime": "2026-04-28 13:05:53.428218",
+      "json_ok": true,
+      "top_keys": [
+        "名称",
+        "作用",
+        "触发方式",
+        "依赖",
+        "所属系统",
+        "创建修改记录",
+        "拦截原则",
+        "必须拦截动作",
+        "允许动作",
+        "安全边界"
+      ]
+    }
+  ],
+  "startup_preflight": {
+    "latest_md": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\开机施工准备\\startup_construction_preflight_latest.md",
+    "latest_json": {
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\开机施工准备\\startup_construction_preflight_latest.json",
+      "exists": true,
+      "name": "startup_construction_preflight_latest.json",
+      "size": 33477,
+      "mtime": "2026-05-05 21:46:38.098614",
+      "json_ok": true,
+      "top_keys": [
+        "generated_at",
+        "root",
+        "mode",
+        "purpose",
+        "machine",
+        "construction",
+        "ready_for_codex",
+        "warnings",
+        "safety_boundary"
+      ]
+    },
+    "latest_md_tail": "# Startup Construction Preflight\n\nGenerated at: 2026-05-05 21:46:38\n\n## Result\n\n- Ready for Codex construction: True\n- Latest v3 acceptance: total=168, passed=168, failed=0\n- Annotation check: True\n- Stock status summary: True\n- Current progress report: True\n- Readonly status check: True\n- V3 AI base healthcheck: True\n\n## Smart Readiness\n\n- docker-cli: ok=True, required=True, elapsed=0s, detail=docker server=29.3.1\n- ollama-container: ok=True, required=True, elapsed=0s, detail=jiege_v3_ollama running\n- redis-container: ok=True, required=True, elapsed=0s, detail=jiege_v3_redis running\n- n8n-container: ok=True, required=True, elapsed=0s, detail=jiege_v3_n8n running\n- ollama-api-29134: ok=True, required=True, elapsed=0s, detail=ollama api ready; models=14\n- redis-ping: ok=True, required=True, elapsed=0s, detail=redis PONG\n- n8n-port-28679: ok=True, required=True, elapsed=0s, detail=listen pid=22440\n- stock-local-entry-19300: ok=True, required=True, elapsed=0s, detail=listen pid=16908\n- stock-wecom-entry-19302: ok=True, required=True, elapsed=0s, detail=listen pid=29444\n- wecom-unified-entry-19310: ok=True, required=True, elapsed=0s, detail=listen pid=8024\n- v3-agent-brain-28100: ok=True, required=False, elapsed=0s, detail=listen pid=17184\n\n\n## Machine\n\n- CPU: AMD Ryzen 7 7800X3D 8-Core Processor           \n- Memory: total 63.06GB, free 47.01GB, free percent 74.56%\n- D drive free: 394.3GB\n- Docker available: True\n\n## Construction Entry\n\n- New system root: D:\\杰哥智能化系统\n- Latest preflight JSON: D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\开机施工准备\\startup_construction_preflight_latest.json\n- Stock status markdown: \n\n## Warnings\n\nnone\n\n## Safety Boundary\n\nThis script does not delete files, overwrite the old system, restart formal services, trigger n8n, send WeWork messages, write formal business DB, call broker APIs, or trade.\n"
+  },
+  "safety_statement": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "broker_api": false,
+    "auto_trade": false,
+    "delete_or_clean": false,
+    "modify_business_config": false
+  },
+  "alignment_audit": {
+    "summary": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "delivery_blocked": false,
+      "needs_attention": false
+    },
+    "findings": [
+      {
+        "level": "OK",
+        "area": "总体",
+        "title": "未发现交付阻断",
+        "evidence": "只读审计未发现 P0/P1 交付阻断。",
+        "suggestion": "进入灰度运行观察与周期巡检。"
+      }
+    ]
+  }
+}

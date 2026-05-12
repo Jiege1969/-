@@ -1,0 +1,196 @@
+{
+  "name": "政策事件候选到入库阻断清单",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:43:19",
+  "asset_identity": "W1政策候选入库阻断清单",
+  "status": "shadow_blocking_checklist",
+  "source_assets": {
+    "candidate_draft": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\政策事件候选草案_20260507.json",
+    "candidate_draft_exists": true,
+    "exposure_review_validation": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\政策事件单股暴露度人工复核回执模板验收_最新.json",
+    "exposure_review_validation_passed": true
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_policy_event_write": true,
+  "not_score_write": true,
+  "not_formal_database_write": true,
+  "candidate_blocking_records": [
+    {
+      "candidate_id": "POL-CAND-20260507-001",
+      "suggested_event_id": "POL-2023-002",
+      "title": "商务部 海关总署公告2023年第39号 关于优化调整石墨物项临时出口管制措施的公告",
+      "candidate_status": "draft",
+      "not_for_scoring": true,
+      "entry_gates": {
+        "official_source_verified": false,
+        "source_url_reachable_or_archived": false,
+        "impact_direction_confirmed": false,
+        "impact_strength_confirmed": false,
+        "valid_until_or_decay_confirmed": false,
+        "risk_counterpoint_confirmed": false,
+        "stock_exposure_split_ready": false,
+        "duplicate_policy_check_passed": false,
+        "human_review_passed": false
+      },
+      "entry_decision": {
+        "can_write_policy_events": false,
+        "can_write_stock_exposures": false,
+        "can_enter_l3_policy_score": false,
+        "blocking_reason": "政策候选尚未完成入库前复核，只能作为线索，不得入库或入分。"
+      },
+      "candidate_exposure_count": 3,
+      "missing_before_formal_use": [
+        "需核对公司产品是否满足公告列管技术参数。",
+        "需补出口收入占比、海外客户结构和许可证执行情况。",
+        "需确认影响方向是价格弹性、合规成本还是订单扰动。"
+      ]
+    },
+    {
+      "candidate_id": "POL-CAND-20260507-002",
+      "suggested_event_id": "POL-2024-001",
+      "title": "商务部 海关总署公告2024年第33号 关于对锑等物项实施出口管制的公告",
+      "candidate_status": "draft",
+      "not_for_scoring": true,
+      "entry_gates": {
+        "official_source_verified": false,
+        "source_url_reachable_or_archived": false,
+        "impact_direction_confirmed": false,
+        "impact_strength_confirmed": false,
+        "valid_until_or_decay_confirmed": false,
+        "risk_counterpoint_confirmed": false,
+        "stock_exposure_split_ready": false,
+        "duplicate_policy_check_passed": false,
+        "human_review_passed": false
+      },
+      "entry_decision": {
+        "can_write_policy_events": false,
+        "can_write_stock_exposures": false,
+        "can_enter_l3_policy_score": false,
+        "blocking_reason": "政策候选尚未完成入库前复核，只能作为线索，不得入库或入分。"
+      },
+      "candidate_exposure_count": 2,
+      "missing_before_formal_use": [
+        "需补公司锑业务占比和产量数据。",
+        "需核对是否直接涉及出口或仅为国内价格预期映射。",
+        "需评估超硬材料链条与A股标的的直接暴露度。"
+      ]
+    },
+    {
+      "candidate_id": "POL-CAND-20260507-003",
+      "suggested_event_id": "POL-2024-002",
+      "title": "稀土管理条例（中华人民共和国国务院令 第785号）",
+      "candidate_status": "draft",
+      "not_for_scoring": true,
+      "entry_gates": {
+        "official_source_verified": false,
+        "source_url_reachable_or_archived": false,
+        "impact_direction_confirmed": false,
+        "impact_strength_confirmed": false,
+        "valid_until_or_decay_confirmed": false,
+        "risk_counterpoint_confirmed": false,
+        "stock_exposure_split_ready": false,
+        "duplicate_policy_check_passed": false,
+        "human_review_passed": false
+      },
+      "entry_decision": {
+        "can_write_policy_events": false,
+        "can_write_stock_exposures": false,
+        "can_enter_l3_policy_score": false,
+        "blocking_reason": "政策候选尚未完成入库前复核，只能作为线索，不得入库或入分。"
+      },
+      "candidate_exposure_count": 3,
+      "missing_before_formal_use": [
+        "需补各公司稀土资源/冶炼分离/贸易业务占比。",
+        "需结合年度总量控制指标、价格数据和配额变化复核。",
+        "需区分长期制度利好与短期股价催化。"
+      ]
+    },
+    {
+      "candidate_id": "POL-CAND-20260507-004",
+      "suggested_event_id": "POL-2024-003",
+      "title": "商务部 工业和信息化部 海关总署 国家密码局公告2024年第51号 关于发布《中华人民共和国两用物项出口管制清单》的公告",
+      "candidate_status": "draft",
+      "not_for_scoring": true,
+      "entry_gates": {
+        "official_source_verified": false,
+        "source_url_reachable_or_archived": false,
+        "impact_direction_confirmed": false,
+        "impact_strength_confirmed": false,
+        "valid_until_or_decay_confirmed": false,
+        "risk_counterpoint_confirmed": false,
+        "stock_exposure_split_ready": false,
+        "duplicate_policy_check_passed": false,
+        "human_review_passed": false
+      },
+      "entry_decision": {
+        "can_write_policy_events": false,
+        "can_write_stock_exposures": false,
+        "can_enter_l3_policy_score": false,
+        "blocking_reason": "政策候选尚未完成入库前复核，只能作为线索，不得入库或入分。"
+      },
+      "candidate_exposure_count": 0,
+      "missing_before_formal_use": [
+        "需解析清单附件并拆分具体物项。",
+        "需建立物项-产业链-公司产品映射。",
+        "未拆分前不得直接给任何单股政策加分。"
+      ]
+    },
+    {
+      "candidate_id": "POL-CAND-20260507-005",
+      "suggested_event_id": "POL-2024-004",
+      "title": "商务部公告2024年第46号 关于加强相关两用物项对美国出口管制的公告",
+      "candidate_status": "draft",
+      "not_for_scoring": true,
+      "entry_gates": {
+        "official_source_verified": false,
+        "source_url_reachable_or_archived": false,
+        "impact_direction_confirmed": false,
+        "impact_strength_confirmed": false,
+        "valid_until_or_decay_confirmed": false,
+        "risk_counterpoint_confirmed": false,
+        "stock_exposure_split_ready": false,
+        "duplicate_policy_check_passed": false,
+        "human_review_passed": false
+      },
+      "entry_decision": {
+        "can_write_policy_events": false,
+        "can_write_stock_exposures": false,
+        "can_enter_l3_policy_score": false,
+        "blocking_reason": "政策候选尚未完成入库前复核，只能作为线索，不得入库或入分。"
+      },
+      "candidate_exposure_count": 1,
+      "missing_before_formal_use": [
+        "需避免与POL-2023-001重复计分。",
+        "需确认公司对美国出口占比和实际许可影响。",
+        "需拆分本公告对不同物项的边际影响。"
+      ]
+    }
+  ],
+  "global_blocking_rules": [
+    "候选政策不得参与L3政策分。",
+    "候选政策不得直接写入policy_events正式表。",
+    "候选股票暴露度不得直接写入stock_policy_exposures正式表。",
+    "官方来源、影响方向、影响强度、股票暴露度、时效衰减、反证风险、重复政策检查均未完成前，只能作为线索。",
+    "新闻热词、行业口号、宏观背景不得替代结构化政策事件。"
+  ],
+  "summary": {
+    "candidate_count": 5,
+    "entry_allowed_count": 0,
+    "score_allowed_count": 0,
+    "blocked_count": 5
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

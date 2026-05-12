@@ -1,0 +1,26 @@
+{
+  "asset_id": "VIDEO_AGENT_ASSET_NAMING_CONFLICT_SCAN_SAMPLE_001",
+  "version": "v1.0",
+  "asset_type": "scan_result_sample",
+  "construction_level": "W1/R0",
+  "scope": "video_shadow_base_file_naming_governance",
+  "status": "draft_sample_not_real_scan_conclusion",
+  "purpose": "Define the output style for future naming conflict or encoding readability checks without deleting, moving, or overwriting assets.",
+  "sample_rows": [
+    {"scan_id": "NCS-001", "filename": "sample_duplicate_number.md", "issue_type": "number_may_be_reused", "risk": "low", "suggested_action": "create_next_numbered_version_without_overwrite", "requires_manager": false},
+    {"scan_id": "NCS-002", "filename": "sample_formal_publish_entry.md", "issue_type": "filename_implies_formal_entry", "risk": "medium", "suggested_action": "rename_future_asset_as_shadow_draft", "requires_manager": "case_by_case"},
+    {"scan_id": "NCS-003", "filename": "sample_unreadable_title.md", "issue_type": "encoding_readability_suspected", "risk": "low", "suggested_action": "create_correction_note_or_new_version_without_moving_old_asset", "requires_manager": false},
+    {"scan_id": "NCS-004", "filename": "sample_md_json_pair", "issue_type": "asset_id_inconsistent_between_md_and_json", "risk": "low", "suggested_action": "correct_new_asset_pair_fields", "requires_manager": false}
+  ],
+  "fixed_principles": [
+    "Scan result registers issues only and does not auto-clean.",
+    "Do not delete, move, or rename old assets.",
+    "If manager index, formal index, or public component is involved, mark as manager decision required.",
+    "Prefer adding explanatory files inside the video shadow base when possible."
+  ],
+  "boundary": {
+    "is_real_scan_script": false,
+    "read_other_directories": false,
+    "execute_fix": false
+  }
+}

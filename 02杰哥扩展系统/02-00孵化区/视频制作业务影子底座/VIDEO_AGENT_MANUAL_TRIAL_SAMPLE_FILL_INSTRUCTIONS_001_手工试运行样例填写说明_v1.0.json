@@ -1,0 +1,31 @@
+{
+  "id": "VIDEO_AGENT_MANUAL_TRIAL_SAMPLE_FILL_INSTRUCTIONS_001",
+  "name": "手工试运行样例填写说明",
+  "asset_identity": "video_creation_agent_manual_trial_sample_fill_instructions",
+  "stage": "W1_R0",
+  "status": "fill_instructions_not_real_task_creator",
+  "fill_order": [
+    "desensitized_idea_intake_prompt_template",
+    "desensitized_trial_sample_template",
+    "shadow_trial_io_packet",
+    "shadow_run_checklist",
+    "trial_output_quality_checklist",
+    "human_receipt_state_log_and_manual_trial_record"
+  ],
+  "allowed_placeholders": {
+    "target_platform": "pending_verification",
+    "asset_authorization_status": "pending_verification",
+    "platform_rule_status": "pending_verification",
+    "originality_review": "pending_human_review",
+    "ai_labeling_requirement": "pending_platform_rule_verification"
+  },
+  "forbidden_fields": [
+    "real_account",
+    "secret",
+    "webhook",
+    "full_asset_path",
+    "undesensitized_privacy",
+    "generation_approved",
+    "publish_approved"
+  ]
+}

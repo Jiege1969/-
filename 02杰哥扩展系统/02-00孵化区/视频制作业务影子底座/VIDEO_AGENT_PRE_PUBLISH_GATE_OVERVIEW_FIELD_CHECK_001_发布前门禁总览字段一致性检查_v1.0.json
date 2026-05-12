@@ -1,0 +1,32 @@
+{
+  "asset_id": "VIDEO_AGENT_PRE_PUBLISH_GATE_OVERVIEW_FIELD_CHECK_001",
+  "version": "v1.0",
+  "asset_type": "field_consistency_check",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "pre_publish_gate_overview_blocker_summary_multi_platform_receipts",
+  "status": "draft",
+  "purpose": "Keep pre-publish gate assets using consistent fields and blocker wording.",
+  "required_fields": [
+    {"field": "task_id", "meaning": "video task id", "required_in": ["blocker_summary", "wecom_reply", "multi_platform_receipt"]},
+    {"field": "gate_name", "meaning": "gate name", "required_in": ["gate_overview", "blocker_summary"]},
+    {"field": "gate_state", "meaning": "gate state", "required_in": ["gate_overview", "blocker_summary"]},
+    {"field": "required_proof", "meaning": "required proof", "required_in": ["gate_overview", "blocker_summary"]},
+    {"field": "blocker_reason", "meaning": "blocker reason", "required_in": ["blocker_summary", "wecom_reply"]},
+    {"field": "review_queue", "meaning": "review queue", "required_in": ["blocker_summary", "wecom_reply"]},
+    {"field": "next_action", "meaning": "next shadow action", "required_in": ["all_reply_assets"]},
+    {"field": "real_system_triggered", "meaning": "whether a real system was triggered", "required_in": ["all_reply_assets"]}
+  ],
+  "consistency_rules": [
+    "If gate_state is pending_confirmation, no publishable conclusion may appear.",
+    "real_system_triggered must be false in this stage.",
+    "Multi-platform checks for the same task must keep per-platform states and not collapse into one global state.",
+    "When a redline blocker exists, next_action can only be blocker registration or manager decision.",
+    "If publishing release confirmation is missing, WeCom replies must refuse publishing commands."
+  ],
+  "failure_handling": "Generate field-gap or state-conflict lists only; do not modify real configs, publish, or send WeCom messages.",
+  "boundaries": {
+    "modify_real_config": false,
+    "trigger_publish": false,
+    "wecom_real_send": false
+  }
+}

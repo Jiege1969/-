@@ -1,0 +1,122 @@
+{
+  "task_id": "CTRL-CAND-MGR-003",
+  "asset_name": "系统管家提示语收紧验收样例",
+  "created_at": "2026-05-08 11:23:49 +08:00",
+  "asset_identity": "总管侧W1/R0受控试用提示语纠偏样例",
+  "source_input": "验证30回传结论",
+  "risk_level": "W1/R0",
+  "current_position": "只固化系统管家输出验收口径，不修改企业微信服务、不重启19310、不触发n8n",
+  "pass_points": {
+    "ping_fast_reply": true,
+    "system_manager_online": true,
+    "core_entry_status_returned": true,
+    "readonly_inspection_result": true,
+    "n8n_triggered": false,
+    "wecom_real_send": false,
+    "trade_triggered": false
+  },
+  "wording_risk": {
+    "risk_item": "n8n状态",
+    "risky_phrase": "n8n 正常",
+    "risk_reason": "容易被理解为n8n已接入、已启用或真实工作流可执行",
+    "required_phrase": "n8n 相关入口/占位状态可检查，但真实触发仍关闭",
+    "forbidden_phrases": [
+      "n8n 正常",
+      "n8n 已接入可用",
+      "可触发 n8n"
+    ]
+  },
+  "acceptance_samples": [
+    {
+      "scene": "基础在线",
+      "user_inputs": [
+        "ping",
+        "系统管家在线吗"
+      ],
+      "must_include": [
+        "在线",
+        "只读巡检",
+        "核心入口状态"
+      ],
+      "must_not_include": [
+        "已启用n8n"
+      ]
+    },
+    {
+      "scene": "进度查询",
+      "user_inputs": [
+        "系统现在到什么阶段"
+      ],
+      "must_include": [
+        "受控试用版状态",
+        "各业务线可用/待修项",
+        "下一步低风险修复"
+      ],
+      "must_not_include": [
+        "把暂停线说成已交付"
+      ]
+    },
+    {
+      "scene": "路径查询",
+      "user_inputs": [
+        "税收系统路径在哪里",
+        "视频任务在哪里"
+      ],
+      "must_include": [
+        "权威路径",
+        "业务线澄清"
+      ],
+      "must_not_include": [
+        "虚构路径"
+      ]
+    },
+    {
+      "scene": "n8n状态",
+      "user_inputs": [
+        "n8n 正常吗"
+      ],
+      "must_include": [
+        "n8n 相关入口/占位状态可检查，但真实触发仍关闭"
+      ],
+      "must_not_include": [
+        "n8n 正常",
+        "n8n 已接入可用",
+        "可触发 n8n"
+      ]
+    }
+  ],
+  "future_actions": [
+    {
+      "action": "把本样例交给系统管家服务提示语修正",
+      "risk": "W2",
+      "implemented_this_round": false
+    },
+    {
+      "action": "修改企业微信统一指令服务脚本",
+      "risk": "W2/W3",
+      "implemented_this_round": false
+    },
+    {
+      "action": "重启19310验证真实回复",
+      "risk": "W2/W3",
+      "implemented_this_round": false
+    },
+    {
+      "action": "继续新增只读验收样例",
+      "risk": "W1/R0",
+      "implemented_this_round": true
+    }
+  ],
+  "boundary_flags": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "modify_service_script": false,
+    "restart_19310": false,
+    "write_formal_db": false,
+    "trade": false
+  },
+  "self_check": {
+    "passed": true,
+    "boundary_kept": true
+  }
+}

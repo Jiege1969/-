@@ -1,0 +1,362 @@
+﻿{
+    "version":  "1.1",
+    "status":  "active",
+    "name":  "最高智能总管入口规则",
+    "positioning":  "轻量三色分流入口，不做重审批",
+    "traffic_light_policy":  {
+                                 "green":  {
+                                               "meaning":  "直接推进",
+                                               "principle":  "普通工作不加流程，R0核查、总结、草案整理、读取现有资料直接做"
+                                           },
+                                 "yellow":  {
+                                                "meaning":  "轻提醒后推进",
+                                                "principle":  "方案、影子样例、底座完善、理念沉淀先说明边界，再继续做"
+                                            },
+                                 "red":  {
+                                             "meaning":  "暂停讨论或人工确认",
+                                             "principle":  "正式扩展系统、删除清债、外部动作、业务写入、服务变更、交易相关动作必须停下来"
+                                         }
+                             },
+    "hard_rules":  [
+                       "新扩展系统正式开工前，必须先讨论成熟方案",
+                       "不可逆动作、外部动作、业务写入动作，必须先停下来确认",
+                       "清债不能顺手清，必须先查源头和资产身份",
+                       "所有业务输出默认是待复核草案，不冒充最终结论",
+                       "全体系先判依据层级再执行；上位依据优先，下位制度和流程不得反向覆盖"
+                   ],
+    "capability_boundary":  {
+                                "can_do":  [
+                                               "classify_user_intent",
+                                               "route_green_directly",
+                                               "route_yellow_with_light_reminder",
+                                               "route_red_to_discussion_or_confirmation",
+                                               "run_R0_static_checks",
+                                               "build_shadow_knowledge_base_from_public_official_sources",
+                                               "update_current_panel_and_resume_pack"
+                                           ],
+                                "cannot_do_without_execution_layer_or_human":  [
+                                                                                   "independently_develop_extension_system",
+                                                                                   "independently_approve_formal_build",
+                                                                                   "call_external_business_interfaces",
+                                                                                   "trigger_n8n",
+                                                                                   "send_wecom",
+                                                                                   "place_trade_order",
+                                                                                   "delete_irreplaceable_data",
+                                                                                   "restart_formal_services"
+                                                                               ]
+                            },
+    "highest_principles":  [
+                               "mainline_first",
+                               "lightweight_routing_not_heavy_approval",
+                               "understand_before_formal_build",
+                               "limited_intelligence_correct_growth",
+                               "dao_shu_mapping_when_needed",
+                               "basis_hierarchy_before_execution",
+                               "human_has_final_decision"
+                           ],
+    "basis_hierarchy":  {
+                            "positioning":  "全智能体系底层逻辑，适用于搭建、运行、系统协作、内部流程、业务输出和进化沉淀",
+                            "core_rule":  "上位依据优先，下位制度和流程只能细化执行，不能反向覆盖。",
+                            "user_core_chain":  [
+                                                    "宪法",
+                                                    "法律",
+                                                    "部门规章制度",
+                                                    "单位企业制度",
+                                                    "职能科室工作流程"
+                                                ],
+                            "general_chain":  [
+                                                  "宪法/根本原则",
+                                                  "法律",
+                                                  "行政法规",
+                                                  "部门规章、规范性文件、主管机关政策",
+                                                  "地方口径、单位/企业制度",
+                                                  "职能科室工作流程、操作SOP、人工经验"
+                                              ],
+                            "conflict_policy":  "存在冲突时，自动动作降级为待复核；不得用下位流程生成确定结论或执行高风险动作。",
+                            "rule_files":  [
+                                               "D:\\杰哥智能化系统\\03杰哥进化系统\\规则库\\依据层级与冲突处理规则_v1.0.md",
+                                               "D:\\杰哥智能化系统\\03杰哥进化系统\\规则库\\依据层级与冲突处理规则_v1.0.json"
+                                           ],
+                            "system_governance_hierarchy":  [
+                                                                "系统总目标/根本原则",
+                                                                "全体系底层逻辑",
+                                                                "总管运行规则",
+                                                                "进化系统规则",
+                                                                "业务系统母本与通用模板",
+                                                                "具体业务线方案",
+                                                                "脚本、工作流、计划任务",
+                                                                "操作记录、案例、人工经验"
+                                                            ],
+                            "governance_obedience_rule":  "下级服从上级；脚本、工作流、计划任务不得反向覆盖总管规则和底层逻辑。"
+                        },
+    "intent_routes":  [
+                          {
+                              "id":  "intent_classifier_first",
+                              "description":  "所有消息优先经过意图归因器，由AI决定路由目标",
+                              "action":  "call_localhost_5801_classify",
+                              "route":  "intent_classifier_api",
+                              "light":  "green",
+                              "match":  {
+                                            "any":  [
+                                                        "*"
+                                                    ]
+                                        },
+                              "api":  {
+                                          "body_template":  "{\"message\": \"{user_message}\"}",
+                                          "method":  "POST",
+                                          "url":  "http://localhost:5801/classify"
+                                      }
+                          },
+                          {
+                              "id":  "alert_query",
+                              "description":  "查询血脉探针捕获的异常事件",
+                              "action":  "call_localhost_5802_alerts",
+                              "route":  "alert_query_api",
+                              "light":  "green",
+                              "match":  {
+                                            "any":  [
+                                                        "报警",
+                                                        "异常",
+                                                        "故障",
+                                                        "出错",
+                                                        "警告",
+                                                        "alert",
+                                                        "error",
+                                                        "有未处理",
+                                                        "系统状态"
+                                                    ]
+                                        },
+                              "api":  {
+                                          "url":  "http://localhost:5802/alerts?days=1",
+                                          "method":  "GET"
+                                      }
+                          },
+                          {
+                              "id":  "readonly_check",
+                              "light":  "green",
+                              "match":  {
+                                            "any":  [
+                                                        "查",
+                                                        "看",
+                                                        "扫",
+                                                        "读取",
+                                                        "验证",
+                                                        "统计",
+                                                        "核验",
+                                                        "确认是否存在"
+                                                    ]
+                                        },
+                              "route":  "R0_readonly_allowed",
+                              "action":  "direct_execute"
+                          },
+                          {
+                              "id":  "official_public_policy_shadow_kb",
+                              "light":  "green",
+                              "match":  {
+                                            "required_any_groups":  [
+                                                                        [
+                                                                            "国家税务总局",
+                                                                            "总局政策库",
+                                                                            "政策法规库",
+                                                                            "官方政策",
+                                                                            "公开政策",
+                                                                            "政策文件"
+                                                                        ],
+                                                                        [
+                                                                            "下载",
+                                                                            "筛选",
+                                                                            "全文有效",
+                                                                            "登记",
+                                                                            "元数据",
+                                                                            "资料库",
+                                                                            "知识库",
+                                                                            "采集"
+                                                                        ]
+                                                                    ]
+                                        },
+                              "route":  "official_public_source_to_shadow_knowledge_base",
+                              "action":  "direct_execute_with_R0_source_filter_and_shadow_metadata_registration",
+                              "boundary":  "只使用公开官方来源；只写影子底座元数据和演练记录；不写正式税收库；不输出正式税务结论"
+                          },
+                          {
+                              "id":  "summary_or_structure",
+                              "light":  "green",
+                              "match":  {
+                                            "any":  [
+                                                        "总结",
+                                                        "归纳",
+                                                        "整理",
+                                                        "提炼",
+                                                        "看看",
+                                                        "分析一下"
+                                                    ]
+                                        },
+                              "route":  "direct_summary_or_structuring",
+                              "action":  "direct_execute"
+                          },
+                          {
+                              "id":  "core_foundation_improvement",
+                              "light":  "yellow",
+                              "match":  {
+                                            "any":  [
+                                                        "总管",
+                                                        "智能系统",
+                                                        "进化系统",
+                                                        "底座",
+                                                        "锚点",
+                                                        "接续",
+                                                        "检索",
+                                                        "输出原则"
+                                                    ]
+                                        },
+                              "route":  "light_reminder_then_build",
+                              "action":  "state_mainline_purpose_then_continue"
+                          },
+                          {
+                              "id":  "business_scenario_to_plan",
+                              "light":  "yellow",
+                              "match":  {
+                                            "any":  [
+                                                        "场景",
+                                                        "案例",
+                                                        "业务问题",
+                                                        "方案",
+                                                        "样例",
+                                                        "影子",
+                                                        "讨论",
+                                                        "怎么搭建"
+                                                    ]
+                                        },
+                              "route":  "dao_shu_mapping_if_useful",
+                              "action":  "discuss_or_prepare_blueprint"
+                          },
+                          {
+                              "id":  "experience_capture",
+                              "light":  "yellow",
+                              "match":  {
+                                            "any":  [
+                                                        "理念",
+                                                        "原则",
+                                                        "方法",
+                                                        "教训",
+                                                        "纲领",
+                                                        "策略锚点",
+                                                        "沉淀"
+                                                    ]
+                                        },
+                              "route":  "check_existing_anchor_then_record_if_needed",
+                              "action":  "avoid_duplicate_document_debt"
+                          },
+                          {
+                              "id":  "extension_formal_build",
+                              "light":  "red",
+                              "match":  {
+                                            "required_any_groups":  [
+                                                                        [
+                                                                            "帮我搭建",
+                                                                            "开始搭建",
+                                                                            "正式搭建",
+                                                                            "立即搭建",
+                                                                            "开发",
+                                                                            "上线",
+                                                                            "正式",
+                                                                            "可运行",
+                                                                            "接入",
+                                                                            "启用"
+                                                                        ],
+                                                                        [
+                                                                            "税收",
+                                                                            "税务",
+                                                                            "视频",
+                                                                            "本职工作",
+                                                                            "扩展系统",
+                                                                            "业务系统",
+                                                                            "企业微信非股票"
+                                                                        ]
+                                                                    ]
+                                        },
+                              "route":  "trigger_startup_five_questions",
+                              "action":  "pause_for_mature_plan"
+                          },
+                          {
+                              "id":  "cleanup_or_mutation",
+                              "light":  "red",
+                              "match":  {
+                                            "any":  [
+                                                        "清理",
+                                                        "清债",
+                                                        "删",
+                                                        "删除",
+                                                        "改配置",
+                                                        "迁移",
+                                                        "移动",
+                                                        "停用",
+                                                        "禁用"
+                                                    ]
+                                        },
+                              "route":  "trigger_direction_calibration_and_cleanup_four_steps",
+                              "action":  "pause_for_risk_gate"
+                          },
+                          {
+                              "id":  "external_or_critical_action",
+                              "light":  "red",
+                              "match":  {
+                                            "any":  [
+                                                        "触发n8n",
+                                                        "启动n8n",
+                                                        "企业微信发送",
+                                                        "发企业微信",
+                                                        "写正式库",
+                                                        "调用券商",
+                                                        "交易",
+                                                        "下单",
+                                                        "重启服务",
+                                                        "启动服务",
+                                                        "停止服务",
+                                                        "外发"
+                                                    ]
+                                        },
+                              "route":  "require_explicit_human_confirmation",
+                              "action":  "pause_for_confirmation"
+                          },
+                          {
+                              "id":  "emergency_stop",
+                              "light":  "red",
+                              "match":  {
+                                            "any":  [
+                                                        "全停",
+                                                        "红灯",
+                                                        "紧急",
+                                                        "停止外发",
+                                                        "停止交易"
+                                                    ]
+                                        },
+                              "route":  "execute_reversible_safety_stop_then_record",
+                              "action":  "safety_first_then_record"
+                          }
+                      ],
+    "startup_five_questions":  [
+                                   "这个系统要解决什么真实问题？",
+                                   "输入是什么，来自哪里，可信度如何？",
+                                   "输出给谁用，以什么业务语言呈现？",
+                                   "哪些结论必须标记为待复核草案？",
+                                   "怎样算第一阶段可用？"
+                               ],
+    "workflow_entrypoints":  {
+                                 "dao_shu_mapping":  "D:\\杰哥智能化系统\\03杰哥进化系统\\规则库\\道术映射工作流_v1.0.md",
+                                 "current_panel":  "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\当前施工面板.md",
+                                 "resume_pack":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\开工上下文\\一键接续施工包_最新.md",
+                                 "extension_start_anchor":  "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\扩展系统开工锚点_v1.0.md",
+                                 "strategy_anchor_index":  "D:\\杰哥智能化系统\\03杰哥进化系统\\策略锚点库\\策略锚点库_最新.json"
+                             },
+    "safety_defaults":  {
+                            "trigger_n8n":  false,
+                            "send_wecom":  false,
+                            "write_formal_db":  false,
+                            "call_model_inference":  false,
+                            "run_business_script":  false,
+                            "restart_service":  false,
+                            "delete_irreplaceable_data":  false,
+                            "trade_or_order":  false
+                        }
+}

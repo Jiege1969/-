@@ -1,0 +1,75 @@
+{
+  "asset_id": "WECOM_ACCESS_FEEDBACK_ABSORPTION_GOVERNOR_RULING_20260508",
+  "generated_at": "2026-05-08 07:27:29 +08:00",
+  "asset_identity": "总管侧企业微信接入层 W1/R0 回传吸收与口径裁定记录",
+  "status": "只读吸收与当前口径裁定，不是服务变更许可，不是企业微信真实发送许可，不是 n8n 启用许可",
+  "absorption_conclusion": "企业微信接入层本轮回传符合公共接入层身份，可吸收为接入层状态说明，不判定为业务中枢扩张。",
+  "current_robot_mapping": {
+    "杰哥股票分析助手": {
+      "business_system": "02杰哥扩展系统/01股票研究系统",
+      "position": "个股研究入口",
+      "forbidden": "不接交易、不下单"
+    },
+    "杰哥的股票分析专家": {
+      "business_system": "02杰哥扩展系统/01股票研究系统",
+      "position": "推荐/总览入口",
+      "forbidden": "不真实主动发送"
+    },
+    "杰哥工作秘书": {
+      "business_system": "扩展通用业务入口，当前优先承接税收待复核分析",
+      "position": "不收窄为只税收",
+      "forbidden": "不做正式税务结论或真实办理"
+    },
+    "杰哥视频助理": {
+      "business_system": "02杰哥扩展系统/02视频制作系统",
+      "position": "影子工厂/人工复核链入口",
+      "forbidden": "不渲染、不发布"
+    },
+    "杰哥系统管家": {
+      "business_system": "00杰哥系统总管",
+      "position": "状态、进度、接续入口",
+      "forbidden": "不替业务系统做业务判断"
+    }
+  },
+  "rulings": [
+    {
+      "item": "三条业务线回传写入总管面板或一键接续包",
+      "ruling": "已由总管对话框吸收；企业微信接入层不得自行写总管文件",
+      "risk": "W1/R0 已完成"
+    },
+    {
+      "item": "税收入口状态升级",
+      "ruling": "暂不升级，仍保持 dry-run / pending / 待复核分析口径",
+      "risk": "升级需另走 W2/W3"
+    },
+    {
+      "item": "杰哥工作秘书是否收窄为税收主入口",
+      "ruling": "不收窄，保持扩展通用入口，税收为当前优先承接场景之一",
+      "risk": "只作口径裁定，不改配置"
+    },
+    {
+      "item": "股票线旧本人白名单单条真实灰度口径",
+      "ruling": "当前不得启用，现行总管口径为最大真实消息数 0，真实发送禁用",
+      "risk": "如需恢复必须 W3 确认"
+    },
+    {
+      "item": "视频线真实渲染/发布",
+      "ruling": "不进入，当前仍为 blocked / 待人工复核 / 放行拆分口径",
+      "risk": "渲染或发布必须 W3 确认"
+    },
+    {
+      "item": "公共路由、服务脚本、n8n、真实发送配置",
+      "ruling": "不改，均超出 W1/R0",
+      "risk": "必须暂停确认"
+    }
+  ],
+  "boundary": {
+    "modify_wecom_public_config": false,
+    "modify_service_script": false,
+    "restart_19310": false,
+    "real_send_wecom": false,
+    "trigger_n8n": false,
+    "write_formal_db": false,
+    "trigger_tax_stock_video_real_action": false
+  }
+}

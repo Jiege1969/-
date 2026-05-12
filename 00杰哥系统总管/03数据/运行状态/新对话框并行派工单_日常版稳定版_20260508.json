@@ -1,0 +1,60 @@
+{
+  "asset_name": "新对话框并行派工单_日常版稳定版",
+  "generated_at": "2026-05-08",
+  "asset_identity": "总管侧 W1/R0 并行派工单",
+  "recommendation": "open_3_new_dialogs_plus_current_manager",
+  "parallel_lines": [
+    {
+      "dialog": "当前对话框",
+      "role": "总管协调与最终收口",
+      "write_scope": ["00杰哥系统总管 的运行状态、面板、接续包"],
+      "forbidden": ["替业务线做正式结论"]
+    },
+    {
+      "dialog": "新对话框 A",
+      "role": "税收政策顾问试用线",
+      "write_scope": [
+        "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_TAX_20260508_*.md/json",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\PAR_TAX_20260508_*.md/json"
+      ],
+      "forbidden": ["正式税务意见", "确定金额", "申报建议", "电子税务局登录", "n8n", "企业微信真实发送"]
+    },
+    {
+      "dialog": "新对话框 B",
+      "role": "股票 L3 证据补齐线",
+      "write_scope": [
+        "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_STOCK_20260508_*.md/json"
+      ],
+      "forbidden": ["交易建议", "券商接口", "下单", "自动调仓", "n8n", "企业微信真实发送"]
+    },
+    {
+      "dialog": "新对话框 C",
+      "role": "视频影子工厂复核线",
+      "write_scope": [
+        "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_VIDEO_20260508_*.md/json",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\PAR_VIDEO_20260508_*.md/json"
+      ],
+      "forbidden": ["读取真实素材", "渲染", "上传", "发布", "视频引擎调用", "n8n", "企业微信真实发送"]
+    }
+  ],
+  "max_recommended_dialogs": 4,
+  "return_format_required": [
+    "并行线",
+    "新增文件",
+    "修改文件",
+    "完成结论",
+    "红线命中",
+    "仍需总管裁定",
+    "边界确认"
+  ],
+  "boundaries": {
+    "trigger_n8n": false,
+    "wecom_real_send": false,
+    "write_formal_db": false,
+    "restart_service": false,
+    "login_real_system": false,
+    "trade": false,
+    "tax_filing": false,
+    "video_publish": false
+  }
+}

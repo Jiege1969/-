@@ -1,0 +1,67 @@
+{
+  "名称": "行业价格观测账本验收",
+  "generated_at": "2026-05-08 06:55:30",
+  "asset_identity": "自动验收报告",
+  "status": "passed",
+  "ledger": {
+    "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\industry_price_observations_ledger_v1.0.json",
+    "observation_count": 1,
+    "product_count": 1,
+    "field_problems": []
+  },
+  "cards": [
+    {
+      "card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\云南锗业_行业价格证据卡_本地观测_latest.json",
+      "stock_name": "云南锗业",
+      "display_code": "sz002428",
+      "product_codes": [
+        "germanium_ingot"
+      ],
+      "observation_count": 0,
+      "actual_status": "source_registered",
+      "expected_status_floor": "source_registered",
+      "trend_available": false,
+      "price_value_available": false
+    },
+    {
+      "card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\天齐锂业_行业价格证据卡_本地观测_latest.json",
+      "stock_name": "天齐锂业",
+      "display_code": "sz002466",
+      "product_codes": [
+        "battery_grade_lithium_carbonate"
+      ],
+      "observation_count": 1,
+      "actual_status": "single_observation",
+      "expected_status_floor": "single_observation",
+      "trend_available": false,
+      "price_value_available": true
+    },
+    {
+      "card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\正丹股份_行业价格证据卡_本地观测_latest.json",
+      "stock_name": "正丹股份",
+      "display_code": "sz300641",
+      "product_codes": [
+        "trimellitic_anhydride_tma"
+      ],
+      "observation_count": 0,
+      "actual_status": "source_registered",
+      "expected_status_floor": "source_registered",
+      "trend_available": false,
+      "price_value_available": false
+    }
+  ],
+  "blocking": [],
+  "warnings": [],
+  "rule": {
+    "trend_ready_min_observations": 5,
+    "single_observation_range": "1-4",
+    "zero_observation_status": "source_registered"
+  },
+  "safety_boundary": {
+    "not_external_fetch": true,
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "名称": "L3企业微信短答服务刷新验证",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "服务刷新验证记录",
+  "状态": "verified",
+  "本次动作": [
+    {
+      "action": "停止股票助手19300",
+      "result": "stopped",
+      "old_process_id": 31964
+    },
+    {
+      "action": "启动股票助手19300",
+      "result": "started",
+      "new_process_id": 17344
+    },
+    {
+      "action": "保留企业微信桥接19302",
+      "result": "not_restarted",
+      "process_id": 24784
+    }
+  ],
+  "health_check": {
+    "url": "http://127.0.0.1:19300/health",
+    "status": "正常",
+    "service": "杰哥股票研究助手",
+    "port": 19300,
+    "old_system_write": false,
+    "broker_interface": false
+  },
+  "local_http_validation": {
+    "assistant_endpoint": "http://127.0.0.1:19300/analyze",
+    "bridge_endpoint": "http://127.0.0.1:19302/wecom-bot/message",
+    "query": "分析天齐锂业",
+    "assistant_reply_first_line": "分析对象：天齐锂业（sz002466）",
+    "bridge_reply_contains_l3_short_answer": true,
+    "bridge_real_send": false,
+    "bridge_reply_length": 638
+  },
+  "安全边界": {
+    "not_external_send": true,
+    "real_wecom_callback_send": false,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

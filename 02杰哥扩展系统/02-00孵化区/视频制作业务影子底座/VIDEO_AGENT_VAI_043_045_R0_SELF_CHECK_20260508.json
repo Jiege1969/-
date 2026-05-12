@@ -1,0 +1,43 @@
+{
+  "id": "VIDEO_AGENT_VAI_043_045_R0_SELF_CHECK_20260508",
+  "asset_identity": "video_production_shadow_base_self_check",
+  "stage": "W1_R0",
+  "date": "2026-05-08",
+  "result": "passed",
+  "checked_assets": [
+    {
+      "id": "VAI-043",
+      "name": "manual_trial_sample_fill_instructions",
+      "result": "passed",
+      "note": "fill instructions only, not real task creator"
+    },
+    {
+      "id": "VAI-044",
+      "name": "status_transition_checklist",
+      "result": "passed",
+      "note": "transition checklist only, not real state machine"
+    },
+    {
+      "id": "VAI-045",
+      "name": "total_closure_summary_card",
+      "result": "passed",
+      "note": "summary card only, not launch report"
+    }
+  ],
+  "boundary_check": {
+    "modify_formal_video_scripts": false,
+    "modify_public_wechat_config": false,
+    "call_real_model_api": false,
+    "read_real_assets": false,
+    "generate_render_upload_publish_external_send": false,
+    "trigger_n8n_or_real_wechat_send": false,
+    "start_or_restart_service": false,
+    "modify_19310_or_19302": false,
+    "move_delete_or_rename_old_assets": false
+  },
+  "next_shadow_queue": [
+    "fill_manual_trial_sample_after_user_provides_desensitized_video_idea",
+    "empty_input_waiting_state_record_card",
+    "auto_construction_alternative_queue_when_desensitized_input_missing"
+  ]
+}

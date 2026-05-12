@@ -1,0 +1,10 @@
+{
+  "name": "新增样本股票浙商中拓与正丹股份验收补齐验收结果",
+  "generated_at": "2026-05-08 12:56:54",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "sample_count": 2,
+    "expected_count": 2
+  }
+}

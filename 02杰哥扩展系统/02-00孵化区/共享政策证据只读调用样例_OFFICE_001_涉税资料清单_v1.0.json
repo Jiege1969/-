@@ -1,0 +1,63 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "sample_id": "SHARED_POLICY_READONLY_OFFICE_001",
+  "name": "涉税资料清单只读调用样例",
+  "asset_identity": "office_work_system_readonly_policy_evidence_call_shadow_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "replace_approval": false,
+    "replace_tax_opinion": false,
+    "modify_policy_base": false,
+    "external_send": false,
+    "trigger_n8n": false
+  },
+  "call_input": {
+    "requesting_system": "office_work_system",
+    "query_intent": "tax_related_material_checklist_compliance_preparation",
+    "topic_keywords": ["软件产品", "增值税", "即征即退", "资料要求"],
+    "expected_evidence_level": ["国家级政策依据", "待核验地方口径"],
+    "source": "SHARED-POLICY-EVIDENCE-001"
+  },
+  "readonly_evidence": {
+    "policy_basis": "财税〔2011〕100号",
+    "source_level": "国家级主管机关政策/规范性文件",
+    "validity_status": "以官方政策法规库展示为准，待人工逐条复核",
+    "related_guide": "国家税务总局软件产品即征即退政策指引",
+    "evidence_gap": [
+      "地方材料要求",
+      "检测证明",
+      "产品登记或替代材料",
+      "收入拆分",
+      "测算字段"
+    ]
+  },
+  "allowed_outputs": [
+    {
+      "output": "资料准备清单",
+      "boundary": "仅为待复核工作清单"
+    },
+    {
+      "output": "待补材料问题",
+      "boundary": "需要用户或专业人员确认"
+    },
+    {
+      "output": "流程提醒",
+      "boundary": "不替代审批、不替代税务判断"
+    }
+  ],
+  "forbidden_outputs": [
+    "该业务一定适用",
+    "可以享受优惠",
+    "确定金额",
+    "可外发正式意见",
+    "替代内部审批或盖章流程"
+  ],
+  "output_state": "pending_review_work_draft",
+  "review_questions": [
+    "主管税务机关和地区是什么？",
+    "资料清单是否来自官方或内部有效流程？",
+    "是否需要专业税务人员复核？",
+    "是否涉及内部审批或盖章流程？"
+  ]
+}

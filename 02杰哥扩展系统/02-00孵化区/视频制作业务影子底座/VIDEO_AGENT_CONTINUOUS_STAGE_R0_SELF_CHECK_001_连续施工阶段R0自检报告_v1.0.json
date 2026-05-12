@@ -1,0 +1,22 @@
+{
+  "asset_id": "VIDEO_AGENT_CONTINUOUS_STAGE_R0_SELF_CHECK_001",
+  "name": "连续施工阶段R0自检报告",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:35:00 +08:00",
+  "risk_level": "低风险",
+  "scope": ["VAI030至VAI041新增资产", "VAI030至VAI041对齐回传记录", "JSON可解析性", "红线边界"],
+  "checks": {
+    "read_manager_panel_each_round": true,
+    "read_continuation_package_each_round": true,
+    "write_scope_video_shadow_only": true,
+    "json_parse_passed": true,
+    "call_real_model": false,
+    "read_real_assets": false,
+    "render_upload_publish": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "modify_manager_public_service_or_formal_db": false
+  },
+  "conclusion": "VAI030 至 VAI041 属于 W1/R0 低风险影子资产，不代表正式上线或真实执行能力",
+  "real_system_triggered": false
+}

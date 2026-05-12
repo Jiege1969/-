@@ -1,0 +1,100 @@
+{
+  "name": "股票线第四批低风险续建队列",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 12:17:08",
+  "asset_identity": "W1/W2股票线低风险连续施工队列",
+  "status": "active",
+  "source_assets": {
+    "third_queue_completed_count": 5,
+    "third_queue_queued_count": 0
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "construction_queue": [
+    {
+      "id": "STOCK-AUTO4-001",
+      "title": "财报资金证据到前台短答压缩映射验收",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把后台财报/资金证据压缩成用户可读的结论依据，不堆指标，不凭空补分。",
+      "validation_asset": "财报资金证据到前台短答压缩映射验收结果_最新.json",
+      "completed_at": "2026-05-08 11:31:22"
+    },
+    {
+      "id": "STOCK-AUTO4-002",
+      "title": "行业价格连续观测到复核字段联动样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把行业价格连续观测映射到前台复核重点和后台missing字段。",
+      "validation_asset": "行业价格连续观测到复核字段联动样例验收结果_最新.json",
+      "completed_at": "2026-05-08 12:10:56"
+    },
+    {
+      "id": "STOCK-AUTO4-003",
+      "title": "政策事件候选到前台表述约束验收",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "约束政策候选只能作为线索或结构化证据，不让模型凭空强化结论。",
+      "validation_asset": "政策事件候选到前台表述约束验收结果_最新.json",
+      "completed_at": "2026-05-08 12:13:03"
+    },
+    {
+      "id": "STOCK-AUTO4-004",
+      "title": "市场风格适配到结论强度限制样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把市场风格适配结果转成结论强度限制和缺口提示。",
+      "validation_asset": "市场风格适配到结论强度限制样例验收结果_最新.json",
+      "completed_at": "2026-05-08 12:15:11"
+    },
+    {
+      "id": "STOCK-AUTO4-005",
+      "title": "第四批统一影子验收总表",
+      "risk_level": "W2",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "汇总第四批所有影子资产验收状态，形成本批收口记录。",
+      "validation_asset": "股票线第四批统一影子验收总表验收_最新.json",
+      "completed_at": "2026-05-08 12:17:08"
+    }
+  ],
+  "blocked_queue": [
+    {
+      "id": "STOCK-AUTO4-BLOCK-001",
+      "title": "接入企业微信真实发送",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "真实外发属于红线事项，本业务线不得实施。"
+    },
+    {
+      "id": "STOCK-AUTO4-BLOCK-002",
+      "title": "修改正式评分配置或正式入口",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "正式配置/入口属于W3，必须交回总管判断。"
+    }
+  ],
+  "summary": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

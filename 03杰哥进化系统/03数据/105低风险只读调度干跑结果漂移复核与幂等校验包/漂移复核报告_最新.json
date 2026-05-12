@@ -1,0 +1,64 @@
+{
+  "name": "低风险只读调度干跑结果漂移复核报告",
+  "generated_at": "2026-05-08 20:13:49",
+  "pass": true,
+  "error_count": 0,
+  "drift_count": 0,
+  "missing_count": 0,
+  "redline_regression_count": 0,
+  "drift_items": [],
+  "missing_items": [],
+  "redline_scan_summary": {
+    "redline_regression_count": 0,
+    "regression_items": [],
+    "summary": "红线字段均保持 false，未出现真实发送、外部连接、交易、登录、正式规则、总管面板、一键接续或重载回归。"
+  },
+  "task_count": 8,
+  "task_order": [
+    "LRSL-001",
+    "LRSL-002",
+    "LRSL-003",
+    "LRSL-004",
+    "LRSL-005",
+    "LRSL-006",
+    "LRSL-007",
+    "LRSL-008"
+  ],
+  "ledger_field_check": {
+    "required_fields": [
+      "evidence_path",
+      "hash",
+      "operator_mode",
+      "pause_required",
+      "plan_time",
+      "preview_status",
+      "task_id",
+      "task_name"
+    ],
+    "missing_count": 0
+  },
+  "actual_execution": false,
+  "copy_source_files": false,
+  "move_source_files": false,
+  "source_files_modified": false,
+  "external_call": false,
+  "reload_service": false,
+  "hard_red_line_confirmation": {
+    "real_wecom_send": false,
+    "trigger_n8n": false,
+    "external_call": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "auto_promote_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false,
+    "actual_execution": false,
+    "copy_source_files": false,
+    "move_source_files": false,
+    "source_files_modified": false
+  },
+  "errors": []
+}

@@ -1,0 +1,37 @@
+{
+  "id": "VIDEO_AGENT_VAI_040_R0_SELF_CHECK_20260508",
+  "asset_identity": "video_production_shadow_base_self_check",
+  "stage": "W1_R0",
+  "date": "2026-05-08",
+  "result": "passed",
+  "checked_assets": [
+    {
+      "id": "VAI-040",
+      "name": "manual_trial_readiness_check",
+      "result": "passed",
+      "note": "manual shadow trial readiness only, no real rendering or publishing"
+    }
+  ],
+  "pre_read": {
+    "manager_panel": true,
+    "continuation_package": true,
+    "latest_line_total_closure": true
+  },
+  "boundary_check": {
+    "modify_formal_video_scripts": false,
+    "modify_public_wechat_config": false,
+    "call_real_model_api": false,
+    "read_real_assets": false,
+    "generate_image_audio_subtitle_cover_video": false,
+    "upload_publish_external_send": false,
+    "trigger_n8n": false,
+    "real_wechat_send": false,
+    "start_or_restart_service": false,
+    "move_delete_or_rename_old_assets": false
+  },
+  "command_verification": {
+    "json_parse": "passed",
+    "index_registration": "passed",
+    "real_system_triggered": false
+  }
+}

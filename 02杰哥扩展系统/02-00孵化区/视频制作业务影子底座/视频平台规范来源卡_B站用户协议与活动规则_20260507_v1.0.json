@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "source_card_id": "VIDEO_PLATFORM_RULE_SOURCE_BILIBILI_20260507",
+  "asset_identity": "video_platform_rule_real_source_shadow_card",
+  "risk_level": "W1",
+  "boundary": {
+    "connect_platform_account": false,
+    "read_real_material": false,
+    "edit_or_render_video": false,
+    "upload_or_publish": false,
+    "external_send": false,
+    "trigger_n8n": false
+  },
+  "platform_name": "哔哩哔哩",
+  "source_type": "official_user_agreement_and_official_activity_rule",
+  "sources": [
+    {
+      "name": "哔哩哔哩用户协议",
+      "url": "https://game.bilibili.com/licence/h5/",
+      "status": "official_source_candidate"
+    },
+    {
+      "name": "哔哩哔哩活动规则页样例",
+      "url": "https://www.bilibili.com/blackboard/era/rule.html",
+      "status": "official_activity_rule_candidate_may_expire"
+    }
+  ],
+  "collected_date": "2026-05-07",
+  "applicable_content_type": ["视频投稿", "活动投稿"],
+  "unknown_fields": ["duration_limit", "resolution_requirement", "aspect_ratio", "subtitle_requirement", "cover_requirement"],
+  "risk_flags": ["平台规则变化", "活动规则可能过期", "素材授权不足", "原创性和版权风险", "分区规则待补"],
+  "allowed_use": ["视频草案前置合规提示", "平台规范证据线索", "人工复核问题"],
+  "forbidden_use": ["发布许可", "平台合规确认", "版权安全结论", "账号上传或自动发布"],
+  "next_action": "补目标平台当前投稿规范、分区规则和素材授权证据；真实发布前重新确认。"
+}

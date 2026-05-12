@@ -1,0 +1,118 @@
+{
+  "name": "五样本前台结论型短答修订样例",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 08:44:45",
+  "asset_identity": "W1样本修订草案",
+  "status": "draft",
+  "source_assets": {
+    "checklist": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本前台结论型短答验收清单_最新.json",
+    "checklist_exists": true
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "front_answer_contract": {
+    "format": [
+      "第一行：股票名称（代码）",
+      "第二行：结论词",
+      "第三行：主要原因",
+      "第四行：关键缺口",
+      "第五行：置信度和下一次复核重点"
+    ],
+    "principles": [
+      "前台回答先给结论，后台分析不原样堆给用户。",
+      "依据只写关键原因，缺证据必须明说。",
+      "政策、市场风格、行业价格、财报、资金证据不足时，不得强行补分。",
+      "不出现交易执行、下单、仓位或券商接口话术。"
+    ]
+  },
+  "samples": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "front_answer": [
+        "云南锗业（sz002428）",
+        "结论：可纳入观察，但还不能上调为重点关注。",
+        "主要原因：锗出口管制政策事件已结构化匹配，是目前最清楚的积极证据；但资金/机构/解禁证据仍待采集，不能强化结论。",
+        "关键缺口：价格/景气尚未入账，不能写趋势确认；财报和资金证据还需要补齐。",
+        "置信度：medium。下一次复核重点看锗价连续观测、资金证据和财报摘要是否补上。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "front_answer": [
+        "天齐锂业（sz002466）",
+        "结论：可观察，但暂不强化结论。",
+        "主要原因：锂行业价格只有少量观测点，只能弱参考；未匹配直接结构化政策，政策项不能加分。",
+        "关键缺口：资金/机构/解禁证据仍待采集，不能强化结论；碳酸锂价格/景气观测点不足，不能写趋势确认。",
+        "置信度：low to medium。下一次复核重点看锂价连续观测和资金证据。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "front_answer": [
+        "华虹公司（sh688347）",
+        "结论：可纳入观察，但需要等政策和景气证据落到单股。",
+        "主要原因：半导体政策背景存在，但尚未结构化到单股事件，政策证据待补；行业景气尚不能写趋势确认。",
+        "关键缺口：资金/机构/解禁证据仍待采集，不能强化结论；晶圆代工景气观测点不足，不能写趋势确认。",
+        "置信度：medium。下一次复核重点看政策事件是否能结构化到公司，以及行业景气是否形成连续证据。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "front_answer": [
+        "浙商中拓（sz000906）",
+        "结论：暂不建议强化关注，先补证据。",
+        "主要原因：当前没有匹配到直接结构化政策，供应链景气也尚未形成连续观测。",
+        "关键缺口：资金/机构/解禁证据仍待采集，不能强化结论；价格/景气尚未入账，不能写趋势确认。",
+        "置信度：low。下一次复核重点看财报质量、资金证据和供应链景气观测。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "front_answer": [
+        "正丹股份（sz300641）",
+        "结论：可观察，但不能用题材热度替代结构化证据。",
+        "主要原因：未匹配直接结构化政策，政策项不能加分；TMA 价格/景气观测点不足，不能写趋势确认。",
+        "关键缺口：资金/机构/解禁证据仍待采集，不能强化结论；财报摘要和行业价格连续观测需要补齐。",
+        "置信度：low to medium。下一次复核重点看TMA价格连续观测、资金证据和业绩兑现情况。"
+      ]
+    }
+  ],
+  "summary": {
+    "sample_count": 5,
+    "all_first_line_object_clear": true,
+    "all_include_conclusion": true,
+    "all_include_missing_or_gap": true,
+    "all_include_confidence": true
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_adapter_write": true,
+    "not_score_write": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

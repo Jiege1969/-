@@ -1,0 +1,29 @@
+{
+  "sample_id": "OFFICE_SHADOW_002",
+  "version": "v1.0",
+  "business_line": "office_work",
+  "scenario": "流程资料登记",
+  "status": "blank_shadow_sample",
+  "not_formal_work_material": true,
+  "source_materials": "待用户提供",
+  "input_summary": "待补",
+  "output_draft": "待复核",
+  "basis_or_reference": "待补",
+  "risk_flags": "待补",
+  "missing_items": "待补",
+  "human_review_required": true,
+  "human_review_result": "待填写",
+  "evolution_candidate": "待判",
+  "forbidden_actions": {
+    "connect_oa": false,
+    "connect_erp": false,
+    "connect_finance_system": false,
+    "connect_hr_system": false,
+    "submit_approval": false,
+    "external_send": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false
+  },
+  "note": "本 JSON 是既有 Markdown 空白样例的结构化镜像；未覆盖原 Markdown。"
+}

@@ -1,0 +1,59 @@
+{
+  "report": "摸清家底找差距第三轮收口",
+  "generated_at": "2026-05-06 07:23:00 +08:00",
+  "mode": "autonomous_evidence_based_cleanup_and_inventory",
+  "parallel_reviews": [
+    "data_assets_and_backup_gap",
+    "dependency_recovery_and_dark_corners",
+    "prompt_and_workflow_governance"
+  ],
+  "completed": {
+    "deleted_scheduled_tasks": [
+      "serviceraj",
+      "AI_AutoEvolve",
+      "AI_Backup",
+      "AI_HealthCheck",
+      "AI_WeeklyCleanup",
+      "DailyWorkPlan",
+      "WSL_AutoStart"
+    ],
+    "fixed_wsl_bashrc": true,
+    "removed_dead_firewall_rules": 13,
+    "fixed_dead_environment_paths": true,
+    "created_current_small_high_value_snapshot": "F:/系统备份/当前高价值小资产快照_20260506_071440",
+    "updated_backup_ledger": "F:/系统备份/备份总台账_最新.json",
+    "created_data_asset_ledger": "D:/杰哥智能化系统/03杰哥进化系统/03数据/33暗角治理建议10到15/数据资产台账_最新.json",
+    "created_prompt_version_index": "D:/杰哥智能化系统/03杰哥进化系统/02提示词管理/03数据/台账/提示词版本索引_最新.json",
+    "created_workflow_inventory": "D:/杰哥智能化系统/01杰哥智能系统/03数据/工作流台账/n8n工作流资产台账_最新.json",
+    "created_no_new_debt_rule": "D:/杰哥智能化系统/03杰哥进化系统/03数据/32技术债清偿强制前置规则/清债不添新债原则_最新.json"
+  },
+  "validation": {
+    "removed_tasks_exist_after": false,
+    "jiege_named_scheduled_task_count": 8,
+    "blood_probe_ready": true,
+    "blood_probe_failed_count": 0,
+    "blood_probe_record_time": "2026-05-06 07:22:01",
+    "new_json_parse_ok": true,
+    "n8n_sqlite_integrity_check": "ok",
+    "n8n_workflow_count": 34,
+    "n8n_active_count": 0
+  },
+  "remaining_gaps": [
+    "WSL2 VHDX 189.45GB consistency backup",
+    "Ollama model manifest and about 92.22GB F gap decision",
+    "n8n workflow per-item ownership risk rollback ledger",
+    "prompt change workflow auto-versioning",
+    "log retention and 06临时 cleanup",
+    "local tool runtime and node_modules manual-change check"
+  ],
+  "safety": {
+    "triggered_n8n": false,
+    "called_webhook": false,
+    "sent_wecom": false,
+    "called_broker_api": false,
+    "auto_trade": false,
+    "deleted_formal_data": false,
+    "deleted_docker_volume_image_model_database": false,
+    "stopped_docker_or_wsl": false
+  }
+}

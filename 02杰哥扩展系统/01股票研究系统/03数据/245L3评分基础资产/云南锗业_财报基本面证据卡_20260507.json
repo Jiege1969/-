@@ -1,0 +1,113 @@
+{
+  "名称": "云南锗业财报基本面证据卡",
+  "版本": "shadow_v1.0",
+  "生成日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子证据卡",
+  "状态": "shadow_only",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "stock": {
+    "name": "云南锗业",
+    "code": "sz002428",
+    "display_code": "002428.SZ"
+  },
+  "source_status": {
+    "local_company_snapshot": "missing_stock_record",
+    "external_public_disclosure_used": true,
+    "structured_into_l3_shadow": true,
+    "formal_chain_status": "not_integrated"
+  },
+  "sources": [
+    {
+      "source_name": "巨潮资讯网/公司2025年年度报告摘要",
+      "source_url": "https://static.cninfo.com.cn/finalpage/2026-04-23/1225152694.PDF",
+      "source_type": "上市公司公告",
+      "evidence_scope": "2025年年度主要财务指标、业务和行业描述",
+      "checked_at": "2026-05-07"
+    },
+    {
+      "source_name": "新浪财经转载上海证券报/公司2026年第一季度报告",
+      "source_url": "https://finance.sina.com.cn/roll/2026-04-30/doc-inhwhene7156516.shtml",
+      "source_type": "上市公司公告转载",
+      "evidence_scope": "2026年一季度经营变动方向和原因说明",
+      "checked_at": "2026-05-07"
+    }
+  ],
+  "financial_metrics": {
+    "annual_2025": {
+      "revenue_yuan": 1065881192.39,
+      "revenue_yoy_pct": 38.89,
+      "net_profit_parent_yuan": 20145995.69,
+      "net_profit_parent_yoy_pct": -62.06,
+      "deducted_net_profit_yuan": -6806650.08,
+      "deducted_net_profit_yoy_pct": -126.02,
+      "operating_cashflow_yuan": -187347968.19,
+      "operating_cashflow_yoy_pct": -501.02,
+      "roe_weighted_pct": 1.37,
+      "basic_eps_yuan": 0.03
+    },
+    "quarterly_2025": {
+      "q1_revenue_yuan": 240098237.36,
+      "q2_revenue_yuan": 289401012.66,
+      "q3_revenue_yuan": 269330840.91,
+      "q4_revenue_yuan": 267051101.46,
+      "q1_net_profit_parent_yuan": 10199386.70,
+      "q2_net_profit_parent_yuan": 11950370.08,
+      "q3_net_profit_parent_yuan": -4001542.61,
+      "q4_net_profit_parent_yuan": 1997781.52
+    },
+    "q1_2026_directional": {
+      "revenue_direction": "同比增加",
+      "profit_direction": "归母净利润和扣非净利润同比下降",
+      "company_explanation": "收入增加主要来自部分产品销量结构变化；利润下降主要受综合毛利率下降和期间费用上升影响。",
+      "numeric_table_status": "source_page_table_not_machine_readable_in_current_shadow_card"
+    }
+  },
+  "business_evidence": [
+    "公司主要从事锗矿开采及冶炼、锗系列产品、化合物半导体材料的精深加工和研发。",
+    "公司披露其锗产品产销量全国第一，是国内最大的锗系列产品生产商和供应商之一。",
+    "2025年营业收入同比增长，但归母净利润、扣非净利润和经营现金流明显承压。",
+    "2025年扣非净利润为负，经营现金流净额为负，说明盈利质量和现金回款仍是主要约束。",
+    "2026年一季度公告披露收入同比增加，但利润端同比下降，短期基本面仍不能支持强结论。"
+  ],
+  "fundamental_capital_shadow_score": {
+    "score": 8,
+    "max_score": 20,
+    "score_reason": "收入增长和行业地位提供基本面支撑，但利润下滑、扣非亏损、经营现金流为负、ROE偏低，且最新一季报数值尚未结构化，因此只能小幅高于原缺失分，不能作为强支撑。",
+    "positive_evidence": [
+      "2025年营业收入同比增长38.89%。",
+      "公司具备锗资源和锗产品产业链辨识度。",
+      "光伏级锗、光通信和化合物半导体材料需求在公告中有积极表述。"
+    ],
+    "negative_evidence": [
+      "2025年归母净利润同比下降62.06%。",
+      "2025年扣非净利润为-680.67万元。",
+      "2025年经营现金流净额为-1.87亿元。",
+      "2025年加权ROE为1.37%，盈利质量偏弱。"
+    ],
+    "missing": [
+      "2026年一季报核心数值尚未从公告表格中结构化提取。",
+      "锗现货价格、产品售价和成本变化尚未进入可回测字段。",
+      "资金流、机构持仓和减持解禁仍未合并到本证据卡。"
+    ],
+    "confidence": "medium"
+  },
+  "front_output_compression": {
+    "one_sentence": "财报不再是空白：公司有收入增长和锗产业链地位，但利润、扣非和现金流偏弱，基本面只能算弱支撑。",
+    "user_facing_reason": "政策和行业地位有辨识度，但财报质量还不足以支撑强结论。",
+    "do_not_say": [
+      "财报未接入",
+      "基本面完全未知",
+      "政策利好所以直接重点关注"
+    ]
+  },
+  "safety_boundary": {
+    "only_for_research": true,
+    "not_investment_advice": true,
+    "not_buy_sell_signal": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

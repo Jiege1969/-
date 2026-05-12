@@ -1,0 +1,33 @@
+{
+  "id": "VIDEO_AGENT_MANUAL_TRIAL_RECORD_TABLE_001",
+  "name": "手工试运行记录空白表",
+  "asset_identity": "video_creation_agent_manual_shadow_trial_record_table",
+  "stage": "W1_R0",
+  "status": "blank_table_not_real_task_ledger",
+  "boundary": {
+    "real_entry": false,
+    "formal_database_write": false,
+    "wechat_message_saved": false,
+    "credential_saved": false,
+    "asset_path_saved": false
+  },
+  "fields": {
+    "record_id": "VAI-MANUAL-TRIAL-0000",
+    "trial_date": "to_be_filled",
+    "operator": "to_be_filled",
+    "linked_trial_packet": "to_be_filled",
+    "linked_desensitized_sample": "to_be_filled",
+    "input_desensitization_status": "pending_verification",
+    "run_check_result": "to_be_filled",
+    "output_type": "to_be_filled",
+    "human_receipt_status": "to_be_filled",
+    "state_log_id": "to_be_filled",
+    "evolution_candidate": "pending_review",
+    "real_system_triggered": false
+  },
+  "limits": [
+    "no_database",
+    "no_wechat_message_account_secret_or_asset_path_storage",
+    "not_formal_task_created"
+  ]
+}

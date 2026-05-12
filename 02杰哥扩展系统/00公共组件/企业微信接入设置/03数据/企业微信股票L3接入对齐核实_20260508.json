@@ -1,0 +1,65 @@
+{
+  "name": "企业微信股票L3接入对齐核实",
+  "date": "2026-05-08",
+  "scope": "00公共组件/企业微信接入设置 与 01股票研究系统 L3企业微信短答",
+  "conclusion": "已对齐。公共企业微信接入层的股票预演改为读取股票桥接入口L3结论型短答dry-run，不再读取旧technical技术面接口；当前真实发送、Webhook、n8n、交易接口仍关闭。",
+  "aligned_items": [
+    {
+      "item": "股票路由样例",
+      "before": "新易盛 / 旧研究星级样例",
+      "after": "分析云南锗业 / L3结论型短答样例"
+    },
+    {
+      "item": "股票本地调用方式",
+      "before": "http_get http://127.0.0.1:19300/technical?stock={query}",
+      "after": "POST http://127.0.0.1:19302/wecom-bot/message，强制real_send=false"
+    },
+    {
+      "item": "前台股票话术",
+      "before": "研究星级、买入研究信号、不构成买入指令",
+      "after": "分析对象、结论、一句话、现在怎么处理、观察条件、风险线、为什么、缺口、说明"
+    },
+    {
+      "item": "灰度门禁",
+      "before": "满足进入最多5条白名单真实灰度测试的前置条件",
+      "after": "本地/影子预演通过；当前真实灰度仍未放行，必须另行人工确认；最大首轮真实消息数=0"
+    }
+  ],
+  "changed_files": [
+    "01配置/企业微信统一指令路由预演规则.json",
+    "01配置/企业微信统一指令本地调用预演规则.json",
+    "01配置/企业微信统一指令灰度放行规则.json",
+    "02脚本/生成企业微信统一指令本地调用预演.py",
+    "02脚本/生成企业微信统一指令使用速查卡.py",
+    "02脚本/生成企业微信统一指令灰度放行门禁.py",
+    "02脚本/验证企业微信统一指令灰度放行门禁.py",
+    "02脚本/验证企业微信助手系统状态摘要.py"
+  ],
+  "refreshed_outputs": [
+    "03数据/08统一指令路由预演/wecom-unified-command-router-preview-最新.json",
+    "03数据/09统一指令本地调用预演/wecom-unified-command-local-call-preview-最新.json",
+    "03数据/10统一指令灰度放行门禁/wecom-unified-command-gray-gate-最新.json",
+    "03数据/11统一指令使用速查卡/wecom-unified-command-quick-card-最新.json",
+    "03数据/07状态摘要/wecom-assistant-system-status-summary-最新.json",
+    "07文档/企业微信统一指令使用速查卡.md"
+  ],
+  "verification": {
+    "route_preview": "healthy, 7/7, real_actions=0",
+    "local_call_preview": "healthy, 7/7, real_actions=0",
+    "local_service": "10/10 passed",
+    "quick_card": "14/14 passed",
+    "gray_gate": "13/13 passed, max_real_messages=0",
+    "status_summary": "28/28 passed",
+    "old_stock_wording_scan": "no hits in current config/latest generated outputs"
+  },
+  "safety_boundary": {
+    "real_send": false,
+    "webhook": false,
+    "n8n": false,
+    "broker_interface": false,
+    "auto_trade": false,
+    "max_real_messages": 0,
+    "requires_manual_confirmation_for_real_gray": true
+  },
+  "remaining_note": "历史日志和旧影子预案中可能仍保留旧样例文本；当前配置、最新预演、速查卡、门禁和状态摘要已对齐。"
+}

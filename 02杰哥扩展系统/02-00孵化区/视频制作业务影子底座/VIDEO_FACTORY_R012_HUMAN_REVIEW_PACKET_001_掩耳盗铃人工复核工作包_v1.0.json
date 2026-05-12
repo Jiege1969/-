@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 00:19:18 +08:00",
+  "packet_id": "VIDEO_FACTORY_R012_HUMAN_REVIEW_PACKET_001",
+  "task_id": "VF-20260508-003",
+  "asset_identity": "video_factory_round012_human_review_packet_shadow_sample",
+  "risk_level": "W1",
+  "status": "pending_human_review",
+  "boundary": {
+    "modify_formal_video_system": false,
+    "modify_video_system_task": false,
+    "modify_release_lists": false,
+    "read_real_assets": false,
+    "render": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false,
+    "send_wecom": false,
+    "trigger_n8n": false
+  },
+  "read_order": [
+    "VIDEO_FACTORY_R012_GATE_001_生成发布放行清单只读核对_v1.0.md",
+    "VIDEO_FACTORY_R012_REVIEW_002_掩耳盗铃发布前待复核问题清单_v1.0.md",
+    "VIDEO_FACTORY_R012_SCRIPT_REVIEW_001_脚本草案去AI感与原创性复核清单_v1.0.md",
+    "VIDEO_FACTORY_R012_STORYBOARD_REVIEW_001_分镜素材授权复核清单_v1.0.md"
+  ],
+  "one_sentence_conclusion": "VF-20260508-003 has local script and storyboard preview drafts, but release lists do not register the task, manual script markers remain, and storyboard authorization fields are missing; it can only continue human review, not rendering or publishing.",
+  "blocking_items": [
+    {
+      "item": "generation_release",
+      "status": "latest_task_not_registered",
+      "resolution": "human_register_and_release_in_formal_generation_release_list"
+    },
+    {
+      "item": "publish_release",
+      "status": "latest_task_not_registered",
+      "resolution": "human_release_after_finished_video_preview"
+    },
+    {
+      "item": "script_manual_confirmation_markers",
+      "status": "unresolved",
+      "resolution": "human_rewrite_topic_and_closing_lines"
+    },
+    {
+      "item": "idiom_story_core",
+      "status": "insufficient",
+      "resolution": "add_story_core_and_original_interpretation"
+    },
+    {
+      "item": "asset_authorization",
+      "status": "missing",
+      "resolution": "register_asset_source_and_authorization_proof"
+    },
+    {
+      "item": "platform_rules",
+      "status": "missing",
+      "resolution": "fill_target_platform_category_aspect_ratio_ai_label_rules"
+    }
+  ],
+  "handoff_suggestions": [
+    "do_not_reuse_release_status_from_VF-20260508-001_or_VF-20260507-007",
+    "rewrite_script_with_idiom_story_core_then_modern_self_deception_scene_then_original_conclusion",
+    "prefer_self_made_non_identifiable_assets",
+    "replace_real_chat_screenshots_with_simulated_or_desensitized_visuals",
+    "choose_primary_aspect_ratio_before_release",
+    "confirm_ai_label_platform_category_title_rules_music_and_font_authorization_before_publish"
+  ],
+  "can_render": false,
+  "can_publish": false,
+  "self_check": "[自检: VIDEO_FACTORY_R012_HUMAN_REVIEW_PACKET_001已完成, 风险等级: W1, 产物: 掩耳盗铃人工复核工作包md/json, 边界: 守住了。]"
+}

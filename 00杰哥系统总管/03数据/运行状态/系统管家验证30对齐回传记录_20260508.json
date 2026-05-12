@@ -1,0 +1,33 @@
+{
+  "asset_name": "系统管家验证30对齐回传记录",
+  "created_at": "2026-05-08 11:23:49 +08:00",
+  "asset_identity": "总管侧W1/R0对齐回传记录",
+  "source": "用户对验证30的判断",
+  "absorbed": true,
+  "validation_result": "pass_with_wording_risk",
+  "risk_type": "提示语表述风险",
+  "standard_phrase": "n8n 相关入口/占位状态可检查，但真实触发仍关闭",
+  "forbidden_unqualified_phrase": "n8n 正常",
+  "next_quality_fix_candidates": [
+    "系统管家进度查询输出质量",
+    "系统管家路径查询输出质量",
+    "系统管家n8n状态表述"
+  ],
+  "deferred_redline_actions": [
+    "修改系统管家服务输出逻辑",
+    "重启19310验证",
+    "写企业微信正式配置",
+    "触发n8n"
+  ],
+  "boundary_flags": {
+    "service_modified": false,
+    "restart_19310": false,
+    "trigger_n8n": false,
+    "wecom_real_send": false,
+    "formal_config_write": false
+  },
+  "self_check": {
+    "risk_level": "W1/R0",
+    "boundary_kept": true
+  }
+}

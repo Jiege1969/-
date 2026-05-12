@@ -1,0 +1,85 @@
+{
+  "system_name": "知识库可追溯问答框",
+  "system_dir": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库可追溯问答框",
+  "generated_at": "2026-05-11 07:45:02",
+  "overall_status": "pass",
+  "score": 100,
+  "entry_scripts": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库可追溯问答框\\02脚本\\生成知识库可追溯问答框交付包.py",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库可追溯问答框\\02脚本\\验证知识库可追溯问答框交付包.py"
+  ],
+  "checks": {
+    "timeliness": {
+      "ok": true,
+      "task_name": "�ܸ����ܻ�ϵͳ_ÿ�ջ���_֪ʶ���׷���ʴ��",
+      "exists": true,
+      "state": "Running",
+      "last_run_time": "2026-05-11 07:45:01",
+      "last_task_result": 267009,
+      "next_run_time": "2026-05-12 07:45:00"
+    },
+    "output_completeness": {
+      "ok": true,
+      "checks": [
+        {
+          "name": "可追溯问答交付包",
+          "ok": true,
+          "required": true,
+          "latest_file": {
+            "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库可追溯问答框\\03数据\\01交付包\\知识库可追溯问答框交付包_20260511-074502.md",
+            "exists": true,
+            "size": 1644,
+            "modified_at": "2026-05-11 07:45:02",
+            "updated_today": true
+          }
+        }
+      ]
+    },
+    "template_compliance": {
+      "ok": true,
+      "hits": [],
+      "scanned_files": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库可追溯问答框\\03数据\\01交付包\\知识库可追溯问答框交付包_20260511-074502.md"
+      ]
+    },
+    "universal_laws": {
+      "ok": true,
+      "total_penalty": 0,
+      "rules": [
+        {
+          "id": "silence_is_gold",
+          "name": "沉默是金：数据缺失却强行生成结论",
+          "severity": "defect",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        },
+        {
+          "id": "traceable_conclusions",
+          "name": "可追溯：关键结论必须找到计算来源",
+          "severity": "deduct",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        },
+        {
+          "id": "human_sovereignty",
+          "name": "人的主权：进化系统不得擅自修改业务规则",
+          "severity": "highest_alert",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        }
+      ],
+      "scanned_files": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库可追溯问答框\\03数据\\01交付包\\知识库可追溯问答框交付包_20260511-074502.md"
+      ]
+    }
+  },
+  "safety": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_business_db": false,
+    "call_trade_or_external_execute_api": false
+  }
+}

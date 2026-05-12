@@ -1,0 +1,66 @@
+{
+  "contract_id": "VIDEO_AGENT_ENGINE_ADAPTER_CONTRACT_001",
+  "name": "外部引擎适配契约草案",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:30:00 +08:00",
+  "asset_identity": "视频创作智能体 W1/R0 外部引擎适配字段契约草案",
+  "risk_level": "W1/R0",
+  "scope": "只描述未来执行器适配字段，不调用任何真实执行器",
+  "engines": [
+    {
+      "name": "MoneyPrinterTurbo",
+      "purpose": "本地成片生成候选",
+      "input_fields": ["脚本", "分镜", "素材清单", "字幕", "画幅", "生成放行ID", "真实渲染放行ID"],
+      "output_fields": ["生成任务ID", "媒体路径", "日志", "错误"],
+      "pre_gates": ["生成放行", "真实渲染放行", "素材授权", "AI标识"],
+      "call_allowed_now": false
+    },
+    {
+      "name": "HappyHorse",
+      "purpose": "片头/精品镜头候选",
+      "input_fields": ["镜头描述", "风格", "时长", "画幅", "素材约束"],
+      "output_fields": ["镜头候选", "预览路径", "错误"],
+      "pre_gates": ["镜头授权", "风格确认", "生成放行"],
+      "call_allowed_now": false
+    },
+    {
+      "name": "Qwen-TTS",
+      "purpose": "配音候选",
+      "input_fields": ["文案", "音色", "语速", "情绪", "版权声明"],
+      "output_fields": ["音频路径", "字幕时间轴", "错误"],
+      "pre_gates": ["音色授权", "文案确认", "AI标识"],
+      "call_allowed_now": false
+    },
+    {
+      "name": "PostBot",
+      "purpose": "发布辅助候选",
+      "input_fields": ["平台", "标题", "简介", "标签", "封面", "成片路径", "发布放行ID"],
+      "output_fields": ["发布草稿ID", "平台回执", "错误"],
+      "pre_gates": ["发布放行", "账号授权", "平台规则确认", "AI标识确认"],
+      "call_allowed_now": false
+    }
+  ],
+  "unified_gate_fields": [
+    "调用前门禁ID",
+    "人工放行人",
+    "人工放行时间",
+    "素材授权状态",
+    "平台规则状态",
+    "AI标识状态",
+    "失败回滚路径",
+    "调用后人工回执"
+  ],
+  "boundary": {
+    "install_engine": false,
+    "call_engine": false,
+    "configure_secret": false,
+    "login_platform": false,
+    "render": false,
+    "voice_generation": false,
+    "publish": false,
+    "trigger_n8n": false,
+    "wecom_real_send": false,
+    "modify_19310_or_19302": false
+  },
+  "formal_capability_claim": false
+}

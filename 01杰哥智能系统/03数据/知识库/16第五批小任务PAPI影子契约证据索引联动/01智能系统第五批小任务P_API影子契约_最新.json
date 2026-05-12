@@ -1,0 +1,151 @@
+{
+  "task": "01智能系统第五批小任务P_API影子契约与知识库证据索引联动样本",
+  "version": "shadow-p-2026-05-05",
+  "generated_at": "2026-05-05 13:03:07",
+  "execution_mode": "local_preview_only",
+  "api_shadow_contract": {
+    "endpoint_shadow": "POST /shadow/v1/intelligence/evidence-linked-answer",
+    "request_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "question",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "evidence_query",
+        "type": "object",
+        "required": true
+      },
+      {
+        "name": "evidence_policy",
+        "type": "string",
+        "required": true,
+        "allowed": [
+          "must_cite_fresh_local_evidence"
+        ]
+      },
+      {
+        "name": "staleness_threshold_days",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "name": "dry_run",
+        "type": "boolean",
+        "required": true
+      },
+      {
+        "name": "safety_boundary",
+        "type": "object",
+        "required": true
+      }
+    ],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "status",
+        "type": "enum",
+        "required": true,
+        "allowed": [
+          "ok",
+          "degraded",
+          "blocked"
+        ]
+      },
+      {
+        "name": "error_code",
+        "type": "enum",
+        "required": true,
+        "allowed": [
+          "OK",
+          "STALE_EVIDENCE",
+          "NO_EVIDENCE",
+          "EXTERNAL_API_BLOCKED",
+          "CONTRACT_FIELD_MISSING",
+          "FORMAL_STORE_DISABLED"
+        ]
+      },
+      {
+        "name": "answer",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "evidence_hits",
+        "type": "array[object]",
+        "required": true
+      },
+      {
+        "name": "degrade_message",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "external_effect",
+        "type": "string",
+        "required": true,
+        "allowed": [
+          "none",
+          "blocked"
+        ]
+      },
+      {
+        "name": "formal_store_write",
+        "type": "boolean",
+        "required": true
+      },
+      {
+        "name": "safety_boundary",
+        "type": "object",
+        "required": true
+      }
+    ],
+    "error_codes": {
+      "OK": "命中本地证据索引，证据未过期，可以按影子契约返回。",
+      "STALE_EVIDENCE": "命中本地证据索引，但证据超过时效阈值，只能降级返回。",
+      "NO_EVIDENCE": "未命中本地证据索引，不得编造答案，只能降级返回。",
+      "EXTERNAL_API_BLOCKED": "请求越权调用真实外部 API 或真实动作，被安全边界硬阻断。",
+      "CONTRACT_FIELD_MISSING": "请求或响应缺少影子契约必需字段。",
+      "FORMAL_STORE_DISABLED": "正式库、正式向量库或正式数据库写入被禁用。"
+    },
+    "degrade_messages": {
+      "STALE_EVIDENCE": "命中的本地证据已超过时效阈值，本轮只返回降级说明，不把旧证据当作当前事实。",
+      "NO_EVIDENCE": "未在本地证据索引中找到可引用证据，本轮不生成事实性回答。",
+      "EXTERNAL_API_BLOCKED": "真实外部 API 或真实动作已被阻断，仅允许输出本地 dry_run 影子结果。",
+      "FORMAL_STORE_DISABLED": "正式库写入保持禁用，本轮只写本地样本文件。"
+    }
+  },
+  "formal_store_policy": {
+    "write_production_db": false,
+    "write_formal_knowledge_db": false,
+    "write_formal_vector_db": false,
+    "allowed_write_targets": [
+      "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\16第五批小任务PAPI影子契约证据索引联动",
+      "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\API契约\\01智能系统第五批小任务P_API影子契约与知识库证据索引联动预案_最新.md"
+    ]
+  },
+  "safety_boundary": {
+    "mode": "local_shadow_only",
+    "allowed_input_source": "local_shadow_samples_and_local_evidence_index",
+    "call_external_api": false,
+    "trigger_n8n": false,
+    "send_wecom_real_message": false,
+    "write_production_db": false,
+    "write_formal_knowledge_db": false,
+    "write_formal_vector_db": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "place_order": false,
+    "touch_primary_work_system": false,
+    "dry_run_required": true
+  }
+}

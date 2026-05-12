@@ -1,0 +1,120 @@
+{
+  "名称": "股票主动研究n8n未激活编排草案",
+  "版本": "2026-05-01",
+  "定位": "为股票主动研究闭环准备n8n编排草案；不导入、不启用、不发送。",
+  "生成时间": "2026-05-09 13:25:09",
+  "生成工具": "生成股票主动研究n8n未激活编排草案.py",
+  "草案状态": "仅本地草案",
+  "是否已导入n8n": false,
+  "是否已启用n8n": false,
+  "是否包含真实发送节点": false,
+  "上游放行包": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\138推送前放行包\\股票企微推送前放行包_最新.json",
+  "日内报告闭环策略包": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\260股票n8n日内报告闭环与晨报推送策略包\\股票n8n日内报告闭环与晨报推送策略包_最新.json",
+  "工作流草案": {
+    "name": "股票主动研究闭环_未激活草案",
+    "active": false,
+    "draft_only": true,
+    "strategy_source": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\260股票n8n日内报告闭环与晨报推送策略包\\股票n8n日内报告闭环与晨报推送策略包_最新.json",
+    "intraday_report_loop": {
+      "轻量随问随答": "全天；不走n8n即时主链路，避免增加延迟。",
+      "收市后每日观察": "15:40-18:30；生成分层日报、候选池和第二天候选推荐草案。",
+      "半夜宏观规律分析": "00:30-05:30；复盘前日推送、行业轮动和替代候选。",
+      "开市前晨报推送": "08:20-08:40；进入本人单条灰度闸口，不群发。"
+    },
+    "nodes": [
+      {
+        "name": "Manual Trigger",
+        "type": "n8n-nodes-base.manualTrigger",
+        "notes": "仅草案；导入后也必须保持active=false。"
+      },
+      {
+        "name": "Run Local Stock Pipeline",
+        "type": "n8n-nodes-base.executeCommand",
+        "parameters": {
+          "command": "python \"D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本\\运行股票主动研究闭环_本地.py\" --no-complex"
+        },
+        "notes": "运行本地闭环脚本，只生成本地文件和推送草案，不真实发送。"
+      },
+      {
+        "name": "Read Push Draft",
+        "type": "n8n-nodes-base.readBinaryFile",
+        "parameters": {
+          "filePath": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\136推送草案\\股票企微推送草案_最新.md"
+        },
+        "notes": "读取推送草案；真实发送节点不放入初版草案。"
+      },
+      {
+        "name": "Read Intraday Strategy",
+        "type": "n8n-nodes-base.readBinaryFile",
+        "parameters": {
+          "filePath": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\260股票n8n日内报告闭环与晨报推送策略包\\股票n8n日内报告闭环与晨报推送策略包_最新.json"
+        },
+        "notes": "读取260日内报告闭环与晨报推送策略；用于后续收市、半夜、晨报分时调度。"
+      }
+    ],
+    "connections": {
+      "Manual Trigger": {
+        "main": [
+          [
+            {
+              "node": "Run Local Stock Pipeline",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Run Local Stock Pipeline": {
+        "main": [
+          [
+            {
+              "node": "Read Push Draft",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "Read Intraday Strategy",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "safety": {
+      "no_wecom_send_node": true,
+      "no_webhook_public_trigger": true,
+      "no_broker_api": true,
+      "no_auto_trade": true,
+      "must_remain_inactive_after_import": true
+    }
+  },
+  "数据健康度": {
+    "放行包存在": true,
+    "草案active": false,
+    "是否完整": true
+  },
+  "安全边界": {
+    "是否调用n8n API": false,
+    "是否导入n8n": false,
+    "是否启用n8n": false,
+    "是否企业微信真实发送": false,
+    "是否调用券商接口": false,
+    "是否自动交易": false
+  },
+  "实际动作": {
+    "生成本地草案": true,
+    "写入03数据": true,
+    "写入04日志": true,
+    "调用n8n API": false,
+    "导入n8n": false,
+    "启用n8n": false,
+    "企业微信真实发送": false
+  },
+  "输出文件": {
+    "JSON时间戳文件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\139n8n主动研究编排草案\\股票主动研究n8n未激活编排草案_20260509_132509.json",
+    "Markdown时间戳文件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\139n8n主动研究编排草案\\股票主动研究n8n未激活编排草案_20260509_132509.md",
+    "JSON最新文件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\139n8n主动研究编排草案\\股票主动研究n8n未激活编排草案_最新.json",
+    "Markdown最新文件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\139n8n主动研究编排草案\\股票主动研究n8n未激活编排草案_最新.md"
+  }
+}

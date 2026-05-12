@@ -1,0 +1,38 @@
+{
+  "report": "WSL2大资产一致性备份策略",
+  "generated_at": "2026-05-06 07:28:00 +08:00",
+  "assets": [
+    {
+      "path": "D:/杰哥智能化系统/01杰哥智能系统/03数据/WSL2/docker-desktop/disk/docker_data.vhdx",
+      "size_gb": 109.30
+    },
+    {
+      "path": "D:/杰哥智能化系统/01杰哥智能系统/03数据/WSL2/Ubuntu-24.04/ext4.vhdx",
+      "size_gb": 80.03
+    }
+  ],
+  "total_size_gb": 189.45,
+  "decision": "do not hot-copy running VHDX; use controlled consistency window",
+  "backup_target_template": "F:/系统备份/WSL2一致性备份_YYYYMMDD_HHMMSS",
+  "required_steps": [
+    "record bloodline status before window",
+    "stop write-producing tasks",
+    "stop Docker Desktop or run wsl --shutdown",
+    "copy VHDX files to F backup directory",
+    "record file size and SHA256",
+    "restart Docker/WSL",
+    "validate blood probe ready=true",
+    "update F backup ledger"
+  ],
+  "not_executed_this_round": {
+    "stopped_docker_or_wsl": false,
+    "copied_vhdx": false
+  },
+  "safety": {
+    "triggered_n8n": false,
+    "sent_wecom": false,
+    "called_broker_api": false,
+    "auto_trade": false,
+    "deleted_docker_assets": false
+  }
+}

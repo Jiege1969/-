@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "name": "人工修正样本格式",
+  "asset_identity": "learning_sample_schema",
+  "status": "active",
+  "purpose": "把人工复核中的修正、补充、否决转化为可检索、可复盘、可形成进化建议的样本",
+  "hard_rules": [
+    "人工修正先进入学习样本，不自动升级为正式规则",
+    "单个样本不得直接改写系统规则",
+    "重复出现的同类修正才可形成进化建议",
+    "涉及高风险业务的修正必须保留人工来源和复核时间",
+    "不确定项必须保留为不确定，不得包装成确定结论"
+  ],
+  "sample_schema": {
+    "sample_id": "",
+    "created_at": "",
+    "business_line": "",
+    "source_case": {
+      "case_id": "",
+      "case_title": "",
+      "input_summary": "",
+      "draft_output_path": ""
+    },
+    "human_review": {
+      "reviewer": "",
+      "review_time": "",
+      "review_action": "confirm | correct | supplement | reject | downgrade_to_uncertain",
+      "review_text": ""
+    },
+    "correction_detail": {
+      "original_statement": "",
+      "corrected_statement": "",
+      "correction_reason": "",
+      "evidence_or_experience_source": "",
+      "certainty_level": "confirmed | likely | uncertain | local_practice_only"
+    },
+    "learning_tags": [],
+    "risk_flags": {
+      "affects_external_action": false,
+      "affects_business_write": false,
+      "affects_user_decision": false,
+      "requires_human_confirmation_before_reuse": true
+    },
+    "evolution_status": {
+      "status": "sample_only | candidate_pattern | evolution_suggestion | approved_rule | archived",
+      "similar_sample_count": 1,
+      "promotion_condition": "同类样本达到阈值后，形成进化建议；不得自动成为正式规则"
+    },
+    "reuse_guidance": {
+      "can_be_used_as_hint": true,
+      "can_be_used_as_final_rule": false,
+      "required_output_label": "待复核草案"
+    }
+  },
+  "example": {
+    "sample_id": "TAX-SAMPLE-软件即征即退-001",
+    "created_at": "2026-05-07T10:34:12+08:00",
+    "business_line": "税收业务",
+    "source_case": {
+      "case_id": "TAX-SHADOW-001",
+      "case_title": "软件产品增值税即征即退影子样例",
+      "input_summary": "一般纳税人销售自行开发软件产品，咨询即征即退适用条件和测算",
+      "draft_output_path": ""
+    },
+    "human_review": {
+      "reviewer": "用户",
+      "review_time": "",
+      "review_action": "supplement",
+      "review_text": "补充地方执行口径或材料要求"
+    },
+    "correction_detail": {
+      "original_statement": "材料条件待核实",
+      "corrected_statement": "材料条件应结合当地主管机关和现行申报要求核实",
+      "correction_reason": "地方执行流程可能存在差异",
+      "evidence_or_experience_source": "人工复核经验",
+      "certainty_level": "local_practice_only"
+    },
+    "learning_tags": ["税收", "增值税", "软件产品", "即征即退", "地方口径待补"],
+    "risk_flags": {
+      "affects_external_action": false,
+      "affects_business_write": false,
+      "affects_user_decision": true,
+      "requires_human_confirmation_before_reuse": true
+    },
+    "evolution_status": {
+      "status": "sample_only",
+      "similar_sample_count": 1,
+      "promotion_condition": "同类样本达到阈值后，形成进化建议；不得自动成为正式规则"
+    },
+    "reuse_guidance": {
+      "can_be_used_as_hint": true,
+      "can_be_used_as_final_rule": false,
+      "required_output_label": "待复核草案"
+    }
+  }
+}

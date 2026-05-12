@@ -1,0 +1,90 @@
+{
+  "asset_id": "VIDEO_AGENT_MANAGER_DECISION_SUBMIT_GAP_CARD_001",
+  "name": "提交总管判断缺口卡",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "视频制作系统",
+  "layer": "W1/W2 影子缺口卡",
+  "status": "draft",
+  "purpose": "记录哪些视频制作线事项超出本业务线影子施工权限，需要交回总管对话框判断。",
+  "trigger_conditions": [
+    {
+      "condition": "请求接真实大模型",
+      "handled_by_video_line": false,
+      "suggested_state": "需总管判断"
+    },
+    {
+      "condition": "请求真实渲染或成片",
+      "handled_by_video_line": false,
+      "suggested_state": "需总管判断"
+    },
+    {
+      "condition": "请求真实上传或发布",
+      "handled_by_video_line": false,
+      "suggested_state": "需总管判断"
+    },
+    {
+      "condition": "请求接n8n",
+      "handled_by_video_line": false,
+      "suggested_state": "需总管判断"
+    },
+    {
+      "condition": "请求企业微信真实外发",
+      "handled_by_video_line": false,
+      "suggested_state": "需总管判断"
+    },
+    {
+      "condition": "请求改企业微信公共接入配置",
+      "handled_by_video_line": false,
+      "suggested_state": "需总管判断"
+    },
+    {
+      "condition": "请求改服务端口或重启服务",
+      "handled_by_video_line": false,
+      "suggested_state": "需总管判断"
+    },
+    {
+      "condition": "请求写正式视频系统、正式库或其他业务线",
+      "handled_by_video_line": false,
+      "suggested_state": "需总管判断"
+    },
+    {
+      "condition": "请求读取真实账号、Cookie、API Key",
+      "handled_by_video_line": false,
+      "suggested_state": "需总管判断"
+    }
+  ],
+  "fields": [
+    "缺口卡ID",
+    "任务ID",
+    "用户原始指令",
+    "命中红线",
+    "当前处理方式",
+    "建议交回对象",
+    "视频线可继续事项",
+    "禁止动作"
+  ],
+  "example": {
+    "缺口卡ID": "VAI-GAP-MGR-20260508-001",
+    "任务ID": "VF-20260508-003",
+    "用户原始指令": "把这个视频直接发到抖音和小红书",
+    "命中红线": "请求真实发布",
+    "当前处理方式": "已登记阻断，不实施",
+    "建议交回对象": "总管对话框",
+    "视频线可继续事项": "生成发布前待复核问题清单",
+    "禁止动作": "不上传、不发布、不调用发布工具"
+  },
+  "boundary": {
+    "write_manager_record": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_service": false,
+    "use_real_account": false,
+    "call_external_engine": false,
+    "read_material": false,
+    "render_video": false,
+    "upload_video": false,
+    "publish_video": false
+  }
+}
+

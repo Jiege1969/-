@@ -1,0 +1,75 @@
+{
+  "id": "P2S7_REAL_MATERIAL_INTAKE_RECEIPT_SAMPLE_DRYRUN",
+  "generated_at": "2026-05-09 11:56:58",
+  "status": "pass",
+  "summary": {
+    "receipt_count": 7,
+    "passed": 7,
+    "failed": 0,
+    "source_case_count": 7
+  },
+  "sample_receipts_path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\56P2S7真实材料接入分流回执样例干跑\\P2S7真实材料接入分流虚拟回执样例_20260509.json",
+  "checks": [
+    {
+      "receipt_id": "P2S7-RECEIPT-001",
+      "source_case_id": "P2S5-CASE-001",
+      "target_line": "tax",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "receipt_id": "P2S7-RECEIPT-002",
+      "source_case_id": "P2S5-CASE-002",
+      "target_line": "office_work",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "receipt_id": "P2S7-RECEIPT-003",
+      "source_case_id": "P2S5-CASE-003",
+      "target_line": "video_production",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "receipt_id": "P2S7-RECEIPT-004",
+      "source_case_id": "P2S5-CASE-004",
+      "target_line": "shared_policy_evidence",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "receipt_id": "P2S7-RECEIPT-005",
+      "source_case_id": "P2S5-CASE-005",
+      "target_line": "pause",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "receipt_id": "P2S7-RECEIPT-006",
+      "source_case_id": "P2S5-CASE-006",
+      "target_line": "pause",
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "receipt_id": "P2S7-RECEIPT-007",
+      "source_case_id": "P2S5-CASE-007",
+      "target_line": "pause",
+      "status": "pass",
+      "errors": []
+    }
+  ],
+  "conclusion": "分流回执样例干跑通过；7 个虚拟场景均可生成字段完整、路线一致、红线关闭或阻断明确的分流回执。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

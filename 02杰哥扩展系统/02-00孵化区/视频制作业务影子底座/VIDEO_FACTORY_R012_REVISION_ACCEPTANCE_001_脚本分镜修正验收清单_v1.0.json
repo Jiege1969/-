@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 00:29:10 +08:00",
+  "acceptance_id": "VIDEO_FACTORY_R012_REVISION_ACCEPTANCE_001",
+  "task_id": "VF-20260508-003",
+  "asset_identity": "video_factory_round012_script_storyboard_revision_acceptance_shadow_checklist",
+  "risk_level": "W1",
+  "status": "pending_use_after_revision",
+  "boundary": {
+    "modify_formal_video_system": false,
+    "modify_video_system_task": false,
+    "modify_release_lists": false,
+    "read_real_assets": false,
+    "move_assets": false,
+    "transcode": false,
+    "render": false,
+    "subtitle_generation": false,
+    "cover_generation": false,
+    "voice_generation": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false,
+    "send_wecom": false,
+    "trigger_n8n": false
+  },
+  "read_first": [
+    "VIDEO_FACTORY_R012_HUMAN_REVIEW_PACKET_001_掩耳盗铃人工复核工作包_v1.0.md",
+    "VIDEO_FACTORY_R012_SCRIPT_REVIEW_001_脚本草案去AI感与原创性复核清单_v1.0.md",
+    "VIDEO_FACTORY_R012_STORYBOARD_REVIEW_001_分镜素材授权复核清单_v1.0.md",
+    "revised_formal_video_script_and_storyboard_drafts"
+  ],
+  "script_acceptance_items": [
+    "idiom_story_core_present",
+    "modern_scene_links_to_self_deception_or_fact_avoidance",
+    "original_viewpoint_present",
+    "template_language_reduced",
+    "manual_confirmation_markers_processed_or_explicitly_carried",
+    "no_clickbait_absolute_words_anxiety_sales_or_conflict_incitement"
+  ],
+  "storyboard_acceptance_items": [
+    "visual_metaphor_related_to_bell_ear_covering_or_fact_avoidance",
+    "asset_type_marked_per_shot",
+    "privacy_and_authorization_explained_for_chat_people_and_locations",
+    "primary_aspect_ratio_selected",
+    "ai_content_label_requirement_and_position_confirmed",
+    "material_path_or_self_made_plan_exists_per_shot"
+  ],
+  "gate_acceptance": {
+    "generation_release": "must_be_manually_registered_for_VF-20260508-003_in_formal_generation_release_list",
+    "publish_release": "must_be_manually_registered_after_finished_video_preview",
+    "wecom": "conversation_source_field_is_not_real_external_send",
+    "n8n": "not_enabled",
+    "real_assets": "not_read_by_this_checklist"
+  },
+  "result_format_fields": [
+    "task_id",
+    "script_acceptance",
+    "storyboard_acceptance",
+    "asset_fields",
+    "gate_status",
+    "conclusion",
+    "human_reviewer",
+    "review_time",
+    "notes"
+  ],
+  "passing_this_checklist_means_generation_release": false,
+  "passing_this_checklist_means_publish_release": false,
+  "self_check": "[自检: VIDEO_FACTORY_R012_REVISION_ACCEPTANCE_001已完成, 风险等级: W1, 产物: 脚本分镜修正验收清单md/json, 边界: 守住了。]"
+}

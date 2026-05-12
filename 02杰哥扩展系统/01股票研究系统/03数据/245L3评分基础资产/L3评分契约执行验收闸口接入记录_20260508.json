@@ -1,0 +1,40 @@
+{
+  "name": "L3评分契约执行验收闸口接入记录",
+  "date": "2026-05-08",
+  "asset_identity": "股票系统验收记录",
+  "scope": "股票分析系统L3评分报告与企业微信短答链路",
+  "purpose": "防止后台评分报告继续残留旧市场风格口径，确保分数、分项、证据、缺口、置信度和结论阈值可自动验收。",
+  "changes": [
+    {
+      "type": "generator_rule",
+      "file": "02脚本/生成单股L3评分报告.py",
+      "description": "missing_summary改为读取各分项真实missing字段；市场风格为confirmed时不再固定写入旧的partial补全口径。"
+    },
+    {
+      "type": "validation_gate",
+      "file": "02脚本/验证L3评分契约执行.py",
+      "description": "新增L3评分契约执行验收，检查总分范围、分项权重、分项合计、结论阈值、置信度与旧市场风格口径残留。"
+    },
+    {
+      "type": "unified_validation",
+      "file": "02脚本/运行L3短答证据刷新与验收.py",
+      "description": "将L3评分契约执行验收接入统一刷新验收流程。"
+    },
+    {
+      "type": "sample_cleanup",
+      "file": "03数据/245L3评分基础资产/单股L3评分/*.json",
+      "description": "机械清理旧样本中的市场风格partial/未结构化/完整性残留话术，不改分数、不改结论、不新增强判断。"
+    }
+  ],
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  },
+  "expected_validation": {
+    "single_gate": "验证L3评分契约执行.py",
+    "unified_gate": "运行L3短答证据刷新与验收.py",
+    "expected_unified_step_count": 10
+  }
+}

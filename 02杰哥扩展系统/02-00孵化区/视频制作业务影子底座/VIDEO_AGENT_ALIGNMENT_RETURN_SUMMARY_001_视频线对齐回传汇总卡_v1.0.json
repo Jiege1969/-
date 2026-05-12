@@ -1,0 +1,31 @@
+{
+  "id": "VIDEO_AGENT_ALIGNMENT_RETURN_SUMMARY_001",
+  "name": "视频线对齐回传汇总卡",
+  "asset_identity": "video_production_shadow_base_alignment_return_summary",
+  "stage": "W1_R0",
+  "status": "business_line_summary_return_no_formal_config_change_request",
+  "conclusion": "VAI-001 to VAI-026 plus trial operation card form a manual shadow trial preparation state only.",
+  "completed_capabilities": {
+    "conversation_state_and_intent_routing": "established",
+    "partial_revision_and_three_option_output": "established",
+    "human_gate_and_receipt_intake": "established",
+    "shadow_input_and_run_check": "established",
+    "redline_block_and_shadow_alternative": "established",
+    "state_log_and_evolution_candidate": "established",
+    "asset_relationship_and_trial_packet": "established",
+    "maturity_snapshot_and_gap_list": "established",
+    "trial_operation_card": "established_this_round"
+  },
+  "manager_readonly_absorption": {
+    "manual_shadow_trial_ready": true,
+    "request_public_wechat_config_change": false,
+    "request_service_start_or_port_change": false,
+    "request_n8n": false,
+    "request_generation_render_publish_or_external_send": false
+  },
+  "next_shadow_suggestions": [
+    "fill_trial_sample_after_user_provides_desensitized_video_idea",
+    "create_three_option_text_draft_and_human_review_questions_for_manual_trial",
+    "intake_human_receipt_and_judge_evolution_candidate"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "VIDEO_AGENT_STATE_CHANGE_LOG_TEMPLATE_001",
+  "name": "影子会话状态变更日志模板",
+  "asset_identity": "video_creation_agent_shadow_state_change_log_template",
+  "stage": "W1_R0",
+  "status": "blank_template_no_database_connection",
+  "boundary": {
+    "database_connection": false,
+    "vector_database": false,
+    "real_conversation_access": false,
+    "formal_task_write": false,
+    "long_term_user_profile": false
+  },
+  "fields": {
+    "log_id": "VAI-STATE-LOG-0000",
+    "session_id": "to_be_filled",
+    "changed_at": "to_be_filled",
+    "previous_state": "to_be_filled",
+    "next_state": "to_be_filled",
+    "trigger_source": "to_be_filled",
+    "linked_files": [],
+    "change_reason": "to_be_filled_summary",
+    "redline_hit": "to_be_filled",
+    "human_review_entered": "to_be_filled"
+  },
+  "limitations": [
+    "not_database",
+    "not_long_term_memory",
+    "not_user_profile",
+    "not_formal_task_status"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "VIDEO_AGENT_PHASE_MATURITY_SNAPSHOT_001",
+  "name": "阶段成熟度快照",
+  "asset_identity": "video_creation_agent_shadow_phase_maturity_snapshot",
+  "stage": "W1_R0",
+  "status": "shadow_maturity_assessment_not_launch_permission",
+  "maturity": "R0-L2",
+  "conclusion": "Shadow fields, templates, checks, receipts, redlines and relationship map are formed enough for manual shadow trial, but not for formal automation.",
+  "dimensions": {
+    "field_contracts": "formed",
+    "input_intake": "formed_manual_shadow_only",
+    "output_templates": "formed",
+    "run_checks": "formed",
+    "evidence_and_asset_authorization": "partially_formed_task_specific_fill_needed",
+    "human_gate": "formed",
+    "automation_integration": "not_established",
+    "formal_publish_capability": "not_available"
+  },
+  "allowed_next_actions": [
+    "manually_fill_shadow_trial_io_packet",
+    "create_three_option_text_draft_for_desensitized_video_idea",
+    "fill_human_receipt_and_state_change_log",
+    "summarize_reusable_experience_as_evolution_candidate"
+  ],
+  "forbidden_next_actions": [
+    "real_wechat_integration",
+    "model_or_external_engine_call",
+    "read_real_assets",
+    "service_start_or_port_change",
+    "upload_publish_external_send"
+  ],
+  "boundary": {
+    "formal_system_capability_claim": false,
+    "launch_permission": false,
+    "real_system_triggered": false
+  }
+}

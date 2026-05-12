@@ -1,0 +1,50 @@
+{
+  "名称": "股票助手n8n受控刷新重启申请规则",
+  "作用": "在n8n Webhook本地受控启用测试出现404后，登记受控刷新或重启新系统隔离n8n的原因、边界、回滚和验收方法。",
+  "触发方式": "python 生成股票助手n8n受控刷新重启申请包.py",
+  "依赖": "n8n本地执行回环测试结果；n8nWebhook本地受控启用测试结果；隔离n8n受控启动脚本",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "创建修改记录": "2026-04-28 创建第一版n8n受控刷新重启申请规则。",
+  "申请原因": [
+    "n8n CLI update:workflow --active=true 修改数据库后，运行中的n8n进程未立即注册生产Webhook。",
+    "n8n CLI输出提示：Activation or deactivation will not take effect if n8n is running. Please restart n8n for changes to take effect if n8n is currently running.",
+    "本地执行回环已通过，说明n8n内部执行能力正常，当前卡点是Webhook注册刷新。"
+  ],
+  "允许对象": {
+    "容器名": "jiege_v3_n8n",
+    "端口": "127.0.0.1:28679",
+    "数据目录": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\n8n",
+    "compose": "D:\\杰哥智能化系统\\01杰哥智能系统\\01配置\\docker-compose.n8n隔离.yml"
+  },
+  "禁止触碰": [
+    "D:\\杰哥智能体操作系统",
+    "jiege_n8n",
+    "n8n旧实例",
+    "企业微信真实发送",
+    "OpenClaw真实桥接",
+    "券商接口",
+    "自动交易"
+  ],
+  "受控动作边界": {
+    "只允许刷新或重启jiege_v3_n8n": true,
+    "不允许docker compose down": true,
+    "不允许删除容器卷": true,
+    "不允许删除n8n数据目录": true,
+    "不允许修改旧系统": true,
+    "不允许发送企业微信": true
+  },
+  "回滚策略": [
+    "若重启后n8n首页不返回200，执行docker compose -f docker-compose.n8n隔离.yml up -d n8n恢复单服务。",
+    "若Webhook测试失败，立即执行n8n update:workflow --id <Webhook工作流ID> --active=false，并记录诊断。",
+    "若端口28679异常，停止继续测试，不切换到旧系统n8n。",
+    "任何异常均只写日志，不发送企业微信。"
+  ],
+  "验收标准": [
+    "docker ps中jiege_v3_n8n运行且端口为127.0.0.1:28679。",
+    "n8n首页返回HTTP 200。",
+    "旧系统jiege_n8n仍运行且未被写入。",
+    "Webhook工作流启用后本地POST返回200。",
+    "测试后Webhook工作流重新关闭或保持受控状态。",
+    "真实企业微信发送仍为false。"
+  ]
+}

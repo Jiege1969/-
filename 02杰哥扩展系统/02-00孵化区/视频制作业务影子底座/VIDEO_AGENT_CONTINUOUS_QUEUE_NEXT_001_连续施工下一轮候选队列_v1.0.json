@@ -1,0 +1,68 @@
+{
+  "asset_id": "VIDEO_AGENT_CONTINUOUS_QUEUE_NEXT_001",
+  "version": "v1.0",
+  "asset_type": "shadow_construction_queue",
+  "construction_level": "W1/R0",
+  "scope": "video_production_shadow_base",
+  "status": "draft",
+  "purpose": "Provide next low-risk candidates so continuous construction does not stop at a progress summary.",
+  "selection_rules": [
+    "Prefer tasks that only write inside the video production shadow base.",
+    "Prefer human review chain, state contracts, checklists, placeholder samples, and handoff records.",
+    "Register blockers instead of implementing redline items.",
+    "If inputs are missing, create input-condition checks, gap cards, placeholder templates, or pending-review question lists."
+  ],
+  "candidate_tasks": [
+    {
+      "order": 1,
+      "task": "index_merge_precheck",
+      "suggested_outputs": ["md", "json"],
+      "risk_level": "low",
+      "auto_executable": true
+    },
+    {
+      "order": 2,
+      "task": "no_stop_execution_rule_card",
+      "suggested_outputs": ["md", "json"],
+      "risk_level": "low",
+      "auto_executable": true
+    },
+    {
+      "order": 3,
+      "task": "shadow_task_trace_fields",
+      "suggested_outputs": ["md", "json"],
+      "risk_level": "low",
+      "auto_executable": true
+    },
+    {
+      "order": 4,
+      "task": "release_conflict_sample_card",
+      "suggested_outputs": ["md", "json"],
+      "risk_level": "low",
+      "auto_executable": true
+    },
+    {
+      "order": 5,
+      "task": "wecom_command_reply_placeholder_sample",
+      "suggested_outputs": ["md", "json"],
+      "risk_level": "low",
+      "auto_executable": true,
+      "boundary": "draft_only"
+    },
+    {
+      "order": 6,
+      "task": "video_agent_stage_maturity_snapshot",
+      "suggested_outputs": ["md", "json"],
+      "risk_level": "low",
+      "auto_executable": true
+    }
+  ],
+  "stop_conditions": [
+    "requires_manager_or_public_component_change",
+    "requires_real_model_api",
+    "requires_real_material_or_account",
+    "requires_real_render_upload_publish_or_wecom_send",
+    "requires_n8n_service_script_or_port",
+    "missing_context_cannot_be_represented_as_gap_card"
+  ]
+}

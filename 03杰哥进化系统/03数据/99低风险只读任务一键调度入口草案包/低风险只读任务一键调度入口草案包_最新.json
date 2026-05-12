@@ -1,0 +1,40 @@
+{
+  "package_name": "低风险只读任务一键调度入口草案包",
+  "generated_at": "2026-05-08 19:57:02",
+  "based_on": "96低风险自主任务本地只读调度预演包",
+  "files": {
+    "entry_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\一键调度入口草案_最新.json",
+    "entry_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\一键调度入口草案_最新.md",
+    "config_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\本地预演配置_最新.json",
+    "config_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\本地预演配置_最新.md",
+    "package_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\低风险只读任务一键调度入口草案包_最新.json",
+    "package_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\99低风险只读任务一键调度入口草案包\\低风险只读任务一键调度入口草案包_最新.md"
+  },
+  "entry_name": "低风险只读任务一键调度入口草案",
+  "task_count": 8,
+  "auto_execute": false,
+  "external_call": false,
+  "real_send": false,
+  "reload_service": false,
+  "modify_supervisor_panel": false,
+  "modify_one_click_pack": false,
+  "hard_red_line_confirmation": {
+    "enabled": false,
+    "preview_only": true,
+    "auto_execute": false,
+    "external_call": false,
+    "real_send": false,
+    "real_wecom_send": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "write_formal_rule": false,
+    "reload_service": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_pack": false,
+    "modify_one_click_continuation_package": false,
+    "task_executed": false
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "package_id": "01智能系统_最终缺口压缩与交付确认前清单",
+  "task_batch": "并行小任务R",
+  "scope": "01杰哥智能系统",
+  "generated_at": "2026-05-05 14:53:49 +08:00",
+  "mode": "read_only_gap_compression",
+  "source_acceptance": {
+    "api_model_route_dry_run": {
+      "result": "PASS",
+      "passed_checks": 90,
+      "total_checks": 90,
+      "failed_checks": 0,
+      "validator_mode": "read_only_local_parse",
+      "external_services_touched": false,
+      "real_model_invocation_touched": false
+    },
+    "knowledge_health_check": {
+      "result": "PASS",
+      "passed_checks": 25,
+      "total_checks": 25,
+      "failed_checks": 0,
+      "knowledge_link_fields": [
+        "knowledge_query_id",
+        "evidence_ids",
+        "evidence_count",
+        "degrade_reason"
+      ]
+    }
+  },
+  "evidence_files": {
+    "api_model_route_package": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\delivery_candidate_api_model_route_dry_run_package_latest.json",
+    "standard_task_to_receipt_trace": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\standard_task_to_receipt_trace_latest.json",
+    "failure_fallback_matrix": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\failure_fallback_matrix_latest.json",
+    "api_route_acceptance_doc": "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\API契约\\delivery_candidate_api_model_route_dry_run_acceptance_latest.md",
+    "knowledge_link_contract": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\16第五批小任务PAPI影子契约证据索引联动\\01智能系统第五批小任务P_API影子契约_最新.json",
+    "knowledge_link_sample": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\16第五批小任务PAPI影子契约证据索引联动\\01智能系统第五批小任务P_知识库证据索引联动样本_最新.json",
+    "error_degradation_standard": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+    "knowledge_health_acceptance": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\18第七批小任务AC基础服务可交付前健康检查包\\01智能系统第七批小任务AC_验收报告_最新.md"
+  },
+  "coverage": {
+    "api_contract": {
+      "status": "compressed_to_confirmation",
+      "basis": "LOCAL_DRY_RUN_ONLY API契约、标准任务单必填字段、请求/响应字段已由90/90验收覆盖。",
+      "confirmation_gate": "交付确认前只需复核最终签收包引用路径和字段名未漂移。"
+    },
+    "model_routing": {
+      "status": "compressed_to_confirmation",
+      "basis": "router invocation=disabled，selection_mode=label_only，candidate_routes real_model_call=false。",
+      "confirmation_gate": "正式模型调用保持disabled；不得把标签路由解释为真实推理。"
+    },
+    "failure_fallback": {
+      "status": "compressed_to_confirmation",
+      "basis": "失败码覆盖schema无效、无安全路由、真实模型禁用、外部触发禁用、正式写入禁用。",
+      "confirmation_gate": "所有失败路径必须输出receipt，不得外扩重试真实服务。"
+    },
+    "receipt": {
+      "status": "compressed_to_confirmation",
+      "basis": "receipt required_fields齐全，external_calls=[]，selected_route.real_model_call=false，status=DRY_RUN_PLANNED。",
+      "confirmation_gate": "最终签收包应保留receipt样例和blocked_actions清单。"
+    },
+    "knowledge_retrieval_link": {
+      "status": "remaining_gap_compressed",
+      "basis": "P/AC已覆盖本地证据索引、fresh/stale/no_evidence降级、knowledge_query_id/evidence_ids/evidence_count/degrade_reason字段。",
+      "remaining_gap": "尚需把知识检索联动证据路径挂到最终交付确认包索引中，属于引用收口缺口，不是运行阻断。",
+      "confirmation_gate": "仅引用本地影子证据；无证据、旧证据、证据不足必须降级并要求人工复核。"
+    },
+    "real_model_invocation_disabled": {
+      "status": "intentional_gate_closed",
+      "basis": "runtime.real_model_invocation_enabled=false，trace.model_call_allowed=false，model_route_selection.invocation=disabled。",
+      "confirmation_gate": "交付确认前不得打开正式模型调用；真实调用许可需另行只读签发和人工批准。"
+    }
+  },
+  "remaining_1_to_2_hour_compression_plan": [
+    {
+      "step": 1,
+      "window_minutes": "0-15",
+      "action": "冻结只读证据：复核API/模型路由90/90、知识健康25/25、回收报告时间戳和文件路径。",
+      "owner": "final_acceptance_worker",
+      "exit_criteria": "所有证据路径存在且可解析。"
+    },
+    {
+      "step": 2,
+      "window_minutes": "15-35",
+      "action": "把API契约、模型路由、失败降级、receipt四块映射到最终签收包目录索引。",
+      "owner": "final_acceptance_worker",
+      "exit_criteria": "最终签收包能逐项指向本包evidence_files。"
+    },
+    {
+      "step": 3,
+      "window_minutes": "35-60",
+      "action": "压缩知识检索联动缺口：只挂本地影子证据索引，不新增真实检索、不联网、不写正式知识库。",
+      "owner": "knowledge_acceptance_worker",
+      "exit_criteria": "fresh/stale/no_evidence三类口径在最终清单中可见。"
+    },
+    {
+      "step": 4,
+      "window_minutes": "60-80",
+      "action": "复核硬闸：正式模型调用、n8n触发、企业微信发送、正式库写入、券商接口、自动交易全部保持false。",
+      "owner": "safety_gate_worker",
+      "exit_criteria": "所有真实动作闸口均为关闭，且blocked_actions保留。"
+    },
+    {
+      "step": 5,
+      "window_minutes": "80-95",
+      "action": "交付确认前报告收口：写入最终签收包引用和本固定回收报告，不触发服务。",
+      "owner": "release_confirmation_worker",
+      "exit_criteria": "只读验证脚本通过，回收报告md/json一致。"
+    }
+  ],
+  "safety_boundary": {
+    "dry_run": true,
+    "read_only_local_parse": true,
+    "network_enabled": false,
+    "real_model_invocation_enabled": false,
+    "external_service_trigger_enabled": false,
+    "n8n_trigger_enabled": false,
+    "wecom_send_enabled": false,
+    "formal_database_write_enabled": false,
+    "formal_knowledge_db_write_enabled": false,
+    "formal_vector_db_write_enabled": false,
+    "real_redis_write_enabled": false,
+    "broker_api_enabled": false,
+    "auto_trade_enabled": false
+  },
+  "delivery_confirmation": {
+    "delivery_blockers": [],
+    "safety_blockers": [],
+    "remaining_gap_count": 1,
+    "remaining_gap_summary": "知识检索联动证据路径需挂入最终签收包；正式模型调用继续disabled，不作为本轮开启项。",
+    "estimated_remaining_minutes": 95,
+    "ready_for_final_confirmation": true
+  }
+}

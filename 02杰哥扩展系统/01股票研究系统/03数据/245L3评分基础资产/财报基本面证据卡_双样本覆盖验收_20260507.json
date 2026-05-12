@@ -1,0 +1,87 @@
+{
+  "名称": "财报基本面证据卡双样本覆盖验收",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子覆盖验收卡",
+  "状态": "passed_with_gaps",
+  "sample_count": 2,
+  "samples": [
+    {
+      "stock_name": "云南锗业",
+      "stock_code": "sz002428",
+      "base_fundamental_score": 5,
+      "shadow_fundamental_score": 8,
+      "base_total_score": 56.3,
+      "shadow_total_score": 59.3,
+      "conclusion": "暂不建议关注",
+      "user_visible_change": "基本面从“财报未接入”变为“收入增长但利润、扣非、现金流偏弱，只能弱支撑”。",
+      "evidence_card": "03数据/245L3评分基础资产/云南锗业_财报基本面证据卡_20260507.json",
+      "short_answer": "03数据/245L3评分基础资产/企业微信短答_云南锗业_财报补证影子样例_20260507.md"
+    },
+    {
+      "stock_name": "天齐锂业",
+      "stock_code": "sz002466",
+      "base_fundamental_score": 5,
+      "shadow_fundamental_score": 13,
+      "base_total_score": 46.0,
+      "shadow_total_score": 54.0,
+      "conclusion": "暂不建议关注",
+      "user_visible_change": "基本面从“财报正文待核验”变为“一季度收入和利润显著修复，但现金流和锂价周期仍需验证”。",
+      "evidence_card": "03数据/245L3评分基础资产/天齐锂业_财报基本面证据卡_20260507.json",
+      "short_answer": "03数据/245L3评分基础资产/企业微信短答_天齐锂业_财报补证影子样例_20260507.md"
+    }
+  ],
+  "acceptance_results": [
+    {
+      "item": "非个例验证",
+      "status": "pass",
+      "evidence": "已覆盖锗材料股和锂资源股两个不同资源品种，均能生成财报证据卡和短答样例。"
+    },
+    {
+      "item": "结论稳定性",
+      "status": "pass",
+      "evidence": "财报补证只改变基本面分项和理由，没有机械把结论升级为重点关注。"
+    },
+    {
+      "item": "用户可感知",
+      "status": "pass",
+      "evidence": "两只股票的前台短答都从工程缺口转为可理解的基本面结论。"
+    },
+    {
+      "item": "证据链",
+      "status": "pass",
+      "evidence": "每只股票都有来源、正负证据、missing、confidence和安全边界。"
+    },
+    {
+      "item": "可批量化",
+      "status": "partial",
+      "evidence": "schema已存在，但自动生成脚本和正式入口接入尚未完成；正式脚本/入口属于后续W3或准W3确认项。"
+    }
+  ],
+  "system_findings": [
+    {
+      "finding": "公司经营快照和191人工核验台账之间存在未闭环。",
+      "example": "天齐锂业经营快照中公司概况仍为待接入，但191台账已有已核验公司概况。",
+      "classification": "unclosed_loop",
+      "suggested_next_shadow_action": "生成经营快照与191台账差异清单，不直接改正式入口。"
+    },
+    {
+      "finding": "财报基本面证据卡可以明显改善前台可读性。",
+      "example": "云南锗业和天齐锂业均从缺口描述变为结论描述。",
+      "classification": "user_visible_improvement",
+      "suggested_next_shadow_action": "再覆盖1只非资源股，检验schema是否足够通用。"
+    }
+  ],
+  "remaining_gaps": [
+    "行业价格字段仍缺：锗价、碳酸锂/氢氧化锂价格和产品价差未统一接入。",
+    "资金字段仍缺：资金流、机构持仓、解禁减持未合并。",
+    "正式企业微信入口、正式生成脚本、正式配置均未改动，若要接入需暂停确认。"
+  ],
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_service_restart": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

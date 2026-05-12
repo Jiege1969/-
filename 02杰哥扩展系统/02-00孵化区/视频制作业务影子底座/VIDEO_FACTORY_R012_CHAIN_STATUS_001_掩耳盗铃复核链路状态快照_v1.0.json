@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 05:53:30 +08:00",
+  "snapshot_id": "VIDEO_FACTORY_R012_CHAIN_STATUS_001",
+  "task_id": "VF-20260508-003",
+  "asset_identity": "video_factory_round012_review_chain_status_shadow_snapshot",
+  "risk_level": "W1",
+  "status": "shadow_handoff_snapshot_not_formal_release_record",
+  "boundary": {
+    "modify_formal_video_system": false,
+    "modify_video_system_task": false,
+    "modify_release_lists": false,
+    "read_real_assets": false,
+    "move_assets": false,
+    "transcode": false,
+    "edit": false,
+    "render": false,
+    "subtitle_generation": false,
+    "cover_generation": false,
+    "voice_generation": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "write_formal_rule_library": false,
+    "modify_formal_script_generator": false
+  },
+  "one_sentence_conclusion": "VF-20260508-003 has a complete shadow review chain from gate check to evolution candidate validation, but it remains pending human revision, human receipt, and multi-case validation; rendering, publishing, and external sending are not allowed.",
+  "chain_nodes": [
+    {"order": 1, "node": "round012_boundary_alignment", "file": "视频工厂轮次012总控层对齐记录_v1.0.md", "status": "aligned_shadow_boundary"},
+    {"order": 2, "node": "shared_evidence_readonly_integration", "file": "视频工厂轮次012共享证据只读对接清单_v1.0.md", "status": "readonly_integration_defined"},
+    {"order": 3, "node": "pre_publish_review", "file": "VIDEO_FACTORY_R012_REVIEW_002_掩耳盗铃发布前待复核问题清单_v1.0.md", "status": "pending_human_review"},
+    {"order": 4, "node": "generation_publish_gate_check", "file": "VIDEO_FACTORY_R012_GATE_001_生成发布放行清单只读核对_v1.0.md", "status": "latest_task_not_released"},
+    {"order": 5, "node": "script_review", "file": "VIDEO_FACTORY_R012_SCRIPT_REVIEW_001_脚本草案去AI感与原创性复核清单_v1.0.md", "status": "pending_revision"},
+    {"order": 6, "node": "storyboard_asset_review", "file": "VIDEO_FACTORY_R012_STORYBOARD_REVIEW_001_分镜素材授权复核清单_v1.0.md", "status": "pending_fields"},
+    {"order": 7, "node": "human_review_packet", "file": "VIDEO_FACTORY_R012_HUMAN_REVIEW_PACKET_001_掩耳盗铃人工复核工作包_v1.0.md", "status": "pending_human_action"},
+    {"order": 8, "node": "revision_acceptance_checklist", "file": "VIDEO_FACTORY_R012_REVISION_ACCEPTANCE_001_脚本分镜修正验收清单_v1.0.md", "status": "pending_use_after_revision"},
+    {"order": 9, "node": "revision_receipt_template", "file": "VIDEO_FACTORY_R012_REVISION_RECEIPT_001_脚本分镜修正验收回执模板_v1.0.md", "status": "pending_fill"},
+    {"order": 10, "node": "review_experience_to_evolution_mapping", "file": "VIDEO_FACTORY_R012_EVOLUTION_MAPPING_001_复核经验到进化候选映射草案_v1.0.md", "status": "mapping_defined"},
+    {"order": 11, "node": "evolution_candidate_record", "file": "VIDEO_EVOLUTION_CANDIDATE_001_掩耳盗铃复核经验空白候选记录_v1.0.md", "status": "blank_candidate_pending_receipt"},
+    {"order": 12, "node": "evolution_candidate_multi_case_validation", "file": "VIDEO_EVOLUTION_CANDIDATE_VALIDATION_001_多案例验证清单_v1.0.md", "status": "not_ready_for_upgrade"}
+  ],
+  "blocking_items": [
+    "generation_release_not_registered_for_VF-20260508-003",
+    "publish_release_not_registered_for_VF-20260508-003",
+    "script_revision_pending",
+    "storyboard_asset_authorization_fields_pending",
+    "platform_rules_pending",
+    "evolution_candidate_not_validated"
+  ],
+  "can_continue_w1": [
+    "revise_script_and_storyboard_draft",
+    "run_shadow_revision_acceptance_after_revision",
+    "fill_revision_receipt_after_human_review",
+    "fill_candidate_record_after_receipt",
+    "continue_multi_case_validation_after_more_cases"
+  ],
+  "cannot_do_from_this_snapshot": {
+    "render": false,
+    "publish": false,
+    "external_send": false,
+    "trigger_n8n": false,
+    "write_formal_rule_library": false
+  },
+  "self_check": "[自检: VIDEO_FACTORY_R012_CHAIN_STATUS_001已完成, 风险等级: W1, 产物: 掩耳盗铃复核链路状态快照md/json, 边界: 守住了。]"
+}

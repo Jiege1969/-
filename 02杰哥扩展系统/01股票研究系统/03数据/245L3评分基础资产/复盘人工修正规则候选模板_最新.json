@@ -1,0 +1,181 @@
+{
+  "name": "复盘人工修正规则候选模板",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:16:03",
+  "asset_identity": "W1复盘经验候选模板",
+  "status": "blank_candidate_template",
+  "source_assets": {
+    "review_loop_acceptance": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\复盘闭环验收_最新.json",
+    "review_loop_acceptance_exists": true,
+    "auto_weight_adjustment_status": "not_enabled_manual_review_only"
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "not_weight_change": true,
+  "not_formal_rule_write": true,
+  "candidates": [
+    {
+      "candidate_id": "REVIEW-CAND-001",
+      "title": "前台回答过度技术化",
+      "issue_type": "front_output_too_technical",
+      "source_example": "用户认为后台分析过程不应原样堆给前台，前台应结论先行、原因少量且明确。",
+      "related_stock": null,
+      "related_report_id": null,
+      "original_output_problem": null,
+      "human_correction": null,
+      "evidence_before": [],
+      "evidence_after": [],
+      "affected_contract_fields": [],
+      "proposed_rule_candidate": null,
+      "applicable_scope": "stock_research_shadow_or_review_candidate",
+      "review_status": "pending_review",
+      "case_count": 1,
+      "promotion_gate": {
+        "can_promote_to_experience": false,
+        "can_update_formal_rule": false,
+        "minimum_cases": 3,
+        "requires_multi_stock_validation": true,
+        "requires_human_review": true,
+        "requires_total_manager_if_formal_config": true,
+        "blocking_reason": "人工修正只能先进入复盘/经验候选；未完成多案例验证和人工复核前，不得修改正式规则或权重。"
+      },
+      "forbidden_actions": [
+        "自动改正式评分权重",
+        "自动改正式配置",
+        "自动触发企业微信外发",
+        "自动触发n8n",
+        "生成买卖/下单/仓位调整/交易建议"
+      ]
+    },
+    {
+      "candidate_id": "REVIEW-CAND-002",
+      "title": "证据缺口未被系统主动暴露",
+      "issue_type": "missing_evidence_not_surfaced",
+      "source_example": "财报、资金、行业价格等缺口应由系统主动标注，而不是等用户发现。",
+      "related_stock": null,
+      "related_report_id": null,
+      "original_output_problem": null,
+      "human_correction": null,
+      "evidence_before": [],
+      "evidence_after": [],
+      "affected_contract_fields": [],
+      "proposed_rule_candidate": null,
+      "applicable_scope": "stock_research_shadow_or_review_candidate",
+      "review_status": "pending_review",
+      "case_count": 1,
+      "promotion_gate": {
+        "can_promote_to_experience": false,
+        "can_update_formal_rule": false,
+        "minimum_cases": 3,
+        "requires_multi_stock_validation": true,
+        "requires_human_review": true,
+        "requires_total_manager_if_formal_config": true,
+        "blocking_reason": "人工修正只能先进入复盘/经验候选；未完成多案例验证和人工复核前，不得修改正式规则或权重。"
+      },
+      "forbidden_actions": [
+        "自动改正式评分权重",
+        "自动改正式配置",
+        "自动触发企业微信外发",
+        "自动触发n8n",
+        "生成买卖/下单/仓位调整/交易建议"
+      ]
+    },
+    {
+      "candidate_id": "REVIEW-CAND-003",
+      "title": "政策或市场风格凭感觉入分",
+      "issue_type": "unstructured_evidence_scoring",
+      "source_example": "政策事件和市场风格必须读取结构化证据及复核字段，不能由模型凭空补分。",
+      "related_stock": null,
+      "related_report_id": null,
+      "original_output_problem": null,
+      "human_correction": null,
+      "evidence_before": [],
+      "evidence_after": [],
+      "affected_contract_fields": [],
+      "proposed_rule_candidate": null,
+      "applicable_scope": "stock_research_shadow_or_review_candidate",
+      "review_status": "pending_review",
+      "case_count": 1,
+      "promotion_gate": {
+        "can_promote_to_experience": false,
+        "can_update_formal_rule": false,
+        "minimum_cases": 3,
+        "requires_multi_stock_validation": true,
+        "requires_human_review": true,
+        "requires_total_manager_if_formal_config": true,
+        "blocking_reason": "人工修正只能先进入复盘/经验候选；未完成多案例验证和人工复核前，不得修改正式规则或权重。"
+      },
+      "forbidden_actions": [
+        "自动改正式评分权重",
+        "自动改正式配置",
+        "自动触发企业微信外发",
+        "自动触发n8n",
+        "生成买卖/下单/仓位调整/交易建议"
+      ]
+    },
+    {
+      "candidate_id": "REVIEW-CAND-004",
+      "title": "完成小闭环后等待用户确认",
+      "issue_type": "construction_pause_after_closure",
+      "source_example": "W1/W2低风险施工完成后应自动进入下一小闭环，红线事项只登记阻断。",
+      "related_stock": null,
+      "related_report_id": null,
+      "original_output_problem": null,
+      "human_correction": null,
+      "evidence_before": [],
+      "evidence_after": [],
+      "affected_contract_fields": [],
+      "proposed_rule_candidate": null,
+      "applicable_scope": "stock_research_shadow_or_review_candidate",
+      "review_status": "pending_review",
+      "case_count": 1,
+      "promotion_gate": {
+        "can_promote_to_experience": false,
+        "can_update_formal_rule": false,
+        "minimum_cases": 3,
+        "requires_multi_stock_validation": true,
+        "requires_human_review": true,
+        "requires_total_manager_if_formal_config": true,
+        "blocking_reason": "人工修正只能先进入复盘/经验候选；未完成多案例验证和人工复核前，不得修改正式规则或权重。"
+      },
+      "forbidden_actions": [
+        "自动改正式评分权重",
+        "自动改正式配置",
+        "自动触发企业微信外发",
+        "自动触发n8n",
+        "生成买卖/下单/仓位调整/交易建议"
+      ]
+    }
+  ],
+  "intake_rules": [
+    "人工修正先进入复盘/经验候选，不直接改正式规则。",
+    "同类问题至少跨3个案例验证后，才允许提出规则升级建议。",
+    "涉及正式配置、正式脚本、企业微信入口或评分权重时，必须交回总管判断。",
+    "用户指出的问题必须转成可复核字段：原输出问题、人工修正、证据前后、适用范围、推广闸口。",
+    "复盘候选不得生成买卖、下单、仓位或交易建议。"
+  ],
+  "summary": {
+    "candidate_count": 4,
+    "formal_rule_update_allowed_count": 0,
+    "weight_change_allowed_count": 0,
+    "pending_review_count": 4
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_adapter_write": true,
+    "not_score_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_auto_weight_change": true
+  }
+}

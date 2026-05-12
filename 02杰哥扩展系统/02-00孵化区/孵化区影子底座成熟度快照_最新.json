@@ -1,0 +1,64 @@
+﻿{
+    "version":  "1.2",
+    "updated_at":  "2026-05-07 22:56:28 +08:00",
+    "status":  "shadow_maturity_snapshot_not_formal_acceptance",
+    "scores":  [
+                   {
+                       "business_line":  "tax",
+                       "name":  "税收业务影子底座",
+                       "score":  100,
+                       "level":  "L4",
+                       "dimensions":  {
+                                          "sample":  true,
+                                          "review":  true,
+                                          "boundary":  true,
+                                          "machine_readable":  true,
+                                          "handoff":  true,
+                                          "skeleton":  true,
+                                          "index":  true,
+                                          "shadow_trial_5_of_5":  true,
+                                          "daily_shadow_trial_ready":  true
+                                      },
+                       "current_use":  "小范围日常影子试用，只输出待复核草案",
+                       "formal_capability_claim":  false
+                   },
+                   {
+                       "business_line":  "office_work",
+                       "name":  "本职工作业务影子底座",
+                       "score":  100,
+                       "level":  "L4",
+                       "dimensions":  {
+                                          "sample":  true,
+                                          "review":  true,
+                                          "boundary":  true,
+                                          "machine_readable":  true,
+                                          "handoff":  true,
+                                          "skeleton":  true,
+                                          "index":  true
+                                      },
+                       "formal_capability_claim":  false
+                   },
+                   {
+                       "business_line":  "video_production",
+                       "name":  "视频制作业务影子底座",
+                       "score":  100,
+                       "level":  "L4",
+                       "dimensions":  {
+                                          "sample":  true,
+                                          "review":  true,
+                                          "boundary":  true,
+                                          "machine_readable":  true,
+                                          "handoff":  true,
+                                          "skeleton":  true,
+                                          "index":  true
+                                      },
+                       "formal_capability_claim":  false
+                   }
+               ],
+    "boundary":  {
+                     "wechat":  false,
+                     "formal_database":  false,
+                     "real_business_action":  false,
+                     "n8n":  false
+                 }
+}

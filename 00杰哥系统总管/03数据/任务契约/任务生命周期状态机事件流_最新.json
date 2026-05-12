@@ -1,0 +1,115 @@
+{
+  "生成时间": "2026-05-05 14:03:26",
+  "events": [
+    {
+      "event_id": 1,
+      "task_id": "task-20260505-lifecycle-closed-001",
+      "idempotency_key": "20260505-lifecycle-closed-001",
+      "from_status": null,
+      "to_status": "queued_shadow",
+      "event_name": "enqueue_shadow",
+      "success": 1,
+      "detail_json": "{\"error\": \"\", \"inserted\": true}",
+      "created_at": "2026-05-05 14:03:26"
+    },
+    {
+      "event_id": 2,
+      "task_id": "task-20260505-lifecycle-closed-001",
+      "idempotency_key": "20260505-lifecycle-closed-001",
+      "from_status": "queued_shadow",
+      "to_status": "admitted",
+      "event_name": "admit_shadow_task",
+      "success": 1,
+      "detail_json": "{\"guards\": {\"dry_run\": true, \"real_action_allowed\": false}, \"reason\": \"准入通过\", \"receipt\": {\"accepted\": true, \"real_action_executed\": false, \"result\": \"admitted to local shadow lifecycle\"}}",
+      "created_at": "2026-05-05 14:03:26"
+    },
+    {
+      "event_id": 3,
+      "task_id": "task-20260505-lifecycle-closed-001",
+      "idempotency_key": "20260505-lifecycle-closed-001",
+      "from_status": "admitted",
+      "to_status": "planned",
+      "event_name": "build_local_plan",
+      "success": 1,
+      "detail_json": "{\"plan\": [\"read sample task\", \"write local simulation ledger\", \"write receipt\", \"close local shadow task\"], \"rollback_plan_present\": true}",
+      "created_at": "2026-05-05 14:03:26"
+    },
+    {
+      "event_id": 4,
+      "task_id": "task-20260505-lifecycle-closed-001",
+      "idempotency_key": "20260505-lifecycle-closed-001",
+      "from_status": "planned",
+      "to_status": "dry_run_executed",
+      "event_name": "execute_dry_run_locally",
+      "success": 1,
+      "detail_json": "{\"forbidden_actions_attempted\": [], \"forbidden_actions_blocked\": [\"connect_redis\", \"trigger_n8n\", \"send_wecom\", \"write_formal_db\", \"call_model\", \"call_broker\", \"auto_trade\"], \"real_action_executed\": false}",
+      "created_at": "2026-05-05 14:03:26"
+    },
+    {
+      "event_id": 5,
+      "task_id": "task-20260505-lifecycle-closed-001",
+      "idempotency_key": "20260505-lifecycle-closed-001",
+      "from_status": "dry_run_executed",
+      "to_status": "receipt_written",
+      "event_name": "write_receipt",
+      "success": 1,
+      "detail_json": "{\"receipt\": {\"accepted\": true, \"evidence\": {\"events\": \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\任务契约\\\\任务生命周期状态机事件流_最新.json\", \"report\": \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\并行回收\\\\00总管_任务生命周期状态机回收报告_最新.json\", \"sqlite\": \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\任务契约\\\\任务生命周期状态机模拟器_最新.sqlite\"}, \"real_action_executed\": false, \"result\": \"local dry_run completed; receipt written; no real action executed\"}, \"receipt_present\": true}",
+      "created_at": "2026-05-05 14:03:26"
+    },
+    {
+      "event_id": 6,
+      "task_id": "task-20260505-lifecycle-closed-001",
+      "idempotency_key": "20260505-lifecycle-closed-001",
+      "from_status": "receipt_written",
+      "to_status": "closed",
+      "event_name": "close_shadow_task",
+      "success": 1,
+      "detail_json": "{\"closed\": true, \"receipt\": {\"accepted\": true, \"evidence\": {\"events\": \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\任务契约\\\\任务生命周期状态机事件流_最新.json\", \"report\": \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\并行回收\\\\00总管_任务生命周期状态机回收报告_最新.json\", \"sqlite\": \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\任务契约\\\\任务生命周期状态机模拟器_最新.sqlite\"}, \"real_action_executed\": false, \"result\": \"local dry_run completed; receipt written; no real action executed\"}}",
+      "created_at": "2026-05-05 14:03:26"
+    },
+    {
+      "event_id": 7,
+      "task_id": "task-20260505-lifecycle-blocked-001",
+      "idempotency_key": "20260505-lifecycle-blocked-001",
+      "from_status": null,
+      "to_status": "queued_shadow",
+      "event_name": "enqueue_shadow",
+      "success": 1,
+      "detail_json": "{\"error\": \"\", \"inserted\": true}",
+      "created_at": "2026-05-05 14:03:26"
+    },
+    {
+      "event_id": 8,
+      "task_id": "task-20260505-lifecycle-blocked-001",
+      "idempotency_key": "20260505-lifecycle-blocked-001",
+      "from_status": "queued_shadow",
+      "to_status": "admitted",
+      "event_name": "admit_for_guard_evaluation",
+      "success": 1,
+      "detail_json": "{\"guards\": {\"dry_run\": true, \"real_action_allowed\": false}, \"note\": \"进入本地守卫评估，不进入执行计划\"}",
+      "created_at": "2026-05-05 14:03:26"
+    },
+    {
+      "event_id": 9,
+      "task_id": "task-20260505-lifecycle-blocked-001",
+      "idempotency_key": "20260505-lifecycle-blocked-001",
+      "from_status": "admitted",
+      "to_status": "blocked",
+      "event_name": "rollback_plan_guard_blocked",
+      "success": 1,
+      "detail_json": "{\"reason\": \"缺少rollback_plan\", \"receipt\": {\"accepted\": false, \"real_action_executed\": false, \"result\": \"blocked: 缺少rollback_plan\"}}",
+      "created_at": "2026-05-05 14:03:26"
+    },
+    {
+      "event_id": 10,
+      "task_id": "task-20260505-lifecycle-duplicate-001",
+      "idempotency_key": "20260505-lifecycle-closed-001",
+      "from_status": null,
+      "to_status": "blocked",
+      "event_name": "duplicate_idempotency_blocked",
+      "success": 1,
+      "detail_json": "{\"error\": \"UNIQUE constraint failed: task_ledger.idempotency_key\", \"expected\": \"UNIQUE constraint failed\", \"inserted\": false}",
+      "created_at": "2026-05-05 14:03:26"
+    }
+  ]
+}

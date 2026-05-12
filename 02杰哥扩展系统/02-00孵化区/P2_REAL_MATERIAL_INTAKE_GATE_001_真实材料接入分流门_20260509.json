@@ -1,0 +1,81 @@
+{
+  "gate_id": "P2_REAL_MATERIAL_INTAKE_GATE_001",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S4",
+  "layer": "extension_incubation_cross_cutting_capability",
+  "status": "readonly_routing_gate_not_automatic_processor",
+  "purpose": "真实脱敏材料进入影子入口前，先判断来源、授权、敏感性、目标业务线、红线和人工复核状态",
+  "required_fields": [
+    "material_id",
+    "source_type",
+    "source_path_or_url",
+    "authorization_status",
+    "sensitivity",
+    "desensitized_status",
+    "target_line",
+    "can_enter_shadow",
+    "human_review_required",
+    "next_allowed_action"
+  ],
+  "routes": [
+    {
+      "target_line": "tax",
+      "entry": "TAX_DAILY_INTAKE_002",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\TAX_DAILY_INTAKE_002_脱敏问题接入空白卡_20260509.json",
+      "rule": "税收政策或涉税业务分析材料进入税收影子入口，不得直接生成正式税务意见"
+    },
+    {
+      "target_line": "office_work",
+      "entry": "OFFICE_SHADOW_002",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\本职工作业务影子底座\\OFFICE_SHADOW_002_流程资料登记_空白影子样例_v1.0.json",
+      "rule": "制度、流程、台账字段、办公资料进入本职工作影子入口，不得连接真实办公系统"
+    },
+    {
+      "target_line": "video_production",
+      "entry": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_P2_REVIEW_CHAIN_NEXT_001_脚本分镜素材授权发布门禁续建卡_20260509.json",
+      "rule": "脚本、分镜、素材授权、平台规范进入视频复核链，发布门禁保持关闭"
+    },
+    {
+      "target_line": "shared_policy_evidence",
+      "entry": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\P2_SHARED_POLICY_READONLY_NEXT_001_共享政策证据只读调用下一步卡_20260509.json",
+      "rule": "政策依据候选或公开政策来源进入共享政策证据只读入口，不得替代业务线判断"
+    },
+    {
+      "target_line": "pause",
+      "entry": "gap_or_redline_record",
+      "entry_path": "none",
+      "rule": "未授权、未脱敏、来源不清或命中真实执行请求时暂停，只记录缺口或红线阻断"
+    }
+  ],
+  "pause_conditions": [
+    "未授权",
+    "禁止使用",
+    "来源不清",
+    "敏感内容未脱敏",
+    "请求申报",
+    "请求开票",
+    "请求退税",
+    "请求交易",
+    "请求审批",
+    "请求上传",
+    "请求发布",
+    "请求外发"
+  ],
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "scan_unspecified_directory": false,
+    "copy_sensitive_material": false,
+    "tax_filing": false,
+    "invoice_action": false,
+    "tax_refund_action": false,
+    "trade": false,
+    "connect_real_office_system": false,
+    "render_upload_or_publish_video": false,
+    "claim_formal_capability": false
+  },
+  "human_review_required": true
+}

@@ -1,0 +1,32 @@
+{
+  "asset_id": "VIDEO_AGENT_SHADOW_TASK_CLOSE_RECEIPT_TEMPLATE_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_close_template_not_real_task_close",
+  "usage": [
+    "completed_shadow_loop",
+    "blocked_by_redline",
+    "cancelled_shadow",
+    "incomplete_gap"
+  ],
+  "fields": [
+    "close_receipt_id",
+    "shadow_task_id",
+    "close_type",
+    "close_reason",
+    "final_shadow_status",
+    "related_assets",
+    "human_review_reference",
+    "not_formal_release_statement"
+  ],
+  "fixed_statement": "Shadow task closure does not mean real video task completion, generation, render, upload, publish, external send, or WeCom real send.",
+  "real_system_triggered": {
+    "real_task_close": false,
+    "formal_database_write": false,
+    "historical_asset_delete": false,
+    "wecom_real_send": false,
+    "publish": false
+  }
+}

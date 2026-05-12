@@ -1,0 +1,79 @@
+{
+  "名称": "L3前台证据状态话术验收",
+  "generated_at": "2026-05-08 06:55:33",
+  "asset_identity": "自动验收报告",
+  "status": "passed",
+  "summary": {
+    "sample_count": 5,
+    "passed_count": 5,
+    "blocking_count": 0,
+    "warning_count": 2
+  },
+  "samples": [
+    {
+      "name": "云南锗业",
+      "code": "sz002428",
+      "price_status": "source_registered",
+      "why_line": "为什么：技术未确认；基本面有支撑但不充分；政策有辅助，行业价未入账；市场适配16/20。",
+      "missing_line": "缺口：锗锭具体价格、日期、单位尚未入账；锗锭尚未形成5个连续观测点；锗锭尚未形成20个连续观测点。",
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "name": "天齐锂业",
+      "code": "sz002466",
+      "price_status": "single_observation",
+      "why_line": "为什么：技术未确认；基本面偏弱；政策不强，行业价仅单点；市场适配16/20。",
+      "missing_line": "缺口：电池级碳酸锂尚未形成5个连续观测点；电池级碳酸锂尚未形成20个连续观测点；价格与公司毛利、现金流产品暴露度的量化映射尚未完成。",
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "name": "华虹公司",
+      "code": "sh688347",
+      "price_status": "not_required",
+      "why_line": "为什么：技术未确认；基本面有支撑但不充分；政策不强，行业价未入账；市场适配16/20。",
+      "missing_line": "缺口：更高分受制于政策事件未结构化、2026一季报缺失晶圆代工经营拆分不足。",
+      "blocking": [],
+      "warnings": [
+        "前台未显式说明行业价格状态；当前可接受，但后续若加行业价格卡需同步更新"
+      ],
+      "passed": true
+    },
+    {
+      "name": "浙商中拓",
+      "code": "sz000906",
+      "price_status": "not_required",
+      "why_line": "为什么：技术未确认；基本面偏弱；政策不强，行业价未入账；市场适配16/20。",
+      "missing_line": "缺口：更高分受制于成交不足、扣非弱、供应链风控字段缺失、政策事件仍需结构化补强。",
+      "blocking": [],
+      "warnings": [
+        "前台未显式说明行业价格状态；当前可接受，但后续若加行业价格卡需同步更新"
+      ],
+      "passed": true
+    },
+    {
+      "name": "正丹股份",
+      "code": "sz300641",
+      "price_status": "source_registered",
+      "why_line": "为什么：技术未确认；基本面偏弱；政策不强，行业价未入账；市场适配16/20。",
+      "missing_line": "缺口：更高分受制于价格低于修复区、成交不足、业绩下滑、产品价格资金证据缺失；偏苯三酸酐/TMA具体价格、日期、单位尚未入账；偏苯三酸酐/TMA尚未形成5个连续观测点。",
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    }
+  ],
+  "blocking": [],
+  "warnings": [
+    "华虹公司：前台未显式说明行业价格状态；当前可接受，但后续若加行业价格卡需同步更新",
+    "浙商中拓：前台未显式说明行业价格状态；当前可接受，但后续若加行业价格卡需同步更新"
+  ],
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

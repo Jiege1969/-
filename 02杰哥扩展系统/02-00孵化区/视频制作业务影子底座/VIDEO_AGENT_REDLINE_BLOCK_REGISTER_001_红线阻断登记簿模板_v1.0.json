@@ -1,0 +1,43 @@
+{
+  "asset_id": "VIDEO_AGENT_REDLINE_BLOCK_REGISTER_001",
+  "name": "红线阻断登记簿模板",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:52:00 +08:00",
+  "risk_level": "低风险",
+  "purpose": "登记连续施工中命中的红线，并转向低风险影子替代动作",
+  "register_fields": [
+    "阻断编号",
+    "触发指令",
+    "命中红线类型",
+    "风险说明",
+    "当前状态",
+    "替代影子动作",
+    "是否触发真实系统",
+    "是否需要总管整合",
+    "下一步 W1/R0 候选"
+  ],
+  "redline_types": [
+    "真实模型",
+    "真实渲染",
+    "真实发布",
+    "n8n",
+    "企业微信真实外发",
+    "服务端口",
+    "总管文件",
+    "公共组件",
+    "正式库",
+    "真实账号"
+  ],
+  "alternative_rules": {
+    "真实模型": "生成模型接入前置条件清单",
+    "真实渲染": "生成真实渲染放行缺口卡",
+    "真实发布": "生成发布前最终门禁摘要",
+    "企业微信真实外发": "生成企业微信回执草案",
+    "越权写入": "生成本线对齐回传记录"
+  },
+  "boundary": {
+    "execute_redline_action": false,
+    "real_system_triggered": false,
+    "requires_manager_when_integrating": true
+  }
+}

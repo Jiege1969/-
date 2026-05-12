@@ -1,0 +1,100 @@
+{
+  "receipt_id": "PAR_WECOM_20260508_D",
+  "generated_at": "2026-05-08 19:11:18 +08:00",
+  "parallel_line": "D",
+  "asset_name": "企业微信接入层只读核查回执",
+  "risk_level": "W1/R0",
+  "status": "pass",
+  "red_line_hits": 0,
+  "needs_manager_decision": false,
+  "write_scope_confirmed": true,
+  "created_files": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_WECOM_20260508_D_企业微信接入层只读核查回执.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_WECOM_20260508_D_企业微信接入层只读核查回执.json",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\03数据\\PAR_WECOM_20260508_D_企业微信接入层只读核查回执.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\03数据\\PAR_WECOM_20260508_D_企业微信接入层只读核查回执.json"
+  ],
+  "modified_files": [],
+  "read_anchors": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\当前施工面板.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\开工上下文\\一键接续施工包_最新.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\新对话框并行派工单_日常版稳定版_20260508.md"
+  ],
+  "evidence_files": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\01配置\\企业微信机器人终端分工总表.json",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\03数据\\通讯路径登记\\企业微信助手通讯路径_最新.json",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_TRIAL_WECOM_001_机器人入口边界回归检查记录_20260508.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\03数据\\CTRL_CAND_WECOM_002_视频助理智能体入口只读对齐记录_20260508.md"
+  ],
+  "entry_route_checks": [
+    {
+      "entry": "杰哥股票分析助手",
+      "paths": ["/wecom-bot/message"],
+      "route_target": "股票研究系统",
+      "result": "pass",
+      "boundary": "只做研究入口；交易、券商接口、自动下单拦截"
+    },
+    {
+      "entry": "杰哥的股票分析专家",
+      "paths": ["/wecom/message", "/wecom-bot/message?view=stock-reco"],
+      "route_target": "股票研究系统",
+      "result": "pass",
+      "boundary": "只做研究总览入口；不真实主动发送"
+    },
+    {
+      "entry": "杰哥系统管家",
+      "paths": ["/wecom/system-manager"],
+      "route_target": "总管状态、进度、健康、接续入口",
+      "result": "pass",
+      "boundary": "不接管业务判断"
+    },
+    {
+      "entry": "杰哥工作秘书",
+      "paths": ["/wecom/work-secretary"],
+      "route_target": "扩展系统通用入口",
+      "result": "pass",
+      "boundary": "不升级为正式税务入口，不输出正式税务结论"
+    },
+    {
+      "entry": "杰哥视频助理",
+      "paths": ["/wecom/video-assistant"],
+      "route_target": "视频制作系统影子链路",
+      "result": "pass",
+      "boundary": "不渲染、不上传、不发布"
+    }
+  ],
+  "safety_ban_checks": {
+    "real_wecom_send": false,
+    "trigger_n8n": false,
+    "trigger_webhook": false,
+    "modify_service_scripts": false,
+    "restart_19310": false,
+    "restart_19302": false,
+    "write_formal_database": false,
+    "take_over_business_judgement": false,
+    "call_broker_or_trade": false,
+    "tax_filing_or_tax_execution": false,
+    "video_render_upload_publish": false
+  },
+  "service_change_checks": {
+    "script_directory_read_only": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\02脚本",
+    "service_scripts_modified": false,
+    "service_manager_script_called": false,
+    "ports_restarted": false,
+    "business_endpoint_called": false,
+    "key_script_hashes": {
+      "企业微信统一指令本地服务入口.py": "F3C823E30D5A7F8C5A463ABAE48BEF94CDF6BCAE378EC2BE9953059410F2F44B",
+      "管理企业微信统一指令本地服务.py": "9B00A8039AA106789985FCA559CA40FCD8D98545C87CB376E5746828072CACFD",
+      "执行企业微信真实发送禁用态检查.py": "CE4B5B6F67C1F371E28D3C01995F77E182B4676A00E9F659678D3B4334FAA16C",
+      "执行企业微信公共接入层日常只读巡检.py": "D8BAD6E723072CF0E3E8502A0F207DD9E721EE6FE6542815A33BA088F6EEF363"
+    }
+  },
+  "receipt_draft": {
+    "parallel_line": "D 企业微信接入层只读核查线",
+    "completion": "入口、路由、安全禁令、真实发送禁用、n8n禁用、服务脚本不变均完成只读核查。",
+    "red_line_hits": 0,
+    "needs_manager_decision": false,
+    "boundary_confirmation": "未外发、未n8n、未真实系统接入、未正式库、未交易、未税务办理、未视频发布、未重启19310/19302、未修改服务脚本。"
+  },
+  "boundary_statement": "本回执只确认企业微信接入层作为通讯适配层、路由登记层和安全闸门层的只读状态，不代表正式上线、真实外发、n8n启用、服务变更、税务办理、交易、视频生成或发布放行。"
+}

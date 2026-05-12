@@ -1,0 +1,48 @@
+{
+  "record_id": "VIDEO_AGENT_VAI_097_099_HANDOFF_20260508",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "work_scope": "W1/W2 low-risk shadow construction",
+  "round_summary": [
+    "Created final human confirmation quality checklist.",
+    "Created WeCom submit-human-confirmation refusal reply sample.",
+    "Created VAI001-VAI096 line asset index draft v6."
+  ],
+  "changed_files": [
+    "VIDEO_AGENT_FINAL_HUMAN_CONFIRMATION_QUALITY_CHECK_001_发布前最终人工确认质量检查清单_v1.0.md",
+    "VIDEO_AGENT_FINAL_HUMAN_CONFIRMATION_QUALITY_CHECK_001_发布前最终人工确认质量检查清单_v1.0.json",
+    "VIDEO_AGENT_WECOM_SUBMIT_HUMAN_CONFIRMATION_REFUSAL_REPLY_001_企业微信提交人工确认拒绝回执样例_v1.0.md",
+    "VIDEO_AGENT_WECOM_SUBMIT_HUMAN_CONFIRMATION_REFUSAL_REPLY_001_企业微信提交人工确认拒绝回执样例_v1.0.json",
+    "VIDEO_AGENT_LINE_ASSET_INDEX_DRAFT_006_VAI001至VAI096本线资产索引草案_v6.0.md",
+    "VIDEO_AGENT_LINE_ASSET_INDEX_DRAFT_006_VAI001至VAI096本线资产索引草案_v6.0.json",
+    "VIDEO_AGENT_VAI_097_099_对齐回传记录_20260508.md",
+    "VIDEO_AGENT_VAI_097_099_对齐回传记录_20260508.json"
+  ],
+  "risk_level": "low",
+  "real_system_triggered": {
+    "model_api": false,
+    "material_read": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "real_account_cookie_or_api_key_read": false,
+    "platform_upload_or_publish": false,
+    "service_port_manager_public_or_formal_change": false
+  },
+  "requires_manager_integration": false,
+  "manager_integration_note": "Future integration of final human confirmation into a real manager decision entry must return to manager decision.",
+  "next_suggestions": [
+    "Create VAI094-VAI099 mini-stage rollup.",
+    "Create final confirmation missing-material checklist template.",
+    "Create WeCom final-confirmation missing-material reply sample."
+  ],
+  "self_check": {
+    "read_panel_and_start_package_first": true,
+    "write_scope_limited_to_video_shadow_base": true,
+    "json_validated_by_convertfrom_json": true,
+    "scan_hits_are_publish_block_refusal_or_no_connection_boundary_statements": true,
+    "no_real_execution": true,
+    "no_manager_public_service_formal_or_other_line_changes": true
+  }
+}

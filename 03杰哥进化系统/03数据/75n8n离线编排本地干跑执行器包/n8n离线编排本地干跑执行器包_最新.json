@@ -1,0 +1,254 @@
+{
+  "name": "n8n离线编排本地干跑执行器包",
+  "version": "offline-local-dryrun-executor-v1",
+  "generated_at": "2026-05-08 17:52:29",
+  "status": "offline_local_dryrun_executor_ready",
+  "mode": "offline/dry_run",
+  "executor_kind": "local_offline_dry_run",
+  "global_guard": {
+    "mode": "offline/dry_run",
+    "offline": true,
+    "dry_run": true,
+    "real_trigger": false,
+    "webhook_enabled": false,
+    "network_request_enabled": false,
+    "n8n_connection_enabled": false,
+    "external_send_enabled": false,
+    "config_change_enabled": false,
+    "service_reload_enabled": false,
+    "enterprise_wechat_send_enabled": false
+  },
+  "embedded_blueprint": {
+    "name": "n8n离线编排本地干跑内置蓝图",
+    "version": "offline-local-dryrun-blueprint-v1",
+    "generated_at": "2026-05-08 17:52:29",
+    "based_on": {
+      "source_blueprint_path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\72n8n离线编排蓝图与禁触发验收包\\n8n离线编排蓝图_最新.json",
+      "source_package_path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\72n8n离线编排蓝图与禁触发验收包\\n8n离线编排蓝图与禁触发验收包_最新.json",
+      "source_blueprint_exists": true,
+      "source_package_exists": true,
+      "source_node_count": 5,
+      "source_version": "offline-blueprint-v1",
+      "source_status": "offline_blueprint_ready",
+      "source_guards_observed": {
+        "real_trigger": false,
+        "webhook_enabled": false,
+        "network_request_enabled": false
+      }
+    },
+    "scope": "只读本地干跑；不接 n8n；不启用 webhook；不请求网络；不真实发送企业微信。",
+    "mode": "offline/dry_run",
+    "global_guard": {
+      "mode": "offline/dry_run",
+      "offline": true,
+      "dry_run": true,
+      "real_trigger": false,
+      "webhook_enabled": false,
+      "network_request_enabled": false,
+      "n8n_connection_enabled": false,
+      "external_send_enabled": false,
+      "config_change_enabled": false,
+      "service_reload_enabled": false,
+      "enterprise_wechat_send_enabled": false
+    },
+    "workflow": {
+      "flow": [
+        "N01",
+        "N02",
+        "N03",
+        "N04",
+        "N05"
+      ],
+      "nodes": [
+        {
+          "id": "N01",
+          "name": "收到离线消息样本",
+          "kind": "local_offline_dry_run_node",
+          "purpose": "读取人工转录或第三轮蓝图中的离线消息样本，生成标准化本地对象。",
+          "mode": "offline/dry_run",
+          "offline": true,
+          "dry_run": true,
+          "real_trigger": false,
+          "webhook_enabled": false,
+          "network_request_enabled": false,
+          "n8n_connection_enabled": false,
+          "external_send_enabled": false,
+          "config_change_enabled": false,
+          "service_reload_enabled": false,
+          "enterprise_wechat_send_enabled": false,
+          "read_only_input": [
+            "离线消息文本副本",
+            "本地只读蓝图摘要"
+          ],
+          "simulated_output": [
+            "标准化消息对象候选"
+          ],
+          "ready_rule": "仅使用上一节点的本地模拟输出；无外部触发。",
+          "blocked_rule": "命中红线或等待总管确认时阻断。",
+          "wait_for_supervisor": false
+        },
+        {
+          "id": "N02",
+          "name": "离线分类与红线识别",
+          "kind": "local_offline_dry_run_node",
+          "purpose": "按业务线、风险等级、是否触碰红线做本地规则分类。",
+          "mode": "offline/dry_run",
+          "offline": true,
+          "dry_run": true,
+          "real_trigger": false,
+          "webhook_enabled": false,
+          "network_request_enabled": false,
+          "n8n_connection_enabled": false,
+          "external_send_enabled": false,
+          "config_change_enabled": false,
+          "service_reload_enabled": false,
+          "enterprise_wechat_send_enabled": false,
+          "read_only_input": [
+            "标准化消息对象候选"
+          ],
+          "simulated_output": [
+            "离线分类结果候选",
+            "红线命中说明候选"
+          ],
+          "ready_rule": "仅使用上一节点的本地模拟输出；无外部触发。",
+          "blocked_rule": "命中红线或等待总管确认时阻断。",
+          "wait_for_supervisor": false
+        },
+        {
+          "id": "N03",
+          "name": "只读脚本核对模拟",
+          "kind": "local_offline_dry_run_node",
+          "purpose": "模拟只读脚本核对结果，只产生摘要，不调度任何真实脚本或外部服务。",
+          "mode": "offline/dry_run",
+          "offline": true,
+          "dry_run": true,
+          "real_trigger": false,
+          "webhook_enabled": false,
+          "network_request_enabled": false,
+          "n8n_connection_enabled": false,
+          "external_send_enabled": false,
+          "config_change_enabled": false,
+          "service_reload_enabled": false,
+          "enterprise_wechat_send_enabled": false,
+          "read_only_input": [
+            "离线分类结果候选",
+            "本地只读资料路径摘要"
+          ],
+          "simulated_output": [
+            "只读核对摘要候选",
+            "异常阻断说明候选"
+          ],
+          "ready_rule": "仅使用上一节点的本地模拟输出；无外部触发。",
+          "blocked_rule": "命中红线或等待总管确认时阻断。",
+          "wait_for_supervisor": false
+        },
+        {
+          "id": "N04",
+          "name": "候选回传草稿生成",
+          "kind": "local_offline_dry_run_node",
+          "purpose": "生成等待人工审阅的候选回传草稿，保持离线候选状态。",
+          "mode": "offline/dry_run",
+          "offline": true,
+          "dry_run": true,
+          "real_trigger": false,
+          "webhook_enabled": false,
+          "network_request_enabled": false,
+          "n8n_connection_enabled": false,
+          "external_send_enabled": false,
+          "config_change_enabled": false,
+          "service_reload_enabled": false,
+          "enterprise_wechat_send_enabled": false,
+          "read_only_input": [
+            "只读核对摘要候选"
+          ],
+          "simulated_output": [
+            "候选回传草稿",
+            "禁止自动发送说明"
+          ],
+          "ready_rule": "仅使用上一节点的本地模拟输出；无外部触发。",
+          "blocked_rule": "命中红线或等待总管确认时阻断。",
+          "wait_for_supervisor": false
+        },
+        {
+          "id": "N05",
+          "name": "总管确认闸口",
+          "kind": "local_offline_dry_run_node",
+          "purpose": "所有候选输出停在总管确认闸口，不自动放行。",
+          "mode": "offline/dry_run",
+          "offline": true,
+          "dry_run": true,
+          "real_trigger": false,
+          "webhook_enabled": false,
+          "network_request_enabled": false,
+          "n8n_connection_enabled": false,
+          "external_send_enabled": false,
+          "config_change_enabled": false,
+          "service_reload_enabled": false,
+          "enterprise_wechat_send_enabled": false,
+          "read_only_input": [
+            "候选回传草稿",
+            "红线命中说明候选"
+          ],
+          "simulated_output": [
+            "待总管确认记录",
+            "人工处理建议"
+          ],
+          "ready_rule": "仅使用上一节点的本地模拟输出；无外部触发。",
+          "blocked_rule": "命中红线或等待总管确认时阻断。",
+          "wait_for_supervisor": true
+        }
+      ],
+      "edges": [
+        {
+          "from": "N01",
+          "to": "N02",
+          "mode": "offline/dry_run",
+          "real_trigger": false,
+          "webhook_enabled": false
+        },
+        {
+          "from": "N02",
+          "to": "N03",
+          "mode": "offline/dry_run",
+          "real_trigger": false,
+          "webhook_enabled": false
+        },
+        {
+          "from": "N03",
+          "to": "N04",
+          "mode": "offline/dry_run",
+          "real_trigger": false,
+          "webhook_enabled": false
+        },
+        {
+          "from": "N04",
+          "to": "N05",
+          "mode": "offline/dry_run",
+          "real_trigger": false,
+          "webhook_enabled": false
+        }
+      ]
+    },
+    "red_lines": [
+      "不接 n8n",
+      "不触发 webhook",
+      "不请求网络",
+      "不改配置",
+      "不重载服务",
+      "不真实发送企业微信"
+    ]
+  },
+  "expected_outputs": {
+    "dryrun_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\75n8n离线编排本地干跑执行器包\\n8n离线编排本地干跑报告_最新.json",
+    "dryrun_markdown": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\75n8n离线编排本地干跑执行器包\\n8n离线编排本地干跑报告_最新.md",
+    "verify_log": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线编排本地干跑执行器包验收\\n8n-offline-local-dryrun-executor-verify-最新.json"
+  },
+  "acceptance_rules": [
+    "节点数不少于 5。",
+    "所有节点保持 offline/dry_run。",
+    "所有节点 real_trigger=false。",
+    "所有节点 webhook_enabled=false。",
+    "干跑报告 error_count=0。",
+    "所有输出只保留本地模拟结果，停在总管确认闸口。"
+  ]
+}

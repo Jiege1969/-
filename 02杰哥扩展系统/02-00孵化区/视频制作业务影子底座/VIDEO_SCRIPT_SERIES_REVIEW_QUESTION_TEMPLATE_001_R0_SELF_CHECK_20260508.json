@@ -1,0 +1,25 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SERIES_REVIEW_QUESTION_TEMPLATE_001_R0_SELF_CHECK",
+  "created_at": "2026-05-08 13:42:00 +08:00",
+  "risk_level": "W1/R0",
+  "target_asset": "VIDEO_SCRIPT_SERIES_REVIEW_QUESTION_TEMPLATE_001",
+  "status": "passed",
+  "checks": {
+    "asset_identity_clear": true,
+    "review_dimensions_complete": true,
+    "output_fields_clear": true,
+    "redline_boundary_clear": true,
+    "json_parse_passed": true,
+    "index_updated": true
+  },
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "edit_formal_script": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "connect_platform": false,
+    "modify_formal_video_system": false
+  }
+}

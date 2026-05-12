@@ -1,0 +1,68 @@
+{
+  "id": "VIDEO_AGENT_SHADOW_STATUS_ENUM_MAPPING_001",
+  "name": "影子状态枚举对照表",
+  "asset_identity": "video_creation_agent_shadow_status_enum_mapping",
+  "stage": "W1_R0",
+  "status": "status_mapping_not_real_state_machine",
+  "states": [
+    {
+      "state": "intake_pending",
+      "meaning": "waiting_for_desensitized_input",
+      "next": "intake_prompt_template",
+      "not_meaning": "real_entry_integrated"
+    },
+    {
+      "state": "intake_checked",
+      "meaning": "desensitization_and_redline_check_done",
+      "next": "clarification_or_three_option",
+      "not_meaning": "generation_approval"
+    },
+    {
+      "state": "clarification_needed",
+      "meaning": "key_fields_missing",
+      "next": "one_clarification_question",
+      "not_meaning": "service_refusal"
+    },
+    {
+      "state": "option_draft_ready",
+      "meaning": "three_option_text_draft_can_be_created",
+      "next": "human_review",
+      "not_meaning": "final_script"
+    },
+    {
+      "state": "human_review_pending",
+      "meaning": "waiting_for_human_review",
+      "next": "human_receipt",
+      "not_meaning": "pre_publish_approval"
+    },
+    {
+      "state": "revision_pending",
+      "meaning": "waiting_for_revision",
+      "next": "revision_flow_sample",
+      "not_meaning": "automatic_rewrite"
+    },
+    {
+      "state": "redline_blocked",
+      "meaning": "redline_hit",
+      "next": "block_register_and_shadow_alternative",
+      "not_meaning": "manager_approval"
+    },
+    {
+      "state": "shadow_closed",
+      "meaning": "shadow_task_can_be_closed",
+      "next": "close_condition_checklist",
+      "not_meaning": "real_task_closed"
+    },
+    {
+      "state": "evolution_candidate_pending",
+      "meaning": "experience_can_enter_candidate_pool",
+      "next": "evolution_candidate_intake",
+      "not_meaning": "formal_rule"
+    }
+  ],
+  "principles": [
+    "shadow_status_only",
+    "state_change_must_be_logged",
+    "no_state_auto_approves_generation_render_publish_or_external_send"
+  ]
+}

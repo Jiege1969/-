@@ -1,0 +1,76 @@
+﻿{
+    "report":  "摸清家底找差距第四轮最终验收",
+    "generated_at":  "2026-05-06 09:43:24 +08:00",
+    "docker":  {
+                   "images":  [
+                                  "ollama/ollama:0.20.5",
+                                  "docker.m.daocloud.io/ollama/ollama:0.20.5",
+                                  "n8nio/n8n:1.123.30",
+                                  "redis:7.2.5-alpine"
+                              ],
+                   "volume_count":  0,
+                   "containers":  [
+                                      "jiege_v3_ollama|ollama/ollama:0.20.5|127.0.0.1:29134",
+                                      "jiege_v3_redis|redis:7.2.5-alpine|127.0.0.1:26379",
+                                      "jiege_v3_n8n|n8nio/n8n:1.123.30|127.0.0.1:28679"
+                                  ]
+               },
+    "service_health":  {
+                           "blood_probe_failed_count":  0,
+                           "blood_probe_ready":  true,
+                           "ollama":  200,
+                           "redis_tcp":  true,
+                           "n8n":  200
+                       },
+    "n8n":  {
+                "workflow_active":  0,
+                "workflow_total":  5,
+                "sqlite_integrity":  "ok"
+            },
+    "scheduled_tasks":  {
+                            "old_deleted":  7,
+                            "new_tasks_ready":  true,
+                            "new_named_tasks":  8
+                        },
+    "temp_dirs":  {
+                      "intelligence_files":  6,
+                      "manager_files":  1,
+                      "stock_temp_files":  0
+                  },
+    "log_cleanup":  {
+                        "archive_copy_exists":  false,
+                        "reviewed_deleted_bytes":  557512,
+                        "reviewed_deleted_files":  229
+                    },
+    "ollama_volume_cleanup":  {
+                                  "final_docker_volume_count":  0,
+                                  "main_ollama_uses_D_bind_mount":  true,
+                                  "deleted_volumes":  [
+                                                          "ollama",
+                                                          "ollama_data"
+                                                      ]
+                              },
+    "valid_json":  true,
+    "remaining_true_gaps":  [
+
+                            ],
+    "safety":  {
+                   "stopped_wsl":  false,
+                   "auto_trade":  false,
+                   "sent_wecom":  false,
+                   "triggered_n8n":  false,
+                   "stopped_services":  false,
+                   "used_prune":  false,
+                   "deleted_F_backup":  false,
+                   "deleted_D_models":  false,
+                   "called_broker_api":  false
+               },
+    "runtime_ledger":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\本机工具运行时\\资产台账\\本机工具运行时版本来源台账_最新.md/json",
+    "wsl_precheck":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\WSL2一致性备份执行前核验_最新.md/json",
+    "wsl2_consistent_backup":  {
+                                   "target":  "F:\\系统备份\\WSL2一致性备份_20260506_090045",
+                                   "manifest":  "F:\\系统备份\\WSL2一致性备份_20260506_090045\\backup_manifest.json",
+                                   "all_hashes_match":  true,
+                                   "ledger":  "F:\\系统备份\\备份总台账_最新.md/json"
+                               }
+}

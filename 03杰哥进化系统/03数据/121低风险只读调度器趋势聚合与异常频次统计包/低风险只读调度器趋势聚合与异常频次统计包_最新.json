@@ -1,0 +1,62 @@
+{
+  "name": "低风险只读调度器趋势聚合与异常频次统计包",
+  "generated_at": "2026-05-08 21:38:52",
+  "status": "trend_frequency_preview_generated",
+  "data_dir": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\121低风险只读调度器趋势聚合与异常频次统计包",
+  "log_dir": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器趋势聚合与异常频次统计包验收",
+  "day_count": 7,
+  "trend_generated": true,
+  "source_files_modified": false,
+  "external_call": false,
+  "outputs": {
+    "rule_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\121低风险只读调度器趋势聚合与异常频次统计包\\趋势统计规则_最新.json",
+    "rule_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\121低风险只读调度器趋势聚合与异常频次统计包\\趋势统计规则_最新.md",
+    "sample_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\121低风险只读调度器趋势聚合与异常频次统计包\\趋势聚合样本_最新.json",
+    "sample_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\121低风险只读调度器趋势聚合与异常频次统计包\\趋势聚合样本_最新.md",
+    "package_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\121低风险只读调度器趋势聚合与异常频次统计包\\低风险只读调度器趋势聚合与异常频次统计包_最新.json",
+    "package_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\121低风险只读调度器趋势聚合与异常频次统计包\\低风险只读调度器趋势聚合与异常频次统计包_最新.md",
+    "trend_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\121低风险只读调度器趋势聚合与异常频次统计包\\趋势聚合结果_最新.json",
+    "trend_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\121低风险只读调度器趋势聚合与异常频次统计包\\趋势聚合结果_最新.md",
+    "anomaly_frequency_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\121低风险只读调度器趋势聚合与异常频次统计包\\异常频次统计报告_最新.json",
+    "anomaly_frequency_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\121低风险只读调度器趋势聚合与异常频次统计包\\异常频次统计报告_最新.md",
+    "preview_log": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器趋势聚合与异常频次统计包验收\\low-risk-readonly-scheduler-trend-frequency-preview-最新.json"
+  },
+  "source_metrics": {
+    "source_file_count": 7,
+    "source_pass_count": 7,
+    "pause_count_from_sources": 6,
+    "confirmation_count_from_sources": 12,
+    "retention_notice_count_from_sources": 4,
+    "redline_simulation_hit_count_from_sources": 6,
+    "cross_day_manual_review_count_from_sources": 3
+  },
+  "hard_red_line_confirmation": {
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "write_formal_rule": false,
+    "auto_promote_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false,
+    "external_call": false
+  },
+  "updated_at": "2026-05-08 21:38:56",
+  "metrics": {
+    "daily_total_count": 61,
+    "daily_pass_count": 59,
+    "pass_rate": 0.9672,
+    "pause_count": 5,
+    "confirmation_count": 13,
+    "retention_notice_count": 7,
+    "redline_simulation_hit_count": 9,
+    "pause_frequency_per_day": 0.7143,
+    "confirmation_frequency_per_day": 1.8571,
+    "retention_notice_frequency_per_day": 1.0,
+    "redline_hit_frequency_per_day": 1.2857
+  }
+}

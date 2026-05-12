@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-05-07",
+  "status": "shadow_capability_coverage_not_formal_acceptance",
+  "boundary": {
+    "n8n": false,
+    "wechat": false,
+    "formal_database": false,
+    "real_business_action": false
+  },
+  "business_lines": ["tax", "office_work", "video_production"],
+  "coverage_summary": {
+    "shadow_skeleton": "covered",
+    "human_gate": "covered",
+    "shadow_index_anchor": "covered",
+    "safety_gate": "covered",
+    "data_source_list": "covered",
+    "evolution_candidate_layer": "covered",
+    "shadow_acceptance": "covered",
+    "readonly_precheck": "partial",
+    "failure_closure": "todo",
+    "source_first_governance": "todo",
+    "model_routing": "deferred",
+    "service_bloodline": "not_applicable_no_formal_service",
+    "entry_tool_layering": "deferred"
+  },
+  "next_focus": [
+    "failure_closure_shadow_rule",
+    "source_first_shadow_rule",
+    "readonly_precheck_detail"
+  ],
+  "formal_capability_claim": false
+}

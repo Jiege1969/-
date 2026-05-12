@@ -1,0 +1,33 @@
+{
+  "asset_id": "VIDEO_AGENT_RENDER_RELEASE_GAP_CARD_001",
+  "name": "真实渲染放行缺口卡",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:02:00 +08:00",
+  "risk_level": "低风险",
+  "purpose": "把生成或渲染意图转为真实渲染放行缺口检查，不执行渲染",
+  "gap_fields": [
+    "任务ID",
+    "脚本草案版本",
+    "分镜草案版本",
+    "素材授权证明",
+    "音色/配音授权",
+    "字幕/画幅参数",
+    "生成放行状态",
+    "真实渲染放行状态",
+    "失败回滚路径"
+  ],
+  "conclusions": [
+    "真实渲染放行缺口已关闭，等待总管判断是否进入 W3",
+    "真实渲染放行缺口未关闭，保持待人工复核",
+    "命中素材或授权阻断，不得进入真实渲染"
+  ],
+  "boundary": {
+    "call_money_printer_turbo": false,
+    "call_happy_horse": false,
+    "call_qwen_tts": false,
+    "read_real_assets": false,
+    "render": false,
+    "voice_generation": false,
+    "real_system_triggered": false
+  }
+}

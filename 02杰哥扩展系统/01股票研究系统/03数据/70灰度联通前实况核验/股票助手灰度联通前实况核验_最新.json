@@ -1,0 +1,64 @@
+{
+  "生成时间": "2026-04-30 10:02:24",
+  "检查项": [
+    {
+      "名称": "隔离n8n运行",
+      "通过": true,
+      "说明": "{\"Command\":\"\\\"tini -- /docker-ent…\\\"\",\"CreatedAt\":\"2026-04-28 17:50:03 +0800 CST\",\"ID\":\"afcf2e781b18\",\"Image\":\"n8nio/n8n:1.123.30\",\"Labels\":\"com.docker.compose.config-hash=7a306083f071f31a1dade48a271b63b88c78ff6073a18118c03b5fee4b53d604,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.image=sha256:fb8b8f908d26bfa51f11ad37438cb0748d980ae7e85c7caf2e51c38336cfd9f5,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=D:\\\\杰哥智能化系统\\\\01杰哥智能系统\\\\01配置\\\\docker-compose.n8n隔离.yml,com.docker.compose.project.working_dir=D:\\\\杰哥智能化系统\\\\01杰哥智能系统\\\\01配置,com.docker.compose.project=01,com.docker.compose.service=n8n,com.docker.compose.version=5.1.1,com.docker.dhi.chain-id=sha256:944769358dd7f77ef0ea2ae34d07317f84e07d5449adfdb9f763ac479326f348,com.docker.dhi.compliance=cis,com.docker.dhi.created=2026-02-20T09:02:53Z,com.docker.dhi.date.end-of-life=2028-04-30,com.docker.dhi.date.release=2025-05-06,com.docker.dhi.definition=image/node/alpine-3.22/24-dev,com.docker.dhi.distro=alpine-3.22,com.docker.dhi.flavor=,com.docker.dhi.name=dhi/node,com.docker.dhi.package-manager=apk,com.docker.dhi.shell=busybox,com.docker.dhi.title=Node.js 24.x (dev),com.docker.dhi.url=https://dhi.io/catalog/node,com.docker.dhi.variant=dev,com.docker.dhi.version=24.13.1-alpine3.22-dev,desktop.docker.io/binds/0/Source=D:\\\\杰哥智能化系统\\\\01杰哥智能系统\\\\03数据\\\\n8n,desktop.docker.io/binds/0/SourceKind=hostFile,desktop.docker.io/binds/0/Target=/home/node/.n8n,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/5678/tcp=127.0.0.1:28679,org.opencontainers.image.description=Workflow Automation Tool,org.opencontainers.image.source=https://github.com/n8n-io/n8n,org.opencontainers.image.title=n8n,org.opencontainers.image.url=https://n8n.io,org.opencontainers.image.version=1.123.30\",\"LocalVolumes\":\"0\",\"Mounts\":\"/run/desktop/m…\",\"Names\":\"jiege_v3_n8n\",\"Networks\":\"jiege_v3_n8n_isolated_network\",\"Platform\":{\"architecture\":\"amd64\",\"os\":\"linux\"},\"Ports\":\"127.0.0.1:28679-\\u003e5678/tcp\",\"RunningFor\":\"40 hours ago\",\"Size\":\"78MB (virtual 1.57GB)\",\"State\":\"running\",\"Status\":\"Up 27 hours\"}"
+    },
+    {
+      "名称": "工作流已导入且未激活",
+      "通过": true,
+      "说明": "urKB3BwGfDWQMKb5|股票助手企业微信查询适配器未激活导入件\nUwmWRz52D4qadUYd|股票助手企业微信Webhook灰度入口未激活\nFK0r0xYn2nPQgCPx|股票助手n8n本地执行回环测试\nRF534hTCj7N6m6vy|股票助手n8n本地执行回环测试\n4P4ldgMzZ8nRNaDd|股票助手n8n本地执行回环测试\neAY2y1kLFm3Gyrcy|股票助手n8n本地执行回环测试\nOeyaknVZSA2RABFt|股票助手n8n本地执行回环测试\nK906i24mfbVGxumb|股票助手n8n本地执行回环测试\nQiENCDaj78FNsaXx|股票助手n8n本地执行回环测试\nHyIjOwirlmCeWyCC|股票助手n8n本地执行回环测试\nfAFFV8rDTjpLDvjx|股票助手n8n本地执行回环测试\nTg5HWL7JKS2GO3qX|股票助手n8n本地执行回环测试\n8qwseYsm9EEB9KoQ|股票助手n8n本地执行回环测试\nc9ji6XTTiEQoTXgY|股票助手n8n本地执行回环测试\nBE8M52u8vssadSuI|股票助手n8n本地执行回环测试\n8y3ZfyX7JNV4IEzh|股票助手n8n本地执行回环测试\npiLx0WXS5hWQpvZy|股票助手n8n本地执行回环测试\nBZi2lI4seytDqyq0|股票助手n8n本地执行回环测试\nFGUU7TdHB5QeIS9q|股票助手n8n本地执行回环测试\nVA7aiQ9gs1hGchpo|股票助手n8n本地执行回环测试\nOXKmXiUCTEB68a5W|股票助手n8n本地执行回环测试\nLkCRi7aHvc7dZJea|股票助手n8n本地执行回环测试\nqfkOojY6toxoBQNy|股票助手n8n本地执行回环测试\nj0vZweUirm8VMfzG|股票助手n8n本地执行回环测试\nrfHx3FHMV2DVz4lz|股票助手n8n本地执行回环测试\nEWRYw9uNGQm1mQIz|股票助手n8n本地执行回环测试\n9HjJzF44n8jcPvy4|股票助手n8n本地执行回环测试\nuZE65L1gO7GWLB4h|股票助手n8n本地执行回环测试\nTR328sYx1M8Bf880|股票助手n8n本地执行回环测试\nJBVQ8osGXlHoSJfR|股票助手n8n本地执行回环测试\nun0S6SrQSCIsjuhn|股票助手企业微信Webhook桥接入口未激活v2"
+    },
+    {
+      "名称": "没有激活工作流",
+      "通过": true,
+      "说明": "(node:3113) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `node --trace-deprecation ...` to show where the warning was created)"
+    },
+    {
+      "名称": "未激活导入结果通过",
+      "通过": true,
+      "说明": "0"
+    },
+    {
+      "名称": "统一消息出口仍为本地队列",
+      "通过": true,
+      "说明": "真实发送仍关闭"
+    },
+    {
+      "名称": "白名单规则限制首批用户",
+      "通过": true,
+      "说明": "规则文件存在，禁止全员和群发"
+    },
+    {
+      "名称": "凭据隔离规则存在",
+      "通过": true,
+      "说明": "只审计规则，不读取真实密钥"
+    }
+  ],
+  "是否可以进入本地灰度联通演练": true,
+  "是否可以进入真实企业微信灰度发送": false,
+  "当前结论": "已具备本地灰度联通演练条件；真实企业微信发送仍需凭据注入、白名单确认和发送出口切换，不在本次自动执行。",
+  "引用材料": {
+    "统一消息出口配置": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\01配置\\统一消息出口配置.json",
+    "未激活导入结果": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\n8n未激活导入结果\\stock-assistant-n8n-inactive-import-result-verify-最新.json",
+    "白名单规则": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\01配置\\股票企业微信真实灰度白名单试运行规则.json",
+    "凭据隔离规则": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\01配置\\股票企业微信真实发送凭据隔离审计规则.json"
+  },
+  "首轮真实灰度上限": 5,
+  "实际动作": {
+    "读取docker状态": true,
+    "读取n8n未激活列表": true,
+    "读取统一消息出口配置": true,
+    "写入新系统股票核验报告": true,
+    "启用n8n": false,
+    "触发n8n": false,
+    "调用OpenClaw": false,
+    "发送企业微信": false,
+    "写旧系统": false,
+    "写正式库": false,
+    "调用券商接口": false,
+    "自动交易": false
+  }
+}

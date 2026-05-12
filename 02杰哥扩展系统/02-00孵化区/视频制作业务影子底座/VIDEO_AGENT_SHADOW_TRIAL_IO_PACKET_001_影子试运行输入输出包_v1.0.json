@@ -1,0 +1,62 @@
+{
+  "id": "VIDEO_AGENT_SHADOW_TRIAL_IO_PACKET_001",
+  "name": "影子试运行输入输出包",
+  "asset_identity": "video_creation_agent_shadow_trial_input_output_packet",
+  "stage": "W1_R0",
+  "status": "blank_trial_packet_not_real_wechat_entry",
+  "boundary": {
+    "real_wechat_entry": false,
+    "call_model": false,
+    "media_generation": false,
+    "trigger_n8n": false,
+    "formal_task_write": false
+  },
+  "input_fields": {
+    "trial_id": "VAI-TRIAL-0000",
+    "input_record_id": "to_be_filled",
+    "session_id": "to_be_filled",
+    "desensitized_user_question_summary": "to_be_filled",
+    "initial_intent": "pending_routing",
+    "platform_rule_status": "pending_verification",
+    "asset_authorization_status": "pending_verification",
+    "redline_hit": "pending_check"
+  },
+  "output_slots": [
+    {
+      "output_type": "run_check_result",
+      "source_file": "VIDEO_AGENT_SHADOW_RUN_CHECKLIST_001",
+      "status": "to_be_filled"
+    },
+    {
+      "output_type": "clarification_question",
+      "source_file": "VIDEO_AGENT_CLARIFICATION_TEMPLATE_001",
+      "status": "optional"
+    },
+    {
+      "output_type": "three_option_text_draft",
+      "source_file": "VIDEO_AGENT_THREE_OPTION_SAMPLE_001",
+      "status": "optional"
+    },
+    {
+      "output_type": "human_receipt",
+      "source_file": "VIDEO_AGENT_HUMAN_RECEIPT_INTAKE_TEMPLATE_001",
+      "status": "to_be_filled"
+    },
+    {
+      "output_type": "state_change_log",
+      "source_file": "VIDEO_AGENT_STATE_CHANGE_LOG_TEMPLATE_001",
+      "status": "to_be_filled"
+    },
+    {
+      "output_type": "redline_block_record",
+      "source_file": "VIDEO_AGENT_REDLINE_HIT_SAMPLE_001",
+      "status": "optional"
+    }
+  ],
+  "acceptance_conditions": [
+    "input_desensitized",
+    "real_system_not_triggered",
+    "output_text_draft_check_or_receipt_only",
+    "generation_publish_external_send_credential_and_real_asset_requests_blocked"
+  ]
+}

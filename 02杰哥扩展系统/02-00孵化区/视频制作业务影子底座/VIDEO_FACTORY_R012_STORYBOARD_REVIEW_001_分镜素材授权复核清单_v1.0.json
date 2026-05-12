@@ -1,0 +1,82 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 00:16:15 +08:00",
+  "review_id": "VIDEO_FACTORY_R012_STORYBOARD_REVIEW_001",
+  "task_id": "VF-20260508-003",
+  "asset_identity": "video_factory_round012_storyboard_asset_authorization_and_feasibility_review_shadow_sample",
+  "risk_level": "W1",
+  "status": "pending_human_review",
+  "boundary": {
+    "read_storyboard_draft": true,
+    "read_real_assets": false,
+    "move_assets": false,
+    "edit": false,
+    "transcode": false,
+    "render": false,
+    "subtitle_generation": false,
+    "cover_generation": false,
+    "voice_generation": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false,
+    "send_wecom": false,
+    "trigger_n8n": false
+  },
+  "storyboard_summary": [
+    {
+      "shot": 1,
+      "duration": "0-5s",
+      "visual_direction": "雨天路口、地铁口、楼道灯光",
+      "asset_status": "pending_human_confirmation",
+      "review_focus": ["location_permission", "passerby_portrait", "ambient_audio"]
+    },
+    {
+      "shot": 2,
+      "duration": "5-15s",
+      "visual_direction": "人物独处或城市空镜",
+      "asset_status": "pending_human_confirmation",
+      "review_focus": ["portrait_authorization", "asset_source", "template_feel"]
+    },
+    {
+      "shot": 3,
+      "duration": "15-35s",
+      "visual_direction": "日常细节组合画面",
+      "asset_status": "pending_human_confirmation",
+      "review_focus": ["theme_relevance"]
+    },
+    {
+      "shot": 4,
+      "duration": "35-50s",
+      "visual_direction": "手写便签、聊天窗口、通勤背影",
+      "asset_status": "pending_human_confirmation",
+      "review_focus": ["chat_privacy", "text_content", "portrait_and_font"]
+    },
+    {
+      "shot": 5,
+      "duration": "50-60s",
+      "visual_direction": "安静收束画面",
+      "asset_status": "pending_human_confirmation",
+      "review_focus": ["platform_aspect_ratio", "ai_label_space"]
+    }
+  ],
+  "missing_fields": [
+    "target_platform",
+    "final_aspect_ratio_priority",
+    "asset_source",
+    "asset_authorization_proof",
+    "portrait_authorization",
+    "chat_window_handling_method",
+    "font_music_sound_effect_authorization",
+    "ai_generated_content_label_position"
+  ],
+  "recommendations": [
+    "prefer_self_made_non_identifiable_assets",
+    "replace_real_chat_window_with_simulated_or_fully_desensitized_visual",
+    "use_bell_or_ear_covering_visual_metaphor_to_strengthen_idiom_recognition",
+    "confirm_target_platform_aspect_ratio_asset_source_and_authorization_before_generation"
+  ],
+  "can_read_real_assets": false,
+  "can_render": false,
+  "can_publish": false,
+  "self_check": "[自检: VIDEO_FACTORY_R012_STORYBOARD_REVIEW_001已完成, 风险等级: W1, 产物: 分镜素材授权复核清单md/json, 边界: 守住了。]"
+}

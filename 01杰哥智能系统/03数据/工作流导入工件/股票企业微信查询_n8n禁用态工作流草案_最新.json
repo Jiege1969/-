@@ -1,0 +1,167 @@
+{
+  "name": "股票企业微信查询禁用态草案",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {
+        "path": "jiege-stock-query-disabled-draft",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "",
+          "rawBody": false
+        }
+      },
+      "id": "c7d76444-fec2-465a-8e4c-852c6d2579b5",
+      "name": "OpenClaw消息入口禁用态",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        220,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f8de6056-3fb1-4ea2-bd23-5fd29e5412aa",
+              "name": "mode",
+              "value": "disabled_draft_only",
+              "type": "string"
+            },
+            {
+              "id": "f546794f-e1bf-43a2-bdb3-059e15fc5474",
+              "name": "message",
+              "value": "={{ $json.body.message || $json.body.text || '' }}",
+              "type": "string"
+            },
+            {
+              "id": "f95aebdf-86bf-4d11-8466-e16f887ff25c",
+              "name": "source",
+              "value": "openclaw_wework_gateway",
+              "type": "string"
+            },
+            {
+              "id": "4fdc5495-1214-49f0-a3c1-4e407665773b",
+              "name": "must_review_before_enable",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "id": "a66c352c-0661-4318-8c8b-6b4b799f7405",
+      "name": "标准化查询消息",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        500,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:19300/analyze",
+        "sendBody": true,
+        "contentType": "json",
+        "jsonBody": "={{ { \"message\": $json.message, \"source\": $json.source, \"dry_run\": true } }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "067325bf-696d-4353-8a66-393a07313241",
+      "name": "请求本地股票助手草稿",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        780,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"mode\": \"disabled_draft_only\", \"reply\": $json.reply || $json.report || $json, \"real_send\": false, \"trade\": false } }}",
+        "options": {}
+      },
+      "id": "62598e99-c0c9-4ea1-a57d-e34ef7534337",
+      "name": "返回回复草稿不外发",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1060,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "股票企业微信查询禁用态草案\\n生成时间：2026-04-30 10:01:59\\n安全边界：active=false；不导入、不启用、不触发、不发送企业微信、不写旧系统、不调用交易接口。OpenClaw只转发消息，n8n负责逻辑编排。",
+        "height": 260,
+        "width": 420,
+        "color": 5
+      },
+      "id": "4dfcc54b-f8e2-4579-ad13-bc15960255a9",
+      "name": "安全边界说明",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        220,
+        -40
+      ]
+    }
+  ],
+  "connections": {
+    "OpenClaw消息入口禁用态": {
+      "main": [
+        [
+          {
+            "node": "标准化查询消息",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "标准化查询消息": {
+      "main": [
+        [
+          {
+            "node": "请求本地股票助手草稿",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "请求本地股票助手草稿": {
+      "main": [
+        [
+          {
+            "node": "返回回复草稿不外发",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "staticData": null,
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "jiege_stock_wework_query": true,
+    "stage": "disabled_draft_only",
+    "must_remain_inactive": true,
+    "generated_at": "2026-04-30 10:01:59",
+    "requires_manual_confirm_before_import": true,
+    "requires_manual_confirm_before_enable": true
+  }
+}

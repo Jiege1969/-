@@ -1,0 +1,74 @@
+{
+  "record_id": "CTRL_CAND_TAX_002_INPUT_GAP_CHECK_20260508",
+  "generated_at": "2026-05-08 10:34:00 +08:00",
+  "candidate_id": "CTRL-CAND-TAX-002",
+  "asset_identity": "总管侧W1/R0税收政策顾问候选输入条件缺口核对记录",
+  "risk_level": "W1/R0",
+  "candidate_status_after_check": "candidate",
+  "preparation_status": "input_gap_checked",
+  "required_input_fields": [
+    "税种",
+    "期间",
+    "地区",
+    "主体",
+    "问题背景"
+  ],
+  "current_missing_fields": [
+    "税种",
+    "期间",
+    "地区",
+    "主体",
+    "问题背景"
+  ],
+  "minimum_input_template": {
+    "task": "CTRL-CAND-TAX-002",
+    "business_question": "脱敏后的涉税问题",
+    "business_scenario": "业务发生背景",
+    "tax_type": "增值税/企业所得税/个人所得税/印花税/其他/待补",
+    "region": "国家层/省市/待补",
+    "period": "所属期、发生日期或申报期",
+    "entity_profile": "企业类型、纳税人身份、行业、业务模式；需脱敏",
+    "provided_materials": "合同、发票、账务、资质、证明等清单；没有填待补",
+    "requested_output": "政策分析/资料清单/适用条件/测算前置字段/待复核报告"
+  },
+  "boundary_scan": {
+    "is_w1_r0": true,
+    "real_system_integration": false,
+    "external_send": false,
+    "n8n": false,
+    "service_change": false,
+    "delete_move_overwrite": false,
+    "formal_tax_conclusion": false,
+    "tax_filing_or_refund": false,
+    "read_real_finance_system": false
+  },
+  "auto_next_actions_without_new_tax_question": [
+    "税收问题输入模板字段校验表",
+    "税收日常影子试用回执空白模板",
+    "税收候选问题脱敏检查清单",
+    "税收政策顾问第二批试用状态索引"
+  ],
+  "not_allowed_without_input": [
+    "生成第二个税收待复核草案",
+    "使用未脱敏真实资料",
+    "输出可直接申报退税开票的结论",
+    "登录电子税务局或财税软件",
+    "企业微信真实外发",
+    "接n8n"
+  ],
+  "boundary_flags": {
+    "tax_analysis_draft_generated": false,
+    "business_question_fabricated": false,
+    "formal_tax_opinion": false,
+    "login_e_tax_system": false,
+    "read_real_finance_data": false,
+    "external_send": false,
+    "trigger_n8n": false,
+    "write_formal_db": false
+  },
+  "self_check": {
+    "boundary_kept": true,
+    "json_parse_required": true,
+    "next_w1_r0_actions_identified": true
+  }
+}

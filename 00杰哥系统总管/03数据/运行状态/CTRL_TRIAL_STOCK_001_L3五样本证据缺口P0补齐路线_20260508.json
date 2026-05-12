@@ -1,0 +1,114 @@
+{
+  "asset_id": "CTRL_TRIAL_STOCK_001_L3_FIVE_SAMPLE_P0_EVIDENCE_ROUTE_20260508",
+  "asset_name": "CTRL-TRIAL-STOCK-001 L3五样本证据缺口P0补齐路线",
+  "created_at": "2026-05-08",
+  "task_id": "CTRL-TRIAL-STOCK-001",
+  "asset_identity": "总管侧 W1/R0 受控试用任务执行记录",
+  "is_trading_advice": false,
+  "is_formal_frontend_entry": false,
+  "source_inputs": [
+    {
+      "name": "L3五样本证据缺口优先级报告",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\L3五样本证据缺口优先级报告_最新.md",
+      "role": "提供五个样本的分数、置信度、missing和下一步证据动作"
+    },
+    {
+      "name": "股票线对齐回传记录",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\对齐回传记录_20260508_L3五样本证据缺口优先级报告.md",
+      "role": "验证本轮股票线为W1只读分析，未触发交易或正式入口"
+    }
+  ],
+  "scan_result": {
+    "general_red_line_hit": false,
+    "specific_red_line_hit": false,
+    "allow_w1_r0_trial": true,
+    "pause_reason": "",
+    "allowed_scope": "总管侧记录股票L3五样本P0补证路线，不改股票正式配置，不接券商，不交易",
+    "next_artifact": "CTRL-TRIAL-STOCK-001 L3五样本证据缺口P0补齐路线"
+  },
+  "p0_gap_overview": [
+    {
+      "stock": "云南锗业",
+      "confidence": "low",
+      "industry_price_status": "source_registered",
+      "p0_gaps": [
+        "行业价格连续观测不足",
+        "资金/机构/减持解禁证据未合并"
+      ]
+    },
+    {
+      "stock": "天齐锂业",
+      "confidence": "low",
+      "industry_price_status": "single_observation",
+      "p0_gaps": [
+        "资金/机构/减持解禁证据未合并",
+        "行业价格不足5个连续观测点"
+      ]
+    },
+    {
+      "stock": "华虹公司",
+      "confidence": "medium",
+      "industry_price_status": "missing",
+      "p0_gaps": [
+        "行业价格观测缺失",
+        "资金/机构/减持解禁证据未合并"
+      ]
+    },
+    {
+      "stock": "浙商中拓",
+      "confidence": "medium",
+      "industry_price_status": "missing",
+      "p0_gaps": [
+        "行业价格或业务景气观测缺失",
+        "资金/机构/减持解禁证据未合并"
+      ]
+    },
+    {
+      "stock": "正丹股份",
+      "confidence": "medium",
+      "industry_price_status": "source_registered",
+      "p0_gaps": [
+        "行业价格连续观测不足",
+        "资金/机构/减持解禁证据未合并"
+      ]
+    }
+  ],
+  "p0_routes": [
+    {
+      "route": "行业价格连续观测",
+      "acceptance": "只补公开可复核价格、日期、单位和来源；不足5个连续观测点前不得写趋势确认"
+    },
+    {
+      "route": "资金/机构/减持解禁证据候选卡",
+      "acceptance": "只记录来源、日期、字段和missing，不生成买卖、仓位或交易动作"
+    }
+  ],
+  "p1_deferred_routes": [
+    "最新财报结构化字段",
+    "政策事件匹配或确认无直接政策"
+  ],
+  "absorption_conclusion": {
+    "can_absorb": true,
+    "needs_manager_ruling": false,
+    "enter_formal_trading": false,
+    "modify_stock_formal_entry": false,
+    "trigger_broker_interface": false
+  },
+  "task_status": "completed",
+  "next_recommended_task": "CTRL-TRIAL-VIDEO-001",
+  "boundary_flags": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_db": false,
+    "run_stock_business_script": false,
+    "fetch_new_market_data": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "trading_advice": false,
+    "modify_stock_formal_config_or_entry": false,
+    "modify_service_script": false,
+    "restart_19310_or_19302": false,
+    "delete_move_archive_old_directory": false
+  },
+  "self_check_line": "[自检: CTRL-TRIAL-STOCK-001已完成, 风险等级: W1/R0, 产物: L3五样本证据缺口P0补齐路线, 边界: 守住了。]"
+}

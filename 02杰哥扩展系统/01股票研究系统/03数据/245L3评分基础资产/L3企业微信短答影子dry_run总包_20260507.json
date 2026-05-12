@@ -1,0 +1,170 @@
+{
+  "名称": "L3企业微信短答影子dry_run总包",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子dry-run总包",
+  "状态": "shadow_only",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "purpose": "模拟用户在企业微信询问股票时，L3评分、财报基本面证据卡、政策事件、市场风格和前台短答如何形成闭环。",
+  "contract": {
+    "short_answer_contract": "03数据/245L3评分基础资产/企业微信单股分析短答契约草案_20260507.json",
+    "l3_contract": "01配置/L3_scoring_contract_v1.0.json",
+    "fundamental_evidence_schema": "03数据/245L3评分基础资产/财报基本面证据卡_schema_v1.0.json",
+    "closure_rule": "D:/杰哥智能化系统/03杰哥进化系统/01配置/系统搭建闭环防误解规则.json"
+  },
+  "dry_run_cases": [
+    {
+      "case_id": "DRY-L3-WECOM-001",
+      "user_question": "云南锗业现在怎么样",
+      "analysis_object": "云南锗业（sz002428）",
+      "l3_shadow_report": "03数据/245L3评分基础资产/单股L3评分/云南锗业_sz002428_财报补证影子版_20260507.json",
+      "fundamental_evidence_card": "03数据/245L3评分基础资产/云南锗业_财报基本面证据卡_20260507.json",
+      "short_answer_file": "03数据/245L3评分基础资产/企业微信短答_云南锗业_财报补证影子样例_20260507.md",
+      "front_answer_summary": {
+        "conclusion": "暂不建议关注",
+        "one_sentence": "锗主题和政策有支撑，财报也不是空白，但利润、扣非和现金流偏弱，价格还没确认转强。",
+        "fundamental_sentence": "2025年收入增长，但归母净利润下降、扣非为负、经营现金流为负，基本面只能弱支撑。",
+        "key_missing": [
+          "2026年一季报核心数值还未结构化。",
+          "锗现货价格、产品售价和成本变化未接入。",
+          "资金流、机构持仓、减持解禁仍待合并。"
+        ]
+      },
+      "acceptance": {
+        "first_line_object_clear": true,
+        "conclusion_first": true,
+        "fundamental_not_empty": true,
+        "no_trade_instruction": true,
+        "missing_explicit": true,
+        "backend_evidence_linked": true
+      }
+    },
+    {
+      "case_id": "DRY-L3-WECOM-002",
+      "user_question": "天齐锂业怎么看",
+      "analysis_object": "天齐锂业（sz002466）",
+      "l3_shadow_report": "03数据/245L3评分基础资产/单股L3评分/天齐锂业_sz002466_财报补证影子版_20260507.json",
+      "fundamental_evidence_card": "03数据/245L3评分基础资产/天齐锂业_财报基本面证据卡_20260507.json",
+      "short_answer_file": "03数据/245L3评分基础资产/企业微信短答_天齐锂业_财报补证影子样例_20260507.md",
+      "front_answer_summary": {
+        "conclusion": "暂不建议关注",
+        "one_sentence": "财报修复很明显，但股价还没站上关键确认位，政策事件和市场环境证据也还不够完整。",
+        "fundamental_sentence": "一季度收入和利润大幅增长，但现金流下降、2025年全年仍弱、锂价周期波动还没解除。",
+        "key_missing": [
+          "锂盐现货价格和产品价差未接入。",
+          "SQM投资收益、套保、公允价值变动贡献未拆分。",
+          "政策事件暴露度和全市场风格数据仍待补齐。"
+        ]
+      },
+      "acceptance": {
+        "first_line_object_clear": true,
+        "conclusion_first": true,
+        "fundamental_not_empty": true,
+        "no_trade_instruction": true,
+        "missing_explicit": true,
+        "backend_evidence_linked": true
+      }
+    },
+    {
+      "case_id": "DRY-L3-WECOM-003",
+      "user_question": "华虹公司怎么样",
+      "analysis_object": "华虹公司（sh688347）",
+      "l3_shadow_report": "03数据/245L3评分基础资产/单股L3评分/华虹公司_sh688347_财报补证影子版_20260507.json",
+      "fundamental_evidence_card": "03数据/245L3评分基础资产/华虹公司_财报基本面证据卡_20260507.json",
+      "short_answer_file": "03数据/245L3评分基础资产/企业微信短答_华虹公司_财报补证影子样例_20260507.md",
+      "front_answer_summary": {
+        "conclusion": "暂不建议关注",
+        "one_sentence": "技术形态不差、半导体景气有支撑，但利润率和ROE偏弱，成交和政策证据还没形成强确认。",
+        "fundamental_sentence": "营收和现金流有支撑、半导体景气改善，但利润率和ROE偏弱，晶圆代工周期压力还在。",
+        "key_missing": [
+          "2026年一季报财务字段未接入。",
+          "产能利用率、晶圆ASP、折旧和资本开支拆分未结构化。",
+          "半导体政策事件和板块热度仍待结构化。"
+        ]
+      },
+      "acceptance": {
+        "first_line_object_clear": true,
+        "conclusion_first": true,
+        "fundamental_not_empty": true,
+        "no_trade_instruction": true,
+        "missing_explicit": true,
+        "backend_evidence_linked": true
+      }
+    },
+    {
+      "case_id": "DRY-L3-WECOM-004",
+      "user_question": "浙商中拓怎么样",
+      "analysis_object": "浙商中拓（sz000906）",
+      "l3_shadow_report": "03数据/245L3评分基础资产/单股L3评分/浙商中拓_sz000906_财报补证影子版_20260507.json",
+      "fundamental_evidence_card": "03数据/245L3评分基础资产/浙商中拓_财报基本面证据卡_20260507.json",
+      "short_answer_file": "03数据/245L3评分基础资产/企业微信短答_浙商中拓_财报补证影子样例_20260507.md",
+      "front_answer_summary": {
+        "conclusion": "暂不建议关注",
+        "one_sentence": "价格在承接区边缘，但成交太弱；财报有修复，不过扣非和ROE仍弱，暂时不能提高关注。",
+        "fundamental_sentence": "收入和现金流改善，但扣非仍弱、ROE不高，供应链业务要重点看风控和周转。",
+        "key_missing": [
+          "主营品类毛利率、库存周转、应收账款和信用减值未结构化。",
+          "大宗商品价格和供应链景气未接入。",
+          "资金流、机构持仓、解禁减持仍待合并。"
+        ]
+      },
+      "acceptance": {
+        "first_line_object_clear": true,
+        "conclusion_first": true,
+        "fundamental_not_empty": true,
+        "no_trade_instruction": true,
+        "missing_explicit": true,
+        "backend_evidence_linked": true
+      }
+    },
+    {
+      "case_id": "DRY-L3-WECOM-005",
+      "user_question": "正丹股份怎么看",
+      "analysis_object": "正丹股份（sz300641）",
+      "l3_shadow_report": "03数据/245L3评分基础资产/单股L3评分/正丹股份_sz300641_财报补证影子版_20260507.json",
+      "fundamental_evidence_card": "03数据/245L3评分基础资产/正丹股份_财报基本面证据卡_20260507.json",
+      "short_answer_file": "03数据/245L3评分基础资产/企业微信短答_正丹股份_财报补证影子样例_20260507.md",
+      "front_answer_summary": {
+        "conclusion": "暂不建议关注",
+        "one_sentence": "价格和成交已经不支持重点关注，财报补上后也显示收入利润继续下滑，当前仍按风险复核处理。",
+        "fundamental_sentence": "2025年和2026年一季度收入利润都在下滑，当前基本面不支持提高关注。",
+        "key_missing": [
+          "核心产品价格和价差未结构化。",
+          "产能、库存、出口和原材料价格未接入。",
+          "资金流、机构持仓、解禁减持仍待合并。"
+        ]
+      },
+      "acceptance": {
+        "first_line_object_clear": true,
+        "conclusion_first": true,
+        "fundamental_not_empty": true,
+        "no_trade_instruction": true,
+        "missing_explicit": true,
+        "backend_evidence_linked": true
+      }
+    }
+  ],
+  "overall_acceptance": {
+    "case_count": 5,
+    "passed_case_count": 5,
+    "front_answer_is_user_readable": true,
+    "backend_evidence_retained": true,
+    "formal_entry_not_changed": true,
+    "ready_for_user_review": true,
+    "not_ready_for_formal_wecom": true
+  },
+  "remaining_gaps_before_formalization": [
+    "生成正式入口改动清单和回滚方案后，才能申请W3接入。",
+    "市场风格日表仍为partial，需补全全市场宽度、正式板块数据和大小盘相对强弱。",
+    "行业价格字段未统一接入，资源股仍缺锗价、锂价和产品价差。"
+  ],
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_service_restart": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

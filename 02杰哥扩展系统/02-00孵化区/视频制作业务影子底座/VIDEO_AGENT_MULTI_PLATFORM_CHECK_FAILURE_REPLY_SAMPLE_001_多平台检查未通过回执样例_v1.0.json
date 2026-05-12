@@ -1,0 +1,36 @@
+{
+  "asset_id": "VIDEO_AGENT_MULTI_PLATFORM_CHECK_FAILURE_REPLY_SAMPLE_001",
+  "version": "v1.0",
+  "asset_type": "reply_sample",
+  "construction_level": "W1/R0",
+  "scope": "multi_platform_pre_publish_check_failure_placeholder_reply",
+  "status": "draft_sample",
+  "scenario": "User issues publishing command but multi-platform pre-publish checks show remaining title, cover, AI label, or platform-rule gaps.",
+  "reply_sample": {
+    "task_id": "VF-20260508-003",
+    "conclusion": "multi_platform_pre_publish_check_failed",
+    "passed_platforms": [],
+    "pending_review_platforms": [
+      {"platform": "douyin", "issues": ["ai_label_not_confirmed", "cover_not_confirmed"]},
+      {"platform": "xiaohongshu", "issues": ["title_style_pending_review", "material_note_not_confirmed"]},
+      {"platform": "shipinhao", "issues": ["platform_rules_not_checked"]}
+    ],
+    "current_decision": "cannot_real_publish_or_one_click_all_platform_publish",
+    "next_action": [
+      "publishing_compliance_review_queue",
+      "platform_copy_review_queue",
+      "material_authorization_review_queue"
+    ],
+    "real_system_triggered": false
+  },
+  "fixed_rules": [
+    "Reply must list issues by platform.",
+    "Do not describe partial platform pass as all-platform publishable.",
+    "Failed items must map to review queues.",
+    "This sample does not send WeCom messages or publish."
+  ],
+  "boundaries": {
+    "wecom_real_send": false,
+    "execute_publish": false
+  }
+}

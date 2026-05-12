@@ -1,0 +1,107 @@
+{
+  "name": "用户视角报告读感验收样例",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 12:40:21",
+  "asset_identity": "W1用户视角报告读感验收样例",
+  "status": "shadow_readability_acceptance",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "checklist": [
+    {
+      "id": "READ-001",
+      "name": "对象明确",
+      "requirement": "第一行必须写股票名称和代码。"
+    },
+    {
+      "id": "READ-002",
+      "name": "结论先行",
+      "requirement": "第二行必须给结论词，不先堆指标。"
+    },
+    {
+      "id": "READ-003",
+      "name": "主因压缩",
+      "requirement": "主因只写1句，不展开分析过程。"
+    },
+    {
+      "id": "READ-004",
+      "name": "缺口清楚",
+      "requirement": "关键缺口必须可执行、可补证。"
+    },
+    {
+      "id": "READ-005",
+      "name": "边界清楚",
+      "requirement": "不得出现交易、下单或确定性收益表达。"
+    }
+  ],
+  "samples": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "002428"
+      },
+      "readability_result": "pass",
+      "user_view_comment": "结论清楚，知道为什么只能观察，也知道下一步要补锗价、政策暴露度和财报。",
+      "fix_needed": []
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "002466"
+      },
+      "readability_result": "pass",
+      "user_view_comment": "短答没有堆技术指标，缺口集中在锂价和盈利修复，容易理解。",
+      "fix_needed": []
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "688347"
+      },
+      "readability_result": "pass_with_minor_gap",
+      "user_view_comment": "结论可读，但半导体景气指标需要后续补成更具体的数据项。",
+      "fix_needed": [
+        "把半导体景气指标拆成可观测字段"
+      ]
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "000906"
+      },
+      "readability_result": "pass",
+      "user_view_comment": "暂不建议强结论的原因明确，现金流、负债和商品周期是关键。",
+      "fix_needed": []
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "300641"
+      },
+      "readability_result": "pass_with_minor_gap",
+      "user_view_comment": "方向清楚，但产品价格、价差和利润弹性之间还可以再压缩成固定句式。",
+      "fix_needed": [
+        "补化工股产品价格到利润弹性的固定话术"
+      ]
+    }
+  ],
+  "summary": {
+    "check_count": 5,
+    "sample_count": 5,
+    "pass_count": 3,
+    "minor_gap_count": 2,
+    "real_wecom_send_allowed": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

@@ -1,0 +1,58 @@
+﻿{
+  "名称": "轻量资源巡检规则",
+  "作用": "用于施工前后快速判断本机是否处于健康可施工状态，避免失控脚本、重复容器、内存压力再次拖慢系统。",
+  "触发方式": "由执行轻量资源巡检.py读取；也可作为开机施工准备和收工检查的输入规则。",
+  "所属系统": "00杰哥系统总管",
+  "创建修改记录": "2026-04-29 创建轻量资源巡检规则；2026-04-29 增加WSL2/Docker底座进程内存例外阈值，避免把正常底座占用误判为失控进程；2026-05-06 按当前64GB内存与Docker/Ollama底座运行面将vmmemWSL例外阈值调至20GB，并把plain ollama容器从允许项改为旧容器候选。",
+  "资源阈值": {
+    "最低可用内存MB": 8192,
+    "提交内存占比警戒": 0.85,
+    "CPU警戒百分比": 85,
+    "单进程私有内存警戒MB": 4096,
+    "进程私有内存例外阈值MB": {
+      "vmmem": 20480,
+      "vmmemWSL": 20480
+    }
+  },
+  "必需端口": [
+    {
+      "端口": 19300,
+      "名称": "股票助手本地入口",
+      "必要性": "股票系统交付使用版需要"
+    },
+    {
+      "端口": 19302,
+      "名称": "股票企业微信桥接入口",
+      "必要性": "企业微信查询股票需要"
+    }
+  ],
+  "允许运行容器": [
+    "jiege_v3_ollama",
+    "jiege_v3_redis",
+    "jiege_v3_n8n"
+  ],
+  "高风险脚本关键字": [
+    "生成双系统Ollama治理审计.ps1"
+  ],
+  "安全边界": {
+    "自动停止进程": false,
+    "自动停止容器": false,
+    "删除文件": false,
+    "写旧系统": false,
+    "真实发送企业微信": false,
+    "交易接口": false
+  },
+  "禁止复发容器名": [
+    "jiege_agent_gateway",
+    "jiege_agent_core",
+    "jiege_ops_guardian",
+    "jiege_stock_service",
+    "jiege_voice_service",
+    "jiege_n8n",
+    "jiege_ollama",
+    "jiege_redis",
+    "jiege_postgres"
+  ],
+  "当前防复发说明": "Docker allowlist is jiege_v3_ollama, jiege_v3_redis, jiege_v3_n8n. Retired names are recurrence-prevention signatures only."
+}
+

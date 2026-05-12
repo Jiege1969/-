@@ -1,0 +1,17 @@
+{
+  "validation_id": "validate-01-light-contract-20260505-001",
+  "target_package": "01智能系统任务契约适配包",
+  "method": "read_only_local_parse",
+  "expected_command": "powershell -ExecutionPolicy Bypass -File D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\验证01智能系统轻量任务契约适配包.ps1",
+  "external_services_touched": false,
+  "formal_database_touched": false,
+  "n8n_triggered": false,
+  "enterprise_wechat_sent": false,
+  "broker_api_called": false,
+  "auto_trade_triggered": false,
+  "result": "PASS",
+  "checked_at": "2026-05-05 13:55:06 +08:00",
+  "total_checks": 42,
+  "failed_checks": 0,
+  "notes": "已运行只读本地校验脚本；JSON/Markdown解析通过，dry_run、真实动作关闭、n8n干跑、SQLite影子台账、Redis影子映射、receipt字段和外部调用为空均通过。"
+}

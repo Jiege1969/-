@@ -1,0 +1,39 @@
+{
+  "id": "VIDEO_AGENT_DESENSITIZED_IDEA_INTAKE_PROMPT_TEMPLATE_001",
+  "name": "脱敏想法接收提示模板",
+  "asset_identity": "video_creation_agent_desensitized_idea_intake_prompt_template",
+  "stage": "W1_R0",
+  "status": "prompt_template_not_real_entry",
+  "do_not_request": [
+    "account",
+    "phone",
+    "secret",
+    "webhook",
+    "full_asset_path",
+    "identity_document",
+    "client_privacy",
+    "unauthorized_raw_material"
+  ],
+  "suggested_fields": [
+    "video_topic",
+    "target_platform",
+    "target_audience",
+    "expected_style",
+    "target_duration",
+    "asset_status",
+    "forbidden_content",
+    "expected_output"
+  ],
+  "after_intake": [
+    "desensitization_and_redline_check_first",
+    "ask_one_key_clarification_question_when_fields_missing",
+    "create_review_text_draft_only_when_fields_enough",
+    "block_generation_publish_external_send_credential_or_real_asset_read"
+  ],
+  "boundary": {
+    "real_entry": false,
+    "save_credentials": false,
+    "read_real_assets": false,
+    "media_generation": false
+  }
+}

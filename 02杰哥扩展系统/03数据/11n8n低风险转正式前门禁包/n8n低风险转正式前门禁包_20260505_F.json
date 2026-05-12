@@ -1,0 +1,398 @@
+{
+  "package_id": "ext-n8n-dry-run-to-low-risk-front-gate-20260505-F",
+  "package_name": "02扩展系统_n8n低风险转正式前门禁包",
+  "generated_at": "2026-05-05T14:03:00+08:00",
+  "task_batch": "并行小任务F",
+  "scope": {
+    "system": "02杰哥扩展系统",
+    "business_lines": [
+      "enterprise_wechat",
+      "knowledge_base",
+      "content_processing",
+      "video_production",
+      "tax_readonly"
+    ],
+    "purpose": "定义从 dry_run 进入低风险正式动作前的门禁清单、白名单、回滚、审计字段和禁止动作",
+    "execution_boundary": "definition_and_readonly_validation_only"
+  },
+  "non_execution_guarantee": {
+    "workflow_import": false,
+    "workflow_enable": false,
+    "workflow_trigger": false,
+    "workflow_activation": false,
+    "n8n_api_call": false,
+    "webhook_call": false,
+    "credential_read_or_write": false,
+    "external_system_call": false,
+    "real_actions_triggered": 0
+  },
+  "global_gate_policy": {
+    "promotion_target": "low_risk_formal_candidate_only",
+    "promotion_authorized": false,
+    "dry_run_default": true,
+    "manual_approval_required": true,
+    "two_person_review_required": true,
+    "audit_receipt_required": true,
+    "rollback_plan_required": true,
+    "kill_switch_required": true,
+    "production_write_allowed": false,
+    "real_message_send_allowed": false,
+    "real_media_conversion_allowed": false,
+    "formal_tax_judgement_allowed": false,
+    "allowed_low_risk_action_types": [
+      "read_local_gate_definition",
+      "validate_static_fields",
+      "render_manual_checklist",
+      "prepare_disabled_workflow_descriptor",
+      "prepare_receipt_schema",
+      "prepare_shadow_mapping_schema"
+    ],
+    "always_forbidden_action_types": [
+      "import_n8n_workflow",
+      "enable_n8n_workflow",
+      "trigger_n8n_workflow",
+      "call_n8n_webhook",
+      "send_enterprise_wechat_real_message",
+      "write_production_database",
+      "write_production_knowledge_base",
+      "write_vector_database",
+      "convert_real_media",
+      "render_or_publish_real_video",
+      "make_formal_tax_judgement",
+      "submit_tax_filing",
+      "call_external_tax_api",
+      "touch_main_work_system",
+      "delete_or_move_user_files",
+      "read_or_write_real_credentials"
+    ]
+  },
+  "required_audit_fields": [
+    "gate_package_id",
+    "business_line",
+    "requested_action",
+    "dry_run_before_state",
+    "target_low_risk_state",
+    "approval_ticket",
+    "operator",
+    "reviewer",
+    "allowlist_ref",
+    "rollback_ref",
+    "kill_switch_ref",
+    "n8n_workflow_id",
+    "n8n_workflow_active_before",
+    "n8n_workflow_active_after",
+    "real_action_enabled",
+    "production_write_enabled",
+    "external_call_enabled",
+    "blocked_actions",
+    "receipt_id",
+    "evidence_ref",
+    "timestamp_utc8"
+  ],
+  "business_line_gates": [
+    {
+      "business_line": "enterprise_wechat",
+      "display_name": "企业微信",
+      "front_gate_checklist": [
+        "确认 n8n workflow 仅存在于未导入或禁用描述态，不得激活",
+        "确认 response_url、群机器人 webhook、应用消息发送凭据均为空或占位",
+        "确认白名单仅用于人工候选，不构成真实发送许可",
+        "确认消息正文经过脱敏预览，且 receipt_id 可追溯",
+        "确认回滚方式为保持禁用、撤销候选白名单、作废 approval_ticket"
+      ],
+      "allowlist": {
+        "mode": "candidate_only_not_send_permission",
+        "allowed_corp_ids": [
+          "ww_dryrun_corp_placeholder"
+        ],
+        "allowed_user_ids": [
+          "dryrun_reviewer_001",
+          "dryrun_reviewer_002"
+        ],
+        "allowed_chat_ids": [],
+        "allowed_message_types": [
+          "text_preview",
+          "markdown_preview"
+        ],
+        "max_messages_per_window": 0
+      },
+      "rollback": {
+        "rollback_ref": "rollback://enterprise_wechat/keep-disabled-and-revoke-candidate",
+        "steps": [
+          "保持 workflow_import=false、workflow_activation=false",
+          "删除或作废候选 approval_ticket",
+          "将 allowlist mode 恢复为 candidate_only_not_send_permission",
+          "归档失败 receipt，不重放真实消息"
+        ],
+        "max_rollback_minutes": 5
+      },
+      "audit_field_overrides": [
+        "message_preview_hash",
+        "target_chat_id_masked",
+        "send_api_enabled",
+        "response_url_present"
+      ],
+      "forbidden_actions": [
+        "send_enterprise_wechat_real_message",
+        "call_response_url",
+        "call_group_robot_webhook",
+        "write_formal_message_queue",
+        "store_real_wechat_credential"
+      ],
+      "sensitive_actions_status": {
+        "real_send": false,
+        "formal_queue_write": false,
+        "credential_access": false
+      }
+    },
+    {
+      "business_line": "knowledge_base",
+      "display_name": "知识库",
+      "front_gate_checklist": [
+        "确认仅校验入库 schema、引用来源和检索预览，不写正式知识库",
+        "确认向量库、全文索引、正式 SQLite/数据库写入均关闭",
+        "确认外部检索 API 和在线抓取均关闭",
+        "确认白名单仅包含可读来源目录或样例文档引用",
+        "确认回滚方式为废弃影子映射和 receipt，不删除用户资料"
+      ],
+      "allowlist": {
+        "mode": "readonly_source_candidate_only",
+        "allowed_source_refs": [
+          "local-doc-ref://dryrun/knowledge-base/sample",
+          "receipt-ref://knowledge-base/manual-review"
+        ],
+        "allowed_operations": [
+          "schema_validate",
+          "citation_preview",
+          "dedupe_preview"
+        ],
+        "allowed_write_targets": []
+      },
+      "rollback": {
+        "rollback_ref": "rollback://knowledge_base/discard-shadow-map",
+        "steps": [
+          "保持 production_knowledge_base_write=false",
+          "作废候选索引批次号",
+          "保留只读验收 receipt",
+          "不删除、不移动、不覆盖原始知识文件"
+        ],
+        "max_rollback_minutes": 10
+      },
+      "audit_field_overrides": [
+        "source_ref",
+        "citation_count",
+        "vector_db_write_enabled",
+        "production_kb_write_enabled"
+      ],
+      "forbidden_actions": [
+        "write_production_knowledge_base",
+        "write_vector_database",
+        "call_external_search_api",
+        "crawl_external_site",
+        "delete_or_move_user_files"
+      ],
+      "sensitive_actions_status": {
+        "formal_knowledge_write": false,
+        "vector_write": false,
+        "external_search": false
+      }
+    },
+    {
+      "business_line": "content_processing",
+      "display_name": "内容",
+      "front_gate_checklist": [
+        "确认仅生成内容处理计划和差异预览，不覆盖正式内容库",
+        "确认发布、定时发布、同步到外部平台均关闭",
+        "确认真实格式转换仅允许模拟路径和 hash，不落成品",
+        "确认白名单仅包含 dry_run 样例文档引用",
+        "确认回滚方式为丢弃预览和 receipt，不改动用户源文件"
+      ],
+      "allowlist": {
+        "mode": "preview_only",
+        "allowed_content_refs": [
+          "content-ref://dryrun/manual-sample",
+          "content-ref://dryrun/redacted-preview"
+        ],
+        "allowed_operations": [
+          "metadata_extract",
+          "diff_preview",
+          "policy_check_preview"
+        ],
+        "allowed_publish_targets": []
+      },
+      "rollback": {
+        "rollback_ref": "rollback://content_processing/discard-preview",
+        "steps": [
+          "保持 production_content_write=false",
+          "作废内容预览批次号",
+          "保留审计 receipt",
+          "不覆盖、不移动、不删除用户文档"
+        ],
+        "max_rollback_minutes": 10
+      },
+      "audit_field_overrides": [
+        "content_ref",
+        "source_hash",
+        "preview_hash",
+        "publish_enabled",
+        "production_content_write_enabled"
+      ],
+      "forbidden_actions": [
+        "write_production_content_database",
+        "publish_content",
+        "schedule_publish",
+        "convert_real_document",
+        "delete_or_move_user_files"
+      ],
+      "sensitive_actions_status": {
+        "formal_content_write": false,
+        "publish": false,
+        "real_document_conversion": false
+      }
+    },
+    {
+      "business_line": "video_production",
+      "display_name": "视频",
+      "front_gate_checklist": [
+        "确认仅生成分镜、素材清单和参数预览，不启动真实转码或渲染",
+        "确认字幕、封面、成片生成、发布均关闭",
+        "确认媒体工具链、GPU 队列、外部渲染服务均不调用",
+        "确认白名单仅包含样例素材引用，不包含真实媒体输出目录",
+        "确认回滚方式为废弃预览任务，不删除素材"
+      ],
+      "allowlist": {
+        "mode": "storyboard_and_manifest_preview_only",
+        "allowed_asset_refs": [
+          "asset-ref://dryrun/video/sample-manifest",
+          "asset-ref://dryrun/video/storyboard-preview"
+        ],
+        "allowed_operations": [
+          "storyboard_preview",
+          "asset_manifest_validate",
+          "render_parameter_preview"
+        ],
+        "allowed_output_targets": []
+      },
+      "rollback": {
+        "rollback_ref": "rollback://video_production/discard-preview-job",
+        "steps": [
+          "保持 real_media_conversion_allowed=false",
+          "保持 render_queue_enabled=false",
+          "作废预览任务号",
+          "保留 receipt，不删除素材"
+        ],
+        "max_rollback_minutes": 10
+      },
+      "audit_field_overrides": [
+        "asset_manifest_ref",
+        "render_queue_enabled",
+        "media_conversion_enabled",
+        "publish_enabled",
+        "output_path_present"
+      ],
+      "forbidden_actions": [
+        "convert_real_media",
+        "transcode_video",
+        "render_final_video",
+        "generate_final_subtitle_or_cover",
+        "publish_video",
+        "call_external_render_service"
+      ],
+      "sensitive_actions_status": {
+        "real_media_conversion": false,
+        "render_final_video": false,
+        "publish": false
+      }
+    },
+    {
+      "business_line": "tax_readonly",
+      "display_name": "税收只读",
+      "front_gate_checklist": [
+        "确认仅做只读字段核验和人工复核清单，不形成正式税务判断",
+        "确认税务正式库、申报接口、外部税务 API 均关闭",
+        "确认输出文案标记为非税务建议、非申报依据",
+        "确认白名单仅包含脱敏样例和只读凭证引用",
+        "确认回滚方式为作废复核清单，不更改税务数据"
+      ],
+      "allowlist": {
+        "mode": "readonly_evidence_candidate_only",
+        "allowed_evidence_refs": [
+          "tax-evidence-ref://dryrun/redacted-sample",
+          "tax-evidence-ref://manual-review/checklist"
+        ],
+        "allowed_operations": [
+          "field_presence_check",
+          "readonly_consistency_preview",
+          "manual_review_checklist"
+        ],
+        "allowed_write_targets": []
+      },
+      "rollback": {
+        "rollback_ref": "rollback://tax_readonly/void-review-checklist",
+        "steps": [
+          "保持 formal_tax_judgement_allowed=false",
+          "保持 tax_filing_submit_allowed=false",
+          "作废只读复核清单编号",
+          "保留 receipt，不改写税务凭证和正式库"
+        ],
+        "max_rollback_minutes": 5
+      },
+      "audit_field_overrides": [
+        "tax_evidence_ref",
+        "formal_tax_judgement_enabled",
+        "tax_api_enabled",
+        "filing_submit_enabled",
+        "readonly_disclaimer_present"
+      ],
+      "forbidden_actions": [
+        "make_formal_tax_judgement",
+        "generate_tax_filing_advice",
+        "submit_tax_filing",
+        "write_production_tax_database",
+        "call_external_tax_api"
+      ],
+      "sensitive_actions_status": {
+        "formal_tax_judgement": false,
+        "formal_tax_database_write": false,
+        "tax_api_call": false
+      }
+    }
+  ],
+  "n8n_descriptor_guard": {
+    "descriptor_only": true,
+    "workflow_json_export_path": null,
+    "workflow_import_command": null,
+    "workflow_activation_command": null,
+    "webhook_url": null,
+    "manual_gate_before_any_future_import": [
+      "回收报告验收通过",
+      "人工审批单显式授权 workflow_import",
+      "人工审批单显式授权 workflow_activation",
+      "逐业务线二人复核 forbidden_actions 未放开",
+      "回滚负责人和值班窗口已确认"
+    ]
+  },
+  "sample_receipt_schema": {
+    "receipt_id": "receipt-ext-n8n-gate-{business_line}-{yyyymmdd}-{seq}",
+    "status": "front_gate_defined_no_execution",
+    "must_include_fields": [
+      "gate_package_id",
+      "business_line",
+      "requested_action",
+      "dry_run_before_state",
+      "target_low_risk_state",
+      "blocked_actions",
+      "real_actions_triggered",
+      "operator",
+      "reviewer",
+      "timestamp_utc8"
+    ],
+    "real_actions_triggered": 0
+  },
+  "validation": {
+    "script_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02脚本\\验证n8n低风险转正式前门禁包.py",
+    "readonly": true,
+    "network_required": false,
+    "writes_files": false
+  }
+}

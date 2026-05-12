@@ -1,0 +1,59 @@
+{
+  "id": "014",
+  "created_at": "2026-05-03 08:22:55",
+  "doc_type": "generic",
+  "draft_source": "命令行文本",
+  "draft_sha256": "9435e8e36d34c9cbc39cb07d1158ea9c91e863567057e95158eb6dba09f53c52",
+  "draft": "【测试文稿】杰哥，您好！这是文稿质检旁路验证样本。说明：本消息仅用于验证，不触发企业微信，不接入 n8n。",
+  "rule_review": {
+    "pass": false,
+    "score": 7.0,
+    "issues": [
+      {
+        "type": "format",
+        "position": "全文",
+        "description": "文稿过短，可能不是完整报告。"
+      },
+      {
+        "type": "format",
+        "position": "全文",
+        "description": "换行较少，企业微信阅读可能拥挤。"
+      }
+    ],
+    "mobile_layout_advice": []
+  },
+  "model": "",
+  "model_call": {
+    "status": "skipped",
+    "reason": "skip_model=true"
+  },
+  "review": {
+    "pass": false,
+    "total_score": 7.0,
+    "issues": [
+      {
+        "type": "format",
+        "position": "全文",
+        "description": "文稿过短，可能不是完整报告。"
+      },
+      {
+        "type": "format",
+        "position": "全文",
+        "description": "换行较少，企业微信阅读可能拥挤。"
+      }
+    ],
+    "suggested_revision": "【测试文稿】杰哥，您好！这是文稿质检旁路验证样本。说明：本消息仅用于验证，不触发企业微信，不接入 n8n。",
+    "review_summary": "仅完成规则质检，未调用本地模型。"
+  },
+  "forbidden_modified": [],
+  "status": "reviewed",
+  "adopted_revision_path": "",
+  "safety_boundary": {
+    "是否替换原文": false,
+    "是否发送企业微信": false,
+    "是否触发n8n": false,
+    "是否写正式模板": false,
+    "是否调用券商接口": false,
+    "是否自动交易": false
+  }
+}

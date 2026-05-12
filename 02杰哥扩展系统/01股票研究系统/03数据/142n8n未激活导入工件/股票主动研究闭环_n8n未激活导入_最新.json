@@ -1,0 +1,201 @@
+{
+  "name": "股票主动研究闭环_文件桥接未激活",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "e43264b5-ffae-441f-aad7-8143566d8338",
+      "name": "手动触发",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "command": "mkdir -p /home/node/.n8n/jiege_bridge && printf '{\"task\":\"stock_active_research\",\"mode\":\"inactive_intraday_loop\",\"stage\":\"manual_test_or_schedule\",\"created_at\":\"%s\"}\\n' \"$(date -Iseconds)\" > /home/node/.n8n/jiege_bridge/stock_active_research_trigger.json && cat /home/node/.n8n/jiege_bridge/stock_active_research_trigger.json"
+      },
+      "id": "72dbb420-c87c-4211-893e-dd308b608a63",
+      "name": "写入宿主机股票研究触发文件",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        520,
+        260
+      ],
+      "notes": "向n8n共享目录写入触发文件；宿主机受控脚本读取后运行股票闭环。"
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "10792f55-266f-492e-b892-47918bc94a83",
+              "name": "状态",
+              "value": "inactive_import_only",
+              "type": "string"
+            },
+            {
+              "id": "db664f0d-3eb3-490c-8fa4-d6fe3fce7c25",
+              "name": "工作流名",
+              "value": "股票主动研究闭环_文件桥接未激活",
+              "type": "string"
+            },
+            {
+              "id": "543a6c5e-016a-4681-a7da-b3d4af6aad3a",
+              "name": "桥接方式",
+              "value": "n8n共享目录触发文件",
+              "type": "string"
+            },
+            {
+              "id": "5bfc616c-9ac6-4801-ac0a-e56f2dbde551",
+              "name": "触发文件",
+              "value": "/home/node/.n8n/jiege_bridge/stock_active_research_trigger.json",
+              "type": "string"
+            },
+            {
+              "id": "89557923-1745-4865-9676-6ac51e95a5a7",
+              "name": "AI分析报告",
+              "value": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\135分层日报\\AI分析报告_最新.md",
+              "type": "string"
+            },
+            {
+              "id": "04018d0e-e002-4e90-a9da-e1d5575e4547",
+              "name": "企微推送草案",
+              "value": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\136推送草案\\股票企微推送草案_最新.md",
+              "type": "string"
+            },
+            {
+              "id": "c8b2d950-0498-4bde-bc2b-e521302b8b95",
+              "name": "日内报告闭环策略",
+              "value": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\260股票n8n日内报告闭环与晨报推送策略包\\股票n8n日内报告闭环与晨报推送策略包_最新.json",
+              "type": "string"
+            },
+            {
+              "id": "58aba7ae-a2f7-417a-a3a5-f718cf69c970",
+              "name": "收市后每日观察",
+              "value": "15:40-18:30；生成分层日报、候选池和第二天候选推荐草案。",
+              "type": "string"
+            },
+            {
+              "id": "2bb8358f-51de-4b3a-8bb8-4ab200105f36",
+              "name": "半夜宏观规律分析",
+              "value": "00:30-05:30；复盘前日推送、行业轮动、更优候选和风险纠偏。",
+              "type": "string"
+            },
+            {
+              "id": "78ba1467-8fec-469b-b2e7-fe096f627b09",
+              "name": "开市前晨报推送",
+              "value": "08:20-08:40；仅本人单条晨报灰度闸口，不群发。",
+              "type": "string"
+            },
+            {
+              "id": "537519e3-f421-451e-ab02-5349ca59e2e3",
+              "name": "学习沉淀",
+              "value": "推送、纠偏、用户反馈和晚间复盘均进入学习沉淀账与进化候选。",
+              "type": "string"
+            },
+            {
+              "id": "3322e6d4-60f2-4860-a7e3-d936c9420da8",
+              "name": "是否需要人工复核",
+              "value": true,
+              "type": "boolean"
+            },
+            {
+              "id": "8ba4091e-c657-4409-9c90-86d21074d684",
+              "name": "安全声明",
+              "value": "未激活导入；无Webhook；无真实发送节点；无券商接口；无自动交易。",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "c4b97a43-ccba-4dd1-ad60-0837767ae47a",
+      "name": "输出本地结果路径",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "股票主动研究闭环文件桥接未激活导入工件\\n生成时间：2026-05-09 13:26:44\\n日内节奏：全天轻量随问随答；15:40-18:30收市观察；00:30-05:30半夜规律复盘；08:20-08:40开市前晨报。\\n安全边界：active=false；无Webhook；无n8n凭据；无企业微信真实发送节点；无券商接口；无自动交易。\\n用途：n8n写触发文件，宿主机受控脚本消费触发并运行股票主动研究闭环。",
+        "height": 260,
+        "width": 420,
+        "color": 4
+      },
+      "id": "7f7017de-3622-4023-988a-10ef1fedea2c",
+      "name": "安全边界说明",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -40
+      ]
+    }
+  ],
+  "connections": {
+    "手动触发": {
+      "main": [
+        [
+          {
+            "node": "写入宿主机股票研究触发文件",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "写入宿主机股票研究触发文件": {
+      "main": [
+        [
+          {
+            "node": "输出本地结果路径",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "staticData": null,
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "jiege_stock_active_research": true,
+    "target": "jiege_v3_n8n",
+    "requires_manual_confirm_before_import": true,
+    "requires_manual_confirm_before_enable": true,
+    "must_remain_inactive": true,
+    "generated_at": "2026-05-09 13:26:44",
+    "intraday_report_loop": true,
+    "strategy_package": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\260股票n8n日内报告闭环与晨报推送策略包\\股票n8n日内报告闭环与晨报推送策略包_最新.json",
+    "schedule_plan": [
+      {
+        "name": "收市后每日观察",
+        "time": "15:40-18:30",
+        "real_send": false
+      },
+      {
+        "name": "半夜宏观规律分析",
+        "time": "00:30-05:30",
+        "real_send": false
+      },
+      {
+        "name": "开市前晨报推送",
+        "time": "08:20-08:40",
+        "real_send": "single-user-gate-only"
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "VIDEO_AGENT_SHADOW_ASSET_GAP_LIST_001",
+  "name": "VAI影子资产缺口清单",
+  "asset_identity": "video_creation_agent_shadow_asset_gap_list",
+  "stage": "W1_R0",
+  "status": "gap_list_no_formal_system_change",
+  "gaps": [
+    {
+      "gap": "real_desensitized_video_idea_sample_missing",
+      "impact": "cannot_fill_complete_trial_sample",
+      "handling": "wait_for_user_provided_desensitized_idea"
+    },
+    {
+      "gap": "platform_publish_spec_details_missing",
+      "impact": "cannot_assess_publishability",
+      "handling": "keep_pending_verification_no_publish_conclusion"
+    },
+    {
+      "gap": "asset_authorization_details_missing",
+      "impact": "cannot_enter_generation_discussion",
+      "handling": "record_asset_authorization_gap_only"
+    },
+    {
+      "gap": "human_receipt_instance_missing",
+      "impact": "cannot_extract_real_review_experience",
+      "handling": "wait_for_human_receipt"
+    },
+    {
+      "gap": "multi_case_validation_missing",
+      "impact": "cannot_upgrade_rule",
+      "handling": "keep_candidate_pending_review"
+    },
+    {
+      "gap": "real_wechat_entry_authorization_missing",
+      "impact": "cannot_act_as_real_io_terminal",
+      "handling": "continue_manual_shadow_input_no_public_config_change"
+    }
+  ],
+  "existing_support": [
+    "contracts_input_checks_clarification_three_options_receipts_redlines_state_logs",
+    "asset_relationship_map_and_trial_io_packet",
+    "continuous_construction_rule"
+  ],
+  "next_steps": [
+    "fill_trial_sample_after_user_provides_desensitized_video_idea",
+    "continue_platform_spec_and_asset_authorization_gap_fields",
+    "collect_real_review_feedback_with_human_receipt_template"
+  ]
+}

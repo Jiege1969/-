@@ -1,0 +1,35 @@
+# ============================================================
+# Name: docker-compose.isolated-n8n.yml
+# Purpose: Run only the isolated v3 n8n service for stock assistant gray delivery.
+# Trigger: powershell 执行隔离n8n受控启动.ps1
+# Owner system: 01 core system.
+# Dependencies: Docker Desktop; n8nio/n8n:1.123.30.
+# Safety: Uses 127.0.0.1:28679 and data under D:\杰哥智能化系统 only; does not start old system services, does not send messages, and does not enable workflows.
+# Change log: 2026-04-28 created isolated n8n implementation compose from reviewed draft.
+# ============================================================
+
+services:
+  n8n:
+    image: n8nio/n8n:1.123.30
+    container_name: jiege_v3_n8n
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:28679:5678"
+    volumes:
+      - 'D:\杰哥智能化系统\01杰哥智能系统\03数据\n8n:/home/node/.n8n'
+    environment:
+      - N8N_PROTOCOL=http
+      - N8N_HOST=127.0.0.1
+      - N8N_PORT=5678
+      - WEBHOOK_URL=http://127.0.0.1:28679
+      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_PERSONALIZATION_ENABLED=false
+      - N8N_HIRING_BANNER_ENABLED=false
+      - N8N_VERSION_NOTIFICATIONS_ENABLED=false
+      - N8N_TEMPLATES_ENABLED=false
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+      - TZ=Asia/Shanghai
+
+networks:
+  default:
+    name: jiege_v3_n8n_isolated_network

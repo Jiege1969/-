@@ -1,0 +1,237 @@
+﻿{
+    "version":  "1.8",
+    "status":  "shadow_index",
+    "business_line":  "税收业务影子底座",
+    "official_sources":  [
+                             {
+                                 "id":  "TAX-SRC-001",
+                                 "name":  "国家税务总局官网",
+                                 "url":  "https://www.chinatax.gov.cn/",
+                                 "status":  "checked"
+                             },
+                             {
+                                 "id":  "TAX-SRC-002",
+                                 "name":  "国家税务总局政策法规库",
+                                 "url":  "https://fgk.chinatax.gov.cn/",
+                                 "status":  "checked"
+                             },
+                             {
+                                 "id":  "TAX-SRC-003",
+                                 "name":  "财政部官网",
+                                 "url":  "https://www.mof.gov.cn/",
+                                 "status":  "checked"
+                             },
+                             {
+                                 "id":  "TAX-SRC-003A",
+                                 "name":  "财政部税政司政策发布",
+                                 "url":  "https://szs.mof.gov.cn/zhengcefabu/",
+                                 "status":  "checked"
+                             },
+                             {
+                                 "id":  "TAX-SRC-004",
+                                 "name":  "中国人大网",
+                                 "url":  "https://www.npc.gov.cn/",
+                                 "status":  "registered_for_law_level_sources"
+                             }
+                         ],
+    "policy_cards":  [
+                         {
+                             "type":  "law_metadata_card",
+                             "document_id":  "TAX-LAW-VAT-2024",
+                             "document_number":  "中华人民共和国主席令第四十一号",
+                             "file":  "税收政策元数据卡_增值税法2024_v1.0.md",
+                             "json":  "税收政策元数据卡_增值税法2024_v1.0.json"
+                         },
+                         {
+                             "type":  "metadata_card",
+                             "document_id":  "TAX-DOC-2011-100",
+                             "document_number":  "财税〔2011〕100号",
+                             "file":  "税收政策元数据卡_财税2011_100_v1.0.md",
+                             "json":  "税收政策元数据卡_财税2011_100_v1.0.json"
+                         },
+                         {
+                             "type":  "guide_card",
+                             "guide_id":  "TAX-GUIDE-SOFTWARE-VAT-REFUND-20241025",
+                             "file":  "税收政策指引卡_软件产品即征即退_20241025_v1.0.md"
+                         }
+                     ],
+    "operation_rules":  [
+                            {
+                                "id":  "TAX-OP-VALIDITY-FILTER-001",
+                                "name":  "税收政策下载筛选规程",
+                                "file":  "税收政策下载筛选规程_v1.0.md",
+                                "core_rule":  "登记或下载政策文件前，先在官方政策库页面使用有效状态筛选，例如全文有效或等价有效状态。"
+                            },
+                            {
+                                "id":  "TAX-OP-VALIDITY-R0-REHEARSAL-001",
+                                "name":  "国家税务总局政策库全文有效检索R0演练",
+                                "md":  "税收政策库操作演练_全文有效检索_即征即退_v1.0.md",
+                                "json":  "税收政策库操作演练_全文有效检索_即征即退_v1.0.json",
+                                "r0_script":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\R0只读工具\\R0_国家税务总局政策库_全文有效检索.ps1",
+                                "search_word":  "即征即退",
+                                "validity_filter":  "全文有效",
+                                "status":  "completed"
+                            }
+                        ],
+    "shadow_samples":  [
+                           {
+                               "sample_id":  "TAX-SHADOW-001",
+                               "name":  "软件产品即征即退",
+                               "draft":  "软件产品即征即退_影子样例_v1.0.md",
+                               "template_check":  "软件产品即征即退_影子样例_模板符合性检查_v1.0.md",
+                               "calculation_prerequisites":  "软件产品即征即退_测算前置字段清单_v1.0.md",
+                               "condition_fieldization":  "税收适用条件字段化样例_软件产品即征即退_v1.0.md",
+                               "condition_fieldization_json":  "税收适用条件字段化样例_软件产品即征即退_v1.0.json",
+                               "review_sample":  "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\人工修正样本\\TAX_SHADOW_001_软件即征即退_空白复核样本_v1.0.json"
+                           },
+                           {
+                               "sample_id":  "TAX_ANALYSIS_SHADOW_001",
+                               "name":  "软件产品即征即退待复核分析样例",
+                               "md":  "TAX_ANALYSIS_SHADOW_001_软件产品即征即退_待复核分析样例_v1.0.md",
+                               "json":  "TAX_ANALYSIS_SHADOW_001_软件产品即征即退_待复核分析样例_v1.0.json",
+                               "source_contract":  "涉税业务分析契约草案_v1.0",
+                               "confidence":  "draft",
+                               "status":  "shadow_analysis_sample_pending_review"
+                           },
+                           {
+                               "sample_id":  "TAX_ADVISOR_TRIAL_001",
+                               "name":  "软件产品即征即退影子试运行",
+                               "md":  "TAX_ADVISOR_TRIAL_001_软件产品即征即退_影子试运行_v1.0.md",
+                               "json":  "TAX_ADVISOR_TRIAL_001_软件产品即征即退_影子试运行_v1.0.json",
+                               "source_entry":  "税收政策顾问影子版试用入口_v1.0",
+                               "confidence":  "draft",
+                               "status":  "shadow_trial_run_pending_review"
+                           },
+                           {
+                               "sample_id":  "TAX_ADVISOR_TRIAL_002",
+                               "name":  "增值税法基础依据摘要影子试运行",
+                               "md":  "TAX_ADVISOR_TRIAL_002_增值税法基础依据摘要_影子试运行_v1.0.md",
+                               "json":  "TAX_ADVISOR_TRIAL_002_增值税法基础依据摘要_影子试运行_v1.0.json",
+                               "source_entry":  "税收政策顾问影子版试用入口_v1.0",
+                               "confidence":  "evidence_ready",
+                               "status":  "shadow_trial_run_pending_review"
+                           },
+                           {
+                               "sample_id":  "TAX_ADVISOR_TRIAL_003",
+                               "name":  "全文有效政策候选筛选说明影子试运行",
+                               "md":  "TAX_ADVISOR_TRIAL_003_全文有效政策候选筛选说明_影子试运行_v1.0.md",
+                               "json":  "TAX_ADVISOR_TRIAL_003_全文有效政策候选筛选说明_影子试运行_v1.0.json",
+                               "source_entry":  "税收政策顾问影子版试用入口_v1.0",
+                               "confidence":  "evidence_ready",
+                               "status":  "shadow_trial_run_pending_review"
+                           },
+                           {
+                               "sample_id":  "TAX_ADVISOR_TRIAL_004",
+                               "name":  "软件产品即征即退资料清单影子试运行",
+                               "md":  "TAX_ADVISOR_TRIAL_004_软件产品即征即退资料清单_影子试运行_v1.0.md",
+                               "json":  "TAX_ADVISOR_TRIAL_004_软件产品即征即退资料清单_影子试运行_v1.0.json",
+                               "source_entry":  "税收政策顾问影子版试用入口_v1.0",
+                               "confidence":  "draft",
+                               "status":  "shadow_trial_run_pending_review"
+                           },
+                           {
+                               "sample_id":  "TAX_ADVISOR_TRIAL_005",
+                               "name":  "软件产品即征即退测算前置字段影子试运行",
+                               "md":  "TAX_ADVISOR_TRIAL_005_软件产品即征即退测算前置字段_影子试运行_v1.0.md",
+                               "json":  "TAX_ADVISOR_TRIAL_005_软件产品即征即退测算前置字段_影子试运行_v1.0.json",
+                               "source_entry":  "税收政策顾问影子版试用入口_v1.0",
+                               "confidence":  "draft",
+                               "status":  "shadow_trial_run_pending_review"
+                           }
+                       ],
+    "workflow_drafts":  [
+                            {
+                                "id":  "TAX-WORKFLOW-REPORT-001",
+                                "name":  "税收业务报告工作流草案",
+                                "md":  "税收业务报告工作流草案_v1.0.md",
+                                "json":  "税收业务报告工作流草案_v1.0.json",
+                                "source_reference":  "股票分析报告样本与工作流_v1.0",
+                                "status":  "shadow_draft_pending_review",
+                                "boundary":  "不申报、不退税、不外发、不接n8n、不写正式库"
+                            }
+                        ],
+    "analysis_expert_drafts":  [
+                                  {
+                                      "id":  "TAX-CONTRACT-ANALYSIS-001",
+                                      "name":  "涉税业务分析契约草案",
+                                      "md":  "涉税业务分析契约草案_v1.0.md",
+                                      "json":  "涉税业务分析契约草案_v1.0.json",
+                                      "status":  "shadow_draft_pending_review"
+                                  },
+                                  {
+                                      "id":  "TAX-FRONTEND-FIELDS-001",
+                                      "name":  "税收前台输出字段草案",
+                                      "md":  "税收前台输出字段草案_v1.0.md",
+                                      "json":  "税收前台输出字段草案_v1.0.json",
+                                      "status":  "shadow_draft_pending_review"
+                                  },
+                                  {
+                                      "id":  "TAX-REVIEW-FIELDS-001",
+                                      "name":  "税收复盘字段清单",
+                                      "md":  "税收复盘字段清单_v1.0.md",
+                                      "status":  "shadow_draft_pending_review"
+                                  }
+                              ],
+    "shadow_trial_entry":  {
+                               "id":  "TAX-SHADOW-TRIAL-ENTRY-001",
+                               "name":  "税收政策顾问影子版试用入口",
+                               "entry_md":  "税收政策顾问影子版试用入口_v1.0.md",
+                               "input_card_md":  "税收政策顾问影子版提问输入卡_v1.0.md",
+                               "run_checklist_md":  "税收政策顾问影子版运行检查清单_v1.0.md",
+                               "acceptance_checklist_md":  "税收政策顾问影子版试用验收清单_v1.0.md",
+                               "trial_question_queue_md":  "税收政策顾问影子版试用问题队列_最新.md",
+                               "daily_shadow_trial_ledger_md":  "税收政策顾问日常影子试用接入台账_最新.md",
+                               "daily_shadow_trial_ledger_json":  "税收政策顾问日常影子试用接入台账_最新.json",
+                               "daily_intake_sample_md":  "TAX_DAILY_INTAKE_001_软件产品即征即退脱敏接入样例_v1.0.md",
+                               "daily_intake_sample_json":  "TAX_DAILY_INTAKE_001_软件产品即征即退脱敏接入样例_v1.0.json",
+                               "daily_draft_sample_md":  "TAX_DAILY_DRAFT_001_软件产品即征即退待复核草案_v1.0.md",
+                               "daily_draft_sample_json":  "TAX_DAILY_DRAFT_001_软件产品即征即退待复核草案_v1.0.json",
+                               "daily_intake_blank_002_md":  "TAX_DAILY_INTAKE_002_脱敏问题接入空白卡_20260509.md",
+                               "daily_intake_blank_002_json":  "TAX_DAILY_INTAKE_002_脱敏问题接入空白卡_20260509.json",
+                               "daily_draft_blank_002_md":  "TAX_DAILY_DRAFT_002_待复核草案空白模板_20260509.md",
+                               "daily_draft_blank_002_json":  "TAX_DAILY_DRAFT_002_待复核草案空白模板_20260509.json",
+                               "status":  "daily_shadow_trial_ready",
+                               "boundary":  "只生成待复核分析草案，不申报、不退税、不外发、不接n8n"
+                           },
+    "queue_completion_checks":  [
+                                    {
+                                        "id":  "TAX-QUEUE-CHECK-LOCAL-CALIBER-DESENSITIZED-20260508",
+                                        "name":  "税收地方口径与脱敏复核补齐核对记录",
+                                        "md":  "税收地方口径与脱敏复核补齐核对记录_20260508.md",
+                                        "json":  "税收地方口径与脱敏复核补齐核对记录_20260508.json",
+                                        "source_queue_item":  "补地方口径待补模板、脱敏复核样例结构",
+                                        "status":  "completed_w1_r0",
+                                        "boundary":  "不登录电子税务局、不接财税软件、不读取真实企业数据、不生成确定金额、不外发"
+                                    }
+                                ],
+    "formal_capability_claim":  false,
+    "safety_boundary":  {
+                            "formal_tax_system_online":  false,
+                            "write_formal_tax_db":  false,
+                            "trigger_n8n":  false,
+                            "send_wecom":  false,
+                            "call_model_inference":  false,
+                            "generate_final_tax_conclusion":  false
+                        },
+    "green_light_correction":  "官方公开政策库的只读检索、有效状态筛选、元数据登记、影子知识库建设属于绿灯动作。",
+    "basis_hierarchy_rule":  {
+                                 "md":  "D:\\杰哥智能化系统\\03杰哥进化系统\\规则库\\依据层级与冲突处理规则_v1.0.md",
+                                 "json":  "D:\\杰哥智能化系统\\03杰哥进化系统\\规则库\\依据层级与冲突处理规则_v1.0.json",
+                                 "user_core_chain":  [
+                                                         "宪法",
+                                                         "法律",
+                                                         "部门规章制度",
+                                                         "单位企业制度",
+                                                         "职能科室工作流程"
+                                                     ],
+                                 "general_hierarchy":  [
+                                                           "宪法/根本原则",
+                                                           "法律",
+                                                           "行政法规",
+                                                           "部门规章、规范性文件、主管机关政策",
+                                                           "地方口径、单位/企业制度",
+                                                           "职能科室工作流程、操作SOP、人工经验"
+                                                       ],
+                                 "conflict_rule":  "上位依据优先，下位流程只能细化执行，不能反向覆盖。"
+                             }
+}

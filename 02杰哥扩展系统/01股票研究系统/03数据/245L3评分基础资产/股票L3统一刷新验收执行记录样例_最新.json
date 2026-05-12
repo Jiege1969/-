@@ -1,0 +1,151 @@
+{
+  "name": "股票L3统一刷新验收执行记录样例",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 09:47:15",
+  "asset_identity": "W1影子执行记录样例",
+  "status": "shadow_record",
+  "source_assets": {
+    "execution_template": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票L3统一刷新验收执行记录模板_最新.json",
+    "execution_template_exists": true
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "not_real_refresh": true,
+  "execution_header": {
+    "execution_id": "STOCK_L3_REFRESH_SHADOW_20260508_094715",
+    "execution_time": "2026-05-08 09:47:15",
+    "operator": "codex_shadow_builder",
+    "trigger_source": "shadow_local_validation",
+    "scope": "五样本L3统一刷新验收",
+    "real_refresh_performed": false,
+    "external_send_performed": false,
+    "formal_database_write_performed": false
+  },
+  "asset_check_records": [
+    {
+      "asset_key": "l3_gap_priority",
+      "display_name": "L3五样本证据缺口优先级报告",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\L3五样本证据缺口优先级报告_最新.json",
+      "expected_exists": true,
+      "actual_exists": true,
+      "check_result": "pass",
+      "blocking_issue": null,
+      "missing_action": "如缺失，则禁止生成声称 L3 完整的前台报告，并登记缺口。",
+      "review_note": "本地资产存在，影子执行记录检查通过。"
+    },
+    {
+      "asset_key": "policy_gap_queue",
+      "display_name": "五样本政策事件缺口队列",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本政策事件缺口队列_最新.json",
+      "expected_exists": true,
+      "actual_exists": true,
+      "check_result": "pass",
+      "blocking_issue": null,
+      "missing_action": "如缺失，则禁止生成声称 L3 完整的前台报告，并登记缺口。",
+      "review_note": "本地资产存在，影子执行记录检查通过。"
+    },
+    {
+      "asset_key": "industry_price_queue",
+      "display_name": "五样本行业价格连续观测补数队列",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本行业价格连续观测补数队列_最新.json",
+      "expected_exists": true,
+      "actual_exists": true,
+      "check_result": "pass",
+      "blocking_issue": null,
+      "missing_action": "如缺失，则禁止生成声称 L3 完整的前台报告，并登记缺口。",
+      "review_note": "本地资产存在，影子执行记录检查通过。"
+    },
+    {
+      "asset_key": "financial_capital_template",
+      "display_name": "五样本财报资金证据采集模板草案",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本财报资金证据采集模板草案_最新.json",
+      "expected_exists": true,
+      "actual_exists": true,
+      "check_result": "pass",
+      "blocking_issue": null,
+      "missing_action": "如缺失，则禁止生成声称 L3 完整的前台报告，并登记缺口。",
+      "review_note": "本地资产存在，影子执行记录检查通过。"
+    },
+    {
+      "asset_key": "front_answer_samples",
+      "display_name": "五样本前台结论型短答修订样例",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本前台结论型短答修订样例_最新.json",
+      "expected_exists": true,
+      "actual_exists": true,
+      "check_result": "pass",
+      "blocking_issue": null,
+      "missing_action": "如缺失，则禁止生成声称 L3 完整的前台报告，并登记缺口。",
+      "review_note": "本地资产存在，影子执行记录检查通过。"
+    },
+    {
+      "asset_key": "backend_front_mapping",
+      "display_name": "后台证据链到前台短答字段映射草案",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\后台证据链到前台短答字段映射草案_最新.json",
+      "expected_exists": true,
+      "actual_exists": true,
+      "check_result": "pass",
+      "blocking_issue": null,
+      "missing_action": "如缺失，则禁止生成声称 L3 完整的前台报告，并登记缺口。",
+      "review_note": "本地资产存在，影子执行记录检查通过。"
+    },
+    {
+      "asset_key": "sample_mapping_acceptance",
+      "display_name": "五样本后台到前台字段映射验收样例",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本后台到前台字段映射验收样例_最新.json",
+      "expected_exists": true,
+      "actual_exists": true,
+      "check_result": "pass",
+      "blocking_issue": null,
+      "missing_action": "如缺失，则禁止生成声称 L3 完整的前台报告，并登记缺口。",
+      "review_note": "本地资产存在，影子执行记录检查通过。"
+    }
+  ],
+  "decision_section": {
+    "all_required_assets_ready": true,
+    "allow_front_answer_generation": true,
+    "allow_l3_complete_claim": false,
+    "blocked_reasons": [],
+    "missing_summary": "本地关键资产齐备；但未执行真实数据刷新，不能声称正式 L3 完整。",
+    "next_action": "可继续做影子前台短答刷新验收；正式入口或真实刷新仍需 W3 判断。"
+  },
+  "front_answer_gate": {
+    "object_first_line_required": true,
+    "conclusion_from_contract_required": true,
+    "missing_must_be_explicit": true,
+    "no_trade_wording": true,
+    "no_formal_recommendation": true
+  },
+  "prohibited_actions": [
+    "真实发送企业微信",
+    "触发 n8n",
+    "重启服务或修改 19310",
+    "写正式库",
+    "接入真实账号",
+    "新增买入、卖出、下单、仓位调整、券商接口或自动交易"
+  ],
+  "summary": {
+    "asset_record_count": 7,
+    "pass_count": 7,
+    "blocked_count": 0,
+    "real_refresh_performed": false,
+    "external_send_performed": false,
+    "formal_database_write_performed": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_adapter_write": true,
+    "not_score_write": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_real_refresh": true
+  }
+}

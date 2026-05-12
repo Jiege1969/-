@@ -1,0 +1,42 @@
+{
+  "contract_id": "VIDEO_AGENT_INTENT_ROUTING_001",
+  "name": "意图路由分类表草案",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:30:00 +08:00",
+  "asset_identity": "视频创作智能体 W1/R0 意图分类与路由草案",
+  "risk_level": "W1/R0",
+  "scope": "只输出意图分类和待复核路由建议，不执行真实动作",
+  "intent_routes": [
+    {"intent": "新建任务", "route_to": "会话状态契约 + 任务草案", "output": "待复核任务草案", "real_action": false},
+    {"intent": "改文案", "route_to": "局部修正契约", "output": "修改前后对照", "real_action": false},
+    {"intent": "改分镜", "route_to": "局部修正契约", "output": "分镜修正建议", "real_action": false},
+    {"intent": "改风格", "route_to": "会话状态契约", "output": "风格字段更新草案", "real_action": false},
+    {"intent": "改受众", "route_to": "会话状态契约", "output": "受众字段更新草案", "real_action": false},
+    {"intent": "改配音", "route_to": "外部引擎适配契约", "output": "配音需求字段", "real_action": false},
+    {"intent": "改封面", "route_to": "局部修正契约", "output": "封面需求字段", "real_action": false},
+    {"intent": "生成预检", "route_to": "人工门禁升级清单", "output": "生成放行待复核", "real_action": false},
+    {"intent": "发布预检", "route_to": "人工门禁升级清单", "output": "发布放行待复核", "real_action": false},
+    {"intent": "人工复核", "route_to": "人工门禁升级清单", "output": "回执字段草案", "real_action": false},
+    {"intent": "复盘进化", "route_to": "进化候选链路", "output": "候选经验草案", "real_action": false},
+    {"intent": "无法判断", "route_to": "澄清一次", "output": "单轮澄清问题", "real_action": false}
+  ],
+  "routing_rules": {
+    "max_primary_intent": 1,
+    "max_secondary_intents": 2,
+    "redline_terms_go_to_gate_or_blocker": true,
+    "unclear_input_clarify_once": true,
+    "route_result_is_draft_only": true
+  },
+  "boundary": {
+    "replace_task_generator": false,
+    "modify_wecom_route_service": false,
+    "call_model_api": false,
+    "render": false,
+    "upload": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "modify_19310_or_19302": false
+  },
+  "formal_capability_claim": false
+}

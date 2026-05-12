@@ -1,0 +1,52 @@
+{
+  "record_id": "VIDEO_AGENT_VAI_106_108",
+  "date": "2026-05-08",
+  "scope": "视频制作业务影子底座",
+  "construction_level": "W1/W2 低风险影子施工",
+  "summary": "补齐VAI100至VAI105小阶段收口、提交总管判断缺口卡、企业微信提交总管判断阻断回执样例。",
+  "did": [
+    "新增VAI100至VAI105小阶段收口记录",
+    "新增提交总管判断缺口卡",
+    "新增企业微信提交总管判断阻断回执样例"
+  ],
+  "changed_files": [
+    "VIDEO_AGENT_VAI_100_105_MINI_ROLLUP_001_VAI100至VAI105小阶段收口记录_v1.0.md",
+    "VIDEO_AGENT_VAI_100_105_MINI_ROLLUP_001_VAI100至VAI105小阶段收口记录_v1.0.json",
+    "VIDEO_AGENT_MANAGER_DECISION_SUBMIT_GAP_CARD_001_提交总管判断缺口卡_v1.0.md",
+    "VIDEO_AGENT_MANAGER_DECISION_SUBMIT_GAP_CARD_001_提交总管判断缺口卡_v1.0.json",
+    "VIDEO_AGENT_WECOM_SUBMIT_MANAGER_DECISION_BLOCKER_REPLY_001_企业微信提交总管判断阻断回执样例_v1.0.md",
+    "VIDEO_AGENT_WECOM_SUBMIT_MANAGER_DECISION_BLOCKER_REPLY_001_企业微信提交总管判断阻断回执样例_v1.0.json",
+    "VIDEO_AGENT_VAI_106_108_对齐回传记录_20260508.md",
+    "VIDEO_AGENT_VAI_106_108_对齐回传记录_20260508.json"
+  ],
+  "risk_level": "低",
+  "real_system_triggered": {
+    "real_model": false,
+    "real_material_read": false,
+    "real_render": false,
+    "real_publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "real_account_cookie_api_key": false,
+    "platform_upload_or_publish": false,
+    "service_port_manager_public_component_formal_repo": false
+  },
+  "need_manager_integration": {
+    "current": false,
+    "future_condition": "若未来真的要提交总管判断，必须在总管对话框或总管授权链路中处理，本线不能代写正式记录。"
+  },
+  "next_suggestions": [
+    "VAI001至VAI108本线资产索引草案v8",
+    "总管判断后返回视频线的影子接收卡",
+    "企业微信总管判断结果已收到但仍需人工复核回执样例"
+  ],
+  "self_check": {
+    "read_manager_panel_and_startup_package_first": true,
+    "write_scope_limited_to_video_shadow_base": true,
+    "json_convert_from_json_passed": true,
+    "scan_hits_are_boundary_statements": true,
+    "no_real_system_called": true,
+    "no_manager_public_service_formal_or_other_line_modified": true
+  }
+}
+

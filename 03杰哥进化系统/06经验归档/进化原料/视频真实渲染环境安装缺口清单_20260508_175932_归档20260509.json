@@ -1,0 +1,72 @@
+{
+  "名称": "视频真实渲染环境安装缺口清单",
+  "generated_at": "2026-05-08 17:59:32",
+  "真实渲染状态": "blocked",
+  "真实发布状态": "blocked",
+  "安装缺口清单": [
+    {
+      "对象": "MoneyPrinterTurbo",
+      "状态": "blocked",
+      "缺口": "未调用 MoneyPrinterTurbo，项目依赖、配置、素材链路和真实渲染入口未验证。",
+      "只读发现": {
+        "候选目录数量": 6,
+        "存在目录数量": 0,
+        "包含候选入口文件目录数量": 0
+      },
+      "下一步": "人工确认 MoneyPrinterTurbo 根目录、Python 环境、依赖安装状态、项目配置和真实渲染授权后，再由后续受控任务放行。"
+    },
+    {
+      "对象": "MoneyPrinterTurbo",
+      "状态": "blocked",
+      "缺口": "只读候选路径中未发现 MoneyPrinterTurbo 目录存在。",
+      "下一步": "人工提供或安装 MoneyPrinterTurbo 的实际根目录；本任务不安装、不修改 PATH。"
+    },
+    {
+      "对象": "ImageMagick",
+      "状态": "blocked",
+      "缺口": "未执行 magick 或 magick -version，ImageMagick 版本、PATH 可运行性、MoviePy/Pillow 调用链未验证。",
+      "只读发现": {
+        "候选目录数量": 15,
+        "存在目录数量": 0,
+        "包含magick.exe目录数量": 0
+      },
+      "下一步": "人工确认 ImageMagick 安装目录、magick.exe、PATH、策略文件和字体/编码支持后，再由后续受控任务放行。"
+    },
+    {
+      "对象": "ImageMagick",
+      "状态": "blocked",
+      "缺口": "只读候选路径中未发现 ImageMagick 目录存在。",
+      "下一步": "人工安装或提供 ImageMagick 目录；本任务不安装、不写系统环境变量。"
+    }
+  ],
+  "readonly_flags": {
+    "真实渲染": false,
+    "生成真实视频": false,
+    "上传发布": false,
+    "调用MoneyPrinterTurbo": false,
+    "执行magick": false,
+    "执行magick_version": false,
+    "触发n8n": false,
+    "修改企业微信公共配置": false,
+    "修改总管面板": false,
+    "修改一键接续包": false,
+    "重载服务": false,
+    "安装软件": false,
+    "写入系统环境变量": false
+  },
+  "readonly_flags_ascii": {
+    "real_render": false,
+    "generate_real_video": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false,
+    "install_software": false,
+    "write_system_environment": false
+  }
+}

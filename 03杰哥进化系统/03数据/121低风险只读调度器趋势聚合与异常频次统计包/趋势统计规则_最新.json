@@ -1,0 +1,64 @@
+{
+  "name": "低风险只读调度器趋势统计规则",
+  "generated_at": "2026-05-08 21:38:52",
+  "rule_count": 5,
+  "rules": [
+    {
+      "metric": "通过率",
+      "field": "pass_rate",
+      "formula": "daily_pass_count / daily_total_count",
+      "window": "daily_and_weekly",
+      "threshold": ">=0.90 为稳定，<0.80 进入人工复核",
+      "readonly_summary_only": true
+    },
+    {
+      "metric": "暂停次数",
+      "field": "pause_count",
+      "formula": "sum(pause_count)",
+      "window": "daily_and_weekly",
+      "threshold": ">0 记录为异常频次，不自动恢复",
+      "readonly_summary_only": true
+    },
+    {
+      "metric": "总管确认次数",
+      "field": "confirmation_count",
+      "formula": "sum(confirmation_count)",
+      "window": "daily_and_weekly",
+      "threshold": ">0 仅进入人工确认统计",
+      "readonly_summary_only": true
+    },
+    {
+      "metric": "证据到期提醒",
+      "field": "retention_notice_count",
+      "formula": "sum(retention_notice_count)",
+      "window": "daily_and_weekly",
+      "threshold": ">0 只提醒不删除",
+      "readonly_summary_only": true
+    },
+    {
+      "metric": "红线模拟命中次数",
+      "field": "redline_simulation_hit_count",
+      "formula": "sum(redline_simulation_hit_count)",
+      "window": "daily_and_weekly",
+      "threshold": ">0 自动标记为 paused 口径，禁止外部动作",
+      "readonly_summary_only": true
+    }
+  ],
+  "source_files_modified": false,
+  "external_call": false,
+  "hard_red_line_confirmation": {
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "write_formal_rule": false,
+    "auto_promote_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false,
+    "external_call": false
+  }
+}

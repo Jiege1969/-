@@ -1,0 +1,38 @@
+{
+  "id": "VIDEO_AGENT_CONVERSATION_STATE_SAMPLE_001",
+  "name": "会话状态空白样例",
+  "asset_identity": "video_creation_agent_shadow_conversation_state_sample",
+  "stage": "W1_R0",
+  "status": "blank_sample_not_real_conversation",
+  "boundary": {
+    "real_llm": false,
+    "vector_database": false,
+    "read_real_assets": false,
+    "real_wechat_message": false,
+    "real_wechat_send": false,
+    "formal_task_write": false,
+    "generation_or_publish_approval": false
+  },
+  "fields": {
+    "session_id": "VAI-SESSION-0000",
+    "input_source": "manual_shadow_input",
+    "user_idea_summary": "to_be_filled_desensitized_summary_only",
+    "current_intent": "pending_routing",
+    "task_stage": "draft_intake",
+    "linked_materials": [],
+    "asset_authorization_status": "pending_verification",
+    "platform_rule_status": "pending_verification",
+    "current_output_type": "pending",
+    "confidence": "low",
+    "manual_review_items": [],
+    "redline_hits": [],
+    "next_action": "manual_review_or_clarification"
+  },
+  "forbidden_inferences": [
+    "not_a_real_user_profile",
+    "not_long_term_memory",
+    "not_formal_task_record",
+    "not_generation_approval",
+    "not_publish_approval"
+  ]
+}

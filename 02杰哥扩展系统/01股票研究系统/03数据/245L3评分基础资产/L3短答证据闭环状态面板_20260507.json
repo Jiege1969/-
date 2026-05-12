@@ -1,0 +1,79 @@
+{
+  "名称": "L3短答证据闭环状态面板",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子状态面板",
+  "状态": "shadow_only",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "目的": "汇总企业微信L3短答所需的关键证据闭环状态，避免已处理的旧债反复出现，也避免未完成项被误认为已完成。",
+  "evidence_layers": [
+    {
+      "layer": "对象识别",
+      "status": "evidence_ready",
+      "coverage": "五样本短答均有分析对象：股票名称（代码）。",
+      "front_rule": "第一行必须明确股票名称和代码。"
+    },
+    {
+      "layer": "L3评分",
+      "status": "shadow_ready",
+      "coverage": "云南锗业、天齐锂业、华虹公司、浙商中拓、正丹股份均已有影子L3评分报告。",
+      "front_rule": "结论来自L3总分、关键缺口和置信度，不由LLM凭空补分。"
+    },
+    {
+      "layer": "财报基本面证据卡",
+      "status": "shadow_ready",
+      "coverage": "五样本均已有财报基本面证据卡，前台不再写财报未接入。",
+      "front_rule": "已有证据卡时使用front_output_compression压缩成一句话。"
+    },
+    {
+      "layer": "政策事件",
+      "status": "partial",
+      "coverage": "锗出口管制等政策事件已入库；其他行业仍需继续扩充。",
+      "front_rule": "政策只能作为分项依据，不能单因子强推。"
+    },
+    {
+      "layer": "市场风格日表",
+      "status": "confirmed",
+      "coverage": "market_style_daily_latest已补齐全市场宽度、东方财富板块、大小盘相对强弱和近60日成交额分位。",
+      "front_rule": "可作为市场环境适配参考，但不能单独提高个股结论。"
+    },
+    {
+      "layer": "行业价格证据卡",
+      "status": "partial",
+      "coverage": "已建立industry_price_observations_ledger_v1.0.json和更新行业价格趋势证据卡_本地观测.py；天齐锂业电池级碳酸锂为single_observation，云南锗业锗锭、正丹股份TMA为source_registered。",
+      "front_rule": "L3短答已读取本地观测latest证据卡；single_observation只能弱参考，source_registered只能写价格未入账，不得写趋势反转。"
+    },
+    {
+      "layer": "企业微信短答适配层",
+      "status": "formal_candidate_integrated",
+      "coverage": "已新增L3企业微信短答适配器，并由股票助手入口.py最小调用；五样本本地dry-run通过。",
+      "front_rule": "前台输出结论型短答，后台保留证据链；适配器异常时回退旧短答。"
+    },
+    {
+      "layer": "正式企业微信入口",
+      "status": "local_assistant_entry_integrated",
+      "coverage": "股票助手入口.py已接入L3短答适配器；股票企业微信桥接入口.py和真实外发链路未改。",
+      "front_rule": "企业微信桥接仍只调用本地股票助手；本次未触发真实外发、n8n、服务重启或券商接口。"
+    }
+  ],
+  "当前可对用户说明": [
+    "财报旧债在五样本影子层已经闭环，不应再默认写财报未接入。",
+    "市场风格日表已从partial推进到confirmed，短答可写市场环境是否配合。",
+    "行业价格旧债已从静态样例推进到本地观测账本和趋势证据卡生成脚本；天齐锂业为单点观测，云南锗业和正丹股份仍是来源登记。",
+    "企业微信短答已经从影子适配契约推进到本地股票助手入口正式候选接入；企业微信桥接和真实外发链路未改。"
+  ],
+  "下一步推荐": [
+    "继续向industry_price_observations_ledger_v1.0.json补合法连续价格，满足5个观测点后自动升级trend_ready。",
+    "保持市场风格日表每日刷新，并把confirmed状态纳入日常验收。",
+    "如需真实企业微信服务生效，后续只需在受控窗口刷新本地服务；本次不自动重启。"
+  ],
+  "安全边界": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_service_restart": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

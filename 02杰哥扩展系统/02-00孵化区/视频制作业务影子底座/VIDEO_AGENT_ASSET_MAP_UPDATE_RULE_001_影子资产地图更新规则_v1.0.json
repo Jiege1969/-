@@ -1,0 +1,36 @@
+{
+  "asset_id": "VIDEO_AGENT_ASSET_MAP_UPDATE_RULE_001",
+  "name": "影子资产地图更新规则",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:52:00 +08:00",
+  "risk_level": "低风险",
+  "purpose": "定义视频智能体影子资产分类、更新字段和边界",
+  "categories": [
+    {"category": "会话层", "scope": ["会话状态", "澄清", "创作历史", "状态变更"]},
+    {"category": "路由层", "scope": ["意图分类", "命令解析", "路由预演"]},
+    {"category": "修正层", "scope": ["局部修正", "锁定字段", "修改回执"]},
+    {"category": "门禁层", "scope": ["人工复核", "生成放行", "真实渲染放行", "发布放行"]},
+    {"category": "执行器契约层", "scope": ["外部引擎字段", "调用前门禁", "失败回滚"]},
+    {"category": "试运行层", "scope": ["影子输入输出包", "演练报告", "复核问题"]},
+    {"category": "资产治理层", "scope": ["总资产清单", "成熟度快照", "对齐回传"]}
+  ],
+  "update_fields": [
+    "资产ID",
+    "文件名",
+    "类别",
+    "版本",
+    "生成时间",
+    "风险等级",
+    "是否可机器解析",
+    "是否触发真实系统",
+    "关联前置资产",
+    "下一步候选"
+  ],
+  "boundary": {
+    "update_local_shadow_asset_list_allowed": true,
+    "update_manager_index": false,
+    "write_formal_knowledge_base": false,
+    "claim_online_capability": false,
+    "real_system_triggered": false
+  }
+}

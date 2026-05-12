@@ -1,0 +1,93 @@
+{
+  "record_id": "CTRL_CAND_VIDEO_AI_003_ABSORPTION_20260508",
+  "generated_at": "2026-05-08 10:12:00 +08:00",
+  "candidate_id": "CTRL-CAND-VIDEO-AI-003",
+  "asset_identity": "总管侧W1/R0视频创作智能体外部引擎适配与人工门禁回传吸收记录",
+  "business_line": "video_production_shadow",
+  "risk_level": "W1/R0",
+  "status": "completed",
+  "source_files": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_ENGINE_ADAPTER_CONTRACT_001_外部引擎适配契约草案_v1.0.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_ENGINE_ADAPTER_CONTRACT_001_外部引擎适配契约草案_v1.0.json",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_HUMAN_GATE_UPGRADE_001_人工门禁升级清单_v1.0.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_HUMAN_GATE_UPGRADE_001_人工门禁升级清单_v1.0.json",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_VAI_001_005_R0_SELF_CHECK_20260508.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_VAI_001_005_对齐回传记录_20260508.md"
+  ],
+  "engine_adapters_absorbed": [
+    {
+      "name": "MoneyPrinterTurbo",
+      "purpose": "本地成片生成候选",
+      "call_allowed_now": false
+    },
+    {
+      "name": "HappyHorse",
+      "purpose": "片头/精品镜头候选",
+      "call_allowed_now": false
+    },
+    {
+      "name": "Qwen-TTS",
+      "purpose": "配音候选",
+      "call_allowed_now": false
+    },
+    {
+      "name": "PostBot",
+      "purpose": "发布辅助候选",
+      "call_allowed_now": false
+    }
+  ],
+  "gate_fields_absorbed": [
+    "调用前门禁ID",
+    "人工放行人",
+    "人工放行时间",
+    "素材授权状态",
+    "平台规则状态",
+    "AI标识状态",
+    "失败回滚路径",
+    "调用后人工回执"
+  ],
+  "human_gates_absorbed": [
+    "创意确认门禁",
+    "文案确认门禁",
+    "分镜确认门禁",
+    "素材授权门禁",
+    "AI标识门禁",
+    "生成放行门禁",
+    "成片预览门禁",
+    "发布放行门禁"
+  ],
+  "absorbed_constraints": {
+    "engine_adapter_contract_is_not_call_permission": true,
+    "generation_release_is_not_publish_release": true,
+    "publish_release_requires_finished_preview": true,
+    "simple_publish_phrase_means_publish_precheck_only": true,
+    "real_publish_is_w3": true
+  },
+  "boundary_flags": {
+    "install_or_call_money_printer_turbo": false,
+    "install_or_call_happy_horse": false,
+    "call_qwen_tts": false,
+    "call_postbot": false,
+    "configure_secret": false,
+    "login_platform": false,
+    "read_real_assets": false,
+    "render_or_transcode": false,
+    "voice_cover_or_subtitle_generation": false,
+    "upload_or_publish": false,
+    "auto_publish_from_simple_phrase": false,
+    "trigger_n8n": false,
+    "wecom_real_send": false,
+    "write_formal_rule_base": false
+  },
+  "next_recommended_candidates": [
+    "CTRL-CAND-WECOM-002",
+    "CTRL-CAND-TAX-002"
+  ],
+  "self_check": {
+    "source_json_parse_passed": true,
+    "engine_adapter_count": 4,
+    "gate_field_count": 8,
+    "human_gate_count": 8,
+    "boundary_kept": true
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "asset_name": "PAR_TAX_20260508 受控试用回传摘要",
+  "generated_date": "2026-05-08",
+  "parallel_line": "A 税收政策顾问受控试用准备线",
+  "risk_level": "W1/R0",
+  "primary_artifact": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\PAR_TAX_20260508_输入条件与回执草案.md",
+  "reference": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收入口映射验收样例_软件产品即征即退_20260508.md",
+  "new_files": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\PAR_TAX_20260508_输入条件与回执草案.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\PAR_TAX_20260508_输入条件与回执草案.json",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_TAX_20260508_受控试用回传摘要.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_TAX_20260508_受控试用回传摘要.json"
+  ],
+  "modified_files": [],
+  "completion_conclusion": "已形成真实脱敏问题试用前的输入条件清单、脱敏检查清单、回执草案和边界声明；仅用于后续试用前检查，不生成税务分析结论。",
+  "redline_hit_count": 0,
+  "needs_manager_decision": false,
+  "manager_decision_condition": "后续真实输入若要求登录电子税务局、读取真实财税资料、给确定金额、生成申报建议、外发或写正式库，则需暂停并交总管裁定。",
+  "boundary_confirmation": {
+    "external_send": false,
+    "n8n_triggered": false,
+    "real_system_access": false,
+    "formal_database_write": false,
+    "trade": false,
+    "tax_filing_or_handling": false,
+    "video_publish": false,
+    "modified_dashboard_or_continuation_pack": false,
+    "modified_wecom_service_script": false,
+    "modified_service_config": false
+  }
+}

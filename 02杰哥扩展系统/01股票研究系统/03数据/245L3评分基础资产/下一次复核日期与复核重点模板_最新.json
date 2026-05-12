@@ -1,0 +1,132 @@
+{
+  "name": "下一次复核日期与复核重点模板",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:23:10",
+  "asset_identity": "W1下一次复核日期与复核重点影子模板",
+  "status": "shadow_review_template",
+  "not_formal_config": true,
+  "not_scheduler": true,
+  "not_external_send": true,
+  "rules": [
+    {
+      "rule_id": "REVIEW-001",
+      "condition": "high_confidence_and_core_evidence_ready",
+      "default_interval": "T+1至T+3",
+      "review_trigger": "价格、成交、公告或政策证据发生明显变化",
+      "front_requirement": "短答可给明确结论，但必须给下一次复核日期。"
+    },
+    {
+      "rule_id": "REVIEW-002",
+      "condition": "medium_confidence_with_one_key_missing",
+      "default_interval": "T+3至T+5",
+      "review_trigger": "关键缺口补齐或市场风格明显切换",
+      "front_requirement": "短答以观察结论为主，复核重点必须指向缺口。"
+    },
+    {
+      "rule_id": "REVIEW-003",
+      "condition": "low_confidence_or_two_plus_key_missing",
+      "default_interval": "T+5至T+10",
+      "review_trigger": "财报、政策、行业价格、资金证据至少补齐两项",
+      "front_requirement": "短答不输出强判断，主要给缺口和补证方向。"
+    },
+    {
+      "rule_id": "REVIEW-004",
+      "condition": "object_unresolved",
+      "default_interval": "none",
+      "review_trigger": "用户补充明确股票名称或代码",
+      "front_requirement": "先澄清对象，不生成复核日期。"
+    }
+  ],
+  "samples": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "002428"
+      },
+      "confidence": "medium",
+      "next_review_date": "2026-05-13",
+      "review_focus": [
+        "锗价连续观测",
+        "政策事件暴露度复核",
+        "资金承接变化"
+      ]
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "002466"
+      },
+      "confidence": "medium",
+      "next_review_date": "2026-05-13",
+      "review_focus": [
+        "锂价趋势",
+        "财报盈利修复",
+        "板块热度"
+      ]
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "688347"
+      },
+      "confidence": "medium",
+      "next_review_date": "2026-05-13",
+      "review_focus": [
+        "半导体景气",
+        "毛利率趋势",
+        "政策证据匹配"
+      ]
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "000906"
+      },
+      "confidence": "low",
+      "next_review_date": "2026-05-15",
+      "review_focus": [
+        "经营现金流",
+        "商品周期",
+        "公告风险"
+      ]
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "300641"
+      },
+      "confidence": "medium",
+      "next_review_date": "2026-05-13",
+      "review_focus": [
+        "核心产品价格",
+        "订单景气",
+        "资金承接"
+      ]
+    }
+  ],
+  "required_output_fields": [
+    "next_review_date",
+    "review_focus",
+    "review_trigger",
+    "missing_to_check",
+    "confidence_recheck_condition"
+  ],
+  "summary": {
+    "rule_count": 4,
+    "sample_count": 5,
+    "real_reminder_allowed": false,
+    "external_send_allowed": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

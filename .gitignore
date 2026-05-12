@@ -1,0 +1,44 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+virtualenv/
+
+# Logs
+*.log
+*.log.*
+logs/
+Logs/
+04日志/
+**/04日志/
+
+# Private config
+私密配置
+私密配置.*
+*私密配置*
+
+# Local tool runtime data
+01杰哥智能系统/03数据/本机工具运行时/
+
+# WSL / Docker 虚拟磁盘
+*.vhdx
+
+# Large local runtime/model data kept on disk but not in GitHub
+**/ollama/
+**/ollama/**
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+
+# Generated large research snapshots
+*历史K线增强*.json

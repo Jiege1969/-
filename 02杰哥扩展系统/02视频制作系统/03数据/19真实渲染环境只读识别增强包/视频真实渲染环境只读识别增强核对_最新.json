@@ -1,0 +1,40 @@
+{
+  "名称": "视频真实渲染环境只读识别增强核对",
+  "生成时间": "2026-05-08 17:38:00",
+  "来源包": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\19真实渲染环境只读识别增强包\\视频真实渲染环境只读识别增强包_最新.json",
+  "可进入真实渲染": false,
+  "blocked原因列表": [
+    "本轮目标是只读识别增强，不包含真实渲染放行授权",
+    "未执行 magick -version，无法确认 ImageMagick 真实可用版本",
+    "未调用 MoneyPrinterTurbo 入口，无法确认真实工程运行状态",
+    "未进行素材、任务单、人工复核、发布放行链的真实渲染前总验收",
+    "PATH 中未识别到 magick 命令名，需人工安装 ImageMagick 或配置 PATH",
+    "候选目录未识别到 MoneyPrinterTurbo 入口文件，需人工确认安装目录"
+  ],
+  "下一步人工安装配置建议": [
+    "人工安装或确认 ImageMagick，并由负责人在安全窗口手工执行版本核验",
+    "人工确认 MoneyPrinterTurbo 安装目录及 start.bat、app/main.py、webui/Main.py 所属入口",
+    "人工补齐渲染前任务单、素材授权、人工复核、发布放行链验收记录",
+    "确认需要真实渲染时，由总管另行下发明确放行任务；本脚本不得替代放行"
+  ],
+  "识别摘录": {
+    "magick_PATH命令名可找到": false,
+    "magick_解析到的命令路径": "",
+    "MoneyPrinterTurbo_候选目录数": 6,
+    "MoneyPrinterTurbo_识别到入口": false
+  },
+  "当前真实动作": {
+    "执行magick": false,
+    "执行magick_version": false,
+    "调用MoneyPrinterTurbo": false,
+    "真实渲染": false,
+    "生成真实视频": false,
+    "上传发布": false,
+    "触发n8n": false,
+    "修改企业微信公共配置": false,
+    "修改总管面板": false,
+    "修改一键接续包": false,
+    "重载服务": false,
+    "真实渲染核对放行": false
+  }
+}

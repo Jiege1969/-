@@ -1,0 +1,30 @@
+{
+  "asset_id": "VIDEO_AGENT_FOUR_PIECE_GAP_TO_REVIEW_QUEUE_SAMPLE_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_sample_not_real_queue_record",
+  "purpose": "Demonstrate how gaps in the pre-publish four-piece check route to human review queues.",
+  "sample_mapping": [
+    {"four_piece_item": "draft_content", "gap_example": "title_description_or_storyboard_inconsistent", "target_review_queue": "content_review_queue", "blocking_status": "not_released"},
+    {"four_piece_item": "platform_rules", "gap_example": "platform_title_tag_or_cover_rules_unconfirmed", "target_review_queue": "platform_rule_review_queue", "blocking_status": "not_released"},
+    {"four_piece_item": "material_authorization", "gap_example": "material_source_or_authorization_proof_missing", "target_review_queue": "asset_authorization_review_queue", "blocking_status": "not_released"},
+    {"four_piece_item": "ai_label", "gap_example": "ai_label_requirement_unclear", "target_review_queue": "ai_label_review_queue", "blocking_status": "not_released"},
+    {"four_piece_item": "publish_gate", "gap_example": "any_item_not_passed", "target_review_queue": "release_gate_review_queue", "blocking_status": "blocked"}
+  ],
+  "output_fields": [
+    "four_piece_gap_id",
+    "four_piece_item",
+    "gap_description",
+    "target_review_queue",
+    "blocking_status",
+    "required_evidence",
+    "next_shadow_action"
+  ],
+  "real_system_triggered": {
+    "real_queue_created": false,
+    "real_person_notified": false,
+    "publish_permission": false
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "sample_id": "Y-SAMPLE-02-INPUT-MISSING-BLOCKED",
+  "sample_type": "输入缺失禁出",
+  "status": "blocked_before_real_output",
+  "input": {
+    "input_id": null,
+    "source_reference_path": null,
+    "source_reference_type": "missing",
+    "authorization_status": "missing",
+    "input_scope_note": "缺少输入引用和授权状态，禁止补读真实文档，禁止进入真实输出。",
+    "source_read_performed": false
+  },
+  "output_preview": {
+    "preview_id": "Y-PREVIEW-002",
+    "preview_format": "blocked_preview_only",
+    "preview_content_summary": "输入缺失时只生成禁出说明，不生成真实文件，也不生成可交付输出。",
+    "preview_metadata": {
+      "missing_fields": [
+        "input_id",
+        "source_reference_path",
+        "authorization_status"
+      ],
+      "degrade_to": "补齐输入登记后重新人工确认"
+    },
+    "no_real_output_file": true,
+    "real_file_path": null
+  },
+  "manual_confirmation": {
+    "confirm_required": true,
+    "confirm_status": "blocked",
+    "confirmer": "不可确认",
+    "confirm_time": "未确认",
+    "confirm_result": "rejected_input_missing",
+    "signature_required": true
+  },
+  "risk": {
+    "risk_level": "high_missing_input",
+    "risk_items": [
+      "输入引用缺失",
+      "授权状态缺失",
+      "无法追溯来源"
+    ],
+    "sensitive_info_check": "not_performed_because_input_missing",
+    "external_send_check": "blocked",
+    "formal_write_check": "blocked",
+    "risk_clearance_status": "not_cleared"
+  },
+  "rollback": {
+    "rollback_required": true,
+    "rollback_mode": "block_and_discard_incomplete_confirmation_package",
+    "rollback_scope": "incomplete_shadow_metadata_only",
+    "rollback_action": "保留禁出记录；不自动补齐、不读取、不移动、不改写任何用户文档。",
+    "rollback_confirm_required": true
+  },
+  "release_block_conditions": {
+    "block_if_input_missing": true,
+    "block_if_no_manual_confirmation": true,
+    "block_if_risk_not_cleared": true,
+    "block_if_real_output_requested": true,
+    "block_if_batch_or_external_action": true,
+    "block_action": "block_all_real_output"
+  },
+  "action_switches": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_output_file_generation": false,
+    "allow_delete_move_overwrite": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_wecom_real_message": false,
+    "allow_formal_library_write": false,
+    "allow_broker_api": false,
+    "allow_auto_trade": false
+  }
+}

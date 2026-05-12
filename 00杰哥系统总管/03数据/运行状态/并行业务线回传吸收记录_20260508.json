@@ -1,0 +1,51 @@
+{
+  "asset_id": "PARALLEL_BUSINESS_LINE_FEEDBACK_ABSORPTION_20260508",
+  "generated_at": "2026-05-08 07:25:02 +08:00",
+  "asset_identity": "总管侧并行业务线 W1/R0 回传吸收记录",
+  "status": "总管只读吸收与边界确认，不是正式上线许可，不是企业微信真实发送许可，不是 n8n 启用许可",
+  "absorbed_records": [
+    {
+      "business_line": "税收业务系统",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\03数据\\33对齐回传记录\\税收业务系统本轮对齐回传记录_20260508_局部施工边界确认.md",
+      "exists": true,
+      "conclusion": "可吸收为局部施工边界确认"
+    },
+    {
+      "business_line": "视频制作系统",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\对齐回传记录\\视频制作局部施工对齐回传记录_20260508_本轮.md",
+      "exists": true,
+      "conclusion": "可吸收为局部施工边界确认"
+    },
+    {
+      "business_line": "股票研究系统",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\对齐回传记录_20260508_L3五样本证据缺口优先级报告.md",
+      "exists": true,
+      "conclusion": "可吸收为股票线 W1 只读分析进展"
+    },
+    {
+      "business_line": "股票研究系统",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\L3五样本证据缺口优先级报告_最新.md",
+      "exists": true,
+      "conclusion": "可作为 L3 五样本证据缺口后续补证依据"
+    }
+  ],
+  "overall_conclusion": "三条业务线本轮回传均符合局部施工员模式；可被总管吸收为助力，不判定为冲突。",
+  "wecom_position": "企业微信保持通讯适配层、路由登记层、安全闸门层身份；不作为独立业务系统继续扩张。",
+  "next_recommendation": [
+    "税收线继续做政策证据和待复核草案，不进入正式办税",
+    "股票线按 P0 证据缺口补行业价格连续观测和资金机构证据",
+    "视频线继续补素材授权与平台规则复核链，不进入渲染或发布",
+    "企业微信线暂停独立扩张，只做接入层回传吸收和禁令一致性检查",
+    "总管线下一步可生成受控试用版交付清单"
+  ],
+  "boundary": {
+    "modify_business_line_files": false,
+    "modify_wecom_public_config": false,
+    "modify_service_script_or_19310": false,
+    "trigger_n8n": false,
+    "real_send_wecom": false,
+    "write_formal_db": false,
+    "start_formal_online": false,
+    "cross_line_overwrite": false
+  }
+}

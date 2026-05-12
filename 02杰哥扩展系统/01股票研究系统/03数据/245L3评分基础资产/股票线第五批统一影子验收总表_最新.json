@@ -1,0 +1,130 @@
+{
+  "name": "股票线第五批统一影子验收总表",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 12:42:49",
+  "asset_identity": "W2第五批统一影子验收总表",
+  "status": "shadow_acceptance_summary",
+  "purpose": "汇总第五批W1/W2低风险施工资产的本地影子验收结果，确认报告前台表达、缺口优先级、复盘候选沉淀和用户读感闭环是否完成。",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_score_write": true,
+  "not_formal_rule_update": true,
+  "records": [
+    {
+      "check_id": "AUTO5-ACCEPT-001",
+      "name": "前台短答综合样例二次压缩验收",
+      "result_file": "前台短答综合样例二次压缩验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "sample_count": 5
+      }
+    },
+    {
+      "check_id": "AUTO5-ACCEPT-002",
+      "name": "报告缺口优先级排序样例验收",
+      "result_file": "报告缺口优先级排序样例验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "sample_count": 5
+      }
+    },
+    {
+      "check_id": "AUTO5-ACCEPT-003",
+      "name": "复盘字段到经验候选映射样例验收",
+      "result_file": "复盘字段到经验候选映射样例验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "mapping_rule_count": 4,
+        "sample_count": 5
+      }
+    },
+    {
+      "check_id": "AUTO5-ACCEPT-004",
+      "name": "用户视角报告读感验收样例验收",
+      "result_file": "用户视角报告读感验收样例验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "check_count": 5,
+        "sample_count": 5
+      }
+    },
+    {
+      "check_id": "AUTO5-ACCEPT-005",
+      "name": "第五批低风险续建队列验收",
+      "result_file": "股票线第五批低风险续建队列验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "metrics": {
+        "queue_count": 5,
+        "completed_count": 5,
+        "queued_count": 0,
+        "blocked_count": 2
+      }
+    }
+  ],
+  "queue_summary": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "blocked_register_only": [
+    {
+      "id": "STOCK-AUTO5-BLOCK-001",
+      "title": "把影子短答接入企业微信真实发送",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "真实外发属于红线事项，本业务线不得实施。"
+    },
+    {
+      "id": "STOCK-AUTO5-BLOCK-002",
+      "title": "把复盘候选自动改成正式评分规则",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "正式规则调整必须人工复核并交回总管判断。"
+    }
+  ],
+  "summary": {
+    "check_count": 5,
+    "exists_count": 5,
+    "passed_count": 5,
+    "failed_count": 0,
+    "queue_completed_count": 5,
+    "queue_count": 5,
+    "allow_shadow_acceptance_claim": true,
+    "allow_real_wecom_send": false,
+    "allow_formal_entry": false,
+    "allow_formal_score_update": false,
+    "allow_auto_trade": false
+  },
+  "user_value": [
+    "前台短答进一步压缩为结论型表达，弱化后台分析过程堆叠。",
+    "报告缺口从平铺列表升级为P0/P1/P2优先级，便于后续补证和复盘。",
+    "复盘结果只沉淀为经验候选，避免自动改正式规则。",
+    "新增用户视角读感验收，专门检查是否符合使用者想要的前台回答形态。"
+  ],
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  }
+}

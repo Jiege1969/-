@@ -1,0 +1,28 @@
+{
+  "asset_id": "WECOM_LEGACY_COMPATIBILITY_CHECK_20260508",
+  "generated_at": "2026-05-08 06:36:16 +08:00",
+  "asset_identity": "企业微信接入层旧目录兼容入口 W1/R0 核对记录",
+  "status": "只读核对结果，不是旧目录删除许可，不是旧 README 覆盖许可",
+  "legacy_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统",
+  "legacy_readme": "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\README.md",
+  "authoritative_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置",
+  "conclusion": "旧目录 README 已明确降级为兼容保留目录，不再作为独立业务系统和权威维护位置；当前无需覆盖旧 README。",
+  "matched_points": [
+    "旧目录已降级为兼容保留目录",
+    "旧目录不再作为独立业务系统和权威维护位置",
+    "新权威位置为 00公共组件\\企业微信接入设置",
+    "企业微信能力属于扩展系统公共接入设置",
+    "旧目录不得再扩展为新的业务中枢"
+  ],
+  "boundary": {
+    "overwrite_legacy_readme": false,
+    "delete_legacy_path": false,
+    "move_legacy_path": false,
+    "modify_service_script": false,
+    "modify_config_json": false,
+    "restart_service_19310": false,
+    "real_send_wecom": false,
+    "trigger_n8n": false
+  },
+  "next_recommendation": "保留旧目录作为兼容入口和历史证据追溯位置；新建、修改、验收和口径维护优先写入新权威位置。"
+}

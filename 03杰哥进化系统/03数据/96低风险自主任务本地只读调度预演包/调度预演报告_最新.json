@@ -1,0 +1,148 @@
+{
+  "name": "低风险自主任务本地只读调度预演报告",
+  "generated_at": "2026-05-08 19:46:57",
+  "pass": true,
+  "error_count": 0,
+  "errors": [],
+  "confirmation": "只预演排序和依赖，未执行任务，未调用业务接口。",
+  "preview_only": true,
+  "sort_preview_only": true,
+  "dependency_preview_only": true,
+  "tasks_executed": false,
+  "executed_task_count": 0,
+  "scheduled": false,
+  "auto_execute": false,
+  "external_call": false,
+  "real_send": false,
+  "reload_service": false,
+  "write_formal_rule": false,
+  "preview_result": {
+    "task_count": 8,
+    "ordered_tasks": [
+      {
+        "preview_order": 1,
+        "id": "LRS-001",
+        "name": "读取第93包候选队列快照",
+        "source_candidate_id": "LRQ-001",
+        "depends_on": [],
+        "dependency_ready": true,
+        "task_executed": false,
+        "action_taken": "previewed_order_and_dependencies_only"
+      },
+      {
+        "preview_order": 2,
+        "id": "LRS-002",
+        "name": "扫描只读安全字段",
+        "source_candidate_id": "LRQ-002",
+        "depends_on": [
+          "LRS-001"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "action_taken": "previewed_order_and_dependencies_only"
+      },
+      {
+        "preview_order": 3,
+        "id": "LRS-003",
+        "name": "预演暂停闸口检查",
+        "source_candidate_id": "LRQ-003",
+        "depends_on": [
+          "LRS-002"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "action_taken": "previewed_order_and_dependencies_only"
+      },
+      {
+        "preview_order": 4,
+        "id": "LRS-004",
+        "name": "整理证据需求清单",
+        "source_candidate_id": "LRQ-004",
+        "depends_on": [
+          "LRS-003"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "action_taken": "previewed_order_and_dependencies_only"
+      },
+      {
+        "preview_order": 5,
+        "id": "LRS-005",
+        "name": "预演候选排序",
+        "source_candidate_id": "LRQ-005",
+        "depends_on": [
+          "LRS-004"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "action_taken": "previewed_order_and_dependencies_only"
+      },
+      {
+        "preview_order": 6,
+        "id": "LRS-006",
+        "name": "预演依赖链",
+        "source_candidate_id": "LRQ-006",
+        "depends_on": [
+          "LRS-005"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "action_taken": "previewed_order_and_dependencies_only"
+      },
+      {
+        "preview_order": 7,
+        "id": "LRS-007",
+        "name": "预演冲突与红线复核",
+        "source_candidate_id": "LRQ-007",
+        "depends_on": [
+          "LRS-006"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "action_taken": "previewed_order_and_dependencies_only"
+      },
+      {
+        "preview_order": 8,
+        "id": "LRS-008",
+        "name": "汇总预演报告输入",
+        "source_candidate_id": "LRQ-008",
+        "depends_on": [
+          "LRS-007"
+        ],
+        "dependency_ready": true,
+        "task_executed": false,
+        "action_taken": "previewed_order_and_dependencies_only"
+      }
+    ],
+    "dependency_edges": [
+      {
+        "from": "LRS-001",
+        "to": "LRS-002"
+      },
+      {
+        "from": "LRS-002",
+        "to": "LRS-003"
+      },
+      {
+        "from": "LRS-003",
+        "to": "LRS-004"
+      },
+      {
+        "from": "LRS-004",
+        "to": "LRS-005"
+      },
+      {
+        "from": "LRS-005",
+        "to": "LRS-006"
+      },
+      {
+        "from": "LRS-006",
+        "to": "LRS-007"
+      },
+      {
+        "from": "LRS-007",
+        "to": "LRS-008"
+      }
+    ]
+  }
+}

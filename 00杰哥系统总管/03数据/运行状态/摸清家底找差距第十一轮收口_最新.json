@@ -1,0 +1,55 @@
+﻿{
+    "title":  "摸清家底找差距第十一轮收口",
+    "updated_at":  "2026-05-06 11:55:01",
+    "scope":  "当前入口文档、接续包、第八/九轮 _最新 报告、总管/智能系统脚本引用、WSL 当前状态复核。",
+    "principle":  "当前入口只保留当前事实；历史记录如被后轮覆盖，必须显式标注历史口径已覆盖，不能继续误导施工。",
+    "fixed":  [
+                  "当前施工面板.md：第八/九轮中 net-auto 保留、openclaw-gateway 仍 enabled 等旧口径已改为历史口径已覆盖。",
+                  "一键接续施工包_最新.md：同步上述覆盖口径，避免下次开工按旧状态施工。",
+                  "摸清家底找差距第八轮收口_最新.md/json：补正 net-auto 与 openclaw-gateway 的历史覆盖说明。",
+                  "摸清家底找差距第九轮收口_最新.md/json：补正 openclaw-gateway 与 auto-proxy-switch 的历史覆盖说明。"
+              ],
+    "validation":  {
+                       "stale_current_doc_phrases":  "0：未再命中 存在且保留/均 enabled/仍 enabled/仅保留 net-auto 等误导性当前口径。",
+                       "script_refs":  "0：00总管与01智能系统脚本未命中 net-auto、auto-proxy-switch、openclaw-gateway.service、Openclaw Gateway、jiege-boot-self-check、ollama.service 实质引用。",
+                       "windows_tasks":  "仅 8 个 杰哥智能化系统_* 当前任务，脚本路径存在；未发现 Openclaw Gateway 任务。",
+                       "wsl":  "openclaw.service enabled/active；openclaw-gateway.service not-found/inactive；jiege 无 crontab；/opt/jiege-net-auto absent；old unit files 0；auditd disabled；failed units 0。",
+                       "json":  "第八/九/十/十一轮 JSON 均可解析。",
+                       "encoding":  "当前施工面板、接续包、第八/九轮报告 controls=0 replacementChars=0 badVar=false。"
+                   },
+    "pending_parallel":  "Mencius/Banach/Hilbert 若返回新增事实，仅作为第十一轮补充；本轮主线程证据已足够收口当前入口口径。",
+    "safety":  [
+                   "未触发 n8n workflow/webhook",
+                   "未发送企业微信",
+                   "未调用券商接口",
+                   "未自动交易",
+                   "未停止当前 OpenClaw/WeCom/Ollama 服务"
+               ],
+    "windows_supplement":  {
+                               "fixed":  [
+                                             "删除 Windows portproxy 0.0.0.0:8080 -\u003e WSL:8080；WSL 侧无 8080 当前监听，OpenClaw 当前入口为 18789。",
+                                             "删除 OpenClaw 8080 入站防火墙规则。",
+                                             "机器级 OLLAMA_HOST 从 0.0.0.0 收窄为 127.0.0.1，避免未来 Windows 侧 Ollama 误绑全网卡。",
+                                             "11434 在配置中统一登记为 WSL OpenClaw 当前依赖，不再标为旧 Docker Ollama 下线候选。"
+                                         ],
+                               "retained":  [
+                                                "8 个 杰哥智能化系统_* 计划任务路径存在，是当前守护/巡检任务，保留。",
+                                                "WXWork Run 项与 WXWorkUpgrader 属于当前企业微信客户端组件，本轮不作为旧债删除。",
+                                                "N8N_API_URL/N8N_API_TOKEN 未发现 User/Machine 持久环境变量；仅当前进程可见，不写入报告明文。"
+                                            ],
+                               "validation":  {
+                                                  "portproxy":  "empty",
+                                                  "openclaw8080_firewall_rules":  0,
+                                                  "listen8080":  0,
+                                                  "machine_ollama_host":  "127.0.0.1",
+                                                  "persistent_n8n_env":  "User/Machine N8N_API_URL empty; User/Machine N8N_API_TOKEN false",
+                                                  "openclaw18789_listeners":  2,
+                                                  "n8n":  200,
+                                                  "ollama29134":  200,
+                                                  "redis":  "PONG",
+                                                  "wsl_openclaw":  "enabled/active",
+                                                  "wsl_ollama11434":  "listening",
+                                                  "wsl_failed_units":  0
+                                              }
+                           }
+}

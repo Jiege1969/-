@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "trial_id": "TAX_ADVISOR_TRIAL_002",
+  "name": "增值税法基础依据摘要影子试运行",
+  "asset_identity": "tax_policy_advisor_shadow_trial_run_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "formal_tax_opinion": false,
+    "tax_filing": false,
+    "tax_refund_execution": false,
+    "invoice_execution": false,
+    "external_send": false,
+    "trigger_n8n": false
+  },
+  "trial_input": {
+    "business_question": "增值税法在增值税业务分析中处于什么依据层级？和具体优惠政策是什么关系？",
+    "requested_output": ["依据层级摘要", "适用范围提示", "待核验项"],
+    "tax_type": "增值税",
+    "business_scenario": "增值税基础法律依据识别",
+    "entity_profile": "不涉及具体企业",
+    "region": "国家层",
+    "period": "增值税法施行后，具体期间待补",
+    "provided_materials": ["增值税法元数据卡"],
+    "known_policy": ["中华人民共和国增值税法"]
+  },
+  "analysis_object": {
+    "tax_type": "增值税",
+    "policy": "中华人民共和国增值税法",
+    "document_number": "中华人民共和国主席令第四十一号",
+    "business_matter": "增值税基础法律依据识别",
+    "region": "国家层",
+    "period": "2026-01-01后；具体业务期间待补",
+    "status": "evidence_ready"
+  },
+  "policy_evidence": [
+    {
+      "title": "中华人民共和国增值税法",
+      "document_number": "中华人民共和国主席令第四十一号",
+      "evidence_level": "法律",
+      "issuing_authority": "全国人民代表大会常务委员会",
+      "pass_date": "2024-12-25",
+      "effective_date": "2026-01-01",
+      "validity_status": "现行有效，需后续结合官方法律库复核",
+      "source_url": "https://www.npc.gov.cn/npc/c2/c30834/202412/t20241225_442038.html"
+    }
+  ],
+  "basis_summary": {
+    "legal_level": "法律",
+    "role": "作为增值税基础纳税义务、税率、征收管理框架的上位依据",
+    "relationship_with_specific_preferential_policies": "具体优惠政策应在增值税法框架下理解；优惠政策不能反向覆盖法律",
+    "old_basis_note": "旧资料引用增值税暂行条例时，应提示需复核当前适用状态"
+  },
+  "applicable_use": ["增值税纳税义务基础判断", "税率、计税基础、征收管理框架识别", "具体优惠政策的上位依据背景", "旧制度或旧口径是否需要更新的提示"],
+  "not_directly_supported": ["具体企业适用判断", "具体交易适用判断", "具体优惠适用判断", "正式税务意见"],
+  "evidence_gaps": ["具体业务发生期间", "具体优惠政策衔接公告", "后续实施条例或部门公告", "地方执行口径", "旧资料依据替换或并列说明"],
+  "risk_points": ["法律层级依据不等于具体优惠适用结论", "基础法律不能替代具体政策、实施细则或地方执行口径", "具体业务仍需拆解主体、事项、期间、地区、资料和金额字段", "不得外发为正式法律或税务意见"],
+  "review_questions": [
+    "本次分析的具体业务期间是否在2026-01-01之后？",
+    "相关具体优惠政策是否已有后续衔接公告？",
+    "是否需要同时引用实施条例、财政部/税务总局公告或地方口径？",
+    "旧材料是否仍引用增值税暂行条例，是否需要更新为增值税法口径？",
+    "本摘要用于内部理解、资料整理，还是拟进入正式报告？"
+  ],
+  "next_action": ["若分析具体业务，继续补业务场景、主体、期间和资料", "若分析具体优惠，继续调用具体政策卡和条件字段化样例", "若发现旧依据冲突，登记为待复核事项，不直接覆盖旧材料"],
+  "trial_record": {
+    "topic": "增值税法基础依据摘要",
+    "status": "evidence_ready",
+    "main_gaps": ["具体期间", "具体优惠衔接公告", "实施条例或地方口径"],
+    "boundary_violation": false,
+    "next_step": "结合具体业务或具体优惠政策继续分析"
+  },
+  "standard_disclaimer": "本输出为影子版待复核分析草案，不是正式税务意见。涉及申报、退税、开票、外发或正式采用前，必须由人工和专业人员复核。"
+}

@@ -1,0 +1,101 @@
+{
+  "report_id": "02_extension_available_entry_inventory_operation_cards_latest",
+  "report_name": "02扩展系统_可用入口清单操作卡回收报告_最新",
+  "generated_at": "2026-05-05T15:12:00+08:00",
+  "task_batch": "并行小任务N",
+  "target": "为02扩展系统生成可用入口清单和用户操作卡，覆盖股票分析、企业微信助手、知识库只读问答、内容办公草稿、视频制作预案、税收只读证据链。",
+  "execution_boundary": {
+    "definition_only": true,
+    "readonly_validation_only": true,
+    "n8n_triggered": false,
+    "enterprise_wechat_real_send": false,
+    "production_database_written": false,
+    "formal_knowledge_base_written": false,
+    "vector_database_written": false,
+    "real_media_converted": false,
+    "broker_interface_called": false,
+    "automatic_trading_triggered": false,
+    "tax_api_called": false,
+    "tax_filing_submitted": false,
+    "external_system_called": false,
+    "work_system_paused_and_untouched": true,
+    "real_actions_triggered": 0
+  },
+  "artifacts": [
+    {
+      "type": "entry_inventory_json",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\13可用入口清单操作卡包\\可用入口清单操作卡包_20260505_N.json",
+      "description": "机器可读入口清单、状态、可用程度、使用方式、dry_run/真实状态、回滚、禁止动作。"
+    },
+    {
+      "type": "operation_cards_markdown",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\13可用入口清单操作卡包\\可用入口清单操作卡包_20260505_N.md",
+      "description": "人工可读用户操作卡包。"
+    },
+    {
+      "type": "readonly_validation_script",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02脚本\\验证可用入口清单操作卡包.py",
+      "description": "只读验证脚本，仅解析本地 JSON/Markdown，不联网、不写文件。"
+    },
+    {
+      "type": "recycle_report_markdown",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\02扩展系统_可用入口清单操作卡回收报告_最新.md",
+      "description": "固定回收报告 Markdown。"
+    },
+    {
+      "type": "recycle_report_json",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\02扩展系统_可用入口清单操作卡回收报告_最新.json",
+      "description": "固定回收报告 JSON。"
+    }
+  ],
+  "covered_entries": [
+    {
+      "entry_id": "stock_analysis",
+      "entry_name": "股票分析",
+      "status": "available_dry_run",
+      "real_state": "broker_interface=false; order_placement=false; automatic_trading=false"
+    },
+    {
+      "entry_id": "enterprise_wechat_assistant",
+      "entry_name": "企业微信助手",
+      "status": "available_dry_run",
+      "real_state": "real_send=false; response_url=false; group_robot_webhook=false"
+    },
+    {
+      "entry_id": "knowledge_base_readonly_qa",
+      "entry_name": "知识库只读问答",
+      "status": "available_readonly",
+      "real_state": "formal_kb_write=false; vector_database_write=false; external_search_api=false"
+    },
+    {
+      "entry_id": "content_office_draft",
+      "entry_name": "内容办公草稿",
+      "status": "draft_only",
+      "real_state": "production_content_write=false; publish=false; real_document_conversion=false"
+    },
+    {
+      "entry_id": "video_production_preplan",
+      "entry_name": "视频制作预案",
+      "status": "draft_only",
+      "real_state": "media_conversion=false; transcode=false; render=false; publish=false"
+    },
+    {
+      "entry_id": "tax_readonly_evidence_chain",
+      "entry_name": "税收只读证据链",
+      "status": "available_readonly",
+      "real_state": "formal_tax_judgement=false; tax_api_call=false; tax_filing_submit=false"
+    }
+  ],
+  "validation": {
+    "command": "python \"D:\\杰哥智能化系统\\02杰哥扩展系统\\02脚本\\验证可用入口清单操作卡包.py\"",
+    "passed": true,
+    "checked_entry_count": 6,
+    "real_actions_triggered": 0,
+    "work_system_touched": false,
+    "readonly_validation": true,
+    "network_required": false,
+    "writes_files": false,
+    "failures": []
+  },
+  "acceptance_result": "通过"
+}

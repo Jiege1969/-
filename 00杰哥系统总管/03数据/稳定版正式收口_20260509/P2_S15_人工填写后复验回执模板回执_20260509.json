@@ -1,0 +1,34 @@
+{
+  "id": "P2-S15-POST-MANUAL-FILL-RECHECK-RECEIPT-TEMPLATE-RECEIPT-20260509",
+  "executed_at": "2026-05-09 13:16:00 +08:00",
+  "execution_type": "readonly_preview",
+  "status": "pass",
+  "command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S15人工填写后复验回执模板只读检查.py'",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\64P2S15人工填写后复验回执模板只读检查\\P2S15人工填写后复验回执模板只读检查_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\64P2S15人工填写后复验回执模板只读检查\\P2S15人工填写后复验回执模板只读检查_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\64P2S15人工填写后复验回执模板只读检查\\P2S15人工填写后复验回执空白样例_20260509.json"
+  ],
+  "summary": {
+    "receipt_count": 4,
+    "passed": 4,
+    "failed": 0,
+    "human_filled": 0,
+    "ready_for_shadow_draft_candidate": 0,
+    "write_target_entry": 0,
+    "auto_generate_business_conclusion": 0
+  },
+  "conclusion": "人工填写后复验回执模板检查通过；4 份空白复验回执均保持待人工填写状态，0 项写入口、0 项业务结论、0 项正式放行。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

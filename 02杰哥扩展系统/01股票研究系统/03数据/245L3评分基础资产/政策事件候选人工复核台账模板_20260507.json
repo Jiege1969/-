@@ -1,0 +1,193 @@
+{
+  "asset_identity": "policy_event_candidate_manual_review_ledger_template",
+  "version": "2026-05-07",
+  "system": "股票研究系统",
+  "status": "draft_template",
+  "not_for_scoring": true,
+  "purpose": "为政策事件候选草案提供人工复核填报模板。填写完成前不得进入正式政策事件库。",
+  "safety_boundary": {
+    "no_formal_config_change": true,
+    "no_formal_script_change": true,
+    "no_entrypoint_change": true,
+    "no_enterprise_wechat": true,
+    "no_n8n": true,
+    "no_service_restart": true,
+    "no_external_send": true,
+    "no_broker_api": true,
+    "no_auto_trading": true
+  },
+  "fields": [
+    {
+      "name": "candidate_id",
+      "required": true,
+      "description": "候选事件ID，例如POL-CAND-20260507-001。"
+    },
+    {
+      "name": "reviewer",
+      "required": true,
+      "description": "人工复核人。"
+    },
+    {
+      "name": "reviewed_at",
+      "required": true,
+      "description": "复核日期，格式YYYY-MM-DD。"
+    },
+    {
+      "name": "source_verified",
+      "required": true,
+      "description": "官方来源是否核验通过。"
+    },
+    {
+      "name": "source_note",
+      "required": true,
+      "description": "来源核验备注，包括标题、发布时间、实施日期是否一致。"
+    },
+    {
+      "name": "impact_direction_final",
+      "required": true,
+      "description": "复核后的影响方向：利好/利空/中性/不确定。"
+    },
+    {
+      "name": "impact_strength_final",
+      "required": true,
+      "description": "复核后的影响强度，0-1。没有充分理由时不得超过0.30。"
+    },
+    {
+      "name": "impact_mechanism",
+      "required": true,
+      "description": "影响机制：资源价格弹性、出口约束、合规成本、订单扰动、长期制度约束等。"
+    },
+    {
+      "name": "duplicate_scoring_risk",
+      "required": true,
+      "description": "是否存在与已入库事件重复计分风险。"
+    },
+    {
+      "name": "duplicate_scoring_note",
+      "required": true,
+      "description": "如存在重复，说明新增边际影响；否则只能作为背景证据。"
+    },
+    {
+      "name": "stock_exposure_reviewed",
+      "required": true,
+      "description": "股票暴露度是否逐只复核。"
+    },
+    {
+      "name": "admission_decision",
+      "required": true,
+      "description": "keep_draft / evidence_ready / exposure_reviewed / reject。"
+    },
+    {
+      "name": "remaining_missing",
+      "required": true,
+      "description": "仍缺哪些证据。"
+    },
+    {
+      "name": "next_action",
+      "required": true,
+      "description": "下一步动作，例如补公司年报、补产品参数、补出口占比。"
+    }
+  ],
+  "rows": [
+    {
+      "candidate_id": "POL-CAND-20260507-001",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_verified": false,
+      "source_note": "",
+      "impact_direction_final": "",
+      "impact_strength_final": null,
+      "impact_mechanism": "",
+      "duplicate_scoring_risk": "",
+      "duplicate_scoring_note": "",
+      "stock_exposure_reviewed": false,
+      "admission_decision": "keep_draft",
+      "remaining_missing": [
+        "候选公司产品是否落入石墨物项管制参数",
+        "出口收入占比",
+        "许可证执行影响"
+      ],
+      "next_action": "复核负极材料公司公告、年报和产品参数。"
+    },
+    {
+      "candidate_id": "POL-CAND-20260507-002",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_verified": false,
+      "source_note": "",
+      "impact_direction_final": "",
+      "impact_strength_final": null,
+      "impact_mechanism": "",
+      "duplicate_scoring_risk": "",
+      "duplicate_scoring_note": "",
+      "stock_exposure_reviewed": false,
+      "admission_decision": "keep_draft",
+      "remaining_missing": [
+        "锑业务收入占比",
+        "锑产量和权益资源",
+        "出口占比或价格传导证据"
+      ],
+      "next_action": "优先复核湖南黄金、华钰矿业锑业务公开资料。"
+    },
+    {
+      "candidate_id": "POL-CAND-20260507-003",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_verified": false,
+      "source_note": "",
+      "impact_direction_final": "",
+      "impact_strength_final": null,
+      "impact_mechanism": "",
+      "duplicate_scoring_risk": "",
+      "duplicate_scoring_note": "",
+      "stock_exposure_reviewed": false,
+      "admission_decision": "keep_draft",
+      "remaining_missing": [
+        "年度总量控制指标",
+        "稀土价格数据",
+        "候选公司业务环节拆分"
+      ],
+      "next_action": "拆分资源、冶炼分离、磁材、贸易等不同暴露环节。"
+    },
+    {
+      "candidate_id": "POL-CAND-20260507-004",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_verified": false,
+      "source_note": "",
+      "impact_direction_final": "",
+      "impact_strength_final": null,
+      "impact_mechanism": "",
+      "duplicate_scoring_risk": "",
+      "duplicate_scoring_note": "",
+      "stock_exposure_reviewed": false,
+      "admission_decision": "keep_draft",
+      "remaining_missing": [
+        "清单附件物项解析",
+        "物项-产业链-公司产品映射",
+        "单股直接暴露度证据"
+      ],
+      "next_action": "先做清单附件拆解，不直接给单股政策分。"
+    },
+    {
+      "candidate_id": "POL-CAND-20260507-005",
+      "reviewer": "",
+      "reviewed_at": "",
+      "source_verified": false,
+      "source_note": "",
+      "impact_direction_final": "",
+      "impact_strength_final": null,
+      "impact_mechanism": "",
+      "duplicate_scoring_risk": "high",
+      "duplicate_scoring_note": "可能与POL-2023-001镓锗出口管制重复，需要说明新增边际影响。",
+      "stock_exposure_reviewed": false,
+      "admission_decision": "keep_draft",
+      "remaining_missing": [
+        "对美国出口占比",
+        "新增边际影响",
+        "与既有镓锗锑石墨政策的重复计分检查"
+      ],
+      "next_action": "暂作为背景增强证据，不作为独立政策分。"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "asset_id": "VIDEO_AGENT_GAP_TO_REVIEW_QUEUE_MAPPING_001",
+  "version": "v1.0",
+  "asset_type": "mapping_table",
+  "construction_level": "W1/R0",
+  "scope": "video_shadow_task_gap_routing",
+  "status": "draft",
+  "purpose": "Map each missing input to a human review queue so gap cards are actionable without enabling real execution.",
+  "mappings": [
+    {"gap_type": "unclear_topic_expression", "queue": "content_review_queue", "owner_role": "human_editor", "output": "topic_clarification_questions", "allow_real_action": false},
+    {"gap_type": "script_style_mismatch", "queue": "content_review_queue", "owner_role": "human_editor", "output": "partial_revision_suggestions", "allow_real_action": false},
+    {"gap_type": "idiom_or_quote_originality_gap", "queue": "originality_review_queue", "owner_role": "human_editor", "output": "ancient_modern_original_interpretation_questions", "allow_real_action": false},
+    {"gap_type": "platform_rule_missing", "queue": "platform_rule_review_queue", "owner_role": "publishing_owner", "output": "platform_rule_missing_list", "allow_real_action": false},
+    {"gap_type": "material_authorization_missing", "queue": "material_authorization_review_queue", "owner_role": "material_owner", "output": "authorization_proof_missing_list", "allow_real_action": false},
+    {"gap_type": "ai_label_not_confirmed", "queue": "publishing_compliance_review_queue", "owner_role": "publishing_owner", "output": "ai_label_confirmation_receipt", "allow_real_action": false},
+    {"gap_type": "preview_not_confirmed", "queue": "preview_review_queue", "owner_role": "human_reviewer", "output": "preview_acceptance_receipt", "allow_real_action": false},
+    {"gap_type": "release_gate_conflict", "queue": "gate_consistency_review_queue", "owner_role": "control_reviewer", "output": "release_conflict_handling_opinion", "allow_real_action": false},
+    {"gap_type": "real_account_cookie_or_api_key_missing", "queue": "redline_block_register", "owner_role": "manager_decision", "output": "redline_block_record", "allow_real_action": false}
+  ],
+  "output_rules": [
+    "Each gap enters at least one review queue.",
+    "One gap may enter multiple queues, but a primary queue must be marked.",
+    "Redline blockers cannot be converted to real execution.",
+    "Queue outputs are limited to questions, receipts, drafts, or blocker records."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "asset_id": "VIDEO_AGENT_REVIEW_PRIORITY_RULE_001",
+  "name": "人工复核问题优先级规则",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:12:00 +08:00",
+  "risk_level": "低风险",
+  "purpose": "对影子工厂输出的待复核问题排序",
+  "priorities": [
+    {"priority": "P0", "types": ["合规高风险", "素材授权", "肖像隐私", "音乐版权", "发布放行", "AI标识", "平台规则"]},
+    {"priority": "P1", "types": ["主题同质化", "去AI感不足", "原创性不足", "分镜不匹配", "节奏不清", "画幅不明确"]},
+    {"priority": "P2", "types": ["标题口吻", "字幕风格", "配音偏好", "复盘经验", "模板沉淀"]}
+  ],
+  "ordering_rules": [
+    "P0 未关闭时不处理 P1/P2 的执行类请求",
+    "发布相关 P0 优先于风格优化",
+    "素材授权缺口优先于画面美观",
+    "多个 P0 并存时先处理合规和授权，再处理平台发布"
+  ],
+  "boundary": {
+    "replace_human_review": false,
+    "real_system_triggered": false
+  }
+}

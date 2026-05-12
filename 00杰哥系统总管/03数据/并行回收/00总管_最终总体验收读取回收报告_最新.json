@@ -1,0 +1,41 @@
+{
+    "名称":  "00总管_最终总体验收读取回收报告",
+    "生成时间":  "2026-05-05 14:44:23 +08:00",
+    "任务批次":  "并行小任务L",
+    "结论":  "通过",
+    "交付阻断归零":  true,
+    "交付阻断数量":  0,
+    "安全闸门状态":  "仍关闭，不作为交付失败",
+    "当前进度口径":  "88%-93%",
+    "剩余有效工时":  "5-11小时",
+    "是否重算进度":  false,
+    "是否触发外部服务":  false,
+    "是否执行真实动作":  false,
+    "生成文件":  [
+                 "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\最终总体验收读取包_最新.json",
+                 "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\最终总体验收读取包_最新.md",
+                 "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\验证00总管最终总体验收读取包.py",
+                 "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_最终总体验收读取回收报告_最新.json",
+                 "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_最终总体验收读取回收报告_最新.md"
+             ],
+    "验收覆盖":  {
+                 "交付候选HIJK":  "4/4通过，交付阻断0",
+                 "最终门禁DEFG":  "4/4通过，交付阻断0",
+                 "轻量任务契约层":  "通过，dry_run与影子台账有效",
+                 "股票analysis_only":  "13/13通过，交易意图拦截",
+                 "四大系统剩余缺口":  "已列入读取包",
+                 "真实动作安全边界":  "全部保持关闭"
+             },
+    "验证":  {
+               "命令":  "python \"D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\验证00总管最终总体验收读取包.py\"",
+               "exit_code":  0,
+               "输出":  "PASS PACKAGE_JSON_EXISTS\nPASS PACKAGE_MD_EXISTS\nPASS RECYCLE_JSON_EXISTS\nPASS RECYCLE_MD_EXISTS\nPASS READ_ONLY_MODE\nPASS NO_PROGRESS_RECALC\nPASS NO_PROGRESS_WORDING_CHANGE\nPASS NO_EXTERNAL_SERVICE\nPASS NO_REAL_ACTION\nPASS PROGRESS_88_93\nPASS HOURS_5_11\nPASS DELIVERY_BLOCKERS_ZERO\nPASS DELIVERY_BLOCKER_COUNT_0\nPASS HIJK_4_OF_4\nPASS HIJK_DELIVERY_BLOCKERS_0\nPASS DEFG_4_OF_4\nPASS DEFG_DELIVERY_BLOCKERS_0\nPASS CLOSED_GATE_COUNT_GE_8\nPASS ALL_GATES_CLOSED\nPASS REAL_ACTION_BOUNDARY_ALL_FORBIDDEN\nPASS SOURCE_FILE_COUNT_GE_16\nPASS SOURCE_FILES_EXIST\nRESULT PASS"
+           },
+    "输出文件":  {
+                 "读取包JSON":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\最终总体验收读取包_最新.json",
+                 "读取包Markdown":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\最终总体验收读取包_最新.md",
+                 "只读验证脚本":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\验证00总管最终总体验收读取包.py",
+                 "固定回收报告JSON":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_最终总体验收读取回收报告_最新.json",
+                 "固定回收报告Markdown":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_最终总体验收读取回收报告_最新.md"
+             }
+}

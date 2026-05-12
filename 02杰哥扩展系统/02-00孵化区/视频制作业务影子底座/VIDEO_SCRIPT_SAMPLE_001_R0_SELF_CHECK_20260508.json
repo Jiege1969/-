@@ -1,0 +1,28 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SAMPLE_001_R0_SELF_CHECK_20260508",
+  "asset_name": "VIDEO_SCRIPT_SAMPLE_001 R0自检",
+  "created_at": "2026-05-08 11:31:04 +08:00",
+  "risk_level": "W1/R0",
+  "target_assets": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_SCRIPT_SAMPLE_001_掩耳盗铃高质量脚本影子样例_v1.0.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_SCRIPT_SAMPLE_001_掩耳盗铃高质量脚本影子样例_v1.0.json",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_SCRIPT_SAMPLE_001_质量验收记录_20260508.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_SCRIPT_SAMPLE_001_质量验收记录_20260508.json"
+  ],
+  "checks": {
+    "asset_identity_declared": true,
+    "not_formal_script_generation_result": true,
+    "idiom_meaning_story_script_storyboard_insight_complete": true,
+    "compliance_pending_review_kept": true,
+    "human_review_questions_listed": true,
+    "quality_acceptance_record_created": true,
+    "json_parse_required": true,
+    "read_real_media": false,
+    "generate_audio_subtitle_cover_video": false,
+    "render_upload_publish": false,
+    "wecom_real_send_or_n8n": false,
+    "formal_video_script_config_service_modified": false
+  },
+  "result": "passed",
+  "boundary_kept": true
+}

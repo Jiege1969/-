@@ -1,0 +1,42 @@
+﻿{
+    "report":  "旧计划任务删除收口",
+    "generated_at":  "2026-05-06 06:55:29 +08:00",
+    "deleted_tasks":  [
+                          "AI_AutoEvolve",
+                          "AI_Backup",
+                          "AI_HealthCheck",
+                          "AI_WeeklyCleanup",
+                          "DailyWorkPlan",
+                          "WSL_AutoStart"
+                      ],
+    "evidence_dir":  "第30轮原始暗角证据目录已清债删除；判断结论、删除对象、验收结果和安全边界已固化在对应_latest收口报告。",
+    "after_validation":  {
+                             "AI_AutoEvolve":  false,
+                             "AI_Backup":  false,
+                             "AI_HealthCheck":  false,
+                             "AI_WeeklyCleanup":  false,
+                             "DailyWorkPlan":  false,
+                             "WSL_AutoStart":  false
+                         },
+    "jiege_named_tasks_preserved":  [
+                                        "杰哥智能化系统_D盘资源增长监控日报",
+                                        "杰哥智能化系统_v3智能体大脑测试服务",
+                                        "杰哥智能化系统_企业微信统一指令本地服务",
+                                        "杰哥智能化系统_公网反向隧道守护",
+                                        "杰哥智能化系统_开机施工准备自检",
+                                        "杰哥智能化系统_每日只读巡检",
+                                        "杰哥智能化系统_股票系统交付运行环境",
+                                        "杰哥智能化系统_血脉分钟级只读探针"
+                                    ],
+    "not_processed_in_this_batch":  "serviceraj",
+    "processed_later":  "serviceraj",
+    "safety":  {
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false,
+                   "deleted_formal_data":  false,
+                   "deleted_jiege_named_tasks":  false
+               },
+    "第30轮原始证据清债说明":  "第30轮原始暗角证据目录已清债删除；判断结论、删除对象、验收结果和安全边界已固化在对应_latest收口报告。"
+}

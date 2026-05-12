@@ -1,0 +1,50 @@
+﻿{
+    "report":  "摸清家底找差距第五轮收口",
+    "generated_at":  "2026-05-06 10:06:58 +08:00",
+    "theme":  "备份可恢复性与施工者尾巴清理",
+    "completed":  [
+                      "WSL2一致性备份已补恢复说明，避免有备份不会恢复的新债",
+                      "backup_manifest.json已补干净停机状态字段和恢复口径字段",
+                      "F盘备份总台账已更新恢复说明入口",
+                      "Codex工作区n8n临时施工文件11个已删除，释放约4018415字节",
+                      "当前施工面板与一键接续施工包控制字符和脚本哈希占位已清理干净"
+                  ],
+    "key_paths":  {
+                      "wsl_backup":  "F:\\系统备份\\WSL2一致性备份_20260506_090045",
+                      "manifest":  "F:\\系统备份\\WSL2一致性备份_20260506_090045\\backup_manifest.json",
+                      "restore_runbook":  "F:\\系统备份\\WSL2一致性备份_20260506_090045\\恢复说明.md",
+                      "backup_ledger":  "F:\\系统备份\\备份总台账_最新.md/json",
+                      "tail_cleanup":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\施工者尾巴清理收口_最新.md/json",
+                      "restore_closeout":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\WSL2备份恢复口径收口_最新.md/json"
+                  },
+    "validation":  {
+                       "workspace_scratch_files":  0,
+                       "docker_containers":  [
+                                                 "jiege_v3_ollama",
+                                                 "jiege_v3_redis",
+                                                 "jiege_v3_n8n"
+                                             ],
+                       "docker_volume_count":  0,
+                       "n8n":  200,
+                       "ollama":  200,
+                       "redis_tcp":  true,
+                       "panel_control_chars":  0,
+                       "handoff_control_chars":  0,
+                       "panel_scriptHash_literal":  false,
+                       "handoff_scriptHash_literal":  false,
+                       "json_valid":  true
+                   },
+    "remaining_true_gaps":  [
+
+                            ],
+    "note":  "接续包中存在股票系统柏基长期成长框架口径，判定为外部同步事项，不纳入本轮清债剩余差距。",
+    "safety":  {
+                   "stopped_services_this_round":  false,
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false,
+                   "deleted_system_assets":  false,
+                   "deleted_backup":  false
+               }
+}

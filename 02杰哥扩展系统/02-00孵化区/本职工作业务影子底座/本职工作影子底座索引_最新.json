@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-05-09",
+  "status": "shadow_asset_index_not_formal_registry",
+  "business_line": "office_work",
+  "boundary": {
+    "formal_chain": false,
+    "external_send": false,
+    "real_office_system": false,
+    "n8n": false,
+    "wechat": false
+  },
+  "files": {
+    "five_questions": "本职工作_开工五问校准_v1.0.md",
+    "source_list": "本职工作资料来源清单_v1.0.md",
+    "data_source_list": "本职工作数据源清单_v1.0.md",
+    "requirements_draft": "本职工作需求草案_v1.0.md",
+    "scenario_breakdown": "本职工作任务场景拆解_v1.0.md",
+    "workflow_draft": "本职工作工作流梳理_v1.0.md",
+    "source_template": "本职工作制度流程资料模板_v1.0.md",
+    "ledger_field_draft": "本职工作台账字段草案_v1.0.md",
+    "first_blank_shadow_sample": "OFFICE_SHADOW_001_制度流程梳理_空白影子样例_v1.0.md",
+    "second_blank_shadow_sample": "OFFICE_SHADOW_002_流程资料登记_空白影子样例_v1.0.md",
+    "second_blank_shadow_sample_json": "OFFICE_SHADOW_002_流程资料登记_空白影子样例_v1.0.json",
+    "first_material_card": "MATERIAL_CARD_OFFICE_001_制度流程_空白资料登记卡_v1.0.md",
+    "first_review_receipt": "REVIEW_RECEIPT_OFFICE_001_空白复核回执_v1.0.md"
+  },
+  "formal_capability_claim": false
+}

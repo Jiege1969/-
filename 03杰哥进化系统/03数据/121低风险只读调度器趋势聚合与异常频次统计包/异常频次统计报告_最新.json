@@ -1,0 +1,73 @@
+{
+  "name": "低风险只读调度器异常频次统计报告",
+  "generated_at": "2026-05-08 21:38:56",
+  "pass": true,
+  "error_count": 0,
+  "day_count": 7,
+  "trend_generated": true,
+  "source_files_modified": false,
+  "external_call": false,
+  "readonly_summary_only": true,
+  "metrics": {
+    "daily_total_count": 61,
+    "daily_pass_count": 59,
+    "pass_rate": 0.9672,
+    "pause_count": 5,
+    "confirmation_count": 13,
+    "retention_notice_count": 7,
+    "redline_simulation_hit_count": 9,
+    "pause_frequency_per_day": 0.7143,
+    "confirmation_frequency_per_day": 1.8571,
+    "retention_notice_frequency_per_day": 1.0,
+    "redline_hit_frequency_per_day": 1.2857
+  },
+  "anomaly_frequency": [
+    {
+      "metric": "暂停次数",
+      "field": "pause_count",
+      "total": 5,
+      "frequency_per_day": 0.7143,
+      "level": "low",
+      "decision": "只读记录，不自动恢复"
+    },
+    {
+      "metric": "总管确认次数",
+      "field": "confirmation_count",
+      "total": 13,
+      "frequency_per_day": 1.8571,
+      "level": "medium",
+      "decision": "只读记录，等待人工确认"
+    },
+    {
+      "metric": "证据到期提醒",
+      "field": "retention_notice_count",
+      "total": 7,
+      "frequency_per_day": 1.0,
+      "level": "medium",
+      "decision": "只提醒不删除"
+    },
+    {
+      "metric": "红线模拟命中次数",
+      "field": "redline_simulation_hit_count",
+      "total": 9,
+      "frequency_per_day": 1.2857,
+      "level": "medium",
+      "decision": "只读统计，保持暂停口径"
+    }
+  ],
+  "hard_red_line_confirmation": {
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "write_formal_rule": false,
+    "auto_promote_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false,
+    "external_call": false
+  }
+}

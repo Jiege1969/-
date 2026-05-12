@@ -1,0 +1,34 @@
+{
+  "asset_id": "VIDEO_AGENT_LINE_ASSET_INDEX_DRAFT_006",
+  "version": "v6.0",
+  "asset_type": "shadow_index_draft",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "video_production_shadow_base",
+  "status": "draft_not_written_to_manager_or_incubation_total_index",
+  "updated_date": "2026-05-08",
+  "positioning": "Internal shadow index draft for tracking VAI001-VAI096 asset groups; not a formal index and does not imply real publishing is available.",
+  "groups": [
+    {"range": "VAI001-012", "topic": "video_factory_control_base", "state": "shadow_base_formed"},
+    {"range": "VAI013-029", "topic": "r012_alignment_and_review_chain", "state": "review_chain_formed"},
+    {"range": "VAI030-041", "topic": "continuous_construction_governance", "state": "governance_layer_formed"},
+    {"range": "VAI042-053", "topic": "no_stop_and_index_drafts", "state": "continuous_construction_layer_formed"},
+    {"range": "VAI054-060", "topic": "status_query_and_close_receipts", "state": "interaction_template_layer_formed"},
+    {"range": "VAI061-069", "topic": "stage_rollup_field_consistency_block_replies", "state": "block_and_receipt_layer_formed"},
+    {"range": "VAI070-081", "topic": "pre_publish_human_gates_and_four_piece_materials", "state": "pre_publish_review_chain_formed"},
+    {"range": "VAI082-090", "topic": "multi_platform_summary_blocker_close_gate_overview_wecom_blocker_reason", "state": "pre_publish_explanation_layer_formed"},
+    {"range": "VAI091-096", "topic": "field_consistency_next_review_actions_final_confirmation_placeholder", "state": "final_confirmation_shadow_layer_formed"}
+  ],
+  "global_boundaries": {
+    "connect_real_model": false,
+    "call_real_render_audio_or_publish_tools": false,
+    "read_real_material_account_cookie_or_api_key": false,
+    "connect_platform_or_wecom_real_send": false,
+    "connect_n8n": false,
+    "write_formal_repository_or_modify_manager_public_component": false
+  },
+  "next_low_risk_candidates": [
+    "final_human_confirmation_quality_check",
+    "wecom_submit_human_confirmation_refusal_reply_sample",
+    "VAI094_VAI099_mini_stage_rollup"
+  ]
+}

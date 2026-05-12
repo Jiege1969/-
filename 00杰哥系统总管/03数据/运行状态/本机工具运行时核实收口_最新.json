@@ -1,0 +1,74 @@
+﻿{
+    "report":  "本机工具运行时核实收口",
+    "generated_at":  "2026-05-06 08:13:52 +08:00",
+    "runtime_root":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\本机工具运行时",
+    "runtime_summary":  [
+                            {
+                                "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\本机工具运行时\\大龙虾",
+                                "files":  14,
+                                "bytes":  509090081,
+                                "mb":  485.51,
+                                "last_write_time":  "2026-04-26 10:29:44"
+                            },
+                            {
+                                "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\本机工具运行时\\工具软件",
+                                "files":  9514,
+                                "bytes":  425214256,
+                                "mb":  405.52,
+                                "last_write_time":  "2026-04-26 10:28:53"
+                            }
+                        ],
+    "node_modules_summary":  [
+                                 {
+                                     "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\本机工具运行时\\大龙虾\\程序\\node_modules",
+                                     "files":  11,
+                                     "bytes":  509089093,
+                                     "mb":  485.51
+                                 }
+                             ],
+    "claude_code":  {
+                        "name":  "@anthropic-ai/claude-code",
+                        "version":  "2.1.119",
+                        "bin":  "bin/claude.exe",
+                        "package_json":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\本机工具运行时\\大龙虾\\程序\\node_modules\\@anthropic-ai\\claude-code\\package.json",
+                        "bin_exists":  true
+                    },
+    "path_hits":  [
+                      "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\本机工具运行时\\工具软件\\Git\\bin",
+                      "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\本机工具运行时\\工具软件\\Git\\cmd"
+                  ],
+    "port_18789":  [
+                       {
+                           "LocalAddress":  "::1",
+                           "LocalPort":  18789,
+                           "State":  2,
+                           "OwningProcess":  24476
+                       },
+                       {
+                           "LocalAddress":  "127.0.0.1",
+                           "LocalPort":  18789,
+                           "State":  2,
+                           "OwningProcess":  24476
+                       }
+                   ],
+    "process_18789":  {
+                          "Id":  24476,
+                          "ProcessName":  "wslrelay",
+                          "Path":  "C:\\Program Files\\WSL\\wslrelay.exe"
+                      },
+    "decision":  {
+                     "delete_now":  false,
+                     "reason":  "工具运行时含Git和Claude Code/OpenClaw相关运行资产，Git在PATH中，18789端口当前监听；无法证实无依赖，不能当轮删除",
+                     "keep":  "保留本机工具运行时；后续如治理，只做版本清单和可重装来源登记，不直接删除"
+                 },
+    "safety":  {
+                   "deleted_files":  0,
+                   "modified_files":  0,
+                   "stopped_services":  false,
+                   "stopped_wsl":  false,
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false
+               }
+}

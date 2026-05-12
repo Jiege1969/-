@@ -1,0 +1,36 @@
+{
+  "asset_id": "VIDEO_AGENT_NO_STOP_EXECUTION_RULE_001",
+  "version": "v1.0",
+  "asset_type": "continuous_construction_rule_card",
+  "construction_level": "W1/R0",
+  "scope": "video_production_shadow_base",
+  "status": "draft",
+  "problem_to_correct": "Progress summaries and next-step suggestions were incorrectly treated as confirmation gates, causing continuous construction to stop.",
+  "execution_rules": [
+    "When the user has authorized continuous construction, do not ask whether to continue after each round.",
+    "Read the current construction panel and latest startup package at the beginning of each round.",
+    "Only perform W1/R0 low-risk shadow construction inside the video production shadow base.",
+    "Self-check and create an alignment handoff record after each round.",
+    "A handoff record is not a stop point; continue to the next low-risk candidate unless a redline is triggered.",
+    "Register blockers only when a redline appears.",
+    "When material, account, real configuration, or user content is missing, create gap cards, pending-review questions, or placeholder templates."
+  ],
+  "auto_continue_task_types": [
+    "shadow_contract_draft",
+    "human_review_checklist",
+    "state_enum_and_consistency_check",
+    "release_gap_card",
+    "redline_block_register_template",
+    "wecom_reply_draft_template",
+    "shadow_index_draft_and_asset_list",
+    "local_self_check_and_alignment_handoff"
+  ],
+  "must_pause_and_register_blocker": [
+    "real_model_api_connection",
+    "real_executor_connection",
+    "real_material_account_or_cookie_read",
+    "real_render_upload_publish_or_external_send",
+    "n8n_service_port_manager_public_component_or_formal_repository_change"
+  ],
+  "turn_boundary_note": "Within a single tool-execution turn, continue multiple low-risk small tasks. If the interaction protocol requires a user-facing response, report completed work and queued next candidates rather than asking the user to confirm continuation."
+}

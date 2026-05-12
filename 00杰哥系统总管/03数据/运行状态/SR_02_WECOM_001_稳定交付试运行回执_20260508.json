@@ -1,0 +1,24 @@
+{
+  "task_id": "SR-02-WECOM-001",
+  "batch": "SR-02",
+  "execution_time": "2026-05-08 19:20:00 +08:00",
+  "business_line": "企业微信接入层",
+  "risk_level": "W1/R0",
+  "input_summary": "视频助理智能体入口只读对齐",
+  "source_asset": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\03数据\\CTRL_CAND_WECOM_002_视频助理智能体入口只读对齐记录_20260508.md",
+  "status": "completed",
+  "redline_hit": false,
+  "output_summary": "企业微信接入层只做输入、路由和安全闸门，不接管视频业务判断，不真实发送。",
+  "evidence": ["视频助理智能体入口只读对齐记录已完成，边界自检通过"],
+  "missing": ["真实发送关闭", "n8n关闭", "服务变更关闭", "平台账号关闭"],
+  "confidence": "接入层职责边界置信度高；真实外发不评价",
+  "boundary_flags": {
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "write_formal_db": false,
+    "modify_service_script": false,
+    "restart_19310_19302": false,
+    "call_real_llm_or_video_engine": false
+  },
+  "needs_manager_ruling": false
+}

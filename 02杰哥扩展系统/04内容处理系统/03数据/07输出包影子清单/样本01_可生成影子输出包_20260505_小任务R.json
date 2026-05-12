@@ -1,0 +1,83 @@
+{
+  "sample_id": "R-SAMPLE-01-SHADOW-PACKAGE-READY",
+  "sample_type": "可生成影子输出包",
+  "status": "shadow_package_allowed",
+  "input_reference": {
+    "input_id": "manual-shadow-input-001",
+    "source_reference_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\07输出包影子清单\\样本01_人工构造输入引用_不读取真实文档.txt",
+    "source_reference_type": "manual_placeholder",
+    "source_exists_status": "not_required_for_shadow_plan",
+    "authorization_status": "manual_shadow_only",
+    "input_scope_note": "人工构造引用，仅用于字段演示；不读取、不复制、不转换真实业务文档。"
+  },
+  "processing_plan": {
+    "plan_id": "R-PLAN-01",
+    "allowed_shadow_steps": [
+      "记录输入引用",
+      "生成处理计划字段",
+      "列出预期输出包元数据",
+      "等待人工复核"
+    ],
+    "blocked_real_steps": [
+      "真实格式转换",
+      "批量转换",
+      "生成真实docx/pdf/xlsx/html文件",
+      "写回源文件或正式库",
+      "外发或触发n8n"
+    ],
+    "format_intent": "markdown_summary_to_shadow_output_package",
+    "sensitive_check_required": true,
+    "batch_check_required": true
+  },
+  "expected_output": {
+    "shadow_output_package_id": "R-SHADOW-PACKAGE-001",
+    "expected_files": [
+      {
+        "name": "shadow_summary.md",
+        "kind": "planned_markdown_only",
+        "real_file_generated": false
+      },
+      {
+        "name": "shadow_metadata.json",
+        "kind": "planned_metadata_only",
+        "real_file_generated": false
+      }
+    ],
+    "expected_metadata": {
+      "title": "单样本影子输出包演示",
+      "source_trace_required": true,
+      "risk_notice_required": true,
+      "review_card_required": true
+    },
+    "no_real_output_file": true,
+    "degrade_notice": "仅生成影子输出包清单，不生成真实转换产物。"
+  },
+  "manual_review": {
+    "review_required": true,
+    "reviewer": "人工复核人待填",
+    "review_time": "人工复核时填写",
+    "review_status": "pending",
+    "review_result": "not_approved_for_real_conversion",
+    "review_signature_required": true
+  },
+  "rollback": {
+    "rollback_required": true,
+    "rollback_mode": "discard_shadow_package_plan",
+    "rollback_target": "shadow_package_metadata_only",
+    "rollback_action": "人工确认后废弃影子字段，不处理任何用户文档。",
+    "rollback_confirm_required": true
+  },
+  "action_switches": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_output_file_generation": false,
+    "allow_delete_move_overwrite": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_wecom_real_message": false,
+    "allow_formal_library_write": false,
+    "allow_broker_api": false,
+    "allow_auto_trade": false
+  }
+}

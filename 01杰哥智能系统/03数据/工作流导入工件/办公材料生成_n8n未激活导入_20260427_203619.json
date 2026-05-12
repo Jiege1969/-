@@ -1,0 +1,109 @@
+{
+  "name": "办公材料生成",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "8fa5a33f-b7f0-4fbf-9e61-f8099880a1fb",
+      "name": "手动触发",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        260,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "08df70a3-6df2-464f-8edc-d0d029c59450",
+              "name": "状态",
+              "value": "dry_run_only",
+              "type": "string"
+            },
+            {
+              "id": "9f9ebc93-fc7f-4104-84c7-d61834edc122",
+              "name": "工作流名",
+              "value": "办公材料生成",
+              "type": "string"
+            },
+            {
+              "id": "30ad0191-9ab2-4f05-a084-4d1ec9c99751",
+              "name": "执行摘要",
+              "value": "未激活导入验证工件，仅用于确认办公材料生成链路，不生成真实文档、不读取真实业务材料。",
+              "type": "string"
+            },
+            {
+              "id": "3ba3b954-2267-431f-af06-ca7956f9b249",
+              "name": "风险提示",
+              "value": "当前不启用Webhook，不写正式文件，不发送企业微信，不接入税收业务。",
+              "type": "string"
+            },
+            {
+              "id": "84452af2-5de9-4111-8b7f-3ddd47ca19f1",
+              "name": "是否需要人工复核",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "id": "3901a6f5-3e3f-4c01-a358-3706a7fa699b",
+      "name": "生成只读办公材料响应",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        520,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "办公材料生成未激活导入工件\\n生成时间：2026-04-27 20:36:19\\n安全边界：无Webhook、无凭据、不生成真实文档、不外发。",
+        "height": 240,
+        "width": 360,
+        "color": 4
+      },
+      "id": "859f5231-160e-4b8c-8987-b5eaeea1835f",
+      "name": "安全边界说明",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        260,
+        20
+      ]
+    }
+  ],
+  "connections": {
+    "手动触发": {
+      "main": [
+        [
+          {
+            "node": "生成只读办公材料响应",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "staticData": null,
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "jiege_v3_gray_import": true,
+    "target": "jiege_n8n",
+    "must_remain_inactive": true,
+    "generated_at": "2026-04-27 20:36:19",
+    "no_real_document_output": true,
+    "no_wework_send": true
+  }
+}

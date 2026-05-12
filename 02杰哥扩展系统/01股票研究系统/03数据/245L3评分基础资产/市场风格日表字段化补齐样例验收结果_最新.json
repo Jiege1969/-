@@ -1,0 +1,11 @@
+{
+  "name": "市场风格日表字段化补齐样例验收结果",
+  "generated_at": "2026-05-08 13:43:07",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "field_count": 10,
+    "sample_count": 3,
+    "real_market_data_ready": false
+  }
+}

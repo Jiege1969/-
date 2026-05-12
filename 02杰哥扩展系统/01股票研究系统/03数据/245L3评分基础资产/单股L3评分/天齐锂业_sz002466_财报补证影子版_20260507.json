@@ -1,0 +1,56 @@
+{
+  "version": "shadow_finance_patch_1.0",
+  "generated_at": "2026-05-07",
+  "stock_code": "sz002466",
+  "stock_name": "天齐锂业",
+  "asset_identity": "单股L3评分影子补证结果",
+  "source_base_report": "03数据/245L3评分基础资产/单股L3评分/天齐锂业_sz002466_最新.json",
+  "finance_evidence_card": "03数据/245L3评分基础资产/天齐锂业_财报基本面证据卡_20260507.json",
+  "total_score": 54.0,
+  "conclusion_text": "暂不建议关注",
+  "confidence": {
+    "level": "medium",
+    "reason": "财报证据已补入2025年年报摘要、2026年一季报和本地经营快照，基本面/资金分项不再为空白；但政策事件未匹配、市场风格缺口和锂价周期证据仍限制结论。"
+  },
+  "item_scores": [
+    {
+      "item": "技术结构",
+      "score": 30,
+      "max_score": 40,
+      "inherit_from_base_report": true
+    },
+    {
+      "item": "基本面/资金",
+      "score": 13,
+      "max_score": 20,
+      "evidence": [
+        "2026年一季度营业收入51.28亿元，同比增长98.44%。",
+        "2026年一季度归母净利润18.76亿元，同比增长1699.12%。",
+        "公司具备全球化锂资源布局和锂化工产品产能，产业链地位清晰。",
+        "2025年营业收入同比下降20.80%，加权ROE仅1.10%，经营现金流同比下降46.70%。",
+        "2026年一季度经营现金流同比下降72.77%，现金流与利润修复不同步。"
+      ],
+      "missing": [
+        "锂盐现货价格和产品价差未接入。",
+        "SQM投资收益、套保、公允价值变动贡献拆分未进入评分字段。",
+        "资金流、机构持仓和减持解禁未合并。"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "item": "政策事件",
+      "score": 0.0,
+      "max_score": 20,
+      "inherit_from_base_report": true
+    },
+    {
+      "item": "市场风格适配",
+      "score": 11,
+      "max_score": 20,
+      "inherit_from_base_report": true
+    }
+  ],
+  "evidence_summary": "技术沿用原L3样例；基本面已由公开公告、本地经营快照和人工核验台账补证；政策事件市场风格仍是主要缺口。",
+  "missing_summary": "更高分仍受制于政策事件暴露度未匹配、锂价/价差字段缺失、利润来源拆分不足。",
+  "safety_boundary": "仅供研究参考，不构成投资建议，不作为买卖指令；不调用券商接口，不自动交易。"
+}

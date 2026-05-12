@@ -1,0 +1,49 @@
+﻿{
+    "report":  "防火墙与环境变量死路径清理收口",
+    "generated_at":  "2026-05-06 07:14:00 +08:00",
+    "evidence_dir":  "第30轮原始暗角证据目录已清债删除；判断结论、删除对象、验收结果和安全边界已固化在对应_latest收口报告。",
+    "removed_firewall_rules":  {
+                                   "count":  13,
+                                   "categories":  [
+                                                      "old_nodejs_dead_path",
+                                                      "old_qclaw_dead_path",
+                                                      "old_wecom_wemail_dead_path",
+                                                      "duplicate_openclaw_8080"
+                                                  ]
+                               },
+    "preserved":  [
+                      "current_nodejs_firewall_rules",
+                      "docker_desktop_startup",
+                      "docker_hosts_entries",
+                      "jiege_named_scheduled_tasks",
+                      "openclaw_current_18789_18791_18792"
+                  ],
+    "environment_updates":  {
+                                "CLAUDE_CODE_GIT_BASH_PATH":  "D:/杰哥智能化系统/01杰哥智能系统/03数据/本机工具运行时/工具软件/Git/bin/bash.exe",
+                                "removed_user_path_entries":  [
+                                                                  "C:/Users/Administrator/AppData/Local/Programs/Ollama",
+                                                                  "D:/Programs/Ollama"
+                                                              ]
+                            },
+    "validation":  {
+                       "removed_rule_targets_exist_after":  false,
+                       "remaining_nodejs_program_exists":  true,
+                       "remaining_openclaw_8080_count":  0,
+                       "git_bash_target_exists":  true,
+                       "user_path_ollama_dead_entries":  0
+                   },
+    "safety":  {
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false,
+                   "deleted_formal_data":  false,
+                   "deleted_jiege_named_tasks":  false
+               },
+    "当前覆盖口径":  {
+                   "覆盖时间":  "2026-05-06 第十三轮",
+                   "openclaw_8080":  "已清零；防火墙规则0，8080不监听，portproxy为空",
+                   "openclaw_current_ports":  "18789 主 gateway；18791 Browser control；18792 浏览器旁路/CDP派生端口；均为本地监听"
+               },
+    "第30轮原始证据清债说明":  "第30轮原始暗角证据目录已清债删除；判断结论、删除对象、验收结果和安全边界已固化在对应_latest收口报告。"
+}

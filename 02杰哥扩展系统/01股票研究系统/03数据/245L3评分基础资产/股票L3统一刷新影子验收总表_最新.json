@@ -1,0 +1,186 @@
+{
+  "name": "股票L3统一刷新影子验收总表",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:18:03",
+  "asset_identity": "W1统一刷新影子验收总表",
+  "status": "passed",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_real_refresh": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "checks": [
+    {
+      "key": "front_short_answer",
+      "risk_level": "W1",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\前台结论型短答统一验收记录验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "status": null,
+      "generated_at": "2026-05-08 10:09:12",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "sample_count": 5,
+        "sample_passed_count": 5,
+        "gate_count": 4,
+        "gate_passed_count": 4,
+        "allow_shadow_front_answer": true,
+        "allow_real_wecom_send": false,
+        "allow_formal_entry": false
+      }
+    },
+    {
+      "key": "financial_capital_receipt",
+      "risk_level": "W1",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\财报资金证据人工填写回执模板验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "status": null,
+      "generated_at": "2026-05-08 09:55:26",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "receipt_count": 25,
+        "stock_count": 5,
+        "ready_count": 0,
+        "score_allowed_count": 0
+      }
+    },
+    {
+      "key": "industry_price_receipt",
+      "risk_level": "W1",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\行业价格观测人工填报回执模板验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "status": null,
+      "generated_at": "2026-05-08 09:59:32",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "receipt_count": 5,
+        "stock_count": 5,
+        "required_observation_points": 25,
+        "existing_observation_points": 1,
+        "trend_ready_count": 0,
+        "score_allowed_count": 0
+      }
+    },
+    {
+      "key": "policy_event_exposure_receipt",
+      "risk_level": "W1",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\政策事件单股暴露度人工复核回执模板验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "status": null,
+      "generated_at": "2026-05-08 10:06:37",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "receipt_count": 5,
+        "stock_count": 5,
+        "matched_event_stock_count": 1,
+        "policy_score_ready_count": 0,
+        "score_allowed_count": 0
+      }
+    },
+    {
+      "key": "market_style_fit_receipt",
+      "risk_level": "W1",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\市场风格单股适配人工复核回执模板验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "status": null,
+      "generated_at": "2026-05-08 10:02:07",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "receipt_count": 5,
+        "stock_count": 5,
+        "daily_style_status": "confirmed",
+        "style_fit_ready_count": 0,
+        "score_allowed_count": 0
+      }
+    },
+    {
+      "key": "review_candidate_template",
+      "risk_level": "W1",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\复盘人工修正规则候选模板验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "status": null,
+      "generated_at": "2026-05-08 10:16:09",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "candidate_count": 4,
+        "formal_rule_update_allowed_count": 0,
+        "weight_change_allowed_count": 0,
+        "pending_review_count": 4
+      }
+    },
+    {
+      "key": "review_loop_acceptance",
+      "risk_level": "W1",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\复盘闭环验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "status": "passed",
+      "generated_at": "2026-05-08 06:55:31",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "evidence_file_types": 7,
+        "existing_evidence_types": 7,
+        "blocking_count": 0,
+        "warning_count": 0
+      }
+    },
+    {
+      "key": "auto_continue_queue",
+      "risk_level": "W1",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票线连续施工自动续建队列验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "status": null,
+      "generated_at": "2026-05-08 10:16:24",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "queue_count": 6,
+        "blocked_count": 2,
+        "completed_count": 5,
+        "queued_count": 1
+      }
+    }
+  ],
+  "summary": {
+    "check_count": 8,
+    "exists_count": 8,
+    "passed_count": 8,
+    "failed_count": 0,
+    "allow_shadow_refresh_claim": true,
+    "allow_real_wecom_send": false,
+    "allow_formal_entry": false,
+    "allow_formal_score_update": false
+  },
+  "front_output_rule": {
+    "can_say": "影子验收链路已通过，可用于后台继续验证前台短答和证据缺口。",
+    "cannot_say": "已正式上线、已真实外发、已接入正式入口或评分规则会自动更新。"
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_adapter_write": true,
+    "not_score_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

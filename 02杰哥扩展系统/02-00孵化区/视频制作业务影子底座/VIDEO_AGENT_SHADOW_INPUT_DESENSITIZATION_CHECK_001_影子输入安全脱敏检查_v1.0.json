@@ -1,0 +1,32 @@
+{
+  "asset_id": "VIDEO_AGENT_SHADOW_INPUT_DESENSITIZATION_CHECK_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_checklist_not_real_content_gateway",
+  "purpose": "Check whether manual shadow input or placeholder future WeCom input contains sensitive information before it enters the draft chain.",
+  "check_items": [
+    {"item": "personal_identity_information", "examples": ["name", "phone", "id_number", "address"], "shadow_handling": "request_desensitized_input"},
+    {"item": "account_or_credentials", "examples": ["cookie", "token", "password", "api_key"], "shadow_handling": "register_redline_block"},
+    {"item": "unauthorized_asset_path", "examples": ["local_real_asset_path", "real_cloud_link"], "shadow_handling": "route_to_asset_authorization_gap"},
+    {"item": "real_customer_information", "examples": ["customer_name", "contract", "quotation", "private_material"], "shadow_handling": "request_desensitization_or_human_confirmation"},
+    {"item": "real_publish_instruction", "examples": ["publish", "upload", "mass_send", "external_send"], "shadow_handling": "route_to_real_execution_block"},
+    {"item": "platform_sensitive_operation", "examples": ["login", "post_on_behalf", "auto_promote"], "shadow_handling": "register_redline_block"}
+  ],
+  "output_fields": [
+    "input_check_id",
+    "source_input_type",
+    "desensitization_status",
+    "sensitive_items_detected",
+    "required_user_action",
+    "redline_hit",
+    "next_shadow_action"
+  ],
+  "real_system_triggered": {
+    "wecom_real_message_read": false,
+    "real_asset_directory_read": false,
+    "account_cookie_or_credential_read": false,
+    "real_content_gateway_enabled": false
+  }
+}

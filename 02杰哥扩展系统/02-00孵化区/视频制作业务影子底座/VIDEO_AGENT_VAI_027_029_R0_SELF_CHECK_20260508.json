@@ -1,0 +1,46 @@
+{
+  "id": "VIDEO_AGENT_VAI_027_029_R0_SELF_CHECK_20260508",
+  "asset_identity": "video_production_shadow_base_self_check",
+  "stage": "W1_R0",
+  "date": "2026-05-08",
+  "result": "passed",
+  "checked_assets": [
+    {
+      "id": "VAI-027",
+      "name": "shadow_trial_operation_card",
+      "result": "passed",
+      "note": "manual shadow operation card only, not runner script"
+    },
+    {
+      "id": "VAI-028",
+      "name": "total_asset_list",
+      "result": "passed",
+      "note": "asset list only, not formal system directory"
+    },
+    {
+      "id": "VAI-029",
+      "name": "alignment_return_summary",
+      "result": "passed",
+      "note": "summary return only, no formal config change request"
+    }
+  ],
+  "boundary_check": {
+    "modify_formal_video_scripts": false,
+    "call_real_model_api": false,
+    "read_real_assets": false,
+    "generate_image_audio_subtitle_cover_video": false,
+    "upload_publish_external_send": false,
+    "trigger_n8n": false,
+    "real_wechat_send": false,
+    "read_or_save_wechat_credentials": false,
+    "start_or_restart_service": false,
+    "modify_19310_or_19302": false,
+    "write_formal_rule_database": false,
+    "request_public_wechat_config_change": false
+  },
+  "next_shadow_queue": [
+    "manual_shadow_trial_record_blank_table",
+    "trial_output_quality_checklist",
+    "vai_asset_archive_naming_checklist"
+  ]
+}

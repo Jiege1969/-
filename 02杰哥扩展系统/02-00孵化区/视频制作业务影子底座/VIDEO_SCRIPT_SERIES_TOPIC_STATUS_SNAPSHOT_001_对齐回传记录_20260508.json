@@ -1,0 +1,38 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SERIES_TOPIC_STATUS_SNAPSHOT_001_ALIGNMENT_RETURN",
+  "created_at": "2026-05-08 13:53:00 +08:00",
+  "risk_level": "W1/R0",
+  "target_line": "video_shadow_base_and_parallel_video_construction_line",
+  "action": "create_idiom_story_initial_topic_status_snapshot",
+  "absorbed_points": [
+    "only_yan_er_dao_ling_has_shadow_sample",
+    "seven_topics_remain_candidates",
+    "candidate_status_does_not_mean_script_video_or_publish_schedule",
+    "next_low_risk_task_is_blank_task_card_for_wang_yang_bu_lao"
+  ],
+  "next_candidates": [
+    {
+      "id": "NEXT-001",
+      "task": "create_blank_shadow_task_card_for_wang_yang_bu_lao",
+      "boundary": "blank_task_card_only_no_concrete_script"
+    },
+    {
+      "id": "NEXT-002",
+      "task": "create_idiom_story_series_review_receipt_blank_template",
+      "boundary": "human_feedback_receipt_only_no_generation_release"
+    },
+    {
+      "id": "NEXT-003",
+      "task": "create_initial_topic_status_change_log_template",
+      "boundary": "status_change_record_only_no_real_task"
+    }
+  ],
+  "redline_flags": {
+    "real_script_generation": false,
+    "real_rendering": false,
+    "real_publishing": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "formal_script_or_config_change": false
+  }
+}

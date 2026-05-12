@@ -1,0 +1,64 @@
+{
+  "asset_id": "VIDEO_SCRIPT_QUALITY_FIX_CARD_001",
+  "name": "成语故事内容质量纠偏卡",
+  "version": "v1.0",
+  "generated_at": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "stage": "W1_R0",
+  "asset_identity": "video_script_draft_quality_fix_card",
+  "formal_video_system": false,
+  "problem": {
+    "type": "content_quality_gap",
+    "severity": "P1",
+    "description": "idiom story draft can return a generic template instead of actual idiom story content"
+  },
+  "minimum_quality_requirements": [
+    "idiom_name",
+    "idiom_meaning",
+    "short_video_story_outline",
+    "three_to_five_script_segments",
+    "opening_hook",
+    "storyboard_hints",
+    "ending_reflection_or_twist",
+    "asset_and_platform_review_items",
+    "human_review_questions"
+  ],
+  "blocked_outputs": [
+    "empty_generic_template",
+    "placeholder_story_content",
+    "generic_advice_without_script",
+    "publishable_final_claim",
+    "real_render",
+    "upload",
+    "publish",
+    "wecom_real_send",
+    "n8n"
+  ],
+  "acceptance_examples": [
+    {
+      "input": "帮我做一个成语故事短视频",
+      "pass_condition": "contains a specific idiom, story outline and draft script"
+    },
+    {
+      "input": "做一个掩耳盗铃的短视频",
+      "pass_condition": "script is specifically about 掩耳盗铃"
+    },
+    {
+      "input": "成语故事要更适合小学生",
+      "pass_condition": "simple style plus idiom meaning and story"
+    }
+  ],
+  "boundary": {
+    "real_render": false,
+    "voice_generation": false,
+    "subtitle_generation": false,
+    "cover_generation": false,
+    "upload": false,
+    "publish": false,
+    "platform_login": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "generation_release": false,
+    "publish_release": false
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "名称": "L3企业微信正式化人工确认申请",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "W3人工确认申请草案",
+  "状态": "waiting_user_decision",
+  "request": "是否允许进入L3企业微信短答正式化准备的W3实施阶段。",
+  "current_shadow_status": {
+    "five_sample_shadow_acceptance": "passed",
+    "samples": [
+      "云南锗业 sz002428",
+      "天齐锂业 sz002466",
+      "华虹公司 sh688347",
+      "浙商中拓 sz000906",
+      "正丹股份 sz300641"
+    ],
+    "user_review_ready": true,
+    "formal_ready_without_confirmation": false
+  },
+  "if_approved_scope": [
+    "只做正式化前基线备份和hash记录",
+    "只做L3短答适配层，不删除旧v21短回复",
+    "只做dry-run对照，不立即真实发送",
+    "保留灰度开关和停止开关",
+    "任何真实企业微信发送仍需单独确认"
+  ],
+  "if_not_approved_next_shadow_options": [
+    "继续扩展更多样本",
+    "补全市场风格正式日表",
+    "补行业价格字段，如锗价、锂价、半导体板块热度",
+    "继续生成经营快照与191台账差异清单"
+  ],
+  "explicitly_excluded": [
+    "不自动交易",
+    "不接券商接口",
+    "不启用n8n",
+    "不直接真实发送企业微信",
+    "不绕过人工确认令",
+    "不删除旧入口和回滚路径"
+  ],
+  "decision_needed_from_user": {
+    "approve_w3_preparation": null,
+    "approve_real_wecom_send": false,
+    "approve_service_restart": false,
+    "approve_n8n": false,
+    "approve_broker_or_trade": false
+  }
+}

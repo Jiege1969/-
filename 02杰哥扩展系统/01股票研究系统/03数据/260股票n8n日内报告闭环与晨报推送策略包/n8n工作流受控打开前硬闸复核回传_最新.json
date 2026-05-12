@@ -1,0 +1,125 @@
+{
+  "名称": "n8n工作流受控打开前硬闸复核回传",
+  "生成时间": "2026-05-09 14:06:37",
+  "施工范围": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统",
+  "目标工作流": {
+    "name": "股票主动研究闭环_文件桥接未激活",
+    "id": "ZkzsB6MdxlC3VMxY",
+    "当前active": false
+  },
+  "本轮动作": {
+    "只读复核current_json": true,
+    "只读复核当前导出快照": true,
+    "只读复核CLI_list状态": true,
+    "复用既有确认包": [
+      "142n8n未激活导入工件",
+      "260股票n8n日内报告闭环与晨报推送策略包",
+      "38n8n导入前只读审计",
+      "65n8n未激活导入人工确认回执模板",
+      "66n8n目标实例选择与隔离核验",
+      "67新系统隔离n8n实施申请",
+      "68隔离n8n启动前只读核验",
+      "69n8n未激活导入件"
+    ],
+    "启用active_true": false,
+    "触发n8n": false,
+    "n8n_execute": false,
+    "手动执行工作流": false,
+    "企业微信真实发送": false,
+    "群发": false,
+    "接券商": false,
+    "交易": false,
+    "重载19310": false,
+    "重载19302": false,
+    "修改总管面板": false,
+    "修改一键接续包": false
+  },
+  "只读复核来源": {
+    "当前CLI导出快照": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\n8n未激活导入\\stock-n8n-pre-active-hard-gate-export-最新.json",
+    "142最新工件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\142n8n未激活导入工件\\股票主动研究闭环_n8n未激活导入_最新.json",
+    "导入后核验": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\n8n未激活导入\\stock-n8n-inactive-import-post-verify-最新.json",
+    "执行记录只读抽查": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\n8n未激活导入\\n8n-target-execution-readonly-after-import-最新.json"
+  },
+  "当前CLI状态": {
+    "docker_ps": "jiege_v3_n8n|Up 7 hours|127.0.0.1:28679->5678/tcp",
+    "inactive列表包含目标": true,
+    "active列表包含目标": false,
+    "active列表为空": true,
+    "当前导出工作流数量": 5,
+    "目标匹配数量": 1,
+    "目标active": false,
+    "当天执行记录": 0,
+    "历史CLI执行记录": 2,
+    "triggerCount": 0,
+    "webhook_count": 0
+  },
+  "当前工作流结构复核": {
+    "节点数量": 4,
+    "节点类型": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.executeCommand",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote"
+    ],
+    "自动触发节点": false,
+    "webhook": false,
+    "schedule_or_cron": false,
+    "credentials字段数": 0,
+    "HTTP请求节点": false,
+    "企业微信真实发送节点": false,
+    "券商交易节点": false,
+    "风险字样说明": "企业微信/券商/交易字样仅出现在set/stickyNote安全声明文本中，未出现在可执行发送或交易节点中。"
+  },
+  "142工件与当前live导出差异": {
+    "名称一致": true,
+    "active一致": true,
+    "节点数量一致": true,
+    "节点类型一致": true,
+    "连接结构一致": true,
+    "executeCommand参数完全一致": false,
+    "当前live命令摘要": "写入task=stock_active_research, mode=manual, created_at",
+    "142最新命令摘要": "写入task=stock_active_research, mode=inactive_intraday_loop, stage=manual_test_or_schedule, created_at",
+    "差异判定": "不构成active=true自动触发风险；但live不等同于142最新日内策略增强工件。"
+  },
+  "技术判断": {
+    "active_true不会因自动触发节点立即触发": true,
+    "不含真实发送节点": true,
+    "不含交易节点": true,
+    "不含credentials": true,
+    "仍需注意": "工作流被人工执行时会运行executeCommand并写入触发文件；active=true和人工执行必须分开管理。",
+    "当前状态": "技术结构具备进入受控启用准备的条件；管理/人工硬闸尚未放行，本轮不得启用。"
+  },
+  "active_true前硬闸清单": [
+    "目标工作流ID、名称、当前导出快照必须二次确认一致，目标匹配数量必须等于1",
+    "active必须在启用前仍为false；active列表中不得已有目标",
+    "当前导出必须无webhook、无scheduleTrigger、无cron、无interval、无其他自动触发节点",
+    "当前导出必须无credentials字段、无HTTP请求节点、无企业微信真实发送节点",
+    "当前导出必须无券商/交易/下单节点",
+    "执行记录只读抽查必须确认当天未新增执行记录",
+    "65人工确认材料必须升级为允许受控打开active=true但不允许手动执行、不允许发送的明确确认文本",
+    "66/67/68必须完成当前容器运行态复核更新，历史启动前材料不得直接作为当前放行依据",
+    "必须确认active=true只是打开工作流，不点击Execute workflow，不调用n8n execute，不触发手动节点",
+    "必须确认打开后立即复查active列表，确认只有目标按授权变更，其它工作流状态不变",
+    "必须确认如需回退，只执行active=false回退，不重载19310/19302"
+  ],
+  "一票否决项": [
+    "目标匹配数量不是1",
+    "当前导出中出现webhook、scheduleTrigger、cron、interval或其他自动触发节点",
+    "当前导出中出现credentials、HTTP请求、企业微信真实发送、群发、券商、交易、下单节点",
+    "active=true会导致立即执行或已有自动触发登记无法排除",
+    "当前日期存在未授权执行记录，或启用前后执行记录增加",
+    "65未形成受控打开active=true专项人工确认",
+    "总管要求继续保持未激活或未授权打开",
+    "需要导入/覆盖工作流、重载19310/19302、修改总管面板或修改一键接续包才可继续"
+  ],
+  "下一步可执行的受控启用步骤": [
+    "人工确认：使用65材料另行填写专项确认，限定允许打开active=true，不允许手动执行、不允许真实发送、不允许群发、不允许接券商/交易",
+    "启用前二次只读快照：重新执行active=false列表、active=true列表、export:workflow只读导出",
+    "二次结构扫描：确认仍只有manualTrigger、executeCommand、set、stickyNote，无webhook/schedule/cron/credentials/HTTP/发送/交易节点",
+    "受控启用：仅在人工确认后执行docker exec jiege_v3_n8n n8n update:workflow --id ZkzsB6MdxlC3VMxY --active=true",
+    "启用后只读复查：确认目标active=true，未产生执行记录，未新增webhook登记，未发送企业微信",
+    "回传登记：记录命令、时间、前后快照、执行记录计数和安全边界",
+    "回退条件：若任何一票否决项出现，立即active=false回退，只写失败回传，不重试、不发送"
+  ],
+  "结论": "从当前live导出与CLI状态看，目标工作流具备受控打开active=true不会自动触发的技术前提，也未发现真实发送、凭据或交易节点。本轮输出硬闸清单和下一步启用步骤草案；由于专项人工/总管确认尚未完成，本轮不启用，状态保持active=false。"
+}

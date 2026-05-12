@@ -1,0 +1,48 @@
+{
+  "id": "P2-S5-REAL-MATERIAL-INTAKE-GATE-SCENARIO-DRYRUN-RECEIPT-20260509",
+  "executed_at": "2026-05-09 10:17:20 +08:00",
+  "execution_type": "readonly_dryrun",
+  "status": "pass",
+  "command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S5真实材料接入分流门场景干跑.py'",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\54P2S5真实材料接入分流门场景干跑\\P2S5真实材料接入分流门场景干跑_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\54P2S5真实材料接入分流门场景干跑\\P2S5真实材料接入分流门场景干跑_最新.json"
+  ],
+  "summary": {
+    "case_count": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "scenario_results": [
+    {"case": "脱敏涉税问题", "expected": "tax", "actual": "tax", "status": "pass"},
+    {"case": "制度流程资料", "expected": "office_work", "actual": "office_work", "status": "pass"},
+    {"case": "视频脚本分镜素材", "expected": "video_production", "actual": "video_production", "status": "pass"},
+    {"case": "公开政策来源", "expected": "shared_policy_evidence", "actual": "shared_policy_evidence", "status": "pass"},
+    {"case": "未脱敏财务资料", "expected": "pause", "actual": "pause", "status": "pass"},
+    {"case": "真实执行请求", "expected": "pause", "actual": "pause", "status": "pass"},
+    {"case": "来源不清材料", "expected": "pause", "actual": "pause", "status": "pass"}
+  ],
+  "parallel_findings_absorbed": [
+    "P2-S5 最小覆盖为 4 条可进入影子路线、3 类暂停阻断和字段一致性检查",
+    "视频线发布门禁关闭是硬验收点",
+    "孵化区总索引版本和更新时间需同步更新",
+    "P2-S2/P2-S3 检查治理资产应挂入总索引 P2 防护链条"
+  ],
+  "fixes_applied": [
+    "移除过宽的上传单词触发，真实发布风险仍由发布、发送企业微信、触发 n8n 等词阻断",
+    "增加否定语境识别，不把不发布、不上传、不外发等边界声明当作真实执行请求",
+    "来源不清且授权/敏感也未确认时 can_enter_shadow 统一判为否"
+  ],
+  "conclusion": "分流门场景干跑通过；税收、本职工作、视频、共享政策证据和暂停路径均按预期路由。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

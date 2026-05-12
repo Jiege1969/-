@@ -1,0 +1,11 @@
+{
+  "name": "复盘结果到规则候选二次门禁样例验收结果",
+  "generated_at": "2026-05-08 13:44:29",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "gate_count": 4,
+    "sample_count": 3,
+    "any_formal_rule_update_allowed": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "asset_id": "VIDEO_AGENT_STAGE_ROLLUP_001",
+  "version": "v1.0",
+  "asset_type": "stage_rollup",
+  "construction_level": "W1/R0",
+  "scope": "video_production_shadow_base",
+  "status": "draft_not_written_to_manager_or_formal_index",
+  "rollup_date": "2026-05-08",
+  "conclusion": "VAI001-VAI060 formed traceable shadow assets covering contracts, human review gates, release splits, WeCom placeholder replies, no-stop construction rules, and local index drafts.",
+  "not_implied": [
+    "real_model_connected",
+    "real_render_released",
+    "real_publish_released",
+    "wecom_real_send_enabled",
+    "n8n_connected",
+    "manager_or_formal_video_system_integrated"
+  ],
+  "stage_segments": [
+    {"range": "VAI001-012", "topic": "factory_control_task_compliance_drafts_adapters_safety", "state": "shadow_local_rehearsal", "real_system_triggered": false},
+    {"range": "VAI013-029", "topic": "r012_alignment_shared_evidence_readonly_review_chain", "state": "shadow_review_chain", "real_system_triggered": false},
+    {"range": "VAI030-041", "topic": "continuous_state_redline_release_consistency_state_enum_rollup", "state": "shadow_governance_layer", "real_system_triggered": false},
+    {"range": "VAI042-053", "topic": "index_draft_no_stop_missing_input_maturity_snapshot", "state": "shadow_continuous_construction_layer", "real_system_triggered": false},
+    {"range": "VAI054-060", "topic": "state_transition_review_template_wecom_status_close_receipt", "state": "shadow_interaction_template_layer", "real_system_triggered": false}
+  ],
+  "available_capabilities": [
+    "convert_vision_to_shadow_contracts_and_state_fields",
+    "split_generation_render_publish_gates",
+    "convert_missing_inputs_to_gap_cards_or_review_questions",
+    "draft_wecom_style_placeholder_replies_without_sending",
+    "record_line_level_alignment_handoffs"
+  ],
+  "current_blockers": [
+    "real_model_api_not_connected_and_not_allowed_in_this_stage",
+    "real_executors_not_called_and_not_allowed_in_this_stage",
+    "material_authorization_platform_rules_ai_label_preview_incomplete",
+    "wecom_public_route_and_n8n_not_connected_and_not_allowed_in_this_stage",
+    "shadow_index_draft_not_written_to_total_index"
+  ],
+  "next_low_risk_candidates": [
+    "gap_to_review_queue_mapping",
+    "receipt_field_consistency_check",
+    "status_query_reply_quality_check",
+    "shadow_asset_name_conflict_check"
+  ]
+}

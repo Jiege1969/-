@@ -1,0 +1,100 @@
+{
+  "id": "P2S11_HUMAN_REVIEW_RECEIPT_TEMPLATE_READONLY_CHECK",
+  "generated_at": "2026-05-09 12:37:17",
+  "status": "pass",
+  "summary": {
+    "receipt_count": 7,
+    "passed": 7,
+    "failed": 0,
+    "entry_fill_candidates": 4,
+    "release_forms": 0,
+    "auto_fill_shadow_entry": 0,
+    "write_target_entry": 0
+  },
+  "receipt_sample_path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\60P2S11人工复核结果回执模板只读检查\\P2S11人工复核结果虚拟回执样例_20260509.json",
+  "checks": [
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-001",
+      "source_receipt_id": "P2S7-RECEIPT-001",
+      "target_line": "tax",
+      "seal_bucket": "ready_shadow_preview",
+      "human_review_result": "review_pass_fill_candidate",
+      "entry_fill_candidate": true,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-002",
+      "source_receipt_id": "P2S7-RECEIPT-002",
+      "target_line": "office_work",
+      "seal_bucket": "ready_shadow_preview",
+      "human_review_result": "review_pass_fill_candidate",
+      "entry_fill_candidate": true,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-003",
+      "source_receipt_id": "P2S7-RECEIPT-003",
+      "target_line": "video_production",
+      "seal_bucket": "ready_shadow_preview",
+      "human_review_result": "review_pass_fill_candidate",
+      "entry_fill_candidate": true,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-004",
+      "source_receipt_id": "P2S7-RECEIPT-004",
+      "target_line": "shared_policy_evidence",
+      "seal_bucket": "ready_shadow_preview",
+      "human_review_result": "review_pass_fill_candidate",
+      "entry_fill_candidate": true,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-005",
+      "source_receipt_id": "P2S7-RECEIPT-005",
+      "target_line": "pause",
+      "seal_bucket": "pause_gap_archive",
+      "human_review_result": "continue_pause",
+      "entry_fill_candidate": false,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-006",
+      "source_receipt_id": "P2S7-RECEIPT-006",
+      "target_line": "pause",
+      "seal_bucket": "blocked_redline_archive",
+      "human_review_result": "maintain_block",
+      "entry_fill_candidate": false,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-007",
+      "source_receipt_id": "P2S7-RECEIPT-007",
+      "target_line": "pause",
+      "seal_bucket": "pause_gap_archive",
+      "human_review_result": "continue_pause",
+      "entry_fill_candidate": false,
+      "status": "pass",
+      "errors": []
+    }
+  ],
+  "conclusion": "人工复核结果回执模板检查通过；7 份虚拟回执均不构成放行单，4 份仅进入填写候选，0 份自动填写或写入口。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

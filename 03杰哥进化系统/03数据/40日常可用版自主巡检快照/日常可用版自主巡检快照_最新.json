@@ -1,0 +1,4342 @@
+{
+  "名称": "日常可用版自主巡检快照",
+  "生成时间": "2026-05-09 05:43:45",
+  "总体状态": "pass",
+  "汇总": {
+    "总数": 239,
+    "通过": 239,
+    "失败": 0,
+    "阻断检查总数": 239,
+    "阻断检查通过": 239
+  },
+  "检查结果": [
+    {
+      "名称": "企业微信公共接入层日常巡检",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\03数据\\15日常可用版只读巡检包\\企业微信公共接入层日常只读巡检_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "股票展示口径一致性验收",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\246展示口径修复\\股票展示口径一致性验收_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "股票前台展示口径全量扫雷",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\246展示口径修复\\股票前台展示口径全量一致性扫雷_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常可用交付版一键只读总回归",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用交付版一键只读总回归验收\\daily-usable-readonly-regression-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第十二轮低风险只读调度入口并行调度索引包",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十二轮低风险只读调度入口并行调度索引包验收\\parallel-round12-low-risk-readonly-scheduler-entry-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "n8n禁用态导入草案人工签收与回滚演练包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n禁用态导入草案人工签收与回滚演练包验收\\n8n-disabled-import-signoff-rollback-drill-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "n8n离线导入前凭据隔离与启用禁入包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线导入前凭据隔离与启用禁入包验收\\n8n-offline-import-credential-isolation-no-activate-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "n8n离线导入包静态扫描与禁用态导出草案包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线导入包静态扫描与禁用态导出草案包验收\\n8n-offline-disabled-import-static-scan-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "n8n离线干跑多场景回归与闸口矩阵包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线干跑多场景回归与闸口矩阵包验收\\n8n-offline-multiscenario-gate-matrix-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "n8n离线编排本地干跑执行器包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线编排本地干跑执行器包验收\\n8n-offline-local-dryrun-executor-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "n8n离线编排蓝图与禁触发验收包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线编排蓝图与禁触发验收包验收\\n8n-offline-blueprint-no-trigger-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "n8n离线闸口失败演练与回滚剧本包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线闸口失败演练与回滚剧本包验收\\n8n-offline-gate-failure-drill-rollback-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "三业务反馈人工确认状态机与候选生效前闸口包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务反馈人工确认状态机与候选生效前闸口包验收\\three-business-feedback-confirmation-state-machine-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "三业务反馈候选复跑去重与人工确认台账包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务反馈候选复跑去重与人工确认台账包验收\\three-business-feedback-rerun-dedupe-ledger-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "三业务反馈候选正式规则申请草案审查包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务反馈候选正式规则申请草案审查包验收\\three-business-formal-rule-application-draft-review-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "三业务反馈样本闭环只读入队与候选生成包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务反馈样本闭环只读入队与候选生成包验收\\three-business-feedback-readonly-queue-candidate-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "三业务正式规则申请人工签收流转与回滚校验包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务正式规则申请人工签收流转与回滚校验包验收\\three-business-rule-signoff-flow-rollback-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "三业务正式规则申请草案冲突扫描与签收台账包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务正式规则申请草案冲突扫描与签收台账包验收\\three-business-rule-draft-conflict-signoff-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "三业务用户反馈样本闭环模板包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务用户反馈样本闭环模板包验收\\three-business-feedback-loop-template-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "三日巡检样本防伪与次日待执行卡包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三日巡检样本防伪与次日待执行卡包验收\\three-day-patrol-anti-fake-nextday-card-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "三日巡检第2天待执行链路与防伪检查包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三日巡检第2天待执行链路与防伪检查包验收\\three-day-patrol-day2-pending-chain-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "三日巡检续跑准备与自然日样本模板包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三日巡检续跑准备与自然日样本模板包验收\\three-day-patrol-rerun-template-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "交付后首日运行观察与问题登记包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\交付后首日运行观察与问题登记包验收\\day1-operation-observation-issue-ledger-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "交付后首日运行观察与问题登记包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\交付后首日运行观察与问题登记包验收\\生成交付后首日运行观察与问题登记包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "企业微信真实验证反馈候选验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\企业微信真实验证反馈候选验收\\enterprise-wechat-real-validation-feedback-candidates-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读任务一键调度入口草案包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读任务一键调度入口草案包验收\\low-risk-readonly-one-click-scheduler-entry-generate-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读任务一键调度入口草案包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读任务一键调度入口草案包验收\\low-risk-readonly-one-click-scheduler-entry-run-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读任务一键调度入口草案包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读任务一键调度入口草案包验收\\low-risk-readonly-one-click-scheduler-entry-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器交接班摘要与未完成项继承包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器交接班摘要与未完成项继承包验收\\low-risk-readonly-scheduler-handoff-inheritance-generate-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器交接班摘要与未完成项继承包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器交接班摘要与未完成项继承包验收\\low-risk-readonly-scheduler-handoff-inheritance-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器周周期值守样本预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周周期值守样本预演包验收\\low-risk-readonly-scheduler-week-cycle-sample-execute-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器周周期值守样本预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周周期值守样本预演包验收\\low-risk-readonly-scheduler-week-cycle-sample-generate-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器周周期值守样本预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周周期值守样本预演包验收\\low-risk-readonly-scheduler-week-cycle-sample-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器周报草稿与不发送封存包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周报草稿与不发送封存包验收\\low-risk-readonly-scheduler-weekly-report-no-send-generate-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器周报草稿与不发送封存包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周报草稿与不发送封存包验收\\low-risk-readonly-scheduler-weekly-report-no-send-preview-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器周报草稿与不发送封存包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周报草稿与不发送封存包验收\\low-risk-readonly-scheduler-weekly-report-no-send-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器异常升级草案与总管确认队列包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器异常升级草案与总管确认队列包验收\\low-risk-readonly-scheduler-escalation-confirmation-queue-run-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器异常升级草案与总管确认队列包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器异常升级草案与总管确认队列包验收\\low-risk-readonly-scheduler-escalation-confirmation-queue-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器日内值守节拍预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器日内值守节拍预演包验收\\low-risk-readonly-scheduler-daily-rhythm-preview-execute-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器日内值守节拍预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器日内值守节拍预演包验收\\low-risk-readonly-scheduler-daily-rhythm-preview-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器本地值守摘要与不发送通知包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器本地值守摘要与不发送通知包验收\\low-risk-readonly-scheduler-local-brief-no-send-generate-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器本地值守摘要与不发送通知包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器本地值守摘要与不发送通知包验收\\low-risk-readonly-scheduler-local-brief-no-send-preview-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器本地值守摘要与不发送通知包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器本地值守摘要与不发送通知包验收\\low-risk-readonly-scheduler-local-brief-no-send-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器证据留存到期检查与不删除预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器证据留存到期检查与不删除预演包验收\\low-risk-readonly-scheduler-evidence-retention-expiry-run-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器证据留存到期检查与不删除预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器证据留存到期检查与不删除预演包验收\\low-risk-readonly-scheduler-evidence-retention-expiry-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器趋势聚合与异常频次统计包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器趋势聚合与异常频次统计包验收\\low-risk-readonly-scheduler-trend-frequency-preview-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器趋势聚合与异常频次统计包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器趋势聚合与异常频次统计包验收\\low-risk-readonly-scheduler-trend-frequency-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器跨日值守接续预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器跨日值守接续预演包验收\\low-risk-readonly-scheduler-cross-day-handoff-execute-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器跨日值守接续预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器跨日值守接续预演包验收\\low-risk-readonly-scheduler-cross-day-handoff-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器连续三轮干跑预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器连续三轮干跑预演包验收\\low-risk-readonly-scheduler-three-round-dryrun-execute-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度器连续三轮干跑预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器连续三轮干跑预演包验收\\low-risk-readonly-scheduler-three-round-dryrun-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度干跑结果漂移复核与幂等校验包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度干跑结果漂移复核与幂等校验包验收\\low-risk-readonly-scheduler-drift-idempotency-execute-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度干跑结果漂移复核与幂等校验包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度干跑结果漂移复核与幂等校验包验收\\low-risk-readonly-scheduler-drift-idempotency-generate-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度干跑结果漂移复核与幂等校验包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度干跑结果漂移复核与幂等校验包验收\\low-risk-readonly-scheduler-drift-idempotency-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度红线失败注入与自动暂停演练包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度红线失败注入与自动暂停演练包验收\\low-risk-readonly-redline-injection-pause-run-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度红线失败注入与自动暂停演练包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度红线失败注入与自动暂停演练包验收\\low-risk-readonly-redline-injection-pause-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度运行台账与证据归档预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度运行台账与证据归档预演包验收\\low-risk-readonly-scheduler-ledger-evidence-preview-generate-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度运行台账与证据归档预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度运行台账与证据归档预演包验收\\low-risk-readonly-scheduler-ledger-evidence-preview-run-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险只读调度运行台账与证据归档预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度运行台账与证据归档预演包验收\\low-risk-readonly-scheduler-ledger-evidence-preview-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险用户反馈样本模板包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险用户反馈样本模板包验收\\low-risk-user-feedback-template-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险自主任务失败暂停与恢复演练包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务失败暂停与恢复演练包验收\\low-risk-autonomous-failure-pause-recovery-drill-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险自主任务失败暂停与恢复演练包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务失败暂停与恢复演练包验收\\low-risk-autonomous-failure-pause-recovery-generate-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险自主任务失败暂停与恢复演练包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务失败暂停与恢复演练包验收\\low-risk-autonomous-failure-pause-recovery-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险自主任务本地只读调度预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务本地只读调度预演包验收\\low-risk-autonomous-local-scheduler-preview-generate-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险自主任务本地只读调度预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务本地只读调度预演包验收\\low-risk-autonomous-local-scheduler-preview-run-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险自主任务本地只读调度预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务本地只读调度预演包验收\\low-risk-autonomous-local-scheduler-preview-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险自主任务队列准入与暂停闸口包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务队列准入与暂停闸口包验收\\low-risk-autonomous-task-queue-admission-check-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险自主任务队列准入与暂停闸口包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务队列准入与暂停闸口包验收\\low-risk-autonomous-task-queue-gate-generate-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险自主任务队列准入与暂停闸口包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务队列准入与暂停闸口包验收\\low-risk-autonomous-task-queue-gate-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险自主命令白名单与红线静态扫描包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主命令白名单与红线静态扫描包验收\\low-risk-autonomous-command-redline-static-scan-run-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "低风险自主命令白名单与红线静态扫描包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主命令白名单与红线静态扫描包验收\\low-risk-autonomous-command-whitelist-redline-scan-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "使用者入口导航与常用指令包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\使用者入口导航与常用指令包验收\\user-entry-navigation-commands-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "使用者入口导航与常用指令包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\使用者入口导航与常用指令包验收\\生成使用者入口导航与常用指令包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "使用者首周试用场景演练包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\使用者首周试用场景演练包验收\\user-week1-trial-scenarios-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "使用者首周试用场景演练包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\使用者首周试用场景演练包验收\\生成使用者首周试用场景演练包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "使用者验收签收与后续迭代队列包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\使用者验收签收与后续迭代队列包验收\\user-signoff-iteration-queue-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "使用者验收签收与后续迭代队列包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\使用者验收签收与后续迭代队列包验收\\生成使用者验收签收与后续迭代队列包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "历史经验验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\历史经验验收\\evolution-concurrent-latest-write-experience-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "双版本最终总回传与继续施工分界包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\双版本最终总回传与继续施工分界包验收\\dual-version-final-return-boundary-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "双版本最终总回传与继续施工分界包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\双版本最终总回传与继续施工分界包验收\\生成双版本最终总回传与继续施工分界包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "复盘反馈观察验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\复盘反馈观察验收\\evolution-stock-review-feedback-pending-observe-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "复盘转经验候选验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\复盘转经验候选验收\\evolution-stock-review-feedback-to-experience-candidates-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "多业务并行施工每日交接摘要与下一步队列包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\多业务并行施工每日交接摘要与下一步队列包验收\\multi-business-parallel-daily-handoff-next-queue-generate-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "多业务并行施工每日交接摘要与下一步队列包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\多业务并行施工每日交接摘要与下一步队列包验收\\multi-business-parallel-daily-handoff-next-queue-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "多对话框并行施工冲突扫描包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\多对话框并行施工冲突扫描包验收\\parallel-dialogue-construction-conflict-scan-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "学习提炼导航",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\学习提炼导航\\learning-navigation-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付低风险模板落地包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付低风险模板落地包验收\\full-delivery-low-risk-template-landing-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "完全交付低风险模板落地包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付低风险模板落地包验收\\执行完全交付低风险模板只读核对_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "完全交付使用版低风险可推进拆单包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险可推进拆单包验收\\full-delivery-low-risk-breakdown-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "完全交付使用版低风险可推进拆单包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险可推进拆单包验收\\执行完全交付低风险拆单只读核对_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "完全交付使用版低风险续建启动队列包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建启动队列包验收\\full-delivery-low-risk-continue-queue-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版低风险续建启动队列包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建启动队列包验收\\生成完全交付使用版低风险续建启动队列包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版低风险续建第一批执行包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建第一批执行包验收\\full-delivery-low-risk-batch1-execute-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版低风险续建第一批执行包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建第一批执行包验收\\生成完全交付使用版低风险续建第一批执行包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版低风险续建第三批总复核与长期样本归档包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建第三批总复核与长期样本归档包验收\\full-delivery-low-risk-batch3-sample-archive-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版低风险续建第三批总复核与长期样本归档包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建第三批总复核与长期样本归档包验收\\生成完全交付使用版低风险续建第三批总复核与长期样本归档包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版低风险续建第二批复核包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建第二批复核包验收\\full-delivery-low-risk-batch2-recheck-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版低风险续建第二批复核包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建第二批复核包验收\\生成完全交付使用版低风险续建第二批复核包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版红线材料一致性复核与缺口补齐包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线材料一致性复核与缺口补齐包验收\\full-delivery-redline-material-consistency-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版红线材料一致性复核与缺口补齐包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线材料一致性复核与缺口补齐包验收\\生成完全交付使用版红线材料一致性复核与缺口补齐包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版红线解锁人工签收前材料闭环总复核包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁人工签收前材料闭环总复核包验收\\full-delivery-redline-unlock-presign-material-closure-review-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版红线解锁分项确认单草案与授权边界包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁分项确认单草案与授权边界包验收\\full-delivery-redline-unlock-confirmation-boundary-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版红线解锁拒收样本与回滚演练包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁拒收样本与回滚演练包验收\\full-delivery-redline-unlock-reject-rollback-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版红线解锁生效前总验收矩阵与人工签收台账包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁生效前总验收矩阵与人工签收台账包验收\\full-delivery-redline-unlock-preactivation-ledger-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版红线解锁申请只读风险评审与禁止生效闸口包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁申请只读风险评审与禁止生效闸口包验收\\full-delivery-redline-unlock-readonly-risk-gate-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版红线解锁申请材料总索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁申请材料总索引包验收\\full-delivery-redline-unlock-material-index-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版红线解锁申请材料总索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁申请材料总索引包验收\\生成完全交付使用版红线解锁申请材料总索引包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版红线解锁误触发拦截与禁止执行预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁误触发拦截与禁止执行预演包验收\\full-delivery-redline-unlock-misfire-blocker-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "完全交付使用版缺口拆解与红线解锁路线图包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版缺口拆解与红线解锁路线图包验收\\执行完全交付使用版缺口路线图只读核对_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "完全交付使用版缺口拆解与红线解锁路线图包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版缺口拆解与红线解锁路线图包验收\\验证完全交付使用版缺口拆解与红线解锁路线图包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": "pass"
+      }
+    },
+    {
+      "名称": "完全交付使用路线图与工时估算验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用路线图与工时估算验收\\full-delivery-roadmap-hours-estimate-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "并行施工调度索引与合并验收准备包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\并行施工调度索引与合并验收准备包验收\\parallel-work-dispatch-merge-prepare-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "并行自主施工分片护栏与抢占处理包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\并行自主施工分片护栏与抢占处理包验收\\parallel-autonomous-work-guard-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "施工前本地检查验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\施工前本地检查验收\\evolution-prework-local-check-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常交付版与稳定版协同施工完成度复核包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常交付版与稳定版协同施工完成度复核包验收\\daily-stable-coop-completion-review-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常交付版与稳定版每日运行交接闭环包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常交付版与稳定版每日运行交接闭环包验收\\daily-stable-daily-handoff-loop-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常可用交付版收口包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用交付版收口包验收\\daily-usable-closeout-package-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常可用交付版收口后进度校准验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用交付版收口后进度校准验收\\daily-usable-closeout-progress-calibration-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常可用交付版状态包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用交付版状态包验收\\daily-usable-delivery-status-package-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常可用版与稳定交付版最终交付收尾包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用版与稳定交付版最终交付收尾包验收\\daily-stable-final-delivery-closeout-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常可用版与稳定交付版最终交付收尾包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用版与稳定交付版最终交付收尾包验收\\生成日常可用版与稳定交付版最终交付收尾包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常稳定交付使用接管与续建总包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付使用接管与续建总包验收\\daily-stable-handoff-continue-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常稳定交付使用接管与续建总包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付使用接管与续建总包验收\\生成日常稳定交付使用接管与续建总包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常稳定交付最终交付清单与启动索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付最终交付清单与启动索引包验收\\daily-stable-final-delivery-start-index-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常稳定交付最终交付清单与启动索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付最终交付清单与启动索引包验收\\生成日常稳定交付最终交付清单与启动索引包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常稳定交付最终签收启动包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付最终签收启动包验收\\daily-stable-final-signoff-start-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常稳定交付最终签收启动包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付最终签收启动包验收\\生成日常稳定交付最终签收启动包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常稳定交付签收回执与首轮试运行任务单包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付签收回执与首轮试运行任务单包验收\\daily-stable-signoff-receipt-trial-task-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常稳定交付签收回执与首轮试运行任务单包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付签收回执与首轮试运行任务单包验收\\生成日常稳定交付签收回执与首轮试运行任务单包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常稳定双版本交付封存与后续路线包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定双版本交付封存与后续路线包验收\\daily-stable-dual-delivery-freeze-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常稳定双版本交付封存与后续路线包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定双版本交付封存与后续路线包验收\\生成日常稳定双版本交付封存与后续路线包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常签收完成与稳定试运行启动回传包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常签收完成与稳定试运行启动回传包验收\\daily-signoff-done-stable-trial-start-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "日常签收完成与稳定试运行启动回传包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常签收完成与稳定试运行启动回传包验收\\生成日常签收完成与稳定试运行启动回传包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "最终日常可用交付候选回传验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\最终日常可用交付候选回传验收\\final-daily-usable-delivery-candidate-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "本地检查项候选验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\本地检查项候选验收\\evolution-local-rule-check-candidates-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "每日开工收工清单与低风险续跑包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\每日开工收工清单与低风险续跑包验收\\daily-start-end-low-risk-rerun-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "每日开工收工清单与低风险续跑包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\每日开工收工清单与低风险续跑包验收\\生成每日开工收工清单与低风险续跑包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "状态摘要验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\状态摘要验收\\evolution-system-status-summary-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "用户明确规则沉淀验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\用户明确规则沉淀验收\\evolution-user-stock-formalization-rules-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "税收业务对话框恢复接续包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\税收业务对话框恢复接续包验收\\tax-dialog-recovery-continuation-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "税收微信股票通过经验候选补充验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\税收微信股票通过经验候选补充验收\\tax-wechat-stock-passed-experience-candidate-supplement-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付使用者交付摘要与非技术操作手册包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付使用者交付摘要与非技术操作手册包验收\\stable-delivery-user-handoff-manual-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付失败自动分级与总管确认闸口包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付失败自动分级与总管确认闸口包验收\\stable-delivery-failure-gate-package-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付异常复跑队列与低风险自动续建包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付异常复跑队列与低风险自动续建包验收\\stable-delivery-rerun-rebuild-package-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付异常恢复与日志索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付异常恢复与日志索引包验收\\stable-delivery-recovery-log-index-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付日常运行台账与交接验收包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付日常运行台账与交接验收包验收\\stable-delivery-daily-ledger-handoff-package-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付版三日达标判定器与样本采集标准包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版三日达标判定器与样本采集标准包验收\\stable-delivery-three-day-acceptance-judge-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付版本地试运行达标复核与签收完成包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版本地试运行达标复核与签收完成包验收\\stable-local-trial-acceptance-signoff-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付版本地试运行达标复核与签收完成包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版本地试运行达标复核与签收完成包验收\\生成稳定交付版本地试运行达标复核与签收完成包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付版次日复验待执行闸口包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版次日复验待执行闸口包验收\\stable-delivery-day2-recheck-pending-gate-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付版每日一键只读刷新与日报汇总包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版每日一键只读刷新与日报汇总包验收\\stable-delivery-daily-one-click-refresh-report-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付版每日运行日报与次日待办包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版每日运行日报与次日待办包验收\\stable-delivery-daily-report-next-todo-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付版运行指挥台每日刷新入口包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版运行指挥台每日刷新入口包验收\\stable-delivery-runtime-dashboard-daily-refresh-entry-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付版运行指挥台索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版运行指挥台索引包验收\\stable-delivery-runtime-dashboard-index-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付版运行观察基线与改进闭环包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版运行观察基线与改进闭环包验收\\stable-delivery-runtime-observation-loop-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付版首日复验执行与问题回收包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版首日复验执行与问题回收包验收\\stable-delivery-day1-recheck-issue-intake-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付跨业务回归证据链与版本冻结候选包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付跨业务回归证据链与版本冻结候选包验收\\stable-delivery-evidence-freeze-candidate-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定交付长周期只读巡检样本与趋势记录包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付长周期只读巡检样本与趋势记录包验收\\stable-delivery-long-term-patrol-trend-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定候选异常样例库与演练包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定候选异常样例库与演练包验收\\stable-candidate-exception-samples-drill-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定候选最终只读总验收与收口回传包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定候选最终只读总验收与收口回传包验收\\stable-candidate-final-readonly-acceptance-closeout-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定候选最终复核与日常版收口声明包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定候选最终复核与日常版收口声明包验收\\stable-candidate-final-review-daily-closeout-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定候选补强与三日巡检启动包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定候选补强与三日巡检启动包验收\\stable-candidate-hardening-three-day-patrol-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版使用者一页操作卡与灯号说明包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版使用者一页操作卡与灯号说明包验收\\stable-user-one-page-operation-card-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版候选最终回传与可交付声明包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版候选最终回传与可交付声明包验收\\stable-candidate-final-delivery-statement-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版候选最终总索引与收口验收包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版候选最终总索引与收口验收包验收\\stable-candidate-final-master-index-closeout-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版候选正式封版申请草案与最终交付封面收紧包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版候选正式封版申请草案与最终交付封面收紧包验收\\stable-candidate-formal-freeze-request-draft-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版封版候选总验收与剩余缺口清单验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版封版候选总验收与剩余缺口清单验收\\stable-release-freeze-candidate-acceptance-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版最后收口总回传与候选交付封面包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版最后收口总回传与候选交付封面包验收\\stable-final-closeout-cover-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版最终候选索引与接续包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版最终候选索引与接续包验收\\stable-final-candidate-index-continue-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版样本等待期低风险保活巡检包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版样本等待期低风险保活巡检包验收\\stable-sample-waiting-keepalive-patrol-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版次日自然日样本待办与防重复闸口包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版次日自然日样本待办与防重复闸口包验收\\stable-nextday-natural-sample-todo-duplicate-gate-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版每日唯一入口操作卡同步包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版每日唯一入口操作卡同步包验收\\stable-daily-single-entry-operation-card-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版自然日样本采集与达标刷新入口包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版自然日样本采集与达标刷新入口包验收\\stable-natural-day-sample-refresh-entry-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版试运行反馈入账执行器样例验收包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版试运行反馈入账执行器样例验收包验收\\stable-trial-feedback-intake-executor-sample-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版试运行反馈本地入账执行器包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版试运行反馈本地入账执行器包验收\\stable-trial-feedback-local-intake-executor-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版试运行回传入口导航与闭环索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版试运行回传入口导航与闭环索引包验收\\stable-trial-feedback-navigation-loop-index-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版试运行问题回传模板与入账预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版试运行问题回传模板与入账预演包验收\\stable-trial-feedback-intake-preview-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版运行期问题候选队列分流预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版运行期问题候选队列分流预演包验收\\stable-runtime-issue-candidate-queue-preview-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定版运行期问题分级与处置路线包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版运行期问题分级与处置路线包验收\\stable-runtime-issue-triage-route-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定试运行首轮观察执行闭环包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定试运行首轮观察执行闭环包验收\\stable-trial-round1-observation-loop-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "稳定试运行首轮观察执行闭环包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定试运行首轮观察执行闭环包验收\\生成稳定试运行首轮观察执行闭环包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第七轮放行前审查并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第七轮放行前审查并行调度索引包验收\\parallel-round7-pre-release-review-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第三轮低风险能力前置并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第三轮低风险能力前置并行调度索引包验收\\parallel-round3-low-risk-capability-prepare-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第三轮并行施工调度索引与合并验收准备包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第三轮并行施工调度索引与合并验收准备包验收\\parallel-round3-dispatch-merge-prepare-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第九轮签收回滚与留痕并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第九轮签收回滚与留痕并行调度索引包验收\\parallel-round9-signoff-rollback-evidence-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第二轮并行施工调度索引与合并验收准备包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第二轮并行施工调度索引与合并验收准备包验收\\parallel-round2-dispatch-merge-prepare-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第五轮低风险闭环并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第五轮低风险闭环并行调度索引包验收\\parallel-round5-low-risk-loop-prepare-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第八轮放行材料一致性并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第八轮放行材料一致性并行调度索引包验收\\parallel-round8-release-material-consistency-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第六轮安全确认闭环并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第六轮安全确认闭环并行调度索引包验收\\parallel-round6-safety-confirmation-loop-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第十一轮低风险自主调度预演并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十一轮低风险自主调度预演并行调度索引包验收\\parallel-round11-low-risk-autonomous-scheduler-preview-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第十三轮只读调度连续干跑并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十三轮只读调度连续干跑并行调度索引包验收\\parallel-round13-readonly-scheduler-continuous-dryrun-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第十五轮跨日值守样本并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十五轮跨日值守样本并行调度索引包验收\\parallel-round15-cross-day-watch-sample-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第十六轮周周期值守趋势并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十六轮周周期值守趋势并行调度索引包验收\\parallel-round16-week-cycle-watch-trend-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第十四轮只读调度日常值守并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十四轮只读调度日常值守并行调度索引包验收\\parallel-round14-readonly-scheduler-daily-watch-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第十轮交付前证据与队列并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十轮交付前证据与队列并行调度索引包验收\\parallel-round10-pre-delivery-evidence-queue-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "第四轮低风险能力前置并行调度索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第四轮低风险能力前置并行调度索引包验收\\parallel-round4-low-risk-capability-prepare-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "红线材料模板第一批只读填报预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\红线材料模板第一批只读填报预演包验收\\redline-template-batch1-readonly-preview-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "红线材料模板第一批只读填报预演包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\红线材料模板第一批只读填报预演包验收\\生成红线材料模板第一批只读填报预演包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "红线材料缺口低风险补齐第一批模板包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\红线材料缺口低风险补齐第一批模板包验收\\redline-gap-low-risk-template-batch1-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "红线材料缺口低风险补齐第一批模板包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\红线材料缺口低风险补齐第一批模板包验收\\生成红线材料缺口低风险补齐第一批模板包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "红线词命中语义复核包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\红线词命中语义复核包验收\\redline-hit-semantic-review-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "股票交付闭环经验候选与反馈等待验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\股票交付闭环经验候选与反馈等待验收\\evolution-stock-delivery-experience-candidates-waiting-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "股票交付闭环规则沉淀收口验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\股票交付闭环规则沉淀收口验收\\evolution-stock-delivery-rule-deposit-closeout-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "股票交付闭环规则沉淀自动评审小样本验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\股票交付闭环规则沉淀自动评审小样本验收\\evolution-stock-delivery-rule-deposit-auto-review-sample-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "股票交付闭环规则沉淀验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\股票交付闭环规则沉淀验收\\evolution-stock-delivery-loop-rule-deposit-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "股票交付闭环规则自动评审验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\股票交付闭环规则自动评审验收\\evolution-stock-delivery-loop-rule-auto-review-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "股票复盘反馈样本验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\股票复盘反馈样本验收\\evolution-stock-review-feedback-candidates-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "自主运行暂停闸口与人工接管演练包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\自主运行暂停闸口与人工接管演练包验收\\autonomous-pause-handoff-drill-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "自主运行暂停闸口与人工接管演练包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\自主运行暂停闸口与人工接管演练包验收\\生成自主运行暂停闸口与人工接管演练包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "规则沉淀验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\规则沉淀验收\\evolution-acceptance-rule-loop-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "规则自动评审验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\规则自动评审验收\\evolution-rule-auto-review-dedupe-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "跨业务交付证据链冻结快照与差异复核包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\跨业务交付证据链冻结快照与差异复核包验收\\cross-business-delivery-evidence-freeze-diff-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "运行期周报与状态看板数据包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期周报与状态看板数据包验收\\runtime-weekly-dashboard-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "运行期周报与状态看板数据包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期周报与状态看板数据包验收\\生成运行期周报与状态看板数据包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "运行期故障恢复与回滚总索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期故障恢复与回滚总索引包验收\\runtime-recovery-rollback-index-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "运行期故障恢复与回滚总索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期故障恢复与回滚总索引包验收\\生成运行期故障恢复与回滚总索引包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "运行期证据归档与版本冻结候选包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期证据归档与版本冻结候选包验收\\runtime-evidence-freeze-candidate-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "运行期证据归档与版本冻结候选包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期证据归档与版本冻结候选包验收\\生成运行期证据归档与版本冻结候选包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "运行期问题闭环总台账索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期问题闭环总台账索引包验收\\runtime-issue-loop-ledger-index-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "运行期问题闭环总台账索引包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期问题闭环总台账索引包验收\\生成运行期问题闭环总台账索引包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "闸口纠偏验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\闸口纠偏验收\\evolution-gate-correction-continuous-work-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "阶段性多业务联调通过封版候选验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\阶段性多业务联调通过封版候选验收\\multi-business-integration-passed-freeze-candidate-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "阶段性封版候选回归建议拆单验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\阶段性封版候选回归建议拆单验收\\freeze-candidate-regression-cards-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "首周试用结果汇总与签收复核包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\首周试用结果汇总与签收复核包验收\\week1-trial-signoff-recheck-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "首周试用结果汇总与签收复核包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\首周试用结果汇总与签收复核包验收\\生成首周试用结果汇总与签收复核包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "首周运行趋势与问题升级包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\首周运行趋势与问题升级包验收\\week1-runtime-trend-escalation-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "首周运行趋势与问题升级包验收",
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\首周运行趋势与问题升级包验收\\生成首周运行趋势与问题升级包_最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "04日志",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\video-p0-human-receipt-shadow-samples-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "04日志",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\video-production-system-status-summary-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": 0,
+        "status": null
+      }
+    },
+    {
+      "名称": "真实渲染人工放行材料完整性复核与试运行禁入包验收",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染人工放行材料完整性复核与试运行禁入包验收\\video-render-approval-materials-no-trial-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "通过"
+      }
+    },
+    {
+      "名称": "真实渲染启用前总闸口与人工放行申请包验收",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染启用前总闸口与人工放行申请包验收\\video-render-enable-gate-approval-draft-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "通过"
+      }
+    },
+    {
+      "名称": "真实渲染环境候选路径矩阵与安装缺口清单验收",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染环境候选路径矩阵与安装缺口清单验收\\video-render-env-candidate-path-gap-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "通过"
+      }
+    },
+    {
+      "名称": "真实渲染环境只读识别增强包验收",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染环境只读识别增强包验收\\video-render-env-readonly-detect-enhanced-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "真实渲染环境缺口证据压缩与安装识别清单验收",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染环境缺口证据压缩与安装识别清单验收\\video-render-env-gap-compressed-install-identify-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": null
+      }
+    },
+    {
+      "名称": "真实渲染白名单材料人工补齐模板与签收预演包验收",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染白名单材料人工补齐模板与签收预演包验收\\video-render-whitelist-material-signoff-preview-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "通过"
+      }
+    },
+    {
+      "名称": "真实渲染白名单申请材料完整度判定包验收",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染白名单申请材料完整度判定包验收\\video-render-whitelist-application-completeness-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "通过"
+      }
+    },
+    {
+      "名称": "真实渲染试运行批次失败回滚与证据留存包验收",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染试运行批次失败回滚与证据留存包验收\\video-render-trial-failure-rollback-evidence-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "通过"
+      }
+    },
+    {
+      "名称": "真实渲染试运行批次预检与白名单未生效闸口包验收",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染试运行批次预检与白名单未生效闸口包验收\\video-render-trial-batch-precheck-whitelist-inactive-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "通过"
+      }
+    },
+    {
+      "名称": "真实渲染试运行白名单与回滚预案草案包验收",
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染试运行白名单与回滚预案草案包验收\\video-render-trial-whitelist-rollback-draft-verify-最新.json",
+      "存在": true,
+      "通过": true,
+      "参与阻断": true,
+      "摘要": {
+        "error_count": 0,
+        "failed_count": null,
+        "status": "通过"
+      }
+    }
+  ],
+  "安全边界": {
+    "请求19302业务接口": false,
+    "接券商": false,
+    "交易": false,
+    "真实发送企业微信": false,
+    "触发n8n": false,
+    "登录电子税务局": false,
+    "接财税软件": false,
+    "生成正式税务结论": false,
+    "视频真实渲染": false,
+    "自动发布": false,
+    "写正式规则": false,
+    "修改运行配置": false,
+    "重载19310": false,
+    "重载19302": false
+  },
+  "鍚嶇О": "日常可用版自主巡检快照",
+  "鐢熸垚鏃堕棿": "2026-05-09 05:43:45",
+  "鎬讳綋鐘舵€?": "pass",
+  "姹囨€?": {
+    "鎬绘暟": 239,
+    "閫氳繃": 239,
+    "澶辫触": 0
+  },
+  "妫€鏌ョ粨鏋?": [
+    {
+      "鍚嶇О": "企业微信公共接入层日常巡检",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\03数据\\15日常可用版只读巡检包\\企业微信公共接入层日常只读巡检_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "股票展示口径一致性验收",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\246展示口径修复\\股票展示口径一致性验收_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "股票前台展示口径全量扫雷",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\246展示口径修复\\股票前台展示口径全量一致性扫雷_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常可用交付版一键只读总回归",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用交付版一键只读总回归验收\\daily-usable-readonly-regression-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第十二轮低风险只读调度入口并行调度索引包",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十二轮低风险只读调度入口并行调度索引包验收\\parallel-round12-low-risk-readonly-scheduler-entry-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "n8n禁用态导入草案人工签收与回滚演练包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n禁用态导入草案人工签收与回滚演练包验收\\n8n-disabled-import-signoff-rollback-drill-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "n8n离线导入前凭据隔离与启用禁入包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线导入前凭据隔离与启用禁入包验收\\n8n-offline-import-credential-isolation-no-activate-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "n8n离线导入包静态扫描与禁用态导出草案包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线导入包静态扫描与禁用态导出草案包验收\\n8n-offline-disabled-import-static-scan-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "n8n离线干跑多场景回归与闸口矩阵包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线干跑多场景回归与闸口矩阵包验收\\n8n-offline-multiscenario-gate-matrix-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "n8n离线编排本地干跑执行器包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线编排本地干跑执行器包验收\\n8n-offline-local-dryrun-executor-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "n8n离线编排蓝图与禁触发验收包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线编排蓝图与禁触发验收包验收\\n8n-offline-blueprint-no-trigger-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "n8n离线闸口失败演练与回滚剧本包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\n8n离线闸口失败演练与回滚剧本包验收\\n8n-offline-gate-failure-drill-rollback-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "三业务反馈人工确认状态机与候选生效前闸口包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务反馈人工确认状态机与候选生效前闸口包验收\\three-business-feedback-confirmation-state-machine-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "三业务反馈候选复跑去重与人工确认台账包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务反馈候选复跑去重与人工确认台账包验收\\three-business-feedback-rerun-dedupe-ledger-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "三业务反馈候选正式规则申请草案审查包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务反馈候选正式规则申请草案审查包验收\\three-business-formal-rule-application-draft-review-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "三业务反馈样本闭环只读入队与候选生成包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务反馈样本闭环只读入队与候选生成包验收\\three-business-feedback-readonly-queue-candidate-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "三业务正式规则申请人工签收流转与回滚校验包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务正式规则申请人工签收流转与回滚校验包验收\\three-business-rule-signoff-flow-rollback-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "三业务正式规则申请草案冲突扫描与签收台账包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务正式规则申请草案冲突扫描与签收台账包验收\\three-business-rule-draft-conflict-signoff-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "三业务用户反馈样本闭环模板包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三业务用户反馈样本闭环模板包验收\\three-business-feedback-loop-template-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "三日巡检样本防伪与次日待执行卡包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三日巡检样本防伪与次日待执行卡包验收\\three-day-patrol-anti-fake-nextday-card-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "三日巡检第2天待执行链路与防伪检查包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三日巡检第2天待执行链路与防伪检查包验收\\three-day-patrol-day2-pending-chain-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "三日巡检续跑准备与自然日样本模板包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\三日巡检续跑准备与自然日样本模板包验收\\three-day-patrol-rerun-template-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "交付后首日运行观察与问题登记包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\交付后首日运行观察与问题登记包验收\\day1-operation-observation-issue-ledger-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "交付后首日运行观察与问题登记包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\交付后首日运行观察与问题登记包验收\\生成交付后首日运行观察与问题登记包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "企业微信真实验证反馈候选验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\企业微信真实验证反馈候选验收\\enterprise-wechat-real-validation-feedback-candidates-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读任务一键调度入口草案包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读任务一键调度入口草案包验收\\low-risk-readonly-one-click-scheduler-entry-generate-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读任务一键调度入口草案包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读任务一键调度入口草案包验收\\low-risk-readonly-one-click-scheduler-entry-run-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读任务一键调度入口草案包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读任务一键调度入口草案包验收\\low-risk-readonly-one-click-scheduler-entry-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器交接班摘要与未完成项继承包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器交接班摘要与未完成项继承包验收\\low-risk-readonly-scheduler-handoff-inheritance-generate-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器交接班摘要与未完成项继承包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器交接班摘要与未完成项继承包验收\\low-risk-readonly-scheduler-handoff-inheritance-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器周周期值守样本预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周周期值守样本预演包验收\\low-risk-readonly-scheduler-week-cycle-sample-execute-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器周周期值守样本预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周周期值守样本预演包验收\\low-risk-readonly-scheduler-week-cycle-sample-generate-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器周周期值守样本预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周周期值守样本预演包验收\\low-risk-readonly-scheduler-week-cycle-sample-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器周报草稿与不发送封存包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周报草稿与不发送封存包验收\\low-risk-readonly-scheduler-weekly-report-no-send-generate-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器周报草稿与不发送封存包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周报草稿与不发送封存包验收\\low-risk-readonly-scheduler-weekly-report-no-send-preview-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器周报草稿与不发送封存包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器周报草稿与不发送封存包验收\\low-risk-readonly-scheduler-weekly-report-no-send-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器异常升级草案与总管确认队列包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器异常升级草案与总管确认队列包验收\\low-risk-readonly-scheduler-escalation-confirmation-queue-run-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器异常升级草案与总管确认队列包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器异常升级草案与总管确认队列包验收\\low-risk-readonly-scheduler-escalation-confirmation-queue-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器日内值守节拍预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器日内值守节拍预演包验收\\low-risk-readonly-scheduler-daily-rhythm-preview-execute-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器日内值守节拍预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器日内值守节拍预演包验收\\low-risk-readonly-scheduler-daily-rhythm-preview-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器本地值守摘要与不发送通知包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器本地值守摘要与不发送通知包验收\\low-risk-readonly-scheduler-local-brief-no-send-generate-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器本地值守摘要与不发送通知包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器本地值守摘要与不发送通知包验收\\low-risk-readonly-scheduler-local-brief-no-send-preview-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器本地值守摘要与不发送通知包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器本地值守摘要与不发送通知包验收\\low-risk-readonly-scheduler-local-brief-no-send-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器证据留存到期检查与不删除预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器证据留存到期检查与不删除预演包验收\\low-risk-readonly-scheduler-evidence-retention-expiry-run-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器证据留存到期检查与不删除预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器证据留存到期检查与不删除预演包验收\\low-risk-readonly-scheduler-evidence-retention-expiry-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器趋势聚合与异常频次统计包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器趋势聚合与异常频次统计包验收\\low-risk-readonly-scheduler-trend-frequency-preview-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器趋势聚合与异常频次统计包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器趋势聚合与异常频次统计包验收\\low-risk-readonly-scheduler-trend-frequency-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器跨日值守接续预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器跨日值守接续预演包验收\\low-risk-readonly-scheduler-cross-day-handoff-execute-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器跨日值守接续预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器跨日值守接续预演包验收\\low-risk-readonly-scheduler-cross-day-handoff-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器连续三轮干跑预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器连续三轮干跑预演包验收\\low-risk-readonly-scheduler-three-round-dryrun-execute-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度器连续三轮干跑预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器连续三轮干跑预演包验收\\low-risk-readonly-scheduler-three-round-dryrun-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度干跑结果漂移复核与幂等校验包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度干跑结果漂移复核与幂等校验包验收\\low-risk-readonly-scheduler-drift-idempotency-execute-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度干跑结果漂移复核与幂等校验包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度干跑结果漂移复核与幂等校验包验收\\low-risk-readonly-scheduler-drift-idempotency-generate-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度干跑结果漂移复核与幂等校验包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度干跑结果漂移复核与幂等校验包验收\\low-risk-readonly-scheduler-drift-idempotency-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度红线失败注入与自动暂停演练包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度红线失败注入与自动暂停演练包验收\\low-risk-readonly-redline-injection-pause-run-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度红线失败注入与自动暂停演练包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度红线失败注入与自动暂停演练包验收\\low-risk-readonly-redline-injection-pause-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度运行台账与证据归档预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度运行台账与证据归档预演包验收\\low-risk-readonly-scheduler-ledger-evidence-preview-generate-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度运行台账与证据归档预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度运行台账与证据归档预演包验收\\low-risk-readonly-scheduler-ledger-evidence-preview-run-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险只读调度运行台账与证据归档预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度运行台账与证据归档预演包验收\\low-risk-readonly-scheduler-ledger-evidence-preview-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险用户反馈样本模板包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险用户反馈样本模板包验收\\low-risk-user-feedback-template-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险自主任务失败暂停与恢复演练包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务失败暂停与恢复演练包验收\\low-risk-autonomous-failure-pause-recovery-drill-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险自主任务失败暂停与恢复演练包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务失败暂停与恢复演练包验收\\low-risk-autonomous-failure-pause-recovery-generate-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险自主任务失败暂停与恢复演练包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务失败暂停与恢复演练包验收\\low-risk-autonomous-failure-pause-recovery-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险自主任务本地只读调度预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务本地只读调度预演包验收\\low-risk-autonomous-local-scheduler-preview-generate-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险自主任务本地只读调度预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务本地只读调度预演包验收\\low-risk-autonomous-local-scheduler-preview-run-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险自主任务本地只读调度预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务本地只读调度预演包验收\\low-risk-autonomous-local-scheduler-preview-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险自主任务队列准入与暂停闸口包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务队列准入与暂停闸口包验收\\low-risk-autonomous-task-queue-admission-check-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险自主任务队列准入与暂停闸口包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务队列准入与暂停闸口包验收\\low-risk-autonomous-task-queue-gate-generate-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险自主任务队列准入与暂停闸口包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主任务队列准入与暂停闸口包验收\\low-risk-autonomous-task-queue-gate-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险自主命令白名单与红线静态扫描包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主命令白名单与红线静态扫描包验收\\low-risk-autonomous-command-redline-static-scan-run-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "低风险自主命令白名单与红线静态扫描包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险自主命令白名单与红线静态扫描包验收\\low-risk-autonomous-command-whitelist-redline-scan-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "使用者入口导航与常用指令包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\使用者入口导航与常用指令包验收\\user-entry-navigation-commands-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "使用者入口导航与常用指令包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\使用者入口导航与常用指令包验收\\生成使用者入口导航与常用指令包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "使用者首周试用场景演练包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\使用者首周试用场景演练包验收\\user-week1-trial-scenarios-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "使用者首周试用场景演练包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\使用者首周试用场景演练包验收\\生成使用者首周试用场景演练包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "使用者验收签收与后续迭代队列包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\使用者验收签收与后续迭代队列包验收\\user-signoff-iteration-queue-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "使用者验收签收与后续迭代队列包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\使用者验收签收与后续迭代队列包验收\\生成使用者验收签收与后续迭代队列包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "历史经验验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\历史经验验收\\evolution-concurrent-latest-write-experience-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "双版本最终总回传与继续施工分界包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\双版本最终总回传与继续施工分界包验收\\dual-version-final-return-boundary-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "双版本最终总回传与继续施工分界包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\双版本最终总回传与继续施工分界包验收\\生成双版本最终总回传与继续施工分界包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "复盘反馈观察验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\复盘反馈观察验收\\evolution-stock-review-feedback-pending-observe-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "复盘转经验候选验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\复盘转经验候选验收\\evolution-stock-review-feedback-to-experience-candidates-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "多业务并行施工每日交接摘要与下一步队列包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\多业务并行施工每日交接摘要与下一步队列包验收\\multi-business-parallel-daily-handoff-next-queue-generate-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "多业务并行施工每日交接摘要与下一步队列包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\多业务并行施工每日交接摘要与下一步队列包验收\\multi-business-parallel-daily-handoff-next-queue-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "多对话框并行施工冲突扫描包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\多对话框并行施工冲突扫描包验收\\parallel-dialogue-construction-conflict-scan-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "学习提炼导航",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\学习提炼导航\\learning-navigation-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付低风险模板落地包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付低风险模板落地包验收\\full-delivery-low-risk-template-landing-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付低风险模板落地包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付低风险模板落地包验收\\执行完全交付低风险模板只读核对_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版低风险可推进拆单包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险可推进拆单包验收\\full-delivery-low-risk-breakdown-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版低风险可推进拆单包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险可推进拆单包验收\\执行完全交付低风险拆单只读核对_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版低风险续建启动队列包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建启动队列包验收\\full-delivery-low-risk-continue-queue-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版低风险续建启动队列包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建启动队列包验收\\生成完全交付使用版低风险续建启动队列包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版低风险续建第一批执行包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建第一批执行包验收\\full-delivery-low-risk-batch1-execute-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版低风险续建第一批执行包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建第一批执行包验收\\生成完全交付使用版低风险续建第一批执行包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版低风险续建第三批总复核与长期样本归档包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建第三批总复核与长期样本归档包验收\\full-delivery-low-risk-batch3-sample-archive-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版低风险续建第三批总复核与长期样本归档包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建第三批总复核与长期样本归档包验收\\生成完全交付使用版低风险续建第三批总复核与长期样本归档包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版低风险续建第二批复核包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建第二批复核包验收\\full-delivery-low-risk-batch2-recheck-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版低风险续建第二批复核包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版低风险续建第二批复核包验收\\生成完全交付使用版低风险续建第二批复核包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版红线材料一致性复核与缺口补齐包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线材料一致性复核与缺口补齐包验收\\full-delivery-redline-material-consistency-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版红线材料一致性复核与缺口补齐包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线材料一致性复核与缺口补齐包验收\\生成完全交付使用版红线材料一致性复核与缺口补齐包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版红线解锁人工签收前材料闭环总复核包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁人工签收前材料闭环总复核包验收\\full-delivery-redline-unlock-presign-material-closure-review-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版红线解锁分项确认单草案与授权边界包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁分项确认单草案与授权边界包验收\\full-delivery-redline-unlock-confirmation-boundary-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版红线解锁拒收样本与回滚演练包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁拒收样本与回滚演练包验收\\full-delivery-redline-unlock-reject-rollback-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版红线解锁生效前总验收矩阵与人工签收台账包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁生效前总验收矩阵与人工签收台账包验收\\full-delivery-redline-unlock-preactivation-ledger-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版红线解锁申请只读风险评审与禁止生效闸口包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁申请只读风险评审与禁止生效闸口包验收\\full-delivery-redline-unlock-readonly-risk-gate-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版红线解锁申请材料总索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁申请材料总索引包验收\\full-delivery-redline-unlock-material-index-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版红线解锁申请材料总索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁申请材料总索引包验收\\生成完全交付使用版红线解锁申请材料总索引包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版红线解锁误触发拦截与禁止执行预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版红线解锁误触发拦截与禁止执行预演包验收\\full-delivery-redline-unlock-misfire-blocker-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版缺口拆解与红线解锁路线图包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版缺口拆解与红线解锁路线图包验收\\执行完全交付使用版缺口路线图只读核对_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用版缺口拆解与红线解锁路线图包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用版缺口拆解与红线解锁路线图包验收\\验证完全交付使用版缺口拆解与红线解锁路线图包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "完全交付使用路线图与工时估算验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\完全交付使用路线图与工时估算验收\\full-delivery-roadmap-hours-estimate-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "并行施工调度索引与合并验收准备包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\并行施工调度索引与合并验收准备包验收\\parallel-work-dispatch-merge-prepare-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "并行自主施工分片护栏与抢占处理包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\并行自主施工分片护栏与抢占处理包验收\\parallel-autonomous-work-guard-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "施工前本地检查验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\施工前本地检查验收\\evolution-prework-local-check-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常交付版与稳定版协同施工完成度复核包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常交付版与稳定版协同施工完成度复核包验收\\daily-stable-coop-completion-review-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常交付版与稳定版每日运行交接闭环包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常交付版与稳定版每日运行交接闭环包验收\\daily-stable-daily-handoff-loop-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常可用交付版收口包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用交付版收口包验收\\daily-usable-closeout-package-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常可用交付版收口后进度校准验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用交付版收口后进度校准验收\\daily-usable-closeout-progress-calibration-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常可用交付版状态包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用交付版状态包验收\\daily-usable-delivery-status-package-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常可用版与稳定交付版最终交付收尾包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用版与稳定交付版最终交付收尾包验收\\daily-stable-final-delivery-closeout-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常可用版与稳定交付版最终交付收尾包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用版与稳定交付版最终交付收尾包验收\\生成日常可用版与稳定交付版最终交付收尾包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常稳定交付使用接管与续建总包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付使用接管与续建总包验收\\daily-stable-handoff-continue-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常稳定交付使用接管与续建总包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付使用接管与续建总包验收\\生成日常稳定交付使用接管与续建总包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常稳定交付最终交付清单与启动索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付最终交付清单与启动索引包验收\\daily-stable-final-delivery-start-index-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常稳定交付最终交付清单与启动索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付最终交付清单与启动索引包验收\\生成日常稳定交付最终交付清单与启动索引包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常稳定交付最终签收启动包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付最终签收启动包验收\\daily-stable-final-signoff-start-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常稳定交付最终签收启动包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付最终签收启动包验收\\生成日常稳定交付最终签收启动包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常稳定交付签收回执与首轮试运行任务单包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付签收回执与首轮试运行任务单包验收\\daily-stable-signoff-receipt-trial-task-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常稳定交付签收回执与首轮试运行任务单包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定交付签收回执与首轮试运行任务单包验收\\生成日常稳定交付签收回执与首轮试运行任务单包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常稳定双版本交付封存与后续路线包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定双版本交付封存与后续路线包验收\\daily-stable-dual-delivery-freeze-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常稳定双版本交付封存与后续路线包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常稳定双版本交付封存与后续路线包验收\\生成日常稳定双版本交付封存与后续路线包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常签收完成与稳定试运行启动回传包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常签收完成与稳定试运行启动回传包验收\\daily-signoff-done-stable-trial-start-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "日常签收完成与稳定试运行启动回传包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常签收完成与稳定试运行启动回传包验收\\生成日常签收完成与稳定试运行启动回传包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "最终日常可用交付候选回传验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\最终日常可用交付候选回传验收\\final-daily-usable-delivery-candidate-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "本地检查项候选验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\本地检查项候选验收\\evolution-local-rule-check-candidates-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "每日开工收工清单与低风险续跑包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\每日开工收工清单与低风险续跑包验收\\daily-start-end-low-risk-rerun-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "每日开工收工清单与低风险续跑包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\每日开工收工清单与低风险续跑包验收\\生成每日开工收工清单与低风险续跑包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "状态摘要验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\状态摘要验收\\evolution-system-status-summary-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "用户明确规则沉淀验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\用户明确规则沉淀验收\\evolution-user-stock-formalization-rules-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "税收业务对话框恢复接续包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\税收业务对话框恢复接续包验收\\tax-dialog-recovery-continuation-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "税收微信股票通过经验候选补充验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\税收微信股票通过经验候选补充验收\\tax-wechat-stock-passed-experience-candidate-supplement-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付使用者交付摘要与非技术操作手册包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付使用者交付摘要与非技术操作手册包验收\\stable-delivery-user-handoff-manual-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付失败自动分级与总管确认闸口包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付失败自动分级与总管确认闸口包验收\\stable-delivery-failure-gate-package-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付异常复跑队列与低风险自动续建包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付异常复跑队列与低风险自动续建包验收\\stable-delivery-rerun-rebuild-package-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付异常恢复与日志索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付异常恢复与日志索引包验收\\stable-delivery-recovery-log-index-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付日常运行台账与交接验收包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付日常运行台账与交接验收包验收\\stable-delivery-daily-ledger-handoff-package-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付版三日达标判定器与样本采集标准包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版三日达标判定器与样本采集标准包验收\\stable-delivery-three-day-acceptance-judge-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付版本地试运行达标复核与签收完成包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版本地试运行达标复核与签收完成包验收\\stable-local-trial-acceptance-signoff-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付版本地试运行达标复核与签收完成包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版本地试运行达标复核与签收完成包验收\\生成稳定交付版本地试运行达标复核与签收完成包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付版次日复验待执行闸口包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版次日复验待执行闸口包验收\\stable-delivery-day2-recheck-pending-gate-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付版每日一键只读刷新与日报汇总包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版每日一键只读刷新与日报汇总包验收\\stable-delivery-daily-one-click-refresh-report-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付版每日运行日报与次日待办包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版每日运行日报与次日待办包验收\\stable-delivery-daily-report-next-todo-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付版运行指挥台每日刷新入口包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版运行指挥台每日刷新入口包验收\\stable-delivery-runtime-dashboard-daily-refresh-entry-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付版运行指挥台索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版运行指挥台索引包验收\\stable-delivery-runtime-dashboard-index-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付版运行观察基线与改进闭环包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版运行观察基线与改进闭环包验收\\stable-delivery-runtime-observation-loop-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付版首日复验执行与问题回收包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付版首日复验执行与问题回收包验收\\stable-delivery-day1-recheck-issue-intake-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付跨业务回归证据链与版本冻结候选包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付跨业务回归证据链与版本冻结候选包验收\\stable-delivery-evidence-freeze-candidate-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定交付长周期只读巡检样本与趋势记录包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定交付长周期只读巡检样本与趋势记录包验收\\stable-delivery-long-term-patrol-trend-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定候选异常样例库与演练包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定候选异常样例库与演练包验收\\stable-candidate-exception-samples-drill-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定候选最终只读总验收与收口回传包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定候选最终只读总验收与收口回传包验收\\stable-candidate-final-readonly-acceptance-closeout-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定候选最终复核与日常版收口声明包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定候选最终复核与日常版收口声明包验收\\stable-candidate-final-review-daily-closeout-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定候选补强与三日巡检启动包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定候选补强与三日巡检启动包验收\\stable-candidate-hardening-three-day-patrol-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版使用者一页操作卡与灯号说明包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版使用者一页操作卡与灯号说明包验收\\stable-user-one-page-operation-card-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版候选最终回传与可交付声明包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版候选最终回传与可交付声明包验收\\stable-candidate-final-delivery-statement-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版候选最终总索引与收口验收包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版候选最终总索引与收口验收包验收\\stable-candidate-final-master-index-closeout-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版候选正式封版申请草案与最终交付封面收紧包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版候选正式封版申请草案与最终交付封面收紧包验收\\stable-candidate-formal-freeze-request-draft-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版封版候选总验收与剩余缺口清单验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版封版候选总验收与剩余缺口清单验收\\stable-release-freeze-candidate-acceptance-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版最后收口总回传与候选交付封面包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版最后收口总回传与候选交付封面包验收\\stable-final-closeout-cover-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版最终候选索引与接续包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版最终候选索引与接续包验收\\stable-final-candidate-index-continue-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版样本等待期低风险保活巡检包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版样本等待期低风险保活巡检包验收\\stable-sample-waiting-keepalive-patrol-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版次日自然日样本待办与防重复闸口包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版次日自然日样本待办与防重复闸口包验收\\stable-nextday-natural-sample-todo-duplicate-gate-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版每日唯一入口操作卡同步包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版每日唯一入口操作卡同步包验收\\stable-daily-single-entry-operation-card-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版自然日样本采集与达标刷新入口包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版自然日样本采集与达标刷新入口包验收\\stable-natural-day-sample-refresh-entry-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版试运行反馈入账执行器样例验收包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版试运行反馈入账执行器样例验收包验收\\stable-trial-feedback-intake-executor-sample-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版试运行反馈本地入账执行器包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版试运行反馈本地入账执行器包验收\\stable-trial-feedback-local-intake-executor-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版试运行回传入口导航与闭环索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版试运行回传入口导航与闭环索引包验收\\stable-trial-feedback-navigation-loop-index-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版试运行问题回传模板与入账预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版试运行问题回传模板与入账预演包验收\\stable-trial-feedback-intake-preview-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版运行期问题候选队列分流预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版运行期问题候选队列分流预演包验收\\stable-runtime-issue-candidate-queue-preview-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定版运行期问题分级与处置路线包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定版运行期问题分级与处置路线包验收\\stable-runtime-issue-triage-route-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定试运行首轮观察执行闭环包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定试运行首轮观察执行闭环包验收\\stable-trial-round1-observation-loop-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "稳定试运行首轮观察执行闭环包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\稳定试运行首轮观察执行闭环包验收\\生成稳定试运行首轮观察执行闭环包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第七轮放行前审查并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第七轮放行前审查并行调度索引包验收\\parallel-round7-pre-release-review-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第三轮低风险能力前置并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第三轮低风险能力前置并行调度索引包验收\\parallel-round3-low-risk-capability-prepare-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第三轮并行施工调度索引与合并验收准备包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第三轮并行施工调度索引与合并验收准备包验收\\parallel-round3-dispatch-merge-prepare-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第九轮签收回滚与留痕并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第九轮签收回滚与留痕并行调度索引包验收\\parallel-round9-signoff-rollback-evidence-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第二轮并行施工调度索引与合并验收准备包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第二轮并行施工调度索引与合并验收准备包验收\\parallel-round2-dispatch-merge-prepare-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第五轮低风险闭环并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第五轮低风险闭环并行调度索引包验收\\parallel-round5-low-risk-loop-prepare-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第八轮放行材料一致性并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第八轮放行材料一致性并行调度索引包验收\\parallel-round8-release-material-consistency-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第六轮安全确认闭环并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第六轮安全确认闭环并行调度索引包验收\\parallel-round6-safety-confirmation-loop-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第十一轮低风险自主调度预演并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十一轮低风险自主调度预演并行调度索引包验收\\parallel-round11-low-risk-autonomous-scheduler-preview-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第十三轮只读调度连续干跑并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十三轮只读调度连续干跑并行调度索引包验收\\parallel-round13-readonly-scheduler-continuous-dryrun-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第十五轮跨日值守样本并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十五轮跨日值守样本并行调度索引包验收\\parallel-round15-cross-day-watch-sample-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第十六轮周周期值守趋势并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十六轮周周期值守趋势并行调度索引包验收\\parallel-round16-week-cycle-watch-trend-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第十四轮只读调度日常值守并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十四轮只读调度日常值守并行调度索引包验收\\parallel-round14-readonly-scheduler-daily-watch-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第十轮交付前证据与队列并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第十轮交付前证据与队列并行调度索引包验收\\parallel-round10-pre-delivery-evidence-queue-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "第四轮低风险能力前置并行调度索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第四轮低风险能力前置并行调度索引包验收\\parallel-round4-low-risk-capability-prepare-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "红线材料模板第一批只读填报预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\红线材料模板第一批只读填报预演包验收\\redline-template-batch1-readonly-preview-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "红线材料模板第一批只读填报预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\红线材料模板第一批只读填报预演包验收\\生成红线材料模板第一批只读填报预演包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "红线材料缺口低风险补齐第一批模板包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\红线材料缺口低风险补齐第一批模板包验收\\redline-gap-low-risk-template-batch1-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "红线材料缺口低风险补齐第一批模板包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\红线材料缺口低风险补齐第一批模板包验收\\生成红线材料缺口低风险补齐第一批模板包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "红线词命中语义复核包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\红线词命中语义复核包验收\\redline-hit-semantic-review-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "股票交付闭环经验候选与反馈等待验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\股票交付闭环经验候选与反馈等待验收\\evolution-stock-delivery-experience-candidates-waiting-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "股票交付闭环规则沉淀收口验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\股票交付闭环规则沉淀收口验收\\evolution-stock-delivery-rule-deposit-closeout-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "股票交付闭环规则沉淀自动评审小样本验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\股票交付闭环规则沉淀自动评审小样本验收\\evolution-stock-delivery-rule-deposit-auto-review-sample-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "股票交付闭环规则沉淀验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\股票交付闭环规则沉淀验收\\evolution-stock-delivery-loop-rule-deposit-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "股票交付闭环规则自动评审验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\股票交付闭环规则自动评审验收\\evolution-stock-delivery-loop-rule-auto-review-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "股票复盘反馈样本验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\股票复盘反馈样本验收\\evolution-stock-review-feedback-candidates-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "自主运行暂停闸口与人工接管演练包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\自主运行暂停闸口与人工接管演练包验收\\autonomous-pause-handoff-drill-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "自主运行暂停闸口与人工接管演练包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\自主运行暂停闸口与人工接管演练包验收\\生成自主运行暂停闸口与人工接管演练包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "规则沉淀验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\规则沉淀验收\\evolution-acceptance-rule-loop-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "规则自动评审验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\规则自动评审验收\\evolution-rule-auto-review-dedupe-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "跨业务交付证据链冻结快照与差异复核包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\跨业务交付证据链冻结快照与差异复核包验收\\cross-business-delivery-evidence-freeze-diff-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "运行期周报与状态看板数据包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期周报与状态看板数据包验收\\runtime-weekly-dashboard-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "运行期周报与状态看板数据包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期周报与状态看板数据包验收\\生成运行期周报与状态看板数据包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "运行期故障恢复与回滚总索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期故障恢复与回滚总索引包验收\\runtime-recovery-rollback-index-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "运行期故障恢复与回滚总索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期故障恢复与回滚总索引包验收\\生成运行期故障恢复与回滚总索引包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "运行期证据归档与版本冻结候选包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期证据归档与版本冻结候选包验收\\runtime-evidence-freeze-candidate-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "运行期证据归档与版本冻结候选包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期证据归档与版本冻结候选包验收\\生成运行期证据归档与版本冻结候选包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "运行期问题闭环总台账索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期问题闭环总台账索引包验收\\runtime-issue-loop-ledger-index-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "运行期问题闭环总台账索引包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\运行期问题闭环总台账索引包验收\\生成运行期问题闭环总台账索引包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "闸口纠偏验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\闸口纠偏验收\\evolution-gate-correction-continuous-work-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "阶段性多业务联调通过封版候选验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\阶段性多业务联调通过封版候选验收\\multi-business-integration-passed-freeze-candidate-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "阶段性封版候选回归建议拆单验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\阶段性封版候选回归建议拆单验收\\freeze-candidate-regression-cards-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "首周试用结果汇总与签收复核包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\首周试用结果汇总与签收复核包验收\\week1-trial-signoff-recheck-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "首周试用结果汇总与签收复核包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\首周试用结果汇总与签收复核包验收\\生成首周试用结果汇总与签收复核包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "首周运行趋势与问题升级包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\首周运行趋势与问题升级包验收\\week1-runtime-trend-escalation-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "首周运行趋势与问题升级包验收",
+      "璺緞": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\首周运行趋势与问题升级包验收\\生成首周运行趋势与问题升级包_最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "04日志",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\video-p0-human-receipt-shadow-samples-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "04日志",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\video-production-system-status-summary-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "真实渲染人工放行材料完整性复核与试运行禁入包验收",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染人工放行材料完整性复核与试运行禁入包验收\\video-render-approval-materials-no-trial-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "真实渲染启用前总闸口与人工放行申请包验收",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染启用前总闸口与人工放行申请包验收\\video-render-enable-gate-approval-draft-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "真实渲染环境候选路径矩阵与安装缺口清单验收",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染环境候选路径矩阵与安装缺口清单验收\\video-render-env-candidate-path-gap-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "真实渲染环境只读识别增强包验收",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染环境只读识别增强包验收\\video-render-env-readonly-detect-enhanced-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "真实渲染环境缺口证据压缩与安装识别清单验收",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染环境缺口证据压缩与安装识别清单验收\\video-render-env-gap-compressed-install-identify-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "真实渲染白名单材料人工补齐模板与签收预演包验收",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染白名单材料人工补齐模板与签收预演包验收\\video-render-whitelist-material-signoff-preview-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "真实渲染白名单申请材料完整度判定包验收",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染白名单申请材料完整度判定包验收\\video-render-whitelist-application-completeness-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "真实渲染试运行批次失败回滚与证据留存包验收",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染试运行批次失败回滚与证据留存包验收\\video-render-trial-failure-rollback-evidence-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "真实渲染试运行批次预检与白名单未生效闸口包验收",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染试运行批次预检与白名单未生效闸口包验收\\video-render-trial-batch-precheck-whitelist-inactive-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    },
+    {
+      "鍚嶇О": "真实渲染试运行白名单与回滚预案草案包验收",
+      "璺緞": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志\\真实渲染试运行白名单与回滚预案草案包验收\\video-render-trial-whitelist-rollback-draft-verify-最新.json",
+      "瀛樺湪": true,
+      "閫氳繃": true
+    }
+  ]
+}

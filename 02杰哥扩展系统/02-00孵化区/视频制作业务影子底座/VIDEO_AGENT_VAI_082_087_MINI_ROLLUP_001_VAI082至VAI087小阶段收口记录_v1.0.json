@@ -1,0 +1,38 @@
+{
+  "asset_id": "VIDEO_AGENT_VAI_082_087_MINI_ROLLUP_001",
+  "version": "v1.0",
+  "asset_type": "mini_stage_rollup",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "video_production_shadow_base_vai082_to_vai087",
+  "status": "draft",
+  "rollup_date": "2026-05-08",
+  "conclusion": "VAI082-VAI087 formed a traceable mini-loop for multi-platform pre-publish check results, blocker summaries, blocker close conditions, and line asset indexing.",
+  "not_implied": [
+    "real_platform_connected",
+    "real_account_connected",
+    "real_publishing_assistant_connected",
+    "wecom_real_send_enabled"
+  ],
+  "assets": [
+    {"id": "VAI082", "asset": "multi_platform_pre_publish_check_receipt_template", "purpose": "record per-platform human review result", "real_system_triggered": false},
+    {"id": "VAI083", "asset": "pre_publish_blocker_summary_receipt_template", "purpose": "summarize blockers and review queues", "real_system_triggered": false},
+    {"id": "VAI084", "asset": "VAI076_081_mini_rollup", "purpose": "roll up pre-publish review chain", "real_system_triggered": false},
+    {"id": "VAI085", "asset": "pre_publish_blocker_close_condition_checklist", "purpose": "define shadow close conditions for blockers", "real_system_triggered": false},
+    {"id": "VAI086", "asset": "multi_platform_check_failure_reply_sample", "purpose": "show reply wording when per-platform checks fail", "real_system_triggered": false},
+    {"id": "VAI087", "asset": "line_asset_index_draft_v4", "purpose": "track VAI001-VAI084 inside video line", "real_system_triggered": false}
+  ],
+  "shadow_capabilities": [
+    "record_pre_publish_check_state_per_platform",
+    "summarize_multiple_publish_blockers",
+    "define_blocker_close_conditions_without_auto_publish",
+    "maintain_line_shadow_index_drafts"
+  ],
+  "boundaries": {
+    "connect_platform": false,
+    "read_real_account_cookie_or_api_key": false,
+    "wecom_real_send": false,
+    "call_publish_tool": false,
+    "connect_n8n": false,
+    "modify_manager_or_formal_repository": false
+  }
+}

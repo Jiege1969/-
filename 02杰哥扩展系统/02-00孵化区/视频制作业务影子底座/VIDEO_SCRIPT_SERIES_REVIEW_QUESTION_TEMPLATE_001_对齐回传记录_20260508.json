@@ -1,0 +1,36 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SERIES_REVIEW_QUESTION_TEMPLATE_001_ALIGNMENT_RETURN",
+  "created_at": "2026-05-08 13:42:00 +08:00",
+  "risk_level": "W1/R0",
+  "target_line": "video_shadow_base_and_parallel_video_construction_line",
+  "action": "create_idiom_story_series_review_question_template",
+  "absorbed_points": [
+    "idiom_story_review_must_check_story_accuracy_moral_structure_language_duration_storyboard_compliance_ai_label_and_release_boundary",
+    "text_review_pass_does_not_mean_generation_rendering_publishing_or_wecom_release",
+    "parallel_video_line_should_return_structured_review_results_before_total_manager_absorption"
+  ],
+  "next_candidates": [
+    {
+      "id": "NEXT-001",
+      "task": "create_blank_shadow_task_card_for_wang_yang_bu_lao",
+      "boundary": "blank_task_card_only_no_concrete_script"
+    },
+    {
+      "id": "NEXT-002",
+      "task": "create_initial_topic_status_snapshot",
+      "boundary": "candidate_pool_status_only_no_publishing"
+    },
+    {
+      "id": "NEXT-003",
+      "task": "create_idiom_story_series_review_receipt_blank_template",
+      "boundary": "human_feedback_receipt_only_no_generation_release"
+    }
+  ],
+  "redline_flags": {
+    "real_rendering": false,
+    "real_publishing": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "formal_script_or_config_change": false
+  }
+}

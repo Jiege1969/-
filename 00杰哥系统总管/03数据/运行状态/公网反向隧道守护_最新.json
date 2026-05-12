@@ -1,0 +1,69 @@
+﻿{
+    "status":  "ready",
+    "mode":  "Repair",
+    "action":  "probe_only",
+    "reason":  "tunnel_ready",
+    "probe":  {
+                  "status":  "ready",
+                  "ready":  true,
+                  "local_bridge_ok":  true,
+                  "local_bridge_health":  {
+                                              "状态":  "正常",
+                                              "服务":  "股票企业微信桥接入口",
+                                              "端口":  19302,
+                                              "能力":  [
+                                                         "本地股票查询",
+                                                         "杰哥推荐单股材料包生成",
+                                                         "n8n/OpenClaw桥接",
+                                                         "企业微信智能机器人stream回复",
+                                                         "response_url脱敏捕获"
+                                                     ],
+                                              "边界":  {
+                                                         "写旧系统":  false,
+                                                         "调用券商接口":  false,
+                                                         "自动交易":  false
+                                                     },
+                                              "时间":  "2026-05-13 13:28:01"
+                                          },
+                  "ssh_tunnel_process_ok":  true,
+                  "ssh_process_count":  1,
+                  "ssh_process_id":  4100,
+                  "tcp_to_cloud_22_ok":  true,
+                  "tcp_to_cloud_22_count":  1,
+                  "pid_record_exists":  true,
+                  "pid_record_process_id":  4100,
+                  "pid_record_matches_process":  true,
+                  "stderr_exists":  true,
+                  "stderr_has_disconnect_hint":  false,
+                  "stderr_tail":  "",
+                  "cloud_host":  "43.167.210.211",
+                  "cloud_loopback_port":  18080,
+                  "local":  "127.0.0.1:19302",
+                  "check_mode":  "non_business_probe",
+                  "time":  "2026-05-13 13:28:02",
+                  "safety":  {
+                                 "post_wecom_business_path":  false,
+                                 "trigger_n8n":  false,
+                                 "send_wecom":  false,
+                                 "restart_service":  false,
+                                 "call_broker_api":  false,
+                                 "auto_trade":  false
+                             }
+              },
+    "repair_result":  null,
+    "state":  {
+                  "consecutive_failures":  0,
+                  "last_repair_time":  "2026-05-10 10:16:02",
+                  "last_probe_status":  "ready",
+                  "last_probe_time":  "2026-05-13 13:28:02"
+              },
+    "time":  "2026-05-13 13:28:02",
+    "safety":  {
+                   "post_wecom_business_path":  false,
+                   "trigger_n8n":  false,
+                   "send_wecom":  false,
+                   "restart_service":  false,
+                   "call_broker_api":  false,
+                   "auto_trade":  false
+               }
+}

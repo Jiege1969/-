@@ -1,0 +1,100 @@
+{
+  "名称": "正丹股份财报基本面证据卡",
+  "版本": "shadow_v1.0",
+  "生成日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子证据卡",
+  "状态": "shadow_only",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "stock": {
+    "name": "正丹股份",
+    "code": "sz300641",
+    "display_code": "300641.SZ"
+  },
+  "source_status": {
+    "local_company_snapshot": "missing_financial_fields",
+    "external_public_disclosure_used": true,
+    "structured_into_l3_shadow": true,
+    "formal_chain_status": "not_integrated"
+  },
+  "sources": [
+    {
+      "source_name": "正丹股份2025年年度报告/公告资料",
+      "source_url": "https://finance.sina.com.cn/roll/2026-04-24/doc-inhuuvhu2226288.shtml",
+      "source_type": "上市公司公告转载",
+      "evidence_scope": "2025年年度财务指标和业务结构",
+      "checked_at": "2026-05-07"
+    },
+    {
+      "source_name": "正丹股份2026年第一季度报告/公告资料",
+      "source_url": "https://finance.sina.com.cn/roll/2026-04-24/doc-inhuukru6654988.shtml",
+      "source_type": "上市公司公告转载",
+      "evidence_scope": "2026年一季度主要财务指标",
+      "checked_at": "2026-05-07"
+    }
+  ],
+  "financial_metrics": {
+    "annual_2025": {
+      "revenue_yuan": 2290506600.0,
+      "revenue_yoy_pct": -14.89,
+      "net_profit_parent_yuan": 714000000.0,
+      "net_profit_parent_yoy_pct": -39.98,
+      "deducted_net_profit_yuan": 694000000.0,
+      "deducted_net_profit_yoy_pct": -41.39
+    },
+    "q1_2026": {
+      "revenue_yuan": 460000000.0,
+      "revenue_yoy_pct": -46.08,
+      "net_profit_parent_yuan": 67176400.0,
+      "net_profit_parent_yoy_pct": -82.71,
+      "deducted_net_profit_yuan": 61018400.0,
+      "deducted_net_profit_yoy_pct": -84.24
+    }
+  },
+  "business_evidence": [
+    "公司从事高端环保新材料和精细化工产品，产品包括偏苯三酸酐、偏苯三酸三辛酯、高沸点芳烃溶剂、乙烯基甲苯、均四甲苯等。",
+    "公司2025年偏苯三酸酐收入占比高，是利润弹性和周期波动的重要来源。",
+    "2025年收入和利润同比下降，2026年一季度收入和利润继续明显下滑。",
+    "当前技术报告已将其列为风险复核，基本面补证后仍不能支持提高关注等级。",
+    "化工品价格、产能供需、出口和原材料成本是后续主要跟踪变量。"
+  ],
+  "fundamental_capital_shadow_score": {
+    "score": 6,
+    "max_score": 20,
+    "score_reason": "公司仍有盈利和细分产品辨识度，但2025年收入和利润下滑，2026年一季度收入和利润继续大幅下降，基本面更多是风险复核而非支撑。",
+    "positive_evidence": [
+      "2025年仍实现归母净利润约7.14亿元。",
+      "公司在偏苯三酸酐等精细化工产品上具备细分辨识度。"
+    ],
+    "negative_evidence": [
+      "2025年营业收入同比下降14.89%。",
+      "2025年归母净利润同比下降39.98%。",
+      "2026年一季度营业收入同比下降46.08%。",
+      "2026年一季度归母净利润同比下降82.71%，扣非净利润同比下降84.24%。"
+    ],
+    "missing": [
+      "偏苯三酸酐、TMA/TOTM等核心产品价格和价差未结构化接入。",
+      "产能、库存、出口和原材料价格未进入行业价格字段。",
+      "资金流、机构持仓、解禁减持未合并。"
+    ],
+    "confidence": "medium"
+  },
+  "front_output_compression": {
+    "one_sentence": "财报补上后更偏风险：2025年和2026年一季度收入利润都在下滑，当前基本面不支持提高关注。",
+    "user_facing_reason": "正丹股份需要先看到价格、成交和产品景气修复，不能只因历史弹性大就纳入重点。",
+    "do_not_say": [
+      "财报未接入",
+      "强度5/5所以重点关注",
+      "化工品弹性大所以直接转强"
+    ]
+  },
+  "safety_boundary": {
+    "only_for_research": true,
+    "not_investment_advice": true,
+    "not_buy_sell_signal": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

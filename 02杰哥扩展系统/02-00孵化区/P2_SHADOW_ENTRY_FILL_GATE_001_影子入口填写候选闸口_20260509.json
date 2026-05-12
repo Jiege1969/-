@@ -1,0 +1,49 @@
+{
+  "gate_id": "P2_SHADOW_ENTRY_FILL_GATE_001",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S12",
+  "status": "readonly_fill_candidate_gate_not_writer",
+  "purpose": "在影子入口真正填写之前增加只读闸口，确认人工复核后的填写候选是否仍具备填写资格",
+  "input_dependency": "P2-S11 人工复核结果虚拟回执样例",
+  "required_candidate_fields": {
+    "entry_fill_candidate": true,
+    "reviewed_by_human": true,
+    "human_review_result": "review_pass_fill_candidate",
+    "next_gate": "shadow_entry_fill_candidate_gate",
+    "auto_fill_shadow_entry": false,
+    "write_target_entry": false,
+    "release_form": false,
+    "formal_capability_claim": false
+  },
+  "allowed_target_status_before_fill_gate": {
+    "tax": ["blank_waiting_for_desensitized_input"],
+    "office_work": ["blank_shadow_sample"],
+    "video_production": ["blank_waiting_for_review_materials"],
+    "shared_policy_evidence": ["blank_waiting_for_readonly_validation"]
+  },
+  "non_candidate_routes": {
+    "pause_gap_archive": "remain_in_gap_archive",
+    "blocked_redline_archive": "remain_in_problem_recovery_or_supervisor_confirmation"
+  },
+  "hard_rules": {
+    "gate_is_writer": false,
+    "auto_fill_shadow_entry": false,
+    "write_target_entry": false,
+    "release_form": false,
+    "formal_capability_claim": false,
+    "pause_can_enter_business_entry": false,
+    "blocked_can_enter_business_entry": false
+  },
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

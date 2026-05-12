@@ -1,0 +1,37 @@
+{
+  "id": "P2-S6-REAL-MATERIAL-INTAKE-RECEIPT-TEMPLATE-RECEIPT-20260509",
+  "executed_at": "2026-05-09 11:52:38 +08:00",
+  "execution_type": "readonly_check",
+  "status": "pass",
+  "command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S6真实材料接入分流回执模板只读检查.py'",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\55P2S6真实材料接入分流回执模板只读检查\\P2S6真实材料接入分流回执模板只读检查_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\55P2S6真实材料接入分流回执模板只读检查\\P2S6真实材料接入分流回执模板只读检查_最新.json"
+  ],
+  "summary": {
+    "errors": 0,
+    "warnings": 0,
+    "field_count": 19,
+    "missing_field_count": 0,
+    "allowed_target_count": 5,
+    "redline_false_check_count": 12,
+    "index_warning_count": 0
+  },
+  "allowed_target_lines": [
+    "tax",
+    "office_work",
+    "video_production",
+    "shared_policy_evidence",
+    "pause"
+  ],
+  "conclusion": "真实材料接入分流回执模板字段、路由、默认复核状态和红线状态完整；可用于后续真实脱敏材料接入留痕。",
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

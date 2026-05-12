@@ -1,0 +1,56 @@
+{
+  "名称": "天齐锂业经营快照191证据回流预览",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子写回预览",
+  "状态": "preview_only",
+  "not_write_166_snapshot": true,
+  "stock": {
+    "name": "天齐锂业",
+    "code": "sz002466",
+    "display_code": "002466.SZ"
+  },
+  "source": {
+    "ledger_file": "03数据/191单股证据核验人工填写台账/单股证据核验人工填写台账_sz002466_20260506_124629.json",
+    "source_chain": "公司概况",
+    "verification_status": "已核验",
+    "missing_fields_count": 0,
+    "source_material": "巨潮资讯PDF-天齐锂业2025年半年度报告全文",
+    "source_url": "https://static.cninfo.com.cn/finalpage/2025-08-30/1224628837.PDF"
+  },
+  "current_snapshot_problem": {
+    "snapshot_file": "03数据/166公司经营快照/公司经营快照_最新.json",
+    "current_company_status": "待接入",
+    "waiting_fields": [
+      "核心业务",
+      "行业地位",
+      "主营产品",
+      "主要客户或下游",
+      "未来方向"
+    ]
+  },
+  "writeback_preview": {
+    "公司概况.核心业务": "以锂为核心的新能源材料企业，主营覆盖硬岩型锂矿资源开发、锂精矿生产销售和锂化工产品生产销售。",
+    "公司概况.行业地位": "拥有全球化锂资源布局，控股格林布什锂辉石矿，并参股SQM和日喀则扎布耶，锂资源端辨识度高。",
+    "公司概况.主营产品": "锂精矿、碳酸锂、氢氧化锂、金属锂、氯化锂等锂化工产品。",
+    "公司概况.主要客户或下游": "产品面向动力电池、电池材料、新能源汽车、电子、储能等下游市场。",
+    "公司概况.未来方向": "围绕“夯实上游、做强中游、渗透下游”的长期战略，推进资源、锂化工产能和技术研发协同。",
+    "证据状态.公司概况": "人工核验"
+  },
+  "front_output_compression": {
+    "one_sentence": "公司不是单纯锂价弹性股，核心看锂资源、锂化工产能和下游需求恢复的共同验证。",
+    "user_facing_reason": "公司业务和资源地位已有核验证据，前台不应再把公司概况写成待接入。"
+  },
+  "formal_writeback_requirement": {
+    "requires_human_confirmation": true,
+    "reason": "写回166经营快照会改变正式数据资产，应走受控写回或人工确认。",
+    "do_not_auto_apply": true
+  },
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_service_restart": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

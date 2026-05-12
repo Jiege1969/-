@@ -1,0 +1,198 @@
+{
+  "asset_id": "CONTROLLED_TRIAL_BATCH_002_CANDIDATES_20260508",
+  "asset_name": "受控试用第二批候选清单",
+  "created_at": "2026-05-08 09:27:34 +08:00",
+  "asset_identity": "总管侧W1/R0受控试用第二批候选清单",
+  "source_assets": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\首批受控试用队列收口记录_20260508.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\受控试用边界扫描清单_20260508.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\视频创作智能体愿景吸收与并行施工指令_20260508.md"
+  ],
+  "risk_level": "W1/R0",
+  "is_formal_launch_schedule": false,
+  "is_real_integration_permission": false,
+  "principles": [
+    "只收W1/R0影子、只读、草案、回执、索引、核查类任务",
+    "本职工作业务线继续暂停，不纳入第二批候选",
+    "每个候选任务必须先过受控试用边界扫描清单",
+    "出现W2/W3、真实接入、外发、n8n、服务重启、正式库、交易、税务办理、视频真实渲染发布，立即暂停",
+    "第二批候选不是自动执行清单；只有进入W1/R0施工时，才生成对应执行记录"
+  ],
+  "candidates": [
+    {
+      "candidate_id": "CTRL-CAND-VIDEO-AI-001",
+      "business_line": "视频创作智能体",
+      "candidate_task": "会话状态契约回传吸收",
+      "asset_identity": "W1/R0回传吸收",
+      "input_requirement": "并行视频线生成的VIDEO_AGENT_CONVERSATION_STATE_CONTRACT_001",
+      "expected_artifact": "总管侧吸收记录和字段完整性核对",
+      "pause_triggers": [
+        "改正式脚本",
+        "接真实LLM",
+        "写向量库"
+      ],
+      "status": "completed",
+      "completion_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_VIDEO_AI_001_会话状态契约回传吸收记录_20260508.md",
+      "completed_at": "2026-05-08 09:59:00 +08:00"
+    },
+    {
+      "candidate_id": "CTRL-CAND-VIDEO-AI-002",
+      "business_line": "视频创作智能体",
+      "candidate_task": "意图路由与局部修正契约回传吸收",
+      "asset_identity": "W1/R0回传吸收",
+      "input_requirement": "VIDEO_AGENT_INTENT_ROUTING_001和VIDEO_AGENT_PARTIAL_REVISION_CONTRACT_001",
+      "expected_artifact": "路由/局部修正字段核对与越界扫描",
+      "pause_triggers": [
+        "替换task_generator.py",
+        "改企业微信服务"
+      ],
+      "status": "completed",
+      "completion_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_VIDEO_AI_002_意图路由与局部修正契约回传吸收记录_20260508.md",
+      "completed_at": "2026-05-08 10:05:00 +08:00"
+    },
+    {
+      "candidate_id": "CTRL-CAND-VIDEO-AI-003",
+      "business_line": "视频创作智能体",
+      "candidate_task": "外部引擎适配与人工门禁回传吸收",
+      "asset_identity": "W1/R0回传吸收",
+      "input_requirement": "VIDEO_AGENT_ENGINE_ADAPTER_CONTRACT_001和VIDEO_AGENT_HUMAN_GATE_UPGRADE_001",
+      "expected_artifact": "引擎适配字段和门禁拆分核对",
+      "pause_triggers": [
+        "调用MoneyPrinterTurbo",
+        "调用HappyHorse",
+        "调用Qwen-TTS",
+        "调用PostBot",
+        "真实渲染或发布"
+      ],
+      "status": "completed",
+      "completion_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_VIDEO_AI_003_外部引擎适配与人工门禁回传吸收记录_20260508.md",
+      "completed_at": "2026-05-08 10:12:00 +08:00"
+    },
+    {
+      "candidate_id": "CTRL-CAND-TAX-002",
+      "business_line": "税收政策顾问",
+      "candidate_task": "第二个脱敏真实问题影子接入",
+      "asset_identity": "W1/R0影子试用",
+      "input_requirement": "1个脱敏涉税问题，必须含税种、期间、地区、主体、问题背景",
+      "expected_artifact": "待复核草案或试用回执",
+      "pause_triggers": [
+        "登录电子税务局",
+        "读取真实财税系统",
+        "输出确定税务意见或金额"
+      ],
+      "status": "candidate",
+      "preparation_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_TAX_002_输入条件缺口核对_20260508.md",
+      "preparation_status": "input_gap_checked + desensitization_checklist_ready",
+      "desensitization_checklist": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_TAX_002_候选问题脱敏检查清单_20260508.md"
+    },
+    {
+      "candidate_id": "CTRL-CAND-STOCK-002",
+      "business_line": "股票L3研究",
+      "candidate_task": "P0证据候选卡结构化样例",
+      "asset_identity": "W1/R0草案/样例",
+      "input_requirement": "股票线对P0缺口的只读候选证据字段",
+      "expected_artifact": "资金/机构/减持解禁/行业价格候选卡样例",
+      "pause_triggers": [
+        "券商接口",
+        "交易建议",
+        "自动调仓",
+        "改正式前台"
+      ],
+      "status": "completed",
+      "completion_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_STOCK_002_P0证据候选卡结构化样例_20260508.md"
+    },
+    {
+      "candidate_id": "CTRL-CAND-WECOM-002",
+      "business_line": "企业微信接入层",
+      "candidate_task": "视频助理智能体入口只读对齐",
+      "asset_identity": "W1/R0只读核查",
+      "input_requirement": "视频智能体契约回传后的入口、路由、安全禁令",
+      "expected_artifact": "接入层只读对齐记录",
+      "pause_triggers": [
+        "真实发送",
+        "n8n",
+        "重启19310/19302",
+        "改服务脚本"
+      ],
+      "status": "completed",
+      "completion_record": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\03数据\\CTRL_CAND_WECOM_002_视频助理智能体入口只读对齐记录_20260508.md",
+      "completed_at": "2026-05-08 10:18:00 +08:00"
+    },
+    {
+      "candidate_id": "CTRL-CAND-MGR-002",
+      "business_line": "总管协调层",
+      "candidate_task": "第二批候选执行顺序与回传格式核对",
+      "asset_identity": "W1/R0总管协调",
+      "input_requirement": "第二批候选清单和回执模板",
+      "expected_artifact": "执行顺序建议与回传字段核对",
+      "pause_triggers": [
+        "总管替业务线做业务判断",
+        "改业务线正式配置"
+      ],
+      "status": "completed",
+      "recommended_next": false,
+      "completion_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_MGR_002_第二批候选执行顺序与回传格式核对_20260508.md"
+    },
+    {
+      "candidate_id": "CTRL-CAND-MGR-003",
+      "business_line": "总管协调层",
+      "candidate_task": "系统管家验证30提示语收紧",
+      "asset_identity": "W1/R0提示语验收样例",
+      "input_requirement": "验证30回传结论",
+      "expected_artifact": "进度/路径/n8n状态提示语验收样例和对齐回传",
+      "pause_triggers": [
+        "改服务脚本",
+        "重启19310/19302",
+        "触发n8n",
+        "真实发送"
+      ],
+      "status": "completed",
+      "completion_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_MGR_003_系统管家提示语收紧验收样例_20260508.md",
+      "alignment_return_record": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\系统管家验证30对齐回传记录_20260508.md",
+      "completed_at": "2026-05-08 11:23:49 +08:00"
+    }
+  ],
+  "recommended_order": [
+    "CTRL-CAND-MGR-002",
+    "CTRL-CAND-VIDEO-AI-001",
+    "CTRL-CAND-VIDEO-AI-002",
+    "CTRL-CAND-VIDEO-AI-003",
+    "CTRL-CAND-TAX-002",
+    "CTRL-CAND-STOCK-002",
+    "CTRL-CAND-WECOM-002",
+    "CTRL-CAND-MGR-003"
+  ],
+  "boundary_scan_fields": [
+    "task_id",
+    "business_line",
+    "input_summary",
+    "general_redline_hit",
+    "special_redline_hit",
+    "allowed_scope",
+    "expected_artifact",
+    "pause_reason",
+    "boundary_confirmation"
+  ],
+  "boundary_flags": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_db": false,
+    "modify_service_script": false,
+    "restart_19310_or_19302": false,
+    "call_model_api": false,
+    "call_external_video_engine": false,
+    "read_real_media": false,
+    "video_render_upload_publish": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "tax_filing_or_refund": false,
+    "formal_tax_opinion": false,
+    "resume_office_business_line": false
+  },
+  "self_check": {
+    "risk_level": "W1/R0",
+    "json_parse_required": true,
+    "panel_package_update_required": true,
+    "boundary_kept": true
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "record_id": "VIDEO_AGENT_VAI_064_066_HANDOFF_20260508",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "work_scope": "W1/R0 low-risk shadow construction",
+  "round_summary": [
+    "Created status-query reply quality checklist.",
+    "Created shadow asset naming conflict checklist.",
+    "Created review queue intake status board draft."
+  ],
+  "changed_files": [
+    "VIDEO_AGENT_STATUS_QUERY_REPLY_QUALITY_CHECK_001_状态查询回执质量检查清单_v1.0.md",
+    "VIDEO_AGENT_STATUS_QUERY_REPLY_QUALITY_CHECK_001_状态查询回执质量检查清单_v1.0.json",
+    "VIDEO_AGENT_ASSET_NAMING_CONFLICT_CHECK_001_影子资产命名冲突检查清单_v1.0.md",
+    "VIDEO_AGENT_ASSET_NAMING_CONFLICT_CHECK_001_影子资产命名冲突检查清单_v1.0.json",
+    "VIDEO_AGENT_REVIEW_QUEUE_STATUS_BOARD_DRAFT_001_复核队列承接状态看板草案_v1.0.md",
+    "VIDEO_AGENT_REVIEW_QUEUE_STATUS_BOARD_DRAFT_001_复核队列承接状态看板草案_v1.0.json",
+    "VIDEO_AGENT_VAI_064_066_对齐回传记录_20260508.md",
+    "VIDEO_AGENT_VAI_064_066_对齐回传记录_20260508.json"
+  ],
+  "risk_level": "low",
+  "real_system_triggered": {
+    "model_api": false,
+    "material_read": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "database_or_real_board": false,
+    "service_port_manager_public_or_formal_change": false
+  },
+  "requires_manager_integration": false,
+  "manager_integration_note": "Real board, database, WeCom, or n8n integration must be returned to manager decision.",
+  "next_suggestions": [
+    "Create shadow asset naming conflict scan sample.",
+    "Create blank review queue intake ledger template.",
+    "Create WeCom publish-command refusal reply sample."
+  ],
+  "self_check": {
+    "read_panel_and_start_package_first": true,
+    "write_scope_limited_to_video_shadow_base": true,
+    "json_validated_by_convertfrom_json": true,
+    "scan_hits_are_boundary_statements": true,
+    "no_real_execution": true,
+    "no_manager_public_service_formal_or_other_line_changes": true
+  }
+}

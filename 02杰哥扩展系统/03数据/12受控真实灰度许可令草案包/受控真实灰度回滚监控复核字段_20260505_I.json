@@ -1,0 +1,144 @@
+{
+  "control_fields_id": "controlled_real_gray_rollback_monitoring_review_fields_20260505_I",
+  "status": "draft_only",
+  "generated_at": "2026-05-05T14:18:00+08:00",
+  "real_action_count": 0,
+  "kill_switch": {
+    "required": true,
+    "default_state": "closed",
+    "trigger_on_any_forbidden_action": true
+  },
+  "global_review_fields": [
+    "permission_order_id",
+    "business_line",
+    "requested_action",
+    "risk_level",
+    "readonly_or_draft_scope",
+    "whitelist_reference",
+    "rollback_reference",
+    "monitoring_reference",
+    "evidence_reference",
+    "operator",
+    "reviewer",
+    "approver",
+    "approval_ticket",
+    "start_time",
+    "end_time",
+    "kill_switch_owner",
+    "rollback_owner",
+    "data_write_flag",
+    "external_call_flag",
+    "forbidden_action_scan_result",
+    "final_human_review_result"
+  ],
+  "line_controls": [
+    {
+      "line_id": "enterprise_wechat",
+      "rollback_triggers": [
+        "external_send_intent",
+        "whitelist_scope_unknown",
+        "missing_review_field",
+        "production_queue_write_signal"
+      ],
+      "monitoring_metrics": [
+        "draft_count",
+        "readonly_pull_count",
+        "blocked_send_attempt_count",
+        "whitelist_miss_count",
+        "manual_review_pending_count"
+      ],
+      "line_review_fields": [
+        "chat_scope",
+        "message_sample_id",
+        "send_channel_disabled_evidence",
+        "reviewer_confirm_no_external_send"
+      ]
+    },
+    {
+      "line_id": "knowledge_base",
+      "rollback_triggers": [
+        "write_or_upsert_intent",
+        "missing_evidence_reference",
+        "untraceable_draft_card",
+        "whitelist_reference_mismatch"
+      ],
+      "monitoring_metrics": [
+        "readonly_index_pull_count",
+        "draft_card_count",
+        "blocked_write_attempt_count",
+        "missing_evidence_count"
+      ],
+      "line_review_fields": [
+        "source_document_id",
+        "evidence_span",
+        "readonly_snapshot_id",
+        "reviewer_confirm_no_formal_write"
+      ]
+    },
+    {
+      "line_id": "content_processing",
+      "rollback_triggers": [
+        "publish_intent",
+        "formal_content_database_write_intent",
+        "untraceable_draft_source",
+        "sample_scope_outside_whitelist"
+      ],
+      "monitoring_metrics": [
+        "sample_read_count",
+        "draft_generation_count",
+        "blocked_publish_attempt_count",
+        "blocked_database_write_count"
+      ],
+      "line_review_fields": [
+        "sample_document_id",
+        "draft_output_id",
+        "source_trace_evidence",
+        "reviewer_confirm_no_publish"
+      ]
+    },
+    {
+      "line_id": "video_production",
+      "rollback_triggers": [
+        "transcode_or_render_intent",
+        "unknown_asset_manifest_source",
+        "draft_written_to_finished_asset_path",
+        "publish_flag_true"
+      ],
+      "monitoring_metrics": [
+        "asset_manifest_read_count",
+        "script_draft_count",
+        "blocked_transcode_attempt_count",
+        "blocked_render_attempt_count",
+        "blocked_publish_attempt_count"
+      ],
+      "line_review_fields": [
+        "asset_manifest_id",
+        "script_draft_id",
+        "media_queue_disabled_evidence",
+        "reviewer_confirm_no_media_conversion"
+      ]
+    },
+    {
+      "line_id": "tax_readonly",
+      "rollback_triggers": [
+        "formal_tax_conclusion_or_advice_text",
+        "tax_api_call_intent",
+        "formal_tax_database_write_intent",
+        "draft_marked_as_formal_opinion"
+      ],
+      "monitoring_metrics": [
+        "readonly_catalog_pull_count",
+        "draft_checklist_count",
+        "blocked_tax_judgement_count",
+        "blocked_tax_api_attempt_count",
+        "blocked_tax_database_write_count"
+      ],
+      "line_review_fields": [
+        "tax_document_catalog_id",
+        "non_opinion_disclaimer",
+        "tax_api_disabled_evidence",
+        "reviewer_confirm_no_formal_tax_judgement"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "version": "1.0",
+  "effective_date": "2026-05-07",
+  "name": "股票分析报告工作流",
+  "system": "02杰哥扩展系统/01股票研究系统",
+  "asset_identity": "样本系统机器可读工作流",
+  "purpose": "把股票分析系统沉淀为样本系统，固化单股分析、专家总览、交易拦截、报告输出和复盘进化的标准链条。",
+  "universal_analysis_judgment_mechanism": {
+    "path": "01配置/股票通用分析判断机制_v1.0.json",
+    "indicator_selector": "01配置/股票指标智能选择与方法切换规则_v1.0.json",
+    "rule": "所有股票分析、单股报告、行业判断、推荐榜和前台短答，在判断生成前必须先完成问题类型、市场环境、主指标、辅助指标、降权或否决指标、证据法阶的分配；指标主次由指标智能选择引擎按客观环境动态选择。"
+  },
+  "core_principles": [
+    {
+      "name": "对象先明确",
+      "rule": "单股分析必须先识别股票名称和代码；回复首行必须显示分析对象。",
+      "acceptance": "回复包含“分析对象：股票名称（代码）”；未知简称时必须显示“股票简称待补充”或追问。"
+    },
+    {
+      "name": "用户不背机器人分工",
+      "rule": "用户从任一股票入口提出单股分析时，系统按意图转股票分析助手。",
+      "acceptance": "专家入口收到“请分析一下云南锗业”时不得返回专家旧总览。"
+    },
+    {
+      "name": "证据先于判断",
+      "rule": "行情、技术指标、候选池、公司快照、行业景气、财报和风险观察线分层接入。",
+      "acceptance": "证据不足时显式列为待核验，不输出强结论。"
+    },
+    {
+      "name": "通用分析判断机制优先",
+      "rule": "判断生成前必须读取或遵守股票通用分析判断机制_v1.0.json，先识别市场环境和问题类型，再确定本次主指标、辅助指标、降权或否决指标和证据法阶。",
+      "acceptance": "后台报告或材料包至少保留主指标、辅助指标、证据法阶和风险闸门；前台短答不得用辅助指标越级输出强结论。"
+    },
+    {
+      "name": "L3评分契约优先",
+      "rule": "生成L3级单股报告时，必须读取L3_scoring_contract_v1.0.json，并按技术结构、基本面/资金、政策事件、市场风格适配四项输出分数、证据、缺口和置信度。",
+      "acceptance": "L3报告必须包含total_score、item_scores、evidence_summary、missing_summary、confidence、conclusion_text；关键missing存在时不得输出高置信度强结论。"
+    },
+    {
+      "name": "缺证据不输出横杠",
+      "rule": "行情、技术指标或风险观察线缺失时，明确写证据待补齐，不把空值横杠当作承接、转强或风险条件。",
+      "acceptance": "报告不得出现“低位看-能否稳住”“跌破-”这类空值条件。"
+    },
+    {
+      "name": "可公开只读补证",
+      "rule": "本地快照没有单股行情时，可按需读取已登记的公开只读行情源补证。",
+      "acceptance": "只读联网，不写旧系统、不触发企业微信、不调用券商接口、不自动交易。"
+    },
+    {
+      "name": "前台结论驱动",
+      "rule": "企业微信短答先给结论、策略、关注条件、转强条件、成交标准和风险线。",
+      "acceptance": "前台不堆技术指标，不把后台核验任务甩给用户。"
+    },
+    {
+      "name": "安全边界常开",
+      "rule": "股票系统只做研究，不执行买卖、下单、仓位、券商接口和自动交易。",
+      "acceptance": "交易意图被拦截，且不调用券商、不触发交易链路。"
+    },
+    {
+      "name": "复盘进化但不越权",
+      "rule": "人工修正进入经验候选或复盘账，不自动升级为正式规则。",
+      "acceptance": "正式规则修改必须另走人工确认。"
+    }
+  ],
+  "intent_routing": [
+    {
+      "intent": "single_stock_analysis",
+      "examples": ["分析一下002428", "请分析一下云南锗业", "云南锗业怎么看"],
+      "route": "股票分析助手",
+      "required_behavior": "识别股票对象并生成单股报告"
+    },
+    {
+      "intent": "recommendation_or_market_overview",
+      "examples": ["今日推荐", "现在市场方向怎么看", "推荐几只股票"],
+      "route": "股票分析专家",
+      "required_behavior": "生成专家总览、推荐和观察名单"
+    },
+    {
+      "intent": "holding_diagnosis",
+      "examples": ["云南锗业还能不能拿", "持仓002428怎么办"],
+      "route": "股票分析助手",
+      "required_behavior": "生成持仓诊断，不执行交易"
+    },
+    {
+      "intent": "trade_action",
+      "examples": ["买入002428", "卖出云南锗业", "帮我下单"],
+      "route": "交易意图拦截",
+      "required_behavior": "直接拦截，不调用券商接口、不自动交易"
+    }
+  ],
+  "workflow": [
+    {
+      "step": 1,
+      "name": "用户提问",
+      "input": "自然语言、股票名称、股票代码、推荐/总览请求",
+      "output": "原始问题"
+    },
+    {
+      "step": 2,
+      "name": "意图识别",
+      "input": "原始问题",
+      "output": "single_stock_analysis / recommendation_or_market_overview / holding_diagnosis / trade_action / status_query"
+    },
+    {
+      "step": 3,
+      "name": "对象解析",
+      "input": "股票名称、代码、别名、最近上下文",
+      "output": "股票名称、标准代码、识别来源；未知则追问或标注简称待补充"
+    },
+    {
+      "step": 4,
+      "name": "证据调取",
+      "input": "标准股票对象",
+      "output": "行情、技术指标、候选池、公司快照、行业景气、财报、风险观察线、政策事件主表、股票政策暴露度、市场风格日表"
+    },
+    {
+      "step": 5,
+      "name": "判断生成",
+      "input": "证据集合、股票通用分析判断机制、市场环境、问题类型",
+      "output": "分层、L3分项评分、本次主分析方法、主指标、辅助指标、降权或否决指标、证据法阶、研究信号、当前判断、证据摘要、缺口摘要、置信度、风险摘要"
+    },
+    {
+      "step": 6,
+      "name": "前台短答",
+      "input": "判断结果和观察规则",
+      "output": "分析对象、当前判断、操作策略、关注条件、转强条件、成交标准、风险线、结论、图文详情"
+    },
+    {
+      "step": 7,
+      "name": "后台报告",
+      "input": "完整证据和判断",
+      "output": "图形报告、标准报告v2、证据缺口、长期成长质量框架、后续跟踪重点"
+    },
+    {
+      "step": 8,
+      "name": "复盘进化",
+      "input": "用户问题、系统判断、人工评价、后续结果",
+      "output": "判断复盘账、人工决策账、结果验证账、经验候选账"
+    }
+  ],
+  "l3_scoring_assets": {
+    "system_level_closure_rule": "D:/杰哥智能化系统/03杰哥进化系统/01配置/系统搭建闭环防误解规则.json",
+    "system_level_closure_external_check_card": "D:/杰哥智能化系统/03杰哥进化系统/03数据/36系统搭建闭环防误解外化检查卡/系统搭建闭环防误解外化检查卡_v1.0.json",
+    "construction_closure_rule": "01配置/股票系统搭建闭环防误解规则_v1.0.json",
+    "contract": "01配置/L3_scoring_contract_v1.0.json",
+    "policy_events_schema": "01配置/policy_events_schema_v1.0.json",
+    "market_style_daily_schema": "01配置/market_style_daily_schema_v1.0.json",
+    "policy_events": "03数据/245L3评分基础资产/policy_events_v1.0.json",
+    "stock_policy_exposures": "03数据/245L3评分基础资产/stock_policy_exposures_v1.0.json",
+    "market_style_latest": "03数据/245L3评分基础资产/market_style_daily_latest.json",
+    "market_style_public_update_script": "02脚本/更新L3市场风格日表_东方财富只读.py",
+    "market_style_update_script": "02脚本/更新L3市场风格日表_从本地快照.py",
+    "validation_script": "02脚本/验证L3评分基础资产.py",
+    "single_stock_l3_script": "02脚本/生成单股L3评分报告.py",
+    "example_script": "02脚本/生成L3评分示例_云南锗业.py",
+    "rule": "政策事件只能由结构化事件库进入评分；市场整体情绪只能由市场风格日表进入评分；LLM可解释证据和缺口，但不得凭空替代结构化分项。"
+  },
+  "frontend_required_fields": [
+    "分析对象",
+    "L3综合评分",
+    "L3分项证据",
+    "L3证据缺口",
+    "当前判断",
+    "现价",
+    "操作策略",
+    "关注条件",
+    "转强条件",
+    "成交标准",
+    "风险线",
+    "结论",
+    "补充核验",
+    "图文详情"
+  ],
+  "acceptance_tests": [
+    {
+      "case": "分析一下002428",
+      "expected": ["route=股票分析助手", "分析对象：云南锗业（sz002428）", "缺行情时明确证据待补齐，不输出横杠价位"]
+    },
+    {
+      "case": "请分析一下云南锗业",
+      "expected": ["route=股票分析助手", "不得返回专家旧总览"]
+    },
+    {
+      "case": "今日推荐",
+      "expected": ["route=股票分析专家", "输出推荐/观察名单"]
+    },
+    {
+      "case": "买入002428",
+      "expected": ["交易意图拦截", "不调用券商接口", "不自动交易"]
+    }
+  ],
+  "object_resolution_sources": [
+    {
+      "name": "重点关注股票池",
+      "path": "01配置/重点关注股票池.json",
+      "role": "优先识别已纳入股票池的股票"
+    },
+    {
+      "name": "AI日报分析结果",
+      "path": "03数据/135分层日报/AI分析报告_最新.json",
+      "role": "识别最新日报中的候选股票"
+    },
+    {
+      "name": "股票简称补充映射",
+      "path": "01配置/股票简称补充映射.json",
+      "role": "补充用户直接询问但尚未进入股票池的股票代码和简称"
+    },
+    {
+      "name": "东方财富公开行情接口-单股按需只读",
+      "path": "https://push2.eastmoney.com/api/qt/ulist.np/get",
+      "role": "本地行情快照未覆盖单股时，按需只读补充当前行情"
+    }
+  ],
+  "transfer_rule": {
+    "generic": [
+      "对象识别",
+      "证据调取",
+      "结论驱动前台输出",
+      "不确定项显式化",
+      "人工复核",
+      "复盘进化"
+    ],
+    "stock_specific_do_not_copy": [
+      "行情实时刷新",
+      "交易时段保护",
+      "转强线",
+      "成交活跃",
+      "券商接口词表",
+      "单股代码语义"
+    ]
+  }
+}

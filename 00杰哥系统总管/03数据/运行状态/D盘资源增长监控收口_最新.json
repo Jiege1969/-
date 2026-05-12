@@ -1,0 +1,33 @@
+{
+  "report_name": "D盘资源增长监控收口",
+  "record_time": "2026-05-06 05:49:00 +08:00",
+  "status": "completed",
+  "latest_daily_report": {
+    "json": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\D盘资源增长监控日报_最新.json",
+    "markdown": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\D盘资源增长监控日报_最新.md",
+    "history_jsonl": "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\资源增长监控\\disk-growth-history.jsonl",
+    "overall_status": "ok"
+  },
+  "scheduled_task": {
+    "name": "杰哥智能化系统_D盘资源增长监控日报",
+    "schedule": "daily 08:10",
+    "last_task_result": 0,
+    "hidden_window": true
+  },
+  "validation": {
+    "parse_errors": 0,
+    "json_parse_ok": true,
+    "markdown_exists": true,
+    "read_only": true
+  },
+  "safety": {
+    "delete_files": false,
+    "compress_files": false,
+    "move_files": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "call_broker_api": false,
+    "auto_trade": false
+  }
+}
+

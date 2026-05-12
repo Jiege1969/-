@@ -1,0 +1,11 @@
+{
+  "name": "前后台分层报告字段对照样例验收结果",
+  "generated_at": "2026-05-08 12:59:39",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "mapping_count": 8,
+    "sample_count": 2,
+    "backend_only_count": 2
+  }
+}

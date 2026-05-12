@@ -1,0 +1,187 @@
+{
+  "名称": "03进化系统_反退化冻结清单",
+  "创建日期": "2026-05-05",
+  "所属系统": "03杰哥进化系统",
+  "任务批次": "并行小任务O",
+  "清单版本": "2026-05-05-O-final-freeze",
+  "冻结目标": "防止后续规则沉淀、交付候选、并行小任务和旧口径纠偏中退回到搬壳子、第二中枢、无契约施工、真实动作默认开启、进度虚高等状态。",
+  "反退化检查项": [
+    {
+      "检查ID": "ANTI-03-001",
+      "冻结项": "学逻辑不搬壳子",
+      "必须为真": [
+        "learn_logic_only",
+        "source_originals_added_false",
+        "third_party_shell_cloned_false"
+      ],
+      "阻断条件": [
+        "新增OpenClaw或Hermes原始代码、配置、提示词、凭据、workflow、镜像",
+        "把外部系统壳子作为本系统运行件",
+        "用搬运原件替代抽象规则"
+      ],
+      "纠偏方式": "删除执行依赖，保留问题记录，改写为抽象规则卡和只读验收项。"
+    },
+    {
+      "检查ID": "ANTI-03-002",
+      "冻结项": "总管唯一中枢",
+      "必须为真": [
+        "central_manager_unique",
+        "evolution_center_role_rule_deposit_only",
+        "second_center_created_false"
+      ],
+      "阻断条件": [
+        "03进化系统新增系统级调度中枢",
+        "新增绕过00总管的状态放行入口",
+        "规则评审结论自动授权真实动作"
+      ],
+      "纠偏方式": "把状态、回收和验收口径退回00总管，03只保留规则沉淀和只读审计职责。"
+    },
+    {
+      "检查ID": "ANTI-03-003",
+      "冻结项": "任务契约优先",
+      "必须为真": [
+        "task_contract_required",
+        "dry_run_default_true",
+        "acceptance_before_completion_claim"
+      ],
+      "阻断条件": [
+        "无任务契约直接执行",
+        "契约缺少范围、输入、输出、验收、回收路径",
+        "real_action_requested或external_service_requested默认true"
+      ],
+      "纠偏方式": "补齐结构化任务契约，降级为dry_run，只读验收通过前不得宣称完成。"
+    },
+    {
+      "检查ID": "ANTI-03-004",
+      "冻结项": "SQLite影子台账",
+      "必须为真": [
+        "sqlite_shadow_ledger_required_for_state_like_changes",
+        "production_db_write_false_by_default",
+        "shadow_record_not_production_fact"
+      ],
+      "阻断条件": [
+        "跳过影子台账直接写正式库",
+        "把演练记录冒充生产事实",
+        "影子验证失败仍升级"
+      ],
+      "纠偏方式": "恢复影子台账演练、只读对账和回滚计划，正式写入另走升级许可。"
+    },
+    {
+      "检查ID": "ANTI-03-005",
+      "冻结项": "Redis/n8n升级门槛",
+      "必须为真": [
+        "redis_live_queue_false",
+        "n8n_triggered_false",
+        "webhook_called_false",
+        "upgrade_gate_required"
+      ],
+      "阻断条件": [
+        "Redis变成真实队列或权限放行器",
+        "n8n workflow被导入、启用、触发",
+        "webhook被调用",
+        "缺少低风险门禁报告"
+      ],
+      "纠偏方式": "全部回退到本地只读演练，补齐门禁清单、回收报告和人工确认。"
+    },
+    {
+      "检查ID": "ANTI-03-006",
+      "冻结项": "真实动作闸门",
+      "必须为真": [
+        "real_action_default_disabled",
+        "external_service_default_disabled",
+        "real_action_count_zero_without_authorization"
+      ],
+      "阻断条件": [
+        "发送企业微信或外部消息",
+        "写正式库",
+        "调用外部API",
+        "生产调度自动执行",
+        "只读验收脚本产生写入副作用"
+      ],
+      "纠偏方式": "禁用真实动作路径，补齐dry_run证据、回滚方案和人工确认前置项。"
+    },
+    {
+      "检查ID": "ANTI-03-007",
+      "冻结项": "股票analysis-only",
+      "必须为真": [
+        "stock_mode_analysis_only",
+        "broker_api_called_false",
+        "order_created_false",
+        "auto_trade_false"
+      ],
+      "阻断条件": [
+        "下单",
+        "自动交易",
+        "调用券商接口",
+        "输出买卖承诺或收益承诺"
+      ],
+      "纠偏方式": "降级为分析、复盘、证据链核验和只读验收，不保留任何交易执行入口。"
+    },
+    {
+      "检查ID": "ANTI-03-008",
+      "冻结项": "并行收口格式",
+      "必须为真": [
+        "parallel_recycle_md_required",
+        "parallel_recycle_json_required",
+        "artifact_paths_listed",
+        "real_action_count_listed"
+      ],
+      "阻断条件": [
+        "没有固定回收报告",
+        "产物路径不可追踪",
+        "安全边界缺失",
+        "md/json结论不一致"
+      ],
+      "纠偏方式": "补交00总管并行回收固定md/json报告，并重新跑只读验收。"
+    },
+    {
+      "检查ID": "ANTI-03-009",
+      "冻结项": "进度口径不得虚高",
+      "必须为真": [
+        "progress_claim_basis_required",
+        "unverified_completion_claim_false",
+        "dry_run_not_equal_live_release"
+      ],
+      "阻断条件": [
+        "未验收宣称完成",
+        "把草案、样例、演练说成上线",
+        "阻断项未清零仍虚高进度"
+      ],
+      "纠偏方式": "按已落地、已验收、已回收、已授权分层重写进度，保留旧口径纠偏记录。"
+    },
+    {
+      "检查ID": "ANTI-03-010",
+      "冻结项": "旧口径可纠偏",
+      "必须为真": [
+        "legacy_correction_allowed",
+        "history_deleted_false",
+        "replacement_scope_declared"
+      ],
+      "阻断条件": [
+        "旧说法冲突却不纠偏",
+        "删除历史证据",
+        "纠偏无原因、范围、验收证据"
+      ],
+      "纠偏方式": "新增纠偏记录和替代范围说明，不删除历史证据，以当前封版原则为准。"
+    }
+  ],
+  "全局阻断项": [
+    "触发外部服务",
+    "执行真实动作",
+    "写正式库",
+    "调用Redis服务",
+    "导入、启用或触发n8n workflow",
+    "调用webhook",
+    "调用券商接口",
+    "下单或自动交易",
+    "未验收宣称完成",
+    "绕过00总管建立第二中枢"
+  ],
+  "验收口径": {
+    "检查项数量": 10,
+    "真实动作数量必须为": 0,
+    "外部服务调用数量必须为": 0,
+    "验收方式": "只读本地文件解析",
+    "通过条件": "10项冻结原则、10项反退化检查和全部全局阻断项均存在且无冲突。"
+  }
+}

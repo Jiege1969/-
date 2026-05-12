@@ -1,0 +1,208 @@
+{
+  "name": "低风险只读调度器趋势聚合样本",
+  "generated_at": "2026-05-08 21:38:52",
+  "day_count": 7,
+  "sample_window": {
+    "start": "2026-05-02",
+    "end": "2026-05-08"
+  },
+  "daily_samples": [
+    {
+      "sample_date": "2026-05-02",
+      "sample_id": "TREND-DAY-001",
+      "sample_mode": "local_readonly_trend_preview",
+      "daily_total_count": 7,
+      "daily_pass_count": 7,
+      "pass_rate": 1.0,
+      "pause_count": 0,
+      "confirmation_count": 1,
+      "retention_notice_count": 0,
+      "redline_simulation_hit_count": 0,
+      "external_call": false,
+      "source_files_modified": false,
+      "note": "只读趋势聚合样本，不回写源产物。"
+    },
+    {
+      "sample_date": "2026-05-03",
+      "sample_id": "TREND-DAY-002",
+      "sample_mode": "local_readonly_trend_preview",
+      "daily_total_count": 8,
+      "daily_pass_count": 7,
+      "pass_rate": 0.875,
+      "pause_count": 1,
+      "confirmation_count": 1,
+      "retention_notice_count": 0,
+      "redline_simulation_hit_count": 1,
+      "external_call": false,
+      "source_files_modified": false,
+      "note": "只读趋势聚合样本，不回写源产物。"
+    },
+    {
+      "sample_date": "2026-05-04",
+      "sample_id": "TREND-DAY-003",
+      "sample_mode": "local_readonly_trend_preview",
+      "daily_total_count": 8,
+      "daily_pass_count": 8,
+      "pass_rate": 1.0,
+      "pause_count": 0,
+      "confirmation_count": 2,
+      "retention_notice_count": 1,
+      "redline_simulation_hit_count": 0,
+      "external_call": false,
+      "source_files_modified": false,
+      "note": "只读趋势聚合样本，不回写源产物。"
+    },
+    {
+      "sample_date": "2026-05-05",
+      "sample_id": "TREND-DAY-004",
+      "sample_mode": "local_readonly_trend_preview",
+      "daily_total_count": 9,
+      "daily_pass_count": 9,
+      "pass_rate": 1.0,
+      "pause_count": 1,
+      "confirmation_count": 1,
+      "retention_notice_count": 0,
+      "redline_simulation_hit_count": 1,
+      "external_call": false,
+      "source_files_modified": false,
+      "note": "只读趋势聚合样本，不回写源产物。"
+    },
+    {
+      "sample_date": "2026-05-06",
+      "sample_id": "TREND-DAY-005",
+      "sample_mode": "local_readonly_trend_preview",
+      "daily_total_count": 9,
+      "daily_pass_count": 8,
+      "pass_rate": 0.8889,
+      "pause_count": 1,
+      "confirmation_count": 2,
+      "retention_notice_count": 1,
+      "redline_simulation_hit_count": 1,
+      "external_call": false,
+      "source_files_modified": false,
+      "note": "只读趋势聚合样本，不回写源产物。"
+    },
+    {
+      "sample_date": "2026-05-07",
+      "sample_id": "TREND-DAY-006",
+      "sample_mode": "local_readonly_trend_preview",
+      "daily_total_count": 10,
+      "daily_pass_count": 10,
+      "pass_rate": 1.0,
+      "pause_count": 0,
+      "confirmation_count": 2,
+      "retention_notice_count": 1,
+      "redline_simulation_hit_count": 0,
+      "external_call": false,
+      "source_files_modified": false,
+      "note": "只读趋势聚合样本，不回写源产物。"
+    },
+    {
+      "sample_date": "2026-05-08",
+      "sample_id": "TREND-DAY-007",
+      "sample_mode": "local_readonly_trend_preview",
+      "daily_total_count": 10,
+      "daily_pass_count": 10,
+      "pass_rate": 1.0,
+      "pause_count": 2,
+      "confirmation_count": 4,
+      "retention_notice_count": 4,
+      "redline_simulation_hit_count": 6,
+      "external_call": false,
+      "source_files_modified": false,
+      "note": "只读趋势聚合样本，不回写源产物。"
+    }
+  ],
+  "source_metrics": {
+    "source_file_count": 7,
+    "source_pass_count": 7,
+    "pause_count_from_sources": 6,
+    "confirmation_count_from_sources": 12,
+    "retention_notice_count_from_sources": 4,
+    "redline_simulation_hit_count_from_sources": 6,
+    "cross_day_manual_review_count_from_sources": 3
+  },
+  "source_files": [
+    {
+      "source_id": "SRC-104",
+      "name": "连续三轮干跑预演包",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\104低风险只读调度器连续三轮干跑预演包\\低风险只读调度器连续三轮干跑预演包_最新.json",
+      "exists": true,
+      "size": 2595,
+      "mtime": "2026-05-08 20:12:40",
+      "sha256": "eb04731cbe199a5720c4186f7ecb7991bffb583a0da18bd18ed501840546e98a"
+    },
+    {
+      "source_id": "SRC-106-A",
+      "name": "红线失败注入自动暂停演练报告",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\106低风险只读调度红线失败注入与自动暂停演练包\\自动暂停演练报告_最新.json",
+      "exists": true,
+      "size": 4657,
+      "mtime": "2026-05-08 20:12:37",
+      "sha256": "347bcd854af6e54ea58788ef93e3cc065648998b87076e913b6ff40cda0ea0d4"
+    },
+    {
+      "source_id": "SRC-106-B",
+      "name": "红线失败注入总管确认事项清单",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\106低风险只读调度红线失败注入与自动暂停演练包\\总管确认事项清单_最新.json",
+      "exists": true,
+      "size": 3847,
+      "mtime": "2026-05-08 20:12:33",
+      "sha256": "72807afe411e1c8c962811facbc7f8214eb2b7fe04fab59ae915648d41cf0d53"
+    },
+    {
+      "source_id": "SRC-110",
+      "name": "异常升级总管确认队列",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\110低风险只读调度器异常升级草案与总管确认队列包\\总管确认队列_最新.json",
+      "exists": true,
+      "size": 5238,
+      "mtime": "2026-05-08 20:28:39",
+      "sha256": "6fd8bd25824f38d4bf35bbecdf52473b8806cbf2298f61cea10bf5a7e311d86b"
+    },
+    {
+      "source_id": "SRC-116",
+      "name": "跨日值守接续预演结果",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\116低风险只读调度器跨日值守接续预演包\\跨日值守接续预演结果_最新.json",
+      "exists": true,
+      "size": 10010,
+      "mtime": "2026-05-08 21:19:03",
+      "sha256": "08c26619b42ad83ad9c53dc060e777fa98503dff8af5369c996120d284696e94"
+    },
+    {
+      "source_id": "SRC-117",
+      "name": "交接班摘要",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\117低风险只读调度器交接班摘要与未完成项继承包\\交接班摘要_最新.json",
+      "exists": true,
+      "size": 2170,
+      "mtime": "2026-05-08 21:17:36",
+      "sha256": "b1ba16059c4eff8d6c85b02d85be1fcf72508a7d0b74e8249331fe61bcf39e4e"
+    },
+    {
+      "source_id": "SRC-118",
+      "name": "证据留存到期检查与不删除预演报告",
+      "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\118低风险只读调度器证据留存到期检查与不删除预演包\\不删除预演报告_最新.json",
+      "exists": true,
+      "size": 2603,
+      "mtime": "2026-05-08 21:18:26",
+      "sha256": "82dbd6ad1b362da6c171aee861dd0ff8c1d3171ad94091d77c0dc33f9bb79fb8"
+    }
+  ],
+  "trend_generated": true,
+  "source_files_modified": false,
+  "external_call": false,
+  "hard_red_line_confirmation": {
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "write_formal_rule": false,
+    "auto_promote_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false,
+    "external_call": false
+  }
+}

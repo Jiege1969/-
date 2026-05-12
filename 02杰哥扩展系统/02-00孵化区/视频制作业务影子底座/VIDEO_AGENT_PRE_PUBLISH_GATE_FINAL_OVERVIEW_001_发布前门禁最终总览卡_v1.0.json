@@ -1,0 +1,36 @@
+{
+  "asset_id": "VIDEO_AGENT_PRE_PUBLISH_GATE_FINAL_OVERVIEW_001",
+  "version": "v1.0",
+  "asset_type": "gate_overview_card",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "final_human_gate_overview_before_video_publishing",
+  "status": "draft",
+  "purpose": "Show all key pre-publish gates in one card so humans can see why publishing is blocked or whether manager review is needed.",
+  "gates": [
+    {"gate": "generation_release", "required_proof": "generation_release_list_or_receipt", "default_state": "pending_confirmation", "failure_action": "return_to_generation_release_review"},
+    {"gate": "real_render_release", "required_proof": "render_release_list_or_receipt", "default_state": "pending_confirmation", "failure_action": "return_to_render_release_review"},
+    {"gate": "final_preview", "required_proof": "preview_review_receipt", "default_state": "pending_confirmation", "failure_action": "return_to_preview_review_queue"},
+    {"gate": "ai_label", "required_proof": "ai_label_confirmation_receipt", "default_state": "pending_confirmation", "failure_action": "return_to_publishing_compliance_review_queue"},
+    {"gate": "material_authorization", "required_proof": "material_authorization_proof_receipt", "default_state": "pending_confirmation", "failure_action": "return_to_material_authorization_review_queue"},
+    {"gate": "multi_platform_check", "required_proof": "separate_check_receipt_per_platform", "default_state": "pending_confirmation", "failure_action": "return_to_platform_difference_review"},
+    {"gate": "publishing_release", "required_proof": "publishing_release_confirmation_receipt", "default_state": "pending_confirmation", "failure_action": "return_to_gate_consistency_review"},
+    {"gate": "redline_scan", "required_proof": "no_open_redline_or_manager_handled", "default_state": "pending_confirmation", "failure_action": "keep_blocked"}
+  ],
+  "judgement_rules": [
+    "If any gate is pending, publishing remains blocked.",
+    "If any redline is open, publishing remains blocked.",
+    "Even when all gates are complete, do not auto-publish; move only to pending manager or human final confirmation.",
+    "Multi-platform publishing must be judged per platform, not by a global pass."
+  ],
+  "output_template": {
+    "conclusion": "pre_publish_gate_overview_failed_or_pending",
+    "blocked_gates": "list",
+    "next_action": "corresponding_review_queue",
+    "real_system_triggered": false
+  },
+  "boundaries": {
+    "connect_platform": false,
+    "wecom_real_send": false,
+    "call_publish_tool": false
+  }
+}

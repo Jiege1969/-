@@ -1,0 +1,44 @@
+{
+  "matrix_id": "01智能系统_API模型路由干跑失败降级矩阵",
+  "version": "2026-05-05.H",
+  "dry_run": true,
+  "real_model_invocation_enabled": false,
+  "entries": [
+    {
+      "code": "DRYRUN_API_400_SCHEMA_INVALID",
+      "layer": "api_contract_validation",
+      "condition": "标准任务单缺字段或schema_version不匹配",
+      "action": "拒绝进入模型路由，输出VALIDATION_FAILED receipt",
+      "external_call": false
+    },
+    {
+      "code": "DRYRUN_ROUTE_404_NO_SAFE_ROUTE",
+      "layer": "model_route_selection",
+      "condition": "没有满足安全闸口的候选路由",
+      "action": "降级到BLOCKED_NO_SAFE_ROUTE receipt",
+      "external_call": false
+    },
+    {
+      "code": "DRYRUN_MODEL_451_REAL_MODEL_DISABLED",
+      "layer": "model_route_selection",
+      "condition": "任务要求真实模型输出或流式生成",
+      "action": "降级到标签选择和计划回执，不调用模型",
+      "external_call": false
+    },
+    {
+      "code": "DRYRUN_MW_452_EXTERNAL_TRIGGER_DISABLED",
+      "layer": "middleware_capability_plan",
+      "condition": "计划要求触发n8n、企业微信、券商接口或外部服务",
+      "action": "保留中台计划标签，阻断真实触发",
+      "external_call": false
+    },
+    {
+      "code": "DRYRUN_DB_453_FORMAL_WRITE_DISABLED",
+      "layer": "middleware_capability_plan",
+      "condition": "计划要求正式库、向量库或真实Redis写入",
+      "action": "降级为影子写入计划，不连接正式资源",
+      "external_call": false
+    }
+  ],
+  "acceptance_rule": "所有失败码均必须给出receipt输出；所有降级动作均不得触发外部服务。"
+}

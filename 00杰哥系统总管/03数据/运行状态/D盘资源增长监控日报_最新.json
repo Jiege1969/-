@@ -1,0 +1,179 @@
+﻿{
+    "report_name":  "D盘资源增长监控日报",
+    "record_time":  "2026-05-13 08:10:01",
+    "overall_status":  "ok",
+    "logical_disks":  [
+                          {
+                              "drive":  "C:",
+                              "size_gb":  150.002,
+                              "free_gb":  60.41,
+                              "free_percent":  40.27,
+                              "status":  "observed"
+                          },
+                          {
+                              "drive":  "D:",
+                              "size_gb":  781.199,
+                              "free_gb":  376.917,
+                              "free_percent":  48.25,
+                              "status":  "ok"
+                          },
+                          {
+                              "drive":  "E:",
+                              "size_gb":  465.76,
+                              "free_gb":  460.458,
+                              "free_percent":  98.86,
+                              "status":  "observed"
+                          },
+                          {
+                              "drive":  "F:",
+                              "size_gb":  3726.006,
+                              "free_gb":  3437.652,
+                              "free_percent":  92.26,
+                              "status":  "observed"
+                          }
+                      ],
+    "directory_stats":  {
+                            "wsl2":  {
+                                         "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\WSL2",
+                                         "exists":  true,
+                                         "bytes":  203422732631,
+                                         "gb":  189.452,
+                                         "file_count":  4
+                                     },
+                            "ollama":  {
+                                           "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\ollama",
+                                           "exists":  true,
+                                           "bytes":  143874453782,
+                                           "gb":  133.994,
+                                           "file_count":  120
+                                       },
+                            "manager_logs":  {
+                                                 "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志",
+                                                 "exists":  true,
+                                                 "bytes":  127427177,
+                                                 "gb":  0.119,
+                                                 "file_count":  707
+                                             },
+                            "manager_backups":  {
+                                                    "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\05备份",
+                                                    "exists":  true,
+                                                    "bytes":  167918,
+                                                    "gb":  0,
+                                                    "file_count":  7
+                                                },
+                            "f_backup":  {
+                                             "path":  "F:\\系统备份",
+                                             "exists":  true,
+                                             "bytes":  272340759679,
+                                             "gb":  253.637,
+                                             "file_count":  45321
+                                         }
+                        },
+    "vhdx_stats":  {
+                       "docker_data_vhdx":  {
+                                                "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\WSL2\\docker_data.vhdx",
+                                                "exists":  false,
+                                                "bytes":  0,
+                                                "gb":  0
+                                            },
+                       "ubuntu_ext4_vhdx":  {
+                                                "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\WSL2\\Ubuntu-24.04\\ext4.vhdx",
+                                                "exists":  true,
+                                                "bytes":  85931851776,
+                                                "gb":  80.03
+                                            }
+                   },
+    "thresholds":  {
+                       "d_free_gb":  {
+                                         "warning":  200,
+                                         "serious":  120,
+                                         "urgent":  80,
+                                         "direction":  "Low"
+                                     },
+                       "wsl2_gb":  {
+                                       "warning":  220,
+                                       "serious":  260,
+                                       "urgent":  300,
+                                       "direction":  "High"
+                                   },
+                       "docker_data_vhdx_gb":  {
+                                                   "warning":  130,
+                                                   "serious":  160,
+                                                   "urgent":  200,
+                                                   "direction":  "High"
+                                               },
+                       "ubuntu_ext4_vhdx_gb":  {
+                                                   "warning":  100,
+                                                   "serious":  130,
+                                                   "urgent":  160,
+                                                   "direction":  "High"
+                                               },
+                       "ollama_gb":  {
+                                         "warning":  150,
+                                         "serious":  180,
+                                         "urgent":  220,
+                                         "direction":  "High"
+                                     },
+                       "manager_logs_gb":  {
+                                               "warning":  2,
+                                               "serious":  5,
+                                               "urgent":  10,
+                                               "direction":  "High"
+                                           },
+                       "manager_backups_gb":  {
+                                                  "warning":  5,
+                                                  "serious":  10,
+                                                  "urgent":  20,
+                                                  "direction":  "High"
+                                              },
+                       "f_free_gb":  {
+                                         "warning":  1024,
+                                         "serious":  500,
+                                         "urgent":  300,
+                                         "direction":  "Low"
+                                     }
+                   },
+    "checks":  {
+                   "d_free_gb":  {
+                                     "value":  376.917,
+                                     "status":  "ok"
+                                 },
+                   "wsl2_gb":  {
+                                   "value":  189.452,
+                                   "status":  "ok"
+                               },
+                   "docker_data_vhdx_gb":  {
+                                               "value":  0,
+                                               "status":  "ok"
+                                           },
+                   "ubuntu_ext4_vhdx_gb":  {
+                                               "value":  80.03,
+                                               "status":  "ok"
+                                           },
+                   "ollama_gb":  {
+                                     "value":  133.994,
+                                     "status":  "ok"
+                                 },
+                   "manager_logs_gb":  {
+                                           "value":  0.119,
+                                           "status":  "ok"
+                                       },
+                   "manager_backups_gb":  {
+                                              "value":  0,
+                                              "status":  "ok"
+                                          },
+                   "f_free_gb":  {
+                                     "value":  3437.652,
+                                     "status":  "ok"
+                                 }
+               },
+    "safety":  {
+                   "delete_files":  false,
+                   "compress_files":  false,
+                   "move_files":  false,
+                   "trigger_n8n":  false,
+                   "send_wecom":  false,
+                   "call_broker_api":  false,
+                   "auto_trade":  false
+               }
+}

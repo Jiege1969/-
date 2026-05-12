@@ -1,0 +1,12 @@
+{
+  "name": "股票线第五批低风险续建队列验收",
+  "generated_at": "2026-05-08 12:42:49",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 2
+  }
+}

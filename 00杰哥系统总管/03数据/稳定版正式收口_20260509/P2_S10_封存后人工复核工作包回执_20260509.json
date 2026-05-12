@@ -1,0 +1,33 @@
+{
+  "id": "P2-S10-SHADOW-ENTRY-HUMAN-REVIEW-PACKET-RECEIPT-20260509",
+  "executed_at": "2026-05-09 12:11:21 +08:00",
+  "execution_type": "readonly_preview",
+  "status": "pass",
+  "command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S10封存后人工复核工作包只读检查.py'",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\59P2S10封存后人工复核工作包只读检查\\P2S10封存后人工复核工作包只读检查_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\59P2S10封存后人工复核工作包只读检查\\P2S10封存后人工复核工作包只读检查_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\59P2S10封存后人工复核工作包只读检查\\P2S10封存后人工复核工作包预演样例_20260509.json"
+  ],
+  "summary": {
+    "review_item_count": 7,
+    "passed": 7,
+    "failed": 0,
+    "release_forms": 0,
+    "auto_fill_shadow_entry": 0,
+    "write_target_entry": 0
+  },
+  "conclusion": "封存后人工复核工作包预演通过；7 个封存项均生成复核问题、允许动作和禁止动作，且不构成放行单、不自动填写影子入口。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

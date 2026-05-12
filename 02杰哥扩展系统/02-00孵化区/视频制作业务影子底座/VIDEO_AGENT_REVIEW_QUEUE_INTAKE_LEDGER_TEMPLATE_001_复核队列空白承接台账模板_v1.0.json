@@ -1,0 +1,40 @@
+{
+  "asset_id": "VIDEO_AGENT_REVIEW_QUEUE_INTAKE_LEDGER_TEMPLATE_001",
+  "version": "v1.0",
+  "asset_type": "blank_ledger_template",
+  "construction_level": "W1/R0",
+  "scope": "video_shadow_review_queues",
+  "status": "draft_template_not_connected_to_real_ledger",
+  "fields": [
+    {"name": "intake_id", "description": "Review intake id."},
+    {"name": "shadow_task_id", "description": "Shadow task id."},
+    {"name": "source_gap_id", "description": "Source gap id."},
+    {"name": "review_queue", "description": "Review queue."},
+    {"name": "primary_owner_role", "description": "Primary owner role."},
+    {"name": "intake_time", "description": "Placeholder intake time."},
+    {"name": "expected_output", "description": "Question, receipt, draft, or blocker record."},
+    {"name": "current_status", "allowed_values": ["pending_intake", "in_progress", "waiting_human_input", "closed", "blocked_by_redline"]},
+    {"name": "blocker_reason", "description": "Blocker reason."},
+    {"name": "real_system_triggered", "default": false, "description": "Must remain false."},
+    {"name": "handoff_record", "description": "Alignment handoff record."}
+  ],
+  "blank_row": {
+    "intake_id": "to_be_filled",
+    "shadow_task_id": "to_be_filled",
+    "source_gap_id": "to_be_filled",
+    "review_queue": "to_be_filled",
+    "primary_owner_role": "to_be_filled",
+    "current_status": "pending_intake",
+    "expected_output": "to_be_filled",
+    "blocker_reason": "-",
+    "real_system_triggered": false,
+    "handoff_record": "to_be_filled"
+  },
+  "boundaries": {
+    "write_real_database": false,
+    "create_real_ticket": false,
+    "assign_real_people": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false
+  }
+}

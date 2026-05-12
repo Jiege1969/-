@@ -1,0 +1,106 @@
+{
+  "name": "低风险只读调度干跑结果漂移复核规则",
+  "generated_at": "2026-05-08 20:13:44",
+  "scope": "readonly_compare_only_no_source_mutation",
+  "source_priority": [
+    "第104包安全边界与低风险台账摘要",
+    "本地低风险只读调度预演台账作为三轮干跑样例"
+  ],
+  "source_files": {
+    "package104": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\104完全交付使用版低风险续建第二批复核包\\完全交付使用版低风险续建第二批复核包_最新.json",
+    "readonly_ledger": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\调度预演台账_最新.json",
+    "ledger_field_definition": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\运行台账字段定义_最新.json",
+    "readonly_run_report": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\调度运行台账归档预演执行报告_最新.json"
+  },
+  "checks": [
+    {
+      "id": "task_count",
+      "name": "任务数量",
+      "method": "三轮 normalized_plan.task_count 必须完全一致，且不少于 1。",
+      "pass_when": "drift_count=0"
+    },
+    {
+      "id": "task_order",
+      "name": "任务顺序",
+      "method": "比较 task_id 顺序与每条任务 normalized hash 顺序。",
+      "pass_when": "diff_count=0"
+    },
+    {
+      "id": "redline_scan_summary",
+      "name": "红线扫描摘要",
+      "method": "扫描源包和三轮计划中的企业微信、n8n、券商、交易、税局、财税、正式规则、总管面板、一键接续、重载字段。",
+      "pass_when": "redline_regression_count=0"
+    },
+    {
+      "id": "safety_boundary_fields",
+      "name": "安全边界字段",
+      "method": "关键安全字段必须存在于复核结果并固定为 false。",
+      "pass_when": "missing_count=0 and redline_regression_count=0"
+    },
+    {
+      "id": "ledger_fields",
+      "name": "台账字段",
+      "method": "每条任务必须包含 task_id、task_name、plan_time、preview_status、pause_required、evidence_path、hash、operator_mode。",
+      "pass_when": "missing_count=0"
+    }
+  ],
+  "required_ledger_fields": [
+    "task_id",
+    "task_name",
+    "plan_time",
+    "preview_status",
+    "pause_required",
+    "evidence_path",
+    "hash",
+    "operator_mode"
+  ],
+  "required_false_fields": [
+    "real_wecom_send",
+    "trigger_n8n",
+    "external_call",
+    "broker_connection",
+    "trade_order",
+    "tax_bureau_login",
+    "finance_tax_software_connection",
+    "auto_promote_formal_rule",
+    "modify_supervisor_panel",
+    "modify_one_click_continuation_package",
+    "reload_service",
+    "actual_execution",
+    "copy_source_files",
+    "move_source_files",
+    "source_files_modified"
+  ],
+  "expected_results": {
+    "repeated_preview_same_plan": true,
+    "source_files_modified": false,
+    "diff_count": 0,
+    "drift_count": 0,
+    "missing_count": 0,
+    "redline_regression_count": 0,
+    "external_call": false
+  },
+  "actual_execution": false,
+  "copy_source_files": false,
+  "move_source_files": false,
+  "source_files_modified": false,
+  "external_call": false,
+  "reload_service": false,
+  "hard_red_line_confirmation": {
+    "real_wecom_send": false,
+    "trigger_n8n": false,
+    "external_call": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "auto_promote_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false,
+    "actual_execution": false,
+    "copy_source_files": false,
+    "move_source_files": false,
+    "source_files_modified": false
+  }
+}

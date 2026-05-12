@@ -1,0 +1,28 @@
+[
+  {
+    "event_id": "POL-2023-001",
+    "title": "商务部 海关总署公告2023年第23号 关于对镓、锗相关物项实施出口管制的公告",
+    "publish_date": "2023-07-03",
+    "effective_date": "2023-08-01",
+    "valid_until": null,
+    "decay_days": 180,
+    "status": "superseded_active",
+    "retired_reason": "原公告相关列管物项后续纳入两用物项出口管制清单管理，但锗相关物项出口许可约束仍需作为长期政策背景跟踪。",
+    "last_reviewed_at": "2026-05-07",
+    "source_url": "https://dcj.mofcom.gov.cn/article/zcfb/zcdwmy/202307/20230703419666.shtml",
+    "source_name": "商务部、海关总署",
+    "source_level": "official",
+    "impact_direction": "利好",
+    "impact_strength": 0.85,
+    "event_confidence": 0.95,
+    "industry_tags": [
+      "稀有金属",
+      "半导体材料",
+      "出口管制",
+      "锗"
+    ],
+    "description": "商务部、海关总署公告对满足特性的镓、锗相关物项实施出口管制。该事件可能提高锗资源及锗材料的战略稀缺性和市场关注度，对具备锗资源、锗产品生产或加工能力的A股公司形成政策催化。",
+    "full_text_summary": "公告列明金属锗、区熔锗锭、磷锗锌、锗外延生长衬底、二氧化锗、四氯化锗等锗相关物项，要求满足相关特性的物项未经许可不得出口。出口经营者需按规定办理出口许可手续，公告自2023年8月1日起正式实施。",
+    "risk_counterpoint": "政策利好并不等同于盈利兑现。若下游需求疲软、出口许可执行节奏变化、替代材料出现或锗价未持续上行，相关个股的政策溢价可能减弱。"
+  }
+]

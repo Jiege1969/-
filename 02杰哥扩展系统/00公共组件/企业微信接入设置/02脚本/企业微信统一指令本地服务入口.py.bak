@@ -1,0 +1,969 @@
+# -*- coding: utf-8 -*-
+"""
+名称：企业微信统一指令本地服务入口.py
+作用：提供企业微信统一指令本地HTTP服务，把单条用户指令路由到股票、系统状态、知识库、内容办公、视频、税收待复核分析或澄清入口。
+触发方式：python 企业微信统一指令本地服务入口.py
+依赖：Python标准库；生成企业微信统一指令本地调用预演.py；企业微信统一指令路由预演规则.json；企业微信统一指令本地调用预演规则.json。
+所属系统：02杰哥扩展系统/00公共组件/企业微信接入设置
+安全边界：只绑定127.0.0.1；只进行本机低风险读取和预演调用；不真实发送企业微信；不触发Webhook；不触发n8n；不写正式库；不写旧系统；不接入税收真实业务；不接入交易。
+创建/修改记录：2026-04-29 创建企业微信统一指令本地服务入口。
+标识：wecom-unified-command-local-service
+"""
+
+from __future__ import annotations
+
+import importlib.util
+import json
+import re
+import socket
+import subprocess
+import sys
+import urllib.parse
+from datetime import datetime
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+from typing import Any
+
+
+HOST = "127.0.0.1"
+PORT = 19310
+
+
+def module_root() -> Path:
+    return Path(__file__).resolve().parents[1]
+
+
+ROOT = module_root()
+ROUTE_CONFIG_PATH = ROOT / "01配置" / "企业微信统一指令路由预演规则.json"
+CALL_CONFIG_PATH = ROOT / "01配置" / "企业微信统一指令本地调用预演规则.json"
+LOCAL_PREVIEW_SCRIPT = ROOT / "02脚本" / "生成企业微信统一指令本地调用预演.py"
+LOG_DIR = ROOT / "04日志" / "统一指令本地服务"
+
+
+def find_system_root() -> Path:
+    for candidate in (ROOT, *ROOT.parents):
+        if (candidate / "00杰哥系统总管").exists() and (candidate / "02杰哥扩展系统").exists():
+            return candidate
+    return ROOT.parents[2]
+
+
+SYSTEM_ROOT = find_system_root()
+LATEST_AUDIT_JSON = SYSTEM_ROOT / "00杰哥系统总管" / "03数据" / "运行状态" / "全系统只读总检与设计纲领对齐审计_最新.json"
+LATEST_PROGRESS_JSON = SYSTEM_ROOT / "00杰哥系统总管" / "03数据" / "阶段判定" / "当前总体进度报告_最新.json"
+CURRENT_PANEL_MD = SYSTEM_ROOT / "00杰哥系统总管" / "07文档" / "当前施工面板.md"
+ONE_CLICK_RESUME_RULE = SYSTEM_ROOT / "00杰哥系统总管" / "01配置" / "一键接续施工包规则.json"
+DEFAULT_ONE_CLICK_RESUME_MD = SYSTEM_ROOT / "00杰哥系统总管" / "03数据" / "开工上下文" / "一键接续施工包_最新.md"
+DEFAULT_ONE_CLICK_RESUME_JSON = SYSTEM_ROOT / "00杰哥系统总管" / "03数据" / "开工上下文" / "一键接续施工包_最新.json"
+VIDEO_ASSISTANT_SCRIPT = SYSTEM_ROOT / "02杰哥扩展系统" / "02视频制作系统" / "02脚本" / "wecom_video_assistant.py"
+FEEDBACK_INTAKE_SCRIPT = SYSTEM_ROOT / "03杰哥进化系统" / "02脚本" / "执行多机器人企业微信需求反馈本地入账.py"
+STOCK_WATCH_POOL_JSON = SYSTEM_ROOT / "02杰哥扩展系统" / "01股票研究系统" / "01配置" / "重点关注股票池.json"
+
+
+def load_json(path: Path, default: Any = None) -> Any:
+    if not path.exists():
+        return default
+    return json.loads(path.read_text(encoding="utf-8-sig"))
+
+
+def write_json(path: Path, data: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def load_preview_module() -> Any:
+    spec = importlib.util.spec_from_file_location("wecom_local_preview", LOCAL_PREVIEW_SCRIPT)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"无法加载统一指令本地调用预演脚本：{LOCAL_PREVIEW_SCRIPT}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+PREVIEW_MODULE = load_preview_module()
+
+
+def load_video_assistant_module() -> Any:
+    spec = importlib.util.spec_from_file_location("wecom_video_assistant", VIDEO_ASSISTANT_SCRIPT)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"无法加载杰哥视频助理指令处理器：{VIDEO_ASSISTANT_SCRIPT}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+VIDEO_ASSISTANT_MODULE = load_video_assistant_module()
+
+
+def normalize_message(text: str) -> str:
+    return re.sub(r"\s+", "", str(text).strip().lower())
+
+
+def load_stock_terms() -> set[str]:
+    data = load_json(STOCK_WATCH_POOL_JSON, {}) or {}
+    terms: set[str] = set()
+    for item in data.get("股票池", []):
+        if not isinstance(item, dict):
+            continue
+        for key in ("名称", "代码", "展示代码"):
+            value = str(item.get(key) or "").strip()
+            if not value:
+                continue
+            terms.add(normalize_message(value))
+            if len(value) >= 8 and value[:2].lower() in {"sh", "sz", "bj"}:
+                terms.add(normalize_message(value[2:]))
+    return {term for term in terms if len(term) >= 2}
+
+
+STOCK_TERMS = load_stock_terms()
+
+
+def text_response(body: str, status: int = 200, content_type: str = "text/plain; charset=utf-8") -> tuple[int, bytes, str]:
+    return status, body.encode("utf-8"), content_type
+
+
+def json_response(data: dict[str, Any], status: int = 200) -> tuple[int, bytes, str]:
+    return status, json.dumps(data, ensure_ascii=False, indent=2).encode("utf-8"), "application/json; charset=utf-8"
+
+
+def build_health() -> dict[str, Any]:
+    route_config = load_json(ROUTE_CONFIG_PATH, {})
+    call_config = load_json(CALL_CONFIG_PATH, {})
+    routes = [item.get("路由") for item in route_config.get("路由规则", [])]
+    routes.append(route_config.get("兜底路由", {}).get("路由", "澄清一次"))
+    return {
+        "状态": "正常",
+        "服务": "企业微信统一指令本地服务",
+        "地址": f"http://{HOST}:{PORT}",
+        "路由数量": len([item for item in routes if item]),
+        "路由": routes,
+        "调用模式": call_config.get("调用模式", "local_preview_only"),
+        "n8n口径": "检查项可读，真实触发关闭",
+        "安全边界": {
+            "绑定地址": HOST,
+            "真实发送企业微信": False,
+            "触发Webhook": False,
+            "触发n8n": False,
+            "写正式库": False,
+            "写旧系统": False,
+            "接入税收真实业务": False,
+            "交易接口": False,
+        },
+    }
+
+
+def is_ping_message(message: str) -> bool:
+    normalized = "".join(str(message).strip().lower().split())
+    if not normalized:
+        return False
+    if normalized in {"ping", "ping一下", "在吗", "在线吗", "系统在线吗", "系统管家在线吗"}:
+        return True
+    return normalized.startswith("ping")
+
+
+def is_system_status_message(message: str) -> bool:
+    normalized = "".join(str(message).strip().lower().split())
+    if not normalized:
+        return False
+    status_words = ("状态", "进度", "自检", "巡检", "总览", "还要多久", "剩余", "工时", "接续", "接续包", "一键接续", "完成了吗", "交付", "系统怎么样")
+    return any(word in normalized for word in status_words)
+
+
+def is_help_message(message: str) -> bool:
+    normalized = "".join(str(message).strip().lower().split())
+    return normalized in {"帮助", "help", "?", "？", "怎么用", "指令", "菜单", "可用指令"}
+
+
+def tcp_ready(port: int, timeout: float = 0.35) -> bool:
+    try:
+        with socket.create_connection((HOST, port), timeout=timeout):
+            return True
+    except OSError:
+        return False
+
+
+def load_latest_audit_summary() -> dict[str, Any]:
+    try:
+        data = load_json(LATEST_AUDIT_JSON, {})
+        summary = data.get("alignment_audit", {}).get("summary", {})
+        return {
+            "p0": summary.get("p0"),
+            "p1": summary.get("p1"),
+            "p2": summary.get("p2"),
+            "delivery_blocked": summary.get("delivery_blocked"),
+            "generated_at": data.get("generated_at"),
+        }
+    except Exception:  # noqa: BLE001
+        return {}
+
+
+def classify_route(message: str) -> dict[str, Any]:
+    route_config = load_json(ROUTE_CONFIG_PATH, {})
+    route = PREVIEW_MODULE.route_message(message, route_config)
+    if str(route.get("路由") or "") == "澄清一次" and looks_like_stock_message(message):
+        return {
+            "路由": "股票研究",
+            "目标系统": "02杰哥扩展系统/01股票研究系统",
+            "能力状态": "已交付使用",
+        }
+    return route
+
+
+def looks_like_stock_message(message: str) -> bool:
+    normalized = normalize_message(message)
+    if re.search(r"(?<!\d)\d{6}(?!\d)", normalized):
+        return True
+    return any(term and term in normalized for term in STOCK_TERMS)
+
+
+def is_stock_question(message: str) -> bool:
+    try:
+        return str(classify_route(message).get("路由") or "") == "股票研究"
+    except Exception:  # noqa: BLE001
+        return False
+
+
+def is_video_question(message: str) -> bool:
+    normalized = "".join(str(message).strip().lower().split())
+    if not normalized:
+        return False
+    if is_help_message(message):
+        return True
+    if re.search(r"vf-\d{8}-\d{3}", normalized, flags=re.IGNORECASE):
+        return True
+    video_terms = ("视频", "素材", "脚本", "分镜", "草案", "复核", "放行", "预检", "渲染", "发布", "字幕", "配音", "镜头")
+    if any(term in normalized for term in video_terms):
+        return True
+    try:
+        return str(classify_route(message).get("路由") or "") == "视频制作"
+    except Exception:  # noqa: BLE001
+        return False
+
+
+def route_hint(route_name: str) -> dict[str, str]:
+    hints = {
+        "股票研究": {
+            "目标机器人": "杰哥股票分析助手 / 杰哥的股票分析专家",
+            "建议路径": "股票企业微信桥接入口：/wecom-bot/message；个股直接发股票名或代码，推荐/市场方向发给股票专家。",
+        },
+        "系统状态": {
+            "目标机器人": "杰哥系统管家",
+            "建议路径": "/wecom/system-manager",
+        },
+        "进化系统状态": {
+            "目标机器人": "杰哥系统管家",
+            "建议路径": "/wecom/system-manager",
+        },
+        "内容办公处理": {
+            "目标机器人": "杰哥工作秘书",
+            "建议路径": "/wecom/work-secretary",
+        },
+        "税收业务待复核分析": {
+            "目标机器人": "杰哥工作秘书",
+            "建议路径": "/wecom/work-secretary",
+        },
+        "知识库问答": {
+            "目标机器人": "杰哥系统管家",
+            "建议路径": "/wecom/system-manager；由系统管家转知识库只读证据链。",
+        },
+        "视频制作": {
+            "目标机器人": "杰哥视频助理",
+            "建议路径": "/wecom/video-assistant",
+        },
+    }
+    return hints.get(route_name, {
+        "目标机器人": "先发系统管家做轻量分流",
+        "建议路径": "/wecom/system-manager",
+    })
+
+
+def build_responsibility_redirect_payload(message: str, source_robot: str, route: dict[str, Any]) -> dict[str, Any]:
+    route_name = str(route.get("路由") or "澄清一次")
+    hint = route_hint(route_name)
+    target_robot = hint["目标机器人"]
+    suggested = suggested_question_for_route(message, route_name)
+    if route_name == "股票研究":
+        content = f"杰哥，您好！这个问题更适合问{target_robot}。我这边不直接判断股票问题，避免越界误答。\n您可以直接这样问：\"{suggested}\""
+    elif route_name == "澄清一次":
+        content = "杰哥，您好！我还没判断出您具体想处理哪件事，您可以说得更具体一点吗？"
+    else:
+        content = f"杰哥，您好！这个问题更适合问{target_robot}。我这边不直接处理这个业务，避免答偏。\n您可以直接这样问：\"{suggested}\""
+    content += "\n安全边界保持：不触发n8n、不发真实消息、不交易。"
+    return {
+        "生成时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "状态": "完成" if route_name != "澄清一次" else "需澄清",
+        "输入": message,
+        "路由": f"{source_robot}职责转交" if route_name != "澄清一次" else f"{source_robot}轻量澄清",
+        "识别路由": route_name,
+        "目标系统": route.get("目标系统"),
+        "能力状态": "已转交提示" if route_name != "澄清一次" else "待补充信息",
+        "回复": content,
+        "reply_text": content,
+        "route": "responsibility-redirect" if route_name != "澄清一次" else "clarify-once",
+        "target_robot": target_robot,
+        "real_send": False,
+        "trade": False,
+        "企业微信模拟回复": {
+            "msgtype": "markdown",
+            "markdown": {"content": f"【{source_robot}】\n{content}"},
+        },
+        "安全边界": {
+            "真实发送企业微信": False,
+            "触发Webhook": False,
+            "触发n8n": False,
+            "写正式库": False,
+            "写旧系统": False,
+            "接入税收真实业务": False,
+            "交易接口": False,
+        },
+    }
+
+
+def suggested_question_for_route(message: str, route_name: str) -> str:
+    text = str(message).strip().strip("。！？!? ")
+    compact = re.sub(r"\s+", "", text)
+    if route_name == "股票研究":
+        subject = re.sub(r"(帮我)?(看一下|看看|分析一下|分析)?", "", compact)
+        subject = re.sub(r"(怎么看|怎么样|什么情况|能买吗|是否值得关注)$", "", subject)
+        subject = subject or compact or "这只股票"
+        return f"分析{subject}"
+    if route_name == "内容办公处理":
+        return f"帮我整理这份材料：{text}"
+    if route_name == "税收业务待复核分析":
+        return f"帮我做税收待复核分析：{text}"
+    if route_name == "视频制作":
+        return f"帮我做视频脚本或分镜：{text}"
+    if route_name == "进化系统状态":
+        return "系统学到了什么？"
+    if route_name == "系统状态":
+        return "系统现在状态怎么样？"
+    if route_name == "知识库问答":
+        return f"帮我查一下依据：{text}"
+    return text or "请帮我处理这件事"
+
+
+def build_entry_clarify_payload(message: str, entry: str = "unified") -> dict[str, Any]:
+    robot = {
+        "system-manager": "杰哥系统管家",
+        "work-secretary": "杰哥工作秘书",
+        "video-assistant": "杰哥视频助理",
+        "unified": "杰哥统一助手",
+    }.get(entry, "杰哥统一助手")
+    normalized = normalize_message(message)
+    if entry == "work-secretary" and any(word in normalized for word in ("写", "东西", "材料", "文案", "内容")):
+        content = "杰哥，您好！这个我可以处理。您想写什么内容？告诉我主题、用途，或者要写给谁就好。"
+    elif entry == "video-assistant":
+        content = "杰哥，您好！我这边主要处理视频脚本、分镜、素材和发布预检。您能说得更具体一点，是想把这件事做成视频，还是问别的事情？"
+    else:
+        content = "杰哥，您好！我还没判断出您具体想处理哪件事，您可以说得更具体一点吗？"
+    return {
+        "生成时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "状态": "需澄清",
+        "输入": message,
+        "路由": "轻量澄清",
+        "目标系统": "00公共组件/企业微信接入设置",
+        "能力状态": "待补充信息",
+        "回复": content,
+        "reply_text": content,
+        "route": "clarify-once",
+        "target_system": "00公共组件/企业微信接入设置",
+        "real_send": False,
+        "trade": False,
+        "企业微信模拟回复": {
+            "msgtype": "markdown",
+            "markdown": {"content": f"【{robot}】\n{content}"},
+        },
+        "安全边界": {
+            "真实发送企业微信": False,
+            "触发Webhook": False,
+            "触发n8n": False,
+            "写正式库": False,
+            "写旧系统": False,
+            "接入税收真实业务": False,
+            "交易接口": False,
+        },
+    }
+
+
+def entry_allowed_routes(entry: str) -> set[str]:
+    if entry == "system-manager":
+        return {"系统状态", "知识库问答", "进化系统状态"}
+    if entry == "work-secretary":
+        return {"内容办公处理", "税收业务待复核分析"}
+    return set()
+
+
+def should_redirect_for_entry(entry: str, route_name: str) -> bool:
+    if entry not in {"system-manager", "work-secretary"}:
+        return False
+    if route_name == "澄清一次":
+        return False
+    return route_name not in entry_allowed_routes(entry)
+
+
+def read_text_if_exists(path: Path, limit: int = 120000) -> str:
+    try:
+        if not path.exists():
+            return ""
+        return path.read_text(encoding="utf-8-sig", errors="ignore")[:limit]
+    except OSError:
+        return ""
+
+
+def first_match(text: str, patterns: list[str]) -> str:
+    for pattern in patterns:
+        match = re.search(pattern, text, flags=re.IGNORECASE)
+        if match:
+            return " ".join(match.group(1).strip().split())
+    return ""
+
+
+def sentence(text: str) -> str:
+    clean = str(text).strip()
+    return clean if clean.endswith(("。", "！", "？", ".", "!", "?")) else f"{clean}。"
+
+
+def load_progress_snapshot() -> dict[str, Any]:
+    structured = load_json(LATEST_PROGRESS_JSON, {})
+    progress_estimate = structured.get("进度估算", {}) if isinstance(structured, dict) else {}
+    main_progress = progress_estimate.get("多功能智能体总体", {}) if isinstance(progress_estimate, dict) else {}
+    time_estimate = structured.get("时间估算", {}) if isinstance(structured, dict) else {}
+    progress = ""
+    if isinstance(main_progress, dict) and main_progress.get("下限") is not None and main_progress.get("上限") is not None:
+        progress = f"{main_progress.get('下限')}%-{main_progress.get('上限')}%"
+    daily_remaining = str(time_estimate.get("到日常可用多功能智能体还需小时") or "").strip() if isinstance(time_estimate, dict) else ""
+    stable_remaining = str(time_estimate.get("到稳定智能体中台还需小时") or "").strip() if isinstance(time_estimate, dict) else ""
+    final_remaining = str(time_estimate.get("到多功能智能体终局还需小时") or "").strip() if isinstance(time_estimate, dict) else ""
+    remaining_parts = []
+    if daily_remaining:
+        remaining_parts.append(f"日常可用 {daily_remaining}小时")
+    if stable_remaining:
+        remaining_parts.append(f"稳定中台 {stable_remaining}小时")
+    if final_remaining:
+        remaining_parts.append(f"终局 {final_remaining}小时")
+    remaining = "；".join(remaining_parts)
+    stage = str(structured.get("当前所在步骤") or "").strip() if isinstance(structured, dict) else ""
+
+    progress_text = read_text_if_exists(LATEST_PROGRESS_JSON)
+    panel_text = read_text_if_exists(CURRENT_PANEL_MD)
+    combined = "\n".join([progress_text, panel_text])
+    progress = progress or first_match(combined, [
+        r"当前进度[：:\"]+\s*([0-9]{1,3}\s*%?\s*[-~至]\s*[0-9]{1,3}\s*%?)",
+        r"全盘当前进度[：:\"]+\s*([0-9]{1,3}\s*%?\s*[-~至]\s*[0-9]{1,3}\s*%?)",
+        r"全盘.*?进度[：:\"]+\s*([0-9]{1,3}\s*%?\s*[-~至]\s*[0-9]{1,3}\s*%?)",
+    ])
+    remaining = remaining or first_match(combined, [
+        r"剩余(?:有效)?(?:工作)?(?:工时|时间)[：:\"]+\s*([0-9.]+\s*[-~至]\s*[0-9.]+\s*小时|[0-9.]+\s*小时)",
+        r"全盘剩余(?:有效)?(?:工作)?(?:工时|时间)[：:\"]+\s*([0-9.]+\s*[-~至]\s*[0-9.]+\s*小时|[0-9.]+\s*小时)",
+    ])
+    stage = stage or first_match(combined, [
+        r"当前状态[：:\"]+\s*([^\n\r\",，。]+)",
+        r"结论[：:\"]+\s*([^\n\r\",，。]+)",
+    ])
+    resume_rule = load_json(ONE_CLICK_RESUME_RULE, {})
+    resume_outputs = resume_rule.get("当前权威输出", {}) if isinstance(resume_rule, dict) else {}
+    resume_md = str(resume_outputs.get("Markdown") or DEFAULT_ONE_CLICK_RESUME_MD)
+    resume_json = str(resume_outputs.get("JSON") or DEFAULT_ONE_CLICK_RESUME_JSON)
+    return {
+        "progress": progress or "未读到最新进度口径",
+        "remaining": remaining or "未读到剩余工时口径",
+        "stage": stage or "按最新总管证据口径运行",
+        "one_click_resume_markdown": resume_md,
+        "one_click_resume_json": resume_json,
+        "progress_file": str(LATEST_PROGRESS_JSON),
+        "panel_file": str(CURRENT_PANEL_MD),
+    }
+
+
+def write_command_log(payload: dict[str, Any]) -> None:
+    write_json(LOG_DIR / "wecom-unified-command-local-service-最新.json", payload)
+
+
+def is_feedback_intake_message(message: str) -> bool:
+    text = "".join(str(message or "").strip().split())
+    if not text:
+        return False
+    subject_terms = ("报告", "回复", "回答", "清单", "草案", "脚本", "分镜", "材料", "进度", "内容", "口径", "功能", "股票名称")
+    feedback_terms = ("缺少", "少了", "太空泛", "太平", "不够", "没讲清", "应该可以", "应该有", "建议", "反馈", "改成", "添加", "补充", "不要")
+    if "需要准备" in text or "需要哪些" in text:
+        return False
+    return any(subject in text for subject in subject_terms) and any(term in text for term in feedback_terms)
+
+
+def feedback_business_for_entry(message: str, entry: str, route: dict[str, Any] | None = None) -> str:
+    route_name = str((route or {}).get("路由") or "")
+    text = str(message or "")
+    if "股票" in text or route_name == "股票研究":
+        return "股票"
+    if "税" in text or route_name == "税收业务待复核分析":
+        return "税收"
+    if "视频" in text or "脚本" in text or "分镜" in text or route_name == "视频制作":
+        return "视频"
+    if "办公" in text or "材料" in text or "文档" in text or "内容" in text or route_name == "内容办公处理":
+        return "办公内容"
+    if entry == "video-assistant":
+        return "视频"
+    if entry == "system-manager":
+        return "系统管家"
+    if entry == "work-secretary":
+        return "办公内容"
+    return "系统管家"
+
+
+def robot_name_for_entry(entry: str, business: str) -> str:
+    if business == "股票":
+        return "股票分析助手/股票分析专家"
+    if business == "税收":
+        return "杰哥工作秘书"
+    if business == "视频":
+        return "杰哥视频助理"
+    if business == "办公内容":
+        return "杰哥工作秘书"
+    if entry == "system-manager":
+        return "杰哥系统管家"
+    return "杰哥系统管家"
+
+
+def build_feedback_intake_payload(message: str, entry: str = "unified", body: dict[str, Any] | None = None) -> dict[str, Any]:
+    route: dict[str, Any] = {}
+    try:
+        route = classify_route(message)
+    except Exception:  # noqa: BLE001
+        route = {}
+    business = str((body or {}).get("business") or (body or {}).get("业务线") or "").strip() or feedback_business_for_entry(message, entry, route)
+    robot = str((body or {}).get("robot") or (body or {}).get("来源机器人") or "").strip() or robot_name_for_entry(entry, business)
+    judgement = str((body or {}).get("judgement") or (body or {}).get("用户判定") or "企业微信自然语言反馈").strip()
+    reply_summary = str((body or {}).get("reply_summary") or (body or {}).get("系统输出摘要") or f"入口={entry}；路由={route.get('路由', '')}").strip()
+    command = [
+        sys.executable,
+        str(FEEDBACK_INTAKE_SCRIPT),
+        "--robot",
+        robot,
+        "--business",
+        business,
+        "--text",
+        str(message or "").strip(),
+        "--reply-summary",
+        reply_summary,
+        "--judgement",
+        judgement,
+    ]
+    completed = subprocess.run(command, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=60)
+    ok = completed.returncode == 0
+    content = "\n".join([
+        "收到，已把这条需求/反馈记入本地候选台账。",
+        f"业务线：{business}",
+        "处理方式：进入进化候选和影子验收，不自动改正式规则。",
+        "安全边界：不触发n8n、不真实发送企业微信、不接券商、不交易、不登录税局、不发布视频。",
+    ]) if ok else "\n".join([
+        "这条反馈暂未入账成功，已保留错误信息等待人工复核。",
+        "安全边界保持：不触发n8n、不真实发送企业微信、不改正式规则。",
+    ])
+    payload = {
+        "生成时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "状态": "完成" if ok else "异常",
+        "输入": message,
+        "路由": "多机器人企业微信需求反馈本地入账",
+        "业务线": business,
+        "来源机器人": robot,
+        "回复": content,
+        "reply_text": content,
+        "real_send": False,
+        "trade": False,
+        "入账器结果": {
+            "返回码": completed.returncode,
+            "stdout": completed.stdout.strip(),
+            "stderr": completed.stderr.strip(),
+        },
+        "安全边界": {
+            "真实发送企业微信": False,
+            "触发Webhook": False,
+            "触发n8n": False,
+            "写正式库": False,
+            "自动转正式规则": False,
+            "写旧系统": False,
+            "接入税收真实业务": False,
+            "登录税局": False,
+            "接财税软件": False,
+            "真实渲染视频": False,
+            "真实发布视频": False,
+            "交易接口": False,
+        },
+    }
+    write_command_log(payload)
+    return payload
+
+
+def build_ping_payload(message: str) -> dict[str, Any]:
+    services = [
+        ("总管入口", 19310),
+        ("股票分析入口", 19300),
+        ("股票企微桥接", 19302),
+        ("v3智能体大脑", 28100),
+        ("n8n检查项", 28679),
+        ("Ollama本地端口", 29134),
+    ]
+    service_rows = [{"名称": name, "端口": port, "正常": tcp_ready(port)} for name, port in services]
+    audit = load_latest_audit_summary()
+    offline = [f"{item['名称']}({item['端口']})" for item in service_rows if not item["正常"]]
+    if offline:
+        n8n_row = next((item for item in service_rows if item["名称"] == "n8n检查项"), {})
+        n8n_note = "n8n检查项可读，真实触发关闭。" if n8n_row.get("正常") else "n8n检查项暂不可读，真实触发仍关闭。"
+        lines = [
+            "杰哥，系统管家在线，我已经看过一遍。",
+            "有入口暂时没准备好：" + "、".join(offline),
+            n8n_note,
+        ]
+    else:
+        lines = [
+            "杰哥，系统管家在线，我已经看过一遍。",
+            "核心入口都在：总管、股票分析、股票企微桥接、v3大脑、Ollama 正常；n8n检查项可读，真实触发关闭。",
+        ]
+    if audit:
+        lines.append(
+            f"只读巡检：P0={audit.get('p0')}、P1={audit.get('p1')}、P2={audit.get('p2')}，"
+            f"交付阻断：{audit.get('delivery_blocked')}"
+        )
+    lines.append("安全边界保持：不触发n8n、不发真实消息、不交易。")
+    content = "\n".join(lines)
+    return {
+        "生成时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "状态": "完成",
+        "输入": message,
+        "路由": "系统管家ping确定性健康检查",
+        "目标系统": "00杰哥系统总管",
+        "能力状态": "日常可用",
+        "回复": content,
+        "reply_text": content,
+        "route": "system-manager-ping",
+        "target_system": "00杰哥系统总管",
+        "service_checks": service_rows,
+        "latest_readonly_audit": audit,
+        "real_send": False,
+        "trade": False,
+        "企业微信模拟回复": {
+            "msgtype": "markdown",
+            "markdown": {"content": f"【杰哥系统管家】\n{content}"},
+        },
+        "安全边界": {
+            "真实发送企业微信": False,
+            "触发Webhook": False,
+            "触发n8n": False,
+            "写正式库": False,
+            "写旧系统": False,
+            "接入税收真实业务": False,
+            "交易接口": False,
+        },
+    }
+
+
+def build_system_status_payload(message: str) -> dict[str, Any]:
+    services = [
+        ("总管", 19310),
+        ("股票分析", 19300),
+        ("股票企微桥接", 19302),
+        ("v3大脑", 28100),
+        ("n8n检查项", 28679),
+        ("Ollama", 29134),
+    ]
+    service_rows = [{"名称": name, "端口": port, "正常": tcp_ready(port)} for name, port in services]
+    offline = [f"{item['名称']}({item['端口']})" for item in service_rows if not item["正常"]]
+    audit = load_latest_audit_summary()
+    progress = load_progress_snapshot()
+    lines = ["杰哥，我按总管最新证据看了一遍。"]
+    lines.append(f"当前进度：{progress['progress']}；剩余有效工时：{progress['remaining']}。")
+    lines.append("当前状态：" + sentence(progress["stage"]))
+    lines.append(f"一键接续包：{progress['one_click_resume_markdown']}。")
+    lines.append("n8n口径：检查项可读，真实触发关闭。")
+    if audit:
+        lines.append(f"只读审计：P0={audit.get('p0')}、P1={audit.get('p1')}、P2={audit.get('p2')}，交付阻断：{audit.get('delivery_blocked')}。")
+    if offline:
+        lines.append("需要注意：" + "、".join(offline) + " 暂未就绪。")
+    else:
+        lines.append("核心入口在线，股票分析入口不受影响。")
+    lines.append("安全边界保持：不触发n8n、不发真实消息、不交易。")
+    content = "\n".join(lines)
+    return {
+        "生成时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "状态": "完成",
+        "输入": message,
+        "路由": "系统管家确定性状态查询",
+        "目标系统": "00杰哥系统总管",
+        "能力状态": "日常可用",
+        "回复": content,
+        "reply_text": content,
+        "route": "system-manager-status",
+        "target_system": "00杰哥系统总管",
+        "service_checks": service_rows,
+        "latest_readonly_audit": audit,
+        "progress_snapshot": progress,
+        "real_send": False,
+        "trade": False,
+        "企业微信模拟回复": {
+            "msgtype": "markdown",
+            "markdown": {"content": f"【杰哥系统管家】\n{content}"},
+        },
+        "安全边界": {
+            "真实发送企业微信": False,
+            "触发Webhook": False,
+            "触发n8n": False,
+            "写正式库": False,
+            "写旧系统": False,
+            "接入税收真实业务": False,
+            "交易接口": False,
+        },
+    }
+
+
+def build_help_payload(message: str = "帮助") -> dict[str, Any]:
+    content = "\n".join([
+        "杰哥，我在。常用说法可以这样发：",
+        "1. ping：看系统管家是否在线。",
+        "2. 系统状态 / 自检 / 巡检：看总管、股票、模型和审计状态。",
+        "3. 目前进度怎么样 / 还要多久完成：看最新交付口径。",
+        "4. 一键接续包路径：读取当前权威接续包位置。",
+        "5. 分析 股票代码或名称：这类问题交给股票分析入口处理。",
+        "安全边界保持：不触发n8n、不发真实消息、不交易。",
+    ])
+    return {
+        "生成时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "状态": "完成",
+        "输入": message,
+        "路由": "系统管家帮助",
+        "目标系统": "00杰哥系统总管",
+        "能力状态": "日常可用",
+        "回复": content,
+        "reply_text": content,
+        "route": "system-manager-help",
+        "target_system": "00杰哥系统总管",
+        "real_send": False,
+        "trade": False,
+        "企业微信模拟回复": {
+            "msgtype": "markdown",
+            "markdown": {"content": f"【杰哥系统管家】\n{content}"},
+        },
+        "安全边界": {
+            "真实发送企业微信": False,
+            "触发Webhook": False,
+            "触发n8n": False,
+            "写正式库": False,
+            "写旧系统": False,
+            "接入税收真实业务": False,
+            "交易接口": False,
+        },
+    }
+
+
+def execute_command(message: str, entry: str = "unified") -> dict[str, Any]:
+    if is_feedback_intake_message(message):
+        return build_feedback_intake_payload(message, entry=entry)
+    route: dict[str, Any] = {}
+    if entry in {"system-manager", "work-secretary"}:
+        source_robot = "杰哥系统管家" if entry == "system-manager" else "杰哥工作秘书"
+        route = classify_route(message)
+        route_name = str(route.get("路由") or "")
+        if route_name == "澄清一次":
+            payload = build_entry_clarify_payload(message, entry=entry)
+            write_command_log(payload)
+            return payload
+        if should_redirect_for_entry(entry, route_name):
+            payload = build_responsibility_redirect_payload(message, source_robot, route)
+            write_command_log(payload)
+            return payload
+    if entry in {"system-manager", "work-secretary"} and is_stock_question(message):
+        source_robot = "杰哥系统管家" if entry == "system-manager" else "杰哥工作秘书"
+        payload = build_responsibility_redirect_payload(message, source_robot, route or classify_route(message))
+        write_command_log(payload)
+        return payload
+    if is_ping_message(message):
+        payload = build_ping_payload(message)
+        write_command_log(payload)
+        return payload
+    if is_help_message(message):
+        payload = build_help_payload(message)
+        write_command_log(payload)
+        return payload
+    if is_system_status_message(message):
+        payload = build_system_status_payload(message)
+        write_command_log(payload)
+        return payload
+
+    route_config = load_json(ROUTE_CONFIG_PATH, {})
+    call_config = load_json(CALL_CONFIG_PATH, {})
+    route = PREVIEW_MODULE.route_message(message, route_config)
+    result = PREVIEW_MODULE.execute_local_call(message, route, call_config)
+    content = str(result.get("回复预演", "")).strip()
+    if not content:
+        content = "统一指令本地服务未生成可读回复。"
+    payload = {
+        "生成时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "状态": result.get("调用状态", "完成"),
+        "输入": message,
+        "路由": result.get("路由"),
+        "目标系统": result.get("目标系统"),
+        "能力状态": result.get("能力状态"),
+        "回复": content,
+        "reply_text": content,
+        "route": result.get("路由"),
+        "target_system": result.get("目标系统"),
+        "real_send": False,
+        "trade": False,
+        "企业微信模拟回复": {
+            "msgtype": "markdown",
+            "markdown": {"content": f"【杰哥统一助手】\n{content}"},
+        },
+        "原始结果": result,
+        "安全边界": {
+            "真实发送企业微信": False,
+            "触发Webhook": False,
+            "触发n8n": False,
+            "写正式库": False,
+            "写旧系统": False,
+            "接入税收真实业务": False,
+            "交易接口": False,
+        },
+    }
+    write_command_log(payload)
+    return payload
+
+
+def execute_video_assistant_command(message: str) -> dict[str, Any]:
+    if is_feedback_intake_message(message):
+        return build_feedback_intake_payload(message, entry="video-assistant")
+    if not is_video_question(message):
+        route = classify_route(message)
+        if str(route.get("路由") or "") == "澄清一次":
+            payload = build_entry_clarify_payload(message, entry="video-assistant")
+        else:
+            payload = build_responsibility_redirect_payload(message, "杰哥视频助理", route)
+        write_command_log(payload)
+        return payload
+    payload = VIDEO_ASSISTANT_MODULE.handle_message(message)
+    write_command_log(payload)
+    return payload
+
+
+class Handler(BaseHTTPRequestHandler):
+    server_version = "JiegeWeComUnifiedLocal/1.0"
+
+    def _send(self, response: tuple[int, bytes, str]) -> None:
+        status, body, content_type = response
+        self.send_response(status)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def _body_json(self) -> dict[str, Any]:
+        length = int(self.headers.get("Content-Length") or 0)
+        if length <= 0:
+            return {}
+        raw = self.rfile.read(length).decode("utf-8", errors="replace")
+        return json.loads(raw) if raw.strip() else {}
+
+    def _extract_message(self, body: dict[str, Any]) -> str:
+        direct_keys = ("text", "message", "content", "Content", "指令", "q", "query")
+        for key in direct_keys:
+            value = body.get(key)
+            if isinstance(value, str) and value.strip():
+                return value.strip()
+        nested_paths = (
+            ("text", "content"),
+            ("text", "Content"),
+            ("message", "content"),
+            ("message", "text"),
+            ("data", "content"),
+            ("data", "Content"),
+            ("payload", "text"),
+            ("payload", "content"),
+        )
+        for first, second in nested_paths:
+            value = body.get(first)
+            if isinstance(value, dict):
+                nested = value.get(second)
+                if isinstance(nested, str) and nested.strip():
+                    return nested.strip()
+        return ""
+
+    def log_message(self, format: str, *args: Any) -> None:  # noqa: A003
+        LOG_DIR.mkdir(parents=True, exist_ok=True)
+        line = f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {self.address_string()} {format % args}\n"
+        (LOG_DIR / "access.log").open("a", encoding="utf-8").write(line)
+
+    def do_GET(self) -> None:
+        parsed = urllib.parse.urlparse(self.path)
+        path = urllib.parse.unquote(parsed.path)
+        query = urllib.parse.parse_qs(parsed.query)
+        if path in {"/health", "/健康"}:
+            self._send(json_response(build_health()))
+            return
+        if path == "/wecom/video-assistant":
+            message = str((query.get("text") or query.get("message") or query.get("content") or query.get("q") or [""])[0]).strip()
+            if not message:
+                self._send(json_response(execute_video_assistant_command("帮助")))
+                return
+            self._send(json_response(execute_video_assistant_command(message)))
+            return
+        if path in {"/command", "/指令", "/wecom/unified", "/wecom/system-manager", "/wecom/work-secretary", "/wecom/video-assistant", "/wecom/feedback-intake"}:
+            message = str((query.get("text") or query.get("message") or query.get("content") or query.get("q") or [""])[0]).strip()
+            if not message:
+                payload = build_help_payload()
+                write_command_log(payload)
+                self._send(json_response(payload))
+                return
+            if path == "/wecom/feedback-intake":
+                self._send(json_response(build_feedback_intake_payload(message, entry="feedback-intake")))
+                return
+            if path == "/wecom/video-assistant":
+                self._send(json_response(execute_video_assistant_command(message)))
+                return
+            entry = "system-manager" if path == "/wecom/system-manager" else "work-secretary" if path == "/wecom/work-secretary" else "unified"
+            self._send(json_response(execute_command(message, entry=entry)))
+            return
+        self._send(text_response("企业微信统一指令本地服务：/health 或 /command?text=新易盛", status=404))
+
+    def do_POST(self) -> None:
+        parsed = urllib.parse.urlparse(self.path)
+        path = urllib.parse.unquote(parsed.path)
+        if path not in {"/command", "/指令", "/wecom/unified", "/wecom/system-manager", "/wecom/work-secretary", "/wecom/video-assistant", "/wecom/feedback-intake", "/xiaolongxia/message", "/小龙虾/消息"}:
+            self._send(text_response("未知入口。", status=404))
+            return
+        try:
+            body = self._body_json()
+            message = self._extract_message(body)
+            if not message:
+                payload = build_help_payload()
+                write_command_log(payload)
+                self._send(json_response(payload))
+                return
+            if path == "/wecom/feedback-intake":
+                self._send(json_response(build_feedback_intake_payload(message, entry="feedback-intake", body=body)))
+                return
+            if path == "/wecom/video-assistant":
+                self._send(json_response(execute_video_assistant_command(message)))
+                return
+            entry = "system-manager" if path == "/wecom/system-manager" else "work-secretary" if path == "/wecom/work-secretary" else "unified"
+            self._send(json_response(execute_command(message, entry=entry)))
+        except Exception as exc:  # noqa: BLE001
+            self._send(json_response({
+                "状态": "异常",
+                "错误": str(exc),
+                "安全边界": {
+                    "真实发送企业微信": False,
+                    "触发Webhook": False,
+                    "触发n8n": False,
+                    "写旧系统": False,
+                    "交易接口": False,
+                },
+            }, status=500))
+
+
+def main() -> int:
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    server = ThreadingHTTPServer((HOST, PORT), Handler)
+    print(json.dumps({"状态": "启动", "地址": f"http://{HOST}:{PORT}", "安全边界": build_health()["安全边界"]}, ensure_ascii=False))
+    server.serve_forever()
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

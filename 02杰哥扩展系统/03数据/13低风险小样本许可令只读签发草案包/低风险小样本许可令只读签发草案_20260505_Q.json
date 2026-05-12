@@ -1,0 +1,240 @@
+{
+  "package_id": "low_risk_small_sample_readonly_issuance_draft_20260505_Q",
+  "package_name": "02扩展系统低风险小样本许可令只读签发草案",
+  "generated_at": "2026-05-05T14:53:27+08:00",
+  "task_batch": "并行小任务Q",
+  "based_on": {
+    "source_package_id": "controlled_real_gray_permission_draft_pack_20260505_I",
+    "source_package_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\12受控真实灰度许可令草案包\\受控真实灰度许可令草案包_20260505_I.json",
+    "narrowing_rule": "由受控真实灰度草案收窄为只读签发草案；本草案不构成正式授权，不允许任何真实动作。"
+  },
+  "owner_scope": "D:\\杰哥智能化系统\\02杰哥扩展系统",
+  "status": "readonly_issuance_draft_only",
+  "risk_level": "low_risk_small_sample_candidate",
+  "real_action_count": 0,
+  "n8n_imported": false,
+  "n8n_enabled": false,
+  "n8n_formal_triggered": false,
+  "execution_boundary": {
+    "draft_only": true,
+    "readonly_validation_only": true,
+    "external_system_called": false,
+    "enterprise_wechat_sent": false,
+    "enterprise_wechat_scale_up": false,
+    "n8n_workflow_imported": false,
+    "n8n_workflow_enabled": false,
+    "n8n_formal_triggered": false,
+    "production_database_written": false,
+    "knowledge_base_written": false,
+    "media_converted": false,
+    "tax_formal_judgement_made": false,
+    "broker_interface_called": false,
+    "auto_trade_triggered": false
+  },
+  "only_allowed_future_candidates": [
+    {
+      "candidate_id": "read_only_pull",
+      "name": "只读拉取",
+      "scope": "仅可在后续二次审批后读取小样本白名单内的样本、索引、目录或元数据。",
+      "hard_limits": [
+        "不得写入、覆盖、发布或外发",
+        "不得触发生产队列",
+        "不得调用外部 webhook 或正式接口"
+      ]
+    },
+    {
+      "candidate_id": "draft_generation",
+      "name": "草稿生成",
+      "scope": "仅可在后续二次审批后生成影子草稿、脚本草稿、知识卡草稿或内部清单草稿。",
+      "hard_limits": [
+        "不得进入正式库",
+        "不得自动发布",
+        "不得形成正式业务结论"
+      ]
+    },
+    {
+      "candidate_id": "internal_report_circulation",
+      "name": "内部报告流转",
+      "scope": "仅可在内部复核链路流转小样本观察报告、证据链报告或质量报告。",
+      "hard_limits": [
+        "不得对外发送",
+        "不得自动签收为正式结论",
+        "不得触发企业微信、n8n、税务、券商或交易链路"
+      ]
+    }
+  ],
+  "still_forbidden_actions": [
+    {
+      "action_id": "enterprise_wechat_scale_up",
+      "name": "企业微信放量",
+      "description": "禁止真实群发、单发、response_url、机器人 webhook、正式消息队列写入。"
+    },
+    {
+      "action_id": "n8n_formal_trigger",
+      "name": "n8n正式触发",
+      "description": "禁止导入、启用、正式触发或手动执行任何 n8n workflow。"
+    },
+    {
+      "action_id": "formal_database_write",
+      "name": "正式库写入",
+      "description": "禁止知识库、内容库、税务库、向量库、生产数据库或生产队列写入。"
+    },
+    {
+      "action_id": "real_media_conversion",
+      "name": "真实媒体转换",
+      "description": "禁止转码、剪辑、渲染、字幕封面成品生成或发布。"
+    },
+    {
+      "action_id": "formal_tax_judgement",
+      "name": "正式税务判断",
+      "description": "禁止申报建议、自动申报、正式税务意见、税务 API 调用或对外结论出具。"
+    },
+    {
+      "action_id": "broker_interface",
+      "name": "券商接口",
+      "description": "禁止调用任何券商查询、下单、撤单、账户或行情交易接口。"
+    },
+    {
+      "action_id": "automatic_trading",
+      "name": "自动交易",
+      "description": "禁止自动下单、调仓、撤单、跟单或任何交易执行链路。"
+    }
+  ],
+  "small_sample_guardrails": {
+    "sample_scope": "candidate_whitelist_only",
+    "maximum_sample_policy": "未获后续审批前不设可执行样本量；本草案仅定义未来候选边界。",
+    "data_write_flag_required_value": false,
+    "external_call_flag_required_value": false,
+    "formal_trigger_flag_required_value": false,
+    "human_review_required": true,
+    "two_person_review_required_before_any_future_use": true
+  },
+  "business_lines": [
+    {
+      "line_id": "enterprise_wechat",
+      "line_name": "企业微信",
+      "readonly_issuance_scope": "未来候选仅限只读拉取沙箱会话元数据、生成不发送的回复草稿、内部监控报告流转。",
+      "allowed_future_candidates": [
+        "read_only_pull",
+        "draft_generation",
+        "internal_report_circulation"
+      ],
+      "forbidden_actions": [
+        "enterprise_wechat_scale_up",
+        "n8n_formal_trigger",
+        "formal_database_write"
+      ],
+      "required_evidence_before_future_use": [
+        "发送通道关闭证据",
+        "小样本白名单编号",
+        "人工二人复核记录"
+      ]
+    },
+    {
+      "line_id": "knowledge_base",
+      "line_name": "知识库",
+      "readonly_issuance_scope": "未来候选仅限只读拉取索引或证据样例、生成不入库知识卡草稿、内部证据链报告流转。",
+      "allowed_future_candidates": [
+        "read_only_pull",
+        "draft_generation",
+        "internal_report_circulation"
+      ],
+      "forbidden_actions": [
+        "formal_database_write",
+        "n8n_formal_trigger"
+      ],
+      "required_evidence_before_future_use": [
+        "只读快照编号",
+        "证据引用范围",
+        "人工二人复核记录"
+      ]
+    },
+    {
+      "line_id": "content_processing",
+      "line_name": "内容",
+      "readonly_issuance_scope": "未来候选仅限只读拉取样本文档元数据、生成不发布内容草稿、内部质量报告流转。",
+      "allowed_future_candidates": [
+        "read_only_pull",
+        "draft_generation",
+        "internal_report_circulation"
+      ],
+      "forbidden_actions": [
+        "formal_database_write",
+        "n8n_formal_trigger"
+      ],
+      "required_evidence_before_future_use": [
+        "样本文档编号",
+        "来源追溯证据",
+        "发布通道关闭证据"
+      ]
+    },
+    {
+      "line_id": "video_production",
+      "line_name": "视频",
+      "readonly_issuance_scope": "未来候选仅限只读拉取素材清单、生成不转码脚本或分镜草稿、内部制作报告流转。",
+      "allowed_future_candidates": [
+        "read_only_pull",
+        "draft_generation",
+        "internal_report_circulation"
+      ],
+      "forbidden_actions": [
+        "real_media_conversion",
+        "formal_database_write",
+        "n8n_formal_trigger"
+      ],
+      "required_evidence_before_future_use": [
+        "素材清单只读编号",
+        "媒体队列关闭证据",
+        "复核人确认无真实媒体转换"
+      ]
+    },
+    {
+      "line_id": "tax_readonly",
+      "line_name": "税收只读",
+      "readonly_issuance_scope": "未来候选仅限只读拉取税收资料目录、生成不构成判断的材料清单草稿、内部复核报告流转。",
+      "allowed_future_candidates": [
+        "read_only_pull",
+        "draft_generation",
+        "internal_report_circulation"
+      ],
+      "forbidden_actions": [
+        "formal_tax_judgement",
+        "formal_database_write",
+        "n8n_formal_trigger"
+      ],
+      "required_evidence_before_future_use": [
+        "非税务意见声明",
+        "税务接口关闭证据",
+        "复核人确认无正式税务判断"
+      ]
+    },
+    {
+      "line_id": "stock_research_boundary",
+      "line_name": "股票研究边界",
+      "readonly_issuance_scope": "仅保留内部只读资料与草稿边界说明；不接入券商接口，不触发交易。",
+      "allowed_future_candidates": [
+        "read_only_pull",
+        "draft_generation",
+        "internal_report_circulation"
+      ],
+      "forbidden_actions": [
+        "broker_interface",
+        "automatic_trading",
+        "n8n_formal_trigger"
+      ],
+      "required_evidence_before_future_use": [
+        "券商接口未配置证据",
+        "交易链路关闭证据",
+        "复核人确认无自动交易"
+      ]
+    }
+  ],
+  "acceptance_criteria": {
+    "json_and_markdown_created": true,
+    "readonly_validation_script_created": true,
+    "only_three_future_candidates": true,
+    "required_forbidden_actions_declared": true,
+    "n8n_import_enable_trigger_all_false": true,
+    "real_actions_triggered": 0
+  }
+}

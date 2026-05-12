@@ -1,0 +1,35 @@
+{
+  "asset_id": "VIDEO_SCRIPT_30S_REWRITE_TASK_CARD_001_ALIGNMENT_RETURN",
+  "created_at": "2026-05-08 13:12:00 +08:00",
+  "risk_level": "W1/R0",
+  "source": "continuous_auto_construction_after_user_asked_stop_reason",
+  "completed": [
+    "建立掩耳盗铃30秒影子改写空白任务卡",
+    "固定30秒版本保留项、压缩项、分镜数量和人工复核问题",
+    "避免直接覆盖原始高质量样例",
+    "登记下一步W1/R0候选"
+  ],
+  "impact": {
+    "thirty_second_rewrite_task_card": "available",
+    "source_sample_protected": true,
+    "quality_chain_retained": true,
+    "generation_render_publish": "forbidden",
+    "wecom_real_send_or_n8n": "forbidden",
+    "formal_video_system_modified": false
+  },
+  "next_w1_r0_candidates": [
+    "成语故事系列栏目首批选题登记表",
+    "成语故事系列栏目人工复核问题通用模板",
+    "掩耳盗铃30秒影子改写质量验收空白表"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "edit_formal_script": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_video_system": false,
+    "release_for_generation_render_publish": false
+  }
+}

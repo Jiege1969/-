@@ -1,0 +1,11 @@
+{
+  "name": "股票线第三批统一影子验收总表验收",
+  "generated_at": "2026-05-08 11:27:20",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "check_count": 5,
+    "passed_count": 5,
+    "failed_count": 0
+  }
+}

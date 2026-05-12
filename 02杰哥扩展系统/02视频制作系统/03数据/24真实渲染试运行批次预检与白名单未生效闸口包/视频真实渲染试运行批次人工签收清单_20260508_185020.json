@@ -1,0 +1,96 @@
+{
+  "名称": "视频真实渲染试运行批次人工签收清单",
+  "清单状态": "unsigned",
+  "签收结论": "未签收；白名单未生效；批次不允许。",
+  "批次ID": "TRIAL-BATCH-PRECHECK-20260508-001",
+  "任务ID": "TRIAL-TASK-PRECHECK-20260508-001",
+  "签收项": [
+    {
+      "签收项": "批次ID唯一且仅用于试运行样例",
+      "签收状态": "未签收",
+      "当前可执行": false
+    },
+    {
+      "签收项": "任务ID唯一且可追溯",
+      "签收状态": "未签收",
+      "当前可执行": false
+    },
+    {
+      "签收项": "测试素材来源与授权齐备",
+      "签收状态": "未签收",
+      "当前可执行": false
+    },
+    {
+      "签收项": "输出目录隔离且不接发布链路",
+      "签收状态": "未签收",
+      "当前可执行": false
+    },
+    {
+      "签收项": "最大时长和单批任务数确认",
+      "签收状态": "未签收",
+      "当前可执行": false
+    },
+    {
+      "签收项": "失败回滚负责人确认",
+      "签收状态": "未签收",
+      "当前可执行": false
+    },
+    {
+      "签收项": "日志留存责任人确认",
+      "签收状态": "未签收",
+      "当前可执行": false
+    },
+    {
+      "签收项": "白名单另行启用确认",
+      "签收状态": "未签收",
+      "当前可执行": false
+    }
+  ],
+  "必须签收角色": [
+    "总管",
+    "视频制作负责人",
+    "素材授权负责人",
+    "回滚负责人",
+    "日志留存负责人"
+  ],
+  "签收后限制": [
+    "签收本清单不等于白名单生效。",
+    "签收本清单不等于允许试运行。",
+    "仍需新的独立放行包确认 batch_allowed=true；本包不会产生该状态。"
+  ],
+  "生成时间": "2026-05-08 18:50:20",
+  "error_count": 0,
+  "batch_allowed": false,
+  "whitelist_effective": false,
+  "trial_run_allowed": false,
+  "trial_run_forbidden": true,
+  "can_enter_real_render": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "触发n8n": false,
+  "修改企业微信公共配置": false,
+  "修改总管面板": false,
+  "修改一键接续包": false,
+  "重载服务": false,
+  "readonly_flags_ascii": {
+    "batch_allowed": false,
+    "whitelist_effective": false,
+    "trial_run_allowed": false,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false
+  }
+}

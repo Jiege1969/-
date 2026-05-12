@@ -1,0 +1,266 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stock Fundamental Evidence Card Schema",
+  "description": "单股财报/基本面证据卡影子Schema。用于把公开财报、经营快照和人工核验证据结构化为L3基本面/资金分项和企业微信短答可用的结论依据。",
+  "type": "object",
+  "required": [
+    "名称",
+    "版本",
+    "生成日期",
+    "所属系统",
+    "资产身份",
+    "状态",
+    "stock",
+    "source_status",
+    "sources",
+    "financial_metrics",
+    "business_evidence",
+    "fundamental_capital_shadow_score",
+    "front_output_compression",
+    "safety_boundary"
+  ],
+  "properties": {
+    "名称": {
+      "type": "string"
+    },
+    "版本": {
+      "type": "string"
+    },
+    "生成日期": {
+      "type": "string",
+      "format": "date"
+    },
+    "所属系统": {
+      "type": "string"
+    },
+    "资产身份": {
+      "type": "string",
+      "enum": [
+        "影子证据卡",
+        "样本证据卡",
+        "正式证据卡候选"
+      ]
+    },
+    "状态": {
+      "type": "string",
+      "enum": [
+        "shadow_only",
+        "draft",
+        "evidence_ready",
+        "pending_review",
+        "human_reviewed"
+      ]
+    },
+    "not_formal_config": {
+      "type": "boolean"
+    },
+    "not_entrypoint": {
+      "type": "boolean"
+    },
+    "not_external_send": {
+      "type": "boolean"
+    },
+    "stock": {
+      "type": "object",
+      "required": [
+        "name",
+        "code",
+        "display_code"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "display_code": {
+          "type": "string"
+        }
+      }
+    },
+    "source_status": {
+      "type": "object",
+      "required": [
+        "local_company_snapshot",
+        "external_public_disclosure_used",
+        "structured_into_l3_shadow",
+        "formal_chain_status"
+      ],
+      "properties": {
+        "local_company_snapshot": {
+          "type": "string",
+          "enum": [
+            "available",
+            "partial",
+            "missing_stock_record",
+            "not_checked"
+          ]
+        },
+        "external_public_disclosure_used": {
+          "type": "boolean"
+        },
+        "structured_into_l3_shadow": {
+          "type": "boolean"
+        },
+        "formal_chain_status": {
+          "type": "string",
+          "enum": [
+            "not_integrated",
+            "shadow_integrated",
+            "pending_review",
+            "formal_integrated"
+          ]
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_name",
+          "source_url",
+          "source_type",
+          "evidence_scope",
+          "checked_at"
+        ],
+        "properties": {
+          "source_name": {
+            "type": "string"
+          },
+          "source_url": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "evidence_scope": {
+            "type": "string"
+          },
+          "checked_at": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    "financial_metrics": {
+      "type": "object",
+      "description": "按报告期组织的结构化财务指标；暂未结构化的季度数据必须显式写明状态。"
+    },
+    "business_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fundamental_capital_shadow_score": {
+      "type": "object",
+      "required": [
+        "score",
+        "max_score",
+        "score_reason",
+        "positive_evidence",
+        "negative_evidence",
+        "missing",
+        "confidence"
+      ],
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20
+        },
+        "max_score": {
+          "type": "number",
+          "const": 20
+        },
+        "score_reason": {
+          "type": "string"
+        },
+        "positive_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "negative_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      }
+    },
+    "front_output_compression": {
+      "type": "object",
+      "required": [
+        "one_sentence",
+        "user_facing_reason",
+        "do_not_say"
+      ],
+      "properties": {
+        "one_sentence": {
+          "type": "string"
+        },
+        "user_facing_reason": {
+          "type": "string"
+        },
+        "do_not_say": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "safety_boundary": {
+      "type": "object",
+      "required": [
+        "only_for_research",
+        "not_investment_advice",
+        "not_buy_sell_signal",
+        "not_broker_interface",
+        "not_auto_trade"
+      ],
+      "properties": {
+        "only_for_research": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_investment_advice": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_buy_sell_signal": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_broker_interface": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_auto_trade": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    }
+  }
+}

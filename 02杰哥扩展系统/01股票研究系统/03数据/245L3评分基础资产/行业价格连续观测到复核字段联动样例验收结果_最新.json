@@ -1,0 +1,9 @@
+{
+  "name": "行业价格连续观测到复核字段联动样例验收结果",
+  "generated_at": "2026-05-08 12:10:43",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "sample_count": 5
+  }
+}

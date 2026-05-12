@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "sample_id": "SHARED_POLICY_READONLY_TAX_002",
+  "name": "增值税法基础依据只读调用样例",
+  "asset_identity": "tax_analysis_assistant_law_level_readonly_policy_evidence_call_shadow_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "formal_tax_opinion": false,
+    "replace_specific_policy": false,
+    "external_send": false,
+    "trigger_n8n": false
+  },
+  "call_input": {
+    "requesting_system": "tax_business_analysis_assistant",
+    "query_intent": "vat_basic_law_level_evidence",
+    "topic_keywords": ["增值税法", "增值税", "法律层级", "基础依据"],
+    "expected_evidence_level": "law",
+    "source": "SHARED-POLICY-EVIDENCE-001"
+  },
+  "readonly_evidence": {
+    "document_id": "TAX-LAW-VAT-2024",
+    "title": "中华人民共和国增值税法",
+    "document_number": "中华人民共和国主席令第四十一号",
+    "issuing_authority": "全国人民代表大会常务委员会",
+    "pass_date": "2024-12-25",
+    "effective_date": "2026-01-01",
+    "validity_status": "现行有效，需后续结合官方法律库复核",
+    "source_url": "https://www.npc.gov.cn/npc/c2/c30834/202412/t20241225_442038.html",
+    "source_level": "国家级法律",
+    "legal_level": "法律",
+    "hierarchy_rank": 1,
+    "verification_status": "已登记官方来源，待人工逐条复核条文"
+  },
+  "contract_mapping": {
+    "policy_evidence": "中华人民共和国增值税法",
+    "evidence_level": "法律",
+    "validity_status": "现行有效，需后续结合官方法律库复核",
+    "official_source": "中国人大网官方链接",
+    "extracted_conditions": ["增值税基础纳税义务", "税率", "征收管理框架"],
+    "evidence_gap": ["实施条例", "后续优惠政策衔接公告", "地方执行口径"]
+  },
+  "allowed_use": ["增值税业务的上位基础法律依据"],
+  "forbidden_use": ["替代具体优惠政策", "直接生成适用结论"],
+  "output_state": "evidence_ready_or_pending_review"
+}

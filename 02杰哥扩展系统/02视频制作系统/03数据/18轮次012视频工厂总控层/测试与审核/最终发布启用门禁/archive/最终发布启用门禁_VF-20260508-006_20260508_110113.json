@@ -1,0 +1,62 @@
+{
+  "生成时间": "2026-05-08 11:01:13",
+  "任务ID": "VF-20260508-006",
+  "总体状态": "blocked",
+  "配置已启用真实发布": false,
+  "AI标识已确认": true,
+  "发布清单行": {},
+  "发布放行状态": "",
+  "平台": "bilibili",
+  "账号": "creator",
+  "视频文件": "",
+  "标题": "",
+  "简介": "",
+  "命令检查": {
+    "命令": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+    "可用": true,
+    "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+    "错误": "",
+    "returncode": 0,
+    "stdout": "usage: sau [-h] {douyin,kuaishou,xiaohongshu,bilibili} ...\n\nCLI for social-auto-upload.\n\npositional arguments:\n  {douyin,kuaishou,xiaohongshu,bilibili}\n    douyin              Douyin operations\n    kuaishou            Kuaishou operations\n    xiaohongshu         Xiaohongshu operations\n    bilibili            Bilibili operations\n\noptions:\n  -h, --help            show this help message and exit\n",
+    "stderr": ""
+  },
+  "视频文件检查": {
+    "视频文件": "",
+    "存在": true,
+    "扩展名": "",
+    "文件大小": 0,
+    "有效": false,
+    "阻断原因": [
+      "未填写视频文件路径"
+    ]
+  },
+  "账号检查": {
+    "平台": "bilibili",
+    "账号": "creator",
+    "命令": [
+      "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+      "bilibili",
+      "check",
+      "--account",
+      "creator"
+    ],
+    "总体状态": "blocked",
+    "returncode": 1,
+    "stdout": "invalid\n",
+    "stderr": ""
+  },
+  "阻断项": [
+    "未在发布放行清单中找到任务：VF-20260508-006",
+    "发布放行状态不是“放行”：未填写",
+    "发布清单缺少标题",
+    "发布清单缺少简介",
+    "未填写视频文件路径",
+    "发布账号未通过登录检查：bilibili/creator"
+  ],
+  "安全边界": {
+    "执行上传": false,
+    "执行发布": false,
+    "触发n8n": false,
+    "企业微信真实外发": false
+  }
+}

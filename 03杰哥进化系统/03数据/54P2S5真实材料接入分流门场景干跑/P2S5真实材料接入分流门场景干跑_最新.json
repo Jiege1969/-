@@ -1,0 +1,272 @@
+{
+  "id": "P2S5_REAL_MATERIAL_INTAKE_GATE_SCENARIO_DRYRUN",
+  "generated_at": "2026-05-09 10:17:11",
+  "status": "pass",
+  "summary": {
+    "case_count": 7,
+    "passed": 7,
+    "failed": 0,
+    "registered_routes": [
+      "office_work",
+      "pause",
+      "shared_policy_evidence",
+      "tax",
+      "video_production"
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "P2S5-CASE-001",
+      "name": "脱敏涉税问题进入税收影子入口",
+      "material": {
+        "source_type": "用户提供",
+        "authorization_status": "已授权",
+        "sensitivity": "无敏感",
+        "desensitized_status": "已脱敏",
+        "material_type": "涉税业务分析材料",
+        "request_text": "请分析某类软件产品增值税政策适用条件，信息已脱敏，仅需待复核草案。"
+      },
+      "expected": {
+        "target_line": "tax",
+        "next_allowed_action": "登记资料",
+        "can_enter_shadow": "是"
+      },
+      "actual": {
+        "target_line": "tax",
+        "entry": "tax",
+        "can_enter_shadow": "是",
+        "next_allowed_action": "登记资料",
+        "pause_reasons": [],
+        "human_review_required": true
+      },
+      "checks": {
+        "target_line": true,
+        "next_allowed_action": true,
+        "can_enter_shadow": true,
+        "human_review_required": true,
+        "target_route_registered": true
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "P2S5-CASE-002",
+      "name": "制度流程资料进入本职工作影子入口",
+      "material": {
+        "source_type": "用户提供",
+        "authorization_status": "已授权",
+        "sensitivity": "无敏感",
+        "desensitized_status": "已脱敏",
+        "material_type": "制度流程",
+        "request_text": "请整理一份已脱敏的内部流程资料字段，供影子样例复核。"
+      },
+      "expected": {
+        "target_line": "office_work",
+        "next_allowed_action": "登记资料",
+        "can_enter_shadow": "是"
+      },
+      "actual": {
+        "target_line": "office_work",
+        "entry": "office_work",
+        "can_enter_shadow": "是",
+        "next_allowed_action": "登记资料",
+        "pause_reasons": [],
+        "human_review_required": true
+      },
+      "checks": {
+        "target_line": true,
+        "next_allowed_action": true,
+        "can_enter_shadow": true,
+        "human_review_required": true,
+        "target_route_registered": true
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "P2S5-CASE-003",
+      "name": "视频脚本分镜素材进入视频复核链",
+      "material": {
+        "source_type": "用户提供",
+        "authorization_status": "已授权",
+        "sensitivity": "素材版权",
+        "desensitized_status": "已脱敏",
+        "material_type": "脚本分镜素材授权",
+        "request_text": "请复核一份脱敏脚本、分镜和素材授权说明，不生成不发布。"
+      },
+      "expected": {
+        "target_line": "video_production",
+        "next_allowed_action": "登记资料",
+        "can_enter_shadow": "是"
+      },
+      "actual": {
+        "target_line": "video_production",
+        "entry": "video_production",
+        "can_enter_shadow": "是",
+        "next_allowed_action": "登记资料",
+        "pause_reasons": [],
+        "human_review_required": true
+      },
+      "checks": {
+        "target_line": true,
+        "next_allowed_action": true,
+        "can_enter_shadow": true,
+        "human_review_required": true,
+        "target_route_registered": true
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "P2S5-CASE-004",
+      "name": "公开政策来源进入共享政策证据入口",
+      "material": {
+        "source_type": "官方公开",
+        "authorization_status": "仅参考",
+        "sensitivity": "无敏感",
+        "desensitized_status": "不适用",
+        "material_type": "政策依据候选",
+        "request_text": "请登记一个公开政策来源作为依据候选，不替代业务线判断。"
+      },
+      "expected": {
+        "target_line": "shared_policy_evidence",
+        "next_allowed_action": "登记资料",
+        "can_enter_shadow": "是"
+      },
+      "actual": {
+        "target_line": "shared_policy_evidence",
+        "entry": "shared_policy_evidence",
+        "can_enter_shadow": "是",
+        "next_allowed_action": "登记资料",
+        "pause_reasons": [],
+        "human_review_required": true
+      },
+      "checks": {
+        "target_line": true,
+        "next_allowed_action": true,
+        "can_enter_shadow": true,
+        "human_review_required": true,
+        "target_route_registered": true
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "P2S5-CASE-005",
+      "name": "未脱敏财务资料暂停",
+      "material": {
+        "source_type": "用户提供",
+        "authorization_status": "待确认",
+        "sensitivity": "财务",
+        "desensitized_status": "未脱敏",
+        "material_type": "涉税业务分析材料",
+        "request_text": "资料含未脱敏财务明细，请直接分析。"
+      },
+      "expected": {
+        "target_line": "pause",
+        "next_allowed_action": "暂停",
+        "can_enter_shadow": "否"
+      },
+      "actual": {
+        "target_line": "pause",
+        "entry": "gap_or_redline_record",
+        "can_enter_shadow": "否",
+        "next_allowed_action": "暂停",
+        "pause_reasons": [
+          "授权未确认",
+          "敏感内容未脱敏"
+        ],
+        "human_review_required": true
+      },
+      "checks": {
+        "target_line": true,
+        "next_allowed_action": true,
+        "can_enter_shadow": true,
+        "human_review_required": true,
+        "target_route_registered": true
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "P2S5-CASE-006",
+      "name": "真实执行请求暂停",
+      "material": {
+        "source_type": "用户提供",
+        "authorization_status": "已授权",
+        "sensitivity": "无敏感",
+        "desensitized_status": "已脱敏",
+        "material_type": "视频发布请求",
+        "request_text": "请上传并发布这个视频，同时发送企业微信通知。"
+      },
+      "expected": {
+        "target_line": "pause",
+        "next_allowed_action": "暂停",
+        "can_enter_shadow": "否"
+      },
+      "actual": {
+        "target_line": "pause",
+        "entry": "gap_or_redline_record",
+        "can_enter_shadow": "否",
+        "next_allowed_action": "暂停",
+        "pause_reasons": [
+          "命中真实执行请求"
+        ],
+        "human_review_required": true
+      },
+      "checks": {
+        "target_line": true,
+        "next_allowed_action": true,
+        "can_enter_shadow": true,
+        "human_review_required": true,
+        "target_route_registered": true
+      },
+      "status": "pass"
+    },
+    {
+      "case_id": "P2S5-CASE-007",
+      "name": "来源不清材料暂停",
+      "material": {
+        "source_type": "待核验",
+        "authorization_status": "待确认",
+        "sensitivity": "待判",
+        "desensitized_status": "待确认",
+        "material_type": "未知材料",
+        "request_text": "这是一份来源不清的材料，请先帮我处理。"
+      },
+      "expected": {
+        "target_line": "pause",
+        "next_allowed_action": "暂停",
+        "can_enter_shadow": "否"
+      },
+      "actual": {
+        "target_line": "pause",
+        "entry": "gap_or_redline_record",
+        "can_enter_shadow": "否",
+        "next_allowed_action": "暂停",
+        "pause_reasons": [
+          "来源不清",
+          "授权未确认",
+          "敏感内容未脱敏"
+        ],
+        "human_review_required": true
+      },
+      "checks": {
+        "target_line": true,
+        "next_allowed_action": true,
+        "can_enter_shadow": true,
+        "human_review_required": true,
+        "target_route_registered": true
+      },
+      "status": "pass"
+    }
+  ],
+  "errors": [],
+  "conclusion": "分流门场景干跑通过；税收、本职工作、视频、共享政策证据和暂停路径均按预期路由。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

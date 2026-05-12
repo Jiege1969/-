@@ -1,0 +1,284 @@
+{
+  "package_id": "low_risk_small_sample_readonly_archive_entry_consistency_20260505_V",
+  "package_name": "02扩展系统低风险小样本许可令只读归档入口一致性包",
+  "generated_at": "2026-05-05T15:07:51+08:00",
+  "task_batch": "并行小任务V",
+  "owner_scope": "D:\\杰哥智能化系统\\02杰哥扩展系统",
+  "status": "readonly_archive_and_entry_consistency_review",
+  "real_action_count": 0,
+  "source_references": {
+    "q_readonly_permission_draft": {
+      "task_batch": "并行小任务Q",
+      "json_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\13低风险小样本许可令只读签发草案包\\低风险小样本许可令只读签发草案_20260505_Q.json",
+      "report_json_path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\02扩展系统_低风险小样本许可令只读签发回收报告_最新.json",
+      "used_for": "三类候选、禁止项、业务线只读许可边界"
+    },
+    "n_available_entry_inventory": {
+      "task_batch": "并行小任务N",
+      "json_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\13可用入口清单操作卡包\\可用入口清单操作卡包_20260505_N.json",
+      "report_json_path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\02扩展系统_可用入口清单操作卡回收报告_最新.json",
+      "used_for": "六个可用入口、入口状态、真实动作关闭状态、操作卡边界"
+    }
+  },
+  "write_scope_confirmation": {
+    "extension_system_new_files_only": true,
+    "fixed_recycle_report_written": true,
+    "other_workers_files_modified": false,
+    "work_system_touched": false,
+    "work_system_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统",
+    "work_system_status": "paused"
+  },
+  "execution_boundary": {
+    "archive_only": true,
+    "readonly_validation_only": true,
+    "external_system_called": false,
+    "enterprise_wechat_scale_up": false,
+    "enterprise_wechat_real_send": false,
+    "n8n_workflow_imported": false,
+    "n8n_workflow_enabled": false,
+    "n8n_formal_triggered": false,
+    "production_database_written": false,
+    "formal_knowledge_base_written": false,
+    "vector_database_written": false,
+    "real_media_converted": false,
+    "tax_formal_judgement_made": false,
+    "broker_interface_called": false,
+    "automatic_trading_triggered": false,
+    "real_actions_triggered": 0
+  },
+  "candidate_classes": [
+    {
+      "candidate_id": "read_only_pull",
+      "candidate_name": "只读拉取",
+      "source": "Q",
+      "archived_scope": "仅允许在后续二次审批后读取小样本白名单内的样本、索引、目录或元数据。",
+      "covered_entry_ids": [
+        "stock_analysis",
+        "enterprise_wechat_assistant",
+        "knowledge_base_readonly_qa",
+        "content_office_draft",
+        "video_production_preplan",
+        "tax_readonly_evidence_chain"
+      ],
+      "hard_limits": [
+        "不得写入、覆盖、发布或外发",
+        "不得触发生产队列",
+        "不得调用外部 webhook 或正式接口"
+      ]
+    },
+    {
+      "candidate_id": "draft_generation",
+      "candidate_name": "草稿生成",
+      "source": "Q",
+      "archived_scope": "仅允许在后续二次审批后生成影子草稿、脚本草稿、知识卡草稿或内部清单草稿。",
+      "covered_entry_ids": [
+        "stock_analysis",
+        "enterprise_wechat_assistant",
+        "knowledge_base_readonly_qa",
+        "content_office_draft",
+        "video_production_preplan",
+        "tax_readonly_evidence_chain"
+      ],
+      "hard_limits": [
+        "不得进入正式库",
+        "不得自动发布",
+        "不得形成正式业务结论"
+      ]
+    },
+    {
+      "candidate_id": "internal_report_circulation",
+      "candidate_name": "内部报告流转",
+      "source": "Q",
+      "archived_scope": "仅允许在内部复核链路流转小样本观察报告、证据链报告或质量报告。",
+      "covered_entry_ids": [
+        "stock_analysis",
+        "enterprise_wechat_assistant",
+        "knowledge_base_readonly_qa",
+        "content_office_draft",
+        "video_production_preplan",
+        "tax_readonly_evidence_chain"
+      ],
+      "hard_limits": [
+        "不得对外发送",
+        "不得自动签收为正式结论",
+        "不得触发企业微信、n8n、税务、券商或交易链路"
+      ]
+    }
+  ],
+  "available_entries": [
+    {
+      "entry_id": "stock_analysis",
+      "entry_name": "股票分析",
+      "source": "N",
+      "entry_status": "available_dry_run",
+      "q_business_line_id": "stock_research_boundary",
+      "candidate_consistency": [
+        "read_only_pull",
+        "draft_generation",
+        "internal_report_circulation"
+      ],
+      "entry_boundary": "仅限本地样例、人工录入数据或只读材料的分析草稿；不接券商、不下单、不做自动交易。",
+      "forbidden_action_alignment": [
+        "broker_interface",
+        "automatic_trading",
+        "n8n_formal_trigger"
+      ],
+      "consistent": true
+    },
+    {
+      "entry_id": "enterprise_wechat_assistant",
+      "entry_name": "企业微信助手",
+      "source": "N",
+      "entry_status": "available_dry_run",
+      "q_business_line_id": "enterprise_wechat",
+      "candidate_consistency": [
+        "read_only_pull",
+        "draft_generation",
+        "internal_report_circulation"
+      ],
+      "entry_boundary": "仅生成不发送的回复草稿、脱敏预览和发送前检查单；真实发送全部关闭。",
+      "forbidden_action_alignment": [
+        "enterprise_wechat_scale_up",
+        "n8n_formal_trigger",
+        "formal_database_write"
+      ],
+      "consistent": true
+    },
+    {
+      "entry_id": "knowledge_base_readonly_qa",
+      "entry_name": "知识库只读问答",
+      "source": "N",
+      "entry_status": "available_readonly",
+      "q_business_line_id": "knowledge_base",
+      "candidate_consistency": [
+        "read_only_pull",
+        "draft_generation",
+        "internal_report_circulation"
+      ],
+      "entry_boundary": "仅基于只读索引、样例资料和证据引用生成问答草稿；不写知识库、不写向量库。",
+      "forbidden_action_alignment": [
+        "formal_database_write",
+        "n8n_formal_trigger"
+      ],
+      "consistent": true
+    },
+    {
+      "entry_id": "content_office_draft",
+      "entry_name": "内容办公草稿",
+      "source": "N",
+      "entry_status": "draft_only",
+      "q_business_line_id": "content_processing",
+      "candidate_consistency": [
+        "read_only_pull",
+        "draft_generation",
+        "internal_report_circulation"
+      ],
+      "entry_boundary": "仅生成办公内容草稿、摘要、改写建议和内部质量检查；不发布、不转换真实文件成品。",
+      "forbidden_action_alignment": [
+        "formal_database_write",
+        "n8n_formal_trigger"
+      ],
+      "consistent": true
+    },
+    {
+      "entry_id": "video_production_preplan",
+      "entry_name": "视频制作预案",
+      "source": "N",
+      "entry_status": "draft_only",
+      "q_business_line_id": "video_production",
+      "candidate_consistency": [
+        "read_only_pull",
+        "draft_generation",
+        "internal_report_circulation"
+      ],
+      "entry_boundary": "仅生成脚本、分镜、素材清单和制作参数预案；不转码、不渲染、不发布。",
+      "forbidden_action_alignment": [
+        "real_media_conversion",
+        "formal_database_write",
+        "n8n_formal_trigger"
+      ],
+      "consistent": true
+    },
+    {
+      "entry_id": "tax_readonly_evidence_chain",
+      "entry_name": "税收只读证据链",
+      "source": "N",
+      "entry_status": "available_readonly",
+      "q_business_line_id": "tax_readonly",
+      "candidate_consistency": [
+        "read_only_pull",
+        "draft_generation",
+        "internal_report_circulation"
+      ],
+      "entry_boundary": "仅整理只读证据链、字段完整性检查和人工复核清单；不形成正式税务判断。",
+      "forbidden_action_alignment": [
+        "formal_tax_judgement",
+        "formal_database_write",
+        "n8n_formal_trigger"
+      ],
+      "consistent": true
+    }
+  ],
+  "still_forbidden_actions": [
+    {
+      "action_id": "enterprise_wechat_scale_up",
+      "name": "企业微信放量",
+      "status": "forbidden"
+    },
+    {
+      "action_id": "n8n_formal_trigger",
+      "name": "n8n正式触发",
+      "status": "forbidden"
+    },
+    {
+      "action_id": "formal_database_write",
+      "name": "正式库写入",
+      "status": "forbidden"
+    },
+    {
+      "action_id": "real_media_conversion",
+      "name": "真实媒体转换",
+      "status": "forbidden"
+    },
+    {
+      "action_id": "formal_tax_judgement",
+      "name": "税务正式判断",
+      "status": "forbidden"
+    },
+    {
+      "action_id": "broker_interface",
+      "name": "券商接口",
+      "status": "forbidden"
+    },
+    {
+      "action_id": "automatic_trading",
+      "name": "自动交易",
+      "status": "forbidden"
+    }
+  ],
+  "consistency_review": {
+    "q_candidate_count": 3,
+    "n_entry_count": 6,
+    "archive_candidate_count": 3,
+    "archive_entry_count": 6,
+    "every_entry_maps_to_all_three_candidates": true,
+    "every_candidate_covers_all_six_entries": true,
+    "forbidden_actions_match_required_boundary": true,
+    "n_entry_real_actions_remain_closed": true,
+    "q_permission_remains_readonly_draft_only": true,
+    "work_system_paused_and_untouched": true,
+    "passed": true,
+    "failures": []
+  },
+  "acceptance_criteria": {
+    "json_created": true,
+    "markdown_created": true,
+    "readonly_validation_script_created": true,
+    "based_on_q_and_n": true,
+    "three_candidate_classes_checked": true,
+    "six_available_entries_checked": true,
+    "forbidden_actions_preserved": true,
+    "real_actions_triggered": 0,
+    "work_system_untouched": true
+  }
+}

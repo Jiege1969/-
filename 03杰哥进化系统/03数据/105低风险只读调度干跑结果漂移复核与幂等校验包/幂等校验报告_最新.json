@@ -1,0 +1,89 @@
+{
+  "name": "低风险只读调度干跑结果幂等校验报告",
+  "generated_at": "2026-05-08 20:13:49",
+  "pass": true,
+  "error_count": 0,
+  "repeated_preview_same_plan": true,
+  "source_files_modified": false,
+  "diff_count": 0,
+  "round_count": 3,
+  "round_plan_hashes": [
+    "54b78660e39a52f10eed7ebcef48ae3267c3482d2f15909a69a6f08680404bf3",
+    "54b78660e39a52f10eed7ebcef48ae3267c3482d2f15909a69a6f08680404bf3",
+    "54b78660e39a52f10eed7ebcef48ae3267c3482d2f15909a69a6f08680404bf3"
+  ],
+  "source_snapshot_before": {
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\104完全交付使用版低风险续建第二批复核包\\完全交付使用版低风险续建第二批复核包_最新.json": {
+      "exists": true,
+      "size": 7376,
+      "mtime_ns": 1778240266467456000,
+      "sha256": "cff51a857a4835ea468d5a662302efbe6f537cd971c4a9f09fd83d84d28c81ed"
+    },
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\调度预演台账_最新.json": {
+      "exists": true,
+      "size": 7878,
+      "mtime_ns": 1778241363921076700,
+      "sha256": "7ab3342db855e3b165167e9dcee3a2735a6729fc09d4acbe3f0d0870410e891d"
+    },
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\运行台账字段定义_最新.json": {
+      "exists": true,
+      "size": 3681,
+      "mtime_ns": 1778241363920076700,
+      "sha256": "71bb5d595e96cb83996e1eed3c670783506775093552857e795f7d3b0c6a9914"
+    },
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\调度运行台账归档预演执行报告_最新.json": {
+      "exists": true,
+      "size": 5709,
+      "mtime_ns": 1778241368391531300,
+      "sha256": "ba5f5972089fc4a20dbdeabe38670e8041fff441f9b49877d1153ea6cbb78e3d"
+    }
+  },
+  "source_snapshot_after": {
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\104完全交付使用版低风险续建第二批复核包\\完全交付使用版低风险续建第二批复核包_最新.json": {
+      "exists": true,
+      "size": 7376,
+      "mtime_ns": 1778240266467456000,
+      "sha256": "cff51a857a4835ea468d5a662302efbe6f537cd971c4a9f09fd83d84d28c81ed"
+    },
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\调度预演台账_最新.json": {
+      "exists": true,
+      "size": 7878,
+      "mtime_ns": 1778241363921076700,
+      "sha256": "7ab3342db855e3b165167e9dcee3a2735a6729fc09d4acbe3f0d0870410e891d"
+    },
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\运行台账字段定义_最新.json": {
+      "exists": true,
+      "size": 3681,
+      "mtime_ns": 1778241363920076700,
+      "sha256": "71bb5d595e96cb83996e1eed3c670783506775093552857e795f7d3b0c6a9914"
+    },
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包\\调度运行台账归档预演执行报告_最新.json": {
+      "exists": true,
+      "size": 5709,
+      "mtime_ns": 1778241368391531300,
+      "sha256": "ba5f5972089fc4a20dbdeabe38670e8041fff441f9b49877d1153ea6cbb78e3d"
+    }
+  },
+  "actual_execution": false,
+  "copy_source_files": false,
+  "move_source_files": false,
+  "external_call": false,
+  "reload_service": false,
+  "hard_red_line_confirmation": {
+    "real_wecom_send": false,
+    "trigger_n8n": false,
+    "external_call": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "auto_promote_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false,
+    "actual_execution": false,
+    "copy_source_files": false,
+    "move_source_files": false,
+    "source_files_modified": false
+  }
+}

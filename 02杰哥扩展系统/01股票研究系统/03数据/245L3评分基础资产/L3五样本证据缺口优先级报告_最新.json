@@ -1,0 +1,361 @@
+{
+  "name": "L3五样本证据缺口优先级报告",
+  "generated_at": "2026-05-08 07:17:31",
+  "asset_identity": "W1只读分析报告",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "samples": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "total_score": 56.3,
+      "conclusion": "暂不建议关注",
+      "confidence": "low",
+      "item_scores": {
+        "technical": 25,
+        "fundamental_capital": 5,
+        "policy_events": 15.3,
+        "market_style_fit": 11
+      },
+      "policy_score": 15.3,
+      "market_style_confidence": "low",
+      "finance_card_status": "shadow_only",
+      "industry_price_status": "source_registered",
+      "industry_price_points": 0,
+      "missing": [
+        "原报告包含待核验证据",
+        "近三年营收、净利润、现金流、ROE等财报关键指标未结构化接入",
+        "公告、行业价格、解禁减持和财报正文仍待核验",
+        "当前不是全市场宽度，只能作为局部样本证据",
+        "当前不是正式全市场板块涨跌幅",
+        "大小盘指数相对强弱未完整获取",
+        "近60日成交额分位缺失",
+        "更高分的主要约束来自各分项missing字段；当前市场风格已确认，后续按复盘节奏跟踪市场环境是否变化。",
+        "2026年一季报核心数值尚未从公告表格中结构化提取。",
+        "锗现货价格、产品售价和成本变化尚未进入可回测字段。",
+        "资金流、机构持仓和减持解禁仍未合并到本证据卡。",
+        "锗锭具体价格、日期、单位尚未入账。",
+        "锗锭尚未形成5个连续观测点。",
+        "锗锭尚未形成20个连续观测点。",
+        "价格与公司毛利、现金流和产品暴露度的量化映射尚未完成。"
+      ],
+      "paths": {
+        "l3_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\云南锗业_sz002428_最新.json",
+        "finance_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\云南锗业_财报基本面证据卡_20260507.json",
+        "industry_price_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\云南锗业_行业价格证据卡_本地观测_latest.json"
+      },
+      "priority": "P0",
+      "priority_reasons": [
+        "行业价格尚未形成可用观测",
+        "资金/机构/减持解禁证据未合并",
+        "最新财报字段仍需结构化",
+        "市场风格只宜作辅助参考",
+        "综合置信度偏低"
+      ]
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "total_score": 46.0,
+      "conclusion": "暂不建议关注",
+      "confidence": "low",
+      "item_scores": {
+        "technical": 30,
+        "fundamental_capital": 5,
+        "policy_events": 0.0,
+        "market_style_fit": 11
+      },
+      "policy_score": 0.0,
+      "market_style_confidence": "low",
+      "finance_card_status": "shadow_only",
+      "industry_price_status": "single_observation",
+      "industry_price_points": 1,
+      "missing": [
+        "原报告包含待核验证据",
+        "公告、行业价格、解禁减持和财报正文仍待核验",
+        "未匹配到该股票的政策事件暴露度",
+        "当前不是全市场宽度，只能作为局部样本证据",
+        "当前不是正式全市场板块涨跌幅",
+        "大小盘指数相对强弱未完整获取",
+        "近60日成交额分位缺失",
+        "更高分的主要约束来自各分项missing字段；当前市场风格已确认，后续按复盘节奏跟踪市场环境是否变化。",
+        "锂盐现货价格和产品价差未接入统一字段。",
+        "SQM投资收益、套保、公允价值变动对利润的贡献拆分尚未进入评分字段。",
+        "资金流、机构持仓、减持解禁未合并到本证据卡。",
+        "电池级碳酸锂尚未形成5个连续观测点。",
+        "电池级碳酸锂尚未形成20个连续观测点。",
+        "价格与公司毛利、现金流和产品暴露度的量化映射尚未完成。"
+      ],
+      "paths": {
+        "l3_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\天齐锂业_sz002466_最新.json",
+        "finance_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\天齐锂业_财报基本面证据卡_20260507.json",
+        "industry_price_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\天齐锂业_行业价格证据卡_本地观测_latest.json"
+      },
+      "priority": "P0",
+      "priority_reasons": [
+        "资金/机构/减持解禁证据未合并",
+        "最新财报字段仍需结构化",
+        "政策事件匹配或暴露度不足",
+        "市场风格只宜作辅助参考",
+        "综合置信度偏低"
+      ]
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "total_score": 54.0,
+      "conclusion": "暂不建议关注",
+      "confidence": "medium",
+      "item_scores": {
+        "technical": 32,
+        "fundamental_capital": 11,
+        "policy_events": 0.0,
+        "market_style_fit": 11
+      },
+      "policy_score": 0.0,
+      "market_style_confidence": "low",
+      "finance_card_status": "shadow_only",
+      "industry_price_status": "missing",
+      "industry_price_points": 0,
+      "missing": [
+        "当前成交活跃度未刷新，仍需下一轮数据确认。",
+        "2026年一季报财务字段尚未接入。",
+        "产能利用率、晶圆ASP、折旧和资本开支拆分未进入结构化字段。",
+        "机构持仓、资金流、解禁减持和重组进度未合并。",
+        "未匹配到该股票的结构化政策事件暴露度；半导体国产替代背景尚未进入policy_events表。",
+        "。",
+        "半导体板块热度未从正式板块日表结构化接入。",
+        "更高分受制于政策事件未结构化、2026一季报缺失和晶圆代工经营拆分不足。",
+        "2026年一季报财务字段尚未接入本证据卡。",
+        "机构持仓、资金流、解禁减持和重组进度未合并到本证据卡。"
+      ],
+      "paths": {
+        "l3_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\华虹公司_sh688347_财报补证影子版_20260507.json",
+        "finance_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\华虹公司_财报基本面证据卡_20260507.json",
+        "industry_price_card": ""
+      },
+      "priority": "P0",
+      "priority_reasons": [
+        "行业价格尚未形成可用观测",
+        "资金/机构/减持解禁证据未合并",
+        "最新财报字段仍需结构化",
+        "政策事件匹配或暴露度不足",
+        "市场风格只宜作辅助参考"
+      ]
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "total_score": 48.0,
+      "conclusion": "暂不建议关注",
+      "confidence": "medium",
+      "item_scores": {
+        "technical": 28,
+        "fundamental_capital": 9,
+        "policy_events": 0.0,
+        "market_style_fit": 11
+      },
+      "policy_score": 0.0,
+      "market_style_confidence": "low",
+      "finance_card_status": "shadow_only",
+      "industry_price_status": "missing",
+      "industry_price_points": 0,
+      "missing": [
+        "成交活跃度不足，技术强度不能直接转成强结论。",
+        "主营品类毛利率、库存周转、应收账款和信用减值未结构化。",
+        "大宗商品价格和供应链景气未接入。",
+        "资金流、机构持仓、解禁减持未合并。",
+        "未匹配到结构化政策事件暴露度。",
+        "物流/供应链板块热度未结构化接入。",
+        "全市场宽度、板块强弱和大小盘风格仍不完整。",
+        "更高分受制于成交不足、扣非弱、供应链风控字段缺失、政策事件。",
+        "主营品类毛利率、库存周转、应收账款和信用减值未进入结构化字段。",
+        "大宗商品价格和供应链景气未接入市场风格/行业价格字段。"
+      ],
+      "paths": {
+        "l3_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\浙商中拓_sz000906_财报补证影子版_20260507.json",
+        "finance_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\浙商中拓_财报基本面证据卡_20260507.json",
+        "industry_price_card": ""
+      },
+      "priority": "P0",
+      "priority_reasons": [
+        "行业价格尚未形成可用观测",
+        "资金/机构/减持解禁证据未合并",
+        "政策事件匹配或暴露度不足",
+        "市场风格只宜作辅助参考"
+      ]
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "total_score": 28.0,
+      "conclusion": "暂不建议关注",
+      "confidence": "medium",
+      "item_scores": {
+        "technical": 11,
+        "fundamental_capital": 6,
+        "policy_events": 0.0,
+        "market_style_fit": 11
+      },
+      "policy_score": 0.0,
+      "market_style_confidence": "low",
+      "finance_card_status": "shadow_only",
+      "industry_price_status": "source_registered",
+      "industry_price_points": 0,
+      "missing": [
+        "需重新站回修复区并确认成交活跃，当前不能按强度5/5提高关注。",
+        "核心化工产品价格和价差未结构化。",
+        "产能、库存、出口和原材料价格未接入。",
+        "资金流、机构持仓、解禁减持未合并。",
+        "未匹配到结构化政策事件暴露度。",
+        "化工品价格、化学制品板块热度和产品景气未结构化接入。",
+        "更高分受制于价格低于修复区、成交不足、业绩下滑、产品价格和资金证据缺失。",
+        "偏苯三酸酐、TMA/TOTM等核心产品价格和价差未结构化接入。",
+        "产能、库存、出口和原材料价格未进入行业价格字段。",
+        "偏苯三酸酐/TMA具体价格、日期、单位尚未入账。",
+        "偏苯三酸酐/TMA尚未形成5个连续观测点。",
+        "偏苯三酸酐/TMA尚未形成20个连续观测点。",
+        "价格与公司毛利、现金流和产品暴露度的量化映射尚未完成。"
+      ],
+      "paths": {
+        "l3_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\正丹股份_sz300641_财报补证影子版_20260507.json",
+        "finance_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\正丹股份_财报基本面证据卡_20260507.json",
+        "industry_price_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\正丹股份_行业价格证据卡_本地观测_latest.json"
+      },
+      "priority": "P0",
+      "priority_reasons": [
+        "行业价格尚未形成可用观测",
+        "资金/机构/减持解禁证据未合并",
+        "政策事件匹配或暴露度不足",
+        "市场风格只宜作辅助参考"
+      ]
+    }
+  ],
+  "next_actions": [
+    {
+      "priority": "P0",
+      "stock": "云南锗业",
+      "action": "补行业价格观测入账",
+      "boundary": "只补公开可复核价格、日期、单位和来源；不足5个连续观测点前不得写趋势确认。"
+    },
+    {
+      "priority": "P0",
+      "stock": "云南锗业",
+      "action": "建立资金/机构/减持解禁证据卡候选",
+      "boundary": "只做证据卡候选和missing字段，不生成买卖、仓位或交易动作。"
+    },
+    {
+      "priority": "P1",
+      "stock": "云南锗业",
+      "action": "补最新财报结构化字段",
+      "boundary": "只提取公开披露字段，保留来源和缺口；不得凭空补数。"
+    },
+    {
+      "priority": "P0",
+      "stock": "天齐锂业",
+      "action": "建立资金/机构/减持解禁证据卡候选",
+      "boundary": "只做证据卡候选和missing字段，不生成买卖、仓位或交易动作。"
+    },
+    {
+      "priority": "P1",
+      "stock": "天齐锂业",
+      "action": "补最新财报结构化字段",
+      "boundary": "只提取公开披露字段，保留来源和缺口；不得凭空补数。"
+    },
+    {
+      "priority": "P1",
+      "stock": "天齐锂业",
+      "action": "补政策事件匹配或确认无直接政策",
+      "boundary": "无结构化政策时明确写无直接政策，不让模型凭空加分。"
+    },
+    {
+      "priority": "P0",
+      "stock": "华虹公司",
+      "action": "补行业价格观测入账",
+      "boundary": "只补公开可复核价格、日期、单位和来源；不足5个连续观测点前不得写趋势确认。"
+    },
+    {
+      "priority": "P0",
+      "stock": "华虹公司",
+      "action": "建立资金/机构/减持解禁证据卡候选",
+      "boundary": "只做证据卡候选和missing字段，不生成买卖、仓位或交易动作。"
+    },
+    {
+      "priority": "P1",
+      "stock": "华虹公司",
+      "action": "补最新财报结构化字段",
+      "boundary": "只提取公开披露字段，保留来源和缺口；不得凭空补数。"
+    },
+    {
+      "priority": "P1",
+      "stock": "华虹公司",
+      "action": "补政策事件匹配或确认无直接政策",
+      "boundary": "无结构化政策时明确写无直接政策，不让模型凭空加分。"
+    },
+    {
+      "priority": "P0",
+      "stock": "浙商中拓",
+      "action": "补行业价格观测入账",
+      "boundary": "只补公开可复核价格、日期、单位和来源；不足5个连续观测点前不得写趋势确认。"
+    },
+    {
+      "priority": "P0",
+      "stock": "浙商中拓",
+      "action": "建立资金/机构/减持解禁证据卡候选",
+      "boundary": "只做证据卡候选和missing字段，不生成买卖、仓位或交易动作。"
+    },
+    {
+      "priority": "P1",
+      "stock": "浙商中拓",
+      "action": "补政策事件匹配或确认无直接政策",
+      "boundary": "无结构化政策时明确写无直接政策，不让模型凭空加分。"
+    },
+    {
+      "priority": "P0",
+      "stock": "正丹股份",
+      "action": "补行业价格观测入账",
+      "boundary": "只补公开可复核价格、日期、单位和来源；不足5个连续观测点前不得写趋势确认。"
+    },
+    {
+      "priority": "P0",
+      "stock": "正丹股份",
+      "action": "建立资金/机构/减持解禁证据卡候选",
+      "boundary": "只做证据卡候选和missing字段，不生成买卖、仓位或交易动作。"
+    },
+    {
+      "priority": "P1",
+      "stock": "正丹股份",
+      "action": "补政策事件匹配或确认无直接政策",
+      "boundary": "无结构化政策时明确写无直接政策，不让模型凭空加分。"
+    }
+  ],
+  "context": {
+    "policy_event_count": 1,
+    "market_style_status": "confirmed",
+    "market_style_date": "2026-05-07",
+    "read_current_construction_panel": true,
+    "read_one_key_continuation_package": true
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_delete_or_move_old_assets": true,
+    "not_formal_database_write": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

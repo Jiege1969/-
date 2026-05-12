@@ -1,0 +1,584 @@
+{
+  "name": "行业价格观测人工填报回执模板",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 09:59:28",
+  "asset_identity": "W1行业价格人工填报回执模板",
+  "status": "blank_template",
+  "source_assets": {
+    "observation_queue": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本行业价格连续观测补数队列_最新.json",
+    "observation_queue_exists": true
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "not_real_data_fetch": true,
+  "not_formal_database_write": true,
+  "receipts": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "product_code": "germanium_ingot",
+      "product_name": "锗锭",
+      "indicator_type": "metal_price",
+      "receipt_status": "blank",
+      "current_observation_count": 0,
+      "target_min_observation_count": 5,
+      "missing_observation_count": 5,
+      "preferred_sources": [
+        "上海有色网SMM锗价格页",
+        "百川盈孚锗价格页",
+        "上市公司公告中的锗产品价格说明"
+      ],
+      "minimum_fields": [
+        "observation_date",
+        "value_or_direction",
+        "unit_or_caliber",
+        "source_name",
+        "source_url",
+        "checked_at"
+      ],
+      "observation_rows": [
+        {
+          "row_no": 1,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 2,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 3,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 4,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 5,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        }
+      ],
+      "ready_review": {
+        "trend_ready": false,
+        "score_ready": false,
+        "ready_condition": "至少5个连续、同口径、可复核观测点，并经人工复核后，才可进入趋势证据。",
+        "blocking_reason": "行业价格/景气观测点不足，不能写趋势确认，也不能进入L3市场或基本面加分。",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "front_gap_wording": "不足5个连续观测点前，只能写锗价尚未形成可用趋势证据。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "product_code": "battery_grade_lithium_carbonate",
+      "product_name": "电池级碳酸锂",
+      "indicator_type": "chemical_material_price",
+      "receipt_status": "blank",
+      "current_observation_count": 1,
+      "target_min_observation_count": 5,
+      "missing_observation_count": 4,
+      "preferred_sources": [
+        "上海有色网SMM新能源材料页",
+        "公开锂盐价格页面",
+        "上市公司公告中的锂盐价格说明"
+      ],
+      "minimum_fields": [
+        "observation_date",
+        "value_or_direction",
+        "unit_or_caliber",
+        "source_name",
+        "source_url",
+        "checked_at"
+      ],
+      "observation_rows": [
+        {
+          "row_no": 1,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 2,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 3,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 4,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 5,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        }
+      ],
+      "ready_review": {
+        "trend_ready": false,
+        "score_ready": false,
+        "ready_condition": "至少5个连续、同口径、可复核观测点，并经人工复核后，才可进入趋势证据。",
+        "blocking_reason": "行业价格/景气观测点不足，不能写趋势确认，也不能进入L3市场或基本面加分。",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "front_gap_wording": "行业价格/景气观测点不足：1-4个观测点只能写单点或弱参考，不得写趋势反转。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "product_code": "wafer_foundry_cycle_indicator",
+      "product_name": "晶圆代工景气指标",
+      "indicator_type": "industry_cycle_indicator",
+      "receipt_status": "blank",
+      "current_observation_count": 0,
+      "target_min_observation_count": 5,
+      "missing_observation_count": 5,
+      "preferred_sources": [
+        "公司公告中的产能利用率/ASP说明",
+        "半导体行业协会或公开研究摘要",
+        "公开晶圆代工价格/稼动率报道"
+      ],
+      "minimum_fields": [
+        "observation_date",
+        "value_or_direction",
+        "unit_or_caliber",
+        "source_name",
+        "source_url",
+        "checked_at"
+      ],
+      "observation_rows": [
+        {
+          "row_no": 1,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 2,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 3,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 4,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 5,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        }
+      ],
+      "ready_review": {
+        "trend_ready": false,
+        "score_ready": false,
+        "ready_condition": "至少5个连续、同口径、可复核观测点，并经人工复核后，才可进入趋势证据。",
+        "blocking_reason": "行业价格/景气观测点不足，不能写趋势确认，也不能进入L3市场或基本面加分。",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "front_gap_wording": "行业价格/景气观测点不足：未结构化前只能写晶圆代工景气未接入，不能写半导体景气已经验证。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "product_code": "bulk_supply_chain_cycle_indicator",
+      "product_name": "大宗商品/供应链景气指标",
+      "indicator_type": "business_cycle_indicator",
+      "receipt_status": "blank",
+      "current_observation_count": 0,
+      "target_min_observation_count": 5,
+      "missing_observation_count": 5,
+      "preferred_sources": [
+        "公司公告中的主营品类价格/库存周转说明",
+        "公开大宗商品价格指数",
+        "公开供应链景气或物流指标"
+      ],
+      "minimum_fields": [
+        "observation_date",
+        "value_or_direction",
+        "unit_or_caliber",
+        "source_name",
+        "source_url",
+        "checked_at"
+      ],
+      "observation_rows": [
+        {
+          "row_no": 1,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 2,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 3,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 4,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 5,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        }
+      ],
+      "ready_review": {
+        "trend_ready": false,
+        "score_ready": false,
+        "ready_condition": "至少5个连续、同口径、可复核观测点，并经人工复核后，才可进入趋势证据。",
+        "blocking_reason": "行业价格/景气观测点不足，不能写趋势确认，也不能进入L3市场或基本面加分。",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "front_gap_wording": "行业价格/景气观测点不足：未结构化前只能写供应链景气未接入，不能用泛化大宗上涨强化结论。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "product_code": "trimellitic_anhydride_tma",
+      "product_name": "偏苯三酸酐/TMA",
+      "indicator_type": "chemical_product_price",
+      "receipt_status": "blank",
+      "current_observation_count": 0,
+      "target_min_observation_count": 5,
+      "missing_observation_count": 5,
+      "preferred_sources": [
+        "百川盈孚TMA价格页",
+        "卓创资讯公开化工品价格摘要",
+        "上市公司公告中的TMA/偏苯三酸酐价格说明"
+      ],
+      "minimum_fields": [
+        "observation_date",
+        "value_or_direction",
+        "unit_or_caliber",
+        "source_name",
+        "source_url",
+        "checked_at"
+      ],
+      "observation_rows": [
+        {
+          "row_no": 1,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 2,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 3,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 4,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        },
+        {
+          "row_no": 5,
+          "observation_date": null,
+          "value_or_direction": null,
+          "unit_or_caliber": null,
+          "source_name": null,
+          "source_url": null,
+          "checked_at": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "can_enter_trend": false,
+          "can_enter_score": false,
+          "review_note": null
+        }
+      ],
+      "ready_review": {
+        "trend_ready": false,
+        "score_ready": false,
+        "ready_condition": "至少5个连续、同口径、可复核观测点，并经人工复核后，才可进入趋势证据。",
+        "blocking_reason": "行业价格/景气观测点不足，不能写趋势确认，也不能进入L3市场或基本面加分。",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "front_gap_wording": "不足5个连续观测点前，只能写TMA价格未形成可用趋势证据。"
+    }
+  ],
+  "receipt_rules": [
+    "人工填报必须保留观测日期、数值或方向、单位或口径、来源名称、来源URL和核验时间。",
+    "不足5个连续、同口径、可复核观测点前，trend_ready必须为false。",
+    "trend_ready为false时，前台只能写证据缺口，不能写价格趋势确认。",
+    "空白回执不能进入L3评分，can_enter_score必须为false。",
+    "本模板不抓取真实价格，不写正式价格账本，不触发外发或交易。"
+  ],
+  "summary": {
+    "receipt_count": 5,
+    "stock_count": 5,
+    "required_observation_points": 25,
+    "existing_observation_points": 1,
+    "trend_ready_count": 0,
+    "score_allowed_count": 0
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_adapter_write": true,
+    "not_score_write": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_real_data_fetch": true
+  }
+}

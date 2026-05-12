@@ -1,0 +1,73 @@
+﻿{
+    "report":  "Ollama旧Docker卷真实清理收口",
+    "generated_at":  "2026-05-06 08:27:53 +08:00",
+    "evidence_dir":  "第30轮原始唯一性核实证据目录已清债删除；卷删除判断、重复性结论、最终Docker/n8n/Ollama/Redis验收已固化在本_latest收口报告。",
+    "current_ollama_mount":  "[{\"Type\":\"bind\",\"Source\":\"D:\\\\杰哥智能化系统\\\\01杰哥智能系统\\\\03数据\\\\ollama\",\"Destination\":\"/root/.ollama\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"rprivate\"}]",
+    "all_container_named_volume_refs":  "none: docker ps -a inspect found no container using ollama or ollama_data named volumes",
+    "judgement":  [
+                      {
+                          "volume":  "ollama",
+                          "files":  35,
+                          "bytes":  25824763041,
+                          "duplicate_with_D_blobs":  29,
+                          "duplicate_with_D_manifests":  6,
+                          "unique_assets":  0,
+                          "action":  "delete_volume"
+                      },
+                      {
+                          "volume":  "ollama_data",
+                          "files":  63,
+                          "bytes":  45633078600,
+                          "duplicate_with_D_blobs":  13,
+                          "unique_blob_bytes":  36029252876,
+                          "unique_manifests":  [
+                                                   "registry.ollama.ai/MFDoom/deepseek-r1-tool-calling/7b",
+                                                   "registry.ollama.ai/library/glm-4.7-flash/latest",
+                                                   "registry.ollama.ai/library/gemma3/4b"
+                                               ],
+                          "partial_blobs_present":  true,
+                          "old_generated_key_present":  true,
+                          "action":  "delete_volume"
+                      }
+                  ],
+    "rationale":  "两个卷均未被任何容器挂载；主线Ollama使用D盘bind mount。ollama卷全量为D盘重复。ollama_data卷仅含非当前模型、partial残块和旧自动生成密钥；模型来自公共registry、属于可再生资产，不是当前模型清单和不可再生数据。按清债不添新债原则删除。",
+    "safety":  {
+                   "stopped_services":  false,
+                   "triggered_ollama_service":  false,
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false,
+                   "deleted_D_models":  false,
+                   "deleted_F_backup":  false,
+                   "used_prune":  false
+               },
+    "deleted_volumes":  [
+                            "ollama",
+                            "ollama_data"
+                        ],
+    "before_volumes":  [
+                           "ollama",
+                           "ollama_data"
+                       ],
+    "after_volumes":  null,
+    "volume_exists_after":  {
+                                "ollama_data":  false,
+                                "ollama":  false
+                            },
+    "anti_regression_fix":  "并行核实窗口在卷删除后又只读挂载 ollama_data，Docker 自动创建了同名空卷；已关闭窗口、核实空卷无引用并二次删除。最终 docker volume ls 为空。",
+    "final_validation":  {
+                             "docker_containers":  [
+                                                       "jiege_v3_ollama|ollama/ollama:0.20.5|Up|127.0.0.1:29134",
+                                                       "jiege_v3_redis|redis:7.2.5-alpine|Up|127.0.0.1:26379",
+                                                       "jiege_v3_n8n|n8nio/n8n:1.123.30|Up|127.0.0.1:28679"
+                                                   ],
+                             "docker_volumes_count":  0,
+                             "n8n_healthz":  200,
+                             "ollama_tags":  200,
+                             "redis_tcp":  true,
+                             "blood_probe_ready":  true,
+                             "blood_probe_failed_count":  0
+                         },
+    "第30轮原始证据清债说明":  "第30轮原始唯一性核实证据目录已清债删除；卷删除判断、重复性结论、最终Docker/n8n/Ollama/Redis验收已固化在本_latest收口报告。"
+}

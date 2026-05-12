@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  health-check:
+    docker:
+      - image: cimg/python:3.11
+    steps:
+      - checkout
+      - run:
+          name: Install Python dependencies
+          command: |
+            python --version
+            if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - run:
+          name: Run local health check
+          command: python "02杰哥扩展系统/00公共组件/02脚本/test_local_health.py"
+
+workflows:
+  health-check:
+    jobs:
+      - health-check

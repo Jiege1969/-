@@ -1,0 +1,101 @@
+{
+  "name": "系统状态巡检",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "bf9ed691-88c8-45f2-968b-e1b92ce16b37",
+      "name": "手动触发",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        260,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ab520595-becf-4101-9626-23d28481bd1b",
+              "name": "状态",
+              "value": "dry_run_only",
+              "type": "string"
+            },
+            {
+              "id": "a8d470de-45b6-4c33-8b7e-254d5c44ee8c",
+              "name": "工作流名",
+              "value": "系统状态巡检",
+              "type": "string"
+            },
+            {
+              "id": "b46aee27-0a75-4048-9937-3e2b8c2e8227",
+              "name": "执行摘要",
+              "value": "未激活导入验证工件，仅用于确认n8n导入链路，不执行真实巡检。",
+              "type": "string"
+            },
+            {
+              "id": "11d22fba-70a1-4b74-b6a8-7505e92666d9",
+              "name": "是否需要人工复核",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "id": "6a40692b-c2d0-48ce-8200-4eb36cb8e251",
+      "name": "生成只读状态",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        520,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "系统状态巡检未激活导入工件\\n生成时间：2026-04-27 19:39:58\\n安全边界：无Webhook、无凭据、无自动触发、无外发。",
+        "height": 220,
+        "width": 320,
+        "color": 4
+      },
+      "id": "97083d7c-cbc9-4ec6-a0fa-44c30ece5f6c",
+      "name": "安全边界说明",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        260,
+        20
+      ]
+    }
+  ],
+  "connections": {
+    "手动触发": {
+      "main": [
+        [
+          {
+            "node": "生成只读状态",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "staticData": null,
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "jiege_v3_gray_import": true,
+    "target": "jiege_n8n",
+    "must_remain_inactive": true,
+    "generated_at": "2026-04-27 19:39:58"
+  }
+}

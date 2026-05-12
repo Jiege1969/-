@@ -1,0 +1,51 @@
+{
+  "template_id": "P2_POST_MANUAL_FILL_RECHECK_RECEIPT_TEMPLATE_001",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S15",
+  "status": "post_manual_fill_recheck_receipt_template_not_release_form",
+  "purpose": "规定人工填写完成后如何回执和复验，防止已人工填写被误解成正式放行",
+  "input_dependency": "P2-S14 影子入口人工填写任务包样例",
+  "required_fields": [
+    "recheck_receipt_id",
+    "source_manual_fill_task_id",
+    "target_line",
+    "target_entry",
+    "target_path",
+    "human_filled",
+    "json_parse_check",
+    "redline_false_check",
+    "target_entry_status_check",
+    "readonly_shadow_regression",
+    "ready_for_shadow_draft_candidate",
+    "write_target_entry",
+    "auto_generate_business_conclusion",
+    "release_form",
+    "formal_capability_claim"
+  ],
+  "required_rechecks": [
+    "json_parse_check",
+    "redline_false_check",
+    "target_entry_status_check",
+    "readonly_shadow_regression"
+  ],
+  "allowed_recheck_status": ["pending_manual_fill", "pass", "fail", "blocked"],
+  "hard_rules": {
+    "receipt_is_release_form": false,
+    "write_target_entry": false,
+    "auto_generate_business_conclusion": false,
+    "formal_capability_claim": false,
+    "ready_for_shadow_draft_candidate_is_not_formal_capability": true
+  },
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

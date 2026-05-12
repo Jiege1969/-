@@ -1,0 +1,130 @@
+{
+  "name": "低风险只读调度运行台账字段定义",
+  "generated_at": "2026-05-08 19:56:03",
+  "scope": "readonly_scheduler_ledger_and_evidence_archive_preview_only",
+  "required_minimum_fields": [
+    "task_id",
+    "task_name",
+    "plan_time",
+    "preview_status",
+    "pause_required",
+    "evidence_path",
+    "hash",
+    "operator_mode"
+  ],
+  "field_count": 13,
+  "fields": [
+    {
+      "name": "task_id",
+      "type": "string",
+      "required": true,
+      "description": "预演任务唯一编号。"
+    },
+    {
+      "name": "task_name",
+      "type": "string",
+      "required": true,
+      "description": "预演任务名称。"
+    },
+    {
+      "name": "plan_time",
+      "type": "string",
+      "required": true,
+      "description": "计划登记时间，仅用于预演排序，不注册调度。"
+    },
+    {
+      "name": "preview_status",
+      "type": "string",
+      "required": true,
+      "description": "固定默认为 not_executed。"
+    },
+    {
+      "name": "pause_required",
+      "type": "boolean",
+      "required": true,
+      "description": "是否需要人工暂停复核；预演只登记，不执行。"
+    },
+    {
+      "name": "evidence_path",
+      "type": "string",
+      "required": true,
+      "description": "预演证据归档目标路径，仅登记清单，不复制/移动源文件。"
+    },
+    {
+      "name": "hash",
+      "type": "string",
+      "required": true,
+      "description": "台账记录规范化内容的 sha256。"
+    },
+    {
+      "name": "operator_mode",
+      "type": "string",
+      "required": true,
+      "description": "固定 readonly_preview。"
+    },
+    {
+      "name": "actual_execution",
+      "type": "boolean",
+      "required": true,
+      "description": "固定 false，确认未真实执行。"
+    },
+    {
+      "name": "copy_source_files",
+      "type": "boolean",
+      "required": true,
+      "description": "固定 false，确认未复制业务源文件。"
+    },
+    {
+      "name": "move_source_files",
+      "type": "boolean",
+      "required": true,
+      "description": "固定 false，确认未移动业务源文件。"
+    },
+    {
+      "name": "external_call",
+      "type": "boolean",
+      "required": true,
+      "description": "固定 false，确认未调用外部接口。"
+    },
+    {
+      "name": "reload_service",
+      "type": "boolean",
+      "required": true,
+      "description": "固定 false，确认未重载服务。"
+    }
+  ],
+  "defaults": {
+    "preview_status": "not_executed",
+    "operator_mode": "readonly_preview",
+    "actual_execution": false,
+    "copy_source_files": false,
+    "move_source_files": false,
+    "external_call": false,
+    "reload_service": false,
+    "real_wecom_send": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "auto_promote_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false
+  },
+  "hard_red_line_confirmation": {
+    "actual_execution": false,
+    "copy_source_files": false,
+    "move_source_files": false,
+    "external_call": false,
+    "reload_service": false,
+    "real_wecom_send": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "auto_promote_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false
+  }
+}

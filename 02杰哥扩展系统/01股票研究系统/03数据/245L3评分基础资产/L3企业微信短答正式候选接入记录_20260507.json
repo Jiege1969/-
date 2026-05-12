@@ -1,0 +1,91 @@
+{
+  "名称": "L3企业微信短答正式候选接入记录",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "正式候选接入记录",
+  "状态": "local_assistant_entry_integrated",
+  "用户授权": "用户已明确全权授权继续搭建，无须逐步确认。",
+  "本次改动": [
+    {
+      "path": "02脚本/L3企业微信短答适配器.py",
+      "type": "新增正式候选脚本",
+      "作用": "读取L3评分、财报证据卡、行业价格证据卡和市场风格日表，生成企业微信单股结论型短答。"
+    },
+    {
+      "path": "02脚本/股票助手入口.py",
+      "type": "正式入口最小改动",
+      "作用": "单股前台短答优先调用L3短答适配器；适配器失败时回退旧短答。"
+    }
+  ],
+  "未改动": [
+    "02脚本/股票企业微信桥接入口.py",
+    "01配置/股票前台输出标准_v2.json",
+    "n8n工作流",
+    "企业微信真实外发配置",
+    "服务启动脚本",
+    "券商接口或任何交易链路"
+  ],
+  "验证结果": {
+    "py_compile": "通过",
+    "五样本": [
+      {
+        "question": "分析云南锗业",
+        "first_line": "分析对象：云南锗业（sz002428）",
+        "has_conclusion": true,
+        "has_why": true,
+        "has_missing": true,
+        "trade_hits": []
+      },
+      {
+        "question": "分析天齐锂业",
+        "first_line": "分析对象：天齐锂业（sz002466）",
+        "has_conclusion": true,
+        "has_why": true,
+        "has_missing": true,
+        "trade_hits": []
+      },
+      {
+        "question": "分析华虹公司",
+        "first_line": "分析对象：华虹公司（sh688347）",
+        "has_conclusion": true,
+        "has_why": true,
+        "has_missing": true,
+        "trade_hits": []
+      },
+      {
+        "question": "分析浙商中拓",
+        "first_line": "分析对象：浙商中拓（sz000906）",
+        "has_conclusion": true,
+        "has_why": true,
+        "has_missing": true,
+        "trade_hits": []
+      },
+      {
+        "question": "分析正丹股份",
+        "first_line": "分析对象：正丹股份（sz300641）",
+        "has_conclusion": true,
+        "has_why": true,
+        "has_missing": true,
+        "trade_hits": []
+      }
+    ]
+  },
+  "hashes_after_change": {
+    "02脚本/股票助手入口.py": "E6B2C3469EC392C4CD64DE3E05E283F7546679624BDED700A24092B2E9D6CE25",
+    "02脚本/L3企业微信短答适配器.py": "03D907EF04380C008F0A7FDE0D41784C6D90B79378C2E6226DBF4D40E5DC0214",
+    "02脚本/股票企业微信桥接入口.py": "B2C63276E803CA7304C15FD9E9727094ADE8879697002DDD93ED35BD38809AF4",
+    "01配置/股票前台输出标准_v2.json": "EF0E04753C005206D91EB69B1CC5FE94A1D3A2936DC4799E48CE2C023AF30A96"
+  },
+  "回滚方式": [
+    "删除或停用02脚本/L3企业微信短答适配器.py，股票助手入口会因适配器不存在回退旧短答。",
+    "如需完全回滚代码，可移除股票助手入口.py中build_l3_wecom_short_reply_if_available的调用块。",
+    "本次未改桥接和外发链路，因此无需回滚企业微信配置、n8n或服务配置。"
+  ],
+  "安全边界": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_service_restart": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

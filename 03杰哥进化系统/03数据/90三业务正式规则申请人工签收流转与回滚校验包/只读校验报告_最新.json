@@ -1,0 +1,71 @@
+{
+  "name": "三业务正式规则申请签收流转只读校验报告",
+  "checked_at": "2026-05-08 18:59:55",
+  "passed": true,
+  "error_count": 0,
+  "errors": [],
+  "read_only": true,
+  "based_on_package_86": true,
+  "source_86_files": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\三业务正式规则申请草案冲突扫描与签收台账包_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\三业务正式规则申请草案扫描示例_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\三业务草案冲突扫描结果_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\冲突扫描规则_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\签收台账_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\签收台账字段_最新.json"
+  ],
+  "checked_files": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\90三业务正式规则申请人工签收流转与回滚校验包\\三业务正式规则申请人工签收流转与回滚校验包_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\90三业务正式规则申请人工签收流转与回滚校验包\\人工签收流转定义_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\90三业务正式规则申请人工签收流转与回滚校验包\\人工签收流转定义_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\90三业务正式规则申请人工签收流转与回滚校验包\\回滚校验清单_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\90三业务正式规则申请人工签收流转与回滚校验包\\回滚校验清单_最新.md"
+  ],
+  "businesses": [
+    "税收",
+    "股票",
+    "视频"
+  ],
+  "states": [
+    "可申请正式生效",
+    "回滚待确认",
+    "已驳回",
+    "待签收",
+    "总管已确认",
+    "需补正"
+  ],
+  "confirmed_flags": {
+    "formal_rule_effective": false,
+    "write_formal_rule": false,
+    "auto_apply": false,
+    "rollback_executed": false,
+    "requires_supervisor_confirmation": true
+  },
+  "formal_rule_effective": false,
+  "write_formal_rule": false,
+  "auto_apply": false,
+  "rollback_executed": false,
+  "requires_supervisor_confirmation": true,
+  "external_actions": {
+    "send_wecom": false,
+    "connect_n8n": false,
+    "connect_broker": false,
+    "trade": false,
+    "login_tax_bureau": false,
+    "connect_tax_software": false,
+    "change_supervisor_panel": false,
+    "change_one_click_continuation_package": false,
+    "reload_service": false
+  },
+  "checks": {
+    "package_86_referenced": true,
+    "source_86_files_exist": true,
+    "flow_states_complete": true,
+    "rollback_businesses_complete": true,
+    "formal_rule_effective_false": true,
+    "write_formal_rule_false": true,
+    "auto_apply_false": true,
+    "rollback_executed_false": true,
+    "requires_supervisor_confirmation_true": true
+  }
+}

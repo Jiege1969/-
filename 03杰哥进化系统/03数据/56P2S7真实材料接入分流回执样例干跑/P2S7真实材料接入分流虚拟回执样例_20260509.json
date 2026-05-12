@@ -1,0 +1,295 @@
+{
+  "sample_only": true,
+  "receipts": [
+    {
+      "receipt_id": "P2S7-RECEIPT-001",
+      "material_id": "VIRTUAL-P2S5-CASE-001",
+      "received_at": "2026-05-09 00:00:00 +08:00",
+      "source_type": "用户提供",
+      "source_path_or_url": "virtual_sample_only",
+      "authorization_status": "已授权",
+      "sensitivity": "无敏感",
+      "desensitized_status": "已脱敏",
+      "target_line": "tax",
+      "target_entry": "TAX_DAILY_INTAKE_002",
+      "can_enter_shadow": "是",
+      "pause_reasons": [
+        "无"
+      ],
+      "next_allowed_action": "登记资料",
+      "human_review_required": true,
+      "human_review_status": "待复核",
+      "redline_status": "pass",
+      "redline_reasons": [
+        "无"
+      ],
+      "formal_capability_claim": false,
+      "receipt_status": "draft",
+      "source_case_id": "P2S5-CASE-001",
+      "virtual_sample_only": true,
+      "forbidden_actions": {
+        "trigger_n8n": false,
+        "send_wecom": false,
+        "write_formal_database": false,
+        "scan_unspecified_directory": false,
+        "copy_sensitive_material": false,
+        "tax_filing": false,
+        "invoice_action": false,
+        "tax_refund_action": false,
+        "trade": false,
+        "connect_real_office_system": false,
+        "render_upload_or_publish_video": false,
+        "claim_formal_capability": false
+      }
+    },
+    {
+      "receipt_id": "P2S7-RECEIPT-002",
+      "material_id": "VIRTUAL-P2S5-CASE-002",
+      "received_at": "2026-05-09 00:00:00 +08:00",
+      "source_type": "用户提供",
+      "source_path_or_url": "virtual_sample_only",
+      "authorization_status": "已授权",
+      "sensitivity": "无敏感",
+      "desensitized_status": "已脱敏",
+      "target_line": "office_work",
+      "target_entry": "OFFICE_SHADOW_002",
+      "can_enter_shadow": "是",
+      "pause_reasons": [
+        "无"
+      ],
+      "next_allowed_action": "登记资料",
+      "human_review_required": true,
+      "human_review_status": "待复核",
+      "redline_status": "pass",
+      "redline_reasons": [
+        "无"
+      ],
+      "formal_capability_claim": false,
+      "receipt_status": "draft",
+      "source_case_id": "P2S5-CASE-002",
+      "virtual_sample_only": true,
+      "forbidden_actions": {
+        "trigger_n8n": false,
+        "send_wecom": false,
+        "write_formal_database": false,
+        "scan_unspecified_directory": false,
+        "copy_sensitive_material": false,
+        "tax_filing": false,
+        "invoice_action": false,
+        "tax_refund_action": false,
+        "trade": false,
+        "connect_real_office_system": false,
+        "render_upload_or_publish_video": false,
+        "claim_formal_capability": false
+      }
+    },
+    {
+      "receipt_id": "P2S7-RECEIPT-003",
+      "material_id": "VIRTUAL-P2S5-CASE-003",
+      "received_at": "2026-05-09 00:00:00 +08:00",
+      "source_type": "用户提供",
+      "source_path_or_url": "virtual_sample_only",
+      "authorization_status": "已授权",
+      "sensitivity": "素材版权",
+      "desensitized_status": "已脱敏",
+      "target_line": "video_production",
+      "target_entry": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "can_enter_shadow": "是",
+      "pause_reasons": [
+        "无"
+      ],
+      "next_allowed_action": "登记资料",
+      "human_review_required": true,
+      "human_review_status": "待复核",
+      "redline_status": "pass",
+      "redline_reasons": [
+        "无"
+      ],
+      "formal_capability_claim": false,
+      "receipt_status": "draft",
+      "source_case_id": "P2S5-CASE-003",
+      "virtual_sample_only": true,
+      "forbidden_actions": {
+        "trigger_n8n": false,
+        "send_wecom": false,
+        "write_formal_database": false,
+        "scan_unspecified_directory": false,
+        "copy_sensitive_material": false,
+        "tax_filing": false,
+        "invoice_action": false,
+        "tax_refund_action": false,
+        "trade": false,
+        "connect_real_office_system": false,
+        "render_upload_or_publish_video": false,
+        "claim_formal_capability": false
+      }
+    },
+    {
+      "receipt_id": "P2S7-RECEIPT-004",
+      "material_id": "VIRTUAL-P2S5-CASE-004",
+      "received_at": "2026-05-09 00:00:00 +08:00",
+      "source_type": "官方公开",
+      "source_path_or_url": "virtual_sample_only",
+      "authorization_status": "仅参考",
+      "sensitivity": "无敏感",
+      "desensitized_status": "不适用",
+      "target_line": "shared_policy_evidence",
+      "target_entry": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "can_enter_shadow": "是",
+      "pause_reasons": [
+        "无"
+      ],
+      "next_allowed_action": "登记资料",
+      "human_review_required": true,
+      "human_review_status": "待复核",
+      "redline_status": "pass",
+      "redline_reasons": [
+        "无"
+      ],
+      "formal_capability_claim": false,
+      "receipt_status": "draft",
+      "source_case_id": "P2S5-CASE-004",
+      "virtual_sample_only": true,
+      "forbidden_actions": {
+        "trigger_n8n": false,
+        "send_wecom": false,
+        "write_formal_database": false,
+        "scan_unspecified_directory": false,
+        "copy_sensitive_material": false,
+        "tax_filing": false,
+        "invoice_action": false,
+        "tax_refund_action": false,
+        "trade": false,
+        "connect_real_office_system": false,
+        "render_upload_or_publish_video": false,
+        "claim_formal_capability": false
+      }
+    },
+    {
+      "receipt_id": "P2S7-RECEIPT-005",
+      "material_id": "VIRTUAL-P2S5-CASE-005",
+      "received_at": "2026-05-09 00:00:00 +08:00",
+      "source_type": "用户提供",
+      "source_path_or_url": "virtual_sample_only",
+      "authorization_status": "待确认",
+      "sensitivity": "财务",
+      "desensitized_status": "未脱敏",
+      "target_line": "pause",
+      "target_entry": "gap_or_redline_record",
+      "can_enter_shadow": "否",
+      "pause_reasons": [
+        "授权未确认",
+        "敏感内容未脱敏"
+      ],
+      "next_allowed_action": "暂停",
+      "human_review_required": true,
+      "human_review_status": "待复核",
+      "redline_status": "pass",
+      "redline_reasons": [
+        "无"
+      ],
+      "formal_capability_claim": false,
+      "receipt_status": "draft",
+      "source_case_id": "P2S5-CASE-005",
+      "virtual_sample_only": true,
+      "forbidden_actions": {
+        "trigger_n8n": false,
+        "send_wecom": false,
+        "write_formal_database": false,
+        "scan_unspecified_directory": false,
+        "copy_sensitive_material": false,
+        "tax_filing": false,
+        "invoice_action": false,
+        "tax_refund_action": false,
+        "trade": false,
+        "connect_real_office_system": false,
+        "render_upload_or_publish_video": false,
+        "claim_formal_capability": false
+      }
+    },
+    {
+      "receipt_id": "P2S7-RECEIPT-006",
+      "material_id": "VIRTUAL-P2S5-CASE-006",
+      "received_at": "2026-05-09 00:00:00 +08:00",
+      "source_type": "用户提供",
+      "source_path_or_url": "virtual_sample_only",
+      "authorization_status": "已授权",
+      "sensitivity": "无敏感",
+      "desensitized_status": "已脱敏",
+      "target_line": "pause",
+      "target_entry": "gap_or_redline_record",
+      "can_enter_shadow": "否",
+      "pause_reasons": [
+        "命中真实执行请求"
+      ],
+      "next_allowed_action": "暂停",
+      "human_review_required": true,
+      "human_review_status": "待复核",
+      "redline_status": "blocked",
+      "redline_reasons": [
+        "命中真实执行请求"
+      ],
+      "formal_capability_claim": false,
+      "receipt_status": "draft",
+      "source_case_id": "P2S5-CASE-006",
+      "virtual_sample_only": true,
+      "forbidden_actions": {
+        "trigger_n8n": false,
+        "send_wecom": false,
+        "write_formal_database": false,
+        "scan_unspecified_directory": false,
+        "copy_sensitive_material": false,
+        "tax_filing": false,
+        "invoice_action": false,
+        "tax_refund_action": false,
+        "trade": false,
+        "connect_real_office_system": false,
+        "render_upload_or_publish_video": false,
+        "claim_formal_capability": false
+      }
+    },
+    {
+      "receipt_id": "P2S7-RECEIPT-007",
+      "material_id": "VIRTUAL-P2S5-CASE-007",
+      "received_at": "2026-05-09 00:00:00 +08:00",
+      "source_type": "待核验",
+      "source_path_or_url": "virtual_sample_only",
+      "authorization_status": "待确认",
+      "sensitivity": "待判",
+      "desensitized_status": "待确认",
+      "target_line": "pause",
+      "target_entry": "gap_or_redline_record",
+      "can_enter_shadow": "否",
+      "pause_reasons": [
+        "来源不清",
+        "授权未确认",
+        "敏感内容未脱敏"
+      ],
+      "next_allowed_action": "暂停",
+      "human_review_required": true,
+      "human_review_status": "待复核",
+      "redline_status": "pass",
+      "redline_reasons": [
+        "无"
+      ],
+      "formal_capability_claim": false,
+      "receipt_status": "draft",
+      "source_case_id": "P2S5-CASE-007",
+      "virtual_sample_only": true,
+      "forbidden_actions": {
+        "trigger_n8n": false,
+        "send_wecom": false,
+        "write_formal_database": false,
+        "scan_unspecified_directory": false,
+        "copy_sensitive_material": false,
+        "tax_filing": false,
+        "invoice_action": false,
+        "tax_refund_action": false,
+        "trade": false,
+        "connect_real_office_system": false,
+        "render_upload_or_publish_video": false,
+        "claim_formal_capability": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "status": "draft_schema_not_production_validator",
+  "asset_type": "human_review_receipt",
+  "boundary": {
+    "n8n": false,
+    "wechat": false,
+    "formal_database": false,
+    "real_business_action": false
+  },
+  "required_fields": [
+    "review_id",
+    "related_asset",
+    "business_line",
+    "review_type",
+    "reviewer",
+    "review_date",
+    "correction_points",
+    "can_enter_evolution",
+    "next_action"
+  ],
+  "enum_fields": {
+    "business_line": ["tax", "office_work", "video_production", "governance", "other"],
+    "review_type": ["passed", "passed_with_changes", "rejected", "pending_materials"],
+    "can_enter_evolution": ["yes", "no", "pending"],
+    "next_action": ["continue_shadow", "add_materials", "pause", "manual_confirmation"]
+  },
+  "notes": "Draft schema only. This receipt is not an approval form."
+}

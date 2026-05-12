@@ -1,0 +1,23 @@
+{
+  "名称": "Redis Streams影子队列字段映射",
+  "版本": "2026-05-05",
+  "定位": "仅定义未来xadd字段和消费组口径；本轮不连接Redis、不写入Redis、不作为正式主链。",
+  "stream_name": "jiego:task:shadow",
+  "consumer_group": "jiego-shadow-workers",
+  "字段映射": {
+    "task_id": "task_id",
+    "risk_level": "risk_level",
+    "dry_run": "dry_run",
+    "real_action_allowed": "real_action_allowed",
+    "idempotency_key": "idempotency_key",
+    "payload_json": "完整标准任务单JSON字符串",
+    "created_at": "created_at"
+  },
+  "正式启用前必须验证": [
+    "Redis持久化策略已确认。",
+    "pending任务可读取、重试、回收。",
+    "重复消费不会重复执行真实动作。",
+    "失败任务能落回SQLite台账。"
+  ],
+  "本轮状态": "shadow_mapping_only"
+}

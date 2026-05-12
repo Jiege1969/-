@@ -1,0 +1,26 @@
+{
+  "id": "h0xpxp9rPrUSqk1G",
+  "name": "股票主动研究闭环_桥接未激活",
+  "active": 0,
+  "triggerCount": 0,
+  "createdAt": "2026-05-01 06:26:24.853",
+  "updatedAt": "2026-05-01 06:26:24.853",
+  "isArchived": 0,
+  "versionCounter": 1,
+  "description": null,
+  "node_count": 4,
+  "node_types": [
+    "n8n-nodes-base.manualTrigger",
+    "n8n-nodes-base.executeCommand",
+    "n8n-nodes-base.set",
+    "n8n-nodes-base.stickyNote"
+  ],
+  "node_names": [
+    "手动触发",
+    "调用宿主机股票研究桥接入口",
+    "输出本地结果路径",
+    "安全边界说明"
+  ],
+  "webhook_like": true,
+  "wecom_like": false
+}

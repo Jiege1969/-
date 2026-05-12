@@ -1,0 +1,207 @@
+{
+  "report_name": "用户交付说明与回滚手册包",
+  "task_batch": "并行小任务M",
+  "generated_at": "2026-05-05T14:42:00+08:00",
+  "owner_scope": "00杰哥系统总管",
+  "write_scope": {
+    "allowed_root": "D:\\杰哥智能化系统\\00杰哥系统总管",
+    "created_files_only": true,
+    "fixed_recycle_report_written": true,
+    "other_workers_files_modified": false
+  },
+  "execution_boundary": {
+    "documentation_only": true,
+    "json_only": true,
+    "services_started": false,
+    "n8n_triggered": false,
+    "enterprise_wechat_sent": false,
+    "production_database_written": false,
+    "formal_knowledge_base_written": false,
+    "redis_formal_queue_enabled": false,
+    "broker_interface_called": false,
+    "auto_trade_triggered": false,
+    "media_converted_or_published": false,
+    "real_actions_triggered": 0
+  },
+  "current_available_capabilities": [
+    {
+      "capability": "股票本地分析助手",
+      "status": "可用",
+      "entry": "http://127.0.0.1:19300/health",
+      "boundary": "analysis_only"
+    },
+    {
+      "capability": "股票企业微信桥接",
+      "status": "可用",
+      "entry": "http://127.0.0.1:19302/health",
+      "boundary": "企业微信查询与图文报告，不代表交易许可"
+    },
+    {
+      "capability": "股票图文详情",
+      "status": "可用",
+      "entry": "http://43.167.210.211/wecom-bot/message?card=latest",
+      "boundary": "报告展示"
+    },
+    {
+      "capability": "企业微信统一指令本地服务",
+      "status": "本地入口候选",
+      "entry": "http://127.0.0.1:19310/health",
+      "boundary": "统一路由，不等于真实外发放量"
+    },
+    {
+      "capability": "知识库本地问答预演",
+      "status": "影子只读可用",
+      "entry": "03数据\\运行状态 中知识库问答灰度链路材料",
+      "boundary": "不写正式向量库，不触发n8n"
+    },
+    {
+      "capability": "内容处理、视频制作、税收线",
+      "status": "影子只读材料包",
+      "entry": "03数据\\运行状态 与 03数据\\并行回收",
+      "boundary": "不真实转换、不发布、不做正式税务判断"
+    },
+    {
+      "capability": "进化系统",
+      "status": "规则候选可读",
+      "entry": "03数据\\运行状态 中进化系统与规则审计材料",
+      "boundary": "不自动固化正式规则"
+    }
+  ],
+  "dry_run_shadow_scope": {
+    "light_task_contract": "标准任务单启用；SQLite权威台账影子启用；Redis Streams影子映射；n8n干跑编排草案",
+    "knowledge_base": "本地问答预演、证据卡、灰度样本模板、许可接收清单、回滚清单",
+    "enterprise_wechat": "统一路由、禁用态桥接、灰度门禁、许可令草案",
+    "content_processing": "素材索引、转换预演、影子输出包",
+    "video_production": "素材候选、主题化预演、渲染前确认包",
+    "tax_readonly": "政策证据链只读、人工复核单、正式来源装载前门禁",
+    "evolution": "经验卡片候选、规则审计、自动评审接入材料"
+  },
+  "still_forbidden_actions": [
+    "enterprise_wechat_scale_up",
+    "unattended_external_send",
+    "n8n_workflow_import",
+    "n8n_workflow_enable",
+    "n8n_workflow_trigger",
+    "redis_formal_queue_takeover",
+    "production_database_write",
+    "formal_knowledge_base_write",
+    "legacy_system_write",
+    "real_media_conversion",
+    "real_rendering",
+    "automatic_publish",
+    "formal_tax_judgement",
+    "broker_interface",
+    "capital_account",
+    "order_place",
+    "order_cancel",
+    "trading_api",
+    "automatic_trading",
+    "buy_sell_position_target_price_advice"
+  ],
+  "stock_analysis_only": {
+    "identity": "股票研究分析系统",
+    "allowed": [
+      "股票分析问答",
+      "技术指标解释",
+      "基本面和财务复核",
+      "图文报告",
+      "关注条件",
+      "转强条件",
+      "风险观察线",
+      "失效条件",
+      "复盘证据",
+      "企业微信stream回复"
+    ],
+    "forbidden": [
+      "自动交易",
+      "券商接口",
+      "下单",
+      "撤单",
+      "资金账户配置",
+      "交易API",
+      "交易工作流",
+      "交易委托",
+      "交易指令转执行动作",
+      "买入卖出建议",
+      "仓位建议",
+      "目标价"
+    ],
+    "hard_switches_expected_false": [
+      "允许券商接口",
+      "允许自动交易",
+      "允许下单",
+      "允许资金账户配置",
+      "允许交易指令转执行动作",
+      "允许输出买入卖出建议",
+      "允许输出仓位建议",
+      "允许输出目标价"
+    ]
+  },
+  "evidence_directories": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\01配置",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\用户交付说明与回滚手册包"
+  ],
+  "rollback_manual": {
+    "general": [
+      "停止使用异常入口",
+      "不扩大样本",
+      "不追加真实动作许可",
+      "查03数据\\并行回收固定报告",
+      "查03数据\\运行状态验收材料",
+      "回滚后只允许恢复到只读、dry_run、影子或本地健康检查状态"
+    ],
+    "enterprise_wechat": [
+      "查询异常时改用19300和19302本地健康检查",
+      "统一指令异常时停用用户侧入口并保留日志",
+      "误外发风险时停止外发路径并等待许可令复核"
+    ],
+    "n8n": [
+      "正式导入、启用、触发仍关闭",
+      "发现workflow启用时恢复active=false并导出验证",
+      "回滚脚本只作为人工确认后的保持未激活手段"
+    ],
+    "redis_queue": [
+      "Redis Streams只允许影子映射",
+      "发现正式队列开关打开时恢复formal_queue_enabled=false和redis_connection_allowed=false"
+    ],
+    "stock": [
+      "任何交易类意图未拦截按最高优先级异常处理",
+      "恢复analysis-only闸门",
+      "保留只读分析和风险提示，禁止交易执行或交易建议"
+    ]
+  },
+  "next_low_risk_permission_order": {
+    "recommended_level": ["L0只读巡检", "L1低风险影子"],
+    "sample_limit_default": 1,
+    "sample_limit_max": 3,
+    "permission_text": "许可下一步低风险小样本：仅允许 L0 只读巡检和 L1 低风险影子；样本上限 3 条；允许读取本地样本、公开信息、生成草稿/报告/证据卡/影子台账；允许企业微信沙箱回环和本地入口只读验证；禁止企业微信真实放量、n8n 正式导入/启用/触发、Redis 正式队列接管、正式库写入、正式知识库写入、真实媒体转换/发布、税收正式判断、券商接口、资金账户、下单、自动交易；完成后写固定回收报告和验收 JSON。",
+    "required_acceptance": [
+      "明确业务线",
+      "明确样本数量",
+      "明确回滚点",
+      "生成Markdown和JSON",
+      "real_actions_triggered=0"
+    ]
+  },
+  "artifacts": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\用户交付说明与回滚手册包\\用户交付说明与回滚手册包_20260505_M.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\用户交付说明与回滚手册包\\用户交付说明与回滚手册包_20260505_M.json",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_用户交付说明与回滚手册回收报告_最新.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_用户交付说明与回滚手册回收报告_最新.json"
+  ],
+  "acceptance": {
+    "covered_current_capabilities": true,
+    "covered_local_entry_usage": true,
+    "covered_enterprise_wechat_entry_usage": true,
+    "covered_dry_run_and_shadow": true,
+    "covered_disabled_real_actions": true,
+    "covered_stock_analysis_only": true,
+    "covered_rollback": true,
+    "covered_evidence_lookup": true,
+    "covered_next_low_risk_permission_order": true,
+    "passed": true
+  }
+}

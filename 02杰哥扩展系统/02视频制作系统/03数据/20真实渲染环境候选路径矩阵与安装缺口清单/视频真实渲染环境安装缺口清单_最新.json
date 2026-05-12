@@ -1,0 +1,65 @@
+{
+  "名称": "视频真实渲染环境安装缺口清单",
+  "生成时间": "2026-05-08 17:52:03",
+  "error_count": 0,
+  "缺口数量": 5,
+  "缺口清单": [
+    {
+      "对象": "MoneyPrinterTurbo",
+      "缺口": "未发现候选安装目录存在",
+      "人工处理": "确认安装目录，并将目录放入候选路径或后续受控配置",
+      "自动动作": "无"
+    },
+    {
+      "对象": "MoneyPrinterTurbo",
+      "缺口": "未发现 start.bat、app/main.py、webui/Main.py 任一入口文件",
+      "人工处理": "确认 MoneyPrinterTurbo 工程是否完整，入口文件位置是否符合预期",
+      "自动动作": "无"
+    },
+    {
+      "对象": "ImageMagick",
+      "缺口": "shutil.which('magick') 未解析到命令名",
+      "人工处理": "安装 ImageMagick 或将安装目录加入 PATH；由人工另行执行版本核对",
+      "自动动作": "无"
+    },
+    {
+      "对象": "ImageMagick",
+      "缺口": "候选目录未识别到 magick.exe",
+      "人工处理": "确认 ImageMagick 安装目录，补充受控候选路径",
+      "自动动作": "无"
+    },
+    {
+      "对象": "真实渲染放行链",
+      "缺口": "本包没有真实渲染授权、素材授权、人审回执、发布放行的全链验收",
+      "人工处理": "如需真实渲染，必须由总管另行下发明确放行任务",
+      "自动动作": "无"
+    }
+  ],
+  "可进入真实渲染": false,
+  "readonly_flags": {
+    "真实渲染": false,
+    "生成真实视频": false,
+    "上传发布": false,
+    "调用MoneyPrinterTurbo": false,
+    "执行magick": false,
+    "执行magick_version": false,
+    "触发n8n": false,
+    "修改企业微信公共配置": false,
+    "修改总管面板": false,
+    "修改一键接续包": false,
+    "重载服务": false
+  },
+  "readonly_flags_ascii": {
+    "real_render": false,
+    "generate_real_video": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false
+  }
+}

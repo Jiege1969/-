@@ -1,0 +1,57 @@
+﻿{
+    "version":  "4.2",
+    "updated_at":  "2026-05-08 06:15:19 +08:00",
+    "status":  "R0_readonly_self_check_report_latest_snapshot",
+    "note":  "v4.2 after VIDEO_FACTORY_R012_FEEDBACK_ROUTING_CHECK_001 parallel feedback routing checklist.",
+    "scope":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区",
+    "base_checks":  [
+                        {
+                            "business_line":  "tax",
+                            "name":  "税收业务影子底座",
+                            "path_exists":  true,
+                            "md_count":  39,
+                            "json_count":  17,
+                            "index_md_exists":  true,
+                            "index_json_exists":  true,
+                            "formal_capability_claim":  false
+                        },
+                        {
+                            "business_line":  "office_work",
+                            "name":  "本职工作业务影子底座",
+                            "path_exists":  true,
+                            "md_count":  14,
+                            "json_count":  1,
+                            "index_md_exists":  true,
+                            "index_json_exists":  true,
+                            "formal_capability_claim":  false
+                        },
+                        {
+                            "business_line":  "video_production",
+                            "name":  "视频制作业务影子底座",
+                            "path_exists":  true,
+                            "md_count":  32,
+                            "json_count":  19,
+                            "index_md_exists":  true,
+                            "index_json_exists":  true,
+                            "formal_capability_claim":  false
+                        }
+                    ],
+    "root_cross_cutting_counts":  {
+                                    "md_count":  54,
+                                    "json_count":  30
+                                },
+    "json_parse_failures":  [
+
+                            ],
+    "red_flag_positive_matches":  [
+
+                                  ],
+    "pass":  true,
+    "boundary":  {
+                     "wechat":  false,
+                     "external_send":  false,
+                     "formal_database":  false,
+                     "real_business_action":  false,
+                     "n8n":  false
+                 }
+}

@@ -1,0 +1,61 @@
+{
+  "名称": "五样本行业价格连续观测补数队列验收",
+  "validated_at": "2026-05-08 07:32:37",
+  "status": "passed",
+  "task_count": 5,
+  "errors": [],
+  "tasks": [
+    {
+      "stock": "云南锗业",
+      "code": "sz002428",
+      "product_name": "锗锭",
+      "current_observation_count": 0,
+      "missing_observation_count": 5,
+      "current_status": "source_registered"
+    },
+    {
+      "stock": "天齐锂业",
+      "code": "sz002466",
+      "product_name": "电池级碳酸锂",
+      "current_observation_count": 1,
+      "missing_observation_count": 4,
+      "current_status": "single_observation"
+    },
+    {
+      "stock": "华虹公司",
+      "code": "sh688347",
+      "product_name": "晶圆代工景气指标",
+      "current_observation_count": 0,
+      "missing_observation_count": 5,
+      "current_status": "source_registered"
+    },
+    {
+      "stock": "浙商中拓",
+      "code": "sz000906",
+      "product_name": "大宗商品/供应链景气指标",
+      "current_observation_count": 0,
+      "missing_observation_count": 5,
+      "current_status": "source_registered"
+    },
+    {
+      "stock": "正丹股份",
+      "code": "sz300641",
+      "product_name": "偏苯三酸酐/TMA",
+      "current_observation_count": 0,
+      "missing_observation_count": 5,
+      "current_status": "source_registered"
+    }
+  ],
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_external_fetch": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_delete_or_move_old_assets": true,
+    "not_formal_database_write": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

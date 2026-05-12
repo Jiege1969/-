@@ -1,0 +1,79 @@
+{
+  "id": "024",
+  "created_at": "2026-05-03 23:40:28",
+  "doc_type": "stock_single_report",
+  "draft_source": "命令行文本",
+  "draft_sha256": "5728a4a3707cd5232557df5244693f27c693281b5d893c8439aaa4cb329efd30",
+  "draft": "正丹股份(sz300641)\n【结论】风险复核。\n说明：研究信息参考，不构成自动交易指令。",
+  "rule_review": {
+    "pass": false,
+    "score": 5.5,
+    "char_count": 43,
+    "word_budget": {
+      "min": 300,
+      "ideal_min": 500,
+      "ideal_max": 800,
+      "max": 800,
+      "label": "单股深度分析"
+    },
+    "issues": [
+      {
+        "type": "format",
+        "position": "全文",
+        "description": "文稿过短，可能不是完整报告。"
+      },
+      {
+        "type": "missing_section",
+        "position": "全文",
+        "description": "单股深度分析约43字，低于300字下限，需检查是否缺少必备栏目。",
+        "suggestion": "确认是否包含结论、策略、关键位置、风险提示和免责声明。"
+      },
+      {
+        "type": "format",
+        "position": "全文",
+        "description": "换行较少，企业微信阅读可能拥挤。"
+      }
+    ],
+    "mobile_layout_advice": []
+  },
+  "model": "",
+  "model_call": {
+    "status": "skipped",
+    "reason": "skip_model=true"
+  },
+  "review": {
+    "pass": false,
+    "total_score": 5.5,
+    "issues": [
+      {
+        "type": "format",
+        "position": "全文",
+        "description": "文稿过短，可能不是完整报告。"
+      },
+      {
+        "type": "missing_section",
+        "position": "全文",
+        "description": "单股深度分析约43字，低于300字下限，需检查是否缺少必备栏目。",
+        "suggestion": "确认是否包含结论、策略、关键位置、风险提示和免责声明。"
+      },
+      {
+        "type": "format",
+        "position": "全文",
+        "description": "换行较少，企业微信阅读可能拥挤。"
+      }
+    ],
+    "suggested_revision": "正丹股份(sz300641)\n【结论】风险复核。\n说明：研究信息参考，不构成自动交易指令。",
+    "review_summary": "仅完成规则质检，未调用本地模型。"
+  },
+  "forbidden_modified": [],
+  "status": "reviewed",
+  "adopted_revision_path": "",
+  "safety_boundary": {
+    "是否替换原文": false,
+    "是否发送企业微信": false,
+    "是否触发n8n": false,
+    "是否写正式模板": false,
+    "是否调用券商接口": false,
+    "是否自动交易": false
+  }
+}

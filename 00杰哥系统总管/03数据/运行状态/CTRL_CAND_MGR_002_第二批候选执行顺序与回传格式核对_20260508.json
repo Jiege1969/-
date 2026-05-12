@@ -1,0 +1,135 @@
+{
+  "task_id": "CTRL-CAND-MGR-002",
+  "asset_id": "CTRL_CAND_MGR_002_20260508",
+  "asset_name": "第二批候选执行顺序与回传格式核对",
+  "created_at": "2026-05-08 09:30:30 +08:00",
+  "asset_identity": "总管侧W1/R0第二批候选执行顺序与回传格式核对记录",
+  "source_candidate_list": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\受控试用第二批候选清单_20260508.md",
+  "source_receipt_template": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\受控试用回执模板_20260508.md",
+  "source_boundary_scan": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\受控试用边界扫描清单_20260508.md",
+  "risk_level": "W1/R0",
+  "task_status": "completed",
+  "allowed_to_continue": true,
+  "allowed_scope": "第二批候选执行顺序、回传字段、暂停触发和并行写入边界核对",
+  "execution_order": [
+    {
+      "order": 1,
+      "candidate_id": "CTRL-CAND-MGR-002",
+      "status": "completed",
+      "reason": "先做总管核对，确保后续回传格式一致"
+    },
+    {
+      "order": 2,
+      "candidate_id": "CTRL-CAND-VIDEO-AI-001",
+      "status": "waiting_feedback",
+      "reason": "会话状态契约是视频智能体后续契约基础"
+    },
+    {
+      "order": 3,
+      "candidate_id": "CTRL-CAND-VIDEO-AI-002",
+      "status": "waiting_feedback",
+      "reason": "意图路由和局部修正依赖会话状态字段"
+    },
+    {
+      "order": 4,
+      "candidate_id": "CTRL-CAND-VIDEO-AI-003",
+      "status": "waiting_feedback",
+      "reason": "引擎适配和人工门禁风险更高，后置吸收"
+    },
+    {
+      "order": 5,
+      "candidate_id": "CTRL-CAND-TAX-002",
+      "status": "candidate",
+      "reason": "可并行准备，但仅限脱敏涉税问题影子接入"
+    },
+    {
+      "order": 6,
+      "candidate_id": "CTRL-CAND-STOCK-002",
+      "status": "candidate",
+      "reason": "可并行准备，但仅限只读证据候选卡样例"
+    },
+    {
+      "order": 7,
+      "candidate_id": "CTRL-CAND-WECOM-002",
+      "status": "candidate",
+      "reason": "应在视频智能体契约回传后做入口只读对齐"
+    }
+  ],
+  "required_receipt_fields": [
+    "task_id",
+    "execution_date",
+    "executor_window",
+    "business_line",
+    "risk_level",
+    "input_summary",
+    "changed_files",
+    "output_summary",
+    "evidence",
+    "missing",
+    "confidence",
+    "boundary_flags",
+    "needs_manager_ruling",
+    "self_check_line"
+  ],
+  "special_pause_triggers": {
+    "video_agent": [
+      "改video_factory_chat.py接真实模型",
+      "调用外部引擎",
+      "读取素材",
+      "渲染",
+      "上传",
+      "发布",
+      "写向量库"
+    ],
+    "tax_advisor": [
+      "登录电子税务局",
+      "读取真实财税系统",
+      "输出确定税务意见",
+      "输出确定金额",
+      "申报/退税/开票建议"
+    ],
+    "stock_l3": [
+      "调用券商接口",
+      "输出买卖/下单/调仓",
+      "修改正式前台入口"
+    ],
+    "wecom_layer": [
+      "真实发送",
+      "启用n8n",
+      "改服务脚本",
+      "重启19310/19302",
+      "接管业务判断"
+    ],
+    "manager_layer": [
+      "直接替业务线改正式配置",
+      "替业务线做业务结论"
+    ]
+  },
+  "next_recommended_action": "等待并吸收并行视频线的VIDEO_AGENT_CONVERSATION_STATE_CONTRACT_001；如未回传，可继续做W1/R0的税收第二个脱敏问题接入准备或股票P0证据候选卡结构化样例。",
+  "boundary_flags": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_db": false,
+    "modify_service_script": false,
+    "restart_19310_or_19302": false,
+    "call_model_api": false,
+    "call_external_video_engine": false,
+    "read_real_media": false,
+    "video_render_upload_publish": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "tax_filing_or_refund": false,
+    "formal_tax_opinion": false,
+    "resume_office_business_line": false
+  },
+  "self_check": {
+    "risk_level": "W1/R0",
+    "candidate_order_checked": true,
+    "receipt_fields_checked": true,
+    "pause_triggers_checked": true,
+    "json_parse_required": true,
+    "candidate_list_update_required": true,
+    "panel_package_update_required": true,
+    "boundary_kept": true
+  }
+}

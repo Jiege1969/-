@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "sample_id": "SHARED_POLICY_READONLY_STOCK_002",
+  "name": "软件行业税费政策背景只读调用样例",
+  "asset_identity": "stock_system_readonly_tax_policy_background_call_shadow_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "modify_stock_formal_config": false,
+    "modify_l3_contract": false,
+    "trade_advice": false,
+    "formal_tax_conclusion": false,
+    "external_send": false,
+    "trigger_n8n": false
+  },
+  "call_input": {
+    "requesting_system": "stock_research_system",
+    "query_intent": "software_industry_tax_policy_background_evidence",
+    "topic_keywords": ["软件产品", "增值税", "即征即退", "软件行业"],
+    "expected_evidence_level": "national_policy_or_official_guide",
+    "source": "SHARED-POLICY-EVIDENCE-001"
+  },
+  "readonly_evidence": {
+    "policy_id": "TAX-DOC-2011-100",
+    "title": "财政部 国家税务总局关于软件产品增值税政策的通知",
+    "document_number": "财税〔2011〕100号",
+    "issuing_authority": "财政部、国家税务总局",
+    "source_level": "国家级",
+    "legal_level": "规范性文件",
+    "tax_type": "增值税",
+    "business_scenario": "软件产品增值税即征即退",
+    "validity_status": "现行有效状态需以官方政策法规库展示为准",
+    "source_url": "https://fgk.chinatax.gov.cn/zcfgk/c102416/c5204304/content.html",
+    "related_guide": "国家税务总局《一文了解：软件产品增值税即征即退政策》"
+  },
+  "stock_research_mapping": {
+    "evidence_type": "tax_policy_background",
+    "industry_tags": ["软件", "企业服务", "增值税", "税费优惠"],
+    "evidence_level": "国家级主管机关政策/官方指引",
+    "validity_status": "候选有效状态，待官方页面和人工复核",
+    "allowed_use": ["行业政策背景", "研究证据提示"],
+    "forbidden_use": [
+      "直接提高评分",
+      "替代公司财报和业务证据",
+      "输出交易建议",
+      "生成税务适用结论"
+    ],
+    "confidence": "draft_or_pending_review"
+  },
+  "review_questions": [
+    "目标公司是否有软件产品销售收入？",
+    "软件产品收入占比是多少？",
+    "公司公告或财报是否披露享受即征即退政策？",
+    "收入是否属于自行开发生产的软件产品？",
+    "政策影响是否已反映在利润、现金流或递延收益等科目？",
+    "是否存在政策变化、地方口径或材料不满足风险？"
+  ],
+  "core_rule": "税收政策可作为股票行业研究背景，但不能直接改变股票评分、替代财报证据、生成税务结论或买卖建议。"
+}

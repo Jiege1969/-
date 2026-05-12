@@ -1,0 +1,76 @@
+{
+  "sample_id": "R-SAMPLE-04-REAL-BATCH-CONVERSION-BLOCK",
+  "sample_type": "真实批量转换阻断",
+  "status": "blocked_real_batch_conversion",
+  "input_reference": {
+    "input_id": "batch-request-placeholder-004",
+    "source_reference_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\01素材入口\\批量转换请求占位_不读取真实文档",
+    "source_reference_type": "batch_request_placeholder",
+    "source_exists_status": "not_checked_to_avoid_real_batch_action",
+    "authorization_status": "not_authorized_for_batch_conversion",
+    "input_scope_note": "检测到真实批量转换意图，占位登记后立即阻断；不枚举、不读取、不转换。"
+  },
+  "processing_plan": {
+    "plan_id": "R-PLAN-04",
+    "allowed_shadow_steps": [
+      "记录批量转换阻断",
+      "列出禁用动作",
+      "要求另行审批和人工清单"
+    ],
+    "blocked_real_steps": [
+      "枚举批量输入目录",
+      "转换真实业务文档",
+      "覆盖或移动用户文档",
+      "生成真实输出包",
+      "调用n8n或外发通知"
+    ],
+    "format_intent": "block_real_batch_conversion",
+    "sensitive_check_required": true,
+    "batch_check_required": true
+  },
+  "expected_output": {
+    "shadow_output_package_id": "R-SHADOW-PACKAGE-004",
+    "expected_files": [
+      {
+        "name": "batch_block_notice.md",
+        "kind": "planned_block_notice_only",
+        "real_file_generated": false
+      }
+    ],
+    "expected_metadata": {
+      "block_reason": "real_batch_conversion_requested",
+      "requires_single_sample_review": true,
+      "requires_separate_approval": true
+    },
+    "no_real_output_file": true,
+    "degrade_notice": "真实批量转换请求已阻断，仅可回到单样本影子清单和人工复核。"
+  },
+  "manual_review": {
+    "review_required": true,
+    "reviewer": "人工复核人待填",
+    "review_time": "人工复核时填写",
+    "review_status": "blocked",
+    "review_result": "blocked_real_batch_conversion",
+    "review_signature_required": true
+  },
+  "rollback": {
+    "rollback_required": true,
+    "rollback_mode": "block_all_real_actions",
+    "rollback_target": "batch_conversion_request_placeholder",
+    "rollback_action": "不枚举目录、不处理文件；仅保留阻断登记供人工查看。",
+    "rollback_confirm_required": true
+  },
+  "action_switches": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_output_file_generation": false,
+    "allow_delete_move_overwrite": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_wecom_real_message": false,
+    "allow_formal_library_write": false,
+    "allow_broker_api": false,
+    "allow_auto_trade": false
+  }
+}

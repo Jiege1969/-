@@ -1,0 +1,5 @@
+# 在下一行填写一个官方入口网址；以#开头的行会被忽略。
+# 允许域名：国家税务总局、政策法规库、财政部税政司等配置白名单。
+# 示例：https://www.chinatax.gov.cn/
+
+https://www.chinatax.gov.cn/

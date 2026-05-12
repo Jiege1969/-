@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "sample_id": "SHARED_POLICY_READONLY_VIDEO_002",
+  "name": "平台规范真实来源调用样例",
+  "asset_identity": "video_system_readonly_platform_rule_call_shadow_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "read_real_material": false,
+    "connect_platform_account": false,
+    "edit_or_render_video": false,
+    "upload_or_publish": false,
+    "external_send": false,
+    "trigger_n8n": false
+  },
+  "call_input": {
+    "requesting_system": "video_production_system",
+    "query_intent": "platform_rule_evidence_and_publish_risk_precheck",
+    "topic_keywords": ["B站", "用户协议", "活动规则", "原创性", "版权", "发布风险"],
+    "expected_evidence_level": "official_user_agreement_or_official_activity_rule_with_current_submission_rules_pending",
+    "source": "VIDEO_PLATFORM_RULE_SOURCE_BILIBILI_20260507",
+    "business_context": "pending_target_video_type_platform_material_authorization"
+  },
+  "readonly_evidence": {
+    "evidence_id": "VIDEO_PLATFORM_RULE_SOURCE_BILIBILI_20260507",
+    "title": "B站用户协议与活动规则来源卡",
+    "evidence_level": "官方用户协议/官方活动规则候选来源",
+    "validity_status": "待人工复核；活动规则可能过期，不能当作当前通用投稿标准",
+    "source_url": [
+      "https://game.bilibili.com/licence/h5/",
+      "https://www.bilibili.com/blackboard/era/rule.html"
+    ],
+    "source_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\视频平台规范来源卡_B站用户协议与活动规则_20260507_v1.0.md",
+    "extracted_conditions": ["遵守法律法规和平台规则", "原创性", "版权和素材授权", "活动规则有效期"],
+    "topic_tags": ["B站", "平台规范", "原创性", "版权", "活动投稿", "发布风险"],
+    "risk_flags": ["活动规则可能过期", "投稿规格待补", "素材授权待补", "分区规则待补", "用户发布目标待补"]
+  },
+  "allowed_use": ["平台规范待复核清单", "素材授权待补清单", "脚本或分镜风险提示", "发布前人工检查问题"],
+  "forbidden_use": ["平台合规结论", "版权安全结论", "可发布声明", "自动上传", "自动发布"],
+  "review_questions": [
+    "目标视频是否发布到B站，还是多平台分发？",
+    "目标内容属于普通投稿、活动投稿、直播切片还是商业宣传？",
+    "当前使用的平台规则链接是否为最新页面？",
+    "活动规则是否仍在有效期内？",
+    "素材是否原创、授权、可二次剪辑、可商业使用？",
+    "是否包含人物肖像、客户信息、账号截图、地址、电话等敏感信息？"
+  ],
+  "next_action": "补当前投稿规范、分区规则、素材授权和用户发布目标；真实上传发布前重新确认。"
+}

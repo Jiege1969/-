@@ -1,0 +1,78 @@
+{
+  "生成日期": "2026-05-05",
+  "任务": "第四批并行小任务K-内容整理样本",
+  "样本类型": "内容整理",
+  "执行性质": "单样本文档转换人工复核前影子样本",
+  "样本编号": "K-CONTENT-001",
+  "样本来源": {
+    "来源说明": "人工构造的演示文本，不读取、不复制、不改写真实业务文档",
+    "引用路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\06人工复核\\内容整理样本_20260505_小任务K.json",
+    "真实业务文档路径": "",
+    "真实业务文档读取": false
+  },
+  "整理结果": {
+    "建议标题": "单样本文档转换人工复核流程演示稿",
+    "建议摘要": "本样本仅演示从内容整理到人工复核的字段结构，禁止触发真实转换、批量处理、外发或正式库写入。",
+    "建议段落": [
+      {
+        "段落序号": 1,
+        "段落标题": "样本登记",
+        "段落要点": "登记样本编号、来源说明、引用路径和授权状态。"
+      },
+      {
+        "段落序号": 2,
+        "段落标题": "影子转换",
+        "段落要点": "仅生成目标格式字段映射和差异清单，不生成真实转换产物。"
+      },
+      {
+        "段落序号": 3,
+        "段落标题": "人工复核",
+        "段落要点": "人工检查路径、敏感信息、格式字段、真实动作禁用和回滚字段。"
+      }
+    ],
+    "风险提示": [
+      "不得把本样本当作真实业务文档转换结果",
+      "不得覆盖、删除、移动或改写用户文档",
+      "不得触发 n8n、企业微信、Webhook、外部接口或正式库写入"
+    ]
+  },
+  "人工复核字段": {
+    "review_required": true,
+    "review_status": "pending_manual_review",
+    "review_owner": "人工复核人",
+    "review_required_fields": [
+      "sample_id",
+      "source_reference_path",
+      "authorization_status",
+      "sensitive_info_check",
+      "real_conversion_disabled",
+      "rollback_plan"
+    ],
+    "default_decision": "not_approved_for_real_conversion"
+  },
+  "执行开关": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_delete_move_overwrite": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_wecom_real_message": false,
+    "allow_formal_library_write": false,
+    "allow_broker_api": false,
+    "allow_auto_trade": false
+  },
+  "回滚字段": {
+    "rollback_required": true,
+    "rollback_mode": "block_and_discard_shadow_output",
+    "rollback_target": "仅撤销影子登记状态，不处理真实文件",
+    "rollback_trigger": [
+      "发现真实业务文档路径被填入并请求转换",
+      "发现批量转换、覆盖、删除、移动、外发、正式库写入请求",
+      "人工复核字段缺失或复核结论不明确"
+    ],
+    "rollback_owner": "人工复核人",
+    "rollback_confirm_required": true
+  },
+  "降级语": "仅为内容整理影子样本，不代表已执行真实转换；不得覆盖、删除、移动、外发或写入正式库。"
+}

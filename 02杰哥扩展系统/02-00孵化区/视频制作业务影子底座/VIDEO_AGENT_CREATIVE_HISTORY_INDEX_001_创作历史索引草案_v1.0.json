@@ -1,0 +1,43 @@
+{
+  "contract_id": "VIDEO_AGENT_CREATIVE_HISTORY_INDEX_001",
+  "name": "创作历史索引草案",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 09:55:00 +08:00",
+  "asset_identity": "视频创作智能体 W1/R0 创作历史索引草案",
+  "risk_level": "W1/R0",
+  "why_not_extend_existing": "资产索引记录文件清单，轮次快照记录单任务状态；创作历史索引需要跨会话、草案、复核、回执和候选经验建立只读关系。",
+  "capability_gain": [
+    "追踪用户想法到草案和复核链路",
+    "跨会话只读参考历史",
+    "保留候选经验等待多案例验证",
+    "防止历史草案自动覆盖当前草案"
+  ],
+  "required_fields": [
+    "历史索引ID",
+    "会话ID",
+    "用户想法摘要",
+    "关联任务ID",
+    "关联草案ID",
+    "关联复核包ID",
+    "关联回执ID",
+    "关联候选经验ID",
+    "当前阶段",
+    "可复用标签",
+    "不可复用原因",
+    "只读引用路径",
+    "待人工确认项"
+  ],
+  "stage_enum": ["idea", "draft", "review", "revision", "candidate", "archived"],
+  "boundary": {
+    "write_vector_db": false,
+    "connect_real_llm_memory": false,
+    "read_real_assets": false,
+    "store_credentials": false,
+    "modify_formal_video_scripts": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false
+  },
+  "formal_capability_claim": false
+}

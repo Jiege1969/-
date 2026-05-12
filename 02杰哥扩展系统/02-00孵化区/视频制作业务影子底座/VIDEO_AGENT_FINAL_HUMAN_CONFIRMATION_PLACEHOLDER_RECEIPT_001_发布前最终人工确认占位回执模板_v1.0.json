@@ -1,0 +1,44 @@
+{
+  "asset_id": "VIDEO_AGENT_FINAL_HUMAN_CONFIRMATION_PLACEHOLDER_RECEIPT_001",
+  "version": "v1.0",
+  "asset_type": "final_human_confirmation_placeholder_receipt_template",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "final_human_confirmation_after_pre_publish_gates_complete",
+  "status": "draft_template",
+  "purpose": "Record whether a human agrees to submit the task to manager decision or formal publishing-chain assessment after all pre-publish gates are complete; does not trigger real publishing.",
+  "fields": [
+    "receipt_id",
+    "task_id",
+    "gate_overview_record",
+    "blocker_summary_record",
+    "all_gates_complete",
+    "final_human_decision",
+    "decision_person",
+    "decision_time",
+    "remaining_notes",
+    "real_system_triggered"
+  ],
+  "blank_receipt": {
+    "receipt_id": "to_be_filled",
+    "task_id": "to_be_filled",
+    "gate_overview_record": "to_be_filled",
+    "blocker_summary_record": "to_be_filled",
+    "all_gates_complete": "pending_confirmation",
+    "final_human_decision": "pending_confirmation",
+    "decision_person": "to_be_filled",
+    "decision_time": "to_be_filled",
+    "remaining_notes": "to_be_filled",
+    "real_system_triggered": false
+  },
+  "fixed_rules": [
+    "Final human confirmation may only submit to manager decision, mark pending supplement, or reject; it does not publish directly.",
+    "If gate overview or blocker summary is missing, this receipt cannot be marked passed.",
+    "This template must not trigger publishing tools, platform operations, WeCom real send, or n8n."
+  ],
+  "boundaries": {
+    "trigger_publish_tool": false,
+    "platform_operation": false,
+    "wecom_real_send": false,
+    "connect_n8n": false
+  }
+}

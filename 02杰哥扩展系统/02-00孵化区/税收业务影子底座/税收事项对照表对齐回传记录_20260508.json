@@ -1,0 +1,24 @@
+{
+  "id": "TAX_MATTER_COMPARISON_ALIGNMENT_RETURN_20260508",
+  "generated_at": "2026-05-08",
+  "asset_identity": "tax_shadow_w1_r0_alignment_return",
+  "source": "controlled_trial_blocker_fix_P0",
+  "created_files": [
+    "税收事项对照表_软件产品即征即退_vs_研发费用加计扣除_20260508.md",
+    "税收事项对照表_软件产品即征即退_vs_研发费用加计扣除_20260508.json",
+    "税收事项对照表R0自检_20260508.md",
+    "税收事项对照表R0自检_20260508.json"
+  ],
+  "next_auto_candidates": [
+    "tax_work_secretary_mapping_acceptance_samples",
+    "controlled_trial_regression_samples",
+    "pause_if_real_wecom_route_or_service_script_change"
+  ],
+  "boundary": {
+    "login_e_tax_bureau": false,
+    "read_real_tax_system": false,
+    "formal_tax_opinion": false,
+    "write_formal_tax_database": false,
+    "modify_wecom_service_script": false
+  }
+}

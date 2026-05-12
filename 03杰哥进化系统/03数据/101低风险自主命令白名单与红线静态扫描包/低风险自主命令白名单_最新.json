@@ -1,0 +1,129 @@
+{
+  "name": "低风险自主命令白名单",
+  "generated_at": "2026-05-08 19:57:08",
+  "scope": "static_draft_command_text_only",
+  "default_decision": "deny",
+  "allowed_command_families": [
+    {
+      "id": "python_readonly_acceptance_script",
+      "decision": "allow",
+      "description": "允许 Python 启动本地只读验收脚本，脚本名必须以 验证 或 只读验证 开头。",
+      "command_prefixes": [
+        "python",
+        "py",
+        "python3"
+      ],
+      "script_dir": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本",
+      "filename_rules": [
+        "验证*.py",
+        "只读验证*.py"
+      ],
+      "must_keep_flags": {
+        "commands_executed": false,
+        "external_call": false,
+        "reload_service": false,
+        "real_wecom_send": false,
+        "connect_n8n": false,
+        "connect_broker": false,
+        "trade_order": false,
+        "login_tax_bureau": false,
+        "connect_finance_tax_software": false,
+        "real_render_publish": false,
+        "write_formal_rule": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_package": false
+      }
+    },
+    {
+      "id": "python_snapshot_generator",
+      "decision": "allow",
+      "description": "允许 Python 启动本地快照生成脚本，脚本名必须以 生成 开头且包含 快照。",
+      "command_prefixes": [
+        "python",
+        "py",
+        "python3"
+      ],
+      "script_dir": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本",
+      "filename_rules": [
+        "生成*快照*.py"
+      ],
+      "must_keep_flags": {
+        "commands_executed": false,
+        "external_call": false,
+        "reload_service": false,
+        "real_wecom_send": false,
+        "connect_n8n": false,
+        "connect_broker": false,
+        "trade_order": false,
+        "login_tax_bureau": false,
+        "connect_finance_tax_software": false,
+        "real_render_publish": false,
+        "write_formal_rule": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_package": false
+      }
+    },
+    {
+      "id": "python_status_package_generator",
+      "decision": "allow",
+      "description": "允许 Python 启动本地状态包生成脚本，脚本名必须以 生成 开头且包含 状态包。",
+      "command_prefixes": [
+        "python",
+        "py",
+        "python3"
+      ],
+      "script_dir": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本",
+      "filename_rules": [
+        "生成*状态包*.py"
+      ],
+      "must_keep_flags": {
+        "commands_executed": false,
+        "external_call": false,
+        "reload_service": false,
+        "real_wecom_send": false,
+        "connect_n8n": false,
+        "connect_broker": false,
+        "trade_order": false,
+        "login_tax_bureau": false,
+        "connect_finance_tax_software": false,
+        "real_render_publish": false,
+        "write_formal_rule": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_package": false
+      }
+    }
+  ],
+  "explicit_denies": [
+    "Start-Process 服务重载或后台启动",
+    "企业微信真实发送",
+    "n8n/webhook/外部 HTTP 接口",
+    "券商连接、交易、下单",
+    "税局登录",
+    "财税软件连接",
+    "真实渲染发布",
+    "正式规则写入或自动转正式规则",
+    "总管面板修改",
+    "一键接续包修改"
+  ],
+  "allowed_script_examples": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\验证日常可用交付版一键只读总回归.py",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\验证低风险自主任务本地只读调度预演包.py",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\生成日常可用版自主巡检快照.py",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\生成日常可用交付版状态包.py"
+  ],
+  "hard_red_line_confirmation": {
+    "commands_executed": false,
+    "external_call": false,
+    "reload_service": false,
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "connect_broker": false,
+    "trade_order": false,
+    "login_tax_bureau": false,
+    "connect_finance_tax_software": false,
+    "real_render_publish": false,
+    "write_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false
+  }
+}

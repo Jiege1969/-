@@ -1,0 +1,22 @@
+{
+  "asset_id": "CONTINUOUS_CONSTRUCTION_STOP_REASON_REPLY_AND_EXECUTION_20260508",
+  "created_at": "2026-05-08 13:12:00 +08:00",
+  "risk_level": "W1/R0",
+  "trigger": "用户询问这次停下来什么原因",
+  "reason": "final验收短报被写成回合结束样式，使用户感知为等待确认；不是红线触发，不是没有任务，也不是用户授权不足。",
+  "corrective_actions": [
+    "读取当前施工面板",
+    "读取一键接续施工包",
+    "读取视频制作影子底座最新索引",
+    "自动推进W1/R0小任务VIDEO_SCRIPT_30S_REWRITE_TASK_CARD_001"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "edit_formal_script": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_video_system": false
+  }
+}

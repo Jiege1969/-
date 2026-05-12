@@ -1,0 +1,418 @@
+{
+  "package_id": "controlled_real_gray_permission_draft_pack_20260505_I",
+  "package_name": "02扩展系统受控真实灰度许可令草案包",
+  "generated_at": "2026-05-05T14:18:00+08:00",
+  "task_batch": "并行小任务I",
+  "owner_scope": "D:\\杰哥智能化系统\\02杰哥扩展系统",
+  "status": "draft_only",
+  "real_action_count": 0,
+  "execution_boundary": {
+    "draft_only": true,
+    "readonly_validation_only": true,
+    "external_system_called": false,
+    "enterprise_wechat_sent": false,
+    "production_database_written": false,
+    "knowledge_base_written": false,
+    "media_converted": false,
+    "tax_formal_judgement_made": false,
+    "broker_interface_called": false,
+    "auto_trade_triggered": false,
+    "work_system_paused_and_untouched": true
+  },
+  "future_low_risk_formal_candidates": [
+    "read_only_pull",
+    "draft_generation",
+    "internal_report_circulation"
+  ],
+  "still_forbidden_actions": [
+    "enterprise_wechat_scale_up",
+    "formal_database_write",
+    "formal_knowledge_base_write",
+    "real_media_conversion",
+    "formal_tax_judgement",
+    "broker_interface",
+    "automatic_trading",
+    "external_webhook_send",
+    "n8n_workflow_import_enable_or_trigger",
+    "production_queue_write"
+  ],
+  "global_required_manual_review_fields": [
+    "permission_order_id",
+    "business_line",
+    "requested_action",
+    "risk_level",
+    "readonly_or_draft_scope",
+    "whitelist_reference",
+    "rollback_reference",
+    "monitoring_reference",
+    "evidence_reference",
+    "operator",
+    "reviewer",
+    "approver",
+    "approval_ticket",
+    "start_time",
+    "end_time",
+    "kill_switch_owner",
+    "rollback_owner",
+    "data_write_flag",
+    "external_call_flag",
+    "forbidden_action_scan_result",
+    "final_human_review_result"
+  ],
+  "business_lines": [
+    {
+      "line_id": "enterprise_wechat",
+      "line_name": "企业微信",
+      "permission_order_draft": {
+        "draft_status": "candidate_only",
+        "purpose": "允许未来在二次审批后读取沙箱消息样例、生成回复草稿、形成内部监控报告。",
+        "allowed_future_low_risk_candidates": [
+          "只读拉取沙箱会话元数据",
+          "生成不发送的回复草稿",
+          "内部灰度监控报告流转"
+        ],
+        "forbidden_now_and_future_until_new_approval": [
+          "企业微信放量",
+          "真实群发或单发",
+          "response_url 调用",
+          "机器人 webhook 调用",
+          "正式消息队列写入"
+        ],
+        "required_gate": "manual_approval_plus_two_person_review"
+      },
+      "whitelist_draft": {
+        "scope_type": "readonly_candidate",
+        "allowed_objects": [
+          "sandbox_conversation_metadata",
+          "internal_test_user_aliases",
+          "shadow_reply_preview_records"
+        ],
+        "excluded_objects": [
+          "production_group_chat",
+          "external_customer_chat",
+          "live_webhook",
+          "message_send_queue"
+        ]
+      },
+      "rollback_draft": {
+        "trigger_conditions": [
+          "发现外部发送意图",
+          "白名单命中范围不明",
+          "复核字段缺失",
+          "监控出现生产队列写入迹象"
+        ],
+        "rollback_actions": [
+          "保持发送通道关闭",
+          "废弃本次草稿批次",
+          "冻结相关白名单候选",
+          "提交人工复核记录"
+        ]
+      },
+      "monitoring_draft": {
+        "metrics": [
+          "draft_count",
+          "readonly_pull_count",
+          "blocked_send_attempt_count",
+          "whitelist_miss_count",
+          "manual_review_pending_count"
+        ],
+        "alert_thresholds": {
+          "blocked_send_attempt_count": 1,
+          "external_call_flag": 1,
+          "production_queue_write_flag": 1
+        }
+      },
+      "manual_review_fields": [
+        "chat_scope",
+        "message_sample_id",
+        "send_channel_disabled_evidence",
+        "reviewer_confirm_no_external_send"
+      ]
+    },
+    {
+      "line_id": "knowledge_base",
+      "line_name": "知识库",
+      "permission_order_draft": {
+        "draft_status": "candidate_only",
+        "purpose": "允许未来在二次审批后只读拉取索引样例、生成知识卡草稿、流转内部可追溯报告。",
+        "allowed_future_low_risk_candidates": [
+          "只读拉取知识库索引",
+          "生成不入库的知识卡草稿",
+          "内部证据链报告流转"
+        ],
+        "forbidden_now_and_future_until_new_approval": [
+          "正式知识库写入",
+          "向量库写入",
+          "外部检索 API 调用",
+          "覆盖原始文档",
+          "自动回答发布"
+        ],
+        "required_gate": "manual_approval_plus_two_person_review"
+      },
+      "whitelist_draft": {
+        "scope_type": "readonly_candidate",
+        "allowed_objects": [
+          "readonly_index_snapshot",
+          "evidence_reference_sample",
+          "draft_knowledge_card"
+        ],
+        "excluded_objects": [
+          "production_knowledge_collection",
+          "vector_database",
+          "document_source_repository",
+          "external_search_api"
+        ]
+      },
+      "rollback_draft": {
+        "trigger_conditions": [
+          "出现写入或 upsert 意图",
+          "证据引用缺失",
+          "候选知识卡无法追溯",
+          "白名单引用不一致"
+        ],
+        "rollback_actions": [
+          "废弃草稿知识卡",
+          "保持正式库只读",
+          "标记证据链待补",
+          "人工复核后重新编号"
+        ]
+      },
+      "monitoring_draft": {
+        "metrics": [
+          "readonly_index_pull_count",
+          "draft_card_count",
+          "blocked_write_attempt_count",
+          "missing_evidence_count"
+        ],
+        "alert_thresholds": {
+          "blocked_write_attempt_count": 1,
+          "vector_database_write_flag": 1,
+          "external_search_api_flag": 1
+        }
+      },
+      "manual_review_fields": [
+        "source_document_id",
+        "evidence_span",
+        "readonly_snapshot_id",
+        "reviewer_confirm_no_formal_write"
+      ]
+    },
+    {
+      "line_id": "content_processing",
+      "line_name": "内容",
+      "permission_order_draft": {
+        "draft_status": "candidate_only",
+        "purpose": "允许未来在二次审批后读取样本文档、生成内容草稿、流转内部质量报告。",
+        "allowed_future_low_risk_candidates": [
+          "只读拉取样本文档元数据",
+          "生成不发布的内容草稿",
+          "内部质量报告流转"
+        ],
+        "forbidden_now_and_future_until_new_approval": [
+          "正式内容库写入",
+          "发布或定时发布",
+          "真实文档转换",
+          "覆盖用户源文件",
+          "外部渠道分发"
+        ],
+        "required_gate": "manual_approval_plus_two_person_review"
+      },
+      "whitelist_draft": {
+        "scope_type": "readonly_candidate",
+        "allowed_objects": [
+          "sample_document_metadata",
+          "shadow_content_draft",
+          "internal_quality_report"
+        ],
+        "excluded_objects": [
+          "production_content_database",
+          "publish_scheduler",
+          "source_file_overwrite_path",
+          "external_distribution_channel"
+        ]
+      },
+      "rollback_draft": {
+        "trigger_conditions": [
+          "发现发布意图",
+          "发现正式内容库写入意图",
+          "草稿来源无法追溯",
+          "样本范围超出白名单"
+        ],
+        "rollback_actions": [
+          "作废草稿批次",
+          "保持发布通道关闭",
+          "冻结样本白名单候选",
+          "提交人工质量复核"
+        ]
+      },
+      "monitoring_draft": {
+        "metrics": [
+          "sample_read_count",
+          "draft_generation_count",
+          "blocked_publish_attempt_count",
+          "blocked_database_write_count"
+        ],
+        "alert_thresholds": {
+          "blocked_publish_attempt_count": 1,
+          "blocked_database_write_count": 1,
+          "external_distribution_flag": 1
+        }
+      },
+      "manual_review_fields": [
+        "sample_document_id",
+        "draft_output_id",
+        "source_trace_evidence",
+        "reviewer_confirm_no_publish"
+      ]
+    },
+    {
+      "line_id": "video_production",
+      "line_name": "视频",
+      "permission_order_draft": {
+        "draft_status": "candidate_only",
+        "purpose": "允许未来在二次审批后读取视频素材清单、生成脚本或分镜草稿、流转内部制作报告。",
+        "allowed_future_low_risk_candidates": [
+          "只读拉取素材清单",
+          "生成不转码的脚本草稿",
+          "内部制作报告流转"
+        ],
+        "forbidden_now_and_future_until_new_approval": [
+          "真实媒体转换",
+          "转码",
+          "剪辑",
+          "渲染",
+          "字幕封面成品生成",
+          "发布"
+        ],
+        "required_gate": "manual_approval_plus_two_person_review"
+      },
+      "whitelist_draft": {
+        "scope_type": "readonly_candidate",
+        "allowed_objects": [
+          "asset_manifest_readonly",
+          "script_draft",
+          "storyboard_draft",
+          "internal_production_report"
+        ],
+        "excluded_objects": [
+          "transcode_job",
+          "render_queue",
+          "editing_project_export",
+          "publish_channel"
+        ]
+      },
+      "rollback_draft": {
+        "trigger_conditions": [
+          "发现转码或渲染意图",
+          "素材清单来源不明",
+          "草稿误入成品目录",
+          "发布字段被置为 true"
+        ],
+        "rollback_actions": [
+          "废弃脚本或分镜草稿",
+          "保持媒体处理队列关闭",
+          "冻结素材白名单候选",
+          "提交制作负责人复核"
+        ]
+      },
+      "monitoring_draft": {
+        "metrics": [
+          "asset_manifest_read_count",
+          "script_draft_count",
+          "blocked_transcode_attempt_count",
+          "blocked_render_attempt_count",
+          "blocked_publish_attempt_count"
+        ],
+        "alert_thresholds": {
+          "blocked_transcode_attempt_count": 1,
+          "blocked_render_attempt_count": 1,
+          "media_conversion_flag": 1
+        }
+      },
+      "manual_review_fields": [
+        "asset_manifest_id",
+        "script_draft_id",
+        "media_queue_disabled_evidence",
+        "reviewer_confirm_no_media_conversion"
+      ]
+    },
+    {
+      "line_id": "tax_readonly",
+      "line_name": "税收只读",
+      "permission_order_draft": {
+        "draft_status": "candidate_only",
+        "purpose": "允许未来在二次审批后只读拉取税收资料目录、生成内部材料清单草稿、流转内部复核报告。",
+        "allowed_future_low_risk_candidates": [
+          "只读拉取税收资料目录",
+          "生成不构成判断的材料清单草稿",
+          "内部复核报告流转"
+        ],
+        "forbidden_now_and_future_until_new_approval": [
+          "税务正式判断",
+          "申报建议",
+          "自动申报",
+          "正式税务库写入",
+          "税务 API 调用",
+          "对外结论出具"
+        ],
+        "required_gate": "manual_approval_plus_two_person_review"
+      },
+      "whitelist_draft": {
+        "scope_type": "readonly_candidate",
+        "allowed_objects": [
+          "tax_document_catalog_readonly",
+          "internal_material_checklist_draft",
+          "internal_review_report"
+        ],
+        "excluded_objects": [
+          "formal_tax_database",
+          "tax_api",
+          "filing_submission",
+          "external_tax_opinion"
+        ]
+      },
+      "rollback_draft": {
+        "trigger_conditions": [
+          "出现税务结论或建议措辞",
+          "发现税务 API 调用意图",
+          "发现正式税务库写入意图",
+          "内部材料清单被误标为正式意见"
+        ],
+        "rollback_actions": [
+          "作废材料清单草稿",
+          "标记为非税务意见",
+          "保持税务接口关闭",
+          "提交人工税务负责人复核"
+        ]
+      },
+      "monitoring_draft": {
+        "metrics": [
+          "readonly_catalog_pull_count",
+          "draft_checklist_count",
+          "blocked_tax_judgement_count",
+          "blocked_tax_api_attempt_count",
+          "blocked_tax_database_write_count"
+        ],
+        "alert_thresholds": {
+          "blocked_tax_judgement_count": 1,
+          "blocked_tax_api_attempt_count": 1,
+          "formal_tax_database_write_flag": 1
+        }
+      },
+      "manual_review_fields": [
+        "tax_document_catalog_id",
+        "non_opinion_disclaimer",
+        "tax_api_disabled_evidence",
+        "reviewer_confirm_no_formal_tax_judgement"
+      ]
+    }
+  ],
+  "acceptance_criteria": {
+    "business_line_count": 5,
+    "each_line_has_permission_whitelist_rollback_monitoring_review": true,
+    "future_low_risk_candidates_declared": true,
+    "forbidden_actions_declared": true,
+    "real_actions_triggered": 0,
+    "work_system_untouched": true
+  }
+}

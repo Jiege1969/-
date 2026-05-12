@@ -1,0 +1,50 @@
+{
+  "report": "股票样本提纯复用规则收口",
+  "generated_at": "2026-05-06 07:40:00 +08:00",
+  "judgment": "stock_analysis_system_as_base_sample_is_valid_but_requires_distillation_before_reuse",
+  "principle": [
+    "absorb_successful_genes",
+    "correct_debt_lessons",
+    "do_not_copy_stock_specific_business_content_as_general_template",
+    "state_what_to_reuse_not_reuse_and_correct_before_new_system_construction"
+  ],
+  "updated_artifacts": [
+    "D:/杰哥智能化系统/03杰哥进化系统/03数据/32技术债清偿强制前置规则/股票样本复用施工原则_最新.md",
+    "D:/杰哥智能化系统/03杰哥进化系统/03数据/32技术债清偿强制前置规则/股票样本提纯复用矩阵_最新.md",
+    "D:/杰哥智能化系统/03杰哥进化系统/03数据/32技术债清偿强制前置规则/股票样本提纯复用矩阵_最新.json",
+    "D:/杰哥智能化系统/00杰哥系统总管/01配置/新模块开工前置规则.json",
+    "D:/杰哥智能化系统/03杰哥进化系统/01配置/技术债清偿前置规则.json"
+  ],
+  "system_mapping": {
+    "tax": {
+      "absorb": ["evidence_chain", "layered_material_pool", "report_generation", "human_confirmation"],
+      "correct": ["no_stock_trading_semantics", "no_auto_submission", "knowledge_source_version_region_validity_required"]
+    },
+    "manager": {
+      "absorb": ["status_panel", "probe", "acceptance", "event_chain"],
+      "correct": ["manager_does_not_carry_business_main_logic"]
+    },
+    "evolution": {
+      "absorb": ["retrospective", "experience_card", "anti_regression_check"],
+      "correct": ["rules_must_block_construction_not_only_document"]
+    },
+    "intelligence": {
+      "absorb": ["model_routing", "prompt_templates", "read_only_qa", "quality_evaluation"],
+      "correct": ["prompts_versioned", "models_dependencies_manifested", "no_external_action_without_human_gate"]
+    }
+  },
+  "new_system_gate": [
+    "successful_gene_reuse_list",
+    "debt_avoidance_list",
+    "stock_specific_do_not_copy_list",
+    "dryrun_route",
+    "ledger_log_acceptance_rollback_entry"
+  ],
+  "safety": {
+    "triggered_n8n": false,
+    "sent_wecom": false,
+    "called_broker_api": false,
+    "auto_trade": false,
+    "deleted_formal_data": false
+  }
+}

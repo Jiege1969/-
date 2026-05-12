@@ -1,0 +1,66 @@
+{
+  "name": "低风险自主任务队列暂停闸口",
+  "generated_at": "2026-05-08 19:32:20",
+  "default": {
+    "pause_required": false,
+    "reason": "仅登记只读候选且未触发暂停条件"
+  },
+  "triggers": [
+    {
+      "id": "failure_detected",
+      "name": "出现失败",
+      "pause_required": true
+    },
+    {
+      "id": "red_line_word_detected",
+      "name": "红线词",
+      "pause_required": true
+    },
+    {
+      "id": "requires_reload",
+      "name": "需重载",
+      "pause_required": true
+    },
+    {
+      "id": "formal_rule_impact",
+      "name": "正式规则影响",
+      "pause_required": true
+    },
+    {
+      "id": "external_interface_required",
+      "name": "外部接口需求",
+      "pause_required": true
+    }
+  ],
+  "red_line_words": [
+    "真实发企微",
+    "企业微信真实发送",
+    "n8n触发",
+    "券商",
+    "交易",
+    "下单",
+    "税局登录",
+    "财税软件",
+    "正式规则生效",
+    "写正式规则",
+    "重载",
+    "reload",
+    "外部接口",
+    "视频真实发布"
+  ],
+  "pause_decision": {
+    "on_failure": true,
+    "on_red_line_word": true,
+    "on_requires_reload": true,
+    "on_formal_rule_impact": true,
+    "on_external_interface_required": true
+  },
+  "when_paused": [
+    "停止候选登记之外的动作",
+    "不执行任务",
+    "不调用外部接口",
+    "不写正式规则",
+    "不重载服务",
+    "仅输出待人工复核说明"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "asset_id": "VIDEO_AGENT_MULTI_PLATFORM_PRE_PUBLISH_DIFF_CHECK_001",
+  "version": "v1.0",
+  "asset_type": "pre_publish_difference_check_draft",
+  "construction_level": "W1/R0",
+  "scope": "multi_platform_pre_publish_human_review",
+  "status": "draft",
+  "purpose": "Check platform-specific title, tags, cover, AI label, aspect ratio, duration, and material notes before any multi-platform publishing.",
+  "platform_check_items": [
+    {"platform": "douyin", "title": "pending", "tags": "pending", "cover": "pending", "ai_label": "pending", "aspect_duration": "pending", "material_note": "pending", "publish_state": "pending_review"},
+    {"platform": "xiaohongshu", "title": "pending", "tags": "pending", "cover": "pending", "ai_label": "pending", "aspect_duration": "pending", "material_note": "pending", "publish_state": "pending_review"},
+    {"platform": "shipinhao", "title": "pending", "tags": "pending", "cover": "pending", "ai_label": "pending", "aspect_duration": "pending", "material_note": "pending", "publish_state": "pending_review"},
+    {"platform": "bilibili", "title": "pending", "tags": "pending", "cover": "pending", "ai_label": "pending", "aspect_duration": "pending", "material_note": "pending", "publish_state": "pending_review"},
+    {"platform": "kuaishou", "title": "pending", "tags": "pending", "cover": "pending", "ai_label": "pending", "aspect_duration": "pending", "material_note": "pending", "publish_state": "pending_review"}
+  ],
+  "fixed_rules": [
+    "One platform passing review does not imply other platforms pass.",
+    "If platform rules are missing, that platform remains blocked.",
+    "If AI label is not confirmed, that platform remains blocked.",
+    "If cover or title does not fit the platform, route to platform copy review.",
+    "This draft does not connect platforms, read accounts, or publish."
+  ],
+  "output_template": {
+    "conclusion": "multi_platform_pre_publish_check_incomplete",
+    "passed_platforms": "list",
+    "pending_review_platforms": "list",
+    "blocked_platforms_with_reasons": "list",
+    "real_system_triggered": false
+  },
+  "boundaries": {
+    "connect_platform": false,
+    "read_account": false,
+    "execute_publish": false
+  }
+}

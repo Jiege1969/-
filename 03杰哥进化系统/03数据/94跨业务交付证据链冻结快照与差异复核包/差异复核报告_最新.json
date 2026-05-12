@@ -1,0 +1,13 @@
+{
+  "name": "跨业务交付证据链只读差异复核报告",
+  "generated_at": "2026-05-08T19:37:52",
+  "readonly": true,
+  "baseline_created": true,
+  "baseline_path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\94跨业务交付证据链冻结快照与差异复核包\\冻结基线_最新.json",
+  "snapshot_path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\94跨业务交付证据链冻结快照与差异复核包\\冻结快照_最新.json",
+  "source_count": 10,
+  "missing_count": 0,
+  "diff_count": 0,
+  "missing": [],
+  "diffs": []
+}

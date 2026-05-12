@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "sample_id": "SHARED_POLICY_READONLY_STOCK_001",
+  "name": "锗出口管制政策事件只读调用样例",
+  "asset_identity": "stock_system_readonly_policy_evidence_call_shadow_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "modify_stock_config": false,
+    "modify_policy_event_library": false,
+    "frontend_trigger": false,
+    "external_send": false,
+    "trade_action": false
+  },
+  "call_input": {
+    "requesting_system": "stock_research_system",
+    "query_intent": "policy_event_industry_regulation_evidence",
+    "topic_keywords": ["锗", "出口管制", "半导体材料", "稀有金属"],
+    "expected_evidence_level": "official_policy_event",
+    "source": "SHARED-POLICY-EVENT-001"
+  },
+  "readonly_evidence": {
+    "event_id": "POL-2023-001",
+    "title": "商务部 海关总署公告2023年第23号 关于对镓、锗相关物项实施出口管制的公告",
+    "source_name": "商务部、海关总署",
+    "source_level": "official",
+    "publish_date": "2023-07-03",
+    "effective_date": "2023-08-01",
+    "status": "superseded_active",
+    "industry_tags": ["稀有金属", "半导体材料", "出口管制", "锗"],
+    "impact_direction": "利好",
+    "event_confidence": 0.95,
+    "source_url": "https://dcj.mofcom.gov.cn/article/zcfb/zcdwmy/202307/20230703419666.shtml"
+  },
+  "allowed_use": [
+    "政策事件证据",
+    "行业政策背景",
+    "研究报告证据链"
+  ],
+  "forbidden_use": [
+    "直接生成买卖建议",
+    "替代财报证据",
+    "替代行情证据",
+    "替代技术结构证据",
+    "触发外发或交易"
+  ],
+  "risk_counterpoint": "政策利好不等于盈利兑现；需求、价格、许可执行节奏和替代材料均需继续跟踪。",
+  "output_state": "research_draft_or_structured_evidence_only"
+}

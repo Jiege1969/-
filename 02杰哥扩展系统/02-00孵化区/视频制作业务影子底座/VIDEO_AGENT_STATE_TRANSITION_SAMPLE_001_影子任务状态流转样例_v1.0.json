@@ -1,0 +1,38 @@
+{
+  "asset_id": "VIDEO_AGENT_STATE_TRANSITION_SAMPLE_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_sample_not_real_state_machine",
+  "purpose": "Demonstrate how a desensitized video idea can move through shadow-only task states.",
+  "state_flow": [
+    {"step": 1, "input_condition": "desensitized_idea_received", "shadow_status": "draft_intake", "output": "shadow_input_record"},
+    {"step": 2, "input_condition": "platform_duration_or_style_missing", "shadow_status": "needs_clarification", "output": "clarification_questions"},
+    {"step": 3, "input_condition": "key_information_supplied", "shadow_status": "draft_ready", "output": "three_option_draft_preparation"},
+    {"step": 4, "input_condition": "three_text_options_prepared", "shadow_status": "pending_review", "output": "pending_review_draft"},
+    {"step": 5, "input_condition": "human_selects_option_and_requests_revision", "shadow_status": "revision_requested", "output": "partial_revision_scope"},
+    {"step": 6, "input_condition": "revision_draft_completed", "shadow_status": "human_review_needed", "output": "human_review_queue"},
+    {"step": 7, "input_condition": "human_shadow_loop_accepted", "shadow_status": "shadow_closed", "output": "shadow_task_closed"},
+    {"step": 8, "input_condition": "real_generation_publish_or_external_send_requested", "shadow_status": "blocked_by_redline", "output": "redline_block_record"}
+  ],
+  "tracking_fields": [
+    "shadow_task_id",
+    "source_input_type",
+    "current_shadow_status",
+    "last_transition_reason",
+    "missing_fields",
+    "human_review_items",
+    "redline_hit",
+    "next_shadow_action"
+  ],
+  "real_system_triggered": {
+    "model_api": false,
+    "material_read": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "service_or_port_change": false
+  }
+}

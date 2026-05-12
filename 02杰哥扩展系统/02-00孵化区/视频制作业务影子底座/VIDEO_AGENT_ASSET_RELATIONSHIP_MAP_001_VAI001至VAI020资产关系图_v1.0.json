@@ -1,0 +1,46 @@
+{
+  "id": "VIDEO_AGENT_ASSET_RELATIONSHIP_MAP_001",
+  "name": "VAI001至VAI020资产关系图",
+  "asset_identity": "video_creation_agent_shadow_asset_relationship_map",
+  "stage": "W1_R0",
+  "status": "document_relationship_map_not_service_orchestration",
+  "boundary": {
+    "service_orchestration": false,
+    "call_model": false,
+    "wechat_integration": false,
+    "trigger_n8n": false,
+    "renderer_or_publisher": false
+  },
+  "groups": [
+    {
+      "name": "input_and_state",
+      "assets": ["VAI-001", "VAI-006", "VAI-009", "VAI-012", "VAI-018"],
+      "purpose": "shadow conversation, history reference, input and state change"
+    },
+    {
+      "name": "routing_and_clarification",
+      "assets": ["VAI-002", "VAI-008", "VAI-011", "VAI-013"],
+      "purpose": "intent, missing fields and pre-run checks"
+    },
+    {
+      "name": "draft_output",
+      "assets": ["VAI-003", "VAI-007", "VAI-010", "VAI-014", "VAI-017"],
+      "purpose": "partial revision, three-option and revision-flow text drafts"
+    },
+    {
+      "name": "gate_and_receipt",
+      "assets": ["VAI-005", "VAI-015", "VAI-016", "VAI-020"],
+      "purpose": "human review, redline record and shadow alternatives"
+    },
+    {
+      "name": "adapter_and_evolution",
+      "assets": ["VAI-004", "VAI-019"],
+      "purpose": "adapter fields and evolution candidates only"
+    }
+  ],
+  "principles": [
+    "relationship_map_is_not_online_automation",
+    "adapter_node_keeps_fields_only_no_real_call",
+    "redline_node_blocks_real_action_and_routes_to_shadow_alternative"
+  ]
+}

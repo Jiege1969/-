@@ -1,0 +1,53 @@
+{
+  "record_id": "VIDEO_AGENT_VAI_115_117",
+  "date": "2026-05-08",
+  "scope": "视频制作业务影子底座",
+  "construction_level": "W1/W2 低风险影子施工",
+  "summary": "补齐判断结果信息不完整需补充回执、人工复核后仍不同意执行回执、本线索引v10。",
+  "did": [
+    "新增企业微信判断结果信息不完整需补充回执样例",
+    "新增企业微信人工复核后仍不同意执行回执样例",
+    "新增VAI001至VAI114本线资产索引草案v10"
+  ],
+  "changed_files": [
+    "VIDEO_AGENT_WECOM_INCOMPLETE_MANAGER_DECISION_NEED_MORE_REPLY_001_企业微信判断结果信息不完整需补充回执样例_v1.0.md",
+    "VIDEO_AGENT_WECOM_INCOMPLETE_MANAGER_DECISION_NEED_MORE_REPLY_001_企业微信判断结果信息不完整需补充回执样例_v1.0.json",
+    "VIDEO_AGENT_WECOM_HUMAN_REVIEW_REFUSE_EXECUTION_REPLY_001_企业微信人工复核后仍不同意执行回执样例_v1.0.md",
+    "VIDEO_AGENT_WECOM_HUMAN_REVIEW_REFUSE_EXECUTION_REPLY_001_企业微信人工复核后仍不同意执行回执样例_v1.0.json",
+    "VIDEO_AGENT_LINE_ASSET_INDEX_DRAFT_010_VAI001至VAI114本线资产索引草案_v10.0.md",
+    "VIDEO_AGENT_LINE_ASSET_INDEX_DRAFT_010_VAI001至VAI114本线资产索引草案_v10.0.json",
+    "VIDEO_AGENT_VAI_115_117_对齐回传记录_20260508.md",
+    "VIDEO_AGENT_VAI_115_117_对齐回传记录_20260508.json"
+  ],
+  "risk_level": "低",
+  "real_system_triggered": {
+    "real_model": false,
+    "real_material_read": false,
+    "real_render": false,
+    "real_publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "real_account_cookie_api_key": false,
+    "manager_file_read_or_modified": false,
+    "platform_upload_or_publish": false,
+    "service_port_manager_public_component_formal_repo": false
+  },
+  "need_manager_integration": {
+    "current": false,
+    "future_condition": "若未来要把这些回执接入真实企业微信机器人，必须交回总管和企业微信公共接入层判断。"
+  },
+  "next_suggestions": [
+    "VAI112至VAI117小阶段收口记录",
+    "人工复核后进入可局部修正的操作清单",
+    "VAI001至VAI117本线资产索引草案v11"
+  ],
+  "self_check": {
+    "read_manager_panel_and_startup_package_first": true,
+    "write_scope_limited_to_video_shadow_base": true,
+    "json_convert_from_json_passed": true,
+    "scan_hits_are_boundary_statements": true,
+    "no_real_system_called": true,
+    "no_manager_public_service_formal_or_other_line_modified": true
+  }
+}
+

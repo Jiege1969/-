@@ -1,0 +1,26 @@
+{
+  "asset_id": "VIDEO_AGENT_REDLINE_BLOCK_REPLY_TEMPLATE_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_reply_template_not_real_wecom_reply",
+  "purpose": "Provide a clear shadow reply when input hits real generation, publish, external send, WeCom, n8n, service, credential, or formal-write redlines.",
+  "fields": [
+    "input_id",
+    "redline_category",
+    "matched_terms",
+    "block_reason",
+    "allowed_shadow_alternative",
+    "missing_or_review_items",
+    "requires_manager_decision",
+    "boundary_statement"
+  ],
+  "fixed_boundary_statement": "This reply is from the video production shadow base only. It does not execute real generation, render, publish, upload, external send, WeCom real send, n8n, or formal database write.",
+  "real_system_triggered": {
+    "wecom_real_send": false,
+    "service_call": false,
+    "n8n": false,
+    "formal_database_write": false
+  }
+}

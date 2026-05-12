@@ -1,0 +1,26 @@
+{
+  "id": "P2-S8-RECEIPT-TO-SHADOW-ENTRY-MAPPING-PREVIEW-20260509",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S8",
+  "status": "executed_pass",
+  "purpose": "用 P2-S7 虚拟分流回执预演映射到影子入口字段或暂停缺口记录，验证不改写入口、不越级生成结论",
+  "script": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S8分流回执到影子入口映射预演.py",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\57P2S8分流回执到影子入口映射预演\\P2S8分流回执到影子入口映射预演_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\57P2S8分流回执到影子入口映射预演\\P2S8分流回执到影子入口映射预演_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\57P2S8分流回执到影子入口映射预演\\P2S8分流回执到影子入口映射预演样例_20260509.json"
+  ],
+  "latest_receipt": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\稳定版正式收口_20260509\\P2_S8_分流回执到影子入口映射预演回执_20260509.json",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

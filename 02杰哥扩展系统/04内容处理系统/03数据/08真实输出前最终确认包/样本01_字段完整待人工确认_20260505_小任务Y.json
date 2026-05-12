@@ -1,0 +1,73 @@
+{
+  "sample_id": "Y-SAMPLE-01-COMPLETE-PENDING-CONFIRMATION",
+  "sample_type": "字段完整待人工确认",
+  "status": "pending_manual_confirmation",
+  "input": {
+    "input_id": "manual-final-check-input-001",
+    "source_reference_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\08真实输出前最终确认包\\样本01_人工构造输入引用_不读取真实文档.txt",
+    "source_reference_type": "manual_placeholder",
+    "authorization_status": "manual_shadow_only",
+    "input_scope_note": "人工构造引用，仅用于真实输出前确认包字段演示；不读取、不复制、不转换真实业务文档。",
+    "source_read_performed": false
+  },
+  "output_preview": {
+    "preview_id": "Y-PREVIEW-001",
+    "preview_format": "markdown_summary_preview",
+    "preview_content_summary": "预览将包含标题、摘要、风险提示和复核状态字段；仅展示结构，不生成真实文件。",
+    "preview_metadata": {
+      "title": "单样本真实输出前确认预览",
+      "expected_section_count": 4,
+      "risk_notice_required": true,
+      "manual_confirmation_required": true
+    },
+    "no_real_output_file": true,
+    "real_file_path": null
+  },
+  "manual_confirmation": {
+    "confirm_required": true,
+    "confirm_status": "pending",
+    "confirmer": "人工确认人待填",
+    "confirm_time": "人工确认时填写",
+    "confirm_result": "not_approved_for_real_output",
+    "signature_required": true
+  },
+  "risk": {
+    "risk_level": "low_shadow_only",
+    "risk_items": [
+      "确认包字段完整性待人工确认",
+      "真实输出文件生成保持禁用"
+    ],
+    "sensitive_info_check": "not_detected_in_manual_placeholder",
+    "external_send_check": "blocked",
+    "formal_write_check": "blocked",
+    "risk_clearance_status": "not_cleared_until_human_signature"
+  },
+  "rollback": {
+    "rollback_required": true,
+    "rollback_mode": "discard_confirmation_package_preview",
+    "rollback_scope": "shadow_confirmation_metadata_only",
+    "rollback_action": "人工确认后可废弃确认包字段，不处理任何用户文档。",
+    "rollback_confirm_required": true
+  },
+  "release_block_conditions": {
+    "block_if_input_missing": true,
+    "block_if_no_manual_confirmation": true,
+    "block_if_risk_not_cleared": true,
+    "block_if_real_output_requested": true,
+    "block_if_batch_or_external_action": true,
+    "block_action": "block_real_output_and_keep_shadow_record"
+  },
+  "action_switches": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_output_file_generation": false,
+    "allow_delete_move_overwrite": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_wecom_real_message": false,
+    "allow_formal_library_write": false,
+    "allow_broker_api": false,
+    "allow_auto_trade": false
+  }
+}

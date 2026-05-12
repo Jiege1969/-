@@ -1,0 +1,63 @@
+{
+  "名称": "L3企业微信正式化前检查清单",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "W3正式化前检查清单",
+  "状态": "ready_for_user_review",
+  "preconditions": [
+    {
+      "item": "五样本影子验收",
+      "status": "done",
+      "evidence": "03数据/245L3评分基础资产/L3企业微信短答五样本影子验收_20260507.json"
+    },
+    {
+      "item": "用户审阅版短答",
+      "status": "done",
+      "evidence": "03数据/245L3评分基础资产/企业微信L3短答五样本用户审阅版_20260507.md"
+    },
+    {
+      "item": "W3改动清单",
+      "status": "done",
+      "evidence": "03数据/245L3评分基础资产/L3企业微信正式化W3改动清单_20260507.json"
+    },
+    {
+      "item": "回滚方案",
+      "status": "done",
+      "evidence": "03数据/245L3评分基础资产/L3企业微信正式化回滚方案_20260507.json"
+    },
+    {
+      "item": "正式资产只读基线",
+      "status": "done",
+      "evidence": "03数据/245L3评分基础资产/L3企业微信正式化前只读基线快照_20260507.json"
+    },
+    {
+      "item": "人工确认申请",
+      "status": "waiting_user_decision",
+      "evidence": "03数据/245L3评分基础资产/L3企业微信正式化人工确认申请_20260507.json"
+    }
+  ],
+  "must_confirm_before_w3": [
+    "是否允许修改正式脚本或新增正式适配层",
+    "是否允许修改正式配置",
+    "是否允许进行企业微信入口dry-run对照",
+    "是否允许服务重启",
+    "是否允许真实企业微信发送",
+    "是否允许n8n接入"
+  ],
+  "default_denied_without_explicit_confirmation": [
+    "真实企业微信发送",
+    "n8n启用",
+    "服务重启",
+    "券商接口",
+    "自动交易",
+    "绕过人工确认令"
+  ],
+  "recommended_next_step": "先由用户审阅五样本短答效果；若认可，再只批准W3准备阶段，不批准真实发送。",
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_service_restart": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

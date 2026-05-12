@@ -1,0 +1,166 @@
+{
+  "名称": "五样本政策事件缺口队列",
+  "generated_at": "2026-05-08 07:36:49",
+  "asset_identity": "W1政策缺口队列",
+  "status": "ready",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_external_fetch": true,
+  "not_policy_event_write": true,
+  "not_score_write": true,
+  "tasks": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "classification": "structured_policy_ready",
+      "priority": "P2",
+      "matched_policy_events": [
+        {
+          "event_id": "POL-2023-001",
+          "title": "商务部 海关总署公告2023年第23号 关于对镓、锗相关物项实施出口管制的公告",
+          "source_name": "商务部、海关总署",
+          "source_level": "official",
+          "event_status": "superseded_active",
+          "impact_direction": "利好",
+          "impact_strength": 0.85,
+          "event_confidence": 0.95,
+          "exposure": 0.95,
+          "exposure_direction": "受益",
+          "exposure_reason": "云南锗业主营业务与锗材料、锗产品高度相关，是A股中锗主题辨识度较高的公司。镓、锗相关物项出口管制提高锗资源战略属性和市场关注度，对其议价能力和估值预期具有较强映射。"
+        }
+      ],
+      "matched_event_count": 1,
+      "policy_score_allowed": true,
+      "policy_score_action": "保留既有结构化政策事件；后续只需复核是否重复计分、是否需要时效说明。",
+      "review_focus": "复核是否存在官方来源清晰、影响方向明确、公司暴露度可量化的直接政策事件。",
+      "missing": [],
+      "front_wording": "已匹配结构化政策事件，政策只能作为分项依据，不能单因子强推。",
+      "redline_blocking": [
+        "未入库政策不得参与L3政策分。",
+        "无股票暴露度映射不得给单股政策分。",
+        "宏观背景、行业口号、新闻热词不得替代结构化政策事件。",
+        "不得凭空补政策强度、暴露度或时效衰减。",
+        "不得生成买卖、仓位、下单或交易建议。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "classification": "no_direct_structured_policy",
+      "priority": "P2",
+      "matched_policy_events": [],
+      "matched_event_count": 0,
+      "policy_score_allowed": false,
+      "policy_score_action": "先确认无直接政策；如后续发现官方政策，必须单独建立事件和暴露度，不得借用泛新能源口径加分。",
+      "review_focus": "锂盐、新能源材料或矿产资源政策是否存在直接、可量化、可暴露度映射的事件。",
+      "missing": [
+        "未匹配到该股票的政策事件暴露度"
+      ],
+      "front_wording": "未匹配到直接结构化政策，政策项不能加分。",
+      "redline_blocking": [
+        "未入库政策不得参与L3政策分。",
+        "无股票暴露度映射不得给单股政策分。",
+        "宏观背景、行业口号、新闻热词不得替代结构化政策事件。",
+        "不得凭空补政策强度、暴露度或时效衰减。",
+        "不得生成买卖、仓位、下单或交易建议。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "classification": "candidate_policy_needed",
+      "priority": "P1",
+      "matched_policy_events": [],
+      "matched_event_count": 0,
+      "policy_score_allowed": false,
+      "policy_score_action": "可建立半导体政策候选复核任务，但在官方事件、影响方向、影响强度和公司暴露度明确前不得入库计分。",
+      "review_focus": "半导体国产替代、集成电路产业政策、晶圆代工产能与先进制程限制等是否能形成结构化事件。",
+      "missing": [
+        "未匹配到该股票的结构化政策事件暴露度；半导体国产替代背景尚未进入policy_events表。",
+        "更高分受制于政策事件未结构化、2026一季报缺失和晶圆代工经营拆分不足。"
+      ],
+      "front_wording": "半导体政策背景存在，但尚未结构化到单股政策事件，前台只能写政策证据待补。",
+      "redline_blocking": [
+        "未入库政策不得参与L3政策分。",
+        "无股票暴露度映射不得给单股政策分。",
+        "宏观背景、行业口号、新闻热词不得替代结构化政策事件。",
+        "不得凭空补政策强度、暴露度或时效衰减。",
+        "不得生成买卖、仓位、下单或交易建议。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "classification": "no_direct_structured_policy",
+      "priority": "P2",
+      "matched_policy_events": [],
+      "matched_event_count": 0,
+      "policy_score_allowed": false,
+      "policy_score_action": "目前只登记为待观察，不把宏观供应链口号写成政策加分。",
+      "review_focus": "供应链、大宗商品流通、国企改革或物流政策是否与公司主营形成直接映射。",
+      "missing": [
+        "未匹配到结构化政策事件暴露度。",
+        "更高分受制于成交不足、扣非弱、供应链风控字段缺失、政策事件。"
+      ],
+      "front_wording": "未发现可直接映射到公司的结构化政策事件。",
+      "redline_blocking": [
+        "未入库政策不得参与L3政策分。",
+        "无股票暴露度映射不得给单股政策分。",
+        "宏观背景、行业口号、新闻热词不得替代结构化政策事件。",
+        "不得凭空补政策强度、暴露度或时效衰减。",
+        "不得生成买卖、仓位、下单或交易建议。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "classification": "no_direct_structured_policy",
+      "priority": "P2",
+      "matched_policy_events": [],
+      "matched_event_count": 0,
+      "policy_score_allowed": false,
+      "policy_score_action": "仅在找到官方来源、产品范围和公司暴露度后建立候选事件；当前不得给政策分。",
+      "review_focus": "精细化工、TMA、环保、安全生产或出口政策是否直接影响公司产品价格与产能。",
+      "missing": [
+        "未匹配到结构化政策事件暴露度。"
+      ],
+      "front_wording": "未匹配到直接结构化政策，化工品景气需由价格和财报证据验证。",
+      "redline_blocking": [
+        "未入库政策不得参与L3政策分。",
+        "无股票暴露度映射不得给单股政策分。",
+        "宏观背景、行业口号、新闻热词不得替代结构化政策事件。",
+        "不得凭空补政策强度、暴露度或时效衰减。",
+        "不得生成买卖、仓位、下单或交易建议。"
+      ]
+    }
+  ],
+  "source_state": {
+    "policy_event_count": 1,
+    "stock_policy_exposure_count": 2
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_external_fetch": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_delete_or_move_old_assets": true,
+    "not_formal_database_write": true,
+    "not_policy_event_write": true,
+    "not_score_write": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

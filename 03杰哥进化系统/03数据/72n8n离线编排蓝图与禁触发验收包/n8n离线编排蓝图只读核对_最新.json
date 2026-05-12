@@ -1,0 +1,45 @@
+{
+  "name": "n8n离线编排蓝图只读核对",
+  "checked_at": "2026-05-08 17:39:42",
+  "status": "pass",
+  "error_count": 0,
+  "errors": [],
+  "checks": [
+    {
+      "check": "流程覆盖收到消息到总管确认闸口",
+      "passed": true,
+      "detail": "收到消息 -> 分类 -> 只读脚本 -> 生成候选回传 -> 总管确认闸口"
+    },
+    {
+      "check": "节点数量不少于 5",
+      "passed": true,
+      "detail": "5"
+    },
+    {
+      "check": "所有节点禁触发字段正确",
+      "passed": true,
+      "detail": "全部节点通过"
+    },
+    {
+      "check": "所有边禁触发字段正确",
+      "passed": true,
+      "detail": "全部边通过"
+    },
+    {
+      "check": "全局禁触发与离线模式正确",
+      "passed": true,
+      "detail": "{\"mode\": \"dry_run/offline\", \"real_trigger\": false, \"webhook_enabled\": false, \"network_call_enabled\": false, \"n8n_connection_enabled\": false, \"external_delivery_enabled\": false, \"production_rule_enabled\": false}"
+    },
+    {
+      "check": "无 URL/token/凭据/真实动作字段",
+      "passed": true,
+      "detail": "未发现禁用字段和值"
+    },
+    {
+      "check": "离线蓝图与验收包文件存在",
+      "passed": true,
+      "detail": "4"
+    }
+  ],
+  "source": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\72n8n离线编排蓝图与禁触发验收包\\n8n离线编排蓝图_最新.json"
+}

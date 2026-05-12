@@ -1,0 +1,31 @@
+{
+  "asset_id": "VIDEO_AGENT_PUBLISH_REFUSAL_REPLY_QUALITY_CHECK_001",
+  "version": "v1.0",
+  "asset_type": "quality_checklist",
+  "construction_level": "W1/R0",
+  "scope": "wecom_publish_command_refusal_reply_and_cli_publish_block_reply",
+  "status": "draft",
+  "purpose": "Ensure publish-refusal replies explain blockers, review queues, next actions, and no real publish trigger.",
+  "check_items": [
+    {"id": "PRQ-001", "item": "task_id", "standard": "Reply clearly shows task id."},
+    {"id": "PRQ-002", "item": "refusal_conclusion", "standard": "Reply states real publishing cannot proceed."},
+    {"id": "PRQ-003", "item": "three_gates", "standard": "Generation release, real render release, and publishing release are shown separately."},
+    {"id": "PRQ-004", "item": "blocker_reason", "standard": "At least one reviewable blocker is listed."},
+    {"id": "PRQ-005", "item": "review_queue", "standard": "Each blocker is mapped to a human review queue."},
+    {"id": "PRQ-006", "item": "next_action", "standard": "Next action is review, authorization, confirmation, or waiting for human input, not publishing."},
+    {"id": "PRQ-007", "item": "real_system_triggered", "standard": "Explicitly false."},
+    {"id": "PRQ-008", "item": "redline_hint", "standard": "Real account, Cookie, API Key, n8n, or external-send interface requests are registered as blockers."}
+  ],
+  "bad_reply_reasons": [
+    "missing_task_id",
+    "missing_three_gates",
+    "missing_specific_blockers",
+    "missing_review_queue",
+    "missing_real_system_trigger_status"
+  ],
+  "boundary": {
+    "call_wecom": false,
+    "call_publish_tool": false,
+    "connect_n8n": false
+  }
+}

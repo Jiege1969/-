@@ -1,0 +1,118 @@
+{
+  "生成时间": "2026-05-08 06:56:15",
+  "总体状态": "need_fix",
+  "配置文件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\01配置\\视频生成桥梁配置.json",
+  "建议配置文件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\测试与审核\\视频生成环境修复清单\\视频生成桥梁配置_建议更新.json",
+  "MoneyPrinterTurbo检查": {
+    "已找到": false,
+    "推荐根目录": "",
+    "候选检查": [
+      {
+        "路径": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-07\\30-moneyprinterturbo-windows-imagemagick-chrome-1",
+        "存在": true,
+        "start.bat": false,
+        "app/main.py": false,
+        "webui/Main.py": false,
+        "可识别": false
+      },
+      {
+        "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\MoneyPrinterTurbo",
+        "存在": false,
+        "start.bat": false,
+        "app/main.py": false,
+        "webui/Main.py": false,
+        "可识别": false
+      },
+      {
+        "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\moneyprinterturbo",
+        "存在": false,
+        "start.bat": false,
+        "app/main.py": false,
+        "webui/Main.py": false,
+        "可识别": false
+      },
+      {
+        "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\MoneyPrinterTurbo-main",
+        "存在": false,
+        "start.bat": false,
+        "app/main.py": false,
+        "webui/Main.py": false,
+        "可识别": false
+      },
+      {
+        "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\MoneyPrinterTurbo",
+        "存在": false,
+        "start.bat": false,
+        "app/main.py": false,
+        "webui/Main.py": false,
+        "可识别": false
+      },
+      {
+        "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\moneyprinterturbo",
+        "存在": false,
+        "start.bat": false,
+        "app/main.py": false,
+        "webui/Main.py": false,
+        "可识别": false
+      },
+      {
+        "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\MoneyPrinterTurbo-main",
+        "存在": false,
+        "start.bat": false,
+        "app/main.py": false,
+        "webui/Main.py": false,
+        "可识别": false
+      },
+      {
+        "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\MoneyPrinterTurbo",
+        "存在": false,
+        "start.bat": false,
+        "app/main.py": false,
+        "webui/Main.py": false,
+        "可识别": false
+      },
+      {
+        "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\moneyprinterturbo",
+        "存在": false,
+        "start.bat": false,
+        "app/main.py": false,
+        "webui/Main.py": false,
+        "可识别": false
+      },
+      {
+        "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\MoneyPrinterTurbo-main",
+        "存在": false,
+        "start.bat": false,
+        "app/main.py": false,
+        "webui/Main.py": false,
+        "可识别": false
+      }
+    ]
+  },
+  "ImageMagick检查": {
+    "配置命令": "magick",
+    "PATH可识别路径": "",
+    "常见安装路径候选": [],
+    "可用": false,
+    "版本摘要": ""
+  },
+  "阻断项": [
+    "MoneyPrinterTurbo根目录未识别",
+    "ImageMagick不可用"
+  ],
+  "建议步骤": [
+    "将 MoneyPrinterTurbo Windows 一键启动包解压到不含中文和空格的目录，建议同步放一份到 `02视频制作系统\\06临时\\MoneyPrinterTurbo`。",
+    "解压后确认目录内存在 `start.bat`，或存在 `app\\main.py` / `webui\\Main.py`。",
+    "把真实根目录写入 `01配置\\视频生成桥梁配置.json` 的 `生成桥梁.根目录`。",
+    "安装 ImageMagick，并确保 `magick -version` 在 PowerShell 中可正常返回。",
+    "安装 ImageMagick 时建议勾选 legacy utilities / Add application directory to PATH 相关选项。",
+    "完成以上修复后，在企业微信发送：`生成预检 VF-YYYYMMDD-001`。",
+    "即使预检通过，真实渲染仍需人工复核、生成放行和最终真实渲染启用门禁。"
+  ],
+  "安全边界": {
+    "启用真实渲染": false,
+    "调用MoneyPrinterTurbo": false,
+    "触发发布": false,
+    "企业微信真实外发": false
+  }
+}

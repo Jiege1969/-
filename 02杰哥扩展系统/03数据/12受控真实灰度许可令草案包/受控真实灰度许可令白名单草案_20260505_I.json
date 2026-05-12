@@ -1,0 +1,87 @@
+{
+  "whitelist_draft_id": "controlled_real_gray_whitelist_draft_20260505_I",
+  "status": "draft_only",
+  "generated_at": "2026-05-05T14:18:00+08:00",
+  "real_action_count": 0,
+  "policy": {
+    "whitelist_is_permission_candidate_only": true,
+    "does_not_authorize_real_send": true,
+    "does_not_authorize_formal_write": true,
+    "does_not_authorize_media_conversion": true,
+    "does_not_authorize_tax_judgement": true,
+    "does_not_authorize_broker_or_trade": true
+  },
+  "entries": [
+    {
+      "line_id": "enterprise_wechat",
+      "allowed_candidate_scope": [
+        "sandbox_conversation_metadata",
+        "internal_test_user_aliases",
+        "shadow_reply_preview_records"
+      ],
+      "explicit_exclusions": [
+        "production_group_chat",
+        "external_customer_chat",
+        "live_webhook",
+        "message_send_queue"
+      ]
+    },
+    {
+      "line_id": "knowledge_base",
+      "allowed_candidate_scope": [
+        "readonly_index_snapshot",
+        "evidence_reference_sample",
+        "draft_knowledge_card"
+      ],
+      "explicit_exclusions": [
+        "production_knowledge_collection",
+        "vector_database",
+        "document_source_repository",
+        "external_search_api"
+      ]
+    },
+    {
+      "line_id": "content_processing",
+      "allowed_candidate_scope": [
+        "sample_document_metadata",
+        "shadow_content_draft",
+        "internal_quality_report"
+      ],
+      "explicit_exclusions": [
+        "production_content_database",
+        "publish_scheduler",
+        "source_file_overwrite_path",
+        "external_distribution_channel"
+      ]
+    },
+    {
+      "line_id": "video_production",
+      "allowed_candidate_scope": [
+        "asset_manifest_readonly",
+        "script_draft",
+        "storyboard_draft",
+        "internal_production_report"
+      ],
+      "explicit_exclusions": [
+        "transcode_job",
+        "render_queue",
+        "editing_project_export",
+        "publish_channel"
+      ]
+    },
+    {
+      "line_id": "tax_readonly",
+      "allowed_candidate_scope": [
+        "tax_document_catalog_readonly",
+        "internal_material_checklist_draft",
+        "internal_review_report"
+      ],
+      "explicit_exclusions": [
+        "formal_tax_database",
+        "tax_api",
+        "filing_submission",
+        "external_tax_opinion"
+      ]
+    }
+  ]
+}

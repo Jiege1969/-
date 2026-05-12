@@ -1,0 +1,505 @@
+﻿{
+  "名称": "视频真实渲染白名单材料只读签收预演报告",
+  "预演模式": "readonly_signoff_preview_only",
+  "检查结果": [
+    {
+      "检查项": "材料人工补齐模板JSON存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\27真实渲染白名单材料人工补齐模板与签收预演包\\视频真实渲染白名单材料人工补齐模板_最新.json"
+    },
+    {
+      "检查项": "签收预演单JSON存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\27真实渲染白名单材料人工补齐模板与签收预演包\\视频真实渲染白名单材料签收预演单_最新.json"
+    },
+    {
+      "检查项": "总包JSON存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\27真实渲染白名单材料人工补齐模板与签收预演包\\视频真实渲染白名单材料人工补齐模板与签收预演包_最新.json"
+    },
+    {
+      "检查项": "材料人工补齐模板覆盖八项材料",
+      "通过": true,
+      "详情": [
+        "环境识别",
+        "素材授权",
+        "输出目录隔离",
+        "失败回滚",
+        "证据留存",
+        "人工签收",
+        "试运行范围",
+        "发布隔离"
+      ]
+    },
+    {
+      "检查项": "签收预演单覆盖八项材料",
+      "通过": true,
+      "详情": [
+        "环境识别",
+        "素材授权",
+        "输出目录隔离",
+        "失败回滚",
+        "证据留存",
+        "人工签收",
+        "试运行范围",
+        "发布隔离"
+      ]
+    },
+    {
+      "检查项": "材料模板不自动补齐",
+      "通过": true,
+      "详情": [
+        {
+          "item_id": "environment_identification",
+          "name": "环境识别",
+          "manual_fill_fields": [
+            "候选环境标识",
+            "机器范围",
+            "账号范围",
+            "依赖路径确认",
+            "风险备注"
+          ],
+          "acceptance_criteria": "人工确认真实渲染候选环境与当前机器/账号范围一致，且仅作为申请材料，不启用真实渲染。",
+          "source_package_26_status": "pending",
+          "source_package_26_note": "已有部分材料，但仍需人工确认或补齐。",
+          "manual_fill_required": true,
+          "auto_fill": false,
+          "script_may_complete_this_item": false,
+          "signed": false,
+          "field_values": {
+            "候选环境标识": "",
+            "机器范围": "",
+            "账号范围": "",
+            "依赖路径确认": "",
+            "风险备注": ""
+          },
+          "human_operator_note": "",
+          "supervisor_confirmation_note": ""
+        },
+        {
+          "item_id": "material_authorization",
+          "name": "素材授权",
+          "manual_fill_fields": [
+            "素材来源",
+            "授权证明编号",
+            "授权边界",
+            "试运行可用范围",
+            "授权人/确认人"
+          ],
+          "acceptance_criteria": "人工提供或签收素材授权证明，脚本不得代填或推断授权。",
+          "source_package_26_status": "pending",
+          "source_package_26_note": "已有部分材料，但仍需人工确认或补齐。",
+          "manual_fill_required": true,
+          "auto_fill": false,
+          "script_may_complete_this_item": false,
+          "signed": false,
+          "field_values": {
+            "素材来源": "",
+            "授权证明编号": "",
+            "授权边界": "",
+            "试运行可用范围": "",
+            "授权人/确认人": ""
+          },
+          "human_operator_note": "",
+          "supervisor_confirmation_note": ""
+        },
+        {
+          "item_id": "output_directory_isolation",
+          "name": "输出目录隔离",
+          "manual_fill_fields": [
+            "试运行输出目录",
+            "生产目录隔离说明",
+            "清理规则",
+            "覆盖保护说明"
+          ],
+          "acceptance_criteria": "人工确认试运行输出目录与生产/发布目录隔离，且不会覆盖既有产物。",
+          "source_package_26_status": "pending",
+          "source_package_26_note": "已有引用材料；仍需人工签收后才能进入下一阶段。",
+          "manual_fill_required": true,
+          "auto_fill": false,
+          "script_may_complete_this_item": false,
+          "signed": false,
+          "field_values": {
+            "试运行输出目录": "",
+            "生产目录隔离说明": "",
+            "清理规则": "",
+            "覆盖保护说明": ""
+          },
+          "human_operator_note": "",
+          "supervisor_confirmation_note": ""
+        },
+        {
+          "item_id": "failure_rollback",
+          "name": "失败回滚",
+          "manual_fill_fields": [
+            "失败场景",
+            "回滚动作",
+            "责任人",
+            "禁止删除范围",
+            "复核方式"
+          ],
+          "acceptance_criteria": "人工确认失败回滚边界；预演只记录回滚方案，不执行删除、重试真实渲染或恢复动作。",
+          "source_package_26_status": "pending",
+          "source_package_26_note": "已有引用材料；仍需人工签收后才能进入下一阶段。",
+          "manual_fill_required": true,
+          "auto_fill": false,
+          "script_may_complete_this_item": false,
+          "signed": false,
+          "field_values": {
+            "失败场景": "",
+            "回滚动作": "",
+            "责任人": "",
+            "禁止删除范围": "",
+            "复核方式": ""
+          },
+          "human_operator_note": "",
+          "supervisor_confirmation_note": ""
+        },
+        {
+          "item_id": "evidence_retention",
+          "name": "证据留存",
+          "manual_fill_fields": [
+            "材料快照路径",
+            "检查报告路径",
+            "签收记录路径",
+            "留存期限",
+            "审计索引"
+          ],
+          "acceptance_criteria": "人工确认留存期限和审计路径；脚本只写入第27包材料快照索引。",
+          "source_package_26_status": "pending",
+          "source_package_26_note": "已有引用材料；仍需人工签收后才能进入下一阶段。",
+          "manual_fill_required": true,
+          "auto_fill": false,
+          "script_may_complete_this_item": false,
+          "signed": false,
+          "field_values": {
+            "材料快照路径": "",
+            "检查报告路径": "",
+            "签收记录路径": "",
+            "留存期限": "",
+            "审计索引": ""
+          },
+          "human_operator_note": "",
+          "supervisor_confirmation_note": ""
+        },
+        {
+          "item_id": "manual_signoff",
+          "name": "人工签收",
+          "manual_fill_fields": [
+            "签收人",
+            "签收角色",
+            "签收意见",
+            "签收时间",
+            "总管确认编号"
+          ],
+          "acceptance_criteria": "默认 signed=false；必须由总管另行确认，且本包不让白名单生效。",
+          "source_package_26_status": "pending",
+          "source_package_26_note": "已有引用材料；仍需人工签收后才能进入下一阶段。",
+          "manual_fill_required": true,
+          "auto_fill": false,
+          "script_may_complete_this_item": false,
+          "signed": false,
+          "field_values": {
+            "签收人": "",
+            "签收角色": "",
+            "签收意见": "",
+            "签收时间": "",
+            "总管确认编号": ""
+          },
+          "human_operator_note": "",
+          "supervisor_confirmation_note": ""
+        },
+        {
+          "item_id": "trial_scope",
+          "name": "试运行范围",
+          "manual_fill_fields": [
+            "批次编号",
+            "任务范围",
+            "素材范围",
+            "数量上限",
+            "禁入条件"
+          ],
+          "acceptance_criteria": "人工确认试运行范围，不默认扩展，不进入真实渲染。",
+          "source_package_26_status": "pending",
+          "source_package_26_note": "已有引用材料；仍需人工签收后才能进入下一阶段。",
+          "manual_fill_required": true,
+          "auto_fill": false,
+          "script_may_complete_this_item": false,
+          "signed": false,
+          "field_values": {
+            "批次编号": "",
+            "任务范围": "",
+            "素材范围": "",
+            "数量上限": "",
+            "禁入条件": ""
+          },
+          "human_operator_note": "",
+          "supervisor_confirmation_note": ""
+        },
+        {
+          "item_id": "publish_isolation",
+          "name": "发布隔离",
+          "manual_fill_fields": [
+            "上传链路状态",
+            "发布链路状态",
+            "n8n链路状态",
+            "企业微信公共配置状态",
+            "总管面板状态"
+          ],
+          "acceptance_criteria": "人工确认上传、发布、n8n、企业微信公共配置和总管面板链路均保持关闭或隔离。",
+          "source_package_26_status": "pending",
+          "source_package_26_note": "已有引用材料；仍需人工签收后才能进入下一阶段。",
+          "manual_fill_required": true,
+          "auto_fill": false,
+          "script_may_complete_this_item": false,
+          "signed": false,
+          "field_values": {
+            "上传链路状态": "",
+            "发布链路状态": "",
+            "n8n链路状态": "",
+            "企业微信公共配置状态": "",
+            "总管面板状态": ""
+          },
+          "human_operator_note": "",
+          "supervisor_confirmation_note": ""
+        }
+      ]
+    },
+    {
+      "检查项": "签收预演单默认未签收",
+      "通过": true,
+      "详情": [
+        {
+          "item_id": "environment_identification",
+          "name": "环境识别",
+          "preview_status": "waiting_manual_fill",
+          "signed": false,
+          "signoff_person": "",
+          "signoff_time": "",
+          "signoff_opinion": "",
+          "whitelist_effective_after_this_preview": false,
+          "requires_supervisor_confirmation": true
+        },
+        {
+          "item_id": "material_authorization",
+          "name": "素材授权",
+          "preview_status": "waiting_manual_fill",
+          "signed": false,
+          "signoff_person": "",
+          "signoff_time": "",
+          "signoff_opinion": "",
+          "whitelist_effective_after_this_preview": false,
+          "requires_supervisor_confirmation": true
+        },
+        {
+          "item_id": "output_directory_isolation",
+          "name": "输出目录隔离",
+          "preview_status": "waiting_manual_fill",
+          "signed": false,
+          "signoff_person": "",
+          "signoff_time": "",
+          "signoff_opinion": "",
+          "whitelist_effective_after_this_preview": false,
+          "requires_supervisor_confirmation": true
+        },
+        {
+          "item_id": "failure_rollback",
+          "name": "失败回滚",
+          "preview_status": "waiting_manual_fill",
+          "signed": false,
+          "signoff_person": "",
+          "signoff_time": "",
+          "signoff_opinion": "",
+          "whitelist_effective_after_this_preview": false,
+          "requires_supervisor_confirmation": true
+        },
+        {
+          "item_id": "evidence_retention",
+          "name": "证据留存",
+          "preview_status": "waiting_manual_fill",
+          "signed": false,
+          "signoff_person": "",
+          "signoff_time": "",
+          "signoff_opinion": "",
+          "whitelist_effective_after_this_preview": false,
+          "requires_supervisor_confirmation": true
+        },
+        {
+          "item_id": "manual_signoff",
+          "name": "人工签收",
+          "preview_status": "waiting_manual_fill",
+          "signed": false,
+          "signoff_person": "",
+          "signoff_time": "",
+          "signoff_opinion": "",
+          "whitelist_effective_after_this_preview": false,
+          "requires_supervisor_confirmation": true
+        },
+        {
+          "item_id": "trial_scope",
+          "name": "试运行范围",
+          "preview_status": "waiting_manual_fill",
+          "signed": false,
+          "signoff_person": "",
+          "signoff_time": "",
+          "signoff_opinion": "",
+          "whitelist_effective_after_this_preview": false,
+          "requires_supervisor_confirmation": true
+        },
+        {
+          "item_id": "publish_isolation",
+          "name": "发布隔离",
+          "preview_status": "waiting_manual_fill",
+          "signed": false,
+          "signoff_person": "",
+          "signoff_time": "",
+          "signoff_opinion": "",
+          "whitelist_effective_after_this_preview": false,
+          "requires_supervisor_confirmation": true
+        }
+      ]
+    },
+    {
+      "检查项": "签收预演单不让白名单生效",
+      "通过": true,
+      "详情": false
+    },
+    {
+      "检查项": "材料人工补齐模板红线字段关闭",
+      "通过": true,
+      "详情": {
+        "signed": false,
+        "whitelist_effective": false,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "publish": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false,
+        "requires_supervisor_confirmation": true
+      }
+    },
+    {
+      "检查项": "材料人工补齐模板error_count=0",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查项": "签收预演单红线字段关闭",
+      "通过": true,
+      "详情": {
+        "signed": false,
+        "whitelist_effective": false,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "publish": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false,
+        "requires_supervisor_confirmation": true
+      }
+    },
+    {
+      "检查项": "签收预演单error_count=0",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查项": "总包红线字段关闭",
+      "通过": true,
+      "详情": {
+        "signed": false,
+        "whitelist_effective": false,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "publish": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false,
+        "requires_supervisor_confirmation": true
+      }
+    },
+    {
+      "检查项": "总包error_count=0",
+      "通过": true,
+      "详情": 0
+    }
+  ],
+  "错误项": [],
+  "预演结论": "通过；can_enter_real_render=false，real_render=false，publish=false，白名单未生效。",
+  "签收状态确认": {
+    "signed": false,
+    "whitelist_effective": false,
+    "requires_supervisor_confirmation": true,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "publish": false
+  },
+  "产物路径": {
+    "材料人工补齐模板": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\27真实渲染白名单材料人工补齐模板与签收预演包\\视频真实渲染白名单材料人工补齐模板_最新.json",
+    "签收预演单": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\27真实渲染白名单材料人工补齐模板与签收预演包\\视频真实渲染白名单材料签收预演单_最新.json",
+    "只读签收预演报告": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\27真实渲染白名单材料人工补齐模板与签收预演包\\视频真实渲染白名单材料只读签收预演报告_最新.json"
+  },
+  "生成时间": "2026-05-08 19:48:00",
+  "error_count": 0,
+  "signed": false,
+  "whitelist_effective": false,
+  "can_enter_real_render": false,
+  "real_render": false,
+  "publish": false,
+  "requires_supervisor_confirmation": true,
+  "已签收": false,
+  "白名单已生效": false,
+  "可进入真实渲染": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "触发n8n": false,
+  "修改企业微信公共配置": false,
+  "修改总管面板": false,
+  "修改一键接续包": false,
+  "重载服务": false,
+  "需要总管人工确认": true,
+  "readonly_flags_ascii": {
+    "signed": false,
+    "whitelist_effective": false,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "publish": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false,
+    "requires_supervisor_confirmation": true
+  }
+}

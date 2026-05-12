@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-05-07",
+  "status": "W1_shadow_queue_not_formal_schedule",
+  "boundary": {
+    "n8n": false,
+    "wechat": false,
+    "formal_database": false,
+    "real_business_action": false
+  },
+  "queue": [
+    {
+      "order": 1,
+      "task": "add second blank tax policy material card",
+      "expected_asset": "MATERIAL_CARD_TAX_002",
+      "boundary": "no download, no declaration"
+    },
+    {
+      "order": 2,
+      "task": "add second office workflow blank sample card",
+      "expected_asset": "OFFICE_SHADOW_002",
+      "boundary": "do not read real office materials"
+    },
+    {
+      "order": 3,
+      "task": "add second video asset authorization blank card",
+      "expected_asset": "MATERIAL_CARD_VIDEO_002",
+      "boundary": "do not read real assets"
+    },
+    {
+      "order": 4,
+      "task": "add pending review question lists for three lines",
+      "expected_asset": "three question lists",
+      "boundary": "not formal conclusion"
+    },
+    {
+      "order": 5,
+      "task": "refresh maturity snapshot and R0 self-check report",
+      "expected_asset": "latest snapshots",
+      "boundary": "readonly check"
+    }
+  ],
+  "pause_conditions": ["W2", "W3", "real_system_integration", "external_send", "rule_conflict", "hard_requirement_fork"]
+}

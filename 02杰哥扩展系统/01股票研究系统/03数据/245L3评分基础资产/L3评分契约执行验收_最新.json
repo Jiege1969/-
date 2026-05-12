@@ -1,0 +1,100 @@
+{
+  "名称": "L3评分契约执行验收",
+  "generated_at": "2026-05-08 06:55:30",
+  "asset_identity": "自动验收报告",
+  "status": "passed",
+  "market_style_status": "confirmed",
+  "summary": {
+    "report_count": 7,
+    "passed_count": 7,
+    "blocking_count": 0,
+    "warning_count": 0
+  },
+  "reports": [
+    {
+      "file": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\云南锗业_sz002428_最新.json",
+      "file_name": "云南锗业_sz002428_最新.json",
+      "total_score": 56.3,
+      "summed_item_score": 56.3,
+      "conclusion_text": "暂不建议关注",
+      "confidence_level": "low",
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "file": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\云南锗业_sz002428_财报补证影子版_20260507.json",
+      "file_name": "云南锗业_sz002428_财报补证影子版_20260507.json",
+      "total_score": 59.3,
+      "summed_item_score": 59.3,
+      "conclusion_text": "暂不建议关注",
+      "confidence_level": "medium",
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "file": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\华虹公司_sh688347_财报补证影子版_20260507.json",
+      "file_name": "华虹公司_sh688347_财报补证影子版_20260507.json",
+      "total_score": 54.0,
+      "summed_item_score": 54.0,
+      "conclusion_text": "暂不建议关注",
+      "confidence_level": "medium",
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "file": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\天齐锂业_sz002466_最新.json",
+      "file_name": "天齐锂业_sz002466_最新.json",
+      "total_score": 46.0,
+      "summed_item_score": 46.0,
+      "conclusion_text": "暂不建议关注",
+      "confidence_level": "low",
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "file": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\天齐锂业_sz002466_财报补证影子版_20260507.json",
+      "file_name": "天齐锂业_sz002466_财报补证影子版_20260507.json",
+      "total_score": 54.0,
+      "summed_item_score": 54.0,
+      "conclusion_text": "暂不建议关注",
+      "confidence_level": "medium",
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "file": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\正丹股份_sz300641_财报补证影子版_20260507.json",
+      "file_name": "正丹股份_sz300641_财报补证影子版_20260507.json",
+      "total_score": 28.0,
+      "summed_item_score": 28.0,
+      "conclusion_text": "暂不建议关注",
+      "confidence_level": "medium",
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "file": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\浙商中拓_sz000906_财报补证影子版_20260507.json",
+      "file_name": "浙商中拓_sz000906_财报补证影子版_20260507.json",
+      "total_score": 48.0,
+      "summed_item_score": 48.0,
+      "conclusion_text": "暂不建议关注",
+      "confidence_level": "medium",
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    }
+  ],
+  "blocking": [],
+  "warnings": [],
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

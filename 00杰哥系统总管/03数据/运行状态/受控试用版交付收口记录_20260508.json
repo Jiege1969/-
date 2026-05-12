@@ -1,0 +1,42 @@
+{
+  "asset_name": "受控试用版交付收口记录",
+  "generated_at": "2026-05-08 18:50:07 +08:00",
+  "asset_identity": "总管侧 W1/R0 受控试用版交付收口记录",
+  "status": "controlled_trial_delivery_closed",
+  "not_formal_online_permission": true,
+  "closed_blockers": [
+    {
+      "id": "P0",
+      "name": "税收事项匹配纠偏",
+      "owner": "税收业务影子底座",
+      "evidence": "税收入口映射验收样例_软件产品即征即退_20260508.md/json",
+      "status": "closed_for_w1_r0_delivery"
+    },
+    {
+      "id": "P1",
+      "name": "视频脚本质量纠偏",
+      "owner": "视频制作业务影子底座",
+      "evidence": "VIDEO_SCRIPT_SAMPLE_001_质量验收记录_20260508.md/json",
+      "status": "closed_for_w1_r0_delivery"
+    }
+  ],
+  "deliverable_scope": {
+    "tax_advisor": "脱敏涉税问题的待复核政策依据链、适用条件、资料缺口、风险点和人工复核问题",
+    "stock_l3": "证据化研究、评分解释、缺口优先级和复核路线",
+    "video_shadow_factory": "选题、脚本、分镜、素材授权缺口、平台规范复核和人工复核工作包",
+    "wecom_access_layer": "入口、路由、安全禁令和本地预演口径",
+    "manager_coordination": "回传接收、边界维护、裁定和收口记录"
+  },
+  "forbidden_real_actions": {
+    "wecom_real_send": false,
+    "n8n_formal_execution": false,
+    "service_restart": false,
+    "modify_service_script": false,
+    "write_formal_db": false,
+    "formal_tax_opinion_or_filing": false,
+    "video_render_upload_publish": false,
+    "broker_api_order_auto_trade": false,
+    "delete_move_archive_old_dirs": false
+  },
+  "next_step": "用户可开始按受控试用清单使用；正式稳定交付需另行确认真实动作范围和开工五问。"
+}

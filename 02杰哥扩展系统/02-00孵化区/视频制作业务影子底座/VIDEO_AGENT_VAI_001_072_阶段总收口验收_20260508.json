@@ -1,0 +1,40 @@
+{
+  "closure_id": "VIDEO_AGENT_VAI_001_072_PHASE_CLOSURE_ACCEPTANCE_20260508",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "stage": "W1/R0",
+  "asset_identity": "shadow_phase_closure_not_formal_video_system",
+  "overall_conclusion": "VAI-001 to VAI-072 extend the shadow governance chain with redline block replies, desensitization failure gaps, and pending-review cover quality checks.",
+  "new_assets": [
+    {
+      "vai": "VAI-070",
+      "asset": "VIDEO_AGENT_REDLINE_BLOCK_REPLY_TEMPLATE_001",
+      "boundary": "not_a_real_wecom_reply"
+    },
+    {
+      "vai": "VAI-071",
+      "asset": "VIDEO_AGENT_DESENSITIZATION_FAILURE_GAP_CARD_001",
+      "boundary": "not_a_real_data_processing_record"
+    },
+    {
+      "vai": "VAI-072",
+      "asset": "VIDEO_AGENT_PENDING_REVIEW_COVER_QUALITY_CHECK_001",
+      "boundary": "not_a_real_delivery_review"
+    }
+  ],
+  "redline_status": {
+    "real_wecom_connected": false,
+    "n8n_connected": false,
+    "service_started_or_restarted": false,
+    "manager_public_formal_or_other_line_modified": false,
+    "real_material_account_credential_or_publish_platform_read": false,
+    "media_generation_render_transcode_upload_publish": false
+  },
+  "next_auto_queue": [
+    "human_review_receipt_sample",
+    "redline_block_register_sample",
+    "pending_review_draft_io_checklist",
+    "refresh_video_shadow_index_self_check_and_alignment_return"
+  ],
+  "latest_pointer": true
+}

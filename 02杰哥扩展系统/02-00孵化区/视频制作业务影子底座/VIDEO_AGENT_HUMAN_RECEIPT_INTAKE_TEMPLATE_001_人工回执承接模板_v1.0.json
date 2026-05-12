@@ -1,0 +1,33 @@
+{
+  "id": "VIDEO_AGENT_HUMAN_RECEIPT_INTAKE_TEMPLATE_001",
+  "name": "人工回执承接模板",
+  "asset_identity": "video_creation_agent_shadow_human_receipt_intake_template",
+  "stage": "W1_R0",
+  "status": "blank_template_not_formal_acceptance_conclusion",
+  "boundary": {
+    "formal_rule_upgrade": false,
+    "generation_approval": false,
+    "render_approval": false,
+    "publish_approval": false,
+    "formal_task_write": false
+  },
+  "fields": {
+    "receipt_id": "VAI-HR-0000",
+    "linked_input_id": "to_be_filled",
+    "linked_session_id": "to_be_filled",
+    "linked_option_id": "to_be_filled_or_not_applicable",
+    "human_selection_result": "to_be_filled",
+    "revision_feedback": "to_be_filled_summary_only",
+    "asset_authorization_feedback": "pending_verification",
+    "platform_rule_feedback": "pending_verification",
+    "ai_labeling_feedback": "pending_verification",
+    "originality_feedback": "pending_verification",
+    "allow_next_shadow_step": "pending_human_check",
+    "evolution_candidate": "pending_review"
+  },
+  "forbidden": [
+    "receipt_is_not_formal_online_approval",
+    "option_selection_is_not_generation_render_or_publish_approval",
+    "single_human_feedback_must_not_write_formal_rule_database"
+  ]
+}

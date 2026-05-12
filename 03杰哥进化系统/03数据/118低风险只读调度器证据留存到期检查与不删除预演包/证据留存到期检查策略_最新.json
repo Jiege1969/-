@@ -1,0 +1,71 @@
+{
+  "name": "证据留存到期检查策略",
+  "generated_at": "2026-05-08 21:18:26",
+  "target_data_dir": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\118低风险只读调度器证据留存到期检查与不删除预演包",
+  "protected_history_dir_hint": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\114并行自主施工分片护栏与抢占处理包",
+  "readonly_dry_run_only": true,
+  "delete_allowed": false,
+  "rule_count": 5,
+  "rules": [
+    {
+      "id": "RET-POL-001",
+      "name": "到期只登记不删除",
+      "trigger": "证据留存时间达到检查窗口或疑似超过保留期。",
+      "decision": "标记为到期候选，进入不删除处理队列。",
+      "delete_allowed": false,
+      "requires_supervisor_confirmation": true,
+      "dry_run_only": true
+    },
+    {
+      "id": "RET-POL-002",
+      "name": "历史包编号保护",
+      "trigger": "路径位于已有历史编号包，例如 114 或其他已占用编号。",
+      "decision": "只记录引用，不清空、不覆盖、不迁移。",
+      "delete_allowed": false,
+      "requires_supervisor_confirmation": true,
+      "dry_run_only": true
+    },
+    {
+      "id": "RET-POL-003",
+      "name": "证据链完整性优先",
+      "trigger": "证据被台账、验收日志、调度报告或回传索引引用。",
+      "decision": "保留原件，追加候选说明，等待人工复核。",
+      "delete_allowed": false,
+      "requires_supervisor_confirmation": true,
+      "dry_run_only": true
+    },
+    {
+      "id": "RET-POL-004",
+      "name": "缺失元数据不删除",
+      "trigger": "留存起算时间、来源包、验收日志或引用关系缺失。",
+      "decision": "标记元数据缺口，不删除证据。",
+      "delete_allowed": false,
+      "requires_supervisor_confirmation": true,
+      "dry_run_only": true
+    },
+    {
+      "id": "RET-POL-005",
+      "name": "本地预演不触发外部动作",
+      "trigger": "需要通知、n8n、服务刷新、外部归档或真实清理。",
+      "decision": "全部禁止，只生成本地草案和验收日志。",
+      "delete_allowed": false,
+      "requires_supervisor_confirmation": true,
+      "dry_run_only": true
+    }
+  ],
+  "safety_confirmation": {
+    "read_only": true,
+    "delete_file": false,
+    "remove_directory": false,
+    "move_history_package": false,
+    "overwrite_history_package": false,
+    "external_call": false,
+    "send_notification": false,
+    "connect_n8n": false,
+    "reload_service": false,
+    "promote_to_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "write_scope_is_118_only": true
+  }
+}

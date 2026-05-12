@@ -1,0 +1,36 @@
+{
+  "intake_id": "TAX_DAILY_INTAKE_002",
+  "generated_at": "2026-05-09",
+  "business_line": "tax_policy_advisor",
+  "status": "blank_waiting_for_desensitized_input",
+  "nature": "shadow_trial_intake",
+  "not_formal_tax_opinion": true,
+  "fields": {
+    "source_type": "用户脱敏问题",
+    "business_question": "待填写",
+    "taxpayer_profile": "待填写，仅限脱敏描述",
+    "tax_item_or_scenario": "待填写",
+    "target_output": "待填写",
+    "urgency": "待填写",
+    "known_basis": "待填写",
+    "missing_materials": "待填写",
+    "human_review_required": true
+  },
+  "precheck": {
+    "desensitized": "待确认",
+    "involves_real_tax_filing": false,
+    "requests_external_tax_action": false,
+    "can_enter_shadow_analysis": "待人工确认"
+  },
+  "forbidden_actions": {
+    "formal_tax_opinion": false,
+    "tax_filing": false,
+    "invoice_action": false,
+    "tax_refund_action": false,
+    "external_send": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false
+  },
+  "next_step": "填完本卡并确认关键事实后，才可生成 TAX_DAILY_DRAFT_002 待复核草案"
+}

@@ -1,0 +1,404 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stock Industry Price Evidence Card Schema",
+  "description": "单股行业价格证据卡影子Schema。用于把锗价、碳酸锂、TMA等产品价格或价差结构化为L3行业/市场证据和企业微信短答可用的一句话依据。",
+  "type": "object",
+  "required": [
+    "名称",
+    "版本",
+    "生成日期",
+    "所属系统",
+    "资产身份",
+    "状态",
+    "stock",
+    "tracked_products",
+    "source_status",
+    "sources",
+    "price_observations",
+    "industry_price_shadow_score",
+    "front_output_compression",
+    "missing",
+    "safety_boundary"
+  ],
+  "properties": {
+    "名称": {
+      "type": "string"
+    },
+    "版本": {
+      "type": "string"
+    },
+    "生成日期": {
+      "type": "string",
+      "format": "date"
+    },
+    "所属系统": {
+      "type": "string"
+    },
+    "资产身份": {
+      "type": "string",
+      "enum": [
+        "影子证据卡",
+        "样本证据卡",
+        "正式证据卡候选"
+      ]
+    },
+    "状态": {
+      "type": "string",
+      "enum": [
+        "shadow_only",
+        "source_registered",
+        "price_pending",
+        "evidence_ready",
+        "pending_review",
+        "human_reviewed"
+      ]
+    },
+    "not_formal_config": {
+      "type": "boolean"
+    },
+    "not_entrypoint": {
+      "type": "boolean"
+    },
+    "not_external_send": {
+      "type": "boolean"
+    },
+    "stock": {
+      "type": "object",
+      "required": [
+        "name",
+        "code",
+        "display_code",
+        "industry",
+        "stock_type"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "display_code": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "stock_type": {
+          "type": "string",
+          "description": "资源股、锂资源/锂化工、化工高波动、半导体、供应链等"
+        }
+      }
+    },
+    "tracked_products": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "product_name",
+          "product_code",
+          "relevance_to_stock",
+          "exposure_weight",
+          "direction_rule"
+        ],
+        "properties": {
+          "product_name": {
+            "type": "string"
+          },
+          "product_code": {
+            "type": "string"
+          },
+          "relevance_to_stock": {
+            "type": "string"
+          },
+          "exposure_weight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "direction_rule": {
+            "type": "string",
+            "description": "价格上涨/下跌对公司收入、利润或估值预期的方向影响"
+          }
+        }
+      }
+    },
+    "source_status": {
+      "type": "object",
+      "required": [
+        "source_registered",
+        "price_value_available",
+        "trend_available",
+        "spread_available",
+        "formal_chain_status"
+      ],
+      "properties": {
+        "source_registered": {
+          "type": "boolean"
+        },
+        "price_value_available": {
+          "type": "boolean"
+        },
+        "trend_available": {
+          "type": "boolean"
+        },
+        "spread_available": {
+          "type": "boolean"
+        },
+        "formal_chain_status": {
+          "type": "string",
+          "enum": [
+            "not_integrated",
+            "shadow_integrated",
+            "pending_review",
+            "formal_integrated"
+          ]
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_name",
+          "source_url",
+          "source_type",
+          "coverage",
+          "source_role",
+          "checked_at"
+        ],
+        "properties": {
+          "source_name": {
+            "type": "string"
+          },
+          "source_url": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "公开价格页",
+              "价格方法论",
+              "行业数据平台",
+              "商品价格平台",
+              "公告/财报原文",
+              "媒体线索"
+            ]
+          },
+          "coverage": {
+            "type": "string"
+          },
+          "source_role": {
+            "type": "string",
+            "enum": [
+              "正式证据候选",
+              "行情线索",
+              "方法论核验",
+              "辅助交叉验证",
+              "待人工复核"
+            ]
+          },
+          "checked_at": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    "price_observations": {
+      "type": "array",
+      "description": "价格观测值。没有合法价格授权或未入账时可为空数组，但必须在missing中说明。",
+      "items": {
+        "type": "object",
+        "required": [
+          "product_name",
+          "price_date",
+          "price_low",
+          "price_high",
+          "price_mid",
+          "unit",
+          "currency",
+          "change_abs",
+          "change_pct",
+          "trend_5d",
+          "trend_20d",
+          "source_name"
+        ],
+        "properties": {
+          "product_name": {
+            "type": "string"
+          },
+          "price_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "price_low": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "price_high": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "price_mid": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "change_abs": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "change_pct": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "trend_5d": {
+            "type": "string",
+            "enum": [
+              "up",
+              "down",
+              "flat",
+              "unknown"
+            ]
+          },
+          "trend_20d": {
+            "type": "string",
+            "enum": [
+              "up",
+              "down",
+              "flat",
+              "unknown"
+            ]
+          },
+          "source_name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "industry_price_shadow_score": {
+      "type": "object",
+      "required": [
+        "score",
+        "max_score",
+        "score_reason",
+        "positive_evidence",
+        "negative_evidence",
+        "confidence"
+      ],
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "max_score": {
+          "type": "number",
+          "const": 10
+        },
+        "score_reason": {
+          "type": "string"
+        },
+        "positive_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "negative_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      }
+    },
+    "front_output_compression": {
+      "type": "object",
+      "required": [
+        "one_sentence",
+        "user_facing_reason",
+        "do_not_say"
+      ],
+      "properties": {
+        "one_sentence": {
+          "type": "string"
+        },
+        "user_facing_reason": {
+          "type": "string"
+        },
+        "do_not_say": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "missing": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safety_boundary": {
+      "type": "object",
+      "required": [
+        "only_for_research",
+        "not_investment_advice",
+        "not_buy_sell_signal",
+        "not_broker_interface",
+        "not_auto_trade"
+      ],
+      "properties": {
+        "only_for_research": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_investment_advice": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_buy_sell_signal": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_broker_interface": {
+          "type": "boolean",
+          "const": true
+        },
+        "not_auto_trade": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    }
+  }
+}

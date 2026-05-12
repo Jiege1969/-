@@ -1,0 +1,16 @@
+{
+  "name": "五样本前后台分层输出验收矩阵验收",
+  "generated_at": "2026-05-08 10:32:56",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本前后台分层输出验收矩阵_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "sample_count": 5,
+    "front_passed_count": 5,
+    "backend_required_count": 5,
+    "real_wecom_send_allowed": false,
+    "formal_entry_allowed": false
+  },
+  "auto_continue_policy": "通过后继续执行第二批下一小闭环；不等待用户确认。"
+}

@@ -1,0 +1,356 @@
+﻿{
+    "generated_at":  "2026-05-13 07:48:18",
+    "root":  "D:\\杰哥智能化系统",
+    "mode":  "construction-preflight",
+    "purpose":  "Prepare machine and construction context before Codex conversation continues.",
+    "machine":  {
+                    "os":  "Microsoft Windows 11 专业版",
+                    "cpu":  "AMD Ryzen 7 7800X3D 8-Core Processor           ",
+                    "memory":  {
+                                   "total_gb":  63.06,
+                                   "free_gb":  56.64,
+                                   "free_percent":  89.83
+                               },
+                    "disk":  [
+                                 {
+                                     "name":  "C",
+                                     "used_gb":  89.37,
+                                     "free_gb":  60.63
+                                 },
+                                 {
+                                     "name":  "D",
+                                     "used_gb":  405.36,
+                                     "free_gb":  375.84
+                                 },
+                                 {
+                                     "name":  "E",
+                                     "used_gb":  5.3,
+                                     "free_gb":  460.46
+                                 },
+                                 {
+                                     "name":  "F",
+                                     "used_gb":  288.95,
+                                     "free_gb":  3437.06
+                                 }
+                             ],
+                    "gpu":  {
+                                "name":  "NVIDIA GeForce RTX 3090",
+                                "driver_version":  "595.79",
+                                "memory_total_mib":  24576,
+                                "memory_used_mib":  408,
+                                "memory_free_mib":  23915,
+                                "temperature_gpu":  38,
+                                "utilization_gpu_percent":  3
+                            },
+                    "docker":  {
+                                   "available":  true,
+                                   "containers":  {
+
+                                                  },
+                                   "error":  ""
+                               }
+                },
+    "construction":  {
+                         "key_dirs":  [
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\00杰哥系统总管",
+                                              "exists":  true
+                                          },
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\01杰哥智能系统",
+                                              "exists":  true
+                                          },
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统",
+                                              "exists":  true
+                                          },
+                                          {
+                                              "path":  "D:\\杰哥智能化系统\\03杰哥进化系统",
+                                              "exists":  true
+                                          }
+                                      ],
+                         "annotation_check":  {
+                                                  "name":  "annotation-check",
+                                                  "ok":  true,
+                                                  "exit_code":  0,
+                                                  "output":  "{\"文件数\": 2131, \"通过\": 957, \"失败\": 1174}\nD:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\规范检查\\annotation-check-最新.json"
+                                              },
+                         "stock_status_summary":  {
+                                                      "name":  "stock-status-summary",
+                                                      "ok":  true,
+                                                      "exit_code":  0,
+                                                      "output":  "{\"重点关注池\": 143, \"输出\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\01股票研究系统\\\\03数据\\\\16状态摘要\\\\股票研究系统状态摘要_最新.json\", \"摘要\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\01股票研究系统\\\\03数据\\\\16状态摘要\\\\股票研究系统状态摘要_最新.md\"}"
+                                                  },
+                         "current_progress_report":  {
+                                                         "name":  "current-progress-report",
+                                                         "ok":  true,
+                                                         "exit_code":  0,
+                                                         "output":  "{\"多功能智能体总体\": {\"下限\": 98, \"上限\": 100, \"说明\": \"最终交付确认T/U/V/W完成：最终交付确认包、01知识检索证据路径挂入、02低风险许可令归档入口一致性、03最终封版一致性复核均已收口；系统达到可交付确认状态。真实动作安全闸门继续关闭。\"}, \"基础可用版阶段\": {\"下限\": 89, \"上限\": 95, \"说明\": \"按当前基础可用版收尾目标估算，重点看目录、脚本、验收、开机施工准备、核心闭环、日常入口和总览面板是否稳定；当前日常入口21/21可用，企业微信统一指令本地服务已纳入总管入口。\"}, \"股票研究系统\": {\"下限\": 100, \"上限\": 100, \"说明\": \"按股票研究助手独立使用目标估算，已完成本地股票助手、企业微信桥接入口、智能机器人stream回复、公网SSH反向隧道、公网GET URL加密校验、公网POST加密回调、登录自启动任务、交易指令拦截、只分析不交易总闸门13/13、交付使用版总验收22/22、237交付闭环验收15/15、241单人白名单真实灰度发送闭环和242最终收口验收20/20；剩余有效工作时间0小时，阶段性交付完成，后续仅保留灰度监控、问题修复和优化。\"}, \"输出\": \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\阶段判定\\\\当前总体进度报告_最新.json\"}"
+                                                     },
+                         "readonly_status_check":  {
+                                                       "name":  "readonly-status-check",
+                                                       "ok":  true,
+                                                       "exit_code":  0,
+                                                       "output":  "Jiege v3 read-only status check\nTime: 2026-05-13 07:47:39\nSnapshot: D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\D盘瘦身审计\\snapshot_最新.json\nv3 files: 42295\nv3 directories: 3382\nv3 total KB: 346014734.94\nDocker containers: 0\nRequired HTTP checks OK: /4\nHistorical registry HTTP checks OK: 7/7 (failures allowed)\nfailed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.\nfailed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified."
+                                                   },
+                         "architecture_debt_check":  {
+                                                         "name":  "architecture-debt-check",
+                                                         "ok":  true,
+                                                         "exit_code":  0,
+                                                         "output":  "{\"总体状态\": \"pass\", \"输出\": [\"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\架构方向旧债只读检查_最新.json\", \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\架构方向旧债只读检查_最新.md\"]}"
+                                                     },
+                         "anti_mechanical_execution_check":  {
+                                                                 "name":  "anti-mechanical-execution-check",
+                                                                 "ok":  true,
+                                                                 "exit_code":  0,
+                                                                 "output":  "{\"总体状态\": \"pass\", \"输出\": [\"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\主动纠错防机械执行只读检查_最新.json\", \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\主动纠错防机械执行只读检查_最新.md\"]}"
+                                                             },
+                         "continuous_learning_ingestion_check":  {
+                                                                     "name":  "continuous-learning-ingestion-check",
+                                                                     "ok":  true,
+                                                                     "exit_code":  0,
+                                                                     "output":  "{\"总体状态\": \"pass\", \"输出\": [\"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\持续学习入库机制只读检查_最新.json\", \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\持续学习入库机制只读检查_最新.md\"]}"
+                                                                 },
+                         "problem_typing_repair_review_capability_check":  {
+                                                                               "name":  "problem-typing-repair-review-capability-check",
+                                                                               "ok":  true,
+                                                                               "exit_code":  0,
+                                                                               "output":  "{\"总体状态\": \"pass\", \"输出\": [\"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\问题分型修复复核能力只读检查_最新.json\", \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\问题分型修复复核能力只读检查_最新.md\"]}"
+                                                                           },
+                         "teaching_learning_feedback_check":  {
+                                                                  "name":  "teaching-learning-feedback-check",
+                                                                  "ok":  true,
+                                                                  "exit_code":  0,
+                                                                  "output":  "{\"总体状态\": \"pass\", \"输出\": [\"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\教学相长双向反馈能力只读检查_最新.json\", \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\教学相长双向反馈能力只读检查_最新.md\"]}"
+                                                              },
+                         "business_subsystem_typing_template_check":  {
+                                                                          "name":  "business-subsystem-typing-template-check",
+                                                                          "ok":  true,
+                                                                          "exit_code":  0,
+                                                                          "output":  "{\"总体状态\": \"pass\", \"输出\": [\"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\业务子系统问题分型模板只读检查_最新.json\", \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\业务子系统问题分型模板只读检查_最新.md\"]}"
+                                                                      },
+                         "third_natural_day_causal_gate_check":  {
+                                                                     "name":  "third-natural-day-causal-gate-check",
+                                                                     "ok":  true,
+                                                                     "exit_code":  0,
+                                                                     "output":  "{\"判定状态\": \"ready_to_collect_third_day_sample\", \"前置归因条件满足\": true, \"自然日独立性满足\": true, \"输出\": [\"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\第三自然日归因式前置判定_最新.json\", \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\第三自然日归因式前置判定_最新.md\"]}"
+                                                                 },
+                         "stable_version_composite_causal_judge":  {
+                                                                       "name":  "stable-version-composite-causal-judge",
+                                                                       "ok":  true,
+                                                                       "exit_code":  0,
+                                                                       "output":  "{\"判定状态\": \"substantive_stable_evidence_passed_pending_third_sample_accounting\", \"输出\": [\"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\稳定版综合达标归因判定_最新.json\", \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\稳定版综合达标归因判定_最新.md\"]}"
+                                                                   },
+                         "constitutional_bloodline_methodology_check":  {
+                                                                            "name":  "constitutional-bloodline-methodology-check",
+                                                                            "ok":  true,
+                                                                            "exit_code":  0,
+                                                                            "output":  "{\"总体状态\": \"pass\", \"输出\": [\"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\宪法级血脉方法论只读检查_最新.json\", \"D:\\\\杰哥智能化系统\\\\00杰哥系统总管\\\\03数据\\\\运行状态\\\\宪法级血脉方法论只读检查_最新.md\"]}"
+                                                                        },
+                         "v3_ai_base_healthcheck":  {
+                                                        "name":  "v3-ai-base-healthcheck",
+                                                        "ok":  true,
+                                                        "exit_code":  0,
+                                                        "output":  "docker-cli=True:docker server=29.3.1; ollama-container=True:jiege_v3_ollama running; redis-container=True:jiege_v3_redis running; n8n-container=True:jiege_v3_n8n running; ollama-api-29134=True:ollama api ready; models=14; redis-ping=True:redis PONG; n8n-port-28679=True:listen pid=23608; stock-local-entry-19300=True:listen pid=8400; stock-wecom-entry-19302=True:listen pid=17044; wecom-unified-entry-19310=True:listen pid=14676; v3-agent-brain-28100=True:listen pid=8008",
+                                                        "readiness":  [
+                                                                          {
+                                                                              "name":  "docker-cli",
+                                                                              "ok":  true,
+                                                                              "required":  true,
+                                                                              "elapsed_sec":  0,
+                                                                              "timeout_sec":  90,
+                                                                              "detail":  "docker server=29.3.1"
+                                                                          },
+                                                                          {
+                                                                              "name":  "ollama-container",
+                                                                              "ok":  true,
+                                                                              "required":  true,
+                                                                              "elapsed_sec":  0,
+                                                                              "timeout_sec":  120,
+                                                                              "detail":  "jiege_v3_ollama running"
+                                                                          },
+                                                                          {
+                                                                              "name":  "redis-container",
+                                                                              "ok":  true,
+                                                                              "required":  true,
+                                                                              "elapsed_sec":  0,
+                                                                              "timeout_sec":  120,
+                                                                              "detail":  "jiege_v3_redis running"
+                                                                          },
+                                                                          {
+                                                                              "name":  "n8n-container",
+                                                                              "ok":  true,
+                                                                              "required":  true,
+                                                                              "elapsed_sec":  0,
+                                                                              "timeout_sec":  120,
+                                                                              "detail":  "jiege_v3_n8n running"
+                                                                          },
+                                                                          {
+                                                                              "name":  "ollama-api-29134",
+                                                                              "ok":  true,
+                                                                              "required":  true,
+                                                                              "elapsed_sec":  0,
+                                                                              "timeout_sec":  180,
+                                                                              "detail":  "ollama api ready; models=14"
+                                                                          },
+                                                                          {
+                                                                              "name":  "redis-ping",
+                                                                              "ok":  true,
+                                                                              "required":  true,
+                                                                              "elapsed_sec":  0,
+                                                                              "timeout_sec":  120,
+                                                                              "detail":  "redis PONG"
+                                                                          },
+                                                                          {
+                                                                              "name":  "n8n-port-28679",
+                                                                              "ok":  true,
+                                                                              "required":  true,
+                                                                              "elapsed_sec":  1,
+                                                                              "timeout_sec":  120,
+                                                                              "detail":  "listen pid=23608"
+                                                                          },
+                                                                          {
+                                                                              "name":  "stock-local-entry-19300",
+                                                                              "ok":  true,
+                                                                              "required":  true,
+                                                                              "elapsed_sec":  1,
+                                                                              "timeout_sec":  90,
+                                                                              "detail":  "listen pid=8400"
+                                                                          },
+                                                                          {
+                                                                              "name":  "stock-wecom-entry-19302",
+                                                                              "ok":  true,
+                                                                              "required":  true,
+                                                                              "elapsed_sec":  1,
+                                                                              "timeout_sec":  90,
+                                                                              "detail":  "listen pid=17044"
+                                                                          },
+                                                                          {
+                                                                              "name":  "wecom-unified-entry-19310",
+                                                                              "ok":  true,
+                                                                              "required":  true,
+                                                                              "elapsed_sec":  1,
+                                                                              "timeout_sec":  90,
+                                                                              "detail":  "listen pid=14676"
+                                                                          },
+                                                                          {
+                                                                              "name":  "v3-agent-brain-28100",
+                                                                              "ok":  true,
+                                                                              "required":  false,
+                                                                              "elapsed_sec":  1,
+                                                                              "timeout_sec":  30,
+                                                                              "detail":  "listen pid=8008"
+                                                                          }
+                                                                      ]
+                                                    },
+                         "readiness_chain":  [
+                                                 {
+                                                     "name":  "docker-cli",
+                                                     "ok":  true,
+                                                     "required":  true,
+                                                     "elapsed_sec":  0,
+                                                     "timeout_sec":  90,
+                                                     "detail":  "docker server=29.3.1"
+                                                 },
+                                                 {
+                                                     "name":  "ollama-container",
+                                                     "ok":  true,
+                                                     "required":  true,
+                                                     "elapsed_sec":  0,
+                                                     "timeout_sec":  120,
+                                                     "detail":  "jiege_v3_ollama running"
+                                                 },
+                                                 {
+                                                     "name":  "redis-container",
+                                                     "ok":  true,
+                                                     "required":  true,
+                                                     "elapsed_sec":  0,
+                                                     "timeout_sec":  120,
+                                                     "detail":  "jiege_v3_redis running"
+                                                 },
+                                                 {
+                                                     "name":  "n8n-container",
+                                                     "ok":  true,
+                                                     "required":  true,
+                                                     "elapsed_sec":  0,
+                                                     "timeout_sec":  120,
+                                                     "detail":  "jiege_v3_n8n running"
+                                                 },
+                                                 {
+                                                     "name":  "ollama-api-29134",
+                                                     "ok":  true,
+                                                     "required":  true,
+                                                     "elapsed_sec":  0,
+                                                     "timeout_sec":  180,
+                                                     "detail":  "ollama api ready; models=14"
+                                                 },
+                                                 {
+                                                     "name":  "redis-ping",
+                                                     "ok":  true,
+                                                     "required":  true,
+                                                     "elapsed_sec":  0,
+                                                     "timeout_sec":  120,
+                                                     "detail":  "redis PONG"
+                                                 },
+                                                 {
+                                                     "name":  "n8n-port-28679",
+                                                     "ok":  true,
+                                                     "required":  true,
+                                                     "elapsed_sec":  1,
+                                                     "timeout_sec":  120,
+                                                     "detail":  "listen pid=23608"
+                                                 },
+                                                 {
+                                                     "name":  "stock-local-entry-19300",
+                                                     "ok":  true,
+                                                     "required":  true,
+                                                     "elapsed_sec":  1,
+                                                     "timeout_sec":  90,
+                                                     "detail":  "listen pid=8400"
+                                                 },
+                                                 {
+                                                     "name":  "stock-wecom-entry-19302",
+                                                     "ok":  true,
+                                                     "required":  true,
+                                                     "elapsed_sec":  1,
+                                                     "timeout_sec":  90,
+                                                     "detail":  "listen pid=17044"
+                                                 },
+                                                 {
+                                                     "name":  "wecom-unified-entry-19310",
+                                                     "ok":  true,
+                                                     "required":  true,
+                                                     "elapsed_sec":  1,
+                                                     "timeout_sec":  90,
+                                                     "detail":  "listen pid=14676"
+                                                 },
+                                                 {
+                                                     "name":  "v3-agent-brain-28100",
+                                                     "ok":  true,
+                                                     "required":  false,
+                                                     "elapsed_sec":  1,
+                                                     "timeout_sec":  30,
+                                                     "detail":  "listen pid=8008"
+                                                 }
+                                             ],
+                         "latest_acceptance":  {
+                                                   "exists":  false,
+                                                   "path":  ""
+                                               },
+                         "stock_status_markdown":  ""
+                     },
+    "ready_for_codex":  true,
+    "warnings":  [
+
+                 ],
+    "safety_boundary":  {
+                            "delete_files":  false,
+                            "overwrite_old_system":  false,
+                            "restart_formal_services":  false,
+                            "trigger_n8n":  false,
+                            "send_wework":  false,
+                            "write_formal_db":  false,
+                            "broker_api":  false,
+                            "auto_trade":  false
+                        }
+}

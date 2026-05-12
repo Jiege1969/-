@@ -1,0 +1,270 @@
+{
+  "name": "n8n离线编排本地干跑报告",
+  "executed_at": "2026-05-08 17:52:29",
+  "source": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\75n8n离线编排本地干跑执行器包\\n8n离线编排本地干跑执行器包_最新.json",
+  "mode": "offline/dry_run",
+  "offline": true,
+  "dry_run": true,
+  "real_trigger": false,
+  "webhook_enabled": false,
+  "network_request_enabled": false,
+  "n8n_connection_enabled": false,
+  "external_send_enabled": false,
+  "config_change_enabled": false,
+  "service_reload_enabled": false,
+  "enterprise_wechat_send_enabled": false,
+  "status": "pass",
+  "error_count": 0,
+  "errors": [],
+  "metrics": {
+    "node_count": 5,
+    "ready_count": 4,
+    "blocked_count": 1,
+    "real_trigger_count": 0,
+    "webhook_enabled_count": 0
+  },
+  "node_runs": [
+    {
+      "node_id": "N01",
+      "node_name": "收到离线消息样本",
+      "mode": "offline/dry_run",
+      "offline": true,
+      "dry_run": true,
+      "status": "ready",
+      "ready": true,
+      "blocked": false,
+      "blocked_reason": "",
+      "real_trigger": false,
+      "webhook_enabled": false,
+      "network_request_enabled": false,
+      "n8n_connection_enabled": false,
+      "external_send_enabled": false,
+      "simulated_input": {
+        "from_previous_node": {
+          "offline_seed": "本地离线样本"
+        },
+        "declared_read_only_input": [
+          "离线消息文本副本",
+          "本地只读蓝图摘要"
+        ],
+        "real_trigger": false,
+        "webhook_enabled": false
+      },
+      "simulated_output": {
+        "node_id": "N01",
+        "candidate_items": [
+          "标准化消息对象候选"
+        ],
+        "offline": true,
+        "dry_run": true,
+        "real_trigger": false,
+        "webhook_enabled": false,
+        "external_delivery": false,
+        "requires_supervisor": false
+      }
+    },
+    {
+      "node_id": "N02",
+      "node_name": "离线分类与红线识别",
+      "mode": "offline/dry_run",
+      "offline": true,
+      "dry_run": true,
+      "status": "ready",
+      "ready": true,
+      "blocked": false,
+      "blocked_reason": "",
+      "real_trigger": false,
+      "webhook_enabled": false,
+      "network_request_enabled": false,
+      "n8n_connection_enabled": false,
+      "external_send_enabled": false,
+      "simulated_input": {
+        "from_previous_node": {
+          "node_id": "N01",
+          "candidate_items": [
+            "标准化消息对象候选"
+          ],
+          "offline": true,
+          "dry_run": true,
+          "real_trigger": false,
+          "webhook_enabled": false,
+          "external_delivery": false,
+          "requires_supervisor": false
+        },
+        "declared_read_only_input": [
+          "标准化消息对象候选"
+        ],
+        "real_trigger": false,
+        "webhook_enabled": false
+      },
+      "simulated_output": {
+        "node_id": "N02",
+        "candidate_items": [
+          "离线分类结果候选",
+          "红线命中说明候选"
+        ],
+        "offline": true,
+        "dry_run": true,
+        "real_trigger": false,
+        "webhook_enabled": false,
+        "external_delivery": false,
+        "requires_supervisor": false
+      }
+    },
+    {
+      "node_id": "N03",
+      "node_name": "只读脚本核对模拟",
+      "mode": "offline/dry_run",
+      "offline": true,
+      "dry_run": true,
+      "status": "ready",
+      "ready": true,
+      "blocked": false,
+      "blocked_reason": "",
+      "real_trigger": false,
+      "webhook_enabled": false,
+      "network_request_enabled": false,
+      "n8n_connection_enabled": false,
+      "external_send_enabled": false,
+      "simulated_input": {
+        "from_previous_node": {
+          "node_id": "N02",
+          "candidate_items": [
+            "离线分类结果候选",
+            "红线命中说明候选"
+          ],
+          "offline": true,
+          "dry_run": true,
+          "real_trigger": false,
+          "webhook_enabled": false,
+          "external_delivery": false,
+          "requires_supervisor": false
+        },
+        "declared_read_only_input": [
+          "离线分类结果候选",
+          "本地只读资料路径摘要"
+        ],
+        "real_trigger": false,
+        "webhook_enabled": false
+      },
+      "simulated_output": {
+        "node_id": "N03",
+        "candidate_items": [
+          "只读核对摘要候选",
+          "异常阻断说明候选"
+        ],
+        "offline": true,
+        "dry_run": true,
+        "real_trigger": false,
+        "webhook_enabled": false,
+        "external_delivery": false,
+        "requires_supervisor": false
+      }
+    },
+    {
+      "node_id": "N04",
+      "node_name": "候选回传草稿生成",
+      "mode": "offline/dry_run",
+      "offline": true,
+      "dry_run": true,
+      "status": "ready",
+      "ready": true,
+      "blocked": false,
+      "blocked_reason": "",
+      "real_trigger": false,
+      "webhook_enabled": false,
+      "network_request_enabled": false,
+      "n8n_connection_enabled": false,
+      "external_send_enabled": false,
+      "simulated_input": {
+        "from_previous_node": {
+          "node_id": "N03",
+          "candidate_items": [
+            "只读核对摘要候选",
+            "异常阻断说明候选"
+          ],
+          "offline": true,
+          "dry_run": true,
+          "real_trigger": false,
+          "webhook_enabled": false,
+          "external_delivery": false,
+          "requires_supervisor": false
+        },
+        "declared_read_only_input": [
+          "只读核对摘要候选"
+        ],
+        "real_trigger": false,
+        "webhook_enabled": false
+      },
+      "simulated_output": {
+        "node_id": "N04",
+        "candidate_items": [
+          "候选回传草稿",
+          "禁止自动发送说明"
+        ],
+        "offline": true,
+        "dry_run": true,
+        "real_trigger": false,
+        "webhook_enabled": false,
+        "external_delivery": false,
+        "requires_supervisor": false
+      }
+    },
+    {
+      "node_id": "N05",
+      "node_name": "总管确认闸口",
+      "mode": "offline/dry_run",
+      "offline": true,
+      "dry_run": true,
+      "status": "blocked",
+      "ready": false,
+      "blocked": true,
+      "blocked_reason": "等待总管确认，干跑在本地闸口停止。",
+      "real_trigger": false,
+      "webhook_enabled": false,
+      "network_request_enabled": false,
+      "n8n_connection_enabled": false,
+      "external_send_enabled": false,
+      "simulated_input": {
+        "from_previous_node": {
+          "node_id": "N04",
+          "candidate_items": [
+            "候选回传草稿",
+            "禁止自动发送说明"
+          ],
+          "offline": true,
+          "dry_run": true,
+          "real_trigger": false,
+          "webhook_enabled": false,
+          "external_delivery": false,
+          "requires_supervisor": false
+        },
+        "declared_read_only_input": [
+          "候选回传草稿",
+          "红线命中说明候选"
+        ],
+        "real_trigger": false,
+        "webhook_enabled": false
+      },
+      "simulated_output": {
+        "node_id": "N05",
+        "candidate_items": [
+          "待总管确认记录",
+          "人工处理建议"
+        ],
+        "offline": true,
+        "dry_run": true,
+        "real_trigger": false,
+        "webhook_enabled": false,
+        "external_delivery": false,
+        "requires_supervisor": true
+      }
+    }
+  ],
+  "final_gate": {
+    "status": "blocked",
+    "reason": "干跑报告只停在总管确认闸口，不进行真实触发或发送。",
+    "real_trigger": false,
+    "webhook_enabled": false
+  }
+}

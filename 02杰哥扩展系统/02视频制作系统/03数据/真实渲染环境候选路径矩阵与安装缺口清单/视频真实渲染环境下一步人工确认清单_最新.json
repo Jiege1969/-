@@ -1,0 +1,73 @@
+{
+  "名称": "视频真实渲染环境下一步人工确认清单",
+  "generated_at": "2026-05-08 17:59:32",
+  "真实渲染状态": "blocked",
+  "真实发布状态": "blocked",
+  "下一步人工确认清单": [
+    {
+      "序号": 1,
+      "对象": "MoneyPrinterTurbo",
+      "人工确认项": "确认 MoneyPrinterTurbo 实际根目录和入口文件。",
+      "完成条件": "目录、入口文件、依赖清单和项目配置由人工确认；后续任务才可调用。",
+      "当前状态": "blocked"
+    },
+    {
+      "序号": 2,
+      "对象": "MoneyPrinterTurbo",
+      "人工确认项": "确认 Python 环境、依赖安装、素材输入、输出目录和真实渲染授权。",
+      "完成条件": "形成可追溯确认记录；本任务不做安装和渲染。",
+      "当前状态": "blocked"
+    },
+    {
+      "序号": 3,
+      "对象": "ImageMagick",
+      "人工确认项": "确认 ImageMagick 安装目录、magick.exe 和 PATH。",
+      "完成条件": "人工确认后，后续受控任务才可执行 magick -version。",
+      "当前状态": "blocked"
+    },
+    {
+      "序号": 4,
+      "对象": "发布链路",
+      "人工确认项": "确认真实渲染、人工审核、发布授权、n8n/企业微信/总管面板接入边界。",
+      "完成条件": "全部授权前，真实发布仍 blocked。",
+      "当前状态": "blocked"
+    },
+    {
+      "序号": 5,
+      "对象": "验收红线",
+      "人工确认项": "确认本包仅为候选路径矩阵与安装缺口清单，不伪装已接入。",
+      "完成条件": "真实渲染仍 blocked，真实发布仍 blocked。",
+      "当前状态": "blocked"
+    }
+  ],
+  "readonly_flags": {
+    "真实渲染": false,
+    "生成真实视频": false,
+    "上传发布": false,
+    "调用MoneyPrinterTurbo": false,
+    "执行magick": false,
+    "执行magick_version": false,
+    "触发n8n": false,
+    "修改企业微信公共配置": false,
+    "修改总管面板": false,
+    "修改一键接续包": false,
+    "重载服务": false,
+    "安装软件": false,
+    "写入系统环境变量": false
+  },
+  "readonly_flags_ascii": {
+    "real_render": false,
+    "generate_real_video": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false,
+    "install_software": false,
+    "write_system_environment": false
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "checklist_id": "VIDEO_SPEC_AUTH_GAP_FIELDS_001",
+  "name": "视频投稿规格与素材授权待补字段清单",
+  "asset_identity": "video_submission_spec_and_asset_authorization_gap_field_shadow_checklist",
+  "risk_level": "W1",
+  "boundary": {
+    "read_real_material": false,
+    "connect_platform_account": false,
+    "edit_or_render_video": false,
+    "upload_or_publish": false,
+    "external_send": false,
+    "trigger_n8n": false
+  },
+  "platform_spec_fields": [
+    {"field": "target_platform", "status": "missing", "blocking_effect": "无法确定适用平台规则"},
+    {"field": "content_type", "status": "missing", "blocking_effect": "无法判断分区或活动规则"},
+    {"field": "current_rule_url", "status": "missing", "blocking_effect": "不能判断规则是否最新"},
+    {"field": "collected_date", "status": "missing", "blocking_effect": "无法控制规则时效"},
+    {"field": "duration_limit", "status": "missing", "blocking_effect": "不能给剪辑时长建议"},
+    {"field": "resolution_requirement", "status": "missing", "blocking_effect": "不能给导出规格建议"},
+    {"field": "aspect_ratio", "status": "missing", "blocking_effect": "不能给画幅规格建议"},
+    {"field": "cover_requirement", "status": "missing", "blocking_effect": "不能给封面合规建议"},
+    {"field": "subtitle_requirement", "status": "missing", "blocking_effect": "不能给字幕交付建议"},
+    {"field": "tag_or_topic_requirement", "status": "missing", "blocking_effect": "不能给投稿信息建议"}
+  ],
+  "asset_authorization_fields": [
+    {"field": "asset_id", "status": "missing", "blocking_effect": "不能形成可追溯素材清单"},
+    {"field": "asset_type", "status": "missing", "blocking_effect": "无法判断授权类别"},
+    {"field": "source", "status": "missing", "blocking_effect": "无法判断可用性"},
+    {"field": "authorization_scope", "status": "missing", "blocking_effect": "不能进入制作方案"},
+    {"field": "owner", "status": "missing", "blocking_effect": "无法追溯版权责任"},
+    {"field": "usage_limit", "status": "missing", "blocking_effect": "无法判断使用边界"},
+    {"field": "privacy_risk", "status": "missing", "blocking_effect": "无法判断脱敏需求"},
+    {"field": "expiry_date", "status": "missing", "blocking_effect": "无法判断授权是否过期"},
+    {"field": "human_review", "status": "missing", "blocking_effect": "不能升级为可用素材"}
+  ],
+  "blocking_rules": [
+    {"gap": "未明确目标平台", "blocked_output": "平台规格建议和发布结论"},
+    {"gap": "未补当前规则链接", "blocked_output": "平台合规结论"},
+    {"gap": "未补素材授权范围", "blocked_output": "素材进入制作方案"},
+    {"gap": "未补隐私风险判断", "blocked_output": "外发、发布、公开展示"},
+    {"gap": "未补人工复核", "blocked_output": "版权安全和可发布结论"}
+  ],
+  "allowed_outputs": ["脚本结构草案", "分镜结构草案", "平台规范待补清单", "素材授权待补清单", "发布前人工复核问题", "风险提示"],
+  "forbidden_outputs": ["可发布", "平台合规已确认", "版权安全", "素材可商用", "剪辑渲染上传发布外发"],
+  "review_questions": [
+    "目标平台和内容类型是什么？",
+    "当前使用的投稿规范链接是哪一个，采集日期是什么？",
+    "每个素材的来源和权利方是谁？",
+    "每个素材是否可剪辑、可发布、可商用、可跨平台使用？",
+    "是否包含个人、客户、地址、账号、电话、车牌等敏感信息？",
+    "是否需要法务、品牌、客户或平台运营人员复核？"
+  ]
+}

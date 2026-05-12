@@ -1,0 +1,58 @@
+{
+  "id": "VIDEO_AGENT_REDLINE_ALTERNATIVE_ACTION_TEMPLATE_001",
+  "name": "红线阻断后替代影子动作模板",
+  "asset_identity": "video_creation_agent_shadow_redline_alternative_action_template",
+  "stage": "W1_R0",
+  "status": "alternative_action_template_not_redline_exception",
+  "boundary": {
+    "execute_original_redline_request": false,
+    "redline_exception": false,
+    "trigger_real_system": false,
+    "read_or_save_credentials": false,
+    "read_real_assets": false,
+    "modify_formal_entry": false
+  },
+  "alternatives": [
+    {
+      "redline_request": "direct_video_generation",
+      "forbidden_action": "generate_render_transcode_edit",
+      "allowed_shadow_action": "review_script_storyboard_asset_gap_checklist"
+    },
+    {
+      "redline_request": "direct_voice_subtitle_cover_generation",
+      "forbidden_action": "call_tts_subtitle_cover_tools",
+      "allowed_shadow_action": "copy_draft_subtitle_text_draft_cover_copy_direction"
+    },
+    {
+      "redline_request": "direct_platform_publish",
+      "forbidden_action": "upload_publish_change_publish_config",
+      "allowed_shadow_action": "pre_publish_review_question_list"
+    },
+    {
+      "redline_request": "wechat_external_send",
+      "forbidden_action": "real_message_send",
+      "allowed_shadow_action": "draft_message_and_manual_confirmation_items"
+    },
+    {
+      "redline_request": "credential_or_webhook_provided",
+      "forbidden_action": "read_save_or_use_credentials",
+      "allowed_shadow_action": "credential_risk_record_and_manual_config_note"
+    },
+    {
+      "redline_request": "read_real_asset_directory",
+      "forbidden_action": "access_asset_path",
+      "allowed_shadow_action": "asset_exists_pending_authorization_record"
+    },
+    {
+      "redline_request": "modify_formal_entry_port_or_script",
+      "forbidden_action": "service_port_or_formal_route_change",
+      "allowed_shadow_action": "manager_decision_request_and_shadow_alignment_return"
+    }
+  ],
+  "output_requirements": [
+    "state_redline_blocked_first",
+    "state_real_system_not_triggered",
+    "offer_shadow_alternative_only",
+    "do_not_ask_for_secret_account_or_real_asset"
+  ]
+}

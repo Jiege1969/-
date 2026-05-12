@@ -1,0 +1,54 @@
+{
+  "id": "VIDEO_AGENT_TRIAL_HUMAN_REVIEW_QUESTION_LIST_001",
+  "name": "试运行人工复核问题清单",
+  "asset_identity": "video_creation_agent_shadow_trial_human_review_question_list",
+  "stage": "W1_R0",
+  "status": "question_list_not_production_approval",
+  "questions": [
+    {
+      "category": "input_desensitization",
+      "question": "has_account_phone_secret_full_asset_path_and_privacy_been_removed",
+      "handling_before_confirmed": "do_not_fill_trial_sample"
+    },
+    {
+      "category": "platform_rules",
+      "question": "are_target_platform_partition_duration_ratio_and_ai_label_requirements_clear",
+      "handling_before_confirmed": "no_publishable_conclusion"
+    },
+    {
+      "category": "asset_authorization",
+      "question": "are_asset_source_authorization_portrait_trademark_and_copyright_clear",
+      "handling_before_confirmed": "no_generation_discussion"
+    },
+    {
+      "category": "creative_direction",
+      "question": "should_three_options_be_merged_rewritten_or_returned_to_clarification",
+      "handling_before_confirmed": "review_draft_only"
+    },
+    {
+      "category": "originality",
+      "question": "is_there_plagiarism_rewriting_or_infringement_risk",
+      "handling_before_confirmed": "human_review"
+    },
+    {
+      "category": "generation_boundary",
+      "question": "does_anyone_request_direct_video_voice_subtitle_or_cover_generation",
+      "handling_before_confirmed": "redline_block"
+    },
+    {
+      "category": "publish_external_send",
+      "question": "does_anyone_request_upload_publish_wechat_send_or_n8n_flow",
+      "handling_before_confirmed": "redline_block"
+    },
+    {
+      "category": "experience_learning",
+      "question": "does_this_review_create_reusable_experience",
+      "handling_before_confirmed": "evolution_candidate_only"
+    }
+  ],
+  "output_limits": [
+    "not_production_approval",
+    "answered_questions_only_mean_trial_material_more_complete",
+    "generation_publish_external_send_still_require_separate_authorization_and_manager_decision"
+  ]
+}

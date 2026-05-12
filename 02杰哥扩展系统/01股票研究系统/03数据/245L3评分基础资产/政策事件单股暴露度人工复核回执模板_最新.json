@@ -1,0 +1,517 @@
+{
+  "name": "政策事件单股暴露度人工复核回执模板",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:06:32",
+  "asset_identity": "W1政策事件单股暴露度复核模板",
+  "status": "blank_template",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_policy_event_write": true,
+  "not_score_write": true,
+  "not_formal_database_write": true,
+  "source_summary": {
+    "policy_event_count": 1,
+    "stock_exposure_count": 2,
+    "queue_exists": true
+  },
+  "receipts": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "classification": "structured_policy_ready",
+      "matched_event_count": 1,
+      "matched_policy_events": [
+        {
+          "event_id": "POL-2023-001",
+          "title": "商务部 海关总署公告2023年第23号 关于对镓、锗相关物项实施出口管制的公告",
+          "source_name": "商务部、海关总署",
+          "source_level": "official",
+          "event_status": "superseded_active",
+          "impact_direction": "利好",
+          "impact_strength": 0.85,
+          "event_confidence": 0.95,
+          "exposure": 0.95,
+          "exposure_direction": "受益",
+          "exposure_reason": "云南锗业主营业务与锗材料、锗产品高度相关，是A股中锗主题辨识度较高的公司。镓、锗相关物项出口管制提高锗资源战略属性和市场关注度，对其议价能力和估值预期具有较强映射。"
+        }
+      ],
+      "source_assets": {
+        "policy_events": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\policy_events_v1.0.json",
+        "stock_policy_exposures": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\stock_policy_exposures_v1.0.json",
+        "gap_queue": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本政策事件缺口队列_最新.json"
+      },
+      "receipt_status": "blank",
+      "review_fields": {
+        "official_source_valid": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "impact_direction_confirmed": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "impact_strength_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "stock_exposure_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "decay_factor_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "risk_counterpoint_review": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "duplicate_score_check": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "policy_score_candidate": {
+          "value": null,
+          "range": [
+            0,
+            20
+          ],
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        }
+      },
+      "ready_review": {
+        "policy_score_ready": false,
+        "score_ready": false,
+        "ready_condition": "官方来源、影响方向、影响强度、股票暴露度、时效衰减、反证风险和重复计分检查全部通过后，才可进入政策分。",
+        "blocking_reason": "政策证据尚未完成入分前复核，不能凭政策背景或新闻热词给单股政策分。"
+      },
+      "front_output_rule": {
+        "when_missing": "未完成政策事件入分复核时，前台只写政策证据缺口或背景参考，不写政策强驱动。",
+        "when_ready": "输出一句结论型政策影响判断，并在后台保留事件ID、来源、暴露度、时效衰减和反证风险。"
+      }
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "classification": "no_direct_structured_policy",
+      "matched_event_count": 0,
+      "matched_policy_events": [],
+      "source_assets": {
+        "policy_events": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\policy_events_v1.0.json",
+        "stock_policy_exposures": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\stock_policy_exposures_v1.0.json",
+        "gap_queue": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本政策事件缺口队列_最新.json"
+      },
+      "receipt_status": "blank",
+      "review_fields": {
+        "official_source_valid": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "impact_direction_confirmed": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "impact_strength_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "stock_exposure_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "decay_factor_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "risk_counterpoint_review": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "duplicate_score_check": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "policy_score_candidate": {
+          "value": null,
+          "range": [
+            0,
+            20
+          ],
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        }
+      },
+      "ready_review": {
+        "policy_score_ready": false,
+        "score_ready": false,
+        "ready_condition": "官方来源、影响方向、影响强度、股票暴露度、时效衰减、反证风险和重复计分检查全部通过后，才可进入政策分。",
+        "blocking_reason": "政策证据尚未完成入分前复核，不能凭政策背景或新闻热词给单股政策分。"
+      },
+      "front_output_rule": {
+        "when_missing": "未完成政策事件入分复核时，前台只写政策证据缺口或背景参考，不写政策强驱动。",
+        "when_ready": "输出一句结论型政策影响判断，并在后台保留事件ID、来源、暴露度、时效衰减和反证风险。"
+      }
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "classification": "candidate_policy_needed",
+      "matched_event_count": 0,
+      "matched_policy_events": [],
+      "source_assets": {
+        "policy_events": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\policy_events_v1.0.json",
+        "stock_policy_exposures": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\stock_policy_exposures_v1.0.json",
+        "gap_queue": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本政策事件缺口队列_最新.json"
+      },
+      "receipt_status": "blank",
+      "review_fields": {
+        "official_source_valid": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "impact_direction_confirmed": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "impact_strength_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "stock_exposure_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "decay_factor_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "risk_counterpoint_review": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "duplicate_score_check": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "policy_score_candidate": {
+          "value": null,
+          "range": [
+            0,
+            20
+          ],
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        }
+      },
+      "ready_review": {
+        "policy_score_ready": false,
+        "score_ready": false,
+        "ready_condition": "官方来源、影响方向、影响强度、股票暴露度、时效衰减、反证风险和重复计分检查全部通过后，才可进入政策分。",
+        "blocking_reason": "政策证据尚未完成入分前复核，不能凭政策背景或新闻热词给单股政策分。"
+      },
+      "front_output_rule": {
+        "when_missing": "未完成政策事件入分复核时，前台只写政策证据缺口或背景参考，不写政策强驱动。",
+        "when_ready": "输出一句结论型政策影响判断，并在后台保留事件ID、来源、暴露度、时效衰减和反证风险。"
+      }
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "classification": "no_direct_structured_policy",
+      "matched_event_count": 0,
+      "matched_policy_events": [],
+      "source_assets": {
+        "policy_events": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\policy_events_v1.0.json",
+        "stock_policy_exposures": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\stock_policy_exposures_v1.0.json",
+        "gap_queue": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本政策事件缺口队列_最新.json"
+      },
+      "receipt_status": "blank",
+      "review_fields": {
+        "official_source_valid": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "impact_direction_confirmed": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "impact_strength_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "stock_exposure_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "decay_factor_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "risk_counterpoint_review": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "duplicate_score_check": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "policy_score_candidate": {
+          "value": null,
+          "range": [
+            0,
+            20
+          ],
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        }
+      },
+      "ready_review": {
+        "policy_score_ready": false,
+        "score_ready": false,
+        "ready_condition": "官方来源、影响方向、影响强度、股票暴露度、时效衰减、反证风险和重复计分检查全部通过后，才可进入政策分。",
+        "blocking_reason": "政策证据尚未完成入分前复核，不能凭政策背景或新闻热词给单股政策分。"
+      },
+      "front_output_rule": {
+        "when_missing": "未完成政策事件入分复核时，前台只写政策证据缺口或背景参考，不写政策强驱动。",
+        "when_ready": "输出一句结论型政策影响判断，并在后台保留事件ID、来源、暴露度、时效衰减和反证风险。"
+      }
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "classification": "no_direct_structured_policy",
+      "matched_event_count": 0,
+      "matched_policy_events": [],
+      "source_assets": {
+        "policy_events": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\policy_events_v1.0.json",
+        "stock_policy_exposures": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\stock_policy_exposures_v1.0.json",
+        "gap_queue": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本政策事件缺口队列_最新.json"
+      },
+      "receipt_status": "blank",
+      "review_fields": {
+        "official_source_valid": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "impact_direction_confirmed": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        },
+        "impact_strength_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "stock_exposure_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "decay_factor_review": {
+          "value": null,
+          "range": [
+            0,
+            1
+          ],
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "risk_counterpoint_review": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "duplicate_score_check": {
+          "value": null,
+          "required_for_score": true,
+          "evidence_status": "not_applicable",
+          "review_status": "pending_review"
+        },
+        "policy_score_candidate": {
+          "value": null,
+          "range": [
+            0,
+            20
+          ],
+          "required_for_score": true,
+          "evidence_status": "missing",
+          "review_status": "pending_review"
+        }
+      },
+      "ready_review": {
+        "policy_score_ready": false,
+        "score_ready": false,
+        "ready_condition": "官方来源、影响方向、影响强度、股票暴露度、时效衰减、反证风险和重复计分检查全部通过后，才可进入政策分。",
+        "blocking_reason": "政策证据尚未完成入分前复核，不能凭政策背景或新闻热词给单股政策分。"
+      },
+      "front_output_rule": {
+        "when_missing": "未完成政策事件入分复核时，前台只写政策证据缺口或背景参考，不写政策强驱动。",
+        "when_ready": "输出一句结论型政策影响判断，并在后台保留事件ID、来源、暴露度、时效衰减和反证风险。"
+      }
+    }
+  ],
+  "review_rules": [
+    "未入库政策不得参与L3政策分。",
+    "无股票暴露度映射不得给单股政策分。",
+    "宏观背景、行业口号、新闻热词不得替代结构化政策事件。",
+    "政策强度、股票暴露度、时效衰减和反证风险不得凭空补。",
+    "已有结构化事件也必须复核重复计分和时效衰减后再入分。",
+    "不得生成买卖、下单、仓位或交易建议。"
+  ],
+  "summary": {
+    "receipt_count": 5,
+    "stock_count": 5,
+    "matched_event_stock_count": 1,
+    "policy_score_ready_count": 0,
+    "score_allowed_count": 0
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_policy_event_write": true,
+    "not_score_write": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

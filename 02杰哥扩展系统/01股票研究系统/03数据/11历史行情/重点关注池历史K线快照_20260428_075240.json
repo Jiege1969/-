@@ -1,0 +1,168 @@
+{
+  "生成时间": "2026-04-28 07:52:40",
+  "数据源": "东方财富公开历史K线接口",
+  "规则文件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\01配置\\技术指标计算规则.json",
+  "股票数量": 19,
+  "成功数量": 0,
+  "历史K线": [
+    {
+      "代码": "sz000906",
+      "名称": "浙商中拓",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sz300641",
+      "名称": "正丹股份",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sz300502",
+      "名称": "新易盛",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sz000657",
+      "名称": "中钨高新",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sz300871",
+      "名称": "回盛生物",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sh603259",
+      "名称": "药明康德",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sh600326",
+      "名称": "西藏天路",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sh603501",
+      "名称": "豪威集团",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sz002812",
+      "名称": "恩捷股份",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sz002049",
+      "名称": "紫光国微",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sz002028",
+      "名称": "思源电气",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sh600580",
+      "名称": "卧龙电驱",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sh688041",
+      "名称": "海光信息",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sh603986",
+      "名称": "兆易创新",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sz300724",
+      "名称": "捷佳伟创",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sh688235",
+      "名称": "百济神州",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sz300308",
+      "名称": "中际旭创",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sh600198",
+      "名称": "大唐电信",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    },
+    {
+      "代码": "sz002281",
+      "名称": "光迅科技",
+      "状态": "失败",
+      "错误": "Remote end closed connection without response",
+      "记录数": 0,
+      "K线": []
+    }
+  ],
+  "安全边界": {
+    "是否写旧系统": false,
+    "是否触发n8n": false,
+    "是否企业微信真实发送": false,
+    "是否调用券商接口": false,
+    "是否自动交易": false
+  }
+}

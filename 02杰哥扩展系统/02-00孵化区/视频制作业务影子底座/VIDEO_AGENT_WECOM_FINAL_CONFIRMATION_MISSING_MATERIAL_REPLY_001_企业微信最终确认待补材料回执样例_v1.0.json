@@ -1,0 +1,37 @@
+{
+  "asset_id": "VIDEO_AGENT_WECOM_FINAL_CONFIRMATION_MISSING_MATERIAL_REPLY_001",
+  "version": "v1.0",
+  "asset_type": "wecom_placeholder_reply_sample",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "missing_materials_before_final_human_confirmation",
+  "status": "draft_sample_no_real_send",
+  "scenario": "User asks or attempts to confirm publishing, but final confirmation quality check finds missing materials.",
+  "reply_sample": {
+    "task_id": "VF-20260508-003",
+    "decision": "cannot_enter_final_human_confirmation",
+    "missing_materials": [
+      "pre_publish_gate_final_overview_record",
+      "pre_publish_blocker_summary_record",
+      "xiaohongshu_platform_independent_check_receipt",
+      "material_authorization_proof_receipt"
+    ],
+    "review_queues": [
+      "gate_consistency_review_queue",
+      "platform_difference_review_queue",
+      "material_authorization_review_queue"
+    ],
+    "next_action": "complete_missing_materials_first; after completion enter human final confirmation only and no auto-publish occurs",
+    "real_system_triggered": false
+  },
+  "fixed_rules": [
+    "Reply must list specific missing materials.",
+    "Reply must list review queues.",
+    "Reply must remind that completion does not auto-publish.",
+    "This sample does not call WeCom APIs, send real messages, or publish."
+  ],
+  "boundaries": {
+    "call_wecom_api": false,
+    "send_real_message": false,
+    "trigger_publish": false
+  }
+}

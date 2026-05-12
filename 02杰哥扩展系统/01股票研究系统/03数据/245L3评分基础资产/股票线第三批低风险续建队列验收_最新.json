@@ -1,0 +1,14 @@
+{
+  "name": "股票线第三批低风险续建队列验收",
+  "generated_at": "2026-05-08 11:26:56",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "auto_continue_policy": "通过后自动执行第三批第一项；不等待用户确认。"
+}

@@ -1,0 +1,119 @@
+﻿{
+    "status":  "quality_score_failed",
+    "system_slug":  "tax-business",
+    "system_name":  "税收业务系统",
+    "audit_only":  false,
+    "global_lock_acquired":  true,
+    "system_lock_acquired":  true,
+    "system_root":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统",
+    "system_script_dir":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\02脚本",
+    "planned_scripts":  [
+                            "生成税收企业微信正式入口消息预演.py",
+                            "生成税收企业微信待复核草案骨架批量预演.py",
+                            "生成税收系统当前阶段收口验收与下一步队列.py",
+                            "生成涉税业务分析契约影子样例.py",
+                            "生成研发费用分析准备度门禁.py"
+                        ],
+    "scorer":  "生成税收业务系统日报质量评分.py",
+    "actions":  [
+                    {
+                        "script":  "生成税收企业微信正式入口消息预演.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\02脚本\\生成税收企业微信正式入口消息预演.py",
+                        "started_at":  "2026-05-09 19:43:34",
+                        "ended_at":  "2026-05-09 19:43:34",
+                        "exit_code":  null,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194334-tax-business-55Sf5oiQ56iO5pS25LyB5Lia5b6u5L+h5q2j5byP5YWl5Y+j5raI5oGv6aKE5ryULnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194334-tax-business-55Sf5oiQ56iO5pS25LyB5Lia5b6u5L+h5q2j5byP5YWl5Y+j5raI5oGv6aKE5ryULnB5.err.log"
+                    },
+                    {
+                        "script":  "生成税收企业微信待复核草案骨架批量预演.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\02脚本\\生成税收企业微信待复核草案骨架批量预演.py",
+                        "started_at":  "2026-05-09 19:43:34",
+                        "ended_at":  "2026-05-09 19:43:34",
+                        "exit_code":  null,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194334-tax-business-55Sf5oiQ56iO5pS25LyB5Lia5b6u5L+h5b6F5aSN5qC46I2J5qGI6aqo5p625om56YeP6aKE5ryULnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194334-tax-business-55Sf5oiQ56iO5pS25LyB5Lia5b6u5L+h5b6F5aSN5qC46I2J5qGI6aqo5p625om56YeP6aKE5ryULnB5.err.log"
+                    },
+                    {
+                        "script":  "生成税收系统当前阶段收口验收与下一步队列.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\02脚本\\生成税收系统当前阶段收口验收与下一步队列.py",
+                        "started_at":  "2026-05-09 19:43:34",
+                        "ended_at":  "2026-05-09 19:43:34",
+                        "exit_code":  null,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194334-tax-business-55Sf5oiQ56iO5pS257O757uf5b2T5YmN6Zi25q615pS25Y+j6aqM5pS25LiO5LiL5LiA5q2l6Zif5YiXLnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194334-tax-business-55Sf5oiQ56iO5pS257O757uf5b2T5YmN6Zi25q615pS25Y+j6aqM5pS25LiO5LiL5LiA5q2l6Zif5YiXLnB5.err.log"
+                    },
+                    {
+                        "script":  "生成涉税业务分析契约影子样例.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\02脚本\\生成涉税业务分析契约影子样例.py",
+                        "started_at":  "2026-05-09 19:43:34",
+                        "ended_at":  "2026-05-09 19:43:34",
+                        "exit_code":  null,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194334-tax-business-55Sf5oiQ5raJ56iO5Lia5Yqh5YiG5p6Q5aWR57qm5b2x5a2Q5qC35L6LLnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194334-tax-business-55Sf5oiQ5raJ56iO5Lia5Yqh5YiG5p6Q5aWR57qm5b2x5a2Q5qC35L6LLnB5.err.log"
+                    },
+                    {
+                        "script":  "生成研发费用分析准备度门禁.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\02脚本\\生成研发费用分析准备度门禁.py",
+                        "started_at":  "2026-05-09 19:43:34",
+                        "ended_at":  "2026-05-09 19:43:34",
+                        "exit_code":  null,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194334-tax-business-55Sf5oiQ56CU5Y+R6LS555So5YiG5p6Q5YeG5aSH5bqm6Zeo56aBLnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194334-tax-business-55Sf5oiQ56CU5Y+R6LS555So5YiG5p6Q5YeG5aSH5bqm6Zeo56aBLnB5.err.log"
+                    },
+                    {
+                        "script":  "生成税收业务系统日报质量评分.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\02脚本\\生成税收业务系统日报质量评分.py",
+                        "started_at":  "2026-05-09 19:43:34",
+                        "ended_at":  "2026-05-09 19:43:35",
+                        "exit_code":  null,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194334-tax-business-55Sf5oiQ56iO5pS25Lia5Yqh57O757uf5pel5oql6LSo6YeP6K+E5YiGLnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194334-tax-business-55Sf5oiQ56iO5pS25Lia5Yqh57O757uf5pel5oql6LSo6YeP6K+E5YiGLnB5.err.log"
+                    }
+                ],
+    "safety":  {
+                   "real_wecom_send":  false,
+                   "n8n_trigger":  false,
+                   "broker_api":  false,
+                   "auto_trade":  false,
+                   "formal_output":  false,
+                   "real_conversion":  false,
+                   "real_render":  false
+               },
+    "environment_locks":  {
+                              "STOCK_REAL_SEND":  "0",
+                              "STOCK_ENABLE_N8N_TRIGGER":  "0",
+                              "STOCK_ENABLE_BROKER_API":  "0",
+                              "STOCK_ENABLE_AUTO_TRADE":  "0",
+                              "WECOM_REAL_SEND":  "0",
+                              "WEWORK_REAL_SEND":  "0",
+                              "ENABLE_N8N_TRIGGER":  "0",
+                              "ENABLE_FORMAL_OUTPUT":  "0",
+                              "ENABLE_REAL_CONVERSION":  "0",
+                              "ENABLE_REAL_RENDER":  "0"
+                          },
+    "started_by":  {
+                       "user":  "Administrator",
+                       "computer":  "杰哥",
+                       "pid":  5052
+                   },
+    "time":  "2026-05-09 19:43:35"
+}

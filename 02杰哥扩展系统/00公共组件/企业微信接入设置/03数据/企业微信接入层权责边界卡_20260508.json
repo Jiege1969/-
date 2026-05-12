@@ -1,0 +1,55 @@
+{
+  "asset_id": "WECOM_ACCESS_BOUNDARY_CARD_20260508",
+  "generated_at": "2026-05-08 06:39:18 +08:00",
+  "asset_identity": "企业微信接入层 W1/R0 权责边界卡",
+  "status": "施工边界提示卡，不是服务变更许可，不是企业微信真实发送许可",
+  "one_sentence_positioning": "消息从哪里来 -> 应该转给谁 -> 什么动作不能做",
+  "allowed_responsibilities": [
+    "通讯接入",
+    "路由转发",
+    "安全闸门",
+    "日志追溯",
+    "健康检查",
+    "兜底澄清"
+  ],
+  "forbidden_responsibilities": [
+    "判断股票买卖、仓位、交易动作",
+    "判断税务适用、金额、申报路径",
+    "判断视频是否可发布",
+    "判断系统总体进度和施工优先级",
+    "自动触发 n8n、企业微信真实发送、服务重启",
+    "维护另一套机器人业务职责最终解释权"
+  ],
+  "business_authority_sources": {
+    "杰哥股票分析助手": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统",
+    "杰哥的股票分析专家": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统",
+    "杰哥系统管家": "D:\\杰哥智能化系统\\00杰哥系统总管",
+    "杰哥工作秘书": "对应本职工作/税收/内容处理系统",
+    "杰哥视频助理": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统"
+  },
+  "green_w1_r0": [
+    "新增只读核对记录",
+    "新增权责说明卡、口径冲突清单、迁移快照",
+    "修改新权威位置的说明文档口径，且不改变配置和脚本"
+  ],
+  "red_w2_w3": [
+    "修改服务入口脚本",
+    "修改运行配置 JSON",
+    "覆盖旧 06企业微信助手系统 文件",
+    "删除、移动、归档旧目录",
+    "启动或重启 19310",
+    "放开真实发送、n8n、自动发布、真实税务办理、交易接口"
+  ],
+  "boundary": {
+    "modify_service_script": false,
+    "modify_config_json": false,
+    "overwrite_legacy_path": false,
+    "delete_or_move_legacy_path": false,
+    "restart_service_19310": false,
+    "real_send_wecom": false,
+    "trigger_n8n": false,
+    "auto_publish_video": false,
+    "real_tax_filing": false,
+    "broker_or_trading": false
+  }
+}

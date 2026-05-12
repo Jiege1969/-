@@ -1,0 +1,140 @@
+﻿{
+    "report":  "serviceraj与旧计划任务核实判定",
+    "generated_at":  "2026-05-06 06:52:44 +08:00",
+    "mode":  "read_only_then_evidence_export_and_task_deletion",
+    "safety":  {
+                   "disabled_tasks":  false,
+                   "deleted_tasks":  true,
+                   "executed_suspicious_command":  false,
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false,
+                   "deleted_or_moved_data":  false
+               },
+    "serviceraj":  {
+                       "classification":  "P0_SECURITY_RISK_NO_JIEGE_DEPENDENCY",
+                       "task_state":  "Ready",
+                       "enabled":  true,
+                       "hidden":  false,
+                       "user":  "Administrator",
+                       "next_run_time":  null,
+                       "task_file":  "C:\\Windows\\System32\\Tasks\\serviceraj",
+                       "task_file_sha256":  "BF5D8264C0C7492BDFCA6FA131E56A8C4702B4FAFF6EB7EB0B3CD626D3D646CF",
+                       "decoded_script_sha256":  "6EB6B52A9543A7E0D0BAEA2E7FC627595ED81C010A6FB65B44B326FB7E8F058B",
+                       "risk_indicators":  [
+                                               "cmd variable concatenation for powershell",
+                                               "SysWOW64 32-bit PowerShell",
+                                               "-EncodedCommand",
+                                               "certificate validation callback returns true",
+                                               "Net.WebClient.DownloadString",
+                                               "external macarona.autos URL",
+                                               "IEX downloaded content",
+                                               "no author or description"
+                                           ],
+                       "active_process_found":  false,
+                       "recommendation":  "evidence exported and task deleted"
+                   },
+    "legacy_tasks":  [
+                         {
+                             "task":  "AI_AutoEvolve",
+                             "state":  "Disabled",
+                             "enabled":  false,
+                             "referenced_path":  "D:\\杰哥智能系统\\脚本工具\\AutoEvolve.ps1",
+                             "referenced_path_exists":  false,
+                             "classification":  "LEGACY_TASK_RESIDUE",
+                             "recommendation":  "evidence exported and task deleted"
+                         },
+                         {
+                             "task":  "AI_Backup",
+                             "state":  "Ready",
+                             "enabled":  true,
+                             "referenced_path":  "D:\\杰哥智能系统\\03_脚本工具\\backup.ps1",
+                             "referenced_path_exists":  false,
+                             "classification":  "ENABLED_FAILED_LEGACY_TASK",
+                             "recommendation":  "evidence exported and task deleted"
+                         },
+                         {
+                             "task":  "AI_HealthCheck",
+                             "state":  "Disabled",
+                             "enabled":  false,
+                             "referenced_path":  "D:\\杰哥智能系统\\03_脚本工具\\System-Health-Check.ps1",
+                             "referenced_path_exists":  false,
+                             "classification":  "LEGACY_TASK_RESIDUE",
+                             "recommendation":  "evidence exported and task deleted"
+                         },
+                         {
+                             "task":  "AI_WeeklyCleanup",
+                             "state":  "Ready",
+                             "enabled":  true,
+                             "referenced_path":  "D:\\杰哥智能系统\\03_脚本工具\\weekly_cleanup.ps1",
+                             "referenced_path_exists":  false,
+                             "classification":  "ENABLED_FAILED_LEGACY_TASK",
+                             "recommendation":  "evidence exported and task deleted"
+                         },
+                         {
+                             "task":  "DailyWorkPlan",
+                             "state":  "Ready",
+                             "enabled":  true,
+                             "referenced_path":  "D:\\AI_System\\Scripts\\runworkplan.bat",
+                             "referenced_path_exists":  false,
+                             "classification":  "ENABLED_FAILED_LEGACY_TASK",
+                             "recommendation":  "evidence exported and task deleted"
+                         },
+                         {
+                             "task":  "WSL_AutoStart",
+                             "state":  "Disabled",
+                             "enabled":  false,
+                             "referenced_path":  "/mnt/d/00杰哥系统总管/02脚本/守护/boot_self_check.sh",
+                             "referenced_path_exists":  false,
+                             "classification":  "LEGACY_WSL_AUTOSTART_RESIDUE",
+                             "recommendation":  "evidence exported and task deleted; rebuild only as a new governed task if needed"
+                         }
+                     ],
+    "wsl":  {
+                "distros":  [
+                                "docker-desktop",
+                                "Ubuntu-24.04"
+                            ],
+                "wsl_autostart_uses_missing_distro":  "Ubuntu",
+                "bashrc_old_ollama_path_found":  true,
+                "current_windows_ollama_models":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\ollama\\models",
+                "recommendation":  "backup bashrc then fix old OLLAMA_MODELS and container alias in a separate governed change"
+            },
+    "next_actions":  [
+                         "write WSL bashrc remediation plan before editing",
+                         "continue data asset inventory",
+                         "continue prompt versioning"
+                     ],
+    "actual_disposition_update":  {
+                                      "updated_at":  "2026-05-06 06:55:29 +08:00",
+                                      "user_direction":  "delete legacy tasks whose referenced scripts do not exist",
+                                      "evidence_dir":  "第30轮原始暗角证据目录已清债删除；判断结论、删除对象、验收结果和安全边界已固化在对应_latest收口报告。",
+                                      "deleted_legacy_tasks":  [
+                                                                   "AI_AutoEvolve",
+                                                                   "AI_Backup",
+                                                                   "AI_HealthCheck",
+                                                                   "AI_WeeklyCleanup",
+                                                                   "DailyWorkPlan",
+                                                                   "WSL_AutoStart"
+                                                               ],
+                                      "deleted_legacy_tasks_exist_after":  false,
+                                      "jiege_named_tasks_preserved":  true,
+                                      "serviceraj_processed_in_this_batch":  false,
+                                      "serviceraj_processed_later":  true
+                                  },
+    "serviceraj_disposition_update":  {
+                                          "updated_at":  "2026-05-06 06:58:43 +08:00",
+                                          "principle":  "do not create new debt while paying old debt",
+                                          "evidence_dir":  "第30轮原始暗角证据目录已清债删除；判断结论、删除对象、验收结果和安全边界已固化在对应_latest收口报告。",
+                                          "deleted_task":  "serviceraj",
+                                          "exists_after":  false,
+                                          "jiege_named_tasks_preserved":  true,
+                                          "blood_probe_latest":  {
+                                                                     "record_time":  "2026-05-06 06:58:01",
+                                                                     "ready":  true,
+                                                                     "failed_count":  0
+                                                                 }
+                                      },
+    "第30轮原始证据清债说明":  "第30轮原始暗角证据目录已清债删除；判断结论、删除对象、验收结果和安全边界已固化在对应_latest收口报告。"
+}

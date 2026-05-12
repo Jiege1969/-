@@ -1,0 +1,9 @@
+﻿{
+    "status":  "locked_by_global_scheduler",
+    "system_slug":  "tax-business",
+    "system_name":  "税收业务系统",
+    "audit_only":  false,
+    "global_lock_acquired":  false,
+    "system_lock_acquired":  false,
+    "time":  "2026-05-13 07:35:13"
+}

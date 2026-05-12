@@ -1,0 +1,174 @@
+{
+  "名称": "03进化系统_交付候选自动评审接入规则卡",
+  "创建日期": "2026-05-05",
+  "所属系统": "03杰哥进化系统",
+  "任务批次": "并行小任务J",
+  "包版本": "2026-05-05-J",
+  "定位": "为交付候选进入自动评审前提供只读规则、阻断清单和反退化样例；本包不触发外部服务，不放行真实动作。",
+  "总体原则": {
+    "总管唯一中枢": true,
+    "不新增第二中枢": true,
+    "不新增OpenClaw原件": true,
+    "不新增Hermes原件": true,
+    "只沉淀抽象接入规则": true,
+    "任务契约dry_run优先": true,
+    "Redis升级门槛": true,
+    "n8n升级门槛": true,
+    "真实动作闸门": true,
+    "股票analysis_only": true,
+    "并行小任务回收格式统一": true,
+    "进度不得虚高": true
+  },
+  "接入前硬要求": {
+    "默认动作模式": "dry_run_only",
+    "真实动作默认状态": "disabled",
+    "外部服务默认状态": "disabled",
+    "证据来源": "本地规则卡、本地审计清单、本地反退化样例、本地回收报告",
+    "准入结论": "所有阻断项通过后，才允许进入交付候选自动评审；仍不得自动执行真实动作。"
+  },
+  "任务契约必填字段": [
+    "task_id",
+    "source_system",
+    "target_system",
+    "candidate_type",
+    "scope",
+    "inputs",
+    "expected_outputs",
+    "dry_run",
+    "real_action_requested",
+    "external_service_requested",
+    "safety_boundary",
+    "rollback_plan",
+    "acceptance",
+    "recycle_report_path",
+    "progress_claim_basis"
+  ],
+  "核心规则": [
+    {
+      "规则ID": "ARC-001",
+      "规则名": "总管唯一中枢",
+      "规则": "交付候选只能把状态、回收报告和验收结论交回00杰哥系统总管；03进化只提供规则沉淀和只读审计，不建立第二调度中枢。",
+      "阻断条件": [
+        "声明03进化可替代00总管发布系统级进度",
+        "新增绕过00总管的任务分发、状态放行或回收入口",
+        "把自动评审结论写成真实动作许可"
+      ],
+      "准入证据": "候选包必须声明center_role=rule_deposit_only，second_center_created=false。"
+    },
+    {
+      "规则ID": "ARC-002",
+      "规则名": "不新增OpenClaw/Hermes原件",
+      "规则": "允许学习任务契约、分层编排、可审计字段等抽象思想；不得新增OpenClaw或Hermes原始代码、配置、提示词、凭据、镜像、工作流原件或可执行克隆。",
+      "阻断条件": [
+        "新增openclaw或hermes原件目录",
+        "复制上游源代码、凭据、workflow、prompt原文或配置原件",
+        "把第三方编排器作为本系统默认运行依赖"
+      ],
+      "准入证据": "候选包必须声明source_originals_added=false，imported_runtime_dependency=false。"
+    },
+    {
+      "规则ID": "ARC-003",
+      "规则名": "任务契约dry_run优先",
+      "规则": "所有交付候选先提交标准任务契约JSON；dry_run必须为true，real_action_requested和external_service_requested必须为false。",
+      "阻断条件": [
+        "缺少任务契约必填字段",
+        "dry_run不是true",
+        "real_action_requested为true",
+        "external_service_requested为true",
+        "acceptance没有本地只读验收方式"
+      ],
+      "准入证据": "task_contract.dry_run=true，task_contract.real_action_requested=false，task_contract.external_service_requested=false。"
+    },
+    {
+      "规则ID": "ARC-004",
+      "规则名": "Redis升级门槛",
+      "规则": "Redis只能作为影子映射、缓存或候选索引的只读/干跑设计输入；不得成为真实动作队列、权限放行器或进度权威源。",
+      "阻断条件": [
+        "Redis角色为real_action_queue",
+        "Redis承担permission_release",
+        "Redis写入被当作交付完成证据",
+        "没有人工审批、回滚和限流说明就声称可升级"
+      ],
+      "准入证据": "redis.role in shadow_mapping_or_cache，real_action_queue=false，permission_release=false，upgrade_ready=false。"
+    },
+    {
+      "规则ID": "ARC-005",
+      "规则名": "n8n升级门槛",
+      "规则": "n8n在本包中只允许保留dry_run或门禁定义；不得导入、启用、触发workflow，不得调用webhook。",
+      "阻断条件": [
+        "workflow_import=true",
+        "workflow_enabled=true",
+        "workflow_triggered=true",
+        "webhook_called=true",
+        "把n8n运行结果作为真实交付凭证"
+      ],
+      "准入证据": "n8n.mode=dry_run_only，workflow_import=false，workflow_enabled=false，workflow_triggered=false，webhook_called=false。"
+    },
+    {
+      "规则ID": "ARC-006",
+      "规则名": "真实动作单线闸门",
+      "规则": "真实发送、正式库写入、正式发布、外部API调用、券商接口、下单、自动交易必须经过00总管可审计单线闸门；本包不得放行。",
+      "阻断条件": [
+        "出现真实动作默认开启",
+        "出现多闸门并行放行",
+        "缺少人工审批人、复核人、回滚计划和kill switch",
+        "把安全阻断改写为交付失败并要求绕过"
+      ],
+      "准入证据": "real_action_gate.enabled=false，mode=single_line_manual_gate，multi_gate_release=false。"
+    },
+    {
+      "规则ID": "ARC-007",
+      "规则名": "股票analysis-only",
+      "规则": "股票相关候选只能进入分析、复盘、规则沉淀和只读验收；不得生成交易指令，不得调用券商接口，不得下单、撤单或自动交易。",
+      "阻断条件": [
+        "输出被机器直接消费为买卖指令",
+        "调用券商接口",
+        "访问资金账户",
+        "下单、撤单、自动交易",
+        "把analysis-only边界降级为建议性提醒"
+      ],
+      "准入证据": "stock_scope=analysis_only，broker_api_called=false，order_created=false，auto_trade=false。"
+    },
+    {
+      "规则ID": "ARC-008",
+      "规则名": "并行小任务回收格式统一",
+      "规则": "并行小任务固定写入00总管并行回收区的md/json报告；报告必须包含任务、目标、文件、验收、安全边界、真实动作数量、阻断项和协作边界。",
+      "阻断条件": [
+        "缺少固定回收报告",
+        "报告只写03本地不写00并行回收",
+        "报告没有真实动作数量",
+        "报告没有安全边界",
+        "报告没有并行协作边界"
+      ],
+      "准入证据": "recycle_report.format_version=parallel-recycle-v1，real_actions_triggered=0。"
+    },
+    {
+      "规则ID": "ARC-009",
+      "规则名": "进度不得虚高",
+      "规则": "进度只能由本地可验证产物和只读验收结果支撑；未验收、缺证据、阻断项未清零时不得声称完成或提高总进度。",
+      "阻断条件": [
+        "只有描述没有产物却声称完成",
+        "未运行只读验收却声称验收通过",
+        "阻断项大于0仍声称交付完成",
+        "用估算进度替代证据进度",
+        "绕过00总管改写全局进度"
+      ],
+      "准入证据": "progress.claim_basis=verified_local_artifacts，blockers=0，validator_passed=true。"
+    }
+  ],
+  "安全边界": {
+    "触发n8n": false,
+    "导入n8n工作流": false,
+    "启用n8n工作流": false,
+    "调用webhook": false,
+    "发送企业微信": false,
+    "写正式库": false,
+    "调用Redis服务": false,
+    "调用券商接口": false,
+    "自动交易": false,
+    "下单": false,
+    "外部网络调用": false,
+    "新增OpenClaw原件": false,
+    "新增Hermes原件": false
+  }
+}

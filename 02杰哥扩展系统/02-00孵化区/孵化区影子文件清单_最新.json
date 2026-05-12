@@ -1,0 +1,880 @@
+﻿{
+    "version":  "1.2",
+    "updated_at":  "2026-05-07 16:08:50 +08:00",
+    "status":  "shadow_file_inventory_latest_snapshot_not_ledger",
+    "root":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区",
+    "file_count":  96,
+    "boundary":  {
+                     "wechat":  false,
+                     "external_send":  false,
+                     "formal_database":  false,
+                     "real_business_action":  false,
+                     "n8n":  false
+                 },
+    "files":  [
+                  {
+                      "relative_path":  "本职工作业务影子底座\\MATERIAL_CARD_OFFICE_001_制度流程_空白资料登记卡_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1102,
+                      "last_write_time":  "2026-05-07 15:41:41",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\OFFICE_SHADOW_001_制度流程梳理_空白影子样例_v1.0.md",
+                      "extension":  ".md",
+                      "length":  864,
+                      "last_write_time":  "2026-05-07 14:24:53",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\OFFICE_SHADOW_002_流程资料登记_空白影子样例_v1.0.md",
+                      "extension":  ".md",
+                      "length":  741,
+                      "last_write_time":  "2026-05-07 16:06:51",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\REVIEW_RECEIPT_OFFICE_001_空白复核回执_v1.0.md",
+                      "extension":  ".md",
+                      "length":  629,
+                      "last_write_time":  "2026-05-07 15:41:41",
+                      "has_shadow_marker":  false,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\本职工作_开工五问校准_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1896,
+                      "last_write_time":  "2026-05-07 13:35:09",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\本职工作待复核问题清单_最新.md",
+                      "extension":  ".md",
+                      "length":  655,
+                      "last_write_time":  "2026-05-07 16:07:25",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\本职工作工作流梳理_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1680,
+                      "last_write_time":  "2026-05-07 13:43:47",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\本职工作任务场景拆解_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1964,
+                      "last_write_time":  "2026-05-07 13:43:47",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\本职工作数据源清单_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1569,
+                      "last_write_time":  "2026-05-07 13:35:09",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\本职工作台账字段草案_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1017,
+                      "last_write_time":  "2026-05-07 14:16:56",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\本职工作需求草案_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1773,
+                      "last_write_time":  "2026-05-07 13:35:09",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\本职工作影子底座索引_最新.json",
+                      "extension":  ".json",
+                      "length":  1243,
+                      "last_write_time":  "2026-05-07 16:07:25",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\本职工作影子底座索引_最新.md",
+                      "extension":  ".md",
+                      "length":  2103,
+                      "last_write_time":  "2026-05-07 16:07:25",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\本职工作制度流程资料模板_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1042,
+                      "last_write_time":  "2026-05-07 14:16:56",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "本职工作业务影子底座\\本职工作资料来源清单_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1572,
+                      "last_write_time":  "2026-05-07 13:35:09",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区R0自检报告_最新.json",
+                      "extension":  ".json",
+                      "length":  2283,
+                      "last_write_time":  "2026-05-07 15:44:13",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区R0自检报告_最新.md",
+                      "extension":  ".md",
+                      "length":  729,
+                      "last_write_time":  "2026-05-07 15:44:13",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区W1连续施工队列_最新.json",
+                      "extension":  ".json",
+                      "length":  1303,
+                      "last_write_time":  "2026-05-07 16:06:03",
+                      "has_shadow_marker":  false,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区W1连续施工队列_最新.md",
+                      "extension":  ".md",
+                      "length":  1053,
+                      "last_write_time":  "2026-05-07 16:06:03",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区待补事项总表_最新.md",
+                      "extension":  ".md",
+                      "length":  1559,
+                      "last_write_time":  "2026-05-07 14:42:07",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区阶段验收报告_最新.md",
+                      "extension":  ".md",
+                      "length":  1312,
+                      "last_write_time":  "2026-05-07 14:42:07",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区通用能力覆盖矩阵_最新.json",
+                      "extension":  ".json",
+                      "length":  975,
+                      "last_write_time":  "2026-05-07 14:42:07",
+                      "has_shadow_marker":  false,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区通用能力覆盖矩阵_最新.md",
+                      "extension":  ".md",
+                      "length":  2349,
+                      "last_write_time":  "2026-05-07 14:42:07",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区下一步影子施工队列_最新.md",
+                      "extension":  ".md",
+                      "length":  1360,
+                      "last_write_time":  "2026-05-07 14:06:08",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区新对话先读这个.md",
+                      "extension":  ".md",
+                      "length":  1417,
+                      "last_write_time":  "2026-05-07 15:32:35",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区影子底座成熟度快照_最新.json",
+                      "extension":  ".json",
+                      "length":  2861,
+                      "last_write_time":  "2026-05-07 15:43:41",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区影子底座成熟度快照_最新.md",
+                      "extension":  ".md",
+                      "length":  647,
+                      "last_write_time":  "2026-05-07 15:43:41",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区影子底座总索引_最新.json",
+                      "extension":  ".json",
+                      "length":  7369,
+                      "last_write_time":  "2026-05-07 16:06:28",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区影子底座总索引_最新.md",
+                      "extension":  ".md",
+                      "length":  7764,
+                      "last_write_time":  "2026-05-07 16:06:28",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区影子工作包_最新.json",
+                      "extension":  ".json",
+                      "length":  1096,
+                      "last_write_time":  "2026-05-07 16:06:03",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区影子工作包_最新.md",
+                      "extension":  ".md",
+                      "length":  1844,
+                      "last_write_time":  "2026-05-07 16:06:03",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区影子文件清单_最新.json",
+                      "extension":  ".json",
+                      "length":  39006,
+                      "last_write_time":  "2026-05-07 15:43:16",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区影子文件清单_最新.md",
+                      "extension":  ".md",
+                      "length":  8895,
+                      "last_write_time":  "2026-05-07 15:43:16",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "孵化区影子资产关系图_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1274,
+                      "last_write_time":  "2026-05-07 16:06:03",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "人工复核到进化候选操作卡_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1164,
+                      "last_write_time":  "2026-05-07 15:14:00",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "人工复核回执Schema草案_v1.0.json",
+                      "extension":  ".json",
+                      "length":  862,
+                      "last_write_time":  "2026-05-07 14:44:31",
+                      "has_shadow_marker":  false,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "人工复核回执填写说明_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1172,
+                      "last_write_time":  "2026-05-07 15:45:24",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "人工复核回执通用模板_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1412,
+                      "last_write_time":  "2026-05-07 14:23:47",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\MATERIAL_CARD_VIDEO_001_平台规范_空白资料登记卡_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1187,
+                      "last_write_time":  "2026-05-07 15:41:41",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\MATERIAL_CARD_VIDEO_002_素材授权_空白资料登记卡_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1089,
+                      "last_write_time":  "2026-05-07 16:06:51",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\REVIEW_RECEIPT_VIDEO_001_空白复核回执_v1.0.md",
+                      "extension":  ".md",
+                      "length":  683,
+                      "last_write_time":  "2026-05-07 15:41:41",
+                      "has_shadow_marker":  false,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\VIDEO_SHADOW_001_短视频脚本拆解_空白影子样例_v1.0.md",
+                      "extension":  ".md",
+                      "length":  945,
+                      "last_write_time":  "2026-05-07 14:24:53",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\视频平台规范来源卡模板_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1075,
+                      "last_write_time":  "2026-05-07 14:16:56",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\视频素材授权字段模板_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1165,
+                      "last_write_time":  "2026-05-07 14:16:56",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\视频制作_开工五问校准_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1795,
+                      "last_write_time":  "2026-05-07 13:58:08",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\视频制作待复核问题清单_最新.md",
+                      "extension":  ".md",
+                      "length":  698,
+                      "last_write_time":  "2026-05-07 16:07:25",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\视频制作工作流梳理_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1722,
+                      "last_write_time":  "2026-05-07 13:58:08",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\视频制作任务场景拆解_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1575,
+                      "last_write_time":  "2026-05-07 13:58:08",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\视频制作数据源清单_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1444,
+                      "last_write_time":  "2026-05-07 13:58:08",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\视频制作需求草案_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1668,
+                      "last_write_time":  "2026-05-07 13:58:08",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\视频制作影子底座索引_最新.json",
+                      "extension":  ".json",
+                      "length":  1418,
+                      "last_write_time":  "2026-05-07 16:07:25",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\视频制作影子底座索引_最新.md",
+                      "extension":  ".md",
+                      "length":  2210,
+                      "last_write_time":  "2026-05-07 16:07:25",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "视频制作业务影子底座\\视频制作资料来源清单_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1375,
+                      "last_write_time":  "2026-05-07 13:58:08",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\MATERIAL_CARD_TAX_001_地方口径_空白资料登记卡_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1097,
+                      "last_write_time":  "2026-05-07 15:41:41",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\MATERIAL_CARD_TAX_002_政策资料_空白资料登记卡_v1.0.md",
+                      "extension":  ".md",
+                      "length":  926,
+                      "last_write_time":  "2026-05-07 16:06:51",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\REVIEW_RECEIPT_TAX_001_空白复核回执_v1.0.md",
+                      "extension":  ".md",
+                      "length":  626,
+                      "last_write_time":  "2026-05-07 15:41:41",
+                      "has_shadow_marker":  false,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\软件产品即征即退_测算前置字段清单_v1.0.md",
+                      "extension":  ".md",
+                      "length":  3287,
+                      "last_write_time":  "2026-05-07 11:33:08",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\软件产品即征即退_影子样例_v1.0.md",
+                      "extension":  ".md",
+                      "length":  3740,
+                      "last_write_time":  "2026-05-07 11:52:17",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\软件产品即征即退_影子样例_模板符合性检查_v1.0.md",
+                      "extension":  ".md",
+                      "length":  2039,
+                      "last_write_time":  "2026-05-07 11:32:09",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收待复核问题清单_最新.md",
+                      "extension":  ".md",
+                      "length":  640,
+                      "last_write_time":  "2026-05-07 16:07:25",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收地方口径待补模板_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1066,
+                      "last_write_time":  "2026-05-07 14:16:56",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收脱敏复核样例结构_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1193,
+                      "last_write_time":  "2026-05-07 14:16:56",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收业务_开工五问校准_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1859,
+                      "last_write_time":  "2026-05-07 13:44:43",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收业务数据源清单_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1691,
+                      "last_write_time":  "2026-05-07 13:44:43",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收业务需求草案_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1744,
+                      "last_write_time":  "2026-05-07 13:44:43",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收影子底座索引_最新.json",
+                      "extension":  ".json",
+                      "length":  7409,
+                      "last_write_time":  "2026-05-07 12:12:05",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收影子底座索引_最新.md",
+                      "extension":  ".md",
+                      "length":  4717,
+                      "last_write_time":  "2026-05-07 16:07:25",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收政策库操作演练_全文有效检索_即征即退_v1.0.json",
+                      "extension":  ".json",
+                      "length":  1876,
+                      "last_write_time":  "2026-05-07 12:08:08",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收政策库操作演练_全文有效检索_即征即退_v1.0.md",
+                      "extension":  ".md",
+                      "length":  3329,
+                      "last_write_time":  "2026-05-07 12:08:08",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收政策下载筛选规程_v1.0.md",
+                      "extension":  ".md",
+                      "length":  3097,
+                      "last_write_time":  "2026-05-07 12:08:18",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收政策元数据卡_财税2011_100_v1.0.json",
+                      "extension":  ".json",
+                      "length":  2098,
+                      "last_write_time":  "2026-05-07 12:11:28",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收政策元数据卡_财税2011_100_v1.0.md",
+                      "extension":  ".md",
+                      "length":  2344,
+                      "last_write_time":  "2026-05-07 12:11:11",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收政策元数据卡_增值税法2024_v1.0.json",
+                      "extension":  ".json",
+                      "length":  2355,
+                      "last_write_time":  "2026-05-07 12:11:28",
+                      "has_shadow_marker":  false,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收政策元数据卡_增值税法2024_v1.0.md",
+                      "extension":  ".md",
+                      "length":  2224,
+                      "last_write_time":  "2026-05-07 12:11:46",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收政策指引卡_软件产品即征即退_20241025_v1.0.md",
+                      "extension":  ".md",
+                      "length":  2128,
+                      "last_write_time":  "2026-05-07 11:47:01",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收资料来源清单_v1.0.md",
+                      "extension":  ".md",
+                      "length":  2729,
+                      "last_write_time":  "2026-05-07 11:52:17",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "税收业务影子底座\\税收资料元数据字段_v1.0.md",
+                      "extension":  ".md",
+                      "length":  3146,
+                      "last_write_time":  "2026-05-07 12:11:04",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  false,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子到进化候选记录模板_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1346,
+                      "last_write_time":  "2026-05-07 14:26:20",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子底座成熟度评分草案_v1.0.json",
+                      "extension":  ".json",
+                      "length":  1414,
+                      "last_write_time":  "2026-05-07 15:32:35",
+                      "has_shadow_marker":  false,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子底座成熟度评分草案_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1296,
+                      "last_write_time":  "2026-05-07 15:32:35",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子底座统一人工闸口清单_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1795,
+                      "last_write_time":  "2026-05-07 14:06:08",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子底座统一验收清单_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1904,
+                      "last_write_time":  "2026-05-07 14:06:08",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  true
+                  },
+                  {
+                      "relative_path":  "影子失败闭口规则草案_v1.0.md",
+                      "extension":  ".md",
+                      "length":  953,
+                      "last_write_time":  "2026-05-07 14:43:00",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子样例Schema草案_v1.0.json",
+                      "extension":  ".json",
+                      "length":  882,
+                      "last_write_time":  "2026-05-07 14:44:31",
+                      "has_shadow_marker":  false,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  true
+                  },
+                  {
+                      "relative_path":  "影子样例创建操作卡_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1058,
+                      "last_write_time":  "2026-05-07 15:14:00",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子样例复盘字段清单_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1124,
+                      "last_write_time":  "2026-05-07 14:26:20",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子样例命名与编号规则草案_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1445,
+                      "last_write_time":  "2026-05-07 14:23:47",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子样例统一结构模板_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1317,
+                      "last_write_time":  "2026-05-07 14:23:47",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子源头优先治理规则草案_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1128,
+                      "last_write_time":  "2026-05-07 14:43:00",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子只读预检细化模板_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1316,
+                      "last_write_time":  "2026-05-07 14:43:00",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子资料登记卡Schema草案_v1.0.json",
+                      "extension":  ".json",
+                      "length":  918,
+                      "last_write_time":  "2026-05-07 14:44:31",
+                      "has_shadow_marker":  false,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子资料登记卡填写说明_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1249,
+                      "last_write_time":  "2026-05-07 15:45:24",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子资料登记卡通用模板_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1616,
+                      "last_write_time":  "2026-05-07 14:21:42",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "影子资料接入操作卡_v1.0.md",
+                      "extension":  ".md",
+                      "length":  1136,
+                      "last_write_time":  "2026-05-07 15:14:00",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "正式开工前差距清单_最新.json",
+                      "extension":  ".json",
+                      "length":  1304,
+                      "last_write_time":  "2026-05-07 15:34:28",
+                      "has_shadow_marker":  false,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  },
+                  {
+                      "relative_path":  "正式开工前差距清单_最新.md",
+                      "extension":  ".md",
+                      "length":  1631,
+                      "last_write_time":  "2026-05-07 15:34:28",
+                      "has_shadow_marker":  true,
+                      "has_boundary_marker":  true,
+                      "has_formal_capability_claim":  false
+                  }
+              ]
+}

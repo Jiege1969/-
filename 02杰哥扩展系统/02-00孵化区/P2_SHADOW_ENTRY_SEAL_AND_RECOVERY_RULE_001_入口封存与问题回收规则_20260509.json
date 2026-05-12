@@ -1,0 +1,48 @@
+{
+  "rule_id": "P2_SHADOW_ENTRY_SEAL_AND_RECOVERY_RULE_001",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S9",
+  "status": "seal_and_recovery_preview_rule_not_auto_writer",
+  "purpose": "在分流回执映射到影子入口之前增加封存与问题回收层，防止预填建议直接写入业务入口",
+  "upstream_dependency": "P2-S8 分流回执到影子入口映射预演",
+  "buckets": {
+    "ready_shadow_preview": {
+      "allowed_target_lines": ["tax", "office_work", "video_production", "shared_policy_evidence"],
+      "required_redline_status": "pass",
+      "next_allowed_action": "等待人工复核后再决定是否填写对应影子入口",
+      "write_target_entry": false
+    },
+    "pause_gap_archive": {
+      "allowed_target_lines": ["pause"],
+      "required_redline_status": "pass",
+      "next_allowed_action": "只记录缺口、来源不清或条件不足，不生成业务结论",
+      "write_target_entry": false
+    },
+    "blocked_redline_archive": {
+      "allowed_redline_status": "blocked",
+      "next_allowed_action": "阻断并进入问题回收，不进入任何业务入口",
+      "write_target_entry": false
+    }
+  },
+  "hard_rules": {
+    "preview_only": true,
+    "write_target_entry": false,
+    "human_review_required": true,
+    "formal_capability_claim": false,
+    "blocked_can_enter_business_entry": false,
+    "pause_can_enter_business_entry": false,
+    "requires_human_review_before_entry_fill": true
+  },
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "名称": "L3行业价格本地观测接入记录",
+  "日期": "2026-05-08",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "正式候选接入记录",
+  "状态": "partial",
+  "本次新增": [
+    "03数据/245L3评分基础资产/industry_price_observations_ledger_v1.0.json",
+    "02脚本/更新行业价格趋势证据卡_本地观测.py",
+    "03数据/245L3评分基础资产/云南锗业_行业价格证据卡_本地观测_latest.json",
+    "03数据/245L3评分基础资产/天齐锂业_行业价格证据卡_本地观测_latest.json",
+    "03数据/245L3评分基础资产/正丹股份_行业价格证据卡_本地观测_latest.json"
+  ],
+  "适配器同步": {
+    "script": "02脚本/L3企业微信短答适配器.py",
+    "change": "优先读取本地观测latest行业价格证据卡，并在为什么的政策/行业部分输出行业价格一句话。",
+    "hash_after": "3D506AE7182404DE909C7EC6471A30AE84855D416D3E9CB645E51ABC9DAE6679"
+  },
+  "当前样本状态": [
+    {
+      "stock": "云南锗业",
+      "product": "锗锭",
+      "level": "source_registered",
+      "front_sentence": "锗锭来源已登记但价格尚未入账，暂不能作为提高关注等级的依据。"
+    },
+    {
+      "stock": "天齐锂业",
+      "product": "电池级碳酸锂",
+      "level": "single_observation",
+      "front_sentence": "电池级碳酸锂已有单点价格观测，但还缺连续趋势，只能弱参考。"
+    },
+    {
+      "stock": "正丹股份",
+      "product": "偏苯三酸酐/TMA",
+      "level": "source_registered",
+      "front_sentence": "偏苯三酸酐/TMA来源已登记但价格尚未入账，暂不能作为提高关注等级的依据。"
+    }
+  ],
+  "验收": {
+    "py_compile": "passed",
+    "l3_short_answer_validation": "passed",
+    "bridge_dry_run_validation": "passed"
+  },
+  "安全边界": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_scrape_member_data": true
+  }
+}

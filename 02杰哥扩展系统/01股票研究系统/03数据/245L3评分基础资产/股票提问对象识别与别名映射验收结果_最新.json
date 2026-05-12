@@ -1,0 +1,15 @@
+{
+  "name": "股票提问对象识别与别名映射验收结果",
+  "generated_at": "2026-05-08 10:50:51",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "sample_count": 5,
+    "object_clear_count": 5,
+    "ambiguous_count": 0,
+    "formal_route_write_allowed": false,
+    "real_wecom_send_allowed": false
+  },
+  "auto_continue_policy": "通过后继续执行第三批下一小闭环；不等待用户确认。"
+}

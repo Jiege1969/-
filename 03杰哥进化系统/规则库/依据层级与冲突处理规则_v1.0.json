@@ -1,0 +1,168 @@
+﻿{
+    "version":  "1.0",
+    "effective_date":  "2026-05-07",
+    "name":  "依据层级与冲突处理规则",
+    "core_principle":  "上位依据优先，下位流程只能细化执行，不能反向覆盖。",
+    "user_core_chain":  [
+                            "宪法",
+                            "法律",
+                            "部门规章制度",
+                            "单位企业制度",
+                            "职能科室工作流程"
+                        ],
+    "general_hierarchy":  [
+                              {
+                                  "rank":  0,
+                                  "level":  "constitution_or_fundamental_principle",
+                                  "label":  "宪法/根本原则"
+                              },
+                              {
+                                  "rank":  1,
+                                  "level":  "law",
+                                  "label":  "法律"
+                              },
+                              {
+                                  "rank":  2,
+                                  "level":  "administrative_regulation",
+                                  "label":  "行政法规"
+                              },
+                              {
+                                  "rank":  3,
+                                  "level":  "department_rule_or_normative_policy",
+                                  "label":  "部门规章、规范性文件、主管机关政策"
+                              },
+                              {
+                                  "rank":  4,
+                                  "level":  "local_or_enterprise_policy",
+                                  "label":  "地方口径、单位/企业制度"
+                              },
+                              {
+                                  "rank":  5,
+                                  "level":  "department_workflow_or_sop",
+                                  "label":  "职能科室工作流程、操作SOP、人工经验"
+                              }
+                          ],
+    "conflict_rules":  [
+                           {
+                               "condition":  "lower_level_conflicts_with_higher_level",
+                               "action":  "use_higher_level_as_candidate_basis_and_mark_lower_level_as_risk_or_pending_review"
+                           },
+                           {
+                               "condition":  "enterprise_policy_conflicts_with_law_or_rule",
+                               "action":  "do_not_output_final_conclusion_from_enterprise_policy; mark_conflict"
+                           },
+                           {
+                               "condition":  "department_workflow_conflicts_with_enterprise_policy",
+                               "action":  "enterprise_policy_prevails; workflow_is_process_reference_only"
+                           },
+                           {
+                               "condition":  "local_practice_differs_from_national_policy",
+                               "action":  "national_policy_is_baseline; local_practice_requires_region_scope_and_review"
+                           },
+                           {
+                               "condition":  "human_experience_conflicts_with_formal_basis",
+                               "action":  "experience_only_as_evolution_sample_or_risk_hint"
+                           }
+                       ],
+    "metadata_fields_required":  [
+                                     "hierarchy_rank",
+                                     "legal_level",
+                                     "source_scope",
+                                     "conflict_with_higher_level",
+                                     "conflict_note",
+                                     "usable_as_basis",
+                                     "usable_as_process_reference"
+                                 ],
+    "output_rule":  "任何业务草案必须说明最高层级依据、下位流程或经验是否存在、是否冲突、冲突时列为待复核事项。",
+    "safety_boundary":  {
+                            "may_generate_draft":  true,
+                            "may_override_higher_level_basis":  false,
+                            "may_use_workflow_as_final_basis":  false,
+                            "requires_human_review_on_conflict":  true,
+                            "may_lower_workflow_override_higher_rule":  false
+                        },
+    "scope_upgrade":  "全智能体系，包括搭建工作、运行运转机制、各系统内部机制、系统间协作机制、业务输出和进化沉淀",
+    "applies_to_system_mechanisms":  [
+                                         "system_building",
+                                         "runtime_operations",
+                                         "internal_subsystem_rules",
+                                         "cross_system_collaboration",
+                                         "business_outputs",
+                                         "evolution_learning"
+                                     ],
+    "system_governance_hierarchy":  [
+                                        "系统总目标/根本原则",
+                                        "全体系底层逻辑",
+                                        "总管运行规则",
+                                        "进化系统规则",
+                                        "业务系统母本与通用模板",
+                                        "具体业务线方案",
+                                        "脚本、工作流、计划任务",
+                                        "操作记录、案例、人工经验"
+                                    ],
+    "root_law_to_workflow_model":  {
+                                       "制度类比":  [
+                                                    "宪法级根本法则",
+                                                    "法律级总规则",
+                                                    "部门制度级分工规则",
+                                                    "下级规章级执行规则",
+                                                    "基层工作流程",
+                                                    "单次操作动作"
+                                                ],
+                                       "系统对应":  [
+                                                    "系统总目标与底层逻辑",
+                                                    "总管系统规则",
+                                                    "进化系统规则",
+                                                    "智能系统/扩展系统通用机制",
+                                                    "税收、股票、视频、企业微信等业务线方案",
+                                                    "脚本、接口、工作流、计划任务",
+                                                    "命令、函数、代码片段、字段"
+                                                ],
+                                       "执行规则":  "越上位越负责方向、边界、价值和根本稳定；越下位越负责执行、细化、证据和局部效率。下位动作可以暴露上位规则缺口，但不能直接覆盖上位规则。"
+                                   },
+    "governance_obedience_rule":  "下级产物必须服从上级规则；冲突时修正或停用下级产物，不迁就错误产物。",
+    "真理来源裁定":  {
+                   "裁定时间":  "2026-05-10 14:02:21",
+                   "裁定状态":  "已裁定",
+                   "人读规则语义真源":  "D:\\杰哥智能化系统\\03杰哥进化系统\\规则库\\依据层级与冲突处理规则_v1.0.md",
+                   "机器映射文件":  "D:\\杰哥智能化系统\\03杰哥进化系统\\规则库\\依据层级与冲突处理规则_v1.0.json",
+                   "主从关系":  "Markdown作为人读规则语义真源；JSON作为机器映射和执行检查投影。",
+                   "冲突处理":  "若JSON与Markdown冲突，以Markdown人读规则语义为准，并同步修正JSON。",
+                   "处置边界":  "规则库资产不按普通运行状态批量清理；两份文件可共存，但必须明确主从关系。"
+               },
+    "Markdown同步修正说明":  {
+                           "同步时间":  "2026-05-10 14:02:21",
+                           "同步依据":  "D:\\杰哥智能化系统\\03杰哥进化系统\\规则库\\依据层级与冲突处理规则_v1.0.md",
+                           "说明":  "JSON保留为强机器映射，已补充与Markdown真源一致的层级、冲突处理、输出、入库字段和系统应用口径。",
+                           "人读主文关键章节":  [
+                                            "为什么建立本规则",
+                                            "通用依据层级",
+                                            "系统治理层级",
+                                            "根本法则到基层流程",
+                                            "冲突处理",
+                                            "输出要求",
+                                            "资料入库字段要求",
+                                            "对各系统的应用",
+                                            "总则"
+                                        ]
+                       },
+    "why_established":  "防止系统把基层流程、临时脚本、业务口径或人工经验误当成上位规则，造成推理倒挂和运行越权；所有搭建、运行、业务草案、资料入库、系统协作和进化沉淀必须先判断依据层级，再判断适用性和执行权限。",
+    "output_requirements":  [
+                                "当前采用的最高层级依据是什么",
+                                "是否存在下位制度、流程或经验口径",
+                                "下位依据是执行细化还是可能与上位依据冲突",
+                                "若冲突，不强行下结论，列为待复核事项"
+                            ],
+    "system_applications":  {
+                                "搭建工作":  "施工脚本、临时方案、并行窗口不得绕过总纲、安全边界和当前主线规划",
+                                "运行运转机制":  "计划任务、服务状态、n8n工作流、总管调度不得用局部便利覆盖上位规则",
+                                "系统间协作":  "子系统只在自己的职责边界内细化执行，不得反向改写总管边界或进化规则",
+                                "税收系统":  "国家级法律政策优先，地方口径和基层流程后补，不阻塞国家级资料库建设",
+                                "股票系统":  "交易规则、监管规则优先，个人经验和策略只能作分析参考",
+                                "内容系统":  "法律法规、平台规则、授权协议优先，个人风格偏好后置",
+                                "视频系统":  "版权授权、平台规则优先，制作流程和创意偏好后置",
+                                "本职工作系统":  "上级制度和单位制度优先，科室流程作执行参考",
+                                "总管系统":  "分流时先判断是否存在上位依据冲突，冲突项不得自动执行",
+                                "进化系统":  "人工修正不得直接覆盖上位依据，只能形成规则建议或案例样本"
+                            }
+}

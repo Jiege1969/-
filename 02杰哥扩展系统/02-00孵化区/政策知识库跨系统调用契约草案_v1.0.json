@@ -1,0 +1,101 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "name": "政策知识库跨系统调用契约草案",
+  "asset_identity": "cross_extension_shared_policy_evidence_call_contract_draft",
+  "risk_level": "W1",
+  "boundary": {
+    "production_interface": false,
+    "trigger_n8n": false,
+    "wecom_send": false,
+    "write_formal_database": false,
+    "real_business_action": false
+  },
+  "positioning": "政策知识库作为共享政策证据底座，可以被扩展系统内部轻量只读查询，但不直接输出业务结论。第一阶段不建议上n8n。",
+  "recommended_phase_1": "扩展系统内部轻量调配：税收政策知识库提供只读证据，其他扩展系统按需少量查询，各系统在自己的业务契约里解释，总管只登记共享能力和边界。",
+  "n8n_position": "后置。n8n适合稳定后的自动化编排；当前属于W3，不作为第一阶段实现方式。",
+  "architecture": {
+    "governor_system_role": [
+      "记录共享证据源注册表",
+      "判断哪个系统可以查什么",
+      "提醒边界和风险"
+    ],
+    "extension_system_role": [
+      "通过只读查询契约调用政策证据底座",
+      "在本业务分析契约内生成待复核草案"
+    ],
+    "policy_evidence_base_role": [
+      "提供政策标题、文号、来源、有效状态、依据层级、适用条件、待核验项",
+      "不输出正式业务结论"
+    ]
+  },
+  "call_input_fields": [
+    "requesting_system",
+    "query_intent",
+    "business_context",
+    "topic_keywords",
+    "expected_evidence_level",
+    "region",
+    "time_scope"
+  ],
+  "call_output_fields": [
+    "evidence_id",
+    "title",
+    "document_number",
+    "issuing_authority",
+    "evidence_level",
+    "validity_status",
+    "source_url",
+    "source_path",
+    "extracted_conditions",
+    "topic_tags",
+    "risk_flags",
+    "allowed_use",
+    "forbidden_use"
+  ],
+  "usage_by_system": [
+    {
+      "system": "tax_business_analysis_assistant",
+      "allowed_use": ["政策依据", "适用条件", "资料缺口", "待复核报告"],
+      "forbidden_use": ["直接生成正式税务意见"]
+    },
+    {
+      "system": "stock_research_system",
+      "allowed_use": ["政策事件", "行业监管", "宏观政策", "产业政策证据"],
+      "forbidden_use": ["把税务适用结论套进股票评分"]
+    },
+    {
+      "system": "office_work_system",
+      "allowed_use": ["制度依据", "流程依据", "合规提示", "资料清单"],
+      "forbidden_use": ["替代审批或盖章流程"]
+    },
+    {
+      "system": "video_production_system",
+      "allowed_use": ["平台规则", "版权政策", "素材授权政策线索"],
+      "forbidden_use": ["自动发布", "自动判定版权安全"]
+    },
+    {
+      "system": "governor_system",
+      "allowed_use": ["证据源登记", "调用边界", "风险提醒"],
+      "forbidden_use": ["直接替业务系统生成专业结论"]
+    }
+  ],
+  "risk_classification": {
+    "read_shared_registry": "R0",
+    "cross_system_call_design_draft": "W1",
+    "readonly_call_sample": "W1",
+    "extension_internal_readonly_coordination": "W1",
+    "formal_shared_query_config": "W3",
+    "modify_policy_crawler_script": "W3",
+    "allow_other_system_write_policy_base": "W3_default_forbidden",
+    "create_n8n_workflow": "W3_requires_pause",
+    "connect_wecom_external_send": "W3_requires_pause"
+  },
+  "hard_boundaries": [
+    "不允许跨系统互相写库。",
+    "不允许税务政策库直接输出其他业务结论。",
+    "不允许调用方省略依据层级和有效状态。",
+    "不允许待核验资料被升级为确认依据。",
+    "不允许未确认前接入 n8n、企业微信、自动调度或外发。"
+  ]
+}

@@ -1,0 +1,101 @@
+# ============================================================
+# Name: docker-compose.v3-draft.yml
+# Purpose: Draft target shape for the v3 core service stack.
+# Trigger: Documentation and review only. Do not run as production compose.
+# Owner system: 01 core system.
+# Dependencies: Docker Desktop, WSL2, NVIDIA container runtime.
+# Safety: Draft uses 127.0.0.1 ports and must be converted to an approved
+#         implementation compose file before execution.
+# Change log: 2026-04-26 created draft stack definition.
+# ============================================================
+
+services:
+  agent_gateway:
+    image: jiege-v3-agent-gateway:draft
+    container_name: jiege_v3_agent_gateway
+    restart: unless-stopped
+    env_file:
+      - ./环境变量模板.env
+    environment:
+      - AGENT_CORE_URL=http://agent_core:8000
+    ports:
+      - "127.0.0.1:28080:8000"
+    depends_on:
+      - agent_core
+
+  agent_core:
+    image: jiege-v3-agent-core:draft
+    container_name: jiege_v3_agent_core
+    restart: unless-stopped
+    env_file:
+      - ./环境变量模板.env
+    environment:
+      - OLLAMA_URL=http://ollama:11434
+      - REDIS_URL=redis://redis:6379/0
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - N8N_BASE_URL=http://n8n:5678
+    ports:
+      - "127.0.0.1:28100:8000"
+    depends_on:
+      - ollama
+      - redis
+      - postgres
+
+  ollama:
+    image: ollama/ollama:0.20.5
+    container_name: jiege_v3_ollama
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:29134:11434"
+    volumes:
+      - 'D:\杰哥智能化系统\01杰哥智能系统\03数据\ollama:/root/.ollama'
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_NUM_PARALLEL=2
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: jiege_v3_postgres
+    restart: unless-stopped
+    env_file:
+      - ./环境变量模板.env
+    ports:
+      - "127.0.0.1:25432:5432"
+    volumes:
+      - 'D:\杰哥智能化系统\01杰哥智能系统\03数据\postgres:/var/lib/postgresql/data'
+
+  redis:
+    image: redis:7.2.5-alpine
+    container_name: jiege_v3_redis
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:26379:6379"
+    volumes:
+      - 'D:\杰哥智能化系统\01杰哥智能系统\03数据\redis:/data'
+    command: redis-server --appendonly yes --maxmemory 2gb --maxmemory-policy allkeys-lru
+
+  n8n:
+    image: n8nio/n8n:1.123.30
+    container_name: jiege_v3_n8n
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:28679:5678"
+    volumes:
+      - 'D:\杰哥智能化系统\01杰哥智能系统\03数据\n8n:/home/node/.n8n'
+    environment:
+      - N8N_PROTOCOL=http
+      - N8N_HOST=127.0.0.1
+      - N8N_PORT=5678
+      - WEBHOOK_URL=http://127.0.0.1:28679
+
+networks:
+  default:
+    name: jiege_v3_network

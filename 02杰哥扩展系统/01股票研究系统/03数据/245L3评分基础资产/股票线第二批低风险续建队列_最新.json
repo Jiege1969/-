@@ -1,0 +1,120 @@
+{
+  "name": "股票线第二批低风险续建队列",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:45:55",
+  "asset_identity": "W1第二批连续施工队列",
+  "status": "active",
+  "source_assets": {
+    "first_queue": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票线连续施工自动续建队列_最新.json",
+    "first_queue_completed_count": 6,
+    "unified_acceptance": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票L3统一刷新影子验收总表验收_最新.json",
+    "unified_acceptance_passed": true
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_real_refresh": true,
+  "not_score_write": true,
+  "not_formal_database_write": true,
+  "auto_continue_rule": {
+    "when_queue_completed": "自动生成下一批W1/W2低风险续建队列，不等待用户确认。",
+    "when_redline_detected": "只登记阻断，不实施。",
+    "final_response_policy": "最终回复只做阶段汇报，不把下一步建议当成等待确认。"
+  },
+  "construction_queue": [
+    {
+      "id": "STOCK-AUTO2-001",
+      "title": "L3报告生成前置闸口矩阵",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把财报资金、行业价格、政策事件、市场风格、复盘候选的ready状态转成报告允许/禁止口径。",
+      "validation_asset": "L3报告生成前置闸口矩阵验收_最新.json",
+      "completed_at": "2026-05-08 10:28:43"
+    },
+    {
+      "id": "STOCK-AUTO2-002",
+      "title": "五样本前后台分层输出验收矩阵",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "验证前台结论短答少而准，后台保留evidence/missing/confidence/next_review。",
+      "validation_asset": "五样本前后台分层输出验收矩阵验收_最新.json",
+      "completed_at": "2026-05-08 10:33:19"
+    },
+    {
+      "id": "STOCK-AUTO2-003",
+      "title": "财报资金缺口主动暴露规则验收",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把财报缺失、资金缺失、机构缺失转成前台固定缺口话术和后台阻断字段。",
+      "validation_asset": "财报资金缺口主动暴露规则验收结果_最新.json",
+      "completed_at": "2026-05-08 10:37:31"
+    },
+    {
+      "id": "STOCK-AUTO2-004",
+      "title": "行业价格连续观测入账前检查清单",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "明确5点、20点、同口径、来源URL、核验时间等入账前条件。",
+      "validation_asset": "行业价格连续观测入账前检查清单验收_最新.json",
+      "completed_at": "2026-05-08 10:41:30"
+    },
+    {
+      "id": "STOCK-AUTO2-005",
+      "title": "政策事件候选到入库阻断清单",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "政策候选未完成官方来源、方向、强度、暴露度、时效衰减前不得入分。",
+      "validation_asset": "政策事件候选到入库阻断清单验收_最新.json",
+      "completed_at": "2026-05-08 10:43:49"
+    },
+    {
+      "id": "STOCK-AUTO2-006",
+      "title": "第二批统一影子验收总表",
+      "risk_level": "W2",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "汇总第二批队列所有低风险闭环验收结果。",
+      "validation_asset": "股票线第二批统一影子验收总表验收_最新.json",
+      "completed_at": "2026-05-08 10:45:55"
+    }
+  ],
+  "blocked_queue": [
+    {
+      "id": "STOCK-AUTO2-BLOCK-001",
+      "title": "接入企业微信真实发送",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "涉及真实外发和公共接入配置，必须交回总管判断。"
+    },
+    {
+      "id": "STOCK-AUTO2-BLOCK-002",
+      "title": "将影子闸口写入正式评分脚本或配置",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "涉及正式脚本/配置/评分权重，必须交回总管判断。"
+    }
+  ],
+  "summary": {
+    "queue_count": 6,
+    "completed_count": 6,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

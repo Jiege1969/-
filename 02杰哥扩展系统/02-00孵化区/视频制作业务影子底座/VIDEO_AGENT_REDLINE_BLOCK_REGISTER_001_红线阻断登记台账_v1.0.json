@@ -1,0 +1,29 @@
+{
+  "id": "VIDEO_AGENT_REDLINE_BLOCK_REGISTER_001",
+  "name": "红线阻断登记台账",
+  "asset_identity": "video_creation_agent_shadow_redline_block_register",
+  "stage": "W1_R0",
+  "status": "blank_register_block_record_only",
+  "fields": {
+    "block_id": "VAI-BLOCK-0000",
+    "linked_input_id": "to_be_filled",
+    "redline_hit": "to_be_filled",
+    "request_summary_desensitized": "to_be_filled",
+    "block_reason": "to_be_filled",
+    "alternative_shadow_action": "to_be_filled",
+    "real_system_triggered": false,
+    "needs_manager_decision": "to_be_filled",
+    "next_status": "to_be_filled"
+  },
+  "forbidden": [
+    "do_not_execute_redline_request",
+    "do_not_save_account_secret_webhook_or_asset_path",
+    "block_record_is_not_manager_approval"
+  ],
+  "boundary": {
+    "execute_redline_request": false,
+    "save_credentials": false,
+    "save_asset_path": false,
+    "manager_approval_claim": false
+  }
+}

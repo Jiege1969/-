@@ -1,0 +1,154 @@
+{
+  "name": "市场风格日表字段化补齐样例",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 13:43:07",
+  "asset_identity": "W1市场风格日表字段化样例",
+  "status": "shadow_field_sample",
+  "purpose": "把风险偏好、板块热度、大小盘风格、流动性和股票类型适配拆成字段，并明确缺口如何限制前台结论。",
+  "not_real_market_data": true,
+  "not_external_send": true,
+  "not_formal_entry": true,
+  "not_score_write": true,
+  "field_schema": [
+    {
+      "field": "trade_date",
+      "label": "交易日",
+      "required": true
+    },
+    {
+      "field": "risk_appetite",
+      "label": "风险偏好",
+      "required": true
+    },
+    {
+      "field": "sector_heat",
+      "label": "板块热度",
+      "required": true
+    },
+    {
+      "field": "size_style",
+      "label": "大小盘风格",
+      "required": true
+    },
+    {
+      "field": "liquidity",
+      "label": "流动性",
+      "required": true
+    },
+    {
+      "field": "resource_style_fit",
+      "label": "资源股适配",
+      "required": true
+    },
+    {
+      "field": "chemical_style_fit",
+      "label": "化工股适配",
+      "required": true
+    },
+    {
+      "field": "manufacturing_style_fit",
+      "label": "制造股适配",
+      "required": true
+    },
+    {
+      "field": "frontend_effect",
+      "label": "前台影响",
+      "required": true
+    },
+    {
+      "field": "missing_reason",
+      "label": "缺口原因",
+      "required": true
+    }
+  ],
+  "daily_style": {
+    "trade_date": "shadow_sample",
+    "data_status": "shadow_not_real_market_data",
+    "risk_appetite": {
+      "status": "missing",
+      "score": null,
+      "source_status": "missing"
+    },
+    "sector_heat": {
+      "status": "partial",
+      "top_sectors": [
+        "有色金属候选",
+        "化工候选",
+        "先进制造候选"
+      ],
+      "source_status": "shadow_tags_only"
+    },
+    "size_style": {
+      "status": "missing",
+      "dominant": "unknown",
+      "source_status": "missing"
+    },
+    "liquidity": {
+      "status": "missing",
+      "rank_percentile": null,
+      "source_status": "missing"
+    },
+    "style_fit_by_stock_type": {
+      "resource": {
+        "fit_score": null,
+        "status": "missing",
+        "frontend_cap": "只可作为观察备注"
+      },
+      "chemical": {
+        "fit_score": null,
+        "status": "missing",
+        "frontend_cap": "只可作为观察备注"
+      },
+      "manufacturing": {
+        "fit_score": null,
+        "status": "missing",
+        "frontend_cap": "只可作为观察备注"
+      }
+    },
+    "frontend_effect": "市场风格日表未接入真实日度数据前，只能限制结论，不得作为强加分依据。",
+    "missing_reason": "尚未接入真实涨跌家数、板块涨跌、大小盘相对强弱和成交额分位。"
+  },
+  "samples": [
+    {
+      "stock_name": "云南锗业",
+      "stock_code": "002428",
+      "stock_type": "resource",
+      "style_fit_status": "missing",
+      "conclusion_effect": "资源股适配数据缺失时，政策与资源主线只能支持观察，不得提升到重点关注。"
+    },
+    {
+      "stock_name": "正丹股份",
+      "stock_code": "300641",
+      "stock_type": "chemical",
+      "style_fit_status": "missing",
+      "conclusion_effect": "化工股风格适配缺失时，产品价格弹性仍需价格和资金证据确认。"
+    },
+    {
+      "stock_name": "三花智控",
+      "stock_code": "002050",
+      "stock_type": "manufacturing",
+      "style_fit_status": "missing",
+      "conclusion_effect": "制造风格适配缺失时，不得用风格因素强化结论。"
+    }
+  ],
+  "summary": {
+    "field_count": 10,
+    "sample_count": 3,
+    "real_market_data_ready": false,
+    "all_samples_have_conclusion_effect": true
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  }
+}

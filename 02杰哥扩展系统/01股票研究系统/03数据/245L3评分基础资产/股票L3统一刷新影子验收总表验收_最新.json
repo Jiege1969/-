@@ -1,0 +1,19 @@
+{
+  "name": "股票L3统一刷新影子验收总表验收",
+  "generated_at": "2026-05-08 10:18:07",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票L3统一刷新影子验收总表_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "check_count": 8,
+    "exists_count": 8,
+    "passed_count": 8,
+    "failed_count": 0,
+    "allow_shadow_refresh_claim": true,
+    "allow_real_wecom_send": false,
+    "allow_formal_entry": false,
+    "allow_formal_score_update": false
+  },
+  "auto_continue_policy": "本队列最后一个低风险小闭环已通过；heartbeat继续按队列检查新低风险项。"
+}

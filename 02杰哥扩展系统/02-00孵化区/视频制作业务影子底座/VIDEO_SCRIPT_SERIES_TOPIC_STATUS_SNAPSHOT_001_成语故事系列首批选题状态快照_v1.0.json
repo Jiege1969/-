@@ -1,0 +1,92 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SERIES_TOPIC_STATUS_SNAPSHOT_001",
+  "created_at": "2026-05-08 13:53:00 +08:00",
+  "risk_level": "W1/R0",
+  "asset_identity": "shadow_topic_status_snapshot",
+  "source_asset": "VIDEO_SCRIPT_SERIES_TOPIC_REGISTER_001",
+  "not_permission_for": [
+    "formal_script_generation",
+    "real_video_task_creation",
+    "rendering",
+    "publishing",
+    "wecom_send",
+    "n8n_trigger",
+    "formal_video_system_change"
+  ],
+  "summary": {
+    "has_sample_and_30s_task_pending": 1,
+    "candidate": 7,
+    "formal_script_generated": 0,
+    "rendered": 0,
+    "published": 0
+  },
+  "topic_status": [
+    {
+      "topic_id": "IDIOM-001",
+      "idiom": "掩耳盗铃",
+      "current_status": "已有样例，30秒任务卡待填写",
+      "recommended_next_step": "填写30秒影子改写空白任务卡",
+      "current_blocker": "不能覆盖原样例，不能视为剪辑或发布"
+    },
+    {
+      "topic_id": "IDIOM-002",
+      "idiom": "亡羊补牢",
+      "current_status": "候选",
+      "recommended_next_step": "建立影子草案空白任务卡",
+      "current_blocker": "需要先明确故事主线和现代映射"
+    },
+    {
+      "topic_id": "IDIOM-003",
+      "idiom": "画蛇添足",
+      "current_status": "候选",
+      "recommended_next_step": "建立影子草案空白任务卡",
+      "current_blocker": "需要讲清添足为什么破坏结果"
+    },
+    {
+      "topic_id": "IDIOM-004",
+      "idiom": "守株待兔",
+      "current_status": "候选",
+      "recommended_next_step": "建立影子草案空白任务卡",
+      "current_blocker": "需要避免嘲笑人物，强调方法改进"
+    },
+    {
+      "topic_id": "IDIOM-005",
+      "idiom": "刻舟求剑",
+      "current_status": "候选",
+      "recommended_next_step": "建立影子草案空白任务卡",
+      "current_blocker": "需要讲清位置变化和方法失效"
+    },
+    {
+      "topic_id": "IDIOM-006",
+      "idiom": "拔苗助长",
+      "current_status": "候选",
+      "recommended_next_step": "建立影子草案空白任务卡",
+      "current_blocker": "需要用具体动作呈现急于求成"
+    },
+    {
+      "topic_id": "IDIOM-007",
+      "idiom": "滥竽充数",
+      "current_status": "候选",
+      "recommended_next_step": "建立影子草案空白任务卡",
+      "current_blocker": "需要避免羞辱表达，强调真本领"
+    },
+    {
+      "topic_id": "IDIOM-008",
+      "idiom": "狐假虎威",
+      "current_status": "候选",
+      "recommended_next_step": "建立影子草案空白任务卡",
+      "current_blocker": "需要温和处理拟人表达和威吓场景"
+    }
+  ],
+  "next_recommended_asset": "IDIOM-002_亡羊补牢影子草案空白任务卡",
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "edit_formal_script": false,
+    "create_real_video_task": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_video_system": false
+  }
+}

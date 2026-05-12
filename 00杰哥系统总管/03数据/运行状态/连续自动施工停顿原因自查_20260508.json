@@ -1,0 +1,24 @@
+{
+  "asset_id": "CONTINUOUS_CONSTRUCTION_STOP_REASON_REVIEW_20260508",
+  "created_at": "2026-05-08 12:56:00 +08:00",
+  "risk_level": "W1/R0",
+  "trigger": "用户连续指出阶段性停顿体验",
+  "reason": "回合末尾使用final验收短报语气，使交付看起来像等待下一次确认，而不是连续施工短报。",
+  "corrected_execution_order": [
+    "只读当前施工面板",
+    "只读一键接续施工包",
+    "只读本线最新索引或总收口",
+    "自动选择一个W1/R0影子、草案、核查、回执、索引或样例任务",
+    "完成R0自检和索引/回传更新",
+    "final只作短报，不代表等待确认"
+  ],
+  "this_round_completed_task": "VIDEO_SCRIPT_SERIES_STRUCTURE_001",
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_video_system": false
+  }
+}

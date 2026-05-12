@@ -1,0 +1,66 @@
+{
+  "package_name": "股票主动推送dry-run消息样本包",
+  "generated_at": "2026-05-09 11:40:23",
+  "source_rule_package": {
+    "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\248主动推送白名单频率熔断规则包\\股票主动推送白名单频率熔断规则包_最新.json",
+    "exists": true,
+    "sha256": "39f80d4f5dc2c800a265d24067888a18dad36082ad1fa440de3934335ff5c584",
+    "generated_at": "2026-05-09 11:23:34",
+    "真实发送允许": false,
+    "n8n自动推送允许": false
+  },
+  "dry_run": true,
+  "真实发送": false,
+  "n8n": false,
+  "券商": false,
+  "交易": false,
+  "local_only": true,
+  "allowed_tone": [
+    "研究价值",
+    "风险复核",
+    "观察条件",
+    "证据缺口",
+    "人工复核",
+    "不构成投资建议"
+  ],
+  "forbidden_word_check": {
+    "source": "248规则包内容边界及本脚本硬编码红线",
+    "checked_count": 11
+  },
+  "samples": [
+    {
+      "sample_id": "stock-active-push-dry-run-001",
+      "dry_run": true,
+      "真实发送": false,
+      "n8n": false,
+      "券商": false,
+      "交易": false,
+      "用途": "仅用于本地预演，不进入外发链路。",
+      "message_text": "研究价值：公开资料存在进一步复核价值。\n风险复核：信息时效、口径差异、异常波动需要人工复核。\n观察条件：仅在公开资料、风险提示、人工复核一致时保留观察。\n证据缺口：缺少最新公告、行业比较、财务口径交叉验证。\n人工复核：由人工确认资料来源、时间戳、结论边界。\n不构成投资建议：本样本仅用于本地dry-run预演。",
+      "route_guard": {
+        "local_preview_only": true,
+        "enterprise_wechat_api": false,
+        "external_delivery": false,
+        "webhook": false,
+        "n8n_trigger": false,
+        "broker_connection": false,
+        "trade_action": false
+      }
+    }
+  ],
+  "actual_actions": {
+    "write_local_files": true,
+    "enterprise_wechat_api": false,
+    "real_send": false,
+    "enable_n8n": false,
+    "trigger_n8n": false,
+    "reload_19310": false,
+    "reload_19302": false,
+    "broker_connection": false,
+    "trade_action": false,
+    "tax_login": false,
+    "write_formal_rules": false,
+    "modify_admin_panel": false,
+    "modify_one_click_continuation_package": false
+  }
+}

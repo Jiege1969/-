@@ -1,0 +1,117 @@
+{
+  "task": "01智能系统第七批小任务AC_健康检查样本",
+  "generated_at": "2026-05-05 13:21:30",
+  "samples": [
+    {
+      "id": "AC-S01",
+      "case": "健康通过",
+      "input": "基础服务交付前检查 API 契约、错误码、降级、知识检索联动、日志字段、异常处理。",
+      "expected": "OK",
+      "log": {
+        "trace_id": "ac-trace-001",
+        "request_id": "ac-health-001",
+        "service_name": "01-intelligence-base-service",
+        "operation": "pre_delivery_health_check",
+        "health_check_item": "API契约",
+        "status": "ok",
+        "error_code": "OK",
+        "degrade_reason": "",
+        "fallback_action": "none",
+        "knowledge_query_id": "kq-ac-health-001",
+        "evidence_ids": [
+          "V-CONTRACT-LOCAL",
+          "P-KNOWLEDGE-LINK-LOCAL"
+        ],
+        "evidence_count": 2,
+        "safe_to_show_user": true,
+        "requires_human_review": false,
+        "external_effect": "none",
+        "formal_store_write": false,
+        "latency_ms": 0,
+        "timestamp": "2026-05-05 13:21:30"
+      }
+    },
+    {
+      "id": "AC-S02",
+      "case": "知识检索证据不足降级",
+      "input": "健康检查需要知识库证据，但本地证据为空。",
+      "expected": "AC_KNOWLEDGE_LINK_DEGRADED",
+      "log": {
+        "trace_id": "ac-trace-002",
+        "request_id": "ac-health-002",
+        "service_name": "01-intelligence-base-service",
+        "operation": "pre_delivery_health_check",
+        "health_check_item": "知识检索联动",
+        "status": "degraded",
+        "error_code": "AC_KNOWLEDGE_LINK_DEGRADED",
+        "degrade_reason": "local_evidence_missing",
+        "fallback_action": "return_degraded_message_and_manual_review",
+        "knowledge_query_id": "kq-ac-health-002",
+        "evidence_ids": [],
+        "evidence_count": 0,
+        "safe_to_show_user": true,
+        "requires_human_review": true,
+        "external_effect": "none",
+        "formal_store_write": false,
+        "latency_ms": 0,
+        "timestamp": "2026-05-05 13:21:30"
+      }
+    },
+    {
+      "id": "AC-S03",
+      "case": "日志字段缺失阻断",
+      "input": "健康检查日志缺少必需字段。",
+      "expected": "AC_LOG_FIELD_MISSING",
+      "log": {
+        "trace_id": "ac-trace-003",
+        "request_id": "ac-health-003",
+        "service_name": "01-intelligence-base-service",
+        "operation": "pre_delivery_health_check",
+        "health_check_item": "日志字段",
+        "status": "blocked",
+        "error_code": "AC_LOG_FIELD_MISSING",
+        "degrade_reason": "required_log_field_missing",
+        "fallback_action": "block_delivery_and_fix_log_schema",
+        "knowledge_query_id": "kq-ac-health-003",
+        "evidence_ids": [
+          "AC-LOG-SPEC"
+        ],
+        "evidence_count": 1,
+        "safe_to_show_user": true,
+        "requires_human_review": true,
+        "external_effect": "none",
+        "formal_store_write": false,
+        "latency_ms": 0,
+        "timestamp": "2026-05-05 13:21:30"
+      }
+    },
+    {
+      "id": "AC-S04",
+      "case": "安全边界异常阻断",
+      "input": "健康检查发现真实动作开关存在打开风险。",
+      "expected": "AC_SAFETY_BOUNDARY_VIOLATION",
+      "log": {
+        "trace_id": "ac-trace-004",
+        "request_id": "ac-health-004",
+        "service_name": "01-intelligence-base-service",
+        "operation": "pre_delivery_health_check",
+        "health_check_item": "异常处理",
+        "status": "blocked",
+        "error_code": "AC_SAFETY_BOUNDARY_VIOLATION",
+        "degrade_reason": "safety_boundary_open",
+        "fallback_action": "hard_block_and_manual_review",
+        "knowledge_query_id": "kq-ac-health-004",
+        "evidence_ids": [
+          "AC-EXCEPTION-MATRIX"
+        ],
+        "evidence_count": 1,
+        "safe_to_show_user": true,
+        "requires_human_review": true,
+        "external_effect": "blocked",
+        "formal_store_write": false,
+        "latency_ms": 0,
+        "timestamp": "2026-05-05 13:21:30"
+      }
+    }
+  ]
+}

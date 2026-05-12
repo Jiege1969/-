@@ -1,0 +1,26 @@
+{
+  "名称": "前台缺口话术候选分层清单验收",
+  "validated_at": "2026-05-08 08:25:12",
+  "status": "passed",
+  "candidate_count": 22,
+  "summary": {
+    "candidate_count": 22,
+    "w1_rule_draft_count": 12,
+    "w3_blocked_count": 10,
+    "review_needed_count": 0
+  },
+  "errors": [],
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_adapter_write": true,
+    "not_score_write": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

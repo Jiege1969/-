@@ -1,0 +1,60 @@
+{
+  "名称": "五样本前台缺口压缩预演验收",
+  "validated_at": "2026-05-08 07:44:07",
+  "status": "passed",
+  "preview_count": 5,
+  "errors": [],
+  "items": [
+    {
+      "stock": "云南锗业",
+      "code": "sz002428",
+      "conclusion": "暂不建议关注",
+      "policy_score_allowed": true,
+      "price_observation_count": 0,
+      "capital_score_status": "not_scored"
+    },
+    {
+      "stock": "天齐锂业",
+      "code": "sz002466",
+      "conclusion": "暂不建议关注",
+      "policy_score_allowed": false,
+      "price_observation_count": 1,
+      "capital_score_status": "not_scored"
+    },
+    {
+      "stock": "华虹公司",
+      "code": "sh688347",
+      "conclusion": "暂不建议关注",
+      "policy_score_allowed": false,
+      "price_observation_count": 0,
+      "capital_score_status": "not_scored"
+    },
+    {
+      "stock": "浙商中拓",
+      "code": "sz000906",
+      "conclusion": "暂不建议关注",
+      "policy_score_allowed": false,
+      "price_observation_count": 0,
+      "capital_score_status": "not_scored"
+    },
+    {
+      "stock": "正丹股份",
+      "code": "sz300641",
+      "conclusion": "暂不建议关注",
+      "policy_score_allowed": false,
+      "price_observation_count": 0,
+      "capital_score_status": "not_scored"
+    }
+  ],
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_score_write": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

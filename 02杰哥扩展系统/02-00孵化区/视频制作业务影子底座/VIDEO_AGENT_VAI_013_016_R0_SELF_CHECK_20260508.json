@@ -1,0 +1,73 @@
+{
+  "id": "VIDEO_AGENT_VAI_013_016_R0_SELF_CHECK_20260508",
+  "asset_identity": "video_production_shadow_base_self_check",
+  "stage": "W1_R0",
+  "date": "2026-05-08",
+  "result": "passed",
+  "checked_assets": [
+    {
+      "id": "VAI-013",
+      "name": "shadow_run_checklist",
+      "md": "VIDEO_AGENT_SHADOW_RUN_CHECKLIST_001_影子运行检查清单_v1.0.md",
+      "json": "VIDEO_AGENT_SHADOW_RUN_CHECKLIST_001_影子运行检查清单_v1.0.json",
+      "result": "passed",
+      "note": "field and redline checklist only, not runner"
+    },
+    {
+      "id": "VAI-014",
+      "name": "input_to_three_option_rehearsal",
+      "md": "VIDEO_AGENT_INPUT_TO_THREE_OPTION_REHEARSAL_001_影子输入到三候选链路预演_v1.0.md",
+      "json": "VIDEO_AGENT_INPUT_TO_THREE_OPTION_REHEARSAL_001_影子输入到三候选链路预演_v1.0.json",
+      "result": "passed",
+      "note": "text flow rehearsal only, no model or media generation"
+    },
+    {
+      "id": "VAI-015",
+      "name": "human_receipt_intake_template",
+      "md": "VIDEO_AGENT_HUMAN_RECEIPT_INTAKE_TEMPLATE_001_人工回执承接模板_v1.0.md",
+      "json": "VIDEO_AGENT_HUMAN_RECEIPT_INTAKE_TEMPLATE_001_人工回执承接模板_v1.0.json",
+      "result": "passed",
+      "note": "human feedback intake only, no generation or publishing approval"
+    },
+    {
+      "id": "VAI-016",
+      "name": "redline_hit_sample",
+      "md": "VIDEO_AGENT_REDLINE_HIT_SAMPLE_001_红线命中样例卡_v1.0.md",
+      "json": "VIDEO_AGENT_REDLINE_HIT_SAMPLE_001_红线命中样例卡_v1.0.json",
+      "result": "passed",
+      "note": "blocked record sample only, no redline action execution"
+    }
+  ],
+  "boundary_check": {
+    "modify_formal_video_scripts": false,
+    "call_real_model_api": false,
+    "call_external_video_voice_cover_publish_engine": false,
+    "read_real_assets": false,
+    "generate_image_audio_subtitle_cover_video": false,
+    "render_transcode_edit_compose": false,
+    "upload_publish_external_send": false,
+    "trigger_n8n": false,
+    "real_wechat_send": false,
+    "read_or_save_wechat_credentials": false,
+    "start_or_restart_service": false,
+    "modify_19310_or_19302": false,
+    "write_formal_rule_database": false
+  },
+  "next_shadow_queue": [
+    {
+      "priority": "P1",
+      "item": "three_option_human_selection_revision_flow_sample",
+      "boundary": "text state flow only, no media generation"
+    },
+    {
+      "priority": "P1",
+      "item": "shadow_conversation_state_change_log_template",
+      "boundary": "state record only, no database connection"
+    },
+    {
+      "priority": "P2",
+      "item": "video_agent_evolution_candidate_intake_checklist",
+      "boundary": "candidate list only, no formal rule upgrade"
+    }
+  ]
+}

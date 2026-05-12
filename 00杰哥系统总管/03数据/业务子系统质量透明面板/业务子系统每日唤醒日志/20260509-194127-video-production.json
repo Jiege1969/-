@@ -1,0 +1,48 @@
+﻿{
+    "status":  "audit_pass",
+    "system_slug":  "video-production",
+    "system_name":  "视频制作系统",
+    "audit_only":  true,
+    "global_lock_acquired":  true,
+    "system_lock_acquired":  true,
+    "system_root":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统",
+    "system_script_dir":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本",
+    "planned_scripts":  [
+                            "生成视频制作系统状态摘要.py",
+                            "生成视频制作计划.py",
+                            "生成视频素材候选.py",
+                            "生成视频分镜素材匹配.py",
+                            "生成视频主题化预演.py"
+                        ],
+    "scorer":  "生成视频制作系统日报质量评分.py",
+    "actions":  [
+
+                ],
+    "safety":  {
+                   "real_wecom_send":  false,
+                   "n8n_trigger":  false,
+                   "broker_api":  false,
+                   "auto_trade":  false,
+                   "formal_output":  false,
+                   "real_conversion":  false,
+                   "real_render":  false
+               },
+    "environment_locks":  {
+                              "STOCK_REAL_SEND":  "0",
+                              "STOCK_ENABLE_N8N_TRIGGER":  "0",
+                              "STOCK_ENABLE_BROKER_API":  "0",
+                              "STOCK_ENABLE_AUTO_TRADE":  "0",
+                              "WECOM_REAL_SEND":  "0",
+                              "WEWORK_REAL_SEND":  "0",
+                              "ENABLE_N8N_TRIGGER":  "0",
+                              "ENABLE_FORMAL_OUTPUT":  "0",
+                              "ENABLE_REAL_CONVERSION":  "0",
+                              "ENABLE_REAL_RENDER":  "0"
+                          },
+    "started_by":  {
+                       "user":  "Administrator",
+                       "computer":  "杰哥",
+                       "pid":  25040
+                   },
+    "time":  "2026-05-09 19:41:27"
+}

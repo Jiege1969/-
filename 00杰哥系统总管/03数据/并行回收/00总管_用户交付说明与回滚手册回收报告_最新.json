@@ -1,0 +1,88 @@
+{
+  "report_name": "00总管_用户交付说明与回滚手册回收报告_最新",
+  "task_batch": "并行小任务M",
+  "generated_at": "2026-05-05T14:42:00+08:00",
+  "objective": "生成面向用户实际交付使用的说明包，覆盖当前可用能力、本地和企业微信入口、dry_run/影子、真实动作关闭、股票analysis-only、异常回滚、证据目录和下一步低风险小样本许可令。",
+  "write_scope": {
+    "root": "D:\\杰哥智能化系统\\00杰哥系统总管",
+    "new_document_package": true,
+    "fixed_recycle_report": true,
+    "other_worker_files_modified": false,
+    "rollback_existing_changes": false
+  },
+  "execution_boundary": {
+    "documents_written": true,
+    "json_written": true,
+    "services_triggered": false,
+    "n8n_triggered": false,
+    "enterprise_wechat_sent": false,
+    "production_database_written": false,
+    "formal_knowledge_base_written": false,
+    "redis_formal_queue_enabled": false,
+    "broker_interface_called": false,
+    "auto_trade_triggered": false,
+    "real_actions_triggered": 0
+  },
+  "artifacts": [
+    {
+      "type": "user_delivery_manual_markdown",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\用户交付说明与回滚手册包\\用户交付说明与回滚手册包_20260505_M.md"
+    },
+    {
+      "type": "user_delivery_manual_json",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\用户交付说明与回滚手册包\\用户交付说明与回滚手册包_20260505_M.json"
+    },
+    {
+      "type": "fixed_recycle_report_markdown",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_用户交付说明与回滚手册回收报告_最新.md"
+    },
+    {
+      "type": "fixed_recycle_report_json",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_用户交付说明与回滚手册回收报告_最新.json"
+    }
+  ],
+  "coverage": {
+    "current_available_capabilities": true,
+    "local_entry_usage": true,
+    "enterprise_wechat_entry_usage": true,
+    "dry_run_shadow_scope": true,
+    "disabled_real_actions": true,
+    "stock_analysis_only": true,
+    "rollback_manual": true,
+    "evidence_directory_lookup": true,
+    "next_low_risk_sample_permission_order": true
+  },
+  "current_delivery_position": {
+    "overall": "交付候选可用说明已生成",
+    "stock_system": "analysis-only阶段性交付可用",
+    "knowledge_base": "只读/影子/灰度材料可查",
+    "enterprise_wechat": "查询和本地统一指令入口候选可用，真实放量仍需许可",
+    "content_video_tax": "影子和只读材料可查，真实动作关闭",
+    "evolution": "规则候选和审计材料可查，不自动固化"
+  },
+  "still_forbidden_actions": [
+    "企业微信真实放量",
+    "n8n正式导入启用触发",
+    "Redis正式队列接管",
+    "正式库写入",
+    "正式知识库写入",
+    "真实媒体转换或发布",
+    "正式税务判断",
+    "券商接口",
+    "资金账户",
+    "下单撤单",
+    "交易API",
+    "自动交易",
+    "买卖仓位目标价建议"
+  ],
+  "validation_result": {
+    "markdown_package_exists": true,
+    "json_package_exists": true,
+    "fixed_report_markdown_exists": true,
+    "fixed_report_json_exists": true,
+    "json_parse_expected": true,
+    "real_actions_triggered": 0,
+    "passed": true
+  },
+  "acceptance_result": "通过"
+}

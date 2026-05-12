@@ -1,0 +1,17 @@
+{
+  "name": "行业价格观测人工填报回执模板验收",
+  "generated_at": "2026-05-08 09:59:32",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\行业价格观测人工填报回执模板_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "receipt_count": 5,
+    "stock_count": 5,
+    "required_observation_points": 25,
+    "existing_observation_points": 1,
+    "trend_ready_count": 0,
+    "score_allowed_count": 0
+  },
+  "auto_continue_policy": "通过后自动进入下一低风险小闭环；不把下一步建议作为等待用户确认。"
+}

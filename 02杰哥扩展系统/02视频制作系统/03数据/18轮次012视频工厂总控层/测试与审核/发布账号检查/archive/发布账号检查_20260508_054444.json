@@ -1,0 +1,23 @@
+{
+  "生成时间": "2026-05-08 05:44:44",
+  "平台": "bilibili",
+  "账号": "creator",
+  "命令": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+    "bilibili",
+    "check",
+    "--account",
+    "creator"
+  ],
+  "命令文本": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe bilibili check --account creator",
+  "stdout": "invalid\n",
+  "stderr": "",
+  "returncode": 1,
+  "总体状态": "blocked",
+  "安全边界": {
+    "上传": false,
+    "发布": false,
+    "触发n8n": false,
+    "企业微信真实发送": false
+  }
+}

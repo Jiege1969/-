@@ -1,0 +1,96 @@
+{
+  "生成时间": "2026-05-08 16:43:52",
+  "状态": "完成",
+  "输入": "最终启用真实渲染 VF-20260508-005 我确认启用真实渲染",
+  "路由": "杰哥视频助理发布指令",
+  "目标系统": "02杰哥扩展系统/02视频制作系统",
+  "回复": "最终真实渲染启用门禁已执行。\n任务ID：VF-20260508-005\n总体状态：blocked\n真实渲染配置已启用：False\n阻断项：当前最新任务不是 VF-20260508-005；MoneyPrinterTurbo 本地目录或启动入口不可识别\n提醒项：ImageMagick 未通过检查；真实渲染字幕或图片处理可能失败\n说明：这个命令只负责打开或保持关闭真实渲染开关，不会直接生成视频。",
+  "reply_text": "最终真实渲染启用门禁已执行。\n任务ID：VF-20260508-005\n总体状态：blocked\n真实渲染配置已启用：False\n阻断项：当前最新任务不是 VF-20260508-005；MoneyPrinterTurbo 本地目录或启动入口不可识别\n提醒项：ImageMagick 未通过检查；真实渲染字幕或图片处理可能失败\n说明：这个命令只负责打开或保持关闭真实渲染开关，不会直接生成视频。",
+  "real_send": false,
+  "n8n": false,
+  "企业微信模拟回复": {
+    "msgtype": "markdown",
+    "markdown": {
+      "content": "【杰哥视频助理】\n最终真实渲染启用门禁已执行。\n任务ID：VF-20260508-005\n总体状态：blocked\n真实渲染配置已启用：False\n阻断项：当前最新任务不是 VF-20260508-005；MoneyPrinterTurbo 本地目录或启动入口不可识别\n提醒项：ImageMagick 未通过检查；真实渲染字幕或图片处理可能失败\n说明：这个命令只负责打开或保持关闭真实渲染开关，不会直接生成视频。"
+    }
+  },
+  "安全边界": {
+    "真实发送企业微信": false,
+    "触发n8n": false,
+    "绕过发布放行清单": false,
+    "自动发布": false
+  },
+  "final_real_render_gate": {
+    "returncode": 2,
+    "stdout": "{\n  \"生成时间\": \"2026-05-08 16:43:52\",\n  \"任务ID\": \"VF-20260508-005\",\n  \"总体状态\": \"blocked\",\n  \"配置已启用真实渲染\": false,\n  \"确认真实渲染\": true,\n  \"配置备份\": \"\",\n  \"任务状态\": \"生成放行\",\n  \"人工复核状态\": \"复核通过-生成放行\",\n  \"生成放行清单行\": {\n    \"任务ID\": \"VF-20260508-005\",\n    \"放行状态\": \"放行\",\n    \"放行时间\": \"2026-05-08 06:13:59\",\n    \"放行人\": \"杰哥视频助理企业微信确认\",\n    \"备注\": \"企业微信生成放行；真实渲染适配器仍为独立门禁\"\n  },\n  \"MoneyPrinterTurbo检查\": {\n    \"可用\": false,\n    \"根目录\": \"\",\n    \"候选检查\": [\n      {\n        \"路径\": \"C:\\\\Users\\\\Administrator\\\\Documents\\\\Codex\\\\2026-05-07\\\\30-moneyprinterturbo-windows-imagemagick-chrome-1\",\n        \"存在\": true,\n        \"start.bat\": false,\n        \"app/main.py\": false,\n        \"webui/Main.py\": false,\n        \"可识别\": false\n      },\n      {\n        \"路径\": \"D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\02视频制作系统\\\\06临时\\\\MoneyPrinterTurbo\",\n        \"存在\": false,\n        \"start.bat\": false,\n        \"app/main.py\": false,\n        \"webui/Main.py\": false,\n        \"可识别\": false\n      }\n    ]\n  },\n  \"ImageMagick检查\": {\n    \"命令\": \"magick\",\n    \"路径\": \"\",\n    \"可用\": false,\n    \"错误\": \"未找到 ImageMagick 命令\"\n  },\n  \"Chrome检查\": {\n    \"可用\": true,\n    \"路径\": \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\",\n    \"候选检查\": [\n      {\n        \"路径\": \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\",\n        \"存在\": true\n      }\n    ]\n  },\n  \"阻断项\": [\n    \"当前最新任务不是 VF-20260508-005\",\n    \"MoneyPrinterTurbo 本地目录或启动入口不可识别\"\n  ],\n  \"提醒项\": [\n    \"ImageMagick 未通过检查；真实渲染字幕或图片处理可能失败\"\n  ],\n  \"安全边界\": {\n    \"调用MoneyPrinterTurbo\": false,\n    \"生成媒体\": false,\n    \"触发发布\": false,\n    \"企业微信真实外发\": false\n  }\n}\n",
+    "stderr": "",
+    "report": {
+      "生成时间": "2026-05-08 16:43:52",
+      "任务ID": "VF-20260508-005",
+      "总体状态": "blocked",
+      "配置已启用真实渲染": false,
+      "确认真实渲染": true,
+      "配置备份": "",
+      "任务状态": "生成放行",
+      "人工复核状态": "复核通过-生成放行",
+      "生成放行清单行": {
+        "任务ID": "VF-20260508-005",
+        "放行状态": "放行",
+        "放行时间": "2026-05-08 06:13:59",
+        "放行人": "杰哥视频助理企业微信确认",
+        "备注": "企业微信生成放行；真实渲染适配器仍为独立门禁"
+      },
+      "MoneyPrinterTurbo检查": {
+        "可用": false,
+        "根目录": "",
+        "候选检查": [
+          {
+            "路径": "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-07\\30-moneyprinterturbo-windows-imagemagick-chrome-1",
+            "存在": true,
+            "start.bat": false,
+            "app/main.py": false,
+            "webui/Main.py": false,
+            "可识别": false
+          },
+          {
+            "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\MoneyPrinterTurbo",
+            "存在": false,
+            "start.bat": false,
+            "app/main.py": false,
+            "webui/Main.py": false,
+            "可识别": false
+          }
+        ]
+      },
+      "ImageMagick检查": {
+        "命令": "magick",
+        "路径": "",
+        "可用": false,
+        "错误": "未找到 ImageMagick 命令"
+      },
+      "Chrome检查": {
+        "可用": true,
+        "路径": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "候选检查": [
+          {
+            "路径": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+            "存在": true
+          }
+        ]
+      },
+      "阻断项": [
+        "当前最新任务不是 VF-20260508-005",
+        "MoneyPrinterTurbo 本地目录或启动入口不可识别"
+      ],
+      "提醒项": [
+        "ImageMagick 未通过检查；真实渲染字幕或图片处理可能失败"
+      ],
+      "安全边界": {
+        "调用MoneyPrinterTurbo": false,
+        "生成媒体": false,
+        "触发发布": false,
+        "企业微信真实外发": false
+      }
+    }
+  }
+}

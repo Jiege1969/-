@@ -1,0 +1,45 @@
+{
+  "生成时间": "2026-05-09 14:00:33",
+  "总体状态": "blocked",
+  "任务ID过滤": "VF-20260508-006",
+  "真实发布启用": false,
+  "可进入真实发布": false,
+  "桥梁命令": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+  "命令检查": {
+    "命令": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+    "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe",
+    "可用": true,
+    "stdout": "usage: sau [-h] {douyin,kuaishou,xiaohongshu,bilibili} ...\n\nCLI for social-auto-upload.\n\npositional arguments:\n  {douyin,kuaishou,xiaohongshu,bilibili}\n    douyin              Douyin operations\n    kuaishou            Kuaishou operations\n    xiaohongshu         Xiaohongshu operations\n    bilibili            Bilibili operations\n\noptions:\n  -h, --help            show this help message and exit\n",
+    "stderr": "",
+    "错误": "",
+    "returncode": 0
+  },
+  "浏览器运行时检查": {
+    "浏览器目录": "C:\\Users\\Administrator\\AppData\\Local\\ms-playwright",
+    "chromium": [
+      "C:\\Users\\Administrator\\AppData\\Local\\ms-playwright\\chromium-1208"
+    ],
+    "chromium_headless_shell": [
+      "C:\\Users\\Administrator\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1208"
+    ],
+    "ffmpeg": [
+      "C:\\Users\\Administrator\\AppData\\Local\\ms-playwright\\ffmpeg-1011"
+    ],
+    "可用": true
+  },
+  "发布清单行": [],
+  "阻断项": [
+    "未找到匹配的发布清单任务行"
+  ],
+  "提醒项": [
+    "真实发布当前关闭；这是默认安全状态。"
+  ],
+  "安全边界": {
+    "真实发布": false,
+    "执行上传": false,
+    "执行发布": false,
+    "调用外部账号": false,
+    "触发n8n": false,
+    "企业微信真实发送": false
+  }
+}

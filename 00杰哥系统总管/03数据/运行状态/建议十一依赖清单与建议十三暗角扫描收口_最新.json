@@ -1,0 +1,40 @@
+{
+  "report_name": "建议十一依赖清单与建议十三暗角扫描收口",
+  "record_time": "2026-05-06 06:39:22 +08:00",
+  "conclusion": "pass_with_manual_review_items",
+  "done": [
+    "系统依赖与恢复清单第一版",
+    "暗角落只读扫描第一版",
+    "数据资产双副本规则",
+    "只读验收五问模板",
+    "月度档案注记模板"
+  ],
+  "p0_manual_review": ["serviceraj scheduled task"],
+  "p1_next": [
+    "old AI scheduled tasks ownership review",
+    "DailyWorkPlan ownership review",
+    "WSL_AutoStart ownership review",
+    "WSL bashrc old Ollama path remediation plan"
+  ],
+  "artifacts": [
+    "F:\\系统备份\\依赖清单\\系统依赖与恢复清单_最新.md",
+    "F:\\系统备份\\依赖清单\\系统依赖与恢复清单_最新.json",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\暗角扫描\\暗角落只读扫描报告_最新.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\暗角扫描\\暗角落只读扫描报告_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\01配置\\数据资产双副本规则.json",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\验收模板.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\月度档案\\月度档案注记模板.md"
+  ],
+  "safety": {
+    "readonly_scan": true,
+    "modified_tasks": false,
+    "modified_startup": false,
+    "modified_hosts": false,
+    "modified_firewall": false,
+    "modified_wsl": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "call_broker_api": false,
+    "auto_trade": false
+  }
+}

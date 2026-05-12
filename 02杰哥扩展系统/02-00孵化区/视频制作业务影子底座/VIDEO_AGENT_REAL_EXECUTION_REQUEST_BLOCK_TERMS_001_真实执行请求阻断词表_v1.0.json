@@ -1,0 +1,33 @@
+{
+  "asset_id": "VIDEO_AGENT_REAL_EXECUTION_REQUEST_BLOCK_TERMS_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_block_terms_not_real_interceptor",
+  "purpose": "Identify input phrases that may request real generation, render, publish, external send, login, n8n, or formal writes.",
+  "block_terms": [
+    {"category": "real_generation", "terms": ["现在生成视频", "直接渲染", "出片", "合成成片"], "shadow_action": "block_and_convert_to_pending_review_draft"},
+    {"category": "real_publish", "terms": ["发布到平台", "上传B站", "发到抖音", "上线"], "shadow_action": "block_and_route_to_publish_gate_gap"},
+    {"category": "wecom_real_send", "terms": ["发给客户", "群发", "通知群", "通过企业微信发出"], "shadow_action": "block_and_use_wecom_placeholder_reply"},
+    {"category": "account_login", "terms": ["登录账号", "读取cookie", "用我的token"], "shadow_action": "block_and_register_credential_redline"},
+    {"category": "n8n_or_service", "terms": ["触发n8n", "启动服务", "重启端口", "改19310"], "shadow_action": "block_and_return_to_manager_decision"},
+    {"category": "formal_write", "terms": ["写正式库", "改正式配置", "覆盖旧数据"], "shadow_action": "block_and_register_unauthorized_scope_risk"}
+  ],
+  "output_fields": [
+    "block_hit_id",
+    "source_input",
+    "matched_term_category",
+    "matched_term",
+    "redline_level",
+    "allowed_shadow_alternative",
+    "requires_manager_decision"
+  ],
+  "real_system_triggered": {
+    "real_interceptor_enabled": false,
+    "service_route_modified": false,
+    "wecom_real_message_read": false,
+    "n8n": false,
+    "formal_database_write": false
+  }
+}

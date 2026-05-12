@@ -1,0 +1,68 @@
+{
+  "asset_id": "CONTROLLED_TRIAL_RECEIPT_TEMPLATE_20260508",
+  "asset_name": "受控试用回执模板",
+  "created_at": "2026-05-08",
+  "asset_identity": "总管侧 W1/R0 受控试用回执模板",
+  "is_formal_acceptance_report": false,
+  "source_assets": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\受控试用版交付清单_20260508.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\受控试用任务队列_20260508.md"
+  ],
+  "required_fields": [
+    "task_id",
+    "execution_date",
+    "executor_window",
+    "business_line",
+    "risk_level",
+    "input_summary",
+    "changed_files",
+    "output_summary",
+    "boundary_flags",
+    "needs_manager_ruling",
+    "self_check_line"
+  ],
+  "optional_fields": [
+    "evidence",
+    "missing",
+    "confidence"
+  ],
+  "manager_absorption_rules": [
+    {
+      "decision": "可吸收",
+      "condition": "W1/R0，边界全false，无需裁定",
+      "manager_action": "写入回传吸收记录，必要时更新面板/接续包"
+    },
+    {
+      "decision": "需补资料",
+      "condition": "W1/R0，但evidence或missing不完整",
+      "manager_action": "记录为待补事项，不扩大施工"
+    },
+    {
+      "decision": "暂停",
+      "condition": "出现W2/W3、真实接入、外发、服务变更、删除/移动、规则冲突",
+      "manager_action": "停止，交回用户或总管裁定"
+    },
+    {
+      "decision": "退回",
+      "condition": "业务线越权改总管、正式库、服务脚本或真实系统",
+      "manager_action": "标记为不吸收，要求回滚或人工确认"
+    }
+  ],
+  "boundary_flags_template": {
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "write_formal_db": false,
+    "modify_service_script": false,
+    "restart_19310_or_19302": false,
+    "broker_or_trading": false,
+    "login_tax_system_or_finance_software": false,
+    "video_render_upload_publish": false,
+    "delete_move_archive_old_directory": false
+  },
+  "self_check": {
+    "risk_level": "W1/R0",
+    "json_parse_required": true,
+    "panel_package_update_required": true,
+    "boundary_kept": true
+  }
+}

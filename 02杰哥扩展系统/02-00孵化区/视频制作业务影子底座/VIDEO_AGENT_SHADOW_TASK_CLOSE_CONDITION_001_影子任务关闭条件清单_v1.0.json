@@ -1,0 +1,29 @@
+{
+  "asset_id": "VIDEO_AGENT_SHADOW_TASK_CLOSE_CONDITION_001",
+  "name": "影子任务关闭条件清单",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:12:00 +08:00",
+  "risk_level": "低风险",
+  "purpose": "判断视频影子任务是否可在本地闭环",
+  "close_conditions": [
+    "任务单存在",
+    "合规检查完成",
+    "脚本草案完成",
+    "分镜草案完成",
+    "待复核问题列明",
+    "放行状态明确",
+    "回传记录生成",
+    "下一步建议存在"
+  ],
+  "cannot_close_conditions": [
+    "高风险合规问题未登记",
+    "素材授权缺口未列明",
+    "发布放行与生成放行混用",
+    "真实执行结果被写成影子结论",
+    "缺少本轮对齐回传记录"
+  ],
+  "boundary": {
+    "claim_formal_completion": false,
+    "real_system_triggered": false
+  }
+}

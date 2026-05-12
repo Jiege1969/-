@@ -1,0 +1,73 @@
+{
+  "id": "P2S14_SHADOW_ENTRY_MANUAL_FILL_TASK_PACKET_READONLY_CHECK",
+  "generated_at": "2026-05-09 13:03:22",
+  "status": "pass",
+  "summary": {
+    "task_count": 4,
+    "passed": 4,
+    "failed": 0,
+    "candidate_field_count": 25,
+    "must_remain_false_count": 31,
+    "write_target_entry": 0,
+    "auto_fill_shadow_entry": 0,
+    "release_forms": 0,
+    "formal_capability_claim": 0,
+    "real_material_read_by_script": 0
+  },
+  "task_packet_sample_path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\63P2S14影子入口人工填写任务包只读检查\\P2S14影子入口人工填写任务包样例_20260509.json",
+  "checks": [
+    {
+      "task_id": "P2S14-MANUAL-FILL-TASK-001",
+      "target_line": "tax",
+      "target_entry": "TAX_DAILY_INTAKE_002",
+      "candidate_field_count": 8,
+      "must_remain_false_count": 10,
+      "must_not_change_count": 4,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "task_id": "P2S14-MANUAL-FILL-TASK-002",
+      "target_line": "office_work",
+      "target_entry": "OFFICE_SHADOW_002",
+      "candidate_field_count": 7,
+      "must_remain_false_count": 9,
+      "must_not_change_count": 4,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "task_id": "P2S14-MANUAL-FILL-TASK-003",
+      "target_line": "video_production",
+      "target_entry": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "candidate_field_count": 6,
+      "must_remain_false_count": 7,
+      "must_not_change_count": 4,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "task_id": "P2S14-MANUAL-FILL-TASK-004",
+      "target_line": "shared_policy_evidence",
+      "target_entry": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "candidate_field_count": 4,
+      "must_remain_false_count": 5,
+      "must_not_change_count": 4,
+      "status": "pass",
+      "errors": []
+    }
+  ],
+  "conclusion": "影子入口人工填写任务包检查通过；4 份任务包仅列出人工填写字段、保持字段和复验步骤，0 项写入口或自动填写。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

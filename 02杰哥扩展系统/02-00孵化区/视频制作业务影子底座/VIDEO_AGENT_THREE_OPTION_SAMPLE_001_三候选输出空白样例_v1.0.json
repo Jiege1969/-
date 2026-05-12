@@ -1,0 +1,65 @@
+{
+  "id": "VIDEO_AGENT_THREE_OPTION_SAMPLE_001",
+  "name": "三候选输出空白样例",
+  "asset_identity": "video_creation_agent_shadow_three_option_sample",
+  "stage": "W1_R0",
+  "status": "blank_sample_not_publishable_script",
+  "max_options": 3,
+  "boundary": {
+    "image_generation": false,
+    "voice_generation": false,
+    "subtitle_generation": false,
+    "cover_generation": false,
+    "video_generation": false,
+    "render": false,
+    "publish": false,
+    "formal_task_write": false
+  },
+  "options": [
+    {
+      "option_id": "OPTION-A",
+      "positioning": "to_be_filled",
+      "opening_5_seconds": "to_be_filled",
+      "core_hook": "to_be_filled",
+      "storyboard_summary": "to_be_filled",
+      "voiceover_tone": "to_be_filled",
+      "suitable_platform": "pending_verification",
+      "asset_needs": "pending_verification",
+      "risk_points": "pending_review",
+      "manual_confirmation_items": []
+    },
+    {
+      "option_id": "OPTION-B",
+      "positioning": "to_be_filled",
+      "opening_5_seconds": "to_be_filled",
+      "core_hook": "to_be_filled",
+      "storyboard_summary": "to_be_filled",
+      "voiceover_tone": "to_be_filled",
+      "suitable_platform": "pending_verification",
+      "asset_needs": "pending_verification",
+      "risk_points": "pending_review",
+      "manual_confirmation_items": []
+    },
+    {
+      "option_id": "OPTION-C",
+      "positioning": "to_be_filled",
+      "opening_5_seconds": "to_be_filled",
+      "core_hook": "to_be_filled",
+      "storyboard_summary": "to_be_filled",
+      "voiceover_tone": "to_be_filled",
+      "suitable_platform": "pending_verification",
+      "asset_needs": "pending_verification",
+      "risk_points": "pending_review",
+      "manual_confirmation_items": []
+    }
+  ],
+  "required_review_topics": [
+    "asset_authorization",
+    "platform_rules",
+    "ai_labeling",
+    "originality",
+    "privacy_and_portrait_rights",
+    "generation_gate",
+    "publish_gate"
+  ]
+}

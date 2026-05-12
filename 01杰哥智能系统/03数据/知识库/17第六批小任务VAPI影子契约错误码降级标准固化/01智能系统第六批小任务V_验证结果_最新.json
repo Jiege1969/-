@@ -1,0 +1,2036 @@
+{
+  "generated_at": "2026-05-05 13:11:29",
+  "task": "01智能系统第六批小任务V_API影子契约错误码与降级标准固化验证",
+  "result": "通过",
+  "check_count": 23,
+  "passed_count": 23,
+  "failed_count": 0,
+  "delivery_blockers": 0,
+  "security_blockers": 5,
+  "checks": [
+    {
+      "name": "生成脚本返回码为0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "文件存在：01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+      "passed": true,
+      "detail": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json"
+    },
+    {
+      "name": "文件存在：01智能系统第六批小任务V_四类契约样本_最新.json",
+      "passed": true,
+      "detail": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_四类契约样本_最新.json"
+    },
+    {
+      "name": "文件存在：01智能系统第六批小任务V_验收报告_最新.md",
+      "passed": true,
+      "detail": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_验收报告_最新.md"
+    },
+    {
+      "name": "文件存在：01智能系统第六批小任务V_API影子契约错误码与降级标准固化_最新.md",
+      "passed": true,
+      "detail": "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\API契约\\01智能系统第六批小任务V_API影子契约错误码与降级标准固化_最新.md"
+    },
+    {
+      "name": "JSON可解析",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "请求字段齐全",
+      "passed": true,
+      "detail": [
+        "caller",
+        "dry_run",
+        "evidence_ids",
+        "question",
+        "request_id",
+        "safety_boundary"
+      ]
+    },
+    {
+      "name": "响应字段齐全",
+      "passed": true,
+      "detail": [
+        "answer",
+        "degrade_message",
+        "error_code",
+        "evidence",
+        "external_effect",
+        "formal_store_write",
+        "request_id",
+        "requires_human_review",
+        "safe_to_show_user",
+        "safety_boundary",
+        "status"
+      ]
+    },
+    {
+      "name": "错误码齐全",
+      "passed": true,
+      "detail": [
+        "CONTRACT_FIELD_MISSING",
+        "INSUFFICIENT_EVIDENCE",
+        "OK",
+        "SAFETY_FIELD_VIOLATION",
+        "SYSTEM_EXCEPTION_DEGRADED",
+        "UNAUTHORIZED_EXTERNAL_API"
+      ]
+    },
+    {
+      "name": "降级标准齐全",
+      "passed": true,
+      "detail": {
+        "evidence_required": "所有事实性回答必须绑定本地影子证据；无证据、证据不足、证据不匹配均返回 INSUFFICIENT_EVIDENCE。",
+        "external_api_forbidden": "任何真实外部 API、n8n、企业微信真实消息、券商接口、下单或自动交易请求均返回 UNAUTHORIZED_EXTERNAL_API。",
+        "system_exception": "本地异常不得升级为真实服务调用；统一返回 SYSTEM_EXCEPTION_DEGRADED 并保留人工复核提示。",
+        "contract_fields": "请求字段、响应字段、安全字段缺失时返回 CONTRACT_FIELD_MISSING 或 SAFETY_FIELD_VIOLATION。",
+        "formal_store": "正式库、正式知识库、正式向量库、正式数据库写入全部保持 False。"
+      }
+    },
+    {
+      "name": "安全字段齐全",
+      "passed": true,
+      "detail": {
+        "safe_to_show_user": "仅表示本地影子降级语或本地影子答案可展示，不代表可执行真实动作。",
+        "requires_human_review": "证据不足、系统异常、越权外部动作、安全字段异常必须进入人工复核。",
+        "external_effect": "只能为 none 或 blocked，不得出现 sent、called、written、traded 等真实效果。",
+        "formal_store_write": false
+      }
+    },
+    {
+      "name": "四个样本齐全",
+      "passed": true,
+      "detail": [
+        "成功",
+        "系统异常降级",
+        "证据不足",
+        "越权外部API"
+      ]
+    },
+    {
+      "name": "样本覆盖关键错误码",
+      "passed": true,
+      "detail": [
+        "INSUFFICIENT_EVIDENCE",
+        "OK",
+        "SYSTEM_EXCEPTION_DEGRADED",
+        "UNAUTHORIZED_EXTERNAL_API"
+      ]
+    },
+    {
+      "name": "成功样本含证据且无外部效果",
+      "passed": true,
+      "detail": [
+        {
+          "id": "V-S01",
+          "case": "成功",
+          "request": {
+            "request_id": "v-shadow-001",
+            "caller": "local_shadow_contract_tester",
+            "question": "当前 API 影子契约的安全边界是什么？",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-001",
+            "status": "ok",
+            "error_code": "OK",
+            "answer": "当前仅允许本地影子契约样本与本地验证，不调用真实外部 API，不触发 n8n，不写正式库。",
+            "evidence": [
+              {
+                "evidence_id": "V-EV-001",
+                "title": "第六批小任务V本地影子契约安全边界",
+                "source_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+                "quote_digest": "local_shadow_only；真实外部 API、n8n、企业微信真实消息、券商接口、自动交易和正式库写入均关闭。",
+                "freshness": "fresh"
+              }
+            ],
+            "degrade_message": "",
+            "safe_to_show_user": true,
+            "requires_human_review": false,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S02",
+          "case": "证据不足",
+          "request": {
+            "request_id": "v-shadow-002",
+            "caller": "local_shadow_contract_tester",
+            "question": "请基于缺失证据回答一个外部实时事实。",
+            "evidence_ids": [],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-002",
+            "status": "degraded",
+            "error_code": "INSUFFICIENT_EVIDENCE",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地证据不足以支撑结论，本轮只返回降级说明，不生成事实性回答。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S03",
+          "case": "越权外部API",
+          "request": {
+            "request_id": "v-shadow-003",
+            "caller": "local_shadow_contract_tester",
+            "question": "调用真实外部 API、触发 n8n，并把结果写入正式知识库。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-003",
+            "status": "blocked",
+            "error_code": "UNAUTHORIZED_EXTERNAL_API",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "真实外部 API 或真实动作已被安全边界阻断，本轮仅保留本地 dry_run 影子记录。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "blocked",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S04",
+          "case": "系统异常降级",
+          "request": {
+            "request_id": "v-shadow-004",
+            "caller": "local_shadow_contract_tester",
+            "question": "模拟本地影子处理器出现可恢复异常后的返回。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-004",
+            "status": "degraded",
+            "error_code": "SYSTEM_EXCEPTION_DEGRADED",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地影子处理出现系统异常，本轮已降级为人工复核提示，不触发任何外部动作。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "证据不足样本降级且不回答",
+      "passed": true,
+      "detail": [
+        {
+          "id": "V-S01",
+          "case": "成功",
+          "request": {
+            "request_id": "v-shadow-001",
+            "caller": "local_shadow_contract_tester",
+            "question": "当前 API 影子契约的安全边界是什么？",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-001",
+            "status": "ok",
+            "error_code": "OK",
+            "answer": "当前仅允许本地影子契约样本与本地验证，不调用真实外部 API，不触发 n8n，不写正式库。",
+            "evidence": [
+              {
+                "evidence_id": "V-EV-001",
+                "title": "第六批小任务V本地影子契约安全边界",
+                "source_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+                "quote_digest": "local_shadow_only；真实外部 API、n8n、企业微信真实消息、券商接口、自动交易和正式库写入均关闭。",
+                "freshness": "fresh"
+              }
+            ],
+            "degrade_message": "",
+            "safe_to_show_user": true,
+            "requires_human_review": false,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S02",
+          "case": "证据不足",
+          "request": {
+            "request_id": "v-shadow-002",
+            "caller": "local_shadow_contract_tester",
+            "question": "请基于缺失证据回答一个外部实时事实。",
+            "evidence_ids": [],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-002",
+            "status": "degraded",
+            "error_code": "INSUFFICIENT_EVIDENCE",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地证据不足以支撑结论，本轮只返回降级说明，不生成事实性回答。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S03",
+          "case": "越权外部API",
+          "request": {
+            "request_id": "v-shadow-003",
+            "caller": "local_shadow_contract_tester",
+            "question": "调用真实外部 API、触发 n8n，并把结果写入正式知识库。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-003",
+            "status": "blocked",
+            "error_code": "UNAUTHORIZED_EXTERNAL_API",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "真实外部 API 或真实动作已被安全边界阻断，本轮仅保留本地 dry_run 影子记录。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "blocked",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S04",
+          "case": "系统异常降级",
+          "request": {
+            "request_id": "v-shadow-004",
+            "caller": "local_shadow_contract_tester",
+            "question": "模拟本地影子处理器出现可恢复异常后的返回。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-004",
+            "status": "degraded",
+            "error_code": "SYSTEM_EXCEPTION_DEGRADED",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地影子处理出现系统异常，本轮已降级为人工复核提示，不触发任何外部动作。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "越权外部API样本被阻断",
+      "passed": true,
+      "detail": [
+        {
+          "id": "V-S01",
+          "case": "成功",
+          "request": {
+            "request_id": "v-shadow-001",
+            "caller": "local_shadow_contract_tester",
+            "question": "当前 API 影子契约的安全边界是什么？",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-001",
+            "status": "ok",
+            "error_code": "OK",
+            "answer": "当前仅允许本地影子契约样本与本地验证，不调用真实外部 API，不触发 n8n，不写正式库。",
+            "evidence": [
+              {
+                "evidence_id": "V-EV-001",
+                "title": "第六批小任务V本地影子契约安全边界",
+                "source_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+                "quote_digest": "local_shadow_only；真实外部 API、n8n、企业微信真实消息、券商接口、自动交易和正式库写入均关闭。",
+                "freshness": "fresh"
+              }
+            ],
+            "degrade_message": "",
+            "safe_to_show_user": true,
+            "requires_human_review": false,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S02",
+          "case": "证据不足",
+          "request": {
+            "request_id": "v-shadow-002",
+            "caller": "local_shadow_contract_tester",
+            "question": "请基于缺失证据回答一个外部实时事实。",
+            "evidence_ids": [],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-002",
+            "status": "degraded",
+            "error_code": "INSUFFICIENT_EVIDENCE",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地证据不足以支撑结论，本轮只返回降级说明，不生成事实性回答。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S03",
+          "case": "越权外部API",
+          "request": {
+            "request_id": "v-shadow-003",
+            "caller": "local_shadow_contract_tester",
+            "question": "调用真实外部 API、触发 n8n，并把结果写入正式知识库。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-003",
+            "status": "blocked",
+            "error_code": "UNAUTHORIZED_EXTERNAL_API",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "真实外部 API 或真实动作已被安全边界阻断，本轮仅保留本地 dry_run 影子记录。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "blocked",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S04",
+          "case": "系统异常降级",
+          "request": {
+            "request_id": "v-shadow-004",
+            "caller": "local_shadow_contract_tester",
+            "question": "模拟本地影子处理器出现可恢复异常后的返回。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-004",
+            "status": "degraded",
+            "error_code": "SYSTEM_EXCEPTION_DEGRADED",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地影子处理出现系统异常，本轮已降级为人工复核提示，不触发任何外部动作。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "系统异常样本降级且人工复核",
+      "passed": true,
+      "detail": [
+        {
+          "id": "V-S01",
+          "case": "成功",
+          "request": {
+            "request_id": "v-shadow-001",
+            "caller": "local_shadow_contract_tester",
+            "question": "当前 API 影子契约的安全边界是什么？",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-001",
+            "status": "ok",
+            "error_code": "OK",
+            "answer": "当前仅允许本地影子契约样本与本地验证，不调用真实外部 API，不触发 n8n，不写正式库。",
+            "evidence": [
+              {
+                "evidence_id": "V-EV-001",
+                "title": "第六批小任务V本地影子契约安全边界",
+                "source_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+                "quote_digest": "local_shadow_only；真实外部 API、n8n、企业微信真实消息、券商接口、自动交易和正式库写入均关闭。",
+                "freshness": "fresh"
+              }
+            ],
+            "degrade_message": "",
+            "safe_to_show_user": true,
+            "requires_human_review": false,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S02",
+          "case": "证据不足",
+          "request": {
+            "request_id": "v-shadow-002",
+            "caller": "local_shadow_contract_tester",
+            "question": "请基于缺失证据回答一个外部实时事实。",
+            "evidence_ids": [],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-002",
+            "status": "degraded",
+            "error_code": "INSUFFICIENT_EVIDENCE",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地证据不足以支撑结论，本轮只返回降级说明，不生成事实性回答。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S03",
+          "case": "越权外部API",
+          "request": {
+            "request_id": "v-shadow-003",
+            "caller": "local_shadow_contract_tester",
+            "question": "调用真实外部 API、触发 n8n，并把结果写入正式知识库。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-003",
+            "status": "blocked",
+            "error_code": "UNAUTHORIZED_EXTERNAL_API",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "真实外部 API 或真实动作已被安全边界阻断，本轮仅保留本地 dry_run 影子记录。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "blocked",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S04",
+          "case": "系统异常降级",
+          "request": {
+            "request_id": "v-shadow-004",
+            "caller": "local_shadow_contract_tester",
+            "question": "模拟本地影子处理器出现可恢复异常后的返回。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-004",
+            "status": "degraded",
+            "error_code": "SYSTEM_EXCEPTION_DEGRADED",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地影子处理出现系统异常，本轮已降级为人工复核提示，不触发任何外部动作。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "降级/阻断样本都有固定降级语",
+      "passed": true,
+      "detail": [
+        {
+          "id": "V-S01",
+          "case": "成功",
+          "request": {
+            "request_id": "v-shadow-001",
+            "caller": "local_shadow_contract_tester",
+            "question": "当前 API 影子契约的安全边界是什么？",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-001",
+            "status": "ok",
+            "error_code": "OK",
+            "answer": "当前仅允许本地影子契约样本与本地验证，不调用真实外部 API，不触发 n8n，不写正式库。",
+            "evidence": [
+              {
+                "evidence_id": "V-EV-001",
+                "title": "第六批小任务V本地影子契约安全边界",
+                "source_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+                "quote_digest": "local_shadow_only；真实外部 API、n8n、企业微信真实消息、券商接口、自动交易和正式库写入均关闭。",
+                "freshness": "fresh"
+              }
+            ],
+            "degrade_message": "",
+            "safe_to_show_user": true,
+            "requires_human_review": false,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S02",
+          "case": "证据不足",
+          "request": {
+            "request_id": "v-shadow-002",
+            "caller": "local_shadow_contract_tester",
+            "question": "请基于缺失证据回答一个外部实时事实。",
+            "evidence_ids": [],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-002",
+            "status": "degraded",
+            "error_code": "INSUFFICIENT_EVIDENCE",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地证据不足以支撑结论，本轮只返回降级说明，不生成事实性回答。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S03",
+          "case": "越权外部API",
+          "request": {
+            "request_id": "v-shadow-003",
+            "caller": "local_shadow_contract_tester",
+            "question": "调用真实外部 API、触发 n8n，并把结果写入正式知识库。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-003",
+            "status": "blocked",
+            "error_code": "UNAUTHORIZED_EXTERNAL_API",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "真实外部 API 或真实动作已被安全边界阻断，本轮仅保留本地 dry_run 影子记录。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "blocked",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S04",
+          "case": "系统异常降级",
+          "request": {
+            "request_id": "v-shadow-004",
+            "caller": "local_shadow_contract_tester",
+            "question": "模拟本地影子处理器出现可恢复异常后的返回。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-004",
+            "status": "degraded",
+            "error_code": "SYSTEM_EXCEPTION_DEGRADED",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地影子处理出现系统异常，本轮已降级为人工复核提示，不触发任何外部动作。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "所有响应正式库写入为False",
+      "passed": true,
+      "detail": [
+        {
+          "id": "V-S01",
+          "case": "成功",
+          "request": {
+            "request_id": "v-shadow-001",
+            "caller": "local_shadow_contract_tester",
+            "question": "当前 API 影子契约的安全边界是什么？",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-001",
+            "status": "ok",
+            "error_code": "OK",
+            "answer": "当前仅允许本地影子契约样本与本地验证，不调用真实外部 API，不触发 n8n，不写正式库。",
+            "evidence": [
+              {
+                "evidence_id": "V-EV-001",
+                "title": "第六批小任务V本地影子契约安全边界",
+                "source_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+                "quote_digest": "local_shadow_only；真实外部 API、n8n、企业微信真实消息、券商接口、自动交易和正式库写入均关闭。",
+                "freshness": "fresh"
+              }
+            ],
+            "degrade_message": "",
+            "safe_to_show_user": true,
+            "requires_human_review": false,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S02",
+          "case": "证据不足",
+          "request": {
+            "request_id": "v-shadow-002",
+            "caller": "local_shadow_contract_tester",
+            "question": "请基于缺失证据回答一个外部实时事实。",
+            "evidence_ids": [],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-002",
+            "status": "degraded",
+            "error_code": "INSUFFICIENT_EVIDENCE",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地证据不足以支撑结论，本轮只返回降级说明，不生成事实性回答。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S03",
+          "case": "越权外部API",
+          "request": {
+            "request_id": "v-shadow-003",
+            "caller": "local_shadow_contract_tester",
+            "question": "调用真实外部 API、触发 n8n，并把结果写入正式知识库。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-003",
+            "status": "blocked",
+            "error_code": "UNAUTHORIZED_EXTERNAL_API",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "真实外部 API 或真实动作已被安全边界阻断，本轮仅保留本地 dry_run 影子记录。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "blocked",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S04",
+          "case": "系统异常降级",
+          "request": {
+            "request_id": "v-shadow-004",
+            "caller": "local_shadow_contract_tester",
+            "question": "模拟本地影子处理器出现可恢复异常后的返回。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-004",
+            "status": "degraded",
+            "error_code": "SYSTEM_EXCEPTION_DEGRADED",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地影子处理出现系统异常，本轮已降级为人工复核提示，不触发任何外部动作。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "所有请求dry_run为true",
+      "passed": true,
+      "detail": [
+        {
+          "id": "V-S01",
+          "case": "成功",
+          "request": {
+            "request_id": "v-shadow-001",
+            "caller": "local_shadow_contract_tester",
+            "question": "当前 API 影子契约的安全边界是什么？",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-001",
+            "status": "ok",
+            "error_code": "OK",
+            "answer": "当前仅允许本地影子契约样本与本地验证，不调用真实外部 API，不触发 n8n，不写正式库。",
+            "evidence": [
+              {
+                "evidence_id": "V-EV-001",
+                "title": "第六批小任务V本地影子契约安全边界",
+                "source_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+                "quote_digest": "local_shadow_only；真实外部 API、n8n、企业微信真实消息、券商接口、自动交易和正式库写入均关闭。",
+                "freshness": "fresh"
+              }
+            ],
+            "degrade_message": "",
+            "safe_to_show_user": true,
+            "requires_human_review": false,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S02",
+          "case": "证据不足",
+          "request": {
+            "request_id": "v-shadow-002",
+            "caller": "local_shadow_contract_tester",
+            "question": "请基于缺失证据回答一个外部实时事实。",
+            "evidence_ids": [],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-002",
+            "status": "degraded",
+            "error_code": "INSUFFICIENT_EVIDENCE",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地证据不足以支撑结论，本轮只返回降级说明，不生成事实性回答。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S03",
+          "case": "越权外部API",
+          "request": {
+            "request_id": "v-shadow-003",
+            "caller": "local_shadow_contract_tester",
+            "question": "调用真实外部 API、触发 n8n，并把结果写入正式知识库。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-003",
+            "status": "blocked",
+            "error_code": "UNAUTHORIZED_EXTERNAL_API",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "真实外部 API 或真实动作已被安全边界阻断，本轮仅保留本地 dry_run 影子记录。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "blocked",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S04",
+          "case": "系统异常降级",
+          "request": {
+            "request_id": "v-shadow-004",
+            "caller": "local_shadow_contract_tester",
+            "question": "模拟本地影子处理器出现可恢复异常后的返回。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-004",
+            "status": "degraded",
+            "error_code": "SYSTEM_EXCEPTION_DEGRADED",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地影子处理出现系统异常，本轮已降级为人工复核提示，不触发任何外部动作。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "所有响应external_effect合法",
+      "passed": true,
+      "detail": [
+        {
+          "id": "V-S01",
+          "case": "成功",
+          "request": {
+            "request_id": "v-shadow-001",
+            "caller": "local_shadow_contract_tester",
+            "question": "当前 API 影子契约的安全边界是什么？",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-001",
+            "status": "ok",
+            "error_code": "OK",
+            "answer": "当前仅允许本地影子契约样本与本地验证，不调用真实外部 API，不触发 n8n，不写正式库。",
+            "evidence": [
+              {
+                "evidence_id": "V-EV-001",
+                "title": "第六批小任务V本地影子契约安全边界",
+                "source_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+                "quote_digest": "local_shadow_only；真实外部 API、n8n、企业微信真实消息、券商接口、自动交易和正式库写入均关闭。",
+                "freshness": "fresh"
+              }
+            ],
+            "degrade_message": "",
+            "safe_to_show_user": true,
+            "requires_human_review": false,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S02",
+          "case": "证据不足",
+          "request": {
+            "request_id": "v-shadow-002",
+            "caller": "local_shadow_contract_tester",
+            "question": "请基于缺失证据回答一个外部实时事实。",
+            "evidence_ids": [],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-002",
+            "status": "degraded",
+            "error_code": "INSUFFICIENT_EVIDENCE",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地证据不足以支撑结论，本轮只返回降级说明，不生成事实性回答。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S03",
+          "case": "越权外部API",
+          "request": {
+            "request_id": "v-shadow-003",
+            "caller": "local_shadow_contract_tester",
+            "question": "调用真实外部 API、触发 n8n，并把结果写入正式知识库。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-003",
+            "status": "blocked",
+            "error_code": "UNAUTHORIZED_EXTERNAL_API",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "真实外部 API 或真实动作已被安全边界阻断，本轮仅保留本地 dry_run 影子记录。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "blocked",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        },
+        {
+          "id": "V-S04",
+          "case": "系统异常降级",
+          "request": {
+            "request_id": "v-shadow-004",
+            "caller": "local_shadow_contract_tester",
+            "question": "模拟本地影子处理器出现可恢复异常后的返回。",
+            "evidence_ids": [
+              "V-EV-001"
+            ],
+            "dry_run": true,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          },
+          "response": {
+            "request_id": "v-shadow-004",
+            "status": "degraded",
+            "error_code": "SYSTEM_EXCEPTION_DEGRADED",
+            "answer": "",
+            "evidence": [],
+            "degrade_message": "本地影子处理出现系统异常，本轮已降级为人工复核提示，不触发任何外部动作。",
+            "safe_to_show_user": true,
+            "requires_human_review": true,
+            "external_effect": "none",
+            "formal_store_write": false,
+            "safety_boundary": {
+              "mode": "local_shadow_only",
+              "allowed_input_source": "local_shadow_contract_samples",
+              "call_external_api": false,
+              "trigger_n8n": false,
+              "send_wecom_real_message": false,
+              "write_production_db": false,
+              "write_formal_knowledge_db": false,
+              "write_formal_vector_db": false,
+              "call_broker_api": false,
+              "auto_trade": false,
+              "place_order": false,
+              "touch_primary_work_system": false,
+              "dry_run_required": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "安全边界关闭真实动作",
+      "passed": true,
+      "detail": {
+        "mode": "local_shadow_only",
+        "allowed_input_source": "local_shadow_contract_samples",
+        "call_external_api": false,
+        "trigger_n8n": false,
+        "send_wecom_real_message": false,
+        "write_production_db": false,
+        "write_formal_knowledge_db": false,
+        "write_formal_vector_db": false,
+        "call_broker_api": false,
+        "auto_trade": false,
+        "place_order": false,
+        "touch_primary_work_system": false,
+        "dry_run_required": true
+      }
+    },
+    {
+      "name": "正式库策略禁用",
+      "passed": true,
+      "detail": {
+        "write_production_db": false,
+        "write_formal_knowledge_db": false,
+        "write_formal_vector_db": false,
+        "write_formal_database": false,
+        "allowed_write_targets": [
+          "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化",
+          "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\API契约\\01智能系统第六批小任务V_API影子契约错误码与降级标准固化_最新.md"
+        ]
+      }
+    }
+  ],
+  "outputs": {
+    "contract_json": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_API影子契约错误码与降级标准_最新.json",
+    "samples_json": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_四类契约样本_最新.json",
+    "acceptance_md": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_验收报告_最新.md",
+    "verify_json": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\17第六批小任务VAPI影子契约错误码降级标准固化\\01智能系统第六批小任务V_验证结果_最新.json",
+    "doc_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\API契约\\01智能系统第六批小任务V_API影子契约错误码与降级标准固化_最新.md",
+    "recycle_path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\01智能系统_第六批小任务V回收报告_最新.md"
+  },
+  "safety_boundary": {
+    "mode": "local_shadow_only",
+    "allowed_input_source": "local_shadow_contract_samples",
+    "call_external_api": false,
+    "trigger_n8n": false,
+    "send_wecom_real_message": false,
+    "write_production_db": false,
+    "write_formal_knowledge_db": false,
+    "write_formal_vector_db": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "place_order": false,
+    "touch_primary_work_system": false,
+    "dry_run_required": true
+  }
+}

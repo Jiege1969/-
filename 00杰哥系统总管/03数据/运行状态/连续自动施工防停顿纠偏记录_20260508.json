@@ -1,0 +1,54 @@
+{
+  "record_id": "CONTINUOUS_AUTOBUILD_NO_PAUSE_CORRECTION_20260508",
+  "generated_at": "2026-05-08 10:28:00 +08:00",
+  "asset_identity": "总管侧W1/R0连续自动施工防停顿纠偏记录",
+  "risk_level": "W1/R0",
+  "trigger": "用户连续指出不要阶段性停下来等确认",
+  "is_new_approval_rule": false,
+  "is_w2_w3_permission": false,
+  "why_not_extend_existing": "当前施工面板和一键接续施工包负责状态和路径，不适合承载每轮防停顿执行细则；独立记录便于追溯本轮纠偏。",
+  "capability_gain": [
+    "把继续类消息转成实际施工动作",
+    "完成一个阶段后自动寻找下一项W1/R0任务",
+    "缺少业务输入时转入输入条件核对、缺口卡、回执、索引或候选准备",
+    "只在真实暂停条件下暂停"
+  ],
+  "execution_rule": {
+    "read_panel_first": true,
+    "read_handoff_package_first": true,
+    "advance_one_w1_r0_task_per_user_message": true,
+    "if_candidate_input_missing_create_preparation_or_gap_record": true,
+    "update_panel_or_handoff_package": true
+  },
+  "pause_only_when": [
+    "W2/W3",
+    "真实系统接入",
+    "企业微信真实发送",
+    "n8n",
+    "服务重启",
+    "正式库",
+    "删除/移动/覆盖风险",
+    "交易",
+    "税务办理",
+    "视频真实渲染发布",
+    "规则冲突",
+    "需求硬分叉"
+  ],
+  "current_next_action": "CTRL-CAND-TAX-002输入条件缺口核对",
+  "boundary_flags": {
+    "tax_analysis_executed": false,
+    "formal_tax_opinion": false,
+    "login_e_tax_system": false,
+    "read_real_finance_system": false,
+    "refund_amount_or_filing_advice": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "modify_service_script": false,
+    "write_formal_db": false
+  },
+  "self_check": {
+    "boundary_kept": true,
+    "json_parse_required": true,
+    "next_w1_r0_action_identified": true
+  }
+}

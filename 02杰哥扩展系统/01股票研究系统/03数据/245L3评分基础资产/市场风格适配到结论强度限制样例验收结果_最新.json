@@ -1,0 +1,10 @@
+{
+  "name": "市场风格适配到结论强度限制样例验收结果",
+  "generated_at": "2026-05-08 12:15:01",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "style_gate_count": 4,
+    "sample_count": 5
+  }
+}

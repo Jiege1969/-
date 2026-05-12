@@ -1,0 +1,260 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Policy Events Schema v1.0",
+  "version": "1.0",
+  "effective_date": "2026-05-07",
+  "description": "结构化政策事件主表及股票政策暴露度映射表。政策事件与股票暴露度分开维护，便于复盘、调权和回测。",
+  "definitions": {
+    "policy_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "type": "string",
+          "pattern": "^POL-[0-9]{4}-[0-9]{3}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publish_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "effective_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "valid_until": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "description": "政策观察有效期。长期有效或需人工复核时可为null。"
+        },
+        "decay_days": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "超过valid_until后衰减至0所需天数。"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "active",
+            "superseded_active",
+            "retired"
+          ]
+        },
+        "retired_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last_reviewed_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "source_name": {
+          "type": "string"
+        },
+        "source_level": {
+          "type": "string",
+          "enum": [
+            "official",
+            "exchange",
+            "company_filing",
+            "mainstream_media",
+            "research_report",
+            "unknown"
+          ]
+        },
+        "impact_direction": {
+          "type": "string",
+          "enum": [
+            "利好",
+            "利空",
+            "中性",
+            "不确定"
+          ]
+        },
+        "impact_strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "政策事件强度，0=无影响，1=极强影响。"
+        },
+        "event_confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "事件证据置信度，官方文件通常较高。"
+        },
+        "industry_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "description": {
+          "type": "string"
+        },
+        "full_text_summary": {
+          "type": "string"
+        },
+        "risk_counterpoint": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "event_id",
+        "title",
+        "publish_date",
+        "effective_date",
+        "valid_until",
+        "decay_days",
+        "status",
+        "retired_reason",
+        "last_reviewed_at",
+        "source_url",
+        "source_name",
+        "source_level",
+        "impact_direction",
+        "impact_strength",
+        "event_confidence",
+        "industry_tags",
+        "description",
+        "full_text_summary",
+        "risk_counterpoint"
+      ]
+    },
+    "stock_policy_exposure": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "type": "string",
+          "pattern": "^POL-[0-9]{4}-[0-9]{3}$"
+        },
+        "stock_code": {
+          "type": "string",
+          "pattern": "^[0-9]{6}$"
+        },
+        "stock_name": {
+          "type": "string"
+        },
+        "exposure": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "该股票对该政策事件的暴露度，0=无关，1=核心受益或核心受损。"
+        },
+        "exposure_direction": {
+          "type": "string",
+          "enum": [
+            "受益",
+            "受损",
+            "中性",
+            "不确定"
+          ]
+        },
+        "exposure_reason": {
+          "type": "string",
+          "description": "为什么有这样的暴露度。"
+        },
+        "last_reviewed_at": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "event_id",
+        "stock_code",
+        "stock_name",
+        "exposure",
+        "exposure_direction",
+        "exposure_reason",
+        "last_reviewed_at"
+      ]
+    }
+  },
+  "policy_events_schema": {
+    "type": "array",
+    "items": {
+      "$ref": "#/definitions/policy_event"
+    }
+  },
+  "stock_policy_exposures_schema": {
+    "type": "array",
+    "items": {
+      "$ref": "#/definitions/stock_policy_exposure"
+    }
+  },
+  "examples": {
+    "policy_events": [
+      {
+        "event_id": "POL-2023-001",
+        "title": "商务部 海关总署公告2023年第23号 关于对镓、锗相关物项实施出口管制的公告",
+        "publish_date": "2023-07-03",
+        "effective_date": "2023-08-01",
+        "valid_until": null,
+        "decay_days": 180,
+        "status": "superseded_active",
+        "retired_reason": "原公告相关列管物项后续纳入两用物项出口管制清单管理，但锗相关物项出口许可约束仍需作为长期政策背景跟踪。",
+        "last_reviewed_at": "2026-05-07",
+        "source_url": "https://dcj.mofcom.gov.cn/article/zcfb/zcdwmy/202307/20230703419666.shtml",
+        "source_name": "商务部、海关总署",
+        "source_level": "official",
+        "impact_direction": "利好",
+        "impact_strength": 0.85,
+        "event_confidence": 0.95,
+        "industry_tags": [
+          "稀有金属",
+          "半导体材料",
+          "出口管制",
+          "锗"
+        ],
+        "description": "商务部、海关总署公告对满足特性的镓、锗相关物项实施出口管制。该事件可能提高锗资源及锗材料的战略稀缺性和市场关注度，对具备锗资源、锗产品生产或加工能力的A股公司形成政策催化。",
+        "full_text_summary": "公告列明金属锗、区熔锗锭、磷锗锌、锗外延生长衬底、二氧化锗、四氯化锗等锗相关物项，要求满足相关特性的物项未经许可不得出口。出口经营者需按规定办理出口许可手续，公告自2023年8月1日起正式实施。",
+        "risk_counterpoint": "政策利好并不等同于盈利兑现。若下游需求疲软、出口许可执行节奏变化、替代材料出现或锗价未持续上行，相关个股的政策溢价可能减弱。"
+      }
+    ],
+    "stock_policy_exposures": [
+      {
+        "event_id": "POL-2023-001",
+        "stock_code": "002428",
+        "stock_name": "云南锗业",
+        "exposure": 0.95,
+        "exposure_direction": "受益",
+        "exposure_reason": "云南锗业主营业务与锗材料、锗产品高度相关，是A股中锗主题辨识度较高的公司。镓、锗相关物项出口管制提高锗资源战略属性和市场关注度，对其议价能力和估值预期具有较强映射。",
+        "last_reviewed_at": "2026-05-07"
+      },
+      {
+        "event_id": "POL-2023-001",
+        "stock_code": "600497",
+        "stock_name": "驰宏锌锗",
+        "exposure": 0.55,
+        "exposure_direction": "受益",
+        "exposure_reason": "公司名称和业务中包含锗相关资源属性，但具体收益弹性需结合锗业务收入占比、产量、成本和价格传导能力复核，暂按中等偏高暴露度处理。",
+        "last_reviewed_at": "2026-05-07"
+      }
+    ]
+  },
+  "maintenance_rules": {
+    "draft_rule": "由LLM或搜索脚本生成但尚未人工核验的政策事件只能进入draft状态，不得用于正式评分。",
+    "official_source_rule": "source_level为official、exchange或company_filing的事件可进入正式评分；mainstream_media和research_report需人工复核后才能进入active。",
+    "review_rule": "active和superseded_active事件至少每90天复核一次，复核字段写入last_reviewed_at。",
+    "exposure_rule": "股票暴露度必须单独维护，禁止只因为行业标签相同就自动给高暴露度。"
+  }
+}

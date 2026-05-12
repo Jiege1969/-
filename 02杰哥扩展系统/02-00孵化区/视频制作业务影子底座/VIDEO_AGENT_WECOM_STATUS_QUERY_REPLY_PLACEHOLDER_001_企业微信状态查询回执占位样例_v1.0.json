@@ -1,0 +1,35 @@
+{
+  "asset_id": "VIDEO_AGENT_WECOM_STATUS_QUERY_REPLY_PLACEHOLDER_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "placeholder_sample_not_real_wecom_reply",
+  "purpose": "Reserve a shadow reply format for future WeCom status-query conversations without connecting to WeCom.",
+  "reply_template_fields": [
+    "shadow_task_id",
+    "current_shadow_status",
+    "last_shadow_action",
+    "missing_fields",
+    "human_review_items",
+    "redline_status",
+    "next_shadow_action"
+  ],
+  "intent_response_rules": [
+    {"intent": "query_task_progress", "shadow_response": "return_current_shadow_status_and_last_action"},
+    {"intent": "query_missing_items", "shadow_response": "return_missing_fields_and_review_items"},
+    {"intent": "query_publish_permission", "shadow_response": "return_publish_gate_status_without_permission_wording"},
+    {"intent": "query_wecom_send_status", "shadow_response": "return_not_connected_placeholder_status"},
+    {"intent": "query_real_generation_result", "shadow_response": "return_redline_block_note"}
+  ],
+  "real_system_triggered": {
+    "wecom_real_send": false,
+    "wecom_real_message_read": false,
+    "credential_read": false,
+    "n8n": false,
+    "service_or_port_change": false,
+    "model_api": false,
+    "render": false,
+    "publish": false
+  }
+}

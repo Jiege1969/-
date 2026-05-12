@@ -1,0 +1,61 @@
+{
+  "名称": "经营快照 vs 191台账差异清单",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子差异清单",
+  "状态": "shadow_only",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "scan_scope": {
+    "snapshot_file": "03数据/166公司经营快照/公司经营快照_最新.json",
+    "ledger_dir": "03数据/191单股证据核验人工填写台账",
+    "scan_rule": "对比经营快照中的证据状态和公司概况字段，与191人工核验台账中已核验且缺失字段为0的链路。",
+    "matched_overdue_count": 1
+  },
+  "diff_items": [
+    {
+      "stock_name": "天齐锂业",
+      "stock_code": "sz002466",
+      "ledger_file": "03数据/191单股证据核验人工填写台账/单股证据核验人工填写台账_sz002466_20260506_124629.json",
+      "snapshot_file": "03数据/166公司经营快照/公司经营快照_最新.json",
+      "snapshot_status": {
+        "公司概况": "待接入",
+        "财报指标": "已接入",
+        "行业地位": "人工核验",
+        "未来方向": "人工核验"
+      },
+      "snapshot_waiting_company_fields": [
+        "核心业务",
+        "行业地位",
+        "主营产品",
+        "主要客户或下游",
+        "未来方向"
+      ],
+      "ledger_ready_status": {
+        "公司概况": true,
+        "事件风险": true,
+        "行业景气": true
+      },
+      "classification": "已有人工核验证据但经营快照未闭环",
+      "impact": "前台报告和L3基本面/资金分项可能继续把公司业务、行业地位、产品和下游写成缺口，降低用户可感知报告质量。",
+      "recommended_shadow_action": "先生成经营快照写回预览，不直接覆盖正式快照；人工确认后再决定是否受控写回166。",
+      "w3_or_pause_note": "如果只是生成差异清单和写回预览，属于影子/W2；如果修改正式生成脚本、正式入口或自动同步规则，应暂停确认。"
+    }
+  ],
+  "summary": {
+    "clear_unclosed_loop_count": 1,
+    "p0_relevance": "影响单股前台报告质量，属于应优先收束的未闭环项。",
+    "can_continue_shadow_work": true,
+    "formal_writeback_requires_confirmation": true
+  },
+  "safety_boundary": {
+    "not_write_166_snapshot": true,
+    "not_modify_formal_script": true,
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_service_restart": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "asset_id": "VIDEO_AGENT_VAI_094_099_MINI_ROLLUP_001",
+  "version": "v1.0",
+  "asset_type": "mini_stage_rollup",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "video_production_shadow_base_vai094_to_vai099",
+  "status": "draft",
+  "rollup_date": "2026-05-08",
+  "conclusion": "VAI094-VAI099 formed a shadow loop around final human confirmation, including gate-gap mapping, confirmation placeholder, quality check, refusal reply, and index v6.",
+  "not_implied": [
+    "real_publish_available",
+    "real_manager_submission_available",
+    "wecom_real_send_available"
+  ],
+  "assets": [
+    {"id": "VAI094", "asset": "VAI088_093_mini_rollup", "purpose": "roll up pre-publish explanation and review interaction loop", "real_system_triggered": false},
+    {"id": "VAI095", "asset": "pre_publish_gate_gap_to_review_mapping_sample", "purpose": "map gate gaps to queues and required outputs", "real_system_triggered": false},
+    {"id": "VAI096", "asset": "final_human_confirmation_placeholder_receipt", "purpose": "record submit-to-manager pending or rejection decision", "real_system_triggered": false},
+    {"id": "VAI097", "asset": "final_human_confirmation_quality_check", "purpose": "check final confirmation is based on complete materials", "real_system_triggered": false},
+    {"id": "VAI098", "asset": "wecom_submit_human_confirmation_refusal_reply", "purpose": "refuse verbal confirmation replacing structured gates", "real_system_triggered": false},
+    {"id": "VAI099", "asset": "line_asset_index_draft_v6", "purpose": "track VAI001-VAI096 inside video line", "real_system_triggered": false}
+  ],
+  "capabilities": [
+    "identify_missing_materials_before_final_confirmation",
+    "refuse_verbal_publish_confirmation_misfire",
+    "route_gaps_to_human_review_queues",
+    "maintain_shadow_index_without_formal_write"
+  ],
+  "boundaries": {
+    "submit_real_manager_decision": false,
+    "trigger_real_publish": false,
+    "wecom_real_send": false,
+    "connect_n8n": false,
+    "connect_platform_or_account": false
+  }
+}

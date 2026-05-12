@@ -1,0 +1,138 @@
+{
+  "name": "股票线第八批统一影子验收总表",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 14:02:42",
+  "asset_identity": "W2 股票线第八批统一影子验收总表",
+  "status": "shadow_batch_acceptance",
+  "purpose": "汇总第八批低风险续建资产的验收状态，确认本批只增强研究分析证据闭环，不触发真实系统。",
+  "not_formal_config": true,
+  "not_formal_entry": true,
+  "not_external_send": true,
+  "not_formal_database_write": true,
+  "not_rule_update": true,
+  "not_trade": true,
+  "checks": [
+    {
+      "key": "policy_events_fields",
+      "label": "政策事件库字段化补齐样例",
+      "batch_item": "STOCK-AUTO8-001",
+      "exists": true,
+      "passed": true,
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\政策事件库字段化补齐样例验收结果_最新.json",
+      "metrics": {
+        "sample_count": 3,
+        "ready_source_count": 0
+      }
+    },
+    {
+      "key": "market_style_fields",
+      "label": "市场风格日表字段化补齐样例",
+      "batch_item": "STOCK-AUTO8-002",
+      "exists": true,
+      "passed": true,
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\市场风格日表字段化补齐样例验收结果_最新.json",
+      "metrics": {
+        "field_count": 10,
+        "sample_count": 3,
+        "real_market_data_ready": false
+      }
+    },
+    {
+      "key": "replay_rule_gate",
+      "label": "复盘结果到规则候选二次门禁样例",
+      "batch_item": "STOCK-AUTO8-003",
+      "exists": true,
+      "passed": true,
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\复盘结果到规则候选二次门禁样例验收结果_最新.json",
+      "metrics": {
+        "gate_count": 4,
+        "sample_count": 3,
+        "any_formal_rule_update_allowed": false
+      }
+    },
+    {
+      "key": "l3_missing_refresh",
+      "label": "L3证据缺口统一刷新验收样例",
+      "batch_item": "STOCK-AUTO8-004",
+      "exists": true,
+      "passed": true,
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\L3证据缺口统一刷新验收样例验收结果_最新.json",
+      "metrics": {
+        "source_validation_count": 6,
+        "source_validation_passed_count": 6,
+        "sample_count": 5,
+        "formal_score_write_allowed": false,
+        "real_external_send_allowed": false
+      }
+    },
+    {
+      "key": "queue_acceptance",
+      "label": "股票线第八批低风险续建队列验收",
+      "batch_item": "STOCK-AUTO8-005",
+      "exists": true,
+      "passed": true,
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票线第八批低风险续建队列验收_最新.json",
+      "metrics": {
+        "queue_count": 5,
+        "completed_count": 5,
+        "queued_count": 0,
+        "blocked_count": 2
+      }
+    }
+  ],
+  "queue_summary": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "blocked_register": [
+    {
+      "id": "STOCK-AUTO8-BLOCK-001",
+      "title": "接入真实企业微信外发或正式入口",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "真实外发、正式入口、路由和服务变更属于红线事项，本业务线只登记阻断。"
+    },
+    {
+      "id": "STOCK-AUTO8-BLOCK-002",
+      "title": "接入券商接口或交易执行能力",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "股票系统定位为研究分析系统，不新增交易执行能力。"
+    }
+  ],
+  "batch_effect": {
+    "frontend_effect": "前台更容易输出使用者需要的结论型短答，并把证据缺口压缩为必要原因。",
+    "backend_effect": "后台保留政策事件、市场风格、财报资金、行业价格、复盘候选和缺口刷新记录。",
+    "remaining_debt": [
+      "真实财报资金自动来源仍未正式接入",
+      "真实行业价格连续数据仍未正式接入",
+      "真实交易日市场风格日表仍未正式接入",
+      "真实企业微信外发和生产入口仍为红线阻断"
+    ]
+  },
+  "summary": {
+    "check_count": 5,
+    "passed_count": 5,
+    "failed_count": 0,
+    "queue_completed_count": 5,
+    "queue_count": 5,
+    "blocked_count": 2,
+    "real_system_triggered": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  }
+}

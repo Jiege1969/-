@@ -1,0 +1,17 @@
+﻿{
+    "report":  "WSL2备份恢复口径收口",
+    "generated_at":  "2026-05-06 10:04:10 +08:00",
+    "backup_dir":  "F:\\系统备份\\WSL2一致性备份_20260506_090045",
+    "manifest":  "F:\\系统备份\\WSL2一致性备份_20260506_090045\\backup_manifest.json",
+    "restore_runbook":  "F:\\系统备份\\WSL2一致性备份_20260506_090045\\恢复说明.md",
+    "ledger":  "F:\\系统备份\\备份总台账_最新.md/json",
+    "decision":  "WSL2备份已具备恢复说明，避免有备份不会恢复的新债。",
+    "safety":  {
+                   "restored_now":  false,
+                   "stopped_services":  false,
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false
+               }
+}

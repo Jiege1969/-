@@ -1,0 +1,61 @@
+﻿{
+    "report":  "空日志真实删除收口",
+    "generated_at":  "2026-05-06 14:39:44",
+    "rule":  "长度为0、早于2026-05-06、非证据/回滚/安全/真实发送/券商/交易路径的日志，无内容价值；当前进程占用的空stderr视为运行句柄，跳过不强删。",
+    "scanned_roots":  [
+                          "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志",
+                          "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志",
+                          "D:\\杰哥智能化系统\\02杰哥扩展系统\\04日志",
+                          "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志",
+                          "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\04日志",
+                          "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志"
+                      ],
+    "candidate_count":  9,
+    "deleted_count":  5,
+    "skipped_current_handle_count":  4,
+    "failed_count":  0,
+    "deleted_sample":  [
+                           "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\助手入口\\乱码目录归档_060809_stock-assistant-service-stdout.log",
+                           "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\04日志\\统一指令本地服务\\wecom-unified-19310.stderr.log",
+                           "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\04日志\\统一指令本地服务\\wecom-unified-19310.stdout.log",
+                           "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\04日志\\统一指令本地服务\\wecom-unified-command-service-stderr.log",
+                           "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\04日志\\统一指令本地服务\\wecom-unified-command-service-stdout.log"
+                       ],
+    "skipped_current_handle":  [
+                                   {
+                                       "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\企业微信桥接入口\\stock-wework-bridge-service-stderr.log",
+                                       "reason":  "当前进程占用，视为当前运行句柄，不强删"
+                                   },
+                                   {
+                                       "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\企业微信桥接入口\\stock-wework-bridge-service-stdout.log",
+                                       "reason":  "当前进程占用，视为当前运行句柄，不强删"
+                                   },
+                                   {
+                                       "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\04日志\\统一指令本地服务\\wecom-unified-local-service.stderr.log",
+                                       "reason":  "当前进程占用，视为当前运行句柄，不强删"
+                                   },
+                                   {
+                                       "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\04日志\\统一指令本地服务\\wecom-unified-local-service.stdout.log",
+                                       "reason":  "当前进程占用，视为当前运行句柄，不强删"
+                                   }
+                               ],
+    "failed":  [
+
+               ],
+    "safety":  {
+                   "called_broker_api":  false,
+                   "deleted_business_data":  false,
+                   "deleted_evidence_log":  false,
+                   "deleted_non_empty_log":  false,
+                   "auto_trade":  false,
+                   "sent_wecom":  false,
+                   "triggered_n8n":  false
+               },
+    "current_remaining_empty_logs":  [
+                                         "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\企业微信桥接入口\\stock-wework-bridge-service-stderr.log",
+                                         "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\企业微信桥接入口\\stock-wework-bridge-service-stdout.log",
+                                         "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\04日志\\统一指令本地服务\\wecom-unified-local-service.stderr.log",
+                                         "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\04日志\\统一指令本地服务\\wecom-unified-local-service.stdout.log"
+                                     ],
+    "current_remaining_conclusion":  "剩余空日志均为当前服务占用的stdout/stderr运行句柄，不强删，不作为旧债。"
+}

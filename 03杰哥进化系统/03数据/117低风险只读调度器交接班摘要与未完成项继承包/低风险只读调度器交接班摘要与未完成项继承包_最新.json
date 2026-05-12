@@ -1,0 +1,51 @@
+{
+  "名称": "低风险只读调度器交接班摘要与未完成项继承包",
+  "生成时间": "2026-05-08 21:17:36",
+  "状态": "low_risk_readonly_scheduler_handoff_inheritance_ready",
+  "数据目录": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\117低风险只读调度器交接班摘要与未完成项继承包",
+  "验收日志目录": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器交接班摘要与未完成项继承包验收",
+  "历史目录保护": {
+    "113已被历史包占用": true,
+    "本次写入113目录": false,
+    "最终验收目录": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\117低风险只读调度器交接班摘要与未完成项继承包"
+  },
+  "指标": {
+    "继承项数量": 4,
+    "低风险只读可继续项数量": 1,
+    "需总管确认项数量": 3
+  },
+  "输出文件": {
+    "交接班摘要JSON": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\117低风险只读调度器交接班摘要与未完成项继承包\\交接班摘要_最新.json",
+    "交接班摘要Markdown": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\117低风险只读调度器交接班摘要与未完成项继承包\\交接班摘要_最新.md",
+    "未完成项继承清单JSON": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\117低风险只读调度器交接班摘要与未完成项继承包\\未完成项继承清单_最新.json",
+    "未完成项继承清单Markdown": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\117低风险只读调度器交接班摘要与未完成项继承包\\未完成项继承清单_最新.md",
+    "不发送不恢复证明JSON": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\117低风险只读调度器交接班摘要与未完成项继承包\\不发送不恢复证明_最新.json",
+    "不发送不恢复证明Markdown": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\117低风险只读调度器交接班摘要与未完成项继承包\\不发送不恢复证明_最新.md",
+    "总包JSON": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\117低风险只读调度器交接班摘要与未完成项继承包\\低风险只读调度器交接班摘要与未完成项继承包_最新.json",
+    "总包Markdown": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\117低风险只读调度器交接班摘要与未完成项继承包\\低风险只读调度器交接班摘要与未完成项继承包_最新.md"
+  },
+  "readonly_only": true,
+  "local_file_only": true,
+  "handoff_summary_only": true,
+  "inheritance_preview_only": true,
+  "send_allowed": false,
+  "real_send": false,
+  "real_wecom_send": false,
+  "network_request": false,
+  "no_network_request": true,
+  "connect_n8n": false,
+  "trigger_n8n": false,
+  "no_n8n_trigger": true,
+  "auto_resume_task": false,
+  "auto_schedule_task": false,
+  "write_formal_rule": false,
+  "auto_promote_formal_rule": false,
+  "modify_supervisor_panel": false,
+  "modify_one_click_continuation_package": false,
+  "reload_service": false,
+  "delete_business_artifact": false,
+  "broker_connection": false,
+  "trade_order": false,
+  "tax_bureau_login": false,
+  "finance_tax_software_connection": false
+}

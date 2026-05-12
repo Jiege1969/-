@@ -1,0 +1,217 @@
+# -*- coding: utf-8 -*-
+"""
+名称：生成单股证据核验最小人工确认清单.py
+作用：读取200填写建议草案，把仍需人工判断的字段按证据链压缩成最小确认问题清单，避免用户面对整张191表逐项判断。
+触发方式：手动运行、股票系统日常一键运行，或由191人工填写工作台刷新调用。
+依赖：200单股证据核验191填写建议草案、本机Python标准库。
+所属系统：02杰哥扩展系统/01股票研究系统。
+输出：03数据/201单股证据核验最小人工确认清单/单股证据核验最小人工确认清单_最新.json 与 .md。
+安全边界：只读200填写建议草案；只写201最小确认清单；不覆盖191 CSV，不写191台账，不写172/175/178，不写正式档案，不导入正式库，不触发n8n，不发送企业微信，不调用券商接口，不自动交易，不更新施工接续包。
+标识：single-stock-evidence-minimal-human-confirmation-list
+"""
+
+from __future__ import annotations
+
+import json
+from datetime import datetime
+from pathlib import Path
+from typing import Any
+
+
+JUDGMENT_FIELDS = {
+    "核验状态",
+    "核验人",
+    "核验日期",
+    "人工备注",
+    "风险等级",
+    "是否发现新增重大风险",
+    "是否支持当前前台结论",
+    "是否支持现有景气估算",
+    "建议前台处理",
+    "正式行业景气判断",
+}
+
+
+def module_root() -> Path:
+    return Path(__file__).resolve().parents[1]
+
+
+def load_json(path: Path, default: Any = None) -> Any:
+    if not path.exists():
+        return default
+    try:
+        return json.loads(path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError:
+        return default
+
+
+def write_json(path: Path, data: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def write_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8")
+
+
+def group_rows(rows: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        grouped.setdefault(str(row.get("链路") or "未分组"), []).append(row)
+    return grouped
+
+
+def build_confirmation(chain: str, rows: list[dict[str, Any]]) -> dict[str, Any]:
+    copyable = [row for row in rows if row.get("是否可直接复制") is True]
+    judgment = [
+        row for row in rows
+        if row.get("字段") in JUDGMENT_FIELDS
+        and (not row.get("建议填写值") or row.get("建议填写值") == "待人工确认" or row.get("建议置信") == "固定规则")
+    ]
+    required_judgment = [row for row in judgment if row.get("是否必填") == "是"]
+    if chain == "公司概况":
+        question = "候选事实是否足以作为公司概况已核验内容？"
+        options = ["已核验", "待补充", "存疑"]
+        default_action = "若确认无误，把可复制候选写入191，并填写核验人、核验日期、核验状态。"
+    elif chain == "事件风险":
+        question = "候选材料是否发现新增重大风险，是否支持当前前台结论？"
+        options = ["未发现新增重大风险，维持当前前台结论", "发现新增风险，降级观察", "证据不足，继续补资料"]
+        default_action = "人工确认风险等级、是否支持前台结论和建议前台处理。"
+    elif chain == "行业景气":
+        question = "候选材料是否支持现有行业景气估算？"
+        options = ["支持现有估算", "不支持，需修正景气判断", "证据不足，继续补资料"]
+        default_action = "人工确认正式行业景气判断、是否支持估算和建议前台处理。"
+    else:
+        question = f"{chain}是否可确认入账？"
+        options = ["已核验", "待补充", "存疑"]
+        default_action = "人工确认后再进入198质量闸口。"
+    return {
+        "链路": chain,
+        "最小确认问题": question,
+        "建议选项": options,
+        "默认后续动作": default_action,
+        "可复制候选字段数": len(copyable),
+        "仍需确认字段数": len(judgment),
+        "必填确认字段": [row.get("字段") for row in required_judgment],
+        "可复制候选字段": [
+            {
+                "字段": row.get("字段"),
+                "建议填写值": row.get("建议填写值"),
+                "建议依据": row.get("建议依据"),
+                "建议置信": row.get("建议置信"),
+            }
+            for row in copyable
+        ],
+        "仍需确认字段": [
+            {
+                "字段": row.get("字段"),
+                "建议填写值": row.get("建议填写值"),
+                "建议依据": row.get("建议依据"),
+                "是否必填": row.get("是否必填"),
+            }
+            for row in judgment
+        ],
+    }
+
+
+def build_report(root: Path) -> dict[str, Any]:
+    draft_path = root / "03数据" / "200单股证据核验191填写建议草案" / "单股证据核验191填写建议草案_最新.json"
+    draft = load_json(draft_path, {}) or {}
+    rows = draft.get("建议明细", []) if isinstance(draft.get("建议明细"), list) else []
+    groups = [build_confirmation(chain, chain_rows) for chain, chain_rows in group_rows(rows).items()]
+    return {
+        "名称": "单股证据核验最小人工确认清单",
+        "版本": "2026-05-03",
+        "生成时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "目标股票": draft.get("目标股票", {}),
+        "输入文件": {"200填写建议草案": str(draft_path)},
+        "汇总": {
+            "链路数": len(groups),
+            "可复制候选字段数": sum(item["可复制候选字段数"] for item in groups),
+            "仍需确认字段数": sum(item["仍需确认字段数"] for item in groups),
+            "最小确认问题数": len(groups),
+        },
+        "确认清单": groups,
+        "使用原则": [
+            "本清单只把人工判断压缩成最小问题，不替代人工确认。",
+            "确认后仍需把结果写入191 CSV填写值列，再运行198质量闸口。",
+            "核验状态只能由人工确认后填写为已核验；系统不得自动改为已核验。",
+        ],
+        "安全边界": {
+            "覆盖191CSV": False,
+            "写191台账": False,
+            "写172_175_178": False,
+            "写正式档案": False,
+            "导入正式库": False,
+            "企业微信真实发送": False,
+            "触发n8n": False,
+            "调用券商接口": False,
+            "自动交易": False,
+            "更新施工接续包": False,
+        },
+    }
+
+
+def build_markdown(report: dict[str, Any]) -> str:
+    target = report.get("目标股票", {})
+    summary = report["汇总"]
+    lines = [
+        f"# 单股证据核验最小人工确认清单 - {target.get('名称')}({target.get('代码')})",
+        "",
+        "## 一、总览",
+        "",
+        f"- 生成时间：{report['生成时间']}",
+        f"- 链路数：{summary['链路数']}",
+        f"- 最小确认问题数：{summary['最小确认问题数']}",
+        f"- 可复制候选字段数：{summary['可复制候选字段数']}",
+        f"- 仍需确认字段数：{summary['仍需确认字段数']}",
+        "",
+        "## 二、最小确认问题",
+        "",
+    ]
+    for item in report["确认清单"]:
+        lines.extend([
+            f"### {item['链路']}",
+            "",
+            f"- 你只需要确认：{item['最小确认问题']}",
+            f"- 建议选项：{'；'.join(item['建议选项'])}",
+            f"- 默认后续动作：{item['默认后续动作']}",
+            f"- 可复制候选字段数：{item['可复制候选字段数']}",
+            f"- 仍需确认字段：{'、'.join(str(field) for field in item['必填确认字段'])}",
+            "",
+        ])
+    lines.extend(["## 三、使用原则", ""])
+    for item in report["使用原则"]:
+        lines.append(f"- {item}")
+    lines.extend(["", "## 四、安全边界", ""])
+    for key, value in report["安全边界"].items():
+        lines.append(f"- {key}：{value}")
+    return "\n".join(lines) + "\n"
+
+
+def write_open_bat(root: Path, md_path: Path) -> None:
+    bat = root / "05入口工具" / "单股证据核验最小人工确认清单_打开.bat"
+    content = "@echo off\r\nchcp 65001 >nul\r\n" f'start "" "{md_path}"\r\n'
+    write_text(bat, content)
+
+
+def main() -> int:
+    root = module_root()
+    report = build_report(root)
+    out_dir = root / "03数据" / "201单股证据核验最小人工确认清单"
+    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    latest_json = out_dir / "单股证据核验最小人工确认清单_最新.json"
+    latest_md = out_dir / "单股证据核验最小人工确认清单_最新.md"
+    write_json(out_dir / f"单股证据核验最小人工确认清单_{stamp}.json", report)
+    write_json(latest_json, report)
+    markdown = build_markdown(report)
+    write_text(out_dir / f"单股证据核验最小人工确认清单_{stamp}.md", markdown)
+    write_text(latest_md, markdown)
+    write_open_bat(root, latest_md)
+    print(json.dumps({"状态": "完成", "汇总": report["汇总"], "报告": str(latest_md)}, ensure_ascii=False))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,40 @@
+{
+  "名称": "L3样本覆盖验收闸口接入记录",
+  "日期": "2026-05-08",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "自动验收接入记录",
+  "目的": "把五只L3样本的评分、财报、行业价格、短答适配器和企业微信桥接dry-run覆盖情况集中验收，防止样本只是静态文件存在而没有进入前台链路。",
+  "本次新增": [
+    "02脚本/验证L3样本覆盖.py",
+    "03数据/245L3评分基础资产/L3样本覆盖验收_最新.json",
+    "03数据/245L3评分基础资产/L3样本覆盖验收_最新.md"
+  ],
+  "本次修改": [
+    "02脚本/运行L3短答证据刷新与验收.py"
+  ],
+  "当前验收结果": {
+    "样本覆盖验收": "passed",
+    "统一刷新与验收": "passed",
+    "sample_count": 5,
+    "passed_count": 5,
+    "blocking_count": 0,
+    "warning_count": 2
+  },
+  "样本状态": [
+    {"name": "云南锗业", "code": "sz002428", "required_industry_price": true, "status": "passed"},
+    {"name": "天齐锂业", "code": "sz002466", "required_industry_price": true, "status": "passed"},
+    {"name": "华虹公司", "code": "sh688347", "required_industry_price": false, "status": "passed_with_warning"},
+    {"name": "浙商中拓", "code": "sz000906", "required_industry_price": false, "status": "passed_with_warning"},
+    {"name": "正丹股份", "code": "sz300641", "required_industry_price": true, "status": "passed"}
+  ],
+  "提醒": [
+    "华虹公司和浙商中拓当前未强制要求行业价格证据卡，前台不得写成行业价格已入账。",
+    "云南锗业、天齐锂业、正丹股份属于行业价格强跟踪样本，必须保留行业价格证据卡。"
+  ],
+  "安全边界": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "名称": "00总管_最终验收签收包回收报告",
+  "生成时间": "2026-05-05 14:56:06 +08:00",
+  "任务批次": "并行小任务P",
+  "结论": "通过",
+  "当前进度口径": "92%-96%",
+  "剩余有效工时": "2-6小时",
+  "交付阻断归零": true,
+  "交付阻断数量": 0,
+  "安全闸门状态": "仍关闭，不作为交付失败",
+  "是否重算进度": false,
+  "是否改写进度口径": false,
+  "是否触发外部服务": false,
+  "是否执行真实动作": false,
+  "签收覆盖": [
+    "L/M/N/O最终交付收口",
+    "H/I/J/K交付候选层",
+    "D/E/F/G最终验收前门禁",
+    "任务契约层",
+    "02入口操作卡",
+    "03规则封版",
+    "股票analysis-only",
+    "安全闸门"
+  ],
+  "输出文件": {
+    "签收包JSON": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\00总管_最终验收签收包_最新.json",
+    "签收包Markdown": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\00总管_最终验收签收包_最新.md",
+    "只读验证脚本": "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\验证00总管最终验收签收包.py",
+    "固定回收报告JSON": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_最终验收签收包回收报告_最新.json",
+    "固定回收报告Markdown": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_最终验收签收包回收报告_最新.md"
+  },
+  "验证": {
+    "命令": "python \"D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\验证00总管最终验收签收包.py\"",
+    "exit_code": 0,
+    "输出": "PASS PACKAGE_JSON_EXISTS D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\00总管_最终验收签收包_最新.json\nPASS PACKAGE_MD_EXISTS D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\00总管_最终验收签收包_最新.md\nPASS RECYCLE_JSON_EXISTS D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_最终验收签收包回收报告_最新.json\nPASS RECYCLE_MD_EXISTS D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_最终验收签收包回收报告_最新.md\nPASS PACKAGE_RESULT_PASS\nPASS RECYCLE_RESULT_PASS\nPASS READ_ONLY_MODE\nPASS NO_PROGRESS_RECALC\nPASS NO_PROGRESS_WORDING_CHANGE\nPASS NO_EXTERNAL_SERVICE\nPASS NO_REAL_ACTION\nPASS PROGRESS_92_96\nPASS HOURS_2_6\nPASS DELIVERY_BLOCKERS_ZERO\nPASS DELIVERY_BLOCKER_COUNT_0\nPASS LMNO_ALL_PASS\nPASS LMNO_DELIVERY_BLOCKERS_0\nPASS HIJK_ALL_PASS\nPASS HIJK_DELIVERY_BLOCKERS_0\nPASS DEFG_ALL_PASS\nPASS DEFG_DELIVERY_BLOCKERS_0\nPASS REQUIRED_SIGNOFF_SECTIONS_PRESENT\nPASS REQUIRED_SIGNOFF_SECTIONS_PASS\nPASS CLOSED_GATE_COUNT_GE_9\nPASS ALL_GATES_CLOSED\nPASS REAL_ACTION_BOUNDARY_ALL_FALSE\nPASS REMAINING_ACTIONS_PRESENT\nPASS REMAINING_ACTIONS_NO_AUTO_REAL_ACTION\nPASS SOURCE_FILE_COUNT_GE_8\nPASS SOURCE_FILES_EXIST\nPASS RECYCLE_REFERENCES_PACKAGE_JSON\nPASS RECYCLE_REFERENCES_PACKAGE_MD\nPASS RECYCLE_REFERENCES_RECYCLE_JSON\nPASS RECYCLE_REFERENCES_RECYCLE_MD\nRESULT PASS"
+  }
+}

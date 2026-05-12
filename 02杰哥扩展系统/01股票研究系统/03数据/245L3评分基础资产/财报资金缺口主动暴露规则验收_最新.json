@@ -1,0 +1,203 @@
+{
+  "name": "财报资金缺口主动暴露规则验收",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:37:01",
+  "asset_identity": "W1财报资金缺口主动暴露规则",
+  "status": "shadow_acceptance",
+  "source_assets": {
+    "receipt_template": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\财报资金证据人工填写回执模板_最新.json",
+    "receipt_template_exists": true,
+    "receipt_validation": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\财报资金证据人工填写回执模板验收_最新.json",
+    "receipt_validation_passed": true
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "not_real_data_fetch": true,
+  "stock_gap_rules": [
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347",
+        "profile": "半导体制造"
+      },
+      "missing_groups": [
+        "财报摘要",
+        "估值位置",
+        "资金流向",
+        "机构持仓",
+        "解禁/减持"
+      ],
+      "score_allowed_group_count": 0,
+      "front_gap_wording": "财报/资金/机构/解禁证据尚未补齐，基本面和资金项只能作为缺口提示，不能强化结论。",
+      "backend_blocking_fields": {
+        "financial_capital_score_allowed": false,
+        "fundamental_confirmation_allowed": false,
+        "capital_flow_confirmation_allowed": false,
+        "institutional_confirmation_allowed": false,
+        "unlock_risk_confirmation_allowed": false,
+        "max_confidence_if_other_evidence_ready": "medium"
+      },
+      "missing_to_evidence_ready_condition": [
+        "来源名称、来源URL、口径日期齐全。",
+        "核心字段由missing/candidate变为evidence_ready。",
+        "人工复核通过。",
+        "can_enter_score显式为true。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906",
+        "profile": "供应链服务"
+      },
+      "missing_groups": [
+        "财报摘要",
+        "估值位置",
+        "资金流向",
+        "机构持仓",
+        "解禁/减持"
+      ],
+      "score_allowed_group_count": 0,
+      "front_gap_wording": "财报/资金/机构/解禁证据尚未补齐，基本面和资金项只能作为缺口提示，不能强化结论。",
+      "backend_blocking_fields": {
+        "financial_capital_score_allowed": false,
+        "fundamental_confirmation_allowed": false,
+        "capital_flow_confirmation_allowed": false,
+        "institutional_confirmation_allowed": false,
+        "unlock_risk_confirmation_allowed": false,
+        "max_confidence_if_other_evidence_ready": "medium"
+      },
+      "missing_to_evidence_ready_condition": [
+        "来源名称、来源URL、口径日期齐全。",
+        "核心字段由missing/candidate变为evidence_ready。",
+        "人工复核通过。",
+        "can_enter_score显式为true。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428",
+        "profile": "资源/小金属"
+      },
+      "missing_groups": [
+        "财报摘要",
+        "估值位置",
+        "资金流向",
+        "机构持仓",
+        "解禁/减持"
+      ],
+      "score_allowed_group_count": 0,
+      "front_gap_wording": "财报/资金/机构/解禁证据尚未补齐，基本面和资金项只能作为缺口提示，不能强化结论。",
+      "backend_blocking_fields": {
+        "financial_capital_score_allowed": false,
+        "fundamental_confirmation_allowed": false,
+        "capital_flow_confirmation_allowed": false,
+        "institutional_confirmation_allowed": false,
+        "unlock_risk_confirmation_allowed": false,
+        "max_confidence_if_other_evidence_ready": "medium"
+      },
+      "missing_to_evidence_ready_condition": [
+        "来源名称、来源URL、口径日期齐全。",
+        "核心字段由missing/candidate变为evidence_ready。",
+        "人工复核通过。",
+        "can_enter_score显式为true。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466",
+        "profile": "锂资源"
+      },
+      "missing_groups": [
+        "财报摘要",
+        "估值位置",
+        "资金流向",
+        "机构持仓",
+        "解禁/减持"
+      ],
+      "score_allowed_group_count": 0,
+      "front_gap_wording": "财报/资金/机构/解禁证据尚未补齐，基本面和资金项只能作为缺口提示，不能强化结论。",
+      "backend_blocking_fields": {
+        "financial_capital_score_allowed": false,
+        "fundamental_confirmation_allowed": false,
+        "capital_flow_confirmation_allowed": false,
+        "institutional_confirmation_allowed": false,
+        "unlock_risk_confirmation_allowed": false,
+        "max_confidence_if_other_evidence_ready": "medium"
+      },
+      "missing_to_evidence_ready_condition": [
+        "来源名称、来源URL、口径日期齐全。",
+        "核心字段由missing/candidate变为evidence_ready。",
+        "人工复核通过。",
+        "can_enter_score显式为true。"
+      ]
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641",
+        "profile": "化工材料"
+      },
+      "missing_groups": [
+        "财报摘要",
+        "估值位置",
+        "资金流向",
+        "机构持仓",
+        "解禁/减持"
+      ],
+      "score_allowed_group_count": 0,
+      "front_gap_wording": "财报/资金/机构/解禁证据尚未补齐，基本面和资金项只能作为缺口提示，不能强化结论。",
+      "backend_blocking_fields": {
+        "financial_capital_score_allowed": false,
+        "fundamental_confirmation_allowed": false,
+        "capital_flow_confirmation_allowed": false,
+        "institutional_confirmation_allowed": false,
+        "unlock_risk_confirmation_allowed": false,
+        "max_confidence_if_other_evidence_ready": "medium"
+      },
+      "missing_to_evidence_ready_condition": [
+        "来源名称、来源URL、口径日期齐全。",
+        "核心字段由missing/candidate变为evidence_ready。",
+        "人工复核通过。",
+        "can_enter_score显式为true。"
+      ]
+    }
+  ],
+  "global_front_rules": [
+    "前台必须主动写财报/资金缺口，不等用户追问。",
+    "缺财报资金证据时，不能写基本面确认。",
+    "缺资金流证据时，不能写资金确认。",
+    "缺机构持仓证据时，不能写机构认可。",
+    "缺解禁减持证据时，不能写风险已排除。"
+  ],
+  "global_backend_rules": [
+    "financial_capital_score_allowed默认为false。",
+    "所有missing字段不得进入L3加分。",
+    "空白回执不得作为证据。",
+    "人工填报后仍需复核，复核前保持pending_review。"
+  ],
+  "summary": {
+    "stock_count": 5,
+    "receipt_count": 25,
+    "ready_count": 0,
+    "score_allowed_count": 0,
+    "front_gap_required_count": 5
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

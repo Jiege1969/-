@@ -1,0 +1,54 @@
+{
+  "record_id": "CTRL_CAND_WECOM_002_VIDEO_ASSISTANT_ALIGNMENT_20260508",
+  "generated_at": "2026-05-08 10:18:00 +08:00",
+  "candidate_id": "CTRL-CAND-WECOM-002",
+  "asset_identity": "企业微信接入层W1/R0视频助理智能体入口只读对齐记录",
+  "risk_level": "W1/R0",
+  "status": "completed",
+  "terminal": {
+    "name": "杰哥视频助理",
+    "route": "/wecom/video-assistant",
+    "owner_system": "02杰哥扩展系统/02视频制作系统",
+    "current_state": "公网回调已登记，本机统一路由可预演/查询，真实发送禁用"
+  },
+  "aligned_contracts": [
+    "CTRL-CAND-VIDEO-AI-001",
+    "CTRL-CAND-VIDEO-AI-002",
+    "CTRL-CAND-VIDEO-AI-003"
+  ],
+  "allowed_actions": [
+    "接收视频助理消息",
+    "只读识别视频创作、修正、预检、复核或澄清请求",
+    "转交视频制作系统或总管侧回传记录中的草案链路",
+    "命中真实渲染、发布、外发、n8n、真实引擎、平台账号时阻断或转人工",
+    "记录入口、路由目标、预演状态和禁止动作"
+  ],
+  "forbidden_actions": [
+    "修改/wecom/video-assistant服务脚本",
+    "重启19310或19302",
+    "企业微信真实发送",
+    "触发n8n",
+    "登录视频平台账号",
+    "调用真实LLM或写向量库",
+    "调用外部视频、配音、发布引擎",
+    "读取真实素材或真实渲染发布",
+    "代替视频系统判断能不能发布"
+  ],
+  "boundary_flags": {
+    "modify_service_script": false,
+    "modify_config_json": false,
+    "restart_19310_or_19302": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "call_real_llm_or_vector_db": false,
+    "call_video_engine_tts_or_publisher": false,
+    "read_real_assets": false,
+    "render_or_publish": false
+  },
+  "alignment_conclusion": "企业微信接入层只做输入、路由和安全闸门，视频业务判断仍归视频制作系统影子链路，总管只登记边界和回传状态。",
+  "self_check": {
+    "json_parse_required": true,
+    "boundary_kept": true,
+    "service_unchanged": true
+  }
+}

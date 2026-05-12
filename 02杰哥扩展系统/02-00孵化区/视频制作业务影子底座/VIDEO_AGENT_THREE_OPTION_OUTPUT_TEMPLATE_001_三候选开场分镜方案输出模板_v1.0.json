@@ -1,0 +1,48 @@
+{
+  "contract_id": "VIDEO_AGENT_THREE_OPTION_OUTPUT_TEMPLATE_001",
+  "name": "三候选开场分镜方案输出模板",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 09:55:00 +08:00",
+  "asset_identity": "视频创作智能体 W1/R0 三候选开场/分镜方案输出模板",
+  "risk_level": "W1/R0",
+  "why_not_extend_existing": "现有脚本和分镜复核文件面向单个已存在草案；三候选模板面向创意早期，用于输出多个待选择方向。",
+  "capability_gain": [
+    "提供多个创意方向",
+    "避免单方案误当定稿",
+    "显式列出风险和待确认项",
+    "为后续局部修正提供入口"
+  ],
+  "max_options": 3,
+  "required_fields_per_option": [
+    "候选方案ID",
+    "方案定位",
+    "开场5秒",
+    "核心钩子",
+    "分镜摘要",
+    "旁白基调",
+    "适合平台",
+    "素材需求",
+    "风险点",
+    "待人工确认项"
+  ],
+  "rules": {
+    "options_must_be_distinct": true,
+    "risk_points_required": true,
+    "human_confirmation_required": true,
+    "selection_does_not_release_generation": true
+  },
+  "boundary": {
+    "generate_image": false,
+    "generate_audio": false,
+    "generate_subtitle": false,
+    "generate_cover": false,
+    "generate_video": false,
+    "call_model_api": false,
+    "read_real_assets": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false
+  },
+  "formal_capability_claim": false
+}

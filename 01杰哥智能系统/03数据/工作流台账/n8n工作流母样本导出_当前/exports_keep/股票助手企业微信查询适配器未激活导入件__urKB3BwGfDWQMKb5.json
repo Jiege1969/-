@@ -1,0 +1,26 @@
+{
+  "id": "urKB3BwGfDWQMKb5",
+  "name": "股票助手企业微信查询适配器未激活导入件",
+  "active": 0,
+  "triggerCount": 0,
+  "createdAt": "2026-04-28 09:52:50.038",
+  "updatedAt": "2026-04-28 09:52:50.038",
+  "isArchived": 0,
+  "versionCounter": 1,
+  "description": null,
+  "node_count": 4,
+  "node_types": [
+    "n8n-nodes-base.manualTrigger",
+    "n8n-nodes-base.set",
+    "n8n-nodes-base.code",
+    "n8n-nodes-base.stickyNote"
+  ],
+  "node_names": [
+    "手动触发禁用态",
+    "构造契约输入",
+    "安全占位输出",
+    "安全边界说明"
+  ],
+  "webhook_like": false,
+  "wecom_like": false
+}

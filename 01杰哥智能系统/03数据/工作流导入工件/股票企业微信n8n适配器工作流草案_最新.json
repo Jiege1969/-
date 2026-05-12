@@ -1,0 +1,133 @@
+{
+  "name": "股票企业微信n8n适配器禁用态草案",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "97f96294-460b-4f86-8efa-d44ebe3c059f",
+      "name": "手动触发禁用态",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        220,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c6528c0e-867c-4ebc-93f1-268bb9b0a45d",
+              "name": "trace_id",
+              "value": "n8n-draft-demo",
+              "type": "string"
+            },
+            {
+              "id": "ff9e658d-63da-41ca-b327-e5eecbe9dc9b",
+              "name": "message_type",
+              "value": "text",
+              "type": "string"
+            },
+            {
+              "id": "78a51413-bcca-4351-9c70-bc847851cdcb",
+              "name": "text",
+              "value": "分析新易盛",
+              "type": "string"
+            },
+            {
+              "id": "511365b8-5c6f-49db-a1e7-a15b58112ecf",
+              "name": "voice_text",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "51b56f4a-e343-4233-84b0-6f24d64f7078",
+              "name": "dry_run",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "id": "a9a9781e-e6e4-4ff1-9be2-4fad8b0b2964",
+      "name": "构造契约输入",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        500,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { mode: 'disabled_draft_only', adapter_script: 'D:\\\\杰哥智能化系统\\\\02杰哥扩展系统\\\\01股票研究系统\\\\02脚本\\\\执行股票企业微信n8n适配器禁用态.py', expected_cli: 'python 执行股票企业微信n8n适配器禁用态.py --message-type text --text \"分析新易盛\"', real_send: false, trade: false, note: '草案不在n8n内执行本地命令；导入前需人工确认执行节点方案。' } }];"
+      },
+      "id": "36c0b2e3-2536-49b0-b275-3616a7f7c4f1",
+      "name": "适配器调用占位",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        780,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "股票企业微信n8n适配器工作流草案\\n生成时间：2026-04-30 10:02:04\\n安全边界：active=false；不导入、不启用、不触发、不发送企业微信、不调用交易接口。真正执行本地适配器前必须人工确认。",
+        "height": 260,
+        "width": 460,
+        "color": 5
+      },
+      "id": "f84fa20b-b4cc-4073-b8f8-bc352aa885fa",
+      "name": "安全边界说明",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        220,
+        -60
+      ]
+    }
+  ],
+  "connections": {
+    "手动触发禁用态": {
+      "main": [
+        [
+          {
+            "node": "构造契约输入",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "构造契约输入": {
+      "main": [
+        [
+          {
+            "node": "适配器调用占位",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "staticData": null,
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "jiege_stock_wework_n8n_adapter": true,
+    "stage": "disabled_workflow_draft_only",
+    "must_remain_inactive": true,
+    "generated_at": "2026-04-30 10:02:04",
+    "requires_manual_confirm_before_import": true,
+    "requires_manual_confirm_before_enable": true
+  }
+}

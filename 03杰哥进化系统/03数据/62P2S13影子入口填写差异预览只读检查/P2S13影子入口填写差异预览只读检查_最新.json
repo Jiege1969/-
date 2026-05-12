@@ -1,0 +1,73 @@
+{
+  "id": "P2S13_SHADOW_ENTRY_FILL_DIFF_PREVIEW_READONLY_CHECK",
+  "generated_at": "2026-05-09 12:56:33",
+  "status": "pass",
+  "summary": {
+    "candidate_entry_count": 4,
+    "passed": 4,
+    "failed": 0,
+    "diff_count": 77,
+    "candidate_placeholder_count": 25,
+    "must_remain_false_count": 31,
+    "write_target_entry": 0,
+    "auto_fill_shadow_entry": 0,
+    "release_forms": 0,
+    "formal_capability_claim": 0
+  },
+  "diff_sample_path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\62P2S13影子入口填写差异预览只读检查\\P2S13影子入口填写差异预览样例_20260509.json",
+  "checks": [
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-001",
+      "target_line": "tax",
+      "target_entry": "TAX_DAILY_INTAKE_002",
+      "diff_count": 22,
+      "candidate_placeholder_count": 8,
+      "must_remain_false_count": 10,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-002",
+      "target_line": "office_work",
+      "target_entry": "OFFICE_SHADOW_002",
+      "diff_count": 20,
+      "candidate_placeholder_count": 7,
+      "must_remain_false_count": 9,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-003",
+      "target_line": "video_production",
+      "target_entry": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "diff_count": 22,
+      "candidate_placeholder_count": 6,
+      "must_remain_false_count": 7,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "review_receipt_id": "P2S11-HUMAN-REVIEW-RECEIPT-004",
+      "target_line": "shared_policy_evidence",
+      "target_entry": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "diff_count": 13,
+      "candidate_placeholder_count": 4,
+      "must_remain_false_count": 5,
+      "status": "pass",
+      "errors": []
+    }
+  ],
+  "conclusion": "影子入口填写差异预览通过；4 个候选入口仅生成差异预览和人工占位建议，0 项写入口或自动填写。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

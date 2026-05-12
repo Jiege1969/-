@@ -1,0 +1,33 @@
+{
+  "asset_id": "VIDEO_AGENT_STAGE_MATURITY_SNAPSHOT_001",
+  "version": "v1.0",
+  "asset_type": "maturity_snapshot",
+  "construction_level": "W1/R0",
+  "scope": "video_agent_shadow_upgrade_blueprint",
+  "status": "draft",
+  "snapshot_date": "2026-05-08",
+  "current_conclusion": "Shadow contract layer is basically formed, while real execution layer is not connected.",
+  "module_maturity": [
+    {"module": "conversation_state_contract", "maturity": "W1/R0 draft available", "note": "No real conversation storage connected."},
+    {"module": "intent_routing", "maturity": "W1/R0 draft available", "note": "For shadow routing only; no real LLM connection."},
+    {"module": "partial_revision_contract", "maturity": "W1/R0 draft available", "note": "Defines boundaries for future script, storyboard, and title changes."},
+    {"module": "engine_adapter_contract", "maturity": "W1/R0 draft available", "note": "Defines boundaries only; no executor call."},
+    {"module": "human_gate_upgrade", "maturity": "W1/R0 draft available", "note": "Generation, render, and publish gates are separated."},
+    {"module": "wecom_terminal", "maturity": "W1/R0 placeholder sample", "note": "Reply draft only; no external send."},
+    {"module": "real_render", "maturity": "blocked", "note": "Material authorization, platform rules, and human confirmation are incomplete."},
+    {"module": "real_publish", "maturity": "blocked", "note": "Publishing release, preview, and AI label confirmation are incomplete."}
+  ],
+  "allowed_next": [
+    "more_command_reply_placeholder_samples",
+    "shadow_task_state_transition_samples",
+    "human_review_question_templates",
+    "asset_index_drafts_without_formal_write"
+  ],
+  "blocked_next": [
+    "connect_real_model",
+    "call_real_video_or_publish_executors",
+    "connect_n8n",
+    "wecom_real_send",
+    "read_real_material_account_or_cookie"
+  ]
+}

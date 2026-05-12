@@ -1,0 +1,83 @@
+{
+  "report_id": "02扩展系统_n8n低风险转正式前门禁回收报告_最新",
+  "generated_at": "2026-05-05T14:03:00+08:00",
+  "task_batch": "并行小任务F",
+  "owner_scope": "02杰哥扩展系统",
+  "objective": "为企业微信、知识库、内容、视频、税收只读五条扩展线生成 n8n 从 dry_run 到低风险正式动作的前置门禁包",
+  "execution_boundary": {
+    "definition_only": true,
+    "readonly_validation_only": true,
+    "workflow_imported": false,
+    "workflow_enabled": false,
+    "workflow_triggered": false,
+    "external_system_called": false,
+    "real_actions_triggered": 0
+  },
+  "artifacts": [
+    {
+      "type": "gate_package_json",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\11n8n低风险转正式前门禁包\\n8n低风险转正式前门禁包_20260505_F.json"
+    },
+    {
+      "type": "gate_package_markdown",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\11n8n低风险转正式前门禁包\\n8n低风险转正式前门禁包_20260505_F.md"
+    },
+    {
+      "type": "readonly_validation_script",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02脚本\\验证n8n低风险转正式前门禁包.py"
+    },
+    {
+      "type": "recycle_report_markdown",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\02扩展系统_n8n低风险转正式前门禁回收报告_最新.md"
+    },
+    {
+      "type": "recycle_report_json",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\02扩展系统_n8n低风险转正式前门禁回收报告_最新.json"
+    }
+  ],
+  "covered_business_lines": [
+    "enterprise_wechat",
+    "knowledge_base",
+    "content_processing",
+    "video_production",
+    "tax_readonly"
+  ],
+  "gate_summary": {
+    "required_gate_count": 5,
+    "required_audit_field_count": 21,
+    "global_forbidden_action_count": 16,
+    "manual_approval_required": true,
+    "two_person_review_required": true,
+    "rollback_plan_required": true,
+    "kill_switch_required": true
+  },
+  "still_closed": {
+    "enterprise_wechat_real_send": true,
+    "production_database_write": true,
+    "production_knowledge_base_write": true,
+    "vector_database_write": true,
+    "real_media_conversion": true,
+    "formal_tax_judgement": true,
+    "tax_filing_submit": true,
+    "n8n_import_enable_trigger": true
+  },
+  "validation": {
+    "command": "python \"D:\\杰哥智能化系统\\02杰哥扩展系统\\02脚本\\验证n8n低风险转正式前门禁包.py\"",
+    "passed": true,
+    "result": {
+      "checked_business_lines": [
+        "content_processing",
+        "enterprise_wechat",
+        "knowledge_base",
+        "tax_readonly",
+        "video_production"
+      ],
+      "checked_gate_count": 5,
+      "checked_required_audit_fields": 21,
+      "checked_global_forbidden_actions": 16,
+      "real_actions_triggered": 0,
+      "failures": []
+    }
+  },
+  "acceptance_result": "通过"
+}

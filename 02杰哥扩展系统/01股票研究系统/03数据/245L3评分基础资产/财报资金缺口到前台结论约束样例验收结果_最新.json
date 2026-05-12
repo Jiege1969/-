@@ -1,0 +1,11 @@
+{
+  "name": "财报资金缺口到前台结论约束样例验收结果",
+  "generated_at": "2026-05-08 12:55:13",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "sample_count": 5,
+    "rules_count": 4,
+    "forbidden_word_count": 0
+  }
+}

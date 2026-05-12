@@ -1,0 +1,260 @@
+{
+  "task_id": "PAR-STOCK-20260508-L3-EVIDENCE-RECEIPT-DRAFT",
+  "execution_date": "2026-05-08",
+  "generated_at": "2026-05-08 19:10:30 +08:00",
+  "executor_window": "新对话框 B",
+  "business_line": "股票 L3 证据补齐线",
+  "risk_level": "W1/R0",
+  "asset_identity": "总管侧股票L3只读证据补齐前检查回执草案",
+  "status": "draft_pending_human_review",
+  "source_assets": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_STOCK_002_P0证据候选卡结构化样例_20260508.md"
+  ],
+  "scope": {
+    "allowed": [
+      "只读证据字段补齐前检查",
+      "公开来源要求整理",
+      "人工复核问题整理",
+      "evidence/missing/confidence 字段准备",
+      "W1/R0 回执草案"
+    ],
+    "forbidden": [
+      "买卖建议",
+      "下单",
+      "调仓",
+      "仓位建议",
+      "券商接口",
+      "自动交易",
+      "触发 n8n",
+      "发送企业微信",
+      "修改股票正式配置",
+      "修改股票正式脚本",
+      "修改股票正式入口",
+      "写正式库"
+    ]
+  },
+  "samples": [
+    {
+      "stock_name": "云南锗业",
+      "stock_code": "sz002428"
+    },
+    {
+      "stock_name": "天齐锂业",
+      "stock_code": "sz002466"
+    },
+    {
+      "stock_name": "华虹公司",
+      "stock_code": "sh688347"
+    },
+    {
+      "stock_name": "浙商中拓",
+      "stock_code": "sz000906"
+    },
+    {
+      "stock_name": "正丹股份",
+      "stock_code": "sz300641"
+    }
+  ],
+  "evidence_types": [
+    "industry_price",
+    "fund_flow",
+    "institution_holding",
+    "reduction_unlock"
+  ],
+  "required_evidence_fields": [
+    {
+      "field": "card_id",
+      "requirement": "候选卡编号，不得与既有候选卡冲突"
+    },
+    {
+      "field": "stock_name",
+      "requirement": "股票名称，需与代码人工核对"
+    },
+    {
+      "field": "stock_code",
+      "requirement": "交易所前缀代码，仅作样本识别"
+    },
+    {
+      "field": "evidence_type",
+      "requirement": "industry_price/fund_flow/institution_holding/reduction_unlock 四类之一"
+    },
+    {
+      "field": "source_name",
+      "requirement": "公开可复核来源名称"
+    },
+    {
+      "field": "source_url_or_path",
+      "requirement": "公开链接或本地只读证据路径"
+    },
+    {
+      "field": "observation_date",
+      "requirement": "证据日期或观测日期"
+    },
+    {
+      "field": "collected_at",
+      "requirement": "登记时间，仅代表登记"
+    },
+    {
+      "field": "value_fields",
+      "requirement": "价格、单位、变动、持仓、资金方向等结构化值"
+    },
+    {
+      "field": "evidence_status",
+      "requirement": "missing/candidate/single_observation/source_registered/confirmed；本草案默认不得直接写 confirmed"
+    },
+    {
+      "field": "l3_missing_link",
+      "requirement": "对应 L3 missing 字段"
+    },
+    {
+      "field": "confidence_effect",
+      "requirement": "none/raise_candidate/needs_more_observations"
+    },
+    {
+      "field": "can_update_score",
+      "requirement": "必须为 false"
+    },
+    {
+      "field": "can_generate_trade_action",
+      "requirement": "必须为 false"
+    },
+    {
+      "field": "review_questions",
+      "requirement": "人工复核问题，未回答前保持待复核"
+    },
+    {
+      "field": "boundary_note",
+      "requirement": "不交易、不下单、不调仓、不改正式入口"
+    }
+  ],
+  "type_specific_missing_fields": {
+    "industry_price": [
+      "price",
+      "unit",
+      "currency",
+      "product_type",
+      "indicator_name",
+      "indicator_value",
+      "period",
+      "source_label",
+      "至少5个连续观测点"
+    ],
+    "fund_flow": [
+      "net_inflow",
+      "period",
+      "rank",
+      "source_label",
+      "统计区间",
+      "资金口径"
+    ],
+    "institution_holding": [
+      "holder_name",
+      "holding_ratio",
+      "change",
+      "period",
+      "公告或定期报告来源"
+    ],
+    "reduction_unlock": [
+      "share_count",
+      "ratio",
+      "date",
+      "holder",
+      "plan_status",
+      "交易所披露或公告来源"
+    ]
+  },
+  "public_source_requirements": [
+    {
+      "dimension": "可访问性",
+      "requirement": "普通人工复核者可通过公开网页、公告、交易所披露或本地只读证据路径复核"
+    },
+    {
+      "dimension": "可追溯性",
+      "requirement": "来源名称、链接或路径、日期、采集时间完整"
+    },
+    {
+      "dimension": "口径稳定",
+      "requirement": "指标名称、单位、币种、期间、产品类型清楚"
+    },
+    {
+      "dimension": "连续性",
+      "requirement": "行业价格和景气指标可继续按同口径观察"
+    },
+    {
+      "dimension": "权威性",
+      "requirement": "机构持仓、减持解禁优先使用公司公告、交易所披露、定期报告"
+    },
+    {
+      "dimension": "边界合规",
+      "requirement": "只读登记，不抓取新增行情，不调用业务脚本，不登录真实系统"
+    }
+  ],
+  "evidence": {
+    "source_asset": "CTRL_CAND_STOCK_002_P0证据候选卡结构化样例_20260508.md",
+    "available_structure": [
+      "P0候选卡通用字段",
+      "五样本行业价格样例",
+      "资金/机构/减持解禁通用候选卡"
+    ],
+    "available_boundary": [
+      "can_update_score=false",
+      "can_generate_trade_action=false"
+    ],
+    "available_samples_count": 5
+  },
+  "missing": [
+    "公开来源链接或路径",
+    "行业价格连续观测点",
+    "资金流公开口径",
+    "机构持仓最新公告依据",
+    "减持解禁计划状态",
+    "人工复核结论"
+  ],
+  "confidence": {
+    "confidence_level": "low_to_candidate",
+    "confidence_effect": "needs_more_observations",
+    "score_update_allowed": false,
+    "trade_action_allowed": false,
+    "reason": "当前只有结构化样例，真实公开证据和人工复核仍待补齐"
+  },
+  "human_review_questions": [
+    "每个 source_name 是否有公开链接或本地只读证据路径可复核？",
+    "行业价格或景气指标是否与对应公司主营业务暴露相关？",
+    "行业价格样本是否达到同口径连续观测要求，是否至少 5 个连续观测点？",
+    "价格、单位、币种、产品类型、期间是否一致，是否存在口径混用？",
+    "资金流数据是否明确统计区间、资金口径和来源标签？",
+    "机构持仓是否来自最新公告、定期报告或公开披露？",
+    "减持解禁信息是否核对计划状态、执行状态、过期状态和流通盘影响？",
+    "是否仍有 missing 字段未补齐，是否应保持 needs_more_observations？",
+    "是否有人把候选证据误写成 confirmed、误触发评分更新或交易动作？",
+    "是否出现券商接口、自动交易、企业微信外发、n8n 或服务脚本变更诉求？"
+  ],
+  "boundary_flags": {
+    "sent_wecom": false,
+    "triggered_n8n": false,
+    "wrote_formal_database": false,
+    "modified_service_script": false,
+    "restarted_19310_or_19302": false,
+    "called_broker_api": false,
+    "placed_order": false,
+    "auto_trading": false,
+    "generated_buy_sell_advice": false,
+    "generated_position_advice": false,
+    "modified_stock_formal_entry": false,
+    "modified_stock_formal_config": false,
+    "modified_stock_formal_script": false
+  },
+  "redline_hit_count": 0,
+  "needs_manager_ruling": false,
+  "manager_ruling_note": "当前无需总管裁定；如后续出现真实接入、交易、外发、n8n、服务变更或正式评分更新诉求，则必须暂停并交总管裁定。",
+  "changed_files": {
+    "created": [
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_STOCK_20260508_L3受控试用证据补齐回执草案.md",
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_STOCK_20260508_L3受控试用证据补齐回执草案.json"
+    ],
+    "modified": []
+  },
+  "completion_conclusion": "已完成股票 L3 受控试用只读证据补齐前检查回执草案，后续可按公开来源要求补 evidence/missing/confidence，不得自动改分或生成交易动作。",
+  "boundary_confirmation": "未外发、未n8n、未真实系统接入、未正式库、未交易、未税务办理、未视频发布。",
+  "self_check_line": "[自检: PAR-STOCK-20260508 L3受控试用证据补齐回执草案已完成, 风险等级: W1/R0, 产物: PAR_STOCK_20260508_L3受控试用证据补齐回执草案.md/json, 边界: 守住了。]"
+}

@@ -1,0 +1,97 @@
+{
+  "name": "三业务正式规则申请回滚校验清单",
+  "version": "three-business-rule-rollback-checklist-v1",
+  "generated_at": "2026-05-08 18:59:51",
+  "based_on_package_86": true,
+  "source_files": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\三业务正式规则申请草案冲突扫描与签收台账包_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\三业务正式规则申请草案扫描示例_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\三业务草案冲突扫描结果_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\冲突扫描规则_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\签收台账_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\签收台账字段_最新.json"
+  ],
+  "businesses": [
+    "税收",
+    "股票",
+    "视频"
+  ],
+  "checklist": [
+    {
+      "business": "税收",
+      "rollback_entry": "从本包签收材料撤回税收正式规则申请草案标记，保留第86包只读扫描结果。",
+      "pre_rollback_snapshot": "记录税收草案ID、签收状态、总管确认状态、红线声明和补正意见。",
+      "post_rollback_acceptance": "确认税收申请仍为待签收或已驳回，不登录税局，不接财税软件，不写正式规则。",
+      "redline_recheck": [
+        "formal_rule_effective=false",
+        "write_formal_rule=false",
+        "auto_apply=false",
+        "rollback_executed=false",
+        "requires_supervisor_confirmation=true",
+        "不真实发送企业微信",
+        "不接n8n",
+        "不改总管面板",
+        "不改一键接续包"
+      ],
+      "requires_supervisor_confirmation": true,
+      "rollback_executed": false
+    },
+    {
+      "business": "股票",
+      "rollback_entry": "从本包签收材料撤回股票正式规则申请草案标记，保留第86包只读扫描结果。",
+      "pre_rollback_snapshot": "记录股票草案ID、签收状态、总管确认状态、非交易声明和补正意见。",
+      "post_rollback_acceptance": "确认股票申请仍为待签收或已驳回，不接券商，不交易，不写正式规则。",
+      "redline_recheck": [
+        "formal_rule_effective=false",
+        "write_formal_rule=false",
+        "auto_apply=false",
+        "rollback_executed=false",
+        "requires_supervisor_confirmation=true",
+        "不真实发送企业微信",
+        "不接n8n",
+        "不改总管面板",
+        "不改一键接续包"
+      ],
+      "requires_supervisor_confirmation": true,
+      "rollback_executed": false
+    },
+    {
+      "business": "视频",
+      "rollback_entry": "从本包签收材料撤回视频正式规则申请草案标记，保留第86包只读扫描结果。",
+      "pre_rollback_snapshot": "记录视频草案ID、签收状态、总管确认状态、发布前确认点和补正意见。",
+      "post_rollback_acceptance": "确认视频申请仍为待签收或已驳回，不发布，不渲染，不重载服务，不写正式规则。",
+      "redline_recheck": [
+        "formal_rule_effective=false",
+        "write_formal_rule=false",
+        "auto_apply=false",
+        "rollback_executed=false",
+        "requires_supervisor_confirmation=true",
+        "不真实发送企业微信",
+        "不接n8n",
+        "不改总管面板",
+        "不改一键接续包"
+      ],
+      "requires_supervisor_confirmation": true,
+      "rollback_executed": false
+    }
+  ],
+  "guard_flags": {
+    "formal_rule_effective": false,
+    "write_formal_rule": false,
+    "auto_apply": false,
+    "rollback_executed": false,
+    "requires_supervisor_confirmation": true
+  },
+  "forbidden_actions": {
+    "真实发送企业微信": false,
+    "接n8n": false,
+    "接券商": false,
+    "交易": false,
+    "登录税局": false,
+    "接财税软件": false,
+    "自动转正式规则": false,
+    "改总管面板": false,
+    "改一键接续包": false,
+    "重载服务": false
+  }
+}

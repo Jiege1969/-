@@ -1,0 +1,32 @@
+{
+  "report_name": "目录README与角色索引补齐收口",
+  "record_time": "2026-05-06 06:01:00 +08:00",
+  "status": "completed",
+  "updated_files": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\README.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\README.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\README.md"
+  ],
+  "created_files": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\06工具\\README.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\06临时\\README.md",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\智能体大脑\\README.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\目录角色索引_最新.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\目录角色索引_最新.json"
+  ],
+  "validation": {
+    "role_index_json_parse_ok": true,
+    "readme_mentions_semantic_domain": true,
+    "double_06_explained": true,
+    "adapter_layer_explained": true
+  },
+  "safety": {
+    "moved_directories": false,
+    "modified_business_logic": false,
+    "triggered_n8n": false,
+    "sent_wecom": false,
+    "called_broker_api": false,
+    "auto_trade": false
+  }
+}
+

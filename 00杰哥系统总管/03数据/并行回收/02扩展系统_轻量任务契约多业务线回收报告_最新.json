@@ -1,0 +1,109 @@
+{
+  "report_id": "02扩展系统_轻量任务契约多业务线回收报告_最新",
+  "generated_at": "2026-05-05T13:35:00+08:00",
+  "task": "并行小任务B：02扩展系统多业务线任务契约干跑适配",
+  "mode": "dry_run_only_local_readonly_validation",
+  "conclusion": "passed",
+  "real_actions_triggered": 0,
+  "artifacts": [
+    {
+      "type": "contract_json",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\10多业务线任务契约干跑适配包\\多业务线任务契约干跑适配包_20260505_B.json"
+    },
+    {
+      "type": "evidence_markdown",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\10多业务线任务契约干跑适配包\\多业务线任务契约干跑验收证据_20260505_B.md"
+    },
+    {
+      "type": "validation_script",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02脚本\\验证多业务线任务契约干跑适配包.py"
+    },
+    {
+      "type": "recycle_report_markdown",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\02扩展系统_轻量任务契约多业务线回收报告_最新.md"
+    }
+  ],
+  "checked_business_lines": [
+    "enterprise_wechat",
+    "knowledge_base",
+    "content_processing",
+    "video_production",
+    "tax_readonly"
+  ],
+  "checks": [
+    {
+      "name": "五条业务线覆盖",
+      "result": "passed"
+    },
+    {
+      "name": "标准任务单接收字段",
+      "result": "passed"
+    },
+    {
+      "name": "dry_run保持",
+      "result": "passed"
+    },
+    {
+      "name": "receipt输出字段",
+      "result": "passed"
+    },
+    {
+      "name": "SQLite影子台账不连接不写入",
+      "result": "passed"
+    },
+    {
+      "name": "Redis影子映射不连接不写入",
+      "result": "passed"
+    },
+    {
+      "name": "n8n干跑不触发",
+      "result": "passed"
+    },
+    {
+      "name": "真实动作阻断",
+      "result": "passed"
+    }
+  ],
+  "blocked_items": [
+    "trigger_n8n",
+    "send_enterprise_wechat_real_message",
+    "write_production_database",
+    "write_production_knowledge_base",
+    "write_vector_store",
+    "convert_real_document",
+    "convert_real_media",
+    "render_video",
+    "make_formal_tax_judgement",
+    "make_tax_filing_recommendation",
+    "call_broker_api",
+    "auto_trade",
+    "touch_main_work_system"
+  ],
+  "safety_boundary": [
+    "仅新增本地JSON/Markdown证据和只读验证脚本",
+    "不连接SQLite、Redis、n8n、企业微信、知识库、媒体工具链、税务系统、券商接口",
+    "不触发真实发送、正式库写入、真实转换、正式税务判断、自动交易",
+    "不搭建或触碰本职工作系统",
+    "学习OpenClaw/Hermes逻辑但不引入原件"
+  ],
+  "validation": {
+    "script": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02脚本\\验证多业务线任务契约干跑适配包.py",
+    "expected_exit_code": 0,
+    "write_behavior": "stdout_only",
+    "actual_exit_code": 0,
+    "actual_output": {
+      "checked_business_lines": [
+        "content_processing",
+        "enterprise_wechat",
+        "knowledge_base",
+        "tax_readonly",
+        "video_production"
+      ],
+      "checked_task_orders": 5,
+      "checked_receipts": 5,
+      "real_actions_triggered": 0,
+      "passed": true,
+      "failures": []
+    }
+  }
+}

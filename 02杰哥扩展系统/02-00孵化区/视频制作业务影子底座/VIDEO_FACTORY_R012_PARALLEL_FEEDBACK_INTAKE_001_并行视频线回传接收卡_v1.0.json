@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 06:11:37 +08:00",
+  "intake_id": "VIDEO_FACTORY_R012_PARALLEL_FEEDBACK_INTAKE_001",
+  "task_id": "VF-20260508-003",
+  "asset_identity": "video_factory_round012_parallel_feedback_intake_shadow_template",
+  "risk_level": "W1",
+  "status": "shadow_intake_template_pending_feedback",
+  "boundary": {
+    "modify_formal_video_system": false,
+    "modify_video_system_task": false,
+    "modify_release_lists": false,
+    "read_real_assets": false,
+    "move_assets": false,
+    "transcode": false,
+    "edit": false,
+    "render": false,
+    "subtitle_generation": false,
+    "cover_generation": false,
+    "voice_generation": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "write_formal_rule_library": false,
+    "modify_formal_script_generator": false
+  },
+  "read_first": [
+    "VIDEO_FACTORY_R012_CHAIN_STATUS_001_掩耳盗铃复核链路状态快照_v1.0.md",
+    "VIDEO_FACTORY_R012_REVISION_ACCEPTANCE_001_脚本分镜修正验收清单_v1.0.md",
+    "VIDEO_FACTORY_R012_REVISION_RECEIPT_001_脚本分镜修正验收回执模板_v1.0.md",
+    "VIDEO_EVOLUTION_CANDIDATE_VALIDATION_001_多案例验证清单_v1.0.md"
+  ],
+  "intake_fields": {
+    "feedback_batch_id": "待填写",
+    "feedback_source": "待填写",
+    "feedback_time": "待填写",
+    "bound_task_id": "VF-20260508-003",
+    "mentioned_files": "待填写",
+    "feedback_type": "待填写",
+    "claims_generated": "待填写",
+    "claims_published": "待填写",
+    "involves_real_assets": "待填写",
+    "involves_wecom_or_n8n": "待填写",
+    "modifies_formal_config_or_script": "待填写",
+    "requests_formal_rule_write": "待填写",
+    "initial_intake_conclusion": "待填写"
+  },
+  "routing_rules": [
+    {
+      "condition": "script_or_storyboard_draft_revision_only",
+      "route": "continue_W1",
+      "next_action": "use_revision_acceptance_checklist"
+    },
+    {
+      "condition": "human_review_feedback_only",
+      "route": "continue_W1",
+      "next_action": "fill_or_prepare_revision_receipt"
+    },
+    {
+      "condition": "asset_authorization_fields_without_reading_real_assets",
+      "route": "continue_W1",
+      "next_action": "update_review_fields_or_receipt_draft"
+    },
+    {
+      "condition": "claims_generated_rendered_uploaded_or_published",
+      "route": "pause_for_confirmation",
+      "next_action": "do_not_treat_as_release_fact"
+    },
+    {
+      "condition": "involves_real_wecom_send_or_n8n_trigger",
+      "route": "pause_for_W2_W3_confirmation",
+      "next_action": "do_not_execute_external_action"
+    },
+    {
+      "condition": "modifies_formal_video_config_script_or_task",
+      "route": "pause_for_risk_review",
+      "next_action": "verify_write_scope_and_risk_level"
+    },
+    {
+      "condition": "requests_formal_rule_library_write",
+      "route": "pause_for_upgrade_discussion",
+      "next_action": "require_multi_case_validation_and_human_confirmation"
+    }
+  ],
+  "self_check": "[自检: VIDEO_FACTORY_R012_PARALLEL_FEEDBACK_INTAKE_001已完成, 风险等级: W1, 产物: 并行视频线回传接收卡md/json, 边界: 守住了。]"
+}

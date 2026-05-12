@@ -1,0 +1,327 @@
+{
+  "名称": "视频真实渲染试运行批次只读预检报告",
+  "生成时间": "2026-05-08 18:50:23",
+  "核对方式": "只读预检",
+  "error_count": 0,
+  "batch_allowed": false,
+  "whitelist_effective": false,
+  "trial_run_allowed": false,
+  "can_enter_real_render": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "触发n8n": false,
+  "修改企业微信公共配置": false,
+  "修改总管面板": false,
+  "修改一键接续包": false,
+  "重载服务": false,
+  "来源": {
+    "第23包白名单草案": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\23真实渲染试运行白名单与回滚预案草案包\\视频真实渲染试运行白名单草案_最新.json",
+    "第24包总包": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次预检与白名单未生效闸口包_最新.json",
+    "批次预检": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次预检_最新.json",
+    "白名单未生效闸口": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染白名单未生效闸口_最新.json",
+    "人工签收清单": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次人工签收清单_最新.json"
+  },
+  "检查结果": [
+    {
+      "检查项": "第23包白名单草案存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\23真实渲染试运行白名单与回滚预案草案包\\视频真实渲染试运行白名单草案_最新.json"
+    },
+    {
+      "检查项": "第23包白名单未生效",
+      "通过": true,
+      "详情": false
+    },
+    {
+      "检查项": "第23包试运行未允许",
+      "通过": true,
+      "详情": false
+    },
+    {
+      "检查项": "第23包只读核对通过",
+      "通过": true,
+      "详情": "通过；白名单未生效，试运行仍不允许。"
+    },
+    {
+      "检查项": "第24包总包存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次预检与白名单未生效闸口包_最新.json"
+    },
+    {
+      "检查项": "批次预检存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次预检_最新.json"
+    },
+    {
+      "检查项": "白名单未生效闸口存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染白名单未生效闸口_最新.json"
+    },
+    {
+      "检查项": "人工签收清单存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次人工签收清单_最新.json"
+    },
+    {
+      "检查项": "package: 红线字段保持未启用",
+      "通过": true,
+      "详情": {
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "真实渲染": false,
+        "生成真实视频": false,
+        "上传发布": false
+      }
+    },
+    {
+      "检查项": "package: 英文只读红线字段保持 false",
+      "通过": true,
+      "详情": {
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false
+      }
+    },
+    {
+      "检查项": "package: error_count=0",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查项": "precheck: 红线字段保持未启用",
+      "通过": true,
+      "详情": {
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "真实渲染": false,
+        "生成真实视频": false,
+        "上传发布": false
+      }
+    },
+    {
+      "检查项": "precheck: 英文只读红线字段保持 false",
+      "通过": true,
+      "详情": {
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false
+      }
+    },
+    {
+      "检查项": "precheck: error_count=0",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查项": "gate: 红线字段保持未启用",
+      "通过": true,
+      "详情": {
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "真实渲染": false,
+        "生成真实视频": false,
+        "上传发布": false
+      }
+    },
+    {
+      "检查项": "gate: 英文只读红线字段保持 false",
+      "通过": true,
+      "详情": {
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false
+      }
+    },
+    {
+      "检查项": "gate: error_count=0",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查项": "signoff: 红线字段保持未启用",
+      "通过": true,
+      "详情": {
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "真实渲染": false,
+        "生成真实视频": false,
+        "上传发布": false
+      }
+    },
+    {
+      "检查项": "signoff: 英文只读红线字段保持 false",
+      "通过": true,
+      "详情": {
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false
+      }
+    },
+    {
+      "检查项": "signoff: error_count=0",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查项": "批次样例覆盖批次ID",
+      "通过": true,
+      "详情": "TRIAL-BATCH-PRECHECK-20260508-001"
+    },
+    {
+      "检查项": "批次样例覆盖任务ID",
+      "通过": true,
+      "详情": "TRIAL-TASK-PRECHECK-20260508-001"
+    },
+    {
+      "检查项": "批次样例覆盖素材要求",
+      "通过": true,
+      "详情": {
+        "素材用途": "仅限未来人工放行后的低风险测试用途",
+        "授权要求": "素材来源、授权证明、格式、分辨率、时长、任务编号均需人工签收",
+        "禁止项": [
+          "不得使用生产发布素材",
+          "不得混入生产素材池",
+          "不得触发外部上传发布链路"
+        ]
+      }
+    },
+    {
+      "检查项": "批次样例覆盖输出目录",
+      "通过": true,
+      "详情": {
+        "样例目录": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\隔离试运行输出样例\\TRIAL-BATCH-PRECHECK-20260508-001",
+        "要求": [
+          "仅作为路径样例，不创建真实渲染产物",
+          "必须隔离于生产成片目录",
+          "不得被 n8n、企业微信、总管面板或一键接续包读取为发布输入"
+        ]
+      }
+    },
+    {
+      "检查项": "批次样例覆盖最大时长",
+      "通过": true,
+      "详情": {
+        "单条视频最大时长秒": 15,
+        "单批次最大任务数": 1,
+        "说明": "样例参数来自第23包草案口径；当前不代表允许执行。"
+      }
+    },
+    {
+      "检查项": "批次样例覆盖失败回滚",
+      "通过": true,
+      "详情": [
+        "任何预检失败均保持 batch_allowed=false。",
+        "任何白名单未生效均保持 trial_run_allowed=false。",
+        "不得重试真实渲染，不得扩大任务范围。",
+        "仅登记失败原因和人工复核要求，不执行删除、清理、重载或发布动作。"
+      ]
+    },
+    {
+      "检查项": "批次样例覆盖日志留存",
+      "通过": true,
+      "详情": [
+        "留存批次ID、任务ID、来源白名单草案、闸口结论和人工签收状态。",
+        "留存不少于30天或按人工要求延长。",
+        "日志不得包含发布凭据或真实视频产物。"
+      ]
+    },
+    {
+      "检查项": "批次样例覆盖人工签收",
+      "通过": true,
+      "详情": {
+        "签收状态": "未签收",
+        "签收后仍需另行启用白名单": true,
+        "签收后仍需另行试运行放行": true
+      }
+    },
+    {
+      "检查项": "未生效闸口关闭",
+      "通过": true,
+      "详情": "closed"
+    },
+    {
+      "检查项": "人工签收清单未签收",
+      "通过": true,
+      "详情": "unsigned"
+    }
+  ],
+  "错误项": [],
+  "核对结论": "通过；白名单未生效，批次不允许，试运行仍不允许。",
+  "readonly_flags_ascii": {
+    "batch_allowed": false,
+    "whitelist_effective": false,
+    "trial_run_allowed": false,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false
+  }
+}

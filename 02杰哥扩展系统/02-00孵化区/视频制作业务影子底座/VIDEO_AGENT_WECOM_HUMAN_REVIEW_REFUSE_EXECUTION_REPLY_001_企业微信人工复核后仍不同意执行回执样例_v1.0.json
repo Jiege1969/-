@@ -1,0 +1,49 @@
+{
+  "asset_id": "VIDEO_AGENT_WECOM_HUMAN_REVIEW_REFUSE_EXECUTION_REPLY_001",
+  "name": "企业微信人工复核后仍不同意执行回执样例",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "视频制作系统",
+  "layer": "W1/W2 影子回执样例",
+  "status": "draft",
+  "terminal_role": "杰哥视频助理",
+  "input_example": "复核后不同意发布，先别发。",
+  "reply_example": [
+    "杰哥，收到。",
+    "任务已登记为“人工复核后不同意执行”。我不会继续生成、渲染、上传或发布。",
+    "当前建议先处理复核意见：文案问题进入局部修正文案；素材授权问题补来源和授权证据；平台规范问题重新做待补字段核对；合规问题保持阻断并记录复核原因。",
+    "本次没有触发真实渲染、真实发布、企业微信真实外发或n8n。"
+  ],
+  "state_suggestion": {
+    "当前状态": "人工复核后不同意执行",
+    "下一步允许动作": [
+      "局部修正",
+      "补素材授权",
+      "补平台规范",
+      "保持阻断"
+    ],
+    "自动渲染": false,
+    "自动发布": false,
+    "真实外发": false
+  },
+  "blocked_actions": [
+    "继续生成",
+    "真实渲染",
+    "上传",
+    "发布",
+    "企业微信真实外发",
+    "触发n8n"
+  ],
+  "boundary": {
+    "send_wecom": false,
+    "call_wecom_api": false,
+    "modify_public_wecom_component": false,
+    "call_real_model": false,
+    "read_material": false,
+    "render_video": false,
+    "upload_video": false,
+    "publish_video": false,
+    "trigger_n8n": false
+  }
+}
+

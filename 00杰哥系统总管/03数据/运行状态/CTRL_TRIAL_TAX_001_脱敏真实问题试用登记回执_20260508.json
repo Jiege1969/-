@@ -1,0 +1,80 @@
+{
+  "asset_id": "CTRL_TRIAL_TAX_001_DESENSITIZED_TAX_QUESTION_TRIAL_RECEIPT_20260508",
+  "asset_name": "CTRL-TRIAL-TAX-001 脱敏真实问题试用登记回执",
+  "created_at": "2026-05-08",
+  "task_id": "CTRL-TRIAL-TAX-001",
+  "asset_identity": "总管侧 W1/R0 受控试用任务执行回执",
+  "is_formal_tax_opinion": false,
+  "is_formal_launch_permission": false,
+  "input_sources": [
+    {
+      "name": "TAX_DAILY_INTAKE_001",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\TAX_DAILY_INTAKE_001_软件产品即征即退脱敏接入样例_v1.0.md",
+      "role": "脱敏接入样例"
+    },
+    {
+      "name": "TAX_DAILY_DRAFT_001",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\TAX_DAILY_DRAFT_001_软件产品即征即退待复核草案_v1.0.md",
+      "role": "待复核草案"
+    }
+  ],
+  "input_summary": {
+    "question_type": "某软件企业销售自行开发的软件产品，想判断是否可能适用增值税即征即退，并了解资料清单和测算前置字段",
+    "desensitized": true,
+    "requested_output": [
+      "适用条件初筛",
+      "资料清单",
+      "测算前置字段"
+    ],
+    "draft_status": "draft_pending_review"
+  },
+  "scan_result": {
+    "general_red_line_hit": false,
+    "specific_red_line_hit": false,
+    "allow_w1_r0_trial": true,
+    "pause_reason": "",
+    "allowed_scope": "总管侧登记税收政策顾问受控试用回执，不改税收正式配置，不接真实税务系统",
+    "next_artifact": "CTRL-TRIAL-TAX-001脱敏真实问题试用登记回执"
+  },
+  "evidence": [
+    "财税〔2011〕100号元数据卡",
+    "软件产品即征即退官方指引卡",
+    "适用条件字段化样例",
+    "测算前置字段清单"
+  ],
+  "missing": [
+    "一般纳税人身份",
+    "地区",
+    "期间",
+    "软件产品材料",
+    "收入拆分",
+    "销项税额",
+    "进项税额",
+    "应纳税额",
+    "地方口径"
+  ],
+  "confidence": "low_to_medium",
+  "absorption_conclusion": {
+    "can_absorb": true,
+    "needs_manager_ruling": false,
+    "needs_user_supplement": true,
+    "write_formal_db": false,
+    "enter_formal_tax_system": false
+  },
+  "task_status": "completed",
+  "next_recommended_task": "CTRL-TRIAL-STOCK-001",
+  "boundary_flags": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_db": false,
+    "run_tax_business_script": false,
+    "login_tax_system": false,
+    "connect_finance_software": false,
+    "formal_tax_opinion": false,
+    "refund_amount_or_filing_advice": false,
+    "modify_service_script": false,
+    "restart_19310_or_19302": false,
+    "delete_move_archive_old_directory": false
+  },
+  "self_check_line": "[自检: CTRL-TRIAL-TAX-001已完成, 风险等级: W1/R0, 产物: 脱敏真实问题试用登记回执, 边界: 守住了。]"
+}

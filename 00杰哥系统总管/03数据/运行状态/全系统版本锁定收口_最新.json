@@ -1,0 +1,36 @@
+{
+  "report_name": "全系统版本锁定收口",
+  "record_time": "2026-05-06 05:53:00 +08:00",
+  "status": "completed",
+  "artifacts": {
+    "markdown": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\全系统版本锁定表_最新.md",
+    "json": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\全系统版本锁定表_最新.json"
+  },
+  "formal_stack": {
+    "python": "3.14.4",
+    "pip": "26.0.1",
+    "node": "v25.9.0",
+    "npm": "11.12.1",
+    "docker": "29.3.1",
+    "docker_compose": "v5.1.1",
+    "ollama": "ollama/ollama:0.20.5",
+    "redis": "redis:7.2.5-alpine",
+    "n8n": "n8nio/n8n:1.123.30"
+  },
+  "validation": {
+    "json_parse_ok": true,
+    "markdown_exists": true,
+    "latest_model_tags_marked": true,
+    "formal_container_images_listed": true
+  },
+  "safety": {
+    "installed_packages": false,
+    "upgraded_anything": false,
+    "restarted_services": false,
+    "triggered_n8n": false,
+    "sent_wecom": false,
+    "called_broker_api": false,
+    "auto_trade": false
+  }
+}
+

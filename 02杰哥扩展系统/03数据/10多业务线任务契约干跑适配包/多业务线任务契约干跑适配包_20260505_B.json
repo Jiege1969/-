@@ -1,0 +1,451 @@
+{
+  "package_id": "ext-multiline-task-contract-dryrun-20260505-B",
+  "task": "02扩展系统多业务线任务契约干跑适配",
+  "generated_at": "2026-05-05T13:35:00+08:00",
+  "scope_owner": "02杰哥扩展系统",
+  "principle": {
+    "learned_logic": "参考 OpenClaw/Hermes 的边界化任务路由、receipt 回执、影子台账思路",
+    "source_artifact_policy": "不引入 OpenClaw/Hermes 原件、不复制原始实现、不连接外部运行时",
+    "real_actions_enabled": false,
+    "dry_run_only": true,
+    "production_systems_blocked": true,
+    "本职工作系统状态": "paused_not_built_not_touched"
+  },
+  "standard_task_order_contract": {
+    "required_fields": [
+      "task_id",
+      "business_line",
+      "requested_action",
+      "dry_run",
+      "requester",
+      "created_at",
+      "payload",
+      "receipt_required",
+      "safety_boundary"
+    ],
+    "required_values": {
+      "dry_run": true,
+      "receipt_required": true,
+      "real_send": false,
+      "production_write": false,
+      "external_call": false,
+      "auto_trade": false
+    },
+    "accepted_business_lines": [
+      "enterprise_wechat",
+      "knowledge_base",
+      "content_processing",
+      "video_production",
+      "tax_readonly"
+    ],
+    "receipt_contract": {
+      "receipt_id": "required",
+      "source_task_id": "required",
+      "business_line": "required",
+      "dry_run": true,
+      "status": "blocked_real_action_recorded",
+      "shadow_ledger_ref": "required",
+      "redis_shadow_key": "required",
+      "n8n_dry_run_ref": "required",
+      "blocked_actions": "required_non_empty_array",
+      "safe_outputs": "required_array"
+    }
+  },
+  "shadow_infrastructure": {
+    "sqlite_shadow_ledger": {
+      "mode": "local_shadow_plan_only",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\10多业务线任务契约干跑适配包\\shadow_ledger_plan.sqlite",
+      "connect": false,
+      "write": false,
+      "tables_planned": [
+        "task_orders_shadow",
+        "receipts_shadow",
+        "blocked_actions_shadow"
+      ],
+      "ledger_row_policy": "仅记录计划字段，不创建真实库连接，不执行 INSERT/UPDATE/DELETE"
+    },
+    "redis_shadow_mapping": {
+      "mode": "static_shadow_key_plan_only",
+      "connect": false,
+      "write": false,
+      "key_prefix": "dryrun:ext:task_contract:",
+      "ttl_seconds_planned": 86400,
+      "mapping_policy": "仅给出 key 规则和样例，不连接 Redis，不 SET/DEL/PUBLISH"
+    },
+    "n8n_dry_run": {
+      "mode": "descriptor_only",
+      "trigger_n8n": false,
+      "webhook_url": null,
+      "execution_id": null,
+      "workflow_activation": false,
+      "policy": "只保留 dry_run 描述，不请求 webhook，不启动 workflow，不触发节点"
+    }
+  },
+  "business_line_adapters": [
+    {
+      "business_line": "enterprise_wechat",
+      "display_name": "企业微信",
+      "receive_standard_task_order": {
+        "accepted_actions": [
+          "compose_message_preview",
+          "route_message_shadow",
+          "delivery_receipt_preview"
+        ],
+        "input_binding": "payload.message_draft + payload.target_profile_shadow",
+        "dry_run_required": true
+      },
+      "dry_run_guards": [
+        "corp_id/app_id/token/webhook/response_url 不读取、不拼接、不发送",
+        "统一消息出口仅允许影子路由描述",
+        "真实发送、群发、客服消息、应用消息全部阻断"
+      ],
+      "receipt_output": {
+        "status": "blocked_real_send_receipt_only",
+        "safe_outputs": [
+          "message_preview",
+          "shadow_route",
+          "blocked_send_reason"
+        ]
+      },
+      "blocked_real_actions": [
+        "send_wework_message",
+        "call_response_url",
+        "call_webhook",
+        "trigger_n8n",
+        "write_production_message_queue"
+      ],
+      "safety_boundary": "只产生本地预览和 receipt，不触发企业微信真实发送。"
+    },
+    {
+      "business_line": "knowledge_base",
+      "display_name": "知识库",
+      "receive_standard_task_order": {
+        "accepted_actions": [
+          "query_shadow_index",
+          "citation_preview",
+          "answer_boundary_check"
+        ],
+        "input_binding": "payload.question + payload.local_sources_shadow",
+        "dry_run_required": true
+      },
+      "dry_run_guards": [
+        "正式知识库、正式向量库、正式数据库全部只读或不连接",
+        "不可将 dry_run 结果写入正式索引",
+        "缺证、过时、越权问题输出不可回答 receipt"
+      ],
+      "receipt_output": {
+        "status": "readonly_receipt_only",
+        "safe_outputs": [
+          "source_index_preview",
+          "citation_status",
+          "unanswerable_boundary"
+        ]
+      },
+      "blocked_real_actions": [
+        "write_knowledge_base",
+        "write_vector_store",
+        "delete_index",
+        "call_external_search_api",
+        "trigger_n8n"
+      ],
+      "safety_boundary": "只读解析本地来源候选，不写正式库，不生成正式知识结论。"
+    },
+    {
+      "business_line": "content_processing",
+      "display_name": "内容处理",
+      "receive_standard_task_order": {
+        "accepted_actions": [
+          "content_parse_preview",
+          "format_plan_preview",
+          "risk_check_preview"
+        ],
+        "input_binding": "payload.content_sample + payload.format_target_shadow",
+        "dry_run_required": true
+      },
+      "dry_run_guards": [
+        "不覆盖、不移动、不删除用户原文档",
+        "不写正式内容库、不发布、不批量转换",
+        "仅生成解析计划、风险提示和 receipt"
+      ],
+      "receipt_output": {
+        "status": "content_conversion_blocked_receipt_only",
+        "safe_outputs": [
+          "parse_preview",
+          "format_plan",
+          "blocked_conversion_reason"
+        ]
+      },
+      "blocked_real_actions": [
+        "convert_real_document",
+        "overwrite_user_file",
+        "move_or_delete_user_file",
+        "publish_content",
+        "write_production_content_db",
+        "trigger_n8n"
+      ],
+      "safety_boundary": "只做本地干跑计划，不进行真实内容转换或发布。"
+    },
+    {
+      "business_line": "video_production",
+      "display_name": "视频制作",
+      "receive_standard_task_order": {
+        "accepted_actions": [
+          "video_pipeline_plan_preview",
+          "asset_check_preview",
+          "render_receipt_preview"
+        ],
+        "input_binding": "payload.script_outline + payload.asset_manifest_shadow",
+        "dry_run_required": true
+      },
+      "dry_run_guards": [
+        "不转码、不剪辑、不渲染、不生成字幕/封面成品",
+        "不调用真实媒体工具链、不写正式成片清单",
+        "缺素材、版权未确认、人工确认缺失均阻断"
+      ],
+      "receipt_output": {
+        "status": "media_render_blocked_receipt_only",
+        "safe_outputs": [
+          "pipeline_plan",
+          "asset_gap_list",
+          "blocked_render_reason"
+        ]
+      },
+      "blocked_real_actions": [
+        "transcode_media",
+        "edit_media",
+        "render_video",
+        "generate_subtitle_file",
+        "generate_cover_asset",
+        "publish_video",
+        "trigger_n8n"
+      ],
+      "safety_boundary": "只输出制作计划和阻断回执，不做真实媒体转换。"
+    },
+    {
+      "business_line": "tax_readonly",
+      "display_name": "税收只读",
+      "receive_standard_task_order": {
+        "accepted_actions": [
+          "policy_source_candidate_preview",
+          "manual_review_sheet_preview",
+          "tax_boundary_receipt"
+        ],
+        "input_binding": "payload.policy_source_candidates + payload.tax_question_shadow",
+        "dry_run_required": true
+      },
+      "dry_run_guards": [
+        "不输出正式税务适用判断",
+        "不输出正式申报建议、节税方案、自动申报",
+        "不写正式政策库、税务库、知识库、向量库"
+      ],
+      "receipt_output": {
+        "status": "tax_judgement_blocked_receipt_only",
+        "safe_outputs": [
+          "policy_source_candidate_list",
+          "manual_review_required_fields",
+          "non_judgement_boundary"
+        ]
+      },
+      "blocked_real_actions": [
+        "make_formal_tax_judgement",
+        "make_tax_filing_recommendation",
+        "submit_tax_filing",
+        "write_production_tax_db",
+        "write_knowledge_base",
+        "call_external_tax_api",
+        "trigger_n8n"
+      ],
+      "safety_boundary": "仅保留政策来源候选和人工复核字段，不作正式税务判断。"
+    }
+  ],
+  "sample_task_orders": [
+    {
+      "task_id": "dryrun-wework-001",
+      "business_line": "enterprise_wechat",
+      "requested_action": "compose_message_preview",
+      "dry_run": true,
+      "requester": "parallel_task_B",
+      "created_at": "2026-05-05T13:35:00+08:00",
+      "payload": {
+        "message_draft": "仅用于干跑的消息预览",
+        "target_profile_shadow": "shadow_only"
+      },
+      "receipt_required": true,
+      "safety_boundary": "真实发送关闭"
+    },
+    {
+      "task_id": "dryrun-kb-001",
+      "business_line": "knowledge_base",
+      "requested_action": "citation_preview",
+      "dry_run": true,
+      "requester": "parallel_task_B",
+      "created_at": "2026-05-05T13:35:00+08:00",
+      "payload": {
+        "question": "仅验证来源索引字段",
+        "local_sources_shadow": []
+      },
+      "receipt_required": true,
+      "safety_boundary": "正式知识库写入关闭"
+    },
+    {
+      "task_id": "dryrun-content-001",
+      "business_line": "content_processing",
+      "requested_action": "format_plan_preview",
+      "dry_run": true,
+      "requester": "parallel_task_B",
+      "created_at": "2026-05-05T13:35:00+08:00",
+      "payload": {
+        "content_sample": "干跑样例文本",
+        "format_target_shadow": "markdown_preview"
+      },
+      "receipt_required": true,
+      "safety_boundary": "真实转换关闭"
+    },
+    {
+      "task_id": "dryrun-video-001",
+      "business_line": "video_production",
+      "requested_action": "video_pipeline_plan_preview",
+      "dry_run": true,
+      "requester": "parallel_task_B",
+      "created_at": "2026-05-05T13:35:00+08:00",
+      "payload": {
+        "script_outline": "干跑脚本提纲",
+        "asset_manifest_shadow": []
+      },
+      "receipt_required": true,
+      "safety_boundary": "真实媒体转换关闭"
+    },
+    {
+      "task_id": "dryrun-tax-001",
+      "business_line": "tax_readonly",
+      "requested_action": "policy_source_candidate_preview",
+      "dry_run": true,
+      "requester": "parallel_task_B",
+      "created_at": "2026-05-05T13:35:00+08:00",
+      "payload": {
+        "policy_source_candidates": [],
+        "tax_question_shadow": "仅验证只读边界"
+      },
+      "receipt_required": true,
+      "safety_boundary": "正式税务判断关闭"
+    }
+  ],
+  "sample_receipts": [
+    {
+      "receipt_id": "receipt-dryrun-wework-001",
+      "source_task_id": "dryrun-wework-001",
+      "business_line": "enterprise_wechat",
+      "dry_run": true,
+      "status": "blocked_real_action_recorded",
+      "shadow_ledger_ref": "sqlite-shadow://task_orders_shadow/dryrun-wework-001",
+      "redis_shadow_key": "dryrun:ext:task_contract:enterprise_wechat:dryrun-wework-001",
+      "n8n_dry_run_ref": "n8n-dryrun-descriptor-only:no-trigger",
+      "blocked_actions": [
+        "send_wework_message",
+        "call_response_url",
+        "trigger_n8n"
+      ],
+      "safe_outputs": [
+        "message_preview",
+        "shadow_route"
+      ]
+    },
+    {
+      "receipt_id": "receipt-dryrun-kb-001",
+      "source_task_id": "dryrun-kb-001",
+      "business_line": "knowledge_base",
+      "dry_run": true,
+      "status": "blocked_real_action_recorded",
+      "shadow_ledger_ref": "sqlite-shadow://task_orders_shadow/dryrun-kb-001",
+      "redis_shadow_key": "dryrun:ext:task_contract:knowledge_base:dryrun-kb-001",
+      "n8n_dry_run_ref": "n8n-dryrun-descriptor-only:no-trigger",
+      "blocked_actions": [
+        "write_knowledge_base",
+        "write_vector_store",
+        "trigger_n8n"
+      ],
+      "safe_outputs": [
+        "source_index_preview",
+        "citation_status"
+      ]
+    },
+    {
+      "receipt_id": "receipt-dryrun-content-001",
+      "source_task_id": "dryrun-content-001",
+      "business_line": "content_processing",
+      "dry_run": true,
+      "status": "blocked_real_action_recorded",
+      "shadow_ledger_ref": "sqlite-shadow://task_orders_shadow/dryrun-content-001",
+      "redis_shadow_key": "dryrun:ext:task_contract:content_processing:dryrun-content-001",
+      "n8n_dry_run_ref": "n8n-dryrun-descriptor-only:no-trigger",
+      "blocked_actions": [
+        "convert_real_document",
+        "overwrite_user_file",
+        "trigger_n8n"
+      ],
+      "safe_outputs": [
+        "parse_preview",
+        "format_plan"
+      ]
+    },
+    {
+      "receipt_id": "receipt-dryrun-video-001",
+      "source_task_id": "dryrun-video-001",
+      "business_line": "video_production",
+      "dry_run": true,
+      "status": "blocked_real_action_recorded",
+      "shadow_ledger_ref": "sqlite-shadow://task_orders_shadow/dryrun-video-001",
+      "redis_shadow_key": "dryrun:ext:task_contract:video_production:dryrun-video-001",
+      "n8n_dry_run_ref": "n8n-dryrun-descriptor-only:no-trigger",
+      "blocked_actions": [
+        "transcode_media",
+        "render_video",
+        "trigger_n8n"
+      ],
+      "safe_outputs": [
+        "pipeline_plan",
+        "asset_gap_list"
+      ]
+    },
+    {
+      "receipt_id": "receipt-dryrun-tax-001",
+      "source_task_id": "dryrun-tax-001",
+      "business_line": "tax_readonly",
+      "dry_run": true,
+      "status": "blocked_real_action_recorded",
+      "shadow_ledger_ref": "sqlite-shadow://task_orders_shadow/dryrun-tax-001",
+      "redis_shadow_key": "dryrun:ext:task_contract:tax_readonly:dryrun-tax-001",
+      "n8n_dry_run_ref": "n8n-dryrun-descriptor-only:no-trigger",
+      "blocked_actions": [
+        "make_formal_tax_judgement",
+        "make_tax_filing_recommendation",
+        "trigger_n8n"
+      ],
+      "safe_outputs": [
+        "policy_source_candidate_list",
+        "manual_review_required_fields"
+      ]
+    }
+  ],
+  "global_blocked_actions": [
+    "trigger_n8n",
+    "send_enterprise_wechat_real_message",
+    "write_production_database",
+    "write_production_knowledge_base",
+    "write_vector_store",
+    "convert_real_media",
+    "make_formal_tax_judgement",
+    "call_broker_api",
+    "auto_trade",
+    "touch_main_work_system"
+  ],
+  "acceptance_checks": [
+    "五条业务线均存在适配器",
+    "所有样例任务单 dry_run=true",
+    "所有样例 receipt dry_run=true 且 blocked_actions 非空",
+    "SQLite 仅为影子台账计划且 connect/write=false",
+    "Redis 仅为影子 key 规则且 connect/write=false",
+    "n8n trigger_n8n=false 且 webhook_url=null",
+    "真实发送、正式库、真实转换、正式税务判断、券商接口、自动交易均阻断"
+  ]
+}

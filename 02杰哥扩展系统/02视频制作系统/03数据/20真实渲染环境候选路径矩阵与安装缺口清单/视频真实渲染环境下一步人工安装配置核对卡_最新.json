@@ -1,0 +1,40 @@
+{
+  "名称": "视频真实渲染环境下一步人工安装配置核对卡",
+  "生成时间": "2026-05-08 17:52:03",
+  "用途": "供人工在安全窗口核对安装路径、命令 PATH 与放行材料；本卡不替代真实渲染放行",
+  "核对项": [
+    "人工确认 MoneyPrinterTurbo 实际安装目录，并确认 start.bat、app/main.py、webui/Main.py 中的有效入口",
+    "人工确认 ImageMagick 安装目录是否包含 magick.exe",
+    "人工确认 PATH 中 magick 命令名是否可解析；版本核对只能在另行授权窗口手工执行",
+    "人工补齐素材授权、人审回执、任务单、发布放行链和真实渲染前最终确认记录",
+    "总管未另行下发明确放行任务前，不得触发真实渲染、上传发布、n8n、企业微信公共配置或服务重载"
+  ],
+  "来自缺口数量": 5,
+  "可进入真实渲染": false,
+  "readonly_flags": {
+    "真实渲染": false,
+    "生成真实视频": false,
+    "上传发布": false,
+    "调用MoneyPrinterTurbo": false,
+    "执行magick": false,
+    "执行magick_version": false,
+    "触发n8n": false,
+    "修改企业微信公共配置": false,
+    "修改总管面板": false,
+    "修改一键接续包": false,
+    "重载服务": false
+  },
+  "readonly_flags_ascii": {
+    "real_render": false,
+    "generate_real_video": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false
+  }
+}

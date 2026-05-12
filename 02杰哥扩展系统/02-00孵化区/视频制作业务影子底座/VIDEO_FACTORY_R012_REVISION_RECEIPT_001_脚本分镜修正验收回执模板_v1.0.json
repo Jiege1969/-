@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 05:41:21 +08:00",
+  "receipt_id": "VIDEO_FACTORY_R012_REVISION_RECEIPT_001",
+  "task_id": "VF-20260508-003",
+  "asset_identity": "video_factory_round012_revision_acceptance_human_receipt_shadow_template",
+  "risk_level": "W1",
+  "status": "blank_template_pending_human_fill",
+  "boundary": {
+    "modify_formal_video_system": false,
+    "modify_video_system_task": false,
+    "modify_release_lists": false,
+    "read_real_assets": false,
+    "move_assets": false,
+    "transcode": false,
+    "render": false,
+    "subtitle_generation": false,
+    "cover_generation": false,
+    "voice_generation": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false,
+    "send_wecom": false,
+    "trigger_n8n": false
+  },
+  "linked_acceptance_checklist": "VIDEO_FACTORY_R012_REVISION_ACCEPTANCE_001_脚本分镜修正验收清单_v1.0.md",
+  "basic_fields": {
+    "task_id": "VF-20260508-003",
+    "topic": "讲讲掩耳盗铃这个成语的故事",
+    "receipt_type": "script_storyboard_revision_human_acceptance",
+    "human_reviewer": "待填写",
+    "review_time": "待填写",
+    "revised_draft_source": "待填写"
+  },
+  "acceptance_domains": [
+    "task_id_consistency",
+    "script_revision",
+    "storyboard_revision",
+    "asset_fields",
+    "platform_rule_fields",
+    "generation_gate",
+    "publish_gate"
+  ],
+  "allowed_conclusions": [
+    "继续修正",
+    "可进入人工生成放行讨论",
+    "生成后待预览",
+    "可进入人工发布放行讨论",
+    "驳回并记录原因"
+  ],
+  "invalid_conclusion_conditions": [
+    "generation_release_discussion_does_not_modify_formal_generation_release_list",
+    "publish_release_discussion_requires_finished_video_preview_record",
+    "receipt_completion_does_not_equal_generation_release",
+    "receipt_completion_does_not_equal_publish_release"
+  ],
+  "review_required_reason_categories": {
+    "script_failure": [
+      "故事本体不足",
+      "现代类比不足",
+      "原创观点不足",
+      "模板感过强",
+      "人工确认标记未处理",
+      "风险表达不当"
+    ],
+    "storyboard_failure": [
+      "画面贴题不足",
+      "素材来源缺失",
+      "授权缺失",
+      "隐私风险",
+      "画幅未定",
+      "AI标识未定",
+      "可执行性不足"
+    ]
+  },
+  "retrospective_fields": [
+    "本次修正是否减少AI感",
+    "本次修正是否强化成语本体",
+    "本次修正是否补齐素材授权",
+    "仍需补充的证据",
+    "可沉淀为通用规则的经验",
+    "是否进入进化候选"
+  ],
+  "passing_this_receipt_means_generation_release": false,
+  "passing_this_receipt_means_publish_release": false,
+  "self_check": "[自检: VIDEO_FACTORY_R012_REVISION_RECEIPT_001已完成, 风险等级: W1, 产物: 脚本分镜修正验收回执模板md/json, 边界: 守住了。]"
+}

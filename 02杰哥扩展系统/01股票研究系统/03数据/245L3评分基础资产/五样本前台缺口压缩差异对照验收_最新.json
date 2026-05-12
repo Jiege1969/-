@@ -1,0 +1,62 @@
+{
+  "名称": "五样本前台缺口压缩差异对照验收",
+  "validated_at": "2026-05-08 08:17:36",
+  "status": "passed",
+  "sample_count": 5,
+  "errors": [],
+  "items": [
+    {
+      "stock": "云南锗业",
+      "code": "sz002428",
+      "current_reply_status": "available",
+      "adapter_passed": true,
+      "finding_count": 2,
+      "blocked_count": 2
+    },
+    {
+      "stock": "天齐锂业",
+      "code": "sz002466",
+      "current_reply_status": "available",
+      "adapter_passed": true,
+      "finding_count": 3,
+      "blocked_count": 2
+    },
+    {
+      "stock": "华虹公司",
+      "code": "sh688347",
+      "current_reply_status": "available",
+      "adapter_passed": true,
+      "finding_count": 3,
+      "blocked_count": 2
+    },
+    {
+      "stock": "浙商中拓",
+      "code": "sz000906",
+      "current_reply_status": "available",
+      "adapter_passed": true,
+      "finding_count": 2,
+      "blocked_count": 2
+    },
+    {
+      "stock": "正丹股份",
+      "code": "sz300641",
+      "current_reply_status": "available",
+      "adapter_passed": true,
+      "finding_count": 2,
+      "blocked_count": 2
+    }
+  ],
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_score_write": true,
+    "not_adapter_write": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "名称": "视频真实渲染试运行批次失败证据留存索引",
+  "批次ID": "TRIAL-FAILURE-ROLLBACK-20260508-001",
+  "任务ID": "TRIAL-FAILURE-TASK-20260508-001",
+  "前置快照": {
+    "来源说明": "承接第24视频包：真实渲染试运行批次预检与白名单未生效闸口包",
+    "来源文件": {
+      "第24包总包": {
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次预检与白名单未生效闸口包_最新.json",
+        "exists": true,
+        "sha256": "a936f275c7fe53e14a4222476b9d54db6fc53f7bfc15588c6333225106626e47",
+        "error_count": 0,
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "real_render": null,
+        "publish": null,
+        "真实渲染": false,
+        "上传发布": false
+      },
+      "第24包批次预检": {
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次预检_最新.json",
+        "exists": true,
+        "sha256": "facb7ee0ed88e52b4b8a445db079719b436dfcb1c1ff4d421af7ca24f459beba",
+        "error_count": 0,
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "real_render": null,
+        "publish": null,
+        "真实渲染": false,
+        "上传发布": false
+      },
+      "第24包白名单未生效闸口": {
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染白名单未生效闸口_最新.json",
+        "exists": true,
+        "sha256": "920cc3dcab10671ce6eeecd805e46846169a8e6e73f7abe88f7a536304df1eff",
+        "error_count": 0,
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "real_render": null,
+        "publish": null,
+        "真实渲染": false,
+        "上传发布": false
+      },
+      "第24包人工签收清单": {
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次人工签收清单_最新.json",
+        "exists": true,
+        "sha256": "36679210fbdd127ce2641276866649c1fdc7771018b3dc0595747c3dded9d1bf",
+        "error_count": 0,
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "real_render": null,
+        "publish": null,
+        "真实渲染": false,
+        "上传发布": false
+      },
+      "第24包只读预检报告": {
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\24真实渲染试运行批次预检与白名单未生效闸口包\\视频真实渲染试运行批次只读预检报告_最新.json",
+        "exists": true,
+        "sha256": "8a57e2c1247ce3cbb6edfe10b7bc2c890a2ae27cea5566018ef252a80a510e1e",
+        "error_count": 0,
+        "batch_allowed": false,
+        "whitelist_effective": false,
+        "trial_run_allowed": false,
+        "can_enter_real_render": false,
+        "real_render": null,
+        "publish": null,
+        "真实渲染": false,
+        "上传发布": false
+      }
+    }
+  },
+  "失败原因": [
+    {
+      "scenario_id": "FAIL-ENV-UNAVAILABLE",
+      "失败场景": "环境不可用",
+      "失败原因": "环境不可用，不能进入试运行批次。"
+    },
+    {
+      "scenario_id": "FAIL-MATERIAL-MISSING",
+      "失败场景": "素材缺失",
+      "失败原因": "素材缺失，不能形成可验收试运行输入。"
+    },
+    {
+      "scenario_id": "FAIL-WHITELIST-INACTIVE",
+      "失败场景": "白名单未生效",
+      "失败原因": "白名单未生效，试运行仍未获授权。"
+    },
+    {
+      "scenario_id": "FAIL-OUTPUT-UNWRITABLE",
+      "失败场景": "输出目录不可写",
+      "失败原因": "输出目录不可写或隔离边界不足。"
+    },
+    {
+      "scenario_id": "FAIL-MANUAL-REJECTED",
+      "失败场景": "生成后人工否决",
+      "失败原因": "生成后人工否决，不能发布或复用为生产输入。"
+    }
+  ],
+  "人工签收状态": "unsigned",
+  "留存期限": {
+    "retention_days": 180,
+    "retention_until": "2026-11-04",
+    "说明": "不少于180天；如人工复核要求更长留存期，以人工复核要求为准。"
+  },
+  "证据项": [
+    {
+      "名称": "失败场景矩阵JSON",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\25真实渲染试运行批次失败回滚与证据留存包\\视频真实渲染试运行批次失败场景矩阵_最新.json",
+      "required": true
+    },
+    {
+      "名称": "失败场景矩阵MD",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\25真实渲染试运行批次失败回滚与证据留存包\\视频真实渲染试运行批次失败场景矩阵_最新.md",
+      "required": true
+    },
+    {
+      "名称": "回滚动作清单JSON",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\25真实渲染试运行批次失败回滚与证据留存包\\视频真实渲染试运行批次失败回滚动作清单_最新.json",
+      "required": true
+    },
+    {
+      "名称": "回滚动作清单MD",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\25真实渲染试运行批次失败回滚与证据留存包\\视频真实渲染试运行批次失败回滚动作清单_最新.md",
+      "required": true
+    },
+    {
+      "名称": "证据留存索引JSON",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\25真实渲染试运行批次失败回滚与证据留存包\\视频真实渲染试运行批次失败证据留存索引_最新.json",
+      "required": true
+    },
+    {
+      "名称": "证据留存索引MD",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\25真实渲染试运行批次失败回滚与证据留存包\\视频真实渲染试运行批次失败证据留存索引_最新.md",
+      "required": true
+    }
+  ],
+  "生成时间": "2026-05-08 19:00:41",
+  "error_count": 0,
+  "batch_allowed": false,
+  "whitelist_effective": false,
+  "trial_run_allowed": false,
+  "can_enter_real_render": false,
+  "real_render": false,
+  "publish": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "触发n8n": false,
+  "修改企业微信公共配置": false,
+  "修改总管面板": false,
+  "修改一键接续包": false,
+  "重载服务": false,
+  "readonly_flags_ascii": {
+    "batch_allowed": false,
+    "whitelist_effective": false,
+    "trial_run_allowed": false,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "publish": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "title": "Round14 closure for inventory gap cleanup",
+  "time": "2026-05-06 12:50:00 +08:00",
+  "decision": "closed",
+  "principle": "Keep recurrence-prevention logic, not bad-state artifacts. Errors are corrected; verified dead items are closed; only reusable rules, checks, and acceptance logic become assets.",
+  "actions": [
+    "Fixed four registry top-level qmark encoding values; all four JSON files parse and contain no qmark debt.",
+    "Removed retired local container entries from current service registries and retired local port entries from current port registries.",
+    "Updated stable heartbeat, lightweight patrol, old-system protection, and Ollama governance rules to the current v3/OpenClaw facts.",
+    "Updated n8n readonly scripts to target v3 n8n on 28679 and deleted 36 obsolete old-n8n execution/import/enable/rollback scripts.",
+    "Patched full-cycle guard and dual-system Ollama audit to stop treating retired local Ollama as a current target.",
+    "Deleted two obsolete intelligent-agent three-service plan scripts after scheduled-task scan found no active dependency.",
+    "Corrected the overlay approach: 22 unreferenced stale *_latest report/manual shells were deleted after dependency scan.",
+    "Added cleanup recurrence-prevention rules in 03 evolution config and 00 manager config."
+  ],
+  "current_docker": [
+    "jiege_v3_ollama",
+    "jiege_v3_redis",
+    "jiege_v3_n8n"
+  ],
+  "current_ports": [
+    11434,
+    18789,
+    18791,
+    18792,
+    19300,
+    19302,
+    19310,
+    26379,
+    28100,
+    28679,
+    29134
+  ],
+  "n8n": {
+    "container": "jiege_v3_n8n",
+    "port": 28679,
+    "workflows": 5,
+    "active": 0,
+    "kept_reason": "mother samples only"
+  },
+  "validations": {
+    "docker_only_v3_three": true,
+    "docker_volume_count": 0,
+    "retired_old_ports_listening_count": 0,
+    "registry_json_parse": true,
+    "registry_current_old_refs": 0,
+    "script_old_refs_remaining": "only Test-HistoricalPortClosed checks in readonly status script",
+    "python_compile": true,
+    "psparser": true,
+    "n8n_readonly_probe": "tcp_ok and health_ok",
+    "n8n_controlled_status": "true, workflows=5",
+    "readonly_status": "Required HTTP 4/4; historical closed checks 7/7",
+    "stable_hub_verify": "pass 8 fail 0",
+    "health": "n8n 200; v3 Ollama 200; WSL Ollama 200; Redis PONG"
+  },
+  "safety": {
+    "no_n8n_trigger": true,
+    "no_wecom_send": true,
+    "no_broker_api": true,
+    "no_auto_trade": true,
+    "no_docker_prune": true
+  },
+  "remaining_debt_in_scope": [],
+  "deleted_stale_latest_shells_count": 22,
+  "authoritative_current_records": [
+    "Round14 closure report in manager runtime status directory",
+    "Round14 acceptance report in manager acceptance report directory",
+    "Evolution cleanup recurrence-prevention rule JSON",
+    "Manager cleanup recurrence-prevention execution rule JSON"
+  ]
+}

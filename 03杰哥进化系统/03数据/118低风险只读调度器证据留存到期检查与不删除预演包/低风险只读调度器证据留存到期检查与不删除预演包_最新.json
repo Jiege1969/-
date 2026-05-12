@@ -1,0 +1,39 @@
+{
+  "name": "低风险只读调度器证据留存到期检查与不删除预演包",
+  "generated_at": "2026-05-08 21:18:26",
+  "target_data_dir": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\118低风险只读调度器证据留存到期检查与不删除预演包",
+  "log_dir": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度器证据留存到期检查与不删除预演包验收",
+  "source_dir": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\100低风险只读调度运行台账与证据归档预演包",
+  "readonly_dry_run_only": true,
+  "delete_allowed": false,
+  "history_content_untouched": true,
+  "write_scope_is_118_only": true,
+  "metrics": {
+    "policy_rule_count": 5,
+    "inventory_sample_count": 4,
+    "queue_count": 4
+  },
+  "artifacts": {
+    "policy_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\118低风险只读调度器证据留存到期检查与不删除预演包\\证据留存到期检查策略_最新.json",
+    "policy_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\118低风险只读调度器证据留存到期检查与不删除预演包\\证据留存到期检查策略_最新.md",
+    "inventory_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\118低风险只读调度器证据留存到期检查与不删除预演包\\证据留存样本清单_最新.json",
+    "inventory_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\118低风险只读调度器证据留存到期检查与不删除预演包\\证据留存样本清单_最新.md",
+    "queue_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\118低风险只读调度器证据留存到期检查与不删除预演包\\到期不删除处理队列_最新.json",
+    "queue_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\118低风险只读调度器证据留存到期检查与不删除预演包\\到期不删除处理队列_最新.md"
+  },
+  "safety_confirmation": {
+    "read_only": true,
+    "delete_file": false,
+    "remove_directory": false,
+    "move_history_package": false,
+    "overwrite_history_package": false,
+    "external_call": false,
+    "send_notification": false,
+    "connect_n8n": false,
+    "reload_service": false,
+    "promote_to_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "write_scope_is_118_only": true
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "asset_id": "VIDEO_AGENT_STAGE_COMPLETION_REPORT_001",
+  "name": "本阶段资产补齐收口报告",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:22:00 +08:00",
+  "risk_level": "低风险",
+  "completed_groups": [
+    "契约层",
+    "连续施工状态层",
+    "红线阻断层",
+    "门禁缺口层",
+    "回执草案层",
+    "状态枚举层"
+  ],
+  "boundary": {
+    "real_llm": false,
+    "read_real_assets": false,
+    "call_engine": false,
+    "render": false,
+    "upload": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "modify_manager_or_public_components": false,
+    "write_formal_db": false
+  },
+  "next_w1_r0_candidates": [
+    "更新本线影子底座索引草案",
+    "生成 VAI030 至 VAI041 总资产清单",
+    "生成连续施工阶段 R0 自检报告"
+  ],
+  "formal_online_claim": false,
+  "real_system_triggered": false
+}

@@ -1,0 +1,140 @@
+{
+  "name": "股票提问对象识别与别名映射验收",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:50:26",
+  "asset_identity": "W1股票对象识别验收",
+  "status": "shadow_acceptance",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "records": [
+    {
+      "query": "云南锗业现在怎么样",
+      "matched_stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "aliases": [
+        "云南锗业",
+        "002428",
+        "锗业",
+        "云南锗"
+      ],
+      "first_line_required": "云南锗业（sz002428）",
+      "object_clear": true,
+      "ambiguous": false,
+      "requires_disambiguation": false,
+      "front_output_blocking": {
+        "if_ambiguous": "先澄清股票名称和代码，不生成分析结论。",
+        "if_unmatched": "提示未识别到股票对象，不生成分析结论。"
+      }
+    },
+    {
+      "query": "天齐锂业能看吗",
+      "matched_stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "aliases": [
+        "天齐锂业",
+        "002466",
+        "天齐"
+      ],
+      "first_line_required": "天齐锂业（sz002466）",
+      "object_clear": true,
+      "ambiguous": false,
+      "requires_disambiguation": false,
+      "front_output_blocking": {
+        "if_ambiguous": "先澄清股票名称和代码，不生成分析结论。",
+        "if_unmatched": "提示未识别到股票对象，不生成分析结论。"
+      }
+    },
+    {
+      "query": "华虹公司现在怎么样",
+      "matched_stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "aliases": [
+        "华虹公司",
+        "688347",
+        "华虹"
+      ],
+      "first_line_required": "华虹公司（sh688347）",
+      "object_clear": true,
+      "ambiguous": false,
+      "requires_disambiguation": false,
+      "front_output_blocking": {
+        "if_ambiguous": "先澄清股票名称和代码，不生成分析结论。",
+        "if_unmatched": "提示未识别到股票对象，不生成分析结论。"
+      }
+    },
+    {
+      "query": "浙商中拓怎么样",
+      "matched_stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "aliases": [
+        "浙商中拓",
+        "000906",
+        "中拓"
+      ],
+      "first_line_required": "浙商中拓（sz000906）",
+      "object_clear": true,
+      "ambiguous": false,
+      "requires_disambiguation": false,
+      "front_output_blocking": {
+        "if_ambiguous": "先澄清股票名称和代码，不生成分析结论。",
+        "if_unmatched": "提示未识别到股票对象，不生成分析结论。"
+      }
+    },
+    {
+      "query": "正丹股份现在怎么看",
+      "matched_stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "aliases": [
+        "正丹股份",
+        "300641",
+        "正丹"
+      ],
+      "first_line_required": "正丹股份（sz300641）",
+      "object_clear": true,
+      "ambiguous": false,
+      "requires_disambiguation": false,
+      "front_output_blocking": {
+        "if_ambiguous": "先澄清股票名称和代码，不生成分析结论。",
+        "if_unmatched": "提示未识别到股票对象，不生成分析结论。"
+      }
+    }
+  ],
+  "rules": [
+    "前台第一行必须明确股票名称和代码。",
+    "未识别对象时不得输出分析结论。",
+    "对象歧义时先澄清，不得猜测。",
+    "别名只用于本地影子识别验收，不写正式路由。"
+  ],
+  "summary": {
+    "sample_count": 5,
+    "object_clear_count": 5,
+    "ambiguous_count": 0,
+    "formal_route_write_allowed": false,
+    "real_wecom_send_allowed": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

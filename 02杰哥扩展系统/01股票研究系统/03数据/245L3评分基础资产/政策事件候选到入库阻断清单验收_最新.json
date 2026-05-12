@@ -1,0 +1,15 @@
+{
+  "name": "政策事件候选到入库阻断清单验收",
+  "generated_at": "2026-05-08 10:43:25",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\政策事件候选到入库阻断清单_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "candidate_count": 5,
+    "entry_allowed_count": 0,
+    "score_allowed_count": 0,
+    "blocked_count": 5
+  },
+  "auto_continue_policy": "通过后继续执行第二批下一小闭环；不等待用户确认。"
+}

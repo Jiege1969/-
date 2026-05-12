@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 00:10:47 +08:00",
+  "review_id": "VIDEO_FACTORY_R012_REVIEW_002",
+  "task_id": "VF-20260508-003",
+  "asset_identity": "video_factory_round012_latest_task_pre_publish_review_shadow_sample",
+  "risk_level": "W1",
+  "status": "pending_human_review",
+  "boundary": {
+    "read_formal_video_factory_outputs": true,
+    "modify_video_system_task": false,
+    "modify_release_lists": false,
+    "render": false,
+    "upload": false,
+    "publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "external_send": false
+  },
+  "source_files": {
+    "latest_task": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\视频工厂任务单_最新.json",
+    "script_draft": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\草案输出\\视频脚本草案_最新.md",
+    "storyboard_draft": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\草案输出\\分镜草案_最新.md",
+    "generation_release_list": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\放行清单\\视频生成放行清单_最新.md",
+    "publish_release_list": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\放行清单\\视频发布放行清单_最新.md"
+  },
+  "readonly_findings": [
+    "latest_task_is_VF-20260508-003",
+    "task_status_is_previewing",
+    "script_and_storyboard_drafts_exist",
+    "manual_confirmation_items_remain",
+    "generation_release_list_only_registers_VF-20260508-001",
+    "publish_release_list_only_registers_VF-20260508-001",
+    "latest_task_has_no_generation_or_publish_release"
+  ],
+  "review_questions": [
+    {
+      "id": "Q1",
+      "question": "是否确认本任务主题、表达角度和目标受众？",
+      "current_status": "pending_confirmation",
+      "impact": "未确认前只能保留预演草案"
+    },
+    {
+      "id": "Q2",
+      "question": "掩耳盗铃是否做了古今结合原创解读，而不是仅翻译或复述常见故事？",
+      "current_status": "pending_review",
+      "impact": "影响原创性和内容质量"
+    },
+    {
+      "id": "Q3",
+      "question": "脚本里的人工确认标记是否已处理？",
+      "current_status": "not_processed",
+      "impact": "未处理前不得进入生成放行"
+    },
+    {
+      "id": "Q4",
+      "question": "是否补充了真实生活化细节或具体场景？",
+      "current_status": "pending_review",
+      "impact": "影响前台观感和平台审核风险"
+    },
+    {
+      "id": "Q5",
+      "question": "目标平台、分区、内容类型、时长、画幅、标题规范是否已确认？",
+      "current_status": "missing_fields",
+      "impact": "影响投稿规格和发布判断"
+    },
+    {
+      "id": "Q6",
+      "question": "素材来源、授权范围、人物肖像、声音、字体、音乐和图片权利是否已确认？",
+      "current_status": "missing_fields",
+      "impact": "影响素材合规和发布风险"
+    },
+    {
+      "id": "Q7",
+      "question": "是否需要标注AI生成内容或辅助创作声明？",
+      "current_status": "platform_rule_pending",
+      "impact": "影响平台合规"
+    },
+    {
+      "id": "Q8",
+      "question": "是否存在标题党、绝对化表达、煽动焦虑或误导性表达？",
+      "current_status": "pending_review",
+      "impact": "影响内容合规"
+    },
+    {
+      "id": "Q9",
+      "question": "生成放行清单是否单独登记VF-20260508-003并人工改为放行？",
+      "current_status": "not_registered",
+      "impact": "未登记不得渲染"
+    },
+    {
+      "id": "Q10",
+      "question": "发布放行清单是否单独登记VF-20260508-003并人工改为放行？",
+      "current_status": "not_registered",
+      "impact": "未登记不得发布"
+    }
+  ],
+  "conclusion": {
+    "can_render": false,
+    "can_publish": false,
+    "can_send_wecom": false,
+    "can_trigger_n8n": false,
+    "reason": "latest_task_not_registered_in_generation_or_publish_release_lists_and_manual_confirmation_items_remain"
+  },
+  "self_check": "[自检: VIDEO_FACTORY_R012_REVIEW_002已完成, 风险等级: W1, 产物: 最新任务发布前待复核问题清单md/json, 边界: 守住了。]"
+}

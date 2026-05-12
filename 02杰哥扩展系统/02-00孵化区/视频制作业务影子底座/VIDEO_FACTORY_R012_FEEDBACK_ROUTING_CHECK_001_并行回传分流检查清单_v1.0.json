@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 06:15:19 +08:00",
+  "check_id": "VIDEO_FACTORY_R012_FEEDBACK_ROUTING_CHECK_001",
+  "task_id": "VF-20260508-003",
+  "asset_identity": "video_factory_round012_parallel_feedback_routing_shadow_checklist",
+  "risk_level": "W1",
+  "status": "shadow_checklist_pending_feedback",
+  "boundary": {
+    "modify_formal_video_system": false,
+    "modify_video_system_task": false,
+    "modify_release_lists": false,
+    "read_real_assets": false,
+    "move_assets": false,
+    "transcode": false,
+    "edit": false,
+    "render": false,
+    "subtitle_generation": false,
+    "cover_generation": false,
+    "voice_generation": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "write_formal_rule_library": false,
+    "modify_formal_script_generator": false
+  },
+  "read_after": "VIDEO_FACTORY_R012_PARALLEL_FEEDBACK_INTAKE_001_并行视频线回传接收卡_v1.0.md",
+  "required_inputs": [
+    "feedback_batch_id",
+    "bound_task_id",
+    "feedback_source",
+    "feedback_type",
+    "mentioned_files_optional",
+    "feedback_summary"
+  ],
+  "red_line_scan": [
+    {
+      "item": "generation_or_rendering",
+      "signals": ["已生成", "已渲染", "已导出成片", "已转码"],
+      "route": "pause_for_confirmation"
+    },
+    {
+      "item": "upload_or_publish",
+      "signals": ["已上传", "已发布", "已投放", "已同步平台"],
+      "route": "pause_for_confirmation"
+    },
+    {
+      "item": "wecom_or_n8n",
+      "signals": ["已发送企业微信", "已触发n8n", "已自动推送"],
+      "route": "pause_for_confirmation"
+    },
+    {
+      "item": "formal_system_modification",
+      "signals": ["已改正式配置", "已改正式脚本", "已改任务单", "已改放行清单"],
+      "route": "pause_for_confirmation"
+    },
+    {
+      "item": "real_asset_reading",
+      "signals": ["已读取素材目录", "已使用真实视频", "已使用真实音频", "已使用字幕", "已使用封面"],
+      "route": "pause_for_confirmation"
+    },
+    {
+      "item": "formal_rule_upgrade",
+      "signals": ["已写入正式规则库", "建议直接升级规则"],
+      "route": "pause_for_confirmation"
+    }
+  ],
+  "w1_continue_conditions": [
+    "script_text_revision_only",
+    "storyboard_draft_revision_only",
+    "human_review_feedback_without_release_claim",
+    "asset_authorization_or_platform_rule_fields_without_real_asset_reading",
+    "explicit_draft_pending_review_not_generated_not_published",
+    "no_request_to_modify_formal_video_system"
+  ],
+  "routing_result_format": {
+    "feedback_batch_id": "待填写",
+    "bound_task_id": "待填写",
+    "red_line_hit": "待填写",
+    "hit_items": "待填写",
+    "routing_conclusion": "W1可继续 / 暂停确认 / 仅记录不处理",
+    "next_file": "待填写",
+    "processing_note": "待填写"
+  },
+  "self_check": "[自检: VIDEO_FACTORY_R012_FEEDBACK_ROUTING_CHECK_001已完成, 风险等级: W1, 产物: 并行回传分流检查清单md/json, 边界: 守住了。]"
+}

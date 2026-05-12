@@ -1,0 +1,18 @@
+{
+  "name": "前台结论型短答统一验收记录验收",
+  "generated_at": "2026-05-08 10:09:12",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\前台结论型短答统一验收记录_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "sample_count": 5,
+    "sample_passed_count": 5,
+    "gate_count": 4,
+    "gate_passed_count": 4,
+    "allow_shadow_front_answer": true,
+    "allow_real_wecom_send": false,
+    "allow_formal_entry": false
+  },
+  "auto_continue_policy": "通过后继续进入下一低风险小闭环；不等待用户确认。"
+}

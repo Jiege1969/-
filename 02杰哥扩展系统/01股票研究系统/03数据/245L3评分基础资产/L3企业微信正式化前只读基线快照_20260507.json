@@ -1,0 +1,67 @@
+{
+  "名称": "L3企业微信正式化前只读基线快照",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "W3正式化前只读基线",
+  "状态": "baseline_recorded",
+  "purpose": "记录后续若进入L3企业微信正式化可能触碰的正式脚本、正式配置和正式数据资产的当前hash、大小和修改时间，作为回滚锚点。",
+  "scope": [
+    "正式脚本",
+    "正式配置",
+    "正式数据快照"
+  ],
+  "baseline_files": [
+    {
+      "path": "D:/杰哥智能化系统/02杰哥扩展系统/01股票研究系统/02脚本/股票助手入口.py",
+      "asset_type": "正式脚本/本地服务入口",
+      "risk_level": "W3",
+      "length": 157196,
+      "last_write_time": "2026-05-07 14:31:13",
+      "sha256": "4D0736B46A2A5706266023E96CDF45F027DBF069D28F797F831B5F6941E2DC53"
+    },
+    {
+      "path": "D:/杰哥智能化系统/02杰哥扩展系统/01股票研究系统/02脚本/股票企业微信桥接入口.py",
+      "asset_type": "正式脚本/企业微信桥接入口",
+      "risk_level": "W3",
+      "length": 55296,
+      "last_write_time": "2026-05-07 14:09:35",
+      "sha256": "B2C63276E803CA7304C15FD9E9727094ADE8879697002DDD93ED35BD38809AF4"
+    },
+    {
+      "path": "D:/杰哥智能化系统/02杰哥扩展系统/01股票研究系统/01配置/股票前台输出标准_v2.json",
+      "asset_type": "正式配置/前台输出标准",
+      "risk_level": "W3",
+      "length": 12492,
+      "last_write_time": "2026-05-07 15:38:06",
+      "sha256": "EF0E04753C005206D91EB69B1CC5FE94A1D3A2936DC4799E48CE2C023AF30A96"
+    },
+    {
+      "path": "D:/杰哥智能化系统/02杰哥扩展系统/01股票研究系统/01配置/股票分析报告工作流_v1.0.json",
+      "asset_type": "工作流契约",
+      "risk_level": "W3",
+      "length": 9509,
+      "last_write_time": "2026-05-07 21:09:30",
+      "sha256": "0150EB6CFC3FD0A530D3B1FA96EBA5F4EF20856BA3A2449D6E07C1C80738E813"
+    },
+    {
+      "path": "D:/杰哥智能化系统/02杰哥扩展系统/01股票研究系统/03数据/166公司经营快照/公司经营快照_最新.json",
+      "asset_type": "正式数据快照",
+      "risk_level": "W2/W3边界",
+      "length": 170172,
+      "last_write_time": "2026-05-07 21:17:44",
+      "sha256": "7E5EE84DE1FFB4DB38AB7A6F1E37F7A1A899175AB6E6CE761A1421F988D03E12"
+    }
+  ],
+  "recording_method": "PowerShell Get-FileHash -Algorithm SHA256；只读读取文件属性和hash。",
+  "safety_boundary": {
+    "read_only": true,
+    "not_modify_formal_script": true,
+    "not_modify_formal_config": true,
+    "not_write_166_snapshot": true,
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_service_restart": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

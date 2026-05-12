@@ -1,0 +1,64 @@
+{
+  "id": "VIDEO_AGENT_TOTAL_ASSET_LIST_001",
+  "name": "VAI001至VAI026总资产清单",
+  "asset_identity": "video_creation_agent_shadow_total_asset_list",
+  "stage": "W1_R0",
+  "status": "asset_list_not_formal_system_directory",
+  "layers": [
+    {
+      "layer": "contract_layer",
+      "vai_range": "VAI-001_to_VAI-005",
+      "scope": "conversation_intent_partial_revision_engine_adapter_human_gate",
+      "status": "established"
+    },
+    {
+      "layer": "template_layer",
+      "vai_range": "VAI-006_to_VAI-008",
+      "scope": "creative_history_three_option_clarification",
+      "status": "established"
+    },
+    {
+      "layer": "sample_layer",
+      "vai_range": "VAI-009_to_VAI-012",
+      "scope": "conversation_sample_three_option_sample_clarification_mapping_shadow_input",
+      "status": "established"
+    },
+    {
+      "layer": "check_layer",
+      "vai_range": "VAI-013_to_VAI-016",
+      "scope": "run_check_rehearsal_human_receipt_redline_sample",
+      "status": "established"
+    },
+    {
+      "layer": "flow_layer",
+      "vai_range": "VAI-017_to_VAI-020",
+      "scope": "revision_flow_state_log_evolution_candidate_redline_alternative",
+      "status": "established"
+    },
+    {
+      "layer": "closure_layer",
+      "vai_range": "VAI-021_to_VAI-026",
+      "scope": "relationship_map_trial_packet_maturity_sample_template_gap_review_questions",
+      "status": "established"
+    },
+    {
+      "layer": "operation_layer",
+      "vai_range": "VAI-027",
+      "scope": "trial_operation_card",
+      "status": "established_this_round"
+    }
+  ],
+  "boundary": {
+    "shadow_text_or_json_only": true,
+    "contains_credentials_or_real_assets": false,
+    "generation_render_publish_external_send_or_n8n_capability": false,
+    "formal_video_system_launch": false
+  },
+  "main_entry_files": {
+    "latest_phase_closure": "VIDEO_AGENT_VAI_001_026_阶段总收口验收_20260508",
+    "continuous_construction_rule": "VIDEO_AGENT_CONTINUOUS_CONSTRUCTION_RULE_001",
+    "asset_relationship": "VIDEO_AGENT_ASSET_RELATIONSHIP_MAP_001",
+    "shadow_trial": "VIDEO_AGENT_SHADOW_TRIAL_IO_PACKET_001",
+    "operation_steps": "VIDEO_AGENT_SHADOW_TRIAL_OPERATION_CARD_001"
+  }
+}

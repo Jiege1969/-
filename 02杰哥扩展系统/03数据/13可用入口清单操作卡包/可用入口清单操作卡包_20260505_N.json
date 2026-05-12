@@ -1,0 +1,470 @@
+{
+  "package_id": "available_entry_inventory_operation_cards_20260505_N",
+  "package_name": "02扩展系统可用入口清单与用户操作卡包",
+  "generated_at": "2026-05-05T15:10:00+08:00",
+  "task_batch": "并行小任务N",
+  "status": "definition_and_readonly_validation_only",
+  "owner_scope": "D:\\杰哥智能化系统\\02杰哥扩展系统",
+  "write_scope": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\13可用入口清单操作卡包",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02脚本\\验证可用入口清单操作卡包.py",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\02扩展系统_可用入口清单操作卡回收报告_最新.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\02扩展系统_可用入口清单操作卡回收报告_最新.json"
+  ],
+  "work_system_boundary": {
+    "system": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03本职工作系统",
+    "status": "paused",
+    "touched": false,
+    "note": "本批只定义02扩展系统可用入口和操作卡，不读取、不写入、不验证本职工作系统。"
+  },
+  "non_execution_guarantee": {
+    "n8n_workflow_imported": false,
+    "n8n_workflow_enabled": false,
+    "n8n_workflow_triggered": false,
+    "enterprise_wechat_real_send": false,
+    "response_url_called": false,
+    "group_robot_webhook_called": false,
+    "production_database_written": false,
+    "formal_knowledge_base_written": false,
+    "vector_database_written": false,
+    "real_media_converted": false,
+    "broker_interface_called": false,
+    "automatic_trading_triggered": false,
+    "tax_api_called": false,
+    "tax_filing_submitted": false,
+    "external_system_called": false,
+    "real_actions_triggered": 0
+  },
+  "global_policy": {
+    "dry_run_default": true,
+    "real_action_authorized": false,
+    "manual_approval_required_before_any_real_action": true,
+    "two_person_review_required_before_any_real_action": true,
+    "receipt_required": true,
+    "rollback_required": true,
+    "kill_switch_required": true,
+    "allowed_use_modes": [
+      "read_only",
+      "dry_run",
+      "draft_only",
+      "preview_only",
+      "manual_review_only"
+    ],
+    "always_forbidden_actions": [
+      "trigger_n8n_workflow",
+      "call_n8n_webhook",
+      "send_enterprise_wechat_real_message",
+      "call_enterprise_wechat_response_url",
+      "call_enterprise_wechat_group_robot_webhook",
+      "write_production_database",
+      "write_formal_knowledge_base",
+      "write_vector_database",
+      "publish_content",
+      "schedule_publish",
+      "convert_real_document",
+      "convert_real_media",
+      "transcode_video",
+      "render_final_video",
+      "publish_video",
+      "make_formal_tax_judgement",
+      "generate_tax_filing_advice",
+      "submit_tax_filing",
+      "call_external_tax_api",
+      "call_broker_interface",
+      "place_order",
+      "automatic_trading",
+      "touch_main_work_system",
+      "delete_or_move_user_files",
+      "read_or_write_real_credentials"
+    ]
+  },
+  "entry_status_legend": {
+    "available_readonly": "可用，但只读；允许读取本地样例、目录、索引或脱敏证据，不写正式库。",
+    "available_dry_run": "可用，但只能 dry_run；允许生成草稿、预览、清单、校验结果，不执行真实动作。",
+    "draft_only": "仅草稿可用；结果必须人工复核，不构成正式发送、发布、交易、税务判断或入库依据。",
+    "disabled_real": "真实动作关闭；除非后续独立审批和门禁验收通过，否则不得启用。"
+  },
+  "required_receipt_fields": [
+    "package_id",
+    "entry_id",
+    "entry_name",
+    "requested_operation",
+    "use_mode",
+    "dry_run_flag",
+    "real_action_flag",
+    "operator",
+    "reviewer",
+    "evidence_ref",
+    "rollback_ref",
+    "blocked_actions",
+    "result_ref",
+    "timestamp_utc8"
+  ],
+  "entries": [
+    {
+      "entry_id": "stock_analysis",
+      "entry_name": "股票分析",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统",
+      "entry_status": "available_dry_run",
+      "availability": {
+        "usable_level": "可用于本地样例、人工录入数据或只读材料的分析草稿；不接券商、不下单、不做自动交易。",
+        "user_visible_result": "股票观察清单、风险提示草稿、分析假设和人工复核记录。",
+        "not_available": "实时券商接口、自动交易、委托下单、账户资产读取、真实行情订阅。"
+      },
+      "use_method": [
+        "选择人工录入或本地脱敏样例作为输入。",
+        "运行只读校验或 dry_run 分析，输出草稿和证据引用。",
+        "人工复核后仅作为研究记录归档，不形成交易指令。"
+      ],
+      "dry_run_status": {
+        "enabled": true,
+        "default": true,
+        "allowed_operations": [
+          "manual_symbol_watchlist",
+          "local_sample_analysis",
+          "risk_note_draft",
+          "evidence_reference_preview"
+        ]
+      },
+      "real_status": {
+        "enabled": false,
+        "authorized": false,
+        "broker_interface": false,
+        "automatic_trading": false,
+        "order_placement": false
+      },
+      "rollback": {
+        "rollback_ref": "rollback://stock_analysis/discard-dry-run-research",
+        "steps": [
+          "作废本次分析草稿编号。",
+          "保留人工输入和证据引用，不删除源文件。",
+          "确认 broker_interface=false、automatic_trading=false、order_placement=false。",
+          "记录 blocked_actions 和复核人。"
+        ]
+      },
+      "forbidden_actions": [
+        "call_broker_interface",
+        "read_broker_account_asset",
+        "place_order",
+        "automatic_trading",
+        "write_trading_signal_to_execution_queue",
+        "treat_draft_as_investment_advice"
+      ],
+      "operation_card": {
+        "title": "股票分析用户操作卡",
+        "open_with": "进入 01股票研究系统，选择只读样例或人工输入。",
+        "do": "生成观察清单、分析假设、风险提示和证据引用。",
+        "do_not": "不得连接券商、不得下单、不得启用自动交易、不得输出正式投资建议。",
+        "acceptance": "输出含 entry_id、dry_run_flag=true、real_action_flag=false、evidence_ref、rollback_ref。"
+      }
+    },
+    {
+      "entry_id": "enterprise_wechat_assistant",
+      "entry_name": "企业微信助手",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统",
+      "entry_status": "available_dry_run",
+      "availability": {
+        "usable_level": "可生成消息回复草稿、内部预览和发送前检查单；真实发送全部关闭。",
+        "user_visible_result": "不发送的回复草稿、脱敏预览、人工复核卡。",
+        "not_available": "真实群发或单发、response_url、群机器人 webhook、正式消息队列写入。"
+      },
+      "use_method": [
+        "使用脱敏会话样例或人工输入问题。",
+        "生成回复草稿和风险检查结果。",
+        "人工复核后仅保存草稿，不调用企业微信发送通道。"
+      ],
+      "dry_run_status": {
+        "enabled": true,
+        "default": true,
+        "allowed_operations": [
+          "reply_draft",
+          "message_preview",
+          "send_gate_checklist",
+          "manual_review_receipt"
+        ]
+      },
+      "real_status": {
+        "enabled": false,
+        "authorized": false,
+        "real_send": false,
+        "response_url": false,
+        "group_robot_webhook": false
+      },
+      "rollback": {
+        "rollback_ref": "rollback://enterprise_wechat_assistant/void-draft-and-keep-send-disabled",
+        "steps": [
+          "作废草稿批次。",
+          "保持发送配置禁用。",
+          "确认 response_url 和 webhook 未调用。",
+          "保留人工复核记录。"
+        ]
+      },
+      "forbidden_actions": [
+        "send_enterprise_wechat_real_message",
+        "call_enterprise_wechat_response_url",
+        "call_enterprise_wechat_group_robot_webhook",
+        "write_formal_message_queue",
+        "read_or_write_real_credentials"
+      ],
+      "operation_card": {
+        "title": "企业微信助手用户操作卡",
+        "open_with": "进入 06企业微信助手系统，选择草稿/预览模式。",
+        "do": "生成回复草稿、脱敏预览和发送前检查单。",
+        "do_not": "不得点击或调用任何真实发送、response_url、webhook 或正式队列写入动作。",
+        "acceptance": "输出 real_send=false、response_url=false、group_robot_webhook=false。"
+      }
+    },
+    {
+      "entry_id": "knowledge_base_readonly_qa",
+      "entry_name": "知识库只读问答",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库可追溯问答框",
+      "entry_status": "available_readonly",
+      "availability": {
+        "usable_level": "可基于只读索引、样例资料和证据引用进行问答草稿；不写知识库、不写向量库。",
+        "user_visible_result": "带引用的问答草稿、证据链缺口提示、人工复核清单。",
+        "not_available": "正式知识库写入、向量库 upsert、外部检索 API、自动发布回答。"
+      },
+      "use_method": [
+        "选择只读资料目录或样例索引。",
+        "提出问题并生成带 citation 的回答草稿。",
+        "人工检查引用来源，缺证时标记为待补证。"
+      ],
+      "dry_run_status": {
+        "enabled": true,
+        "default": true,
+        "allowed_operations": [
+          "readonly_question_answer",
+          "citation_preview",
+          "evidence_gap_check",
+          "manual_review_checklist"
+        ]
+      },
+      "real_status": {
+        "enabled": false,
+        "authorized": false,
+        "formal_kb_write": false,
+        "vector_database_write": false,
+        "external_search_api": false
+      },
+      "rollback": {
+        "rollback_ref": "rollback://knowledge_base_readonly_qa/discard-answer-draft",
+        "steps": [
+          "废弃问答草稿编号。",
+          "保留只读来源引用。",
+          "确认没有知识库或向量库写入。",
+          "缺证问题回到人工补证队列。"
+        ]
+      },
+      "forbidden_actions": [
+        "write_formal_knowledge_base",
+        "write_vector_database",
+        "call_external_search_api",
+        "crawl_external_site",
+        "overwrite_source_document"
+      ],
+      "operation_card": {
+        "title": "知识库只读问答用户操作卡",
+        "open_with": "进入 07知识库可追溯问答框，选择只读来源。",
+        "do": "生成带证据引用的问答草稿和缺证提示。",
+        "do_not": "不得入库、不得 upsert 向量、不得调用外部检索、不得覆盖原文档。",
+        "acceptance": "每条回答必须有 evidence_ref；formal_kb_write=false；vector_database_write=false。"
+      }
+    },
+    {
+      "entry_id": "content_office_draft",
+      "entry_name": "内容办公草稿",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统",
+      "entry_status": "draft_only",
+      "availability": {
+        "usable_level": "可生成办公内容草稿、摘要、改写建议、内部质量检查；不发布、不转换真实文件成品。",
+        "user_visible_result": "草稿文本、修改建议、差异预览、内部质量报告。",
+        "not_available": "正式内容库写入、发布、定时发布、真实文档转换、覆盖源文件。"
+      },
+      "use_method": [
+        "选择人工输入或脱敏样本文档。",
+        "生成草稿、摘要或修改建议。",
+        "人工确认后另行处理，不由本入口发布或写正式库。"
+      ],
+      "dry_run_status": {
+        "enabled": true,
+        "default": true,
+        "allowed_operations": [
+          "office_draft_generation",
+          "summary_draft",
+          "rewrite_suggestion",
+          "diff_preview",
+          "quality_check_preview"
+        ]
+      },
+      "real_status": {
+        "enabled": false,
+        "authorized": false,
+        "production_content_write": false,
+        "publish": false,
+        "real_document_conversion": false
+      },
+      "rollback": {
+        "rollback_ref": "rollback://content_office_draft/discard-draft",
+        "steps": [
+          "作废草稿批次号。",
+          "保留源文件只读引用。",
+          "确认发布和正式库写入均关闭。",
+          "不删除、不移动、不覆盖用户源文件。"
+        ]
+      },
+      "forbidden_actions": [
+        "write_production_content_database",
+        "publish_content",
+        "schedule_publish",
+        "convert_real_document",
+        "overwrite_source_file",
+        "external_distribution"
+      ],
+      "operation_card": {
+        "title": "内容办公草稿用户操作卡",
+        "open_with": "进入 04内容处理系统，选择草稿模式。",
+        "do": "生成办公草稿、摘要、改写建议和差异预览。",
+        "do_not": "不得发布、不得定时发布、不得写正式内容库、不得转换或覆盖真实文件。",
+        "acceptance": "输出 draft_only；publish=false；production_content_write=false。"
+      }
+    },
+    {
+      "entry_id": "video_production_preplan",
+      "entry_name": "视频制作预案",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统",
+      "entry_status": "draft_only",
+      "availability": {
+        "usable_level": "可生成脚本、分镜、素材清单和制作参数预案；不转码、不渲染、不发布。",
+        "user_visible_result": "视频脚本草稿、分镜预案、素材清单、参数检查表。",
+        "not_available": "真实媒体转换、转码、剪辑、成片渲染、字幕封面成品生成、视频发布。"
+      },
+      "use_method": [
+        "输入主题、素材清单或脱敏样例引用。",
+        "生成脚本、分镜和制作预案。",
+        "人工复核后作为制作前清单，不触发媒体工具链。"
+      ],
+      "dry_run_status": {
+        "enabled": true,
+        "default": true,
+        "allowed_operations": [
+          "script_draft",
+          "storyboard_preplan",
+          "asset_manifest_preview",
+          "render_parameter_checklist"
+        ]
+      },
+      "real_status": {
+        "enabled": false,
+        "authorized": false,
+        "real_media_conversion": false,
+        "transcode": false,
+        "render": false,
+        "publish": false
+      },
+      "rollback": {
+        "rollback_ref": "rollback://video_production_preplan/discard-preplan",
+        "steps": [
+          "作废预案任务号。",
+          "保持转码、渲染、发布队列关闭。",
+          "保留素材清单引用，不删除素材。",
+          "记录 media_conversion=false 和 render=false。"
+        ]
+      },
+      "forbidden_actions": [
+        "convert_real_media",
+        "transcode_video",
+        "edit_real_media",
+        "render_final_video",
+        "generate_final_subtitle_or_cover",
+        "publish_video",
+        "call_external_render_service"
+      ],
+      "operation_card": {
+        "title": "视频制作预案用户操作卡",
+        "open_with": "进入 02视频制作系统，选择预案/草稿模式。",
+        "do": "生成脚本、分镜、素材清单和参数检查表。",
+        "do_not": "不得转码、剪辑、渲染、生成成品字幕封面或发布。",
+        "acceptance": "输出 preplan_only；media_conversion=false；render=false；publish=false。"
+      }
+    },
+    {
+      "entry_id": "tax_readonly_evidence_chain",
+      "entry_name": "税收只读证据链",
+      "entry_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统",
+      "entry_status": "available_readonly",
+      "availability": {
+        "usable_level": "可整理只读证据链、字段完整性检查和人工复核清单；不形成正式税务判断。",
+        "user_visible_result": "证据链目录、材料缺口、只读一致性检查、非税务意见声明。",
+        "not_available": "正式税务判断、申报建议、自动申报、正式税务库写入、税务 API。"
+      },
+      "use_method": [
+        "选择脱敏样例或只读资料目录。",
+        "生成证据链清单、字段核验和缺口提示。",
+        "人工复核后仅作为内部材料整理，不作为申报或税务意见。"
+      ],
+      "dry_run_status": {
+        "enabled": true,
+        "default": true,
+        "allowed_operations": [
+          "readonly_evidence_catalog",
+          "field_presence_check",
+          "consistency_preview",
+          "manual_review_checklist"
+        ]
+      },
+      "real_status": {
+        "enabled": false,
+        "authorized": false,
+        "formal_tax_judgement": false,
+        "tax_database_write": false,
+        "tax_api_call": false,
+        "tax_filing_submit": false
+      },
+      "rollback": {
+        "rollback_ref": "rollback://tax_readonly_evidence_chain/void-checklist",
+        "steps": [
+          "作废只读复核清单编号。",
+          "保留证据引用和非税务意见声明。",
+          "确认 tax_api_call=false、tax_filing_submit=false。",
+          "不改写正式税务资料或凭证。"
+        ]
+      },
+      "forbidden_actions": [
+        "make_formal_tax_judgement",
+        "generate_tax_filing_advice",
+        "submit_tax_filing",
+        "write_production_tax_database",
+        "call_external_tax_api",
+        "issue_external_tax_opinion"
+      ],
+      "operation_card": {
+        "title": "税收只读证据链用户操作卡",
+        "open_with": "进入 05税收业务系统，选择只读证据链模式。",
+        "do": "生成证据目录、字段核验、缺口提示和内部复核清单。",
+        "do_not": "不得给出正式税务判断、申报建议、自动申报、正式库写入或税务 API 调用。",
+        "acceptance": "输出 readonly_disclaimer_present=true；formal_tax_judgement=false；tax_api_call=false。"
+      }
+    }
+  ],
+  "acceptance_criteria": {
+    "entry_count": 6,
+    "required_entry_ids": [
+      "stock_analysis",
+      "enterprise_wechat_assistant",
+      "knowledge_base_readonly_qa",
+      "content_office_draft",
+      "video_production_preplan",
+      "tax_readonly_evidence_chain"
+    ],
+    "each_entry_has_status_availability_use_method_dryrun_real_rollback_forbidden_card": true,
+    "real_actions_triggered": 0,
+    "work_system_untouched": true,
+    "readonly_validation_script_required": true
+  },
+  "validation": {
+    "script_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02脚本\\验证可用入口清单操作卡包.py",
+    "readonly": true,
+    "network_required": false,
+    "writes_files": false
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "sample_id": "R-SAMPLE-03-SENSITIVE-OVERRIDE-BLOCK",
+  "sample_type": "敏感/越权内容阻断",
+  "status": "blocked_sensitive_or_unauthorized",
+  "input_reference": {
+    "input_id": "sensitive-placeholder-003",
+    "source_reference_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\07输出包影子清单\\样本03_敏感占位输入_不读取真实文档.txt",
+    "source_reference_type": "manual_sensitive_placeholder",
+    "source_exists_status": "not_required_for_shadow_plan",
+    "authorization_status": "not_authorized_for_processing",
+    "input_scope_note": "占位描述包含敏感或越权处理意图，必须阻断；不展开、不复制、不转换。"
+  },
+  "processing_plan": {
+    "plan_id": "R-PLAN-03",
+    "allowed_shadow_steps": [
+      "记录阻断原因",
+      "生成安全边界提示",
+      "提交人工复核"
+    ],
+    "blocked_real_steps": [
+      "处理敏感原文",
+      "绕过授权检查",
+      "外发给企业微信或外部系统",
+      "写入正式库",
+      "生成真实输出包"
+    ],
+    "format_intent": "block_sensitive_or_unauthorized_content",
+    "sensitive_check_required": true,
+    "batch_check_required": true
+  },
+  "expected_output": {
+    "shadow_output_package_id": "R-SHADOW-PACKAGE-003",
+    "expected_files": [
+      {
+        "name": "block_notice.json",
+        "kind": "planned_block_notice_only",
+        "real_file_generated": false
+      }
+    ],
+    "expected_metadata": {
+      "block_reason": "sensitive_or_unauthorized_content",
+      "redaction_required": true,
+      "manual_clearance_required": true
+    },
+    "no_real_output_file": true,
+    "degrade_notice": "存在敏感或越权风险，阻断所有内容处理和真实输出。"
+  },
+  "manual_review": {
+    "review_required": true,
+    "reviewer": "人工复核人待填",
+    "review_time": "人工复核时填写",
+    "review_status": "blocked",
+    "review_result": "blocked_sensitive_or_unauthorized",
+    "review_signature_required": true
+  },
+  "rollback": {
+    "rollback_required": true,
+    "rollback_mode": "block_and_discard_shadow_details",
+    "rollback_target": "sensitive_placeholder_record",
+    "rollback_action": "仅保留阻断元数据，不保留敏感正文，不处理任何用户文档。",
+    "rollback_confirm_required": true
+  },
+  "action_switches": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_output_file_generation": false,
+    "allow_delete_move_overwrite": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_wecom_real_message": false,
+    "allow_formal_library_write": false,
+    "allow_broker_api": false,
+    "allow_auto_trade": false
+  }
+}

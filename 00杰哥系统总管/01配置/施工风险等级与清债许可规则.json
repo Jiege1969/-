@@ -1,0 +1,125 @@
+{
+  "version": "3.1",
+  "description": "Jiege intelligent system construction risk level and cleanup permission rules",
+  "last_updated": "2026-05-06",
+  "risk_order": ["R0", "W1", "W2", "W3"],
+  "risk_levels": {
+    "R0": {
+      "label": "READONLY",
+      "definition": "read-only scan, audit, count, text search, port probe, resource collection",
+      "allowed_in_cleanup_verification": true,
+      "allowed_in_functional_verification": true,
+      "auto_execution_allowed": true
+    },
+    "W1": {
+      "label": "WRITE_ANCHOR",
+      "definition": "refresh latest anchor, state snapshot, timestamp marker",
+      "allowed_in_cleanup_verification": false,
+      "allowed_in_functional_verification": true,
+      "auto_execution_allowed": true,
+      "note": "forbidden in cleanup verification"
+    },
+    "W2": {
+      "label": "WRITE_LEDGER",
+      "definition": "write ledger, manual record, business state table",
+      "allowed_in_cleanup_verification": false,
+      "allowed_in_functional_verification": true,
+      "auto_execution_allowed": false,
+      "requires_human_confirmation": true,
+      "note": "requires human confirmation even in functional verification"
+    },
+    "W3": {
+      "label": "WRITE_CRITICAL",
+      "definition": "modify system config, ports, Docker, scheduled tasks, environment variables",
+      "allowed_in_cleanup_verification": false,
+      "allowed_in_functional_verification": true,
+      "auto_execution_allowed": false,
+      "requires_human_confirmation": true,
+      "note": "must not be triggered automatically"
+    }
+  },
+  "risk_determination": {
+    "sources": ["script_header", "risk_ledger", "filename_prefix"],
+    "rules": {
+      "all_consistent": "use_declared_level",
+      "any_missing": "use_strictest_available",
+      "conflicting": "use_highest_risk",
+      "no_identification": "default_to_W2"
+    },
+    "filename_prefix_required": "only_for_new_scripts",
+    "legacy_registration_policy": "mainline_scheduled_manager_entry_cleanup_scripts_first_then_batch_by_call_frequency"
+  },
+  "cleanup_permission_gate": {
+    "required_documents": [
+      "source_audit_report",
+      "asset_identity_classification",
+      "write_risk_assessment"
+    ],
+    "missing_document_policy": "DENY_ALL_WRITE_OPS_ALLOW_R0_ONLY",
+    "verification_script": "R0_verify_cleanup_permissions",
+    "verification_script_status": "planned_not_active",
+    "self_certification": "FORBIDDEN",
+    "batch_cleanup_rule": "must_split_by_directory_or_asset_type",
+    "boundary_requirements": ["scan_scope", "hit_count", "uncovered_scope"]
+  },
+  "verification_channels": {
+    "cleanup_verification": {
+      "allowed_risk_levels": ["R0"],
+      "forbidden_operations": ["any_write", "state_modification", "anchor_refresh"]
+    },
+    "functional_verification": {
+      "allowed_risk_levels": ["R0", "W1", "W2", "W3"],
+      "restrictions": {
+        "W2": "requires_human_confirmation",
+        "W3": "requires_human_confirmation"
+      }
+    }
+  },
+  "health_framework": {
+    "dimensions": {
+      "bloodline": {"weight": 0.4, "description": "core ports alive"},
+      "skeleton": {"weight": 0.2, "description": "directory structure matches snapshot"},
+      "gene": {"weight": 0.2, "description": "resource levels below thresholds"},
+      "evidence": {"weight": 0.2, "description": "latest verification complete"}
+    },
+    "red_items": {
+      "global": {
+        "conditions": ["vram_above_90_percent", "memory_above_90_percent", "disk_D_below_20GB"],
+        "action": "recommend_pause_all_non_critical"
+      },
+      "business_scoped": {
+        "conditions": ["port_19302_unavailable"],
+        "action": "pause_related_business_line"
+      }
+    },
+    "override_rule": "red_items_report_independently_regardless_of_health_score",
+    "calibration_status": "initial_thresholds_pending_R0_gene_probe_measurement"
+  },
+  "cleanup_scope": {
+    "active_targets": [
+      "misleading_current_state_anchors",
+      "garbage_generating_sources",
+      "bad_patterns_about_to_be_copied",
+      "resource_or_security_risks"
+    ],
+    "inactive_policy": "enter_pending_queue_only_no_long_term_observation_debt"
+  },
+  "resource_thresholds": {
+    "memory": {"warning_percent": 80, "critical_percent": 90},
+    "vram": {"warning_percent": 80, "critical_percent": 90},
+    "disk_D": {"warning_GB": 50, "critical_GB": 20}
+  },
+  "rule_self_audit": {
+    "frequency": "quarterly",
+    "agenda": "identify_obsolete_merge_or_deprecate_rules",
+    "modification_requirement": "must_follow_cleanup_four_steps"
+  },
+  "unattended_guard": {
+    "consecutive_failure_threshold": 3,
+    "default_action": "create_red_event_and_stop_further_automatic_invocation",
+    "manual_invocation": "preserved",
+    "auto_suspend_policy": "allowed_only_for_pre_authorized_allowlist",
+    "allowlist_initial_state": "empty",
+    "notification": "red_event_reported_on_next_interaction"
+  }
+}

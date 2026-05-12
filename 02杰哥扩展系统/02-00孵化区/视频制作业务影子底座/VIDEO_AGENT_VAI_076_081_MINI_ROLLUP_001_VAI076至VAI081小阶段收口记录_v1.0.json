@@ -1,0 +1,38 @@
+{
+  "asset_id": "VIDEO_AGENT_VAI_076_081_MINI_ROLLUP_001",
+  "version": "v1.0",
+  "asset_type": "mini_stage_rollup",
+  "construction_level": "W1/R0",
+  "scope": "video_production_shadow_base_vai076_to_vai081",
+  "status": "draft",
+  "rollup_date": "2026-05-08",
+  "conclusion": "VAI076-VAI081 connected four-piece pre-publish check, material authorization, publishing release, multi-platform difference check, and gap routing into a shadow pre-publish review chain.",
+  "not_implied": [
+    "real_publish_ready",
+    "platform_connected",
+    "wecom_real_send_enabled",
+    "n8n_connected",
+    "formal_manager_integrated"
+  ],
+  "assets": [
+    {"id": "VAI076", "asset": "pre_publish_four_piece_check", "purpose": "check preview, AI label, material authorization, and publishing release", "real_system_triggered": false},
+    {"id": "VAI077", "asset": "material_authorization_proof_receipt_template", "purpose": "record material authorization and archive status", "real_system_triggered": false},
+    {"id": "VAI078", "asset": "VAI070_075_mini_rollup", "purpose": "roll up publish refusal and human gate chain", "real_system_triggered": false},
+    {"id": "VAI079", "asset": "publishing_release_confirmation_receipt_template", "purpose": "record final human publishing release opinion", "real_system_triggered": false},
+    {"id": "VAI080", "asset": "multi_platform_pre_publish_diff_check", "purpose": "check title tags cover AI label and related items per platform", "real_system_triggered": false},
+    {"id": "VAI081", "asset": "four_piece_gap_to_review_sample", "purpose": "route missing items to review queues", "real_system_triggered": false}
+  ],
+  "remaining_gaps": [
+    "multi_platform_pre_publish_check_receipt_template",
+    "pre_publish_blocker_summary_receipt_template",
+    "post_vai082_index_update_draft"
+  ],
+  "boundaries": {
+    "connect_platform": false,
+    "read_real_account": false,
+    "execute_publish": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "write_formal_or_manager_files": false
+  }
+}

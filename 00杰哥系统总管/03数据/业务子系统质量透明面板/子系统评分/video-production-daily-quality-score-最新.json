@@ -1,0 +1,100 @@
+{
+  "system_name": "视频制作系统",
+  "system_dir": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统",
+  "generated_at": "2026-05-13 07:35:18",
+  "overall_status": "pass",
+  "score": 100,
+  "entry_scripts": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\生成视频制作系统状态摘要.py",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\生成视频真实渲染环境缺口证据压缩与安装识别清单.py",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\执行视频真实渲染启用前总闸口只读核对.py"
+  ],
+  "checks": {
+    "timeliness": {
+      "ok": true,
+      "task_name": "�ܸ����ܻ�ϵͳ_ÿ�ջ���_��Ƶ����ϵͳ",
+      "exists": true,
+      "state": "Running",
+      "last_run_time": "2026-05-13 07:20:01",
+      "last_task_result": 267009,
+      "next_run_time": "2026-05-14 07:20:00"
+    },
+    "output_completeness": {
+      "ok": true,
+      "checks": [
+        {
+          "name": "状态摘要",
+          "ok": true,
+          "required": true,
+          "latest_file": {
+            "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\09状态摘要\\视频制作系统状态摘要_最新.md",
+            "exists": true,
+            "size": 441,
+            "modified_at": "2026-05-13 07:35:16",
+            "updated_today": true
+          }
+        },
+        {
+          "name": "视频脚本/分镜/预演",
+          "ok": true,
+          "required": true,
+          "latest_file": {
+            "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\07主题化预演\\视频主题化预演_20260513_073517.json",
+            "exists": true,
+            "size": 1984,
+            "modified_at": "2026-05-13 07:35:17",
+            "updated_today": true
+          }
+        }
+      ]
+    },
+    "template_compliance": {
+      "ok": true,
+      "hits": [],
+      "scanned_files": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\09状态摘要\\视频制作系统状态摘要_最新.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\07主题化预演\\视频主题化预演_20260513_073517.json"
+      ]
+    },
+    "universal_laws": {
+      "ok": true,
+      "total_penalty": 0,
+      "rules": [
+        {
+          "id": "silence_is_gold",
+          "name": "沉默是金：数据缺失却强行生成结论",
+          "severity": "defect",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        },
+        {
+          "id": "traceable_conclusions",
+          "name": "可追溯：关键结论必须找到计算来源",
+          "severity": "deduct",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        },
+        {
+          "id": "human_sovereignty",
+          "name": "人的主权：进化系统不得擅自修改业务规则",
+          "severity": "highest_alert",
+          "penalty": 0,
+          "ok": true,
+          "hits": []
+        }
+      ],
+      "scanned_files": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\09状态摘要\\视频制作系统状态摘要_最新.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\07主题化预演\\视频主题化预演_20260513_073517.json"
+      ]
+    }
+  },
+  "safety": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_business_db": false,
+    "call_trade_or_external_execute_api": false
+  }
+}

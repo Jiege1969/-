@@ -1,0 +1,37 @@
+{
+  "report_name": "第二轮P0P1施工收口",
+  "record_time": "2026-05-06 06:05:00 +08:00",
+  "status": "completed",
+  "completed_items": [
+    "公网反向隧道守护",
+    "D盘资源增长监控",
+    "全系统版本锁定表",
+    "Docker旧卷旧镜像清理预案",
+    "目录README与角色索引"
+  ],
+  "scheduled_tasks": {
+    "公网反向隧道守护": "Ready",
+    "D盘资源增长监控日报": "Ready"
+  },
+  "runtime": {
+    "ssh_tunnel_pid": 12332,
+    "docker_main_containers": ["jiege_v3_ollama", "jiege_v3_redis", "jiege_v3_n8n"],
+    "disk_growth_status": "ok",
+    "stock_system_boundary": "analysis-only"
+  },
+  "not_done": {
+    "triggered_n8n": false,
+    "sent_wecom": false,
+    "called_broker_api": false,
+    "auto_trade": false,
+    "deleted_docker_assets": false,
+    "moved_directories": false,
+    "installed_or_upgraded_packages": false
+  },
+  "next_recommended_queue": [
+    "操作说明第一版",
+    "项目venv依赖冻结",
+    "Docker真清理受控窗口"
+  ]
+}
+

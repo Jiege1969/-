@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="720" viewBox="0 0 1080 720">
+  <rect width="1080" height="720" fill="#070b13"/>
+  <rect x="24" y="24" width="1032" height="672" rx="18" fill="#0b111d" stroke="#164e63"/>
+  <text x="48" y="86" font-size="42" fill="#f8fafc" font-weight="800" font-family="Microsoft YaHei, Arial">蓝特光学</text>
+  <text x="48" y="128" font-size="20" fill="#22d3ee" font-family="Microsoft YaHei, Arial">sh688127</text>
+  <text x="170" y="128" font-size="20" fill="#94a3b8" font-family="Microsoft YaHei, Arial">2026-05-11 07:44:26</text>
+  <text x="48" y="180" font-size="42" fill="#FFD700" font-weight="800" font-family="Microsoft YaHei, Arial">84.78元</text>
+  <text x="210" y="180" font-size="26" fill="#FFD700" font-weight="800" font-family="Microsoft YaHei, Arial">-%</text>
+
+  <rect x="48" y="218" width="428" height="132" rx="12" fill="#111827" stroke="#243247"/>
+  <text x="70" y="258" font-size="18" fill="#22d3ee" font-family="Microsoft YaHei, Arial">BASIC INFO</text>
+  <text x="70" y="294" font-size="18" fill="#cbd5e1" font-family="Microsoft YaHei, Arial">分层：杰哥推荐重点关注候选</text>
+  <text x="70" y="326" font-size="18" fill="#cbd5e1" font-family="Microsoft YaHei, Arial">行业：电子</text>
+  <text x="260" y="294" font-size="18" fill="#cbd5e1" font-family="Microsoft YaHei, Arial">评分：92.62</text>
+  <text x="260" y="326" font-size="18" fill="#cbd5e1" font-family="Microsoft YaHei, Arial">成交额：987334513.0</text>
+
+  <rect x="500" y="96" width="508" height="254" rx="14" fill="#101827" stroke="#243247"/>
+  <text x="528" y="138" font-size="24" fill="#f8fafc" font-weight="800" font-family="Microsoft YaHei, Arial">Research Signal</text>
+  <text x="508" y="170" font-size="38" fill="#FFD700" font-family="Microsoft YaHei, Arial">⭐</text>
+<text x="550" y="170" font-size="38" fill="#FFD700" font-family="Microsoft YaHei, Arial">⭐</text>
+<text x="592" y="170" font-size="38" fill="#FFD700" font-family="Microsoft YaHei, Arial">⭐</text>
+<text x="634" y="170" font-size="38" fill="#FFD700" font-family="Microsoft YaHei, Arial">⭐</text>
+<text x="676" y="170" font-size="38" fill="#FFD700" font-family="Microsoft YaHei, Arial">⭐</text>
+  <text x="528" y="238" font-size="25" fill="#FFD700" font-weight="800" font-family="Microsoft YaHei, Arial">研究等级=重点研究；当前状态=等待承接</text>
+  <text x="528" y="278" font-size="20" fill="#dbeafe" font-family="Microsoft YaHei, Arial">研究价值信号 · 强度 5/5</text>
+  <text x="528" y="322" font-size="16" fill="#94a3b8" font-family="Microsoft YaHei, Arial">研究助手信号，不构成交易指令</text>
+
+  <rect x="48" y="386" width="960" height="138" rx="14" fill="#0f172a" stroke="#243247"/>
+  <text x="48" y="372" font-size="20" fill="#22d3ee" font-family="Microsoft YaHei, Arial">KEY INSIGHTS</text>
+  <text x="48" y="332" font-size="20" fill="#f8fafc" font-weight="700" font-family="Microsoft YaHei, Arial">杰哥推荐方法内核原始识别为优先研究，校准后为重点关注候选，原始分92</text>
+<text x="48" y="360" font-size="20" fill="#f8fafc" font-weight="700" font-family="Microsoft YaHei, Arial">.62。；已纳入强势成功样本、失败对照样本、量价特征和方法内核校准复</text>
+<text x="48" y="388" font-size="20" fill="#f8fafc" font-weight="700" font-family="Microsoft YaHei, Arial">核。</text>
+
+  <rect x="48" y="558" width="960" height="94" rx="14" fill="#111827" stroke="#243247"/>
+  <text x="70" y="594" font-size="20" fill="#fb7185" font-family="Microsoft YaHei, Arial">RISK NOTES</text>
+  <text x="48" y="464" font-size="18" fill="#cbd5e1" font-family="Microsoft YaHei, Arial">历史相似不等于未来必然，仍需公告、财报正文、行业价格和成交连续性核验</text>
+<text x="48" y="490" font-size="18" fill="#cbd5e1" font-family="Microsoft YaHei, Arial">。</text>
+</svg>

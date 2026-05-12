@@ -1,0 +1,77 @@
+{
+  "asset_id": "VIDEO_AGENT_MANAGER_DECISION_INCOMPLETE_RETURN_GAP_CARD_001",
+  "name": "判断结果信息不完整退回缺口卡",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "视频制作系统",
+  "layer": "W1/W2 影子缺口卡",
+  "status": "draft",
+  "purpose": "处理总管判断结果已带回但信息不完整的情况，只登记缺口，不触发真实执行。",
+  "incomplete_rules": [
+    {
+      "gap": "缺任务ID",
+      "criterion": "无法绑定视频任务",
+      "default_action": "退回补任务ID"
+    },
+    {
+      "gap": "缺判断来源",
+      "criterion": "无法确认来自总管还是人工口述",
+      "default_action": "退回补来源"
+    },
+    {
+      "gap": "缺判断范围",
+      "criterion": "未说明生成、渲染、发布、素材、合规或路由",
+      "default_action": "退回补范围"
+    },
+    {
+      "gap": "缺执行边界",
+      "criterion": "未说明是否允许真实执行",
+      "default_action": "默认不允许执行"
+    },
+    {
+      "gap": "缺人工复核要求",
+      "criterion": "未说明是否仍需人工复核",
+      "default_action": "默认仍需人工复核"
+    },
+    {
+      "gap": "缺放行拆分",
+      "criterion": "未拆分生成放行、渲染放行、发布放行",
+      "default_action": "不进入发布链"
+    }
+  ],
+  "fields": [
+    "缺口卡ID",
+    "关联任务ID",
+    "原始判断摘要",
+    "缺失字段",
+    "默认阻断结果",
+    "需要补充的问题",
+    "视频线可继续事项"
+  ],
+  "example": {
+    "缺口卡ID": "VAI-GAP-RETURN-20260508-001",
+    "关联任务ID": "VF-20260508-003",
+    "原始判断摘要": "总管说可以继续",
+    "缺失字段": [
+      "判断范围",
+      "执行边界",
+      "放行拆分"
+    ],
+    "默认阻断结果": "不渲染、不发布、不外发",
+    "需要补充的问题": "是继续人工复核，还是允许某一类放行？是否已单独拆分生成/渲染/发布？",
+    "视频线可继续事项": "生成待补问题清单"
+  },
+  "boundary": {
+    "read_manager_file": false,
+    "write_manager": false,
+    "call_wecom_api": false,
+    "modify_public_wecom_component": false,
+    "call_real_model": false,
+    "read_real_material": false,
+    "render_video": false,
+    "upload_video": false,
+    "publish_video": false,
+    "trigger_n8n": false
+  }
+}
+

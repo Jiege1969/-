@@ -1,0 +1,118 @@
+{
+  "名称": "视频真实渲染白名单申请缺口补齐待办",
+  "package_id": "VIDEO-REAL-RENDER-WHITELIST-APPLICATION-COMPLETENESS-20260508-001",
+  "待办数量": 8,
+  "待办清单": [
+    {
+      "todo_id": "TODO-01",
+      "item_id": "environment_identification",
+      "name": "环境识别",
+      "status": "pending",
+      "需要人工提供或确认": "人工确认候选环境与当前机器/账号范围一致。",
+      "不得自动补齐": true,
+      "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+    },
+    {
+      "todo_id": "TODO-02",
+      "item_id": "material_authorization",
+      "name": "素材授权",
+      "status": "pending",
+      "需要人工提供或确认": "人工提供或签收授权证明，不由脚本补齐。",
+      "不得自动补齐": true,
+      "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+    },
+    {
+      "todo_id": "TODO-03",
+      "item_id": "output_directory_isolation",
+      "name": "输出目录隔离",
+      "status": "pending",
+      "需要人工提供或确认": "人工确认隔离目录和清理规则。",
+      "不得自动补齐": true,
+      "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+    },
+    {
+      "todo_id": "TODO-04",
+      "item_id": "failure_rollback",
+      "name": "失败回滚",
+      "status": "pending",
+      "需要人工提供或确认": "人工确认回滚边界和责任人。",
+      "不得自动补齐": true,
+      "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+    },
+    {
+      "todo_id": "TODO-05",
+      "item_id": "evidence_retention",
+      "name": "证据留存",
+      "status": "pending",
+      "需要人工提供或确认": "人工确认留存期限与审计口径。",
+      "不得自动补齐": true,
+      "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+    },
+    {
+      "todo_id": "TODO-06",
+      "item_id": "manual_signoff",
+      "name": "人工签收",
+      "status": "pending",
+      "需要人工提供或确认": "人工最终签收；当前不得让白名单生效。",
+      "不得自动补齐": true,
+      "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+    },
+    {
+      "todo_id": "TODO-07",
+      "item_id": "trial_scope",
+      "name": "试运行范围",
+      "status": "pending",
+      "需要人工提供或确认": "人工确认试运行范围，不默认扩展。",
+      "不得自动补齐": true,
+      "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+    },
+    {
+      "todo_id": "TODO-08",
+      "item_id": "publish_isolation",
+      "name": "发布隔离",
+      "status": "pending",
+      "需要人工提供或确认": "人工确认发布链路仍关闭。",
+      "不得自动补齐": true,
+      "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+    }
+  ],
+  "自动补齐": false,
+  "生成时间": "2026-05-08 19:32:50",
+  "error_count": 0,
+  "whitelist_effective": false,
+  "can_enter_real_render": false,
+  "real_render": false,
+  "publish": false,
+  "requires_supervisor_confirmation": true,
+  "白名单已生效": false,
+  "可进入真实渲染": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "触发n8n": false,
+  "修改企业微信公共配置": false,
+  "修改总管面板": false,
+  "修改一键接续包": false,
+  "重载服务": false,
+  "需要总管人工确认": true,
+  "readonly_flags_ascii": {
+    "whitelist_effective": false,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "publish": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false,
+    "requires_supervisor_confirmation": true
+  }
+}

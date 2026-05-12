@@ -1,0 +1,344 @@
+{
+  "名称": "股票n8n企业微信终端灰度工作流生成记录",
+  "生成时间": "2026-05-09 14:38:25",
+  "工作流名称": "股票主动研究闭环_企业微信终端灰度启用",
+  "桥接地址": "http://172.22.0.1:19312/run",
+  "工作流": {
+    "name": "股票主动研究闭环_企业微信终端灰度启用",
+    "active": true,
+    "nodes": [
+      {
+        "parameters": {
+          "content": "股票企业微信终端灰度调度\\n企业微信是使用者与系统的输入输出窗口。\\nn8n只做定时调度，股票系统和模型路由负责生成可读报告。\\n当前不含企业微信真实发送节点，不群发，不接券商，不交易。",
+          "height": 260,
+          "width": 420,
+          "color": 4
+        },
+        "id": "863b5a60-e07a-41d0-8eca-8dc38f9e6ec6",
+        "name": "安全边界说明",
+        "type": "n8n-nodes-base.stickyNote",
+        "typeVersion": 1,
+        "position": [
+          180,
+          -120
+        ]
+      },
+      {
+        "parameters": {
+          "rule": {
+            "interval": [
+              {
+                "field": "weeks",
+                "weeksInterval": 1,
+                "triggerAtDay": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "triggerAtHour": 18,
+                "triggerAtMinute": 30
+              }
+            ]
+          }
+        },
+        "id": "5a24e581-68bd-4213-bd06-1a86f620f3b9",
+        "name": "收市后每日观察 18:30",
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "typeVersion": 1.3,
+        "position": [
+          180,
+          80
+        ],
+        "notes": "工作日定时触发股票after_close_report；不含企业微信真实发送节点。"
+      },
+      {
+        "parameters": {
+          "command": "mkdir -p /home/node/.n8n/jiege_bridge && node -e \"const fs=require('fs');const url='http://172.22.0.1:19312/run';const output='/home/node/.n8n/jiege_bridge/stock_after_close_report_response.json';const payload={source:'n8n',stage:'after_close_report',text:''};fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-Jiege-Bridge-Token':\\\"Hb0-dXh_ZTagyANWssukQe8zQIo_00Kr\\\"},body:JSON.stringify(payload)}).then(async r=>{const t=await r.text();fs.writeFileSync(output,t);console.log(t.slice(0,2000));if(!r.ok)process.exit(2);}).catch(e=>{console.error(e);process.exit(1);});\""
+        },
+        "id": "83e998e9-8089-4792-91ff-b199a541e730",
+        "name": "调用股票桥接生成after_close_report",
+        "type": "n8n-nodes-base.executeCommand",
+        "typeVersion": 1,
+        "position": [
+          500,
+          80
+        ]
+      },
+      {
+        "parameters": {
+          "rule": {
+            "interval": [
+              {
+                "field": "weeks",
+                "weeksInterval": 1,
+                "triggerAtDay": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "triggerAtHour": 0,
+                "triggerAtMinute": 30
+              }
+            ]
+          }
+        },
+        "id": "ccf6cc93-a6c5-4825-b00b-8a9af9a7ecf9",
+        "name": "半夜长期观察 00:30",
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "typeVersion": 1.3,
+        "position": [
+          180,
+          260
+        ],
+        "notes": "工作日定时触发股票night_observation；不含企业微信真实发送节点。"
+      },
+      {
+        "parameters": {
+          "command": "mkdir -p /home/node/.n8n/jiege_bridge && node -e \"const fs=require('fs');const url='http://172.22.0.1:19312/run';const output='/home/node/.n8n/jiege_bridge/stock_night_observation_response.json';const payload={source:'n8n',stage:'night_observation',text:''};fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-Jiege-Bridge-Token':\\\"Hb0-dXh_ZTagyANWssukQe8zQIo_00Kr\\\"},body:JSON.stringify(payload)}).then(async r=>{const t=await r.text();fs.writeFileSync(output,t);console.log(t.slice(0,2000));if(!r.ok)process.exit(2);}).catch(e=>{console.error(e);process.exit(1);});\""
+        },
+        "id": "938059cc-e559-47e8-b487-8fae356dc4d3",
+        "name": "调用股票桥接生成night_observation",
+        "type": "n8n-nodes-base.executeCommand",
+        "typeVersion": 1,
+        "position": [
+          500,
+          260
+        ]
+      },
+      {
+        "parameters": {
+          "rule": {
+            "interval": [
+              {
+                "field": "weeks",
+                "weeksInterval": 1,
+                "triggerAtDay": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "triggerAtHour": 8,
+                "triggerAtMinute": 20
+              }
+            ]
+          }
+        },
+        "id": "a15fe912-fc9b-42d0-9372-248798c67ddd",
+        "name": "开市前晨报准备 08:20",
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "typeVersion": 1.3,
+        "position": [
+          180,
+          440
+        ],
+        "notes": "工作日定时触发股票morning_brief；不含企业微信真实发送节点。"
+      },
+      {
+        "parameters": {
+          "command": "mkdir -p /home/node/.n8n/jiege_bridge && node -e \"const fs=require('fs');const url='http://172.22.0.1:19312/run';const output='/home/node/.n8n/jiege_bridge/stock_morning_brief_response.json';const payload={source:'n8n',stage:'morning_brief',text:''};fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-Jiege-Bridge-Token':\\\"Hb0-dXh_ZTagyANWssukQe8zQIo_00Kr\\\"},body:JSON.stringify(payload)}).then(async r=>{const t=await r.text();fs.writeFileSync(output,t);console.log(t.slice(0,2000));if(!r.ok)process.exit(2);}).catch(e=>{console.error(e);process.exit(1);});\""
+        },
+        "id": "7ab9ec49-a000-450d-8b6d-c9d7612e9309",
+        "name": "调用股票桥接生成morning_brief",
+        "type": "n8n-nodes-base.executeCommand",
+        "typeVersion": 1,
+        "position": [
+          500,
+          440
+        ]
+      },
+      {
+        "parameters": {},
+        "id": "9ea5cfd9-9adf-4335-b945-fa32951dc0ae",
+        "name": "手动触发即时验证",
+        "type": "n8n-nodes-base.manualTrigger",
+        "typeVersion": 1,
+        "position": [
+          180,
+          520
+        ]
+      },
+      {
+        "parameters": {
+          "command": "mkdir -p /home/node/.n8n/jiege_bridge && node -e \"const fs=require('fs');const url='http://172.22.0.1:19312/run';const output='/home/node/.n8n/jiege_bridge/stock_manual_response.json';const payload={source:'n8n',stage:'manual',text:''};fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-Jiege-Bridge-Token':\\\"Hb0-dXh_ZTagyANWssukQe8zQIo_00Kr\\\"},body:JSON.stringify(payload)}).then(async r=>{const t=await r.text();fs.writeFileSync(output,t);console.log(t.slice(0,2000));if(!r.ok)process.exit(2);}).catch(e=>{console.error(e);process.exit(1);});\""
+        },
+        "id": "20303270-b808-4844-b4d2-a1d70e99b300",
+        "name": "调用股票桥接生成manual",
+        "type": "n8n-nodes-base.executeCommand",
+        "typeVersion": 1,
+        "position": [
+          500,
+          620
+        ]
+      },
+      {
+        "parameters": {
+          "mode": "manual",
+          "duplicateItem": false,
+          "assignments": {
+            "assignments": [
+              {
+                "id": "f6ae2f11-3005-4ef6-8b25-58a3ec4393fc",
+                "name": "工作流状态",
+                "value": "active_gray_scheduled",
+                "type": "string"
+              },
+              {
+                "id": "9d7875bb-3163-4304-9e50-fb66e81cb49e",
+                "name": "企业微信定位",
+                "value": "输入输出终端，不是判断核心",
+                "type": "string"
+              },
+              {
+                "id": "d7b743ca-8571-460d-af0e-87152928482e",
+                "name": "报告定位",
+                "value": "大模型/股票系统加工成使用者可读报告，不输出技术过程堆砌",
+                "type": "string"
+              },
+              {
+                "id": "c82ec8b7-52cb-4bef-96c5-a33bd2ac6c3c",
+                "name": "真实发送企业微信",
+                "value": false,
+                "type": "boolean"
+              },
+              {
+                "id": "feca3892-950b-435e-b89c-42d069d6f45d",
+                "name": "券商交易",
+                "value": false,
+                "type": "boolean"
+              }
+            ]
+          }
+        },
+        "id": "2b9de91c-e43a-4b58-9bb1-78cabf579bb8",
+        "name": "输出灰度状态",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          760,
+          260
+        ]
+      }
+    ],
+    "connections": {
+      "收市后每日观察 18:30": {
+        "main": [
+          [
+            {
+              "node": "调用股票桥接生成after_close_report",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "调用股票桥接生成after_close_report": {
+        "main": [
+          [
+            {
+              "node": "输出灰度状态",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "半夜长期观察 00:30": {
+        "main": [
+          [
+            {
+              "node": "调用股票桥接生成night_observation",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "调用股票桥接生成night_observation": {
+        "main": [
+          [
+            {
+              "node": "输出灰度状态",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "开市前晨报准备 08:20": {
+        "main": [
+          [
+            {
+              "node": "调用股票桥接生成morning_brief",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "调用股票桥接生成morning_brief": {
+        "main": [
+          [
+            {
+              "node": "输出灰度状态",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "手动触发即时验证": {
+        "main": [
+          [
+            {
+              "node": "调用股票桥接生成manual",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "调用股票桥接生成manual": {
+        "main": [
+          [
+            {
+              "node": "输出灰度状态",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "settings": {
+      "executionOrder": "v1",
+      "saveManualExecutions": true,
+      "timezone": "Asia/Shanghai"
+    },
+    "staticData": null,
+    "pinData": {},
+    "tags": [],
+    "meta": {
+      "jiege_stock_n8n_wecom_terminal_gray": true,
+      "generated_at": "2026-05-09 14:38:25",
+      "strategy_package": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\260股票n8n日内报告闭环与晨报推送策略包\\股票n8n日内报告闭环与晨报推送策略包_最新.json",
+      "real_wecom_send": false,
+      "broker_api": false,
+      "trade": false,
+      "formal_rule_auto_apply": false
+    }
+  },
+  "安全边界": {
+    "导入n8n": false,
+    "触发n8n": false,
+    "真实发送企业微信": false,
+    "群发": false,
+    "调用券商接口": false,
+    "自动交易": false
+  }
+}

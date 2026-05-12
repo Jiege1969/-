@@ -1,0 +1,21 @@
+{
+  "rule": "提示词修改规则",
+  "version": "1.0",
+  "created_at": "2026-05-06 07:28:00 +08:00",
+  "scope": [
+    "D:/杰哥智能化系统/01杰哥智能系统/01配置/提示词模板.json",
+    "n8n prompt nodes",
+    "总管消息模板",
+    "业务提示词"
+  ],
+  "requirements": [
+    "modify_runtime_prompt_only_after_creating_new_version_copy",
+    "write_change_log_before_or_with_change",
+    "record_reason_expected_effect_and_rollback_version",
+    "keep_previous_version_unchanged",
+    "if_output_degrades_restore_previous_version"
+  ],
+  "version_library": "D:/杰哥智能化系统/03杰哥进化系统/02提示词管理/03数据/版本库",
+  "ledger": "D:/杰哥智能化系统/03杰哥进化系统/02提示词管理/03数据/台账/提示词版本索引_最新.json",
+  "change_log": "D:/杰哥智能化系统/03杰哥进化系统/02提示词管理/07文档/提示词变更日志.md"
+}

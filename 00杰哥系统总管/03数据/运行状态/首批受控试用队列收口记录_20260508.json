@@ -1,0 +1,68 @@
+{
+  "asset_id": "CONTROLLED_TRIAL_BATCH_001_CLOSEOUT_20260508",
+  "asset_name": "首批受控试用队列收口记录",
+  "created_at": "2026-05-08 08:43:44 +08:00",
+  "asset_identity": "总管侧W1/R0受控试用队列收口记录",
+  "source_queue": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\受控试用任务队列_20260508.md",
+  "is_formal_launch_permission": false,
+  "is_real_integration_permission": false,
+  "batch_status": "closed",
+  "completed_tasks": [
+    {
+      "task_id": "CTRL-TRIAL-MGR-001",
+      "business_line": "总管协调层",
+      "status": "completed",
+      "artifact": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_TRIAL_MGR_001_并行回传统一接收口径试用记录_20260508.md"
+    },
+    {
+      "task_id": "CTRL-TRIAL-TAX-001",
+      "business_line": "税收政策顾问",
+      "status": "completed",
+      "artifact": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_TRIAL_TAX_001_脱敏真实问题试用登记回执_20260508.md"
+    },
+    {
+      "task_id": "CTRL-TRIAL-STOCK-001",
+      "business_line": "股票L3研究",
+      "status": "completed",
+      "artifact": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_TRIAL_STOCK_001_L3五样本证据缺口P0补齐路线_20260508.md"
+    },
+    {
+      "task_id": "CTRL-TRIAL-VIDEO-001",
+      "business_line": "视频影子工厂",
+      "status": "completed",
+      "artifact": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_TRIAL_VIDEO_001_视频影子工厂单任务复核闭环试用记录_20260508.md"
+    },
+    {
+      "task_id": "CTRL-TRIAL-WECOM-001",
+      "business_line": "企业微信接入层",
+      "status": "completed",
+      "artifact": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_TRIAL_WECOM_001_机器人入口边界回归检查记录_20260508.md"
+    }
+  ],
+  "next_stage_recommendations": [
+    "建立受控试用第二批候选清单",
+    "候选任务继续限制为W1/R0影子、只读、回执和索引类任务",
+    "沿用受控试用边界扫描清单",
+    "本职工作业务线继续暂停",
+    "真实发送、n8n、服务重启、正式库、交易、税务办理、视频渲染发布继续按W2/W3暂停"
+  ],
+  "boundary_flags": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_db": false,
+    "modify_service_script": false,
+    "restart_19310_or_19302": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "tax_filing_or_refund": false,
+    "formal_tax_opinion": false,
+    "video_render_upload_publish": false,
+    "delete_move_archive_old_directory": false
+  },
+  "self_check": {
+    "risk_level": "W1/R0",
+    "all_batch_tasks_completed": true,
+    "boundary_kept": true,
+    "json_parse_required": true
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "name": "标准前台报告输出门禁样例",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 13:05:44",
+  "asset_identity": "W1前台输出门禁样例",
+  "status": "shadow_gate_sample",
+  "purpose": "把股票分析助手前台回答的必填项、禁止项和缺口约束做成可验收门禁。",
+  "not_real_market_report": true,
+  "not_external_send": true,
+  "not_formal_entry": true,
+  "not_trade_advice": true,
+  "gate_rules": [
+    {
+      "gate_id": "FRONT-GATE-001",
+      "name": "对象首行门禁",
+      "must_have": [
+        "stock_name",
+        "stock_code",
+        "conclusion"
+      ],
+      "rule": "第一行必须明确股票名称、代码和结论词。"
+    },
+    {
+      "gate_id": "FRONT-GATE-002",
+      "name": "结论词门禁",
+      "must_have": [
+        "重点关注",
+        "可纳入观察",
+        "暂不建议关注"
+      ],
+      "rule": "结论词只能来自标准三档，不允许自由发挥成交易动作。"
+    },
+    {
+      "gate_id": "FRONT-GATE-003",
+      "name": "主因数量门禁",
+      "max_count": 3,
+      "rule": "主要依据最多3条，只保留支撑结论的关键原因。"
+    },
+    {
+      "gate_id": "FRONT-GATE-004",
+      "name": "缺口显式门禁",
+      "must_have_when_missing_exists": [
+        "key_missing"
+      ],
+      "rule": "后台存在P0/P1缺口时，前台必须显式说明关键缺口。"
+    },
+    {
+      "gate_id": "FRONT-GATE-005",
+      "name": "置信度门禁",
+      "must_have": [
+        "confidence_text"
+      ],
+      "rule": "前台必须说明高/中/低置信度及限制原因。"
+    },
+    {
+      "gate_id": "FRONT-GATE-006",
+      "name": "后台指标隐藏门禁",
+      "forbidden_words": [
+        "MACD",
+        "RSI",
+        "K线",
+        "量比",
+        "均线排列",
+        "计算过程",
+        "item_scores"
+      ],
+      "rule": "企业微信前台短答不直接堆后台指标和计算字段。"
+    },
+    {
+      "gate_id": "FRONT-GATE-007",
+      "name": "交易执行禁止门禁",
+      "forbidden_words": [
+        "买入",
+        "卖出",
+        "下单",
+        "仓位",
+        "自动交易",
+        "券商接口"
+      ],
+      "rule": "股票系统只做研究分析，不输出交易执行动作。"
+    }
+  ],
+  "samples": [
+    {
+      "sample_id": "FRONT-SAMPLE-001",
+      "stock_name": "云南锗业",
+      "stock_code": "002428",
+      "backend_missing_exists": true,
+      "frontend_output": {
+        "first_line": "云南锗业（002428）：可纳入观察。",
+        "one_sentence": "政策和资源属性有支撑，但财报、锗价和资金证据还没补齐，暂不输出强结论。",
+        "main_reasons": [
+          "锗相关政策事件候选有支撑",
+          "资源品主题与市场风格适配",
+          "技术结构只作辅助确认"
+        ],
+        "key_missing": [
+          "P0：财报和盈利质量未结构化",
+          "P0：锗价连续观测待补"
+        ],
+        "confidence_text": "置信度中等，主要受财报和价格连续数据缺口限制。",
+        "review_hint": "下一次优先复核财报、锗价和资金证据。"
+      },
+      "expected_gate_result": "pass"
+    },
+    {
+      "sample_id": "FRONT-SAMPLE-002",
+      "stock_name": "正丹股份",
+      "stock_code": "300641",
+      "backend_missing_exists": true,
+      "frontend_output": {
+        "first_line": "正丹股份（300641）：可纳入观察。",
+        "one_sentence": "产品价格和盈利弹性值得跟踪，但关键证据未连续验证前只保留观察。",
+        "main_reasons": [
+          "化工品价格弹性线索值得跟踪",
+          "新增样本已纳入验收"
+        ],
+        "key_missing": [
+          "P0：核心产品价格连续数据待补",
+          "P0：最新财报盈利弹性待复核"
+        ],
+        "confidence_text": "置信度中等，关键取决于价格和财报能否连续验证。",
+        "review_hint": "下一次优先复核核心产品价格、财报和资金承接。"
+      },
+      "expected_gate_result": "pass"
+    },
+    {
+      "sample_id": "FRONT-SAMPLE-003",
+      "stock_name": "上纬新材",
+      "stock_code": "688585",
+      "backend_missing_exists": true,
+      "frontend_output": {
+        "first_line": "上纬新材（688585）：暂不建议关注。",
+        "one_sentence": "当前证据主要停留在局部技术面，财报、行业和资金证据不足。",
+        "main_reasons": [
+          "结构化财报证据不足",
+          "行业景气证据不足"
+        ],
+        "key_missing": [
+          "P0：财报与盈利质量证据缺失",
+          "P0：行业景气与订单价格线索缺失"
+        ],
+        "confidence_text": "置信度低，缺口集中在财报、行业和资金证据。",
+        "review_hint": "下一次先补财报和行业价格/需求证据。"
+      },
+      "expected_gate_result": "pass"
+    }
+  ],
+  "summary": {
+    "gate_count": 7,
+    "sample_count": 3,
+    "all_samples_expected_pass": true
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  }
+}

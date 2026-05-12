@@ -1,0 +1,74 @@
+{
+  "生成日期": "2026-05-05",
+  "任务": "第四批并行小任务K-格式转换影子样本",
+  "样本类型": "格式转换影子",
+  "执行性质": "字段映射预演，不生成 docx、xlsx、pdf、html 或任何真实转换文件",
+  "样本编号": "K-FORMAT-SHADOW-001",
+  "引用路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\06人工复核\\格式转换影子样本_20260505_小任务K.json",
+  "目标格式": {
+    "源格式": "人工演示文本",
+    "目标格式": "Markdown结构草案",
+    "真实目标文件路径": "",
+    "真实目标文件生成": false
+  },
+  "字段映射": [
+    {
+      "源字段": "标题",
+      "目标字段": "markdown_h1",
+      "转换动作": "shadow_map_only",
+      "真实写入": false
+    },
+    {
+      "源字段": "摘要",
+      "目标字段": "summary_block",
+      "转换动作": "shadow_map_only",
+      "真实写入": false
+    },
+    {
+      "源字段": "段落要点",
+      "目标字段": "section_list",
+      "转换动作": "shadow_map_only",
+      "真实写入": false
+    },
+    {
+      "源字段": "风险提示",
+      "目标字段": "review_risk_table",
+      "转换动作": "shadow_map_only",
+      "真实写入": false
+    }
+  ],
+  "差异清单": [
+    "仅记录字段映射，不读取真实源文件",
+    "仅描述目标结构，不创建真实目标文件",
+    "人工复核前不得进入批量转换队列",
+    "缺少人工复核签名时默认阻断"
+  ],
+  "人工复核字段": {
+    "review_required": true,
+    "review_status": "pending_manual_review",
+    "review_checkpoints": [
+      "source_reference_path_present",
+      "target_format_declared",
+      "no_real_output_file",
+      "sensitive_info_check_present",
+      "rollback_fields_present"
+    ],
+    "review_decision": "not_approved_for_real_conversion"
+  },
+  "执行开关": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_output_file_generation": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_formal_library_write": false
+  },
+  "回滚字段": {
+    "rollback_required": true,
+    "rollback_mode": "shadow_record_only",
+    "rollback_action": "标记影子样本无效并保持真实文件不变",
+    "rollback_confirm_required": true
+  },
+  "降级语": "仅为格式转换影子样本，不代表已执行真实转换；不得生成、覆盖、删除、移动或外发任何真实文档。"
+}

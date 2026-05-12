@@ -1,0 +1,23 @@
+{
+  "id": "P2-S4-REAL-MATERIAL-INTAKE-ROUTING-GATE-20260509",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S4",
+  "status": "executed_pass",
+  "purpose": "真实材料进入影子入口前先走来源、授权、敏感、脱敏、业务线、红线和人工复核分流门",
+  "assets": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\P2_REAL_MATERIAL_INTAKE_GATE_001_真实材料接入分流门_20260509.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\P2_REAL_MATERIAL_INTAKE_GATE_001_真实材料接入分流门_20260509.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S4真实材料接入分流门只读检查.py"
+  ],
+  "check_command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S4真实材料接入分流门只读检查.py'",
+  "latest_receipt": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\稳定版正式收口_20260509\\P2_S4_真实材料接入分流门回执_20260509.json",
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "name": "低风险只读调度器本地值守摘要预演结果",
+  "generated_at": "2026-05-08 20:29:09",
+  "pass": true,
+  "error_count": 0,
+  "errors": [],
+  "preview_only": true,
+  "local_file_only": true,
+  "brief_section_count": 5,
+  "brief_sections": [
+    "今日总览",
+    "通过项",
+    "暂停项",
+    "需总管确认项",
+    "下一轮建议"
+  ],
+  "draft_count": 3,
+  "draft_results": [
+    {
+      "draft_id": "wecom-local-draft",
+      "draft_name": "企业微信草稿",
+      "channel": "企业微信",
+      "preview_status": "local_draft_registered_not_sent",
+      "send_allowed": false,
+      "real_send": false,
+      "network_request": false,
+      "trigger_n8n": false
+    },
+    {
+      "draft_id": "supervisor-local-brief-draft",
+      "draft_name": "总管本地摘要草稿",
+      "channel": "本地摘要",
+      "preview_status": "local_draft_registered_not_sent",
+      "send_allowed": false,
+      "real_send": false,
+      "network_request": false,
+      "trigger_n8n": false
+    },
+    {
+      "draft_id": "exception-escalation-draft",
+      "draft_name": "异常升级草稿",
+      "channel": "本地异常升级占位",
+      "preview_status": "local_draft_registered_not_sent",
+      "send_allowed": false,
+      "real_send": false,
+      "network_request": false,
+      "trigger_n8n": false
+    }
+  ],
+  "proof_checked": true,
+  "send_allowed": false,
+  "real_send": false,
+  "real_wecom_send": false,
+  "network_request": false,
+  "no_network_request": true,
+  "connect_n8n": false,
+  "trigger_n8n": false,
+  "no_n8n_trigger": true,
+  "no_wecom_send": true,
+  "broker_connection": false,
+  "trade_order": false,
+  "tax_bureau_login": false,
+  "finance_tax_software_connection": false,
+  "auto_promote_formal_rule": false,
+  "write_formal_rule": false,
+  "modify_supervisor_panel": false,
+  "modify_one_click_continuation_package": false,
+  "reload_service": false,
+  "scope_statement": "只读读取本地摘要模板和草稿并登记预演结果，不发送、不触发、不联网。"
+}

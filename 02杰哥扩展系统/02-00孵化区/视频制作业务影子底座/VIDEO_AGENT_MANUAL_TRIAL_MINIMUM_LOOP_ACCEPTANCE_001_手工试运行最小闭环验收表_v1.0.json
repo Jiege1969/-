@@ -1,0 +1,50 @@
+{
+  "id": "VIDEO_AGENT_MANUAL_TRIAL_MINIMUM_LOOP_ACCEPTANCE_001",
+  "name": "手工试运行最小闭环验收表",
+  "asset_identity": "video_creation_agent_manual_shadow_trial_minimum_loop_acceptance",
+  "stage": "W1_R0",
+  "status": "acceptance_table_not_production_approval",
+  "loop_checks": [
+    {
+      "step": "input",
+      "condition": "desensitized_video_idea_template_used",
+      "result": "to_be_filled"
+    },
+    {
+      "step": "run_check",
+      "condition": "run_checklist_completed",
+      "result": "to_be_filled"
+    },
+    {
+      "step": "clarification",
+      "condition": "one_key_question_when_fields_missing",
+      "result": "to_be_filled"
+    },
+    {
+      "step": "output",
+      "condition": "three_option_text_draft_no_more_than_three",
+      "result": "to_be_filled"
+    },
+    {
+      "step": "review",
+      "condition": "manual_review_questions_listed",
+      "result": "to_be_filled"
+    },
+    {
+      "step": "receipt",
+      "condition": "human_feedback_intaken_or_marked_missing",
+      "result": "to_be_filled"
+    },
+    {
+      "step": "state_log",
+      "condition": "state_change_recorded",
+      "result": "to_be_filled"
+    },
+    {
+      "step": "redline",
+      "condition": "generation_publish_external_send_credential_and_real_asset_risks_blocked",
+      "result": "to_be_filled"
+    }
+  ],
+  "pass_meaning": "manual_shadow_trial_material_complete_only_not_generation_render_publish_or_external_send_approval"
+}

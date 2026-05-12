@@ -1,0 +1,23 @@
+{
+  "asset_name": "系统管家验证30提示语纠偏R0自检",
+  "created_at": "2026-05-08 11:23:49 +08:00",
+  "target_assets": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_MGR_003_系统管家提示语收紧验收样例_20260508.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_MGR_003_系统管家提示语收紧验收样例_20260508.json"
+  ],
+  "risk_level": "W1/R0",
+  "checks": {
+    "asset_identity_declared": true,
+    "validation_30_pass_points_recorded": true,
+    "n8n_wording_tightened": true,
+    "progress_path_n8n_acceptance_samples_ready": true,
+    "wecom_config_modified": false,
+    "service_script_modified": false,
+    "restart_19310_or_19302": false,
+    "trigger_n8n": false,
+    "wecom_real_send": false,
+    "trade_tax_video_real_action": false
+  },
+  "result": "passed",
+  "boundary_kept": true
+}

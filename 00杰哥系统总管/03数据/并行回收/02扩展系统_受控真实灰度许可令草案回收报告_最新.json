@@ -1,0 +1,118 @@
+{
+  "report_id": "02扩展系统_受控真实灰度许可令草案回收报告_最新",
+  "generated_at": "2026-05-05T14:20:00+08:00",
+  "task_batch": "并行小任务I",
+  "owner_scope": "02杰哥扩展系统",
+  "objective": "为企业微信、知识库、内容、视频、税收只读五条扩展线生成受控真实灰度许可令草案包",
+  "execution_boundary": {
+    "draft_only": true,
+    "readonly_validation_only": true,
+    "external_system_called": false,
+    "enterprise_wechat_sent": false,
+    "production_database_written": false,
+    "knowledge_base_written": false,
+    "media_converted": false,
+    "tax_formal_judgement_made": false,
+    "broker_interface_called": false,
+    "auto_trade_triggered": false,
+    "work_system_paused_and_untouched": true,
+    "real_actions_triggered": 0
+  },
+  "artifacts": [
+    {
+      "type": "permission_order_draft_pack_json",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\12受控真实灰度许可令草案包\\受控真实灰度许可令草案包_20260505_I.json"
+    },
+    {
+      "type": "permission_order_draft_pack_markdown",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\12受控真实灰度许可令草案包\\受控真实灰度许可令草案包_20260505_I.md"
+    },
+    {
+      "type": "whitelist_draft_json",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\12受控真实灰度许可令草案包\\受控真实灰度许可令白名单草案_20260505_I.json"
+    },
+    {
+      "type": "rollback_monitoring_review_fields_json",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\12受控真实灰度许可令草案包\\受控真实灰度回滚监控复核字段_20260505_I.json"
+    },
+    {
+      "type": "readonly_validation_script",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02脚本\\验证受控真实灰度许可令草案包.py"
+    },
+    {
+      "type": "recycle_report_markdown",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\02扩展系统_受控真实灰度许可令草案回收报告_最新.md"
+    },
+    {
+      "type": "recycle_report_json",
+      "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\02扩展系统_受控真实灰度许可令草案回收报告_最新.json"
+    }
+  ],
+  "covered_business_lines": [
+    "enterprise_wechat",
+    "knowledge_base",
+    "content_processing",
+    "video_production",
+    "tax_readonly"
+  ],
+  "future_low_risk_formal_candidates": [
+    "read_only_pull",
+    "draft_generation",
+    "internal_report_circulation"
+  ],
+  "still_forbidden_actions": [
+    "enterprise_wechat_scale_up",
+    "formal_database_write",
+    "formal_knowledge_base_write",
+    "real_media_conversion",
+    "formal_tax_judgement",
+    "broker_interface",
+    "automatic_trading",
+    "external_webhook_send",
+    "n8n_workflow_import_enable_or_trigger",
+    "production_queue_write"
+  ],
+  "field_coverage": {
+    "permission_order_draft": true,
+    "whitelist_draft": true,
+    "rollback_draft": true,
+    "monitoring_draft": true,
+    "manual_review_fields": true,
+    "global_manual_review_field_count": 21
+  },
+  "validation": {
+    "command": "python \"D:\\杰哥智能化系统\\02杰哥扩展系统\\02脚本\\验证受控真实灰度许可令草案包.py\"",
+    "passed": true,
+    "result": {
+      "checked_package": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\12受控真实灰度许可令草案包\\受控真实灰度许可令草案包_20260505_I.json",
+      "checked_whitelist": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\12受控真实灰度许可令草案包\\受控真实灰度许可令白名单草案_20260505_I.json",
+      "checked_controls": "D:\\杰哥智能化系统\\02杰哥扩展系统\\03数据\\12受控真实灰度许可令草案包\\受控真实灰度回滚监控复核字段_20260505_I.json",
+      "checked_business_lines": [
+        "content_processing",
+        "enterprise_wechat",
+        "knowledge_base",
+        "tax_readonly",
+        "video_production"
+      ],
+      "checked_line_count": 5,
+      "checked_low_risk_candidates": [
+        "draft_generation",
+        "internal_report_circulation",
+        "read_only_pull"
+      ],
+      "checked_forbidden_actions_minimum": [
+        "automatic_trading",
+        "broker_interface",
+        "enterprise_wechat_scale_up",
+        "formal_database_write",
+        "formal_tax_judgement",
+        "real_media_conversion"
+      ],
+      "checked_global_review_fields": 21,
+      "real_actions_triggered": 0,
+      "passed": true,
+      "failures": []
+    }
+  },
+  "acceptance_result": "通过"
+}

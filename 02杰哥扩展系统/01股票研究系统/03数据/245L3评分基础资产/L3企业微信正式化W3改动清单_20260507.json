@@ -1,0 +1,111 @@
+{
+  "名称": "L3企业微信正式化W3改动清单",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "W3正式化前只读改动清单",
+  "状态": "pending_user_confirmation",
+  "purpose": "在影子闭环5样本通过后，列明若要接入企业微信正式链路将涉及哪些正式资产、风险、验收和回滚要求。",
+  "basis": [
+    "03数据/245L3评分基础资产/L3企业微信短答五样本影子验收_20260507.json",
+    "03数据/245L3评分基础资产/L3企业微信短答影子dry_run总包_20260507.json",
+    "03数据/245L3评分基础资产/影子闭环可用版状态面板_20260507.json"
+  ],
+  "formal_assets_that_may_be_touched": [
+    {
+      "path": "02脚本/股票助手入口.py",
+      "asset_type": "正式脚本/本地服务入口",
+      "risk_level": "W3",
+      "possible_change": "在单股分析/短答生成路径中优先读取L3影子评分和财报基本面证据卡，形成结论型短答。",
+      "must_pause_before_change": true
+    },
+    {
+      "path": "02脚本/股票企业微信桥接入口.py",
+      "asset_type": "正式脚本/企业微信桥接入口",
+      "risk_level": "W3",
+      "possible_change": "企业微信问股消息路由到L3结论型短答，而不是旧v21短回复或技术面为主的报告。",
+      "must_pause_before_change": true
+    },
+    {
+      "path": "01配置/股票前台输出标准_v2.json",
+      "asset_type": "正式配置/前台输出标准",
+      "risk_level": "W3",
+      "possible_change": "固化结论先行、财报证据卡压缩、缺口显式、禁止交易指令等前台短答规则。",
+      "must_pause_before_change": true
+    },
+    {
+      "path": "01配置/股票分析报告工作流_v1.0.json",
+      "asset_type": "工作流契约",
+      "risk_level": "W3",
+      "possible_change": "把L3短答dry-run链路升级为正式单股问答路径的候选步骤。",
+      "must_pause_before_change": true
+    },
+    {
+      "path": "03数据/166公司经营快照/公司经营快照_最新.json",
+      "asset_type": "正式数据资产",
+      "risk_level": "W2/W3边界",
+      "possible_change": "根据191台账受控回流公司概况字段，如天齐锂业。",
+      "must_pause_before_change": true
+    }
+  ],
+  "related_existing_control_assets": [
+    {
+      "path": "03数据/234企业微信短回复v21正式模板替换准入",
+      "usage": "复用其中的正式模板替换准入与回滚思路。"
+    },
+    {
+      "path": "03数据/236企业微信真实发送灰度准入与停止开关方案",
+      "usage": "复用灰度准入、停止开关和真实发送边界。"
+    },
+    {
+      "path": "03数据/240企业微信真实发送人工确认令受控写入",
+      "usage": "复用人工确认令，不允许无确认真实发送。"
+    }
+  ],
+  "formalization_steps_proposed": [
+    {
+      "step": 1,
+      "name": "只读基线备份",
+      "description": "记录正式脚本和正式配置当前hash、时间、关键路径，不做修改。"
+    },
+    {
+      "step": 2,
+      "name": "低风险适配层",
+      "description": "优先新增独立L3短答生成函数或适配器，避免直接重写旧v21逻辑。"
+    },
+    {
+      "step": 3,
+      "name": "dry-run对照",
+      "description": "同一用户问题同时生成旧短答和L3短答，对照格式、证据、缺口和安全边界。"
+    },
+    {
+      "step": 4,
+      "name": "灰度入口",
+      "description": "仅在显式灰度开关和人工确认令存在时，允许企业微信路径使用L3短答。"
+    },
+    {
+      "step": 5,
+      "name": "回滚验收",
+      "description": "确认关闭灰度开关后，企业微信恢复旧短答或禁用态，不影响其他助手。"
+    }
+  ],
+  "must_not_change_without_confirmation": [
+    "不得修改企业微信真实发送逻辑",
+    "不得启用n8n",
+    "不得重启服务",
+    "不得写入券商接口或任何自动交易能力",
+    "不得把影子证据卡直接作为正式评分唯一依据",
+    "不得删除旧v21短回复回滚路径"
+  ],
+  "minimum_acceptance_before_apply": [
+    "5样本影子验收通过",
+    "正式入口改动点明确",
+    "回滚方案明确",
+    "停止开关明确",
+    "人工确认令存在",
+    "用户明确同意进入W3正式化"
+  ],
+  "decision": {
+    "can_apply_now": false,
+    "reason": "当前只是W3正式化前清单；未获得用户明确确认前，不得改正式入口、正式脚本、正式配置、企业微信真实发送链路。"
+  }
+}

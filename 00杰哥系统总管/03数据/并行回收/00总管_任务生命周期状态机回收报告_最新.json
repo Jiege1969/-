@@ -1,0 +1,179 @@
+{
+  "名称": "00总管任务生命周期状态机与SQLite影子台账闭环验收包",
+  "生成时间": "2026-05-05 14:03:26",
+  "结论": "通过",
+  "边界": {
+    "local_sqlite_json_only": true,
+    "redis_connected": false,
+    "n8n_triggered": false,
+    "wecom_sent": false,
+    "formal_db_written": false,
+    "model_called": false,
+    "broker_called": false,
+    "auto_trade": false
+  },
+  "源输入": {
+    "标准任务单": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\任务契约\\标准任务单样例_最新.json",
+    "SQLite影子台账": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\任务契约\\轻量任务契约SQLite影子台账_最新.sqlite",
+    "源台账schema摘要": {
+      "exists": true,
+      "task_ledger_rows": 1,
+      "objects": [
+        {
+          "name": "sqlite_autoindex_task_ledger_1",
+          "type": "index",
+          "sql": null
+        },
+        {
+          "name": "task_ledger",
+          "type": "table",
+          "sql": "CREATE TABLE task_ledger (\n              task_id TEXT PRIMARY KEY,\n              source TEXT NOT NULL,\n              target_system TEXT NOT NULL,\n              risk_level TEXT NOT NULL,\n              dry_run INTEGER NOT NULL,\n              real_action_allowed INTEGER NOT NULL,\n              idempotency_key TEXT NOT NULL,\n              status TEXT NOT NULL,\n              payload_json TEXT NOT NULL,\n              receipt_json TEXT NOT NULL,\n              created_at TEXT NOT NULL,\n              updated_at TEXT NOT NULL\n            )"
+        }
+      ]
+    }
+  },
+  "状态流": {
+    "closed_path_expected": [
+      "queued_shadow",
+      "admitted",
+      "planned",
+      "dry_run_executed",
+      "receipt_written",
+      "closed"
+    ],
+    "closed_path_actual": [
+      "queued_shadow",
+      "admitted",
+      "planned",
+      "dry_run_executed",
+      "receipt_written",
+      "closed"
+    ],
+    "blocked_path_expected": [
+      "queued_shadow",
+      "admitted",
+      "blocked"
+    ],
+    "blocked_path_actual": [
+      "queued_shadow",
+      "admitted",
+      "blocked"
+    ]
+  },
+  "验证项": [
+    {
+      "check_name": "读取标准任务单",
+      "passed": true,
+      "detail": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\任务契约\\标准任务单样例_最新.json"
+    },
+    {
+      "check_name": "读取SQLite影子台账schema",
+      "passed": true,
+      "detail": {
+        "exists": true,
+        "task_ledger_rows": 1,
+        "objects": [
+          {
+            "name": "sqlite_autoindex_task_ledger_1",
+            "type": "index",
+            "sql": null
+          },
+          {
+            "name": "task_ledger",
+            "type": "table",
+            "sql": "CREATE TABLE task_ledger (\n              task_id TEXT PRIMARY KEY,\n              source TEXT NOT NULL,\n              target_system TEXT NOT NULL,\n              risk_level TEXT NOT NULL,\n              dry_run INTEGER NOT NULL,\n              real_action_allowed INTEGER NOT NULL,\n              idempotency_key TEXT NOT NULL,\n              status TEXT NOT NULL,\n              payload_json TEXT NOT NULL,\n              receipt_json TEXT NOT NULL,\n              created_at TEXT NOT NULL,\n              updated_at TEXT NOT NULL\n            )"
+          }
+        ]
+      }
+    },
+    {
+      "check_name": "closed状态流完整",
+      "passed": true,
+      "detail": [
+        "queued_shadow",
+        "admitted",
+        "planned",
+        "dry_run_executed",
+        "receipt_written",
+        "closed"
+      ]
+    },
+    {
+      "check_name": "blocked状态流完整",
+      "passed": true,
+      "detail": [
+        "queued_shadow",
+        "admitted",
+        "blocked"
+      ]
+    },
+    {
+      "check_name": "idempotency_key防重复",
+      "passed": true,
+      "detail": {
+        "blocked": true,
+        "error": "UNIQUE constraint failed: task_ledger.idempotency_key",
+        "idempotency_key": "20260505-lifecycle-closed-001"
+      }
+    },
+    {
+      "check_name": "receipt已写入且不含真实动作",
+      "passed": true,
+      "detail": {
+        "accepted": true,
+        "result": "local dry_run completed; receipt written; no real action executed",
+        "real_action_executed": false,
+        "evidence": {
+          "sqlite": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\任务契约\\任务生命周期状态机模拟器_最新.sqlite",
+          "events": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\任务契约\\任务生命周期状态机事件流_最新.json",
+          "report": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_任务生命周期状态机回收报告_最新.json"
+        }
+      }
+    },
+    {
+      "check_name": "rollback_plan守卫有效",
+      "passed": true,
+      "detail": {
+        "closed_has_rollback_plan": true,
+        "blocked_status": "blocked"
+      }
+    },
+    {
+      "check_name": "real_action_allowed全程为false",
+      "passed": true,
+      "detail": [
+        {
+          "task_id": "task-20260505-lifecycle-blocked-001",
+          "real_action_allowed": 0
+        },
+        {
+          "task_id": "task-20260505-lifecycle-closed-001",
+          "real_action_allowed": 0
+        }
+      ]
+    },
+    {
+      "check_name": "禁止外部动作未触发",
+      "passed": true,
+      "detail": {
+        "forbidden_actions": [
+          "connect_redis",
+          "trigger_n8n",
+          "send_wecom",
+          "write_formal_db",
+          "call_model",
+          "call_broker",
+          "auto_trade"
+        ],
+        "scope": "local SQLite/JSON only"
+      }
+    }
+  ],
+  "产物": {
+    "模拟SQLite": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\任务契约\\任务生命周期状态机模拟器_最新.sqlite",
+    "事件流JSON": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\任务契约\\任务生命周期状态机事件流_最新.json",
+    "验收包JSON": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\任务契约\\任务生命周期状态机验收包_最新.json",
+    "回收报告JSON": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_任务生命周期状态机回收报告_最新.json",
+    "回收报告MD": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_任务生命周期状态机回收报告_最新.md"
+  }
+}

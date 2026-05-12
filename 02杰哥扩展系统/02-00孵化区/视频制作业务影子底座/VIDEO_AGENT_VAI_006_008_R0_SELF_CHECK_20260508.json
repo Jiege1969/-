@@ -1,0 +1,67 @@
+{
+  "id": "VIDEO_AGENT_VAI_006_008_R0_SELF_CHECK_20260508",
+  "asset_identity": "video_production_shadow_base_self_check",
+  "stage": "W1_R0",
+  "date": "2026-05-08",
+  "result": "passed",
+  "checked_assets": [
+    {
+      "id": "VAI-006",
+      "name": "creative_history_index",
+      "md": "VIDEO_AGENT_CREATIVE_HISTORY_INDEX_001_创作历史索引草案_v1.0.md",
+      "json": "VIDEO_AGENT_CREATIVE_HISTORY_INDEX_001_创作历史索引草案_v1.0.json",
+      "result": "passed",
+      "note": "readonly index only, no vector database or real asset read"
+    },
+    {
+      "id": "VAI-007",
+      "name": "three_option_output_template",
+      "md": "VIDEO_AGENT_THREE_OPTION_OUTPUT_TEMPLATE_001_三候选开场分镜方案输出模板_v1.0.md",
+      "json": "VIDEO_AGENT_THREE_OPTION_OUTPUT_TEMPLATE_001_三候选开场分镜方案输出模板_v1.0.json",
+      "result": "passed",
+      "note": "text draft template only, no media generation"
+    },
+    {
+      "id": "VAI-008",
+      "name": "clarification_template",
+      "md": "VIDEO_AGENT_CLARIFICATION_TEMPLATE_001_澄清问题模板_v1.0.md",
+      "json": "VIDEO_AGENT_CLARIFICATION_TEMPLATE_001_澄清问题模板_v1.0.json",
+      "result": "passed",
+      "note": "clarification only, high risk items route to human gate"
+    }
+  ],
+  "boundary_check": {
+    "modify_formal_video_scripts": false,
+    "call_real_model_api": false,
+    "call_money_printer_turbo": false,
+    "call_happy_horse": false,
+    "call_qwen_tts": false,
+    "call_postbot": false,
+    "read_real_assets": false,
+    "generate_image_audio_subtitle_cover_video": false,
+    "render_transcode_edit_compose": false,
+    "upload_publish_external_send": false,
+    "trigger_n8n": false,
+    "real_wechat_send": false,
+    "start_or_restart_service": false,
+    "modify_19310_or_19302": false,
+    "write_formal_rule_database": false
+  },
+  "next_shadow_queue": [
+    {
+      "priority": "P1",
+      "item": "video_agent_conversation_state_blank_sample",
+      "boundary": "fields only, no model call"
+    },
+    {
+      "priority": "P1",
+      "item": "three_option_output_blank_sample",
+      "boundary": "text draft only, no media generation"
+    },
+    {
+      "priority": "P2",
+      "item": "clarification_to_conversation_state_mapping_rehearsal",
+      "boundary": "flow mapping only, no formal entry change"
+    }
+  ]
+}

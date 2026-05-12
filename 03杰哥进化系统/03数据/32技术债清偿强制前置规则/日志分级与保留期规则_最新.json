@@ -1,0 +1,47 @@
+﻿{
+    "rule":  "日志分级与保留期规则",
+    "updated_at":  "2026-05-06 08:33:36 +08:00",
+    "core_principle":  "日志清理先判断未来核查价值，再判断保留期和体量；不是按旧不旧一刀切。",
+    "levels":  [
+                   {
+                       "retention":  "1-3天",
+                       "level":  "DEBUG",
+                       "purpose":  "临时排查、变量细节、实验信息"
+                   },
+                   {
+                       "retention":  "7-30天",
+                       "level":  "INFO",
+                       "purpose":  "正常运行、心跳、探针ready、任务完成"
+                   },
+                   {
+                       "retention":  "30-90天",
+                       "level":  "WARN",
+                       "purpose":  "降级、重试、边界提醒、可恢复异常"
+                   },
+                   {
+                       "retention":  "长期证据",
+                       "level":  "ERROR",
+                       "purpose":  "阻断、失败、数据不一致、高风险动作拦截；必须带事件ID"
+                   }
+               ],
+    "retain_when":  [
+                        "future_audit_or_trace_value_exists",
+                        "problem_fault_exception_misjudgment_or_rollback_recorded",
+                        "acceptance_audit_safety_gate_or_manual_confirmation_recorded",
+                        "issue_not_fully_closed_even_if_service_recovered",
+                        "key_construction_evidence_before_after_validation_or_consistency_check"
+                    ],
+    "delete_when":  [
+                        "only_work流水账_polling_heartbeat_repeated_status_or_temp_drill_output",
+                        "problem_already_resolved_and_acceptance_passed",
+                        "closeout_report_or_ledger_already_records_key_conclusion",
+                        "no_unique_config_secret_root_cause_rollback_audit_or_future_trace_value"
+                    ],
+    "execution_requirements":  [
+                                   "read_content_or_structured_sample_before_delete",
+                                   "small_batches_should_be_reviewed_file_by_file",
+                                   "large_batches_must_build_protection_list_by_event_chain_level_keywords_and_sampling",
+                                   "do_not_compress_archive_confirmed_useless流水账_as_new_debt",
+                                   "logs_with_future_trace_value_should_be_promoted_to_evidence_chain_or_long_term_ledger"
+                               ]
+}

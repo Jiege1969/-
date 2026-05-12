@@ -1,0 +1,47 @@
+{
+  "task_id": "task-01-light-contract-20260505-001",
+  "schema_version": "standard_task.v1",
+  "source": {
+    "system": "00杰哥系统总管",
+    "channel": "parallel_worker_A",
+    "received_at": "2026-05-05 14:00:00 +08:00"
+  },
+  "intent": {
+    "category": "contract_adaptation",
+    "action": "plan_route_and_receipt",
+    "description": "读取标准任务单，规划模型/中台能力路由，保持dry_run并输出receipt。"
+  },
+  "input": {
+    "payload_type": "markdown_request",
+    "payload_ref": "local_request_context",
+    "summary": "01智能系统轻量任务契约适配，不触发外部服务。"
+  },
+  "routing_hint": {
+    "preferred_capability": "task_parse",
+    "fallback_capability": "workflow_orchestration",
+    "model_family_label": "local_shadow_llm_router",
+    "middleware_labels": [
+      "local_contract_parser",
+      "shadow_knowledge_lookup",
+      "n8n_dry_run_shadow"
+    ]
+  },
+  "dry_run": true,
+  "safety": {
+    "risk_level": "high_if_real_action",
+    "real_action_allowed": false,
+    "external_service_allowed": false,
+    "formal_database_write_allowed": false,
+    "broker_api_allowed": false,
+    "auto_trade_allowed": false,
+    "required_blocks": [
+      "n8n_trigger",
+      "enterprise_wechat_send",
+      "formal_database_write",
+      "broker_api_call",
+      "auto_trade",
+      "real_model_api_call"
+    ]
+  },
+  "receipt_required": true
+}

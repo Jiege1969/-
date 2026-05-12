@@ -1,0 +1,15 @@
+{
+  "name": "五样本后台到前台字段映射验收样例验收",
+  "generated_at": "2026-05-08 09:31:02",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本后台到前台字段映射验收样例_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "sample_count": 5,
+    "pass_count": 5,
+    "needs_revision_count": 0,
+    "warning_count": 0
+  },
+  "next_step": "若本样例通过，可转向财报/资金证据补齐或统一刷新验收；仍不得写正式企业微信入口。"
+}

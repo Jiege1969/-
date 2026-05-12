@@ -1,0 +1,177 @@
+{
+  "package_id": "01智能系统任务契约适配包",
+  "version": "2026-05-05.A",
+  "scope": "01杰哥智能系统",
+  "principle": "学习OpenClaw/Hermes的任务编排和回执闭环逻辑，不引入原件、不调用外部服务。",
+  "runtime": {
+    "dry_run_default": true,
+    "real_actions_enabled": false,
+    "network_enabled_for_this_package": false,
+    "model_api_enabled": false,
+    "middleware_call_enabled": false,
+    "formal_database_write_enabled": false,
+    "broker_api_enabled": false,
+    "auto_trade_enabled": false,
+    "n8n": {
+      "mode": "dry_run",
+      "trigger_allowed": false,
+      "workflow_execution_allowed": false,
+      "webhook_call_allowed": false
+    }
+  },
+  "standard_task_contract": {
+    "input_format": "JSON object",
+    "required_fields": [
+      "task_id",
+      "schema_version",
+      "source",
+      "intent",
+      "input",
+      "routing_hint",
+      "dry_run",
+      "safety",
+      "receipt_required"
+    ],
+    "read_steps": [
+      "读取任务单JSON为本地对象。",
+      "校验必填字段、schema_version、dry_run和safety.real_action_allowed。",
+      "将intent.category和routing_hint能力标签映射到候选模型/中台能力。",
+      "只生成计划、影子台账记录和receipt，不执行真实动作。"
+    ],
+    "reject_when": [
+      "dry_run不是true。",
+      "safety.real_action_allowed不是false。",
+      "任务要求触发n8n、企业微信、正式库、券商接口、自动交易或真实模型接口。",
+      "任务缺少receipt_required或receipt_required不是true。"
+    ]
+  },
+  "routing": {
+    "decision_inputs": [
+      "intent.category",
+      "intent.action",
+      "routing_hint.preferred_capability",
+      "safety.risk_level",
+      "input.payload_type"
+    ],
+    "model_route": {
+      "name": "shadow_model_router",
+      "invocation": "disabled",
+      "output_mode": "planned_receipt_only",
+      "allowed_decisions": [
+        "select_model_family_label",
+        "select_prompt_profile_label",
+        "select_fallback_label"
+      ],
+      "blocked_decisions": [
+        "call_real_model_api",
+        "send_prompt_to_external_provider",
+        "stream_model_output"
+      ]
+    },
+    "middleware_routes": [
+      {
+        "capability": "task_parse",
+        "route_label": "local_contract_parser",
+        "execution": "local_read_only"
+      },
+      {
+        "capability": "knowledge_lookup",
+        "route_label": "shadow_knowledge_lookup",
+        "execution": "planned_only"
+      },
+      {
+        "capability": "workflow_orchestration",
+        "route_label": "n8n_dry_run_shadow",
+        "execution": "dry_run_no_trigger"
+      },
+      {
+        "capability": "message_delivery",
+        "route_label": "unified_message_shadow",
+        "execution": "receipt_only_no_send"
+      }
+    ],
+    "fallback": {
+      "when_no_route": "BLOCKED_NO_SAFE_ROUTE",
+      "when_route_requires_real_action": "BLOCKED_REAL_ACTION_REQUIRED",
+      "when_missing_safety_gate": "BLOCKED_SAFETY_GATE_MISSING"
+    }
+  },
+  "shadow_ledger": {
+    "sqlite": {
+      "mode": "shadow_only",
+      "write_formal_db": false,
+      "connect_formal_db": false,
+      "planned_table": "task_shadow_ledger",
+      "planned_fields": [
+        "task_id",
+        "route_label",
+        "dry_run",
+        "status",
+        "blocked_reason",
+        "receipt_id",
+        "created_at"
+      ]
+    }
+  },
+  "shadow_mapping": {
+    "redis": {
+      "mode": "shadow_only",
+      "connect_real_redis": false,
+      "write_real_redis": false,
+      "planned_key_pattern": "shadow:task:{task_id}",
+      "planned_value_fields": [
+        "route_label",
+        "capability",
+        "dry_run",
+        "receipt_id",
+        "ttl_seconds"
+      ]
+    }
+  },
+  "receipt_contract": {
+    "output_format": "JSON object",
+    "required_fields": [
+      "receipt_id",
+      "task_id",
+      "dry_run",
+      "status",
+      "selected_route",
+      "shadow_writes",
+      "external_calls",
+      "blocked_actions",
+      "evidence",
+      "created_at"
+    ],
+    "status_values": [
+      "DRY_RUN_PLANNED",
+      "BLOCKED_BY_SAFETY",
+      "BLOCKED_NO_SAFE_ROUTE",
+      "VALIDATION_FAILED"
+    ],
+    "external_calls_must_be_empty": true
+  },
+  "safety_boundary": {
+    "allowed_actions": [
+      "读取本地JSON任务单",
+      "本地解析和字段校验",
+      "生成影子SQLite台账计划",
+      "生成影子Redis映射计划",
+      "生成n8n干跑计划",
+      "生成receipt样例和验收证据"
+    ],
+    "prohibited_actions": [
+      "触发n8n工作流",
+      "调用企业微信真实发送接口",
+      "连接或写入正式库",
+      "连接或写入正式向量库",
+      "调用真实模型接口",
+      "调用券商接口",
+      "自动交易",
+      "下单",
+      "发送真实外部网络请求"
+    ]
+  },
+  "acceptance": {
+    "expected_result": "PASS"
+  }
+}

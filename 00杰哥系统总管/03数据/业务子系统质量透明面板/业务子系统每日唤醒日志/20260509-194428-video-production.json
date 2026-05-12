@@ -1,0 +1,119 @@
+﻿{
+    "status":  "completed",
+    "system_slug":  "video-production",
+    "system_name":  "视频制作系统",
+    "audit_only":  false,
+    "global_lock_acquired":  true,
+    "system_lock_acquired":  true,
+    "system_root":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统",
+    "system_script_dir":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本",
+    "planned_scripts":  [
+                            "生成视频制作系统状态摘要.py",
+                            "生成视频制作计划.py",
+                            "生成视频素材候选.py",
+                            "生成视频分镜素材匹配.py",
+                            "生成视频主题化预演.py"
+                        ],
+    "scorer":  "生成视频制作系统日报质量评分.py",
+    "actions":  [
+                    {
+                        "script":  "生成视频制作系统状态摘要.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\生成视频制作系统状态摘要.py",
+                        "started_at":  "2026-05-09 19:44:28",
+                        "ended_at":  "2026-05-09 19:44:28",
+                        "exit_code":  0,
+                        "success":  true,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194428-video-production-55Sf5oiQ6KeG6aKR5Yi25L2c57O757uf54q25oCB5pGY6KaBLnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194428-video-production-55Sf5oiQ6KeG6aKR5Yi25L2c57O757uf54q25oCB5pGY6KaBLnB5.err.log"
+                    },
+                    {
+                        "script":  "生成视频制作计划.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\生成视频制作计划.py",
+                        "started_at":  "2026-05-09 19:44:28",
+                        "ended_at":  "2026-05-09 19:44:28",
+                        "exit_code":  0,
+                        "success":  true,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194428-video-production-55Sf5oiQ6KeG6aKR5Yi25L2c6K6h5YiSLnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194428-video-production-55Sf5oiQ6KeG6aKR5Yi25L2c6K6h5YiSLnB5.err.log"
+                    },
+                    {
+                        "script":  "生成视频素材候选.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\生成视频素材候选.py",
+                        "started_at":  "2026-05-09 19:44:28",
+                        "ended_at":  "2026-05-09 19:44:28",
+                        "exit_code":  0,
+                        "success":  true,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194428-video-production-55Sf5oiQ6KeG6aKR57Sg5p2Q5YCZ6YCJLnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194428-video-production-55Sf5oiQ6KeG6aKR57Sg5p2Q5YCZ6YCJLnB5.err.log"
+                    },
+                    {
+                        "script":  "生成视频分镜素材匹配.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\生成视频分镜素材匹配.py",
+                        "started_at":  "2026-05-09 19:44:28",
+                        "ended_at":  "2026-05-09 19:44:28",
+                        "exit_code":  0,
+                        "success":  true,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194428-video-production-55Sf5oiQ6KeG6aKR5YiG6ZWc57Sg5p2Q5Yy56YWNLnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194428-video-production-55Sf5oiQ6KeG6aKR5YiG6ZWc57Sg5p2Q5Yy56YWNLnB5.err.log"
+                    },
+                    {
+                        "script":  "生成视频主题化预演.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\生成视频主题化预演.py",
+                        "started_at":  "2026-05-09 19:44:28",
+                        "ended_at":  "2026-05-09 19:44:28",
+                        "exit_code":  0,
+                        "success":  true,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194428-video-production-55Sf5oiQ6KeG6aKR5Li76aKY5YyW6aKE5ryULnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194428-video-production-55Sf5oiQ6KeG6aKR5Li76aKY5YyW6aKE5ryULnB5.err.log"
+                    },
+                    {
+                        "script":  "生成视频制作系统日报质量评分.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本\\生成视频制作系统日报质量评分.py",
+                        "started_at":  "2026-05-09 19:44:28",
+                        "ended_at":  "2026-05-09 19:44:29",
+                        "exit_code":  0,
+                        "success":  true,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194428-video-production-55Sf5oiQ6KeG6aKR5Yi25L2c57O757uf5pel5oql6LSo6YeP6K+E5YiGLnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194428-video-production-55Sf5oiQ6KeG6aKR5Yi25L2c57O757uf5pel5oql6LSo6YeP6K+E5YiGLnB5.err.log"
+                    }
+                ],
+    "safety":  {
+                   "real_wecom_send":  false,
+                   "n8n_trigger":  false,
+                   "broker_api":  false,
+                   "auto_trade":  false,
+                   "formal_output":  false,
+                   "real_conversion":  false,
+                   "real_render":  false
+               },
+    "environment_locks":  {
+                              "STOCK_REAL_SEND":  "0",
+                              "STOCK_ENABLE_N8N_TRIGGER":  "0",
+                              "STOCK_ENABLE_BROKER_API":  "0",
+                              "STOCK_ENABLE_AUTO_TRADE":  "0",
+                              "WECOM_REAL_SEND":  "0",
+                              "WEWORK_REAL_SEND":  "0",
+                              "ENABLE_N8N_TRIGGER":  "0",
+                              "ENABLE_FORMAL_OUTPUT":  "0",
+                              "ENABLE_REAL_CONVERSION":  "0",
+                              "ENABLE_REAL_RENDER":  "0"
+                          },
+    "started_by":  {
+                       "user":  "Administrator",
+                       "computer":  "杰哥",
+                       "pid":  30708
+                   },
+    "time":  "2026-05-09 19:44:29"
+}

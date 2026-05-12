@@ -1,0 +1,153 @@
+{
+  "名称": "股票展示口径一致性验收",
+  "生成时间": "2026-05-09 14:00:31",
+  "通过": true,
+  "错误": [],
+  "检查文件数": 10,
+  "检查结果": [
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\185专家市场总览\\股票专家市场总览_最新.md",
+      "exists": true,
+      "forbidden_hits": [],
+      "recommendation_hits": [],
+      "risk_hits": [
+        "风险复核",
+        "回避"
+      ],
+      "has_conflict": false,
+      "replacement_hits": [
+        "研究价值评分",
+        "当前操作建议"
+      ],
+      "expert_replacement_ready": true
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\185专家市场总览\\股票专家市场总览_最新.json",
+      "exists": true,
+      "forbidden_hits": [],
+      "recommendation_hits": [],
+      "risk_hits": [
+        "风险复核",
+        "回避"
+      ],
+      "has_conflict": false,
+      "replacement_hits": [
+        "研究价值评分",
+        "当前操作建议"
+      ],
+      "expert_replacement_ready": true
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\86图形报告\\股票图形报告_最新.json",
+      "exists": true,
+      "forbidden_hits": [],
+      "recommendation_hits": [],
+      "risk_hits": [],
+      "has_conflict": false,
+      "replacement_hits": [],
+      "expert_replacement_ready": true
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\86图形报告\\股票图形报告_最新.svg",
+      "exists": true,
+      "forbidden_hits": [],
+      "recommendation_hits": [],
+      "risk_hits": [
+        "风险复核",
+        "回避"
+      ],
+      "has_conflict": false,
+      "replacement_hits": [],
+      "expert_replacement_ready": true
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\86图形报告\\sz002466_最新_png参数.json",
+      "exists": true,
+      "forbidden_hits": [],
+      "recommendation_hits": [],
+      "risk_hits": [
+        "风险复核",
+        "回避"
+      ],
+      "has_conflict": false,
+      "replacement_hits": [
+        "研究价值评分"
+      ],
+      "expert_replacement_ready": true
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\86图形报告\\sz002466_最新.svg",
+      "exists": true,
+      "forbidden_hits": [],
+      "recommendation_hits": [],
+      "risk_hits": [
+        "风险复核",
+        "回避"
+      ],
+      "has_conflict": false,
+      "replacement_hits": [],
+      "expert_replacement_ready": true
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\135分层日报\\单股标准报告v2_天齐锂业_sz002466_最新.md",
+      "exists": true,
+      "forbidden_hits": [],
+      "recommendation_hits": [],
+      "risk_hits": [
+        "风险复核",
+        "继续回避",
+        "回避"
+      ],
+      "has_conflict": false,
+      "replacement_hits": [],
+      "expert_replacement_ready": true
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\135分层日报\\单股标准报告v2_最新.md",
+      "exists": true,
+      "forbidden_hits": [],
+      "recommendation_hits": [],
+      "risk_hits": [
+        "风险复核",
+        "继续回避",
+        "回避"
+      ],
+      "has_conflict": false,
+      "replacement_hits": [],
+      "expert_replacement_ready": true
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\24企业微信短回复\\企业微信单股短回复_最新.md",
+      "exists": true,
+      "forbidden_hits": [],
+      "recommendation_hits": [],
+      "risk_hits": [
+        "回避"
+      ],
+      "has_conflict": false,
+      "replacement_hits": [],
+      "expert_replacement_ready": true
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\24企业微信短回复\\企业微信单股短回复_最新.json",
+      "exists": true,
+      "forbidden_hits": [],
+      "recommendation_hits": [],
+      "risk_hits": [
+        "回避"
+      ],
+      "has_conflict": false,
+      "replacement_hits": [],
+      "expert_replacement_ready": true
+    }
+  ],
+  "安全边界": {
+    "不接券商": true,
+    "不交易": true,
+    "不生成买卖指令": true,
+    "不修改核心评分引擎": true,
+    "不接n8n": true,
+    "不改企业微信公共配置": true,
+    "不真实发送企业微信": true
+  }
+}

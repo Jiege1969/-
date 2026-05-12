@@ -1,0 +1,129 @@
+{
+  "name": "新增样本股票浙商中拓与正丹股份验收补齐",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 12:56:54",
+  "asset_identity": "W1新增样本验收矩阵",
+  "status": "shadow_sample_acceptance",
+  "purpose": "把浙商中拓、正丹股份作为新增股票样本纳入对象识别、行业标签、证据缺口和前台表达验收。",
+  "not_real_market_report": true,
+  "not_external_send": true,
+  "not_formal_entry": true,
+  "not_trade_advice": true,
+  "samples": [
+    {
+      "stock_name": "浙商中拓",
+      "stock_code": "000906",
+      "sample_status": "shadow_sample_added",
+      "object_identification": {
+        "passed": true,
+        "canonical_name": "浙商中拓",
+        "aliases": [
+          "浙商中拓集团",
+          "中拓"
+        ],
+        "first_line_required": "浙商中拓（000906）："
+      },
+      "industry_tags": [
+        "供应链服务",
+        "大宗商品",
+        "浙江国资"
+      ],
+      "evidence_gaps": [
+        {
+          "priority": "P0",
+          "field": "financial_report",
+          "description": "最新财报核心指标与盈利质量待结构化"
+        },
+        {
+          "priority": "P0",
+          "field": "operating_cash_flow",
+          "description": "经营现金流与贸易业务周转质量待复核"
+        },
+        {
+          "priority": "P1",
+          "field": "commodity_cycle",
+          "description": "大宗商品景气对收入和毛利的影响待补"
+        },
+        {
+          "priority": "P1",
+          "field": "capital_flow",
+          "description": "主力资金和机构持仓变化待补"
+        }
+      ],
+      "frontend_expression_check": {
+        "conclusion_cap": "可纳入观察",
+        "confidence_cap": "low",
+        "must_include_missing": true,
+        "must_not_include_trade_action": true
+      }
+    },
+    {
+      "stock_name": "正丹股份",
+      "stock_code": "300641",
+      "sample_status": "shadow_sample_added",
+      "object_identification": {
+        "passed": true,
+        "canonical_name": "正丹股份",
+        "aliases": [
+          "正丹",
+          "江苏正丹"
+        ],
+        "first_line_required": "正丹股份（300641）："
+      },
+      "industry_tags": [
+        "化工",
+        "TMA",
+        "精细化工"
+      ],
+      "evidence_gaps": [
+        {
+          "priority": "P0",
+          "field": "product_price_series",
+          "description": "核心产品价格连续观测待补"
+        },
+        {
+          "priority": "P0",
+          "field": "financial_report",
+          "description": "盈利弹性和持续性待结构化复核"
+        },
+        {
+          "priority": "P1",
+          "field": "capacity_supply_demand",
+          "description": "供需格局、产能变化和价格传导待补"
+        },
+        {
+          "priority": "P1",
+          "field": "capital_flow",
+          "description": "资金承接和机构变化待补"
+        }
+      ],
+      "frontend_expression_check": {
+        "conclusion_cap": "可纳入观察",
+        "confidence_cap": "medium",
+        "must_include_missing": true,
+        "must_not_include_trade_action": true
+      }
+    }
+  ],
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  },
+  "summary": {
+    "sample_count": 2,
+    "all_object_identification_passed": true,
+    "all_have_industry_tags": true,
+    "all_have_p0_missing": true,
+    "all_frontend_expression_constrained": true
+  }
+}

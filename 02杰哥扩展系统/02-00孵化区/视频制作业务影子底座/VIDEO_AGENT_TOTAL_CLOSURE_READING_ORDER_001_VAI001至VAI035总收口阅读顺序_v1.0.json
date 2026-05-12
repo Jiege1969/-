@@ -1,0 +1,124 @@
+{
+  "asset_id": "VIDEO_AGENT_TOTAL_CLOSURE_READING_ORDER_001",
+  "name": "VAI001至VAI035总收口阅读顺序",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 12:45:00 +08:00",
+  "business_line": "video_production_shadow_base",
+  "stage": "W1_R0",
+  "asset_identity": "video_creation_agent_shadow_reading_order_card",
+  "formal_video_system": false,
+  "purpose": "define the read-first order before continuing from VAI-001 to VAI-035 and prevent release-state inheritance",
+  "reading_order": [
+    {
+      "order": 1,
+      "file": "VIDEO_AGENT_VAI_001_035_阶段总收口验收_20260508.md/json",
+      "purpose": "confirm latest phase closure, boundary and next queue",
+      "allowed_after_reading": "choose W1/R0 shadow task",
+      "not_allowed_to_infer": "formal launch approval"
+    },
+    {
+      "order": 2,
+      "file": "VIDEO_AGENT_STAGE_DIRECTORY_NAVIGATION_CARD_001_VAI001至VAI032阶段目录导航卡_v1.0.md/json",
+      "purpose": "locate VAI asset layers",
+      "allowed_after_reading": "readonly asset positioning",
+      "not_allowed_to_infer": "move, archive or delete old assets"
+    },
+    {
+      "order": 3,
+      "file": "VIDEO_AGENT_CONTINUOUS_CONSTRUCTION_RULE_001_不等待确认施工口径_v1.0.md/json",
+      "purpose": "confirm automatic continuation for low-risk shadow tasks",
+      "allowed_after_reading": "continue non-redline shadow work",
+      "not_allowed_to_infer": "override redline rules"
+    },
+    {
+      "order": 4,
+      "file": "VIDEO_AGENT_MANUAL_TRIAL_MINIMUM_LOOP_ACCEPTANCE_001_手工试运行最小闭环验收表_v1.0.md/json",
+      "purpose": "confirm minimum manual shadow trial loop",
+      "allowed_after_reading": "prepare manual trial readiness check",
+      "not_allowed_to_infer": "production release"
+    },
+    {
+      "order": 5,
+      "file": "VIDEO_AGENT_REDLINE_BLOCK_REGISTER_001_红线阻断登记台账_v1.0.md/json",
+      "purpose": "check redline blocking records",
+      "allowed_after_reading": "register new redline block",
+      "not_allowed_to_infer": "execute blocked actions"
+    },
+    {
+      "order": 6,
+      "file": "VIDEO_AGENT_RENDER_RELEASE_GAP_CARD_001_真实渲染放行缺口卡_v1.0.md/json",
+      "purpose": "separate generation intent from real render release",
+      "allowed_after_reading": "record render gap",
+      "not_allowed_to_infer": "call renderer or TTS"
+    },
+    {
+      "order": 7,
+      "file": "VIDEO_AGENT_PUBLISH_GATE_GAP_CARD_001_发布前门禁缺口卡_v1.0.md/json",
+      "purpose": "separate publish intent from publish gate",
+      "allowed_after_reading": "record publish gate gap",
+      "not_allowed_to_infer": "login, upload or publish"
+    },
+    {
+      "order": 8,
+      "file": "VIDEO_AGENT_WECOM_REPLY_DRAFT_TEMPLATE_001_企业微信回执草案模板_v1.0.md/json",
+      "purpose": "separate reply draft from real WeCom send",
+      "allowed_after_reading": "draft local reply",
+      "not_allowed_to_infer": "real WeCom send"
+    }
+  ],
+  "release_state_consistency": {
+    "idea_confirmed": {
+      "allowed": "text draft or clarification",
+      "blocked": ["real_render", "publish", "external_send"]
+    },
+    "script_confirmed": {
+      "allowed": "storyboard draft or partial revision acceptance",
+      "blocked": ["video_generation", "voice_generation", "subtitle_generation", "cover_generation"]
+    },
+    "storyboard_confirmed": {
+      "allowed": "asset authorization and platform spec field check",
+      "blocked": ["read_real_assets", "edit", "transcode"]
+    },
+    "generation_release_pending": {
+      "allowed": "render gap check",
+      "blocked": ["call_money_printer_turbo", "call_happy_horse", "call_qwen_tts"]
+    },
+    "publish_release_pending": {
+      "allowed": "publish gate gap check",
+      "blocked": ["postbot", "platform_login", "upload", "publish"]
+    },
+    "wecom_reply_draft_ready": {
+      "allowed": "local draft only",
+      "blocked": ["wecom_real_send", "n8n_webhook"]
+    }
+  },
+  "redline_only_register_not_execute": [
+    "real_render",
+    "real_edit",
+    "voice_generation",
+    "subtitle_generation",
+    "cover_generation",
+    "platform_login",
+    "upload",
+    "publish",
+    "postbot",
+    "wecom_real_send",
+    "n8n",
+    "service_restart",
+    "read_real_assets",
+    "read_credentials",
+    "formal_rule_upgrade"
+  ],
+  "boundary": {
+    "read_real_assets": false,
+    "call_model": false,
+    "call_tts": false,
+    "call_renderer": false,
+    "call_publisher": false,
+    "wechat_real_send": false,
+    "trigger_n8n": false,
+    "service_started_or_restarted": false,
+    "formal_config_modified": false,
+    "old_assets_moved_deleted_or_renamed": false
+  }
+}

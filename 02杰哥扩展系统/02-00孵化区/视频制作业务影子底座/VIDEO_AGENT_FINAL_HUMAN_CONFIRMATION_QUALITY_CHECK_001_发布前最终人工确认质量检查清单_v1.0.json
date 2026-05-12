@@ -1,0 +1,30 @@
+{
+  "asset_id": "VIDEO_AGENT_FINAL_HUMAN_CONFIRMATION_QUALITY_CHECK_001",
+  "version": "v1.0",
+  "asset_type": "quality_checklist",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "final_human_confirmation_placeholder_receipt",
+  "status": "draft",
+  "purpose": "Ensure final human confirmation is based on gate overview, blocker summary, four-piece materials, multi-platform checks, and redline scan, not a vague approval.",
+  "check_items": [
+    {"id": "FHC-001", "item": "task_id", "standard": "Video task id is clearly filled."},
+    {"id": "FHC-002", "item": "gate_overview_reference", "standard": "Pre-publish final gate overview record is referenced."},
+    {"id": "FHC-003", "item": "blocker_summary_reference", "standard": "Pre-publish blocker summary record is referenced."},
+    {"id": "FHC-004", "item": "four_piece_state", "standard": "Preview, AI label, material authorization, and publishing release all have receipts."},
+    {"id": "FHC-005", "item": "multi_platform_state", "standard": "Each platform has a separate check result."},
+    {"id": "FHC-006", "item": "redline_state", "standard": "No open redline exists, or it has been returned to manager decision."},
+    {"id": "FHC-007", "item": "decision_wording", "standard": "Decision is only submit_to_manager_decision, pending_supplement, or rejected."},
+    {"id": "FHC-008", "item": "real_system_triggered", "standard": "Must be false."}
+  ],
+  "failure_handling": [
+    {"missing": "gate_overview", "action": "return_to_gate_overview_completion"},
+    {"missing": "blocker_summary", "action": "return_to_pre_publish_blocker_summary"},
+    {"missing": "platform_independent_check", "action": "return_to_multi_platform_review"},
+    {"missing": "redline_open", "action": "route_to_redline_block_register"}
+  ],
+  "boundaries": {
+    "trigger_publish": false,
+    "submit_to_manager": false,
+    "call_wecom_api": false
+  }
+}

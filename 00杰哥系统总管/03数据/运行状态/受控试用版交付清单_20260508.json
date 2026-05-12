@@ -1,0 +1,196 @@
+{
+  "asset_id": "CONTROLLED_TRIAL_DELIVERY_CHECKLIST_20260508",
+  "asset_name": "受控试用版交付清单",
+  "created_at": "2026-05-08",
+  "asset_identity": "总管侧 W1/R0 受控试用交付资产",
+  "status": "shadow_ready_controlled_trial",
+  "is_formal_launch_permission": false,
+  "scope": [
+    "税收政策顾问",
+    "股票L3研究",
+    "视频影子工厂",
+    "企业微信接入层",
+    "总管协调层"
+  ],
+  "controlled_trial_capabilities": [
+    {
+      "module": "税收政策顾问",
+      "can_do": "对脱敏涉税问题生成政策依据链、适用条件字段、资料缺口、风险点和人工复核问题",
+      "output": "待复核分析草案、接入台账、复核问题清单",
+      "boundary": "不输出正式税务意见、退税金额、申报建议；不登录电子税务局；不接财税软件；不办理申报、退税、开票"
+    },
+    {
+      "module": "股票L3研究",
+      "can_do": "对指定股票生成证据化研究、评分解释、关键缺口、复核优先级",
+      "output": "L3评分结果、证据缺口报告、样本复盘",
+      "boundary": "不调用券商接口；不下单；不自动交易；不把政策背景直接变成买卖建议"
+    },
+    {
+      "module": "视频影子工厂",
+      "can_do": "对视频选题生成脚本、分镜、素材授权缺口、平台规范复核、人工复核工作包",
+      "output": "本地预演草案、复核清单、放行前缺口包",
+      "boundary": "不真实渲染；不上传；不发布；不登录平台账号；不复用旧任务放行状态"
+    },
+    {
+      "module": "企业微信接入层",
+      "can_do": "登记机器人入口、路由目标、安全禁令和本地预演口径",
+      "output": "路由登记、边界卡、冲突清单、总管裁定记录",
+      "boundary": "不真实发送；不触发n8n；不重启19310；不修改服务脚本；不成为第6个业务中枢"
+    },
+    {
+      "module": "总管协调层",
+      "can_do": "吸收并行业务线回传，更新面板、接续包和裁定记录",
+      "output": "当前施工面板、一键接续包、回传吸收记录",
+      "boundary": "只做协调和边界裁定，不替代业务系统生成正式结论"
+    }
+  ],
+  "still_forbidden": [
+    {
+      "item": "企业微信真实发送",
+      "status": "forbidden",
+      "gate": "W3暂停确认"
+    },
+    {
+      "item": "n8n真实执行",
+      "status": "forbidden",
+      "gate": "W3暂停确认"
+    },
+    {
+      "item": "修改或重启19310/19302服务",
+      "status": "forbidden",
+      "gate": "W2/W3暂停确认"
+    },
+    {
+      "item": "写正式业务库或正式规则库",
+      "status": "forbidden",
+      "gate": "W2/W3暂停确认"
+    },
+    {
+      "item": "税收正式办理链路",
+      "status": "forbidden",
+      "gate": "W3暂停确认"
+    },
+    {
+      "item": "股票交易、下单、调仓、券商接口",
+      "status": "forbidden",
+      "gate": "W3暂停确认"
+    },
+    {
+      "item": "视频真实渲染、上传、发布、平台登录",
+      "status": "forbidden",
+      "gate": "W3暂停确认"
+    },
+    {
+      "item": "删除、移动、归档旧系统目录",
+      "status": "forbidden",
+      "gate": "W2/W3暂停确认"
+    },
+    {
+      "item": "本职工作业务继续搭建",
+      "status": "paused",
+      "gate": "等待用户重新定方向"
+    }
+  ],
+  "minimum_trial_tasks": [
+    {
+      "module": "税收政策顾问",
+      "input": "1个脱敏真实问题",
+      "required_fields": [
+        "问题背景",
+        "税种",
+        "地区",
+        "期间",
+        "主体类型",
+        "资料缺口"
+      ],
+      "required_output": [
+        "依据层级",
+        "有效状态",
+        "适用条件",
+        "missing",
+        "confidence",
+        "人工复核问题"
+      ],
+      "acceptance": "人工能看出为什么这么答、哪里不确定、下一步要补什么"
+    },
+    {
+      "module": "股票L3研究",
+      "input": "1只明确股票名称和代码",
+      "required_fields": [
+        "分析目标",
+        "持仓或观察身份",
+        "已知限制"
+      ],
+      "required_output": [
+        "evidence",
+        "missing",
+        "confidence"
+      ],
+      "acceptance": "不能出现缺证据强结论，不能给交易指令"
+    },
+    {
+      "module": "视频影子工厂",
+      "input": "1个视频选题或已有脚本草案",
+      "required_fields": [
+        "平台",
+        "内容类型",
+        "素材来源",
+        "是否含AI生成",
+        "是否涉及真人或隐私"
+      ],
+      "required_output": [
+        "脚本分镜复核包",
+        "素材授权缺口",
+        "生成放行与发布放行分离检查"
+      ],
+      "acceptance": "能明确能否进入下一步人工修正，不能直接进入渲染或发布"
+    },
+    {
+      "module": "企业微信接入层",
+      "input": "并行业务线回传或机器人入口口径变化",
+      "required_fields": [
+        "机器人名称",
+        "业务系统",
+        "入口路径",
+        "安全禁令",
+        "是否涉及真实发送或服务变更"
+      ],
+      "required_output": [
+        "只读吸收记录",
+        "总管裁定记录"
+      ],
+      "acceptance": "接入层只回答从哪里来、到哪里去、能不能安全转发，不回答业务怎么做"
+    }
+  ],
+  "parallel_work_rules": [
+    "只在本业务线目录内写W1/R0影子、草案、样例、回传记录",
+    "不改总管面板、一键接续包、企业微信服务脚本、n8n、正式库",
+    "每轮回传必须说明新增/修改文件、风险等级、是否触及真实接入、是否有总管裁定事项",
+    "命中W2/W3、真实系统接入、外发、删除/移动、规则冲突时，停止并回传给总管",
+    "本职工作业务线当前暂停，其他对话框不得擅自恢复"
+  ],
+  "next_w1_r0_recommendations": [
+    "建立受控试用任务队列",
+    "建立受控试用回执模板",
+    "建立受控试用边界扫描清单"
+  ],
+  "boundary_flags": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_db": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "login_tax_system": false,
+    "connect_finance_software": false,
+    "video_render_upload_publish": false,
+    "modify_service_script": false,
+    "restart_19310_or_19302": false,
+    "delete_move_archive_old_directory": false
+  },
+  "self_check": {
+    "risk_level": "W1/R0",
+    "json_parse_required": true,
+    "panel_package_update_required": true,
+    "boundary_kept": true
+  }
+}

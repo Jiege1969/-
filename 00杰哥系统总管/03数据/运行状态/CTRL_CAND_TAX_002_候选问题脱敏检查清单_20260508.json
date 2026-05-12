@@ -1,0 +1,62 @@
+{
+  "record_id": "CTRL_CAND_TAX_002_DESENSITIZATION_CHECKLIST_20260508",
+  "generated_at": "2026-05-08 10:42:00 +08:00",
+  "candidate_id": "CTRL-CAND-TAX-002",
+  "asset_identity": "总管侧W1/R0税收政策顾问候选问题脱敏检查清单",
+  "risk_level": "W1/R0",
+  "status": "completed",
+  "preparation_status_after_check": "input_gap_checked + desensitization_checklist_ready",
+  "pass_conditions": [
+    "企业主体只保留企业类型、行业、纳税人身份、业务模式",
+    "客户或个人信息不得含姓名、身份证号、手机号、住址、银行卡",
+    "不得含电子税务局账号、密码、验证码、税控盘信息",
+    "财务资料只列资料类型和字段，不粘贴原始账套、凭证、流水明细",
+    "发票资料只列发票类型、金额口径、业务事项",
+    "合同资料只列合同类型、交易性质、主要条款摘要",
+    "地区和期间可保留，不确定时标待补",
+    "金额字段只保留区间、规模或测算字段名",
+    "政策依据必须来自政策名称、文号、官方链接或本地卡路径"
+  ],
+  "minimum_input_fields": [
+    "问题",
+    "业务场景",
+    "税种",
+    "地区",
+    "期间",
+    "主体",
+    "已有资料",
+    "希望输出"
+  ],
+  "redline_inputs": [
+    "电子税务局、财税软件、银行、平台账号密码",
+    "验证码、密钥、Token、税控盘信息",
+    "未脱敏客户姓名、身份证号、联系方式、住址",
+    "完整企业名称、统一社会信用代码、银行账号",
+    "发票号码、合同编号、凭证编号、流水明细原文",
+    "要求系统直接申报、退税、开票、外发或登录系统",
+    "要求输出可直接发客户、税局或作为正式意见的文本"
+  ],
+  "desensitization_status_enum": [
+    "可接入",
+    "输入待补",
+    "需重新脱敏",
+    "已阻断"
+  ],
+  "candidate_status_after_check": "candidate",
+  "next_w1_r0_if_no_input": "税收政策顾问第二批试用状态索引",
+  "boundary_flags": {
+    "received_real_tax_materials": false,
+    "generated_tax_draft": false,
+    "formal_tax_opinion": false,
+    "login_e_tax_system": false,
+    "read_finance_software": false,
+    "external_send": false,
+    "trigger_n8n": false,
+    "write_formal_db": false
+  },
+  "self_check": {
+    "boundary_kept": true,
+    "json_parse_required": true,
+    "four_statuses_defined": true
+  }
+}

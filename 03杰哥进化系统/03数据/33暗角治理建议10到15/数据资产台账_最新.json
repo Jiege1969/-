@@ -1,0 +1,65 @@
+{
+  "report": "数据资产台账",
+  "generated_at": "2026-05-06 07:21:00 +08:00",
+  "totals": {
+    "D:/杰哥智能化系统": {"files": 162084, "dirs": 2672, "size_gb": 325.76},
+    "F:/系统备份_before_current_snapshot": {"files": 2010, "dirs": 282, "size_gb": 63.89},
+    "F:/系统备份_after_current_snapshot_ledger": {"items": 8, "size_gb": 64.448}
+  },
+  "asset_classes": {
+    "non_regenerable_or_semi_non_regenerable": [
+      "D:/杰哥智能化系统/01杰哥智能系统/03数据/WSL2/docker-desktop/disk/docker_data.vhdx",
+      "D:/杰哥智能化系统/01杰哥智能系统/03数据/WSL2/Ubuntu-24.04/ext4.vhdx",
+      "D:/杰哥智能化系统/01杰哥智能系统/03数据/n8n",
+      "D:/杰哥智能化系统/01杰哥智能系统/03数据/知识库",
+      "D:/杰哥智能化系统/01杰哥智能系统/03数据/工作流草案",
+      "D:/杰哥智能化系统/01杰哥智能系统/03数据/工作流导入工件",
+      "D:/杰哥智能化系统/00杰哥系统总管/01配置",
+      "D:/杰哥智能化系统/00杰哥系统总管/02脚本",
+      "D:/杰哥智能化系统/00杰哥系统总管/03数据",
+      "D:/杰哥智能化系统/00杰哥系统总管/07文档",
+      "D:/杰哥智能化系统/02杰哥扩展系统/01股票研究系统",
+      "D:/杰哥智能化系统/03杰哥进化系统"
+    ],
+    "regenerable_high_restore_cost": [
+      "D:/杰哥智能化系统/01杰哥智能系统/03数据/ollama"
+    ],
+    "intermediate_cleanup_candidates": [
+      "D:/杰哥智能化系统/00杰哥系统总管/04日志",
+      "D:/杰哥智能化系统/01杰哥智能系统/04日志",
+      "D:/杰哥智能化系统/*/06临时",
+      "D:/杰哥智能化系统/01杰哥智能系统/03数据/本机工具运行时"
+    ]
+  },
+  "current_small_high_value_snapshot": {
+    "path": "F:/系统备份/当前高价值小资产快照_20260506_071440",
+    "groups": 13,
+    "files": 54452,
+    "size_gb": 0.56,
+    "n8n_sqlite_validation": {
+      "integrity_check": "ok",
+      "table_count": 53,
+      "workflow_entity": 34,
+      "execution_entity": 43,
+      "shared_workflow": 34
+    }
+  },
+  "open_gaps": [
+    {
+      "asset": "WSL2 vhdx",
+      "size_gb": 189.45,
+      "gap": "no complete F current copy; requires consistency backup window"
+    },
+    {
+      "asset": "Ollama blobs",
+      "size_gb": 133.99,
+      "gap": "deduped blob comparison shows F missing 25 blobs, about 81.892 GB; may be regenerable"
+    }
+  ],
+  "rules": [
+    "non_regenerable_data_requires_D_and_F_current_copies",
+    "small_high_value_assets_get_snapshot_without_waiting",
+    "large_runtime_assets_need_consistency_strategy_not_hot_copy",
+    "regenerable_large_assets_need_manifest_before_full_backup"
+  ]
+}

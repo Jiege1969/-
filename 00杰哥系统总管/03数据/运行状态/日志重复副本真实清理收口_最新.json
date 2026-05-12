@@ -1,0 +1,62 @@
+﻿{
+    "report":  "日志重复副本真实清理收口",
+    "generated_at":  "2026-05-06 08:00:06 +08:00",
+    "evidence_dir":  "第30轮原始重复副本证据目录已清债删除；删除manifest、sha256、原因和安全边界已固化在本_latest收口报告。",
+    "deleted_files":  5,
+    "deleted_bytes":  271094,
+    "deleted_mb":  0.259,
+    "manifest":  [
+                     {
+                         "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\旧容器引用关系检查\\old-container-reference-check-20260505_054440.json",
+                         "existed":  true,
+                         "deleted":  true,
+                         "bytes":  151146,
+                         "sha256":  "57EFA2A20943CEF8C238CC55E59B27ABA36A70EE23CB9FF231C85CC8ED36D918",
+                         "reason":  "SHA256证实与_latest或等价当前副本一致的旧时间戳重复日志"
+                     },
+                     {
+                         "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\旧容器引用关系检查\\old-container-reference-check-20260505_054440.md",
+                         "existed":  true,
+                         "deleted":  true,
+                         "bytes":  15376,
+                         "sha256":  "A0BFE5E3F05C78F886E85B23E102D393D97A91663D67A4331AEA0B905BC2EF5D",
+                         "reason":  "SHA256证实与_latest或等价当前副本一致的旧时间戳重复日志"
+                     },
+                     {
+                         "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\04日志\\知识库\\smart-system-knowledge-middleware-exception-loop-verify-20260505-115523.json",
+                         "existed":  true,
+                         "deleted":  true,
+                         "bytes":  67349,
+                         "sha256":  "E5159911B861263767184BAA12C5F3818EC9D47A9ED54EA6E30FC43C663BD033",
+                         "reason":  "SHA256证实与_latest或等价当前副本一致的旧时间戳重复日志"
+                     },
+                     {
+                         "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\语音股票指令\\stock-voice-command-tolerance-verify-20260430-100149.json",
+                         "existed":  true,
+                         "deleted":  true,
+                         "bytes":  22485,
+                         "sha256":  "D3D82CB7291BAA2A83A11B8D404B9C6434BEE26648841A9C7C9C0598C4A3594E",
+                         "reason":  "SHA256证实与_latest或等价当前副本一致的旧时间戳重复日志"
+                     },
+                     {
+                         "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\单股即时报告\\stock-focus-single-report-index-verify-20260430-100201.json",
+                         "existed":  true,
+                         "deleted":  true,
+                         "bytes":  14738,
+                         "sha256":  "9892101899A3EE0064FF3C53638247748C8F27089F0363D0E8BBF353BA6A5515",
+                         "reason":  "SHA256证实与_latest或等价当前副本一致的旧时间戳重复日志"
+                     }
+                 ],
+    "preserved_policy":  "保留最新、台账、数据库、证据包、回滚、凭据、快照、确认、放行、审计、交付、总包；只删除哈希证实重复的旧时间戳副本",
+    "safety":  {
+                   "stopped_services":  false,
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false,
+                   "deleted_evidence_chain":  false,
+                   "deleted_database":  false,
+                   "deleted_backup":  false
+               },
+    "第30轮原始证据清债说明":  "第30轮原始重复副本证据目录已清债删除；删除manifest、sha256、原因和安全边界已固化在本_latest收口报告。"
+}

@@ -1,0 +1,113 @@
+{
+  "report_name": "第二轮并行核实汇总",
+  "record_time": "2026-05-06 06:10:00 +08:00",
+  "mode": "read_only_parallel_verification",
+  "safety_boundary": {
+    "triggered_n8n": false,
+    "sent_wecom_message": false,
+    "called_broker_api": false,
+    "auto_trade": false,
+    "deleted_data": false,
+    "restarted_services": false
+  },
+  "overall_conclusion": [
+    "四系统主骨架已经成型，能支撑本地私有化AI中台运行",
+    "股票系统成熟度最高，保持analysis-only",
+    "公网反向隧道缺少持续守护，是当前最明确P0风险",
+    "Docker主线容器已收敛到3个，但旧卷旧镜像仍需归属审计",
+    "D盘短期空间充足，长期增长源集中在WSL2、Docker、Ollama",
+    "运行时偏新，依赖锁定和升级回滚治理需要补齐",
+    "目录编号冲突短期不搬目录，先补README和角色索引"
+  ],
+  "parallel_lines": {
+    "E_tunnel_guard": {
+      "status": "completed",
+      "finding": "19302本机健康，但当前未发现活跃SSH反向隧道进程；历史日志显示Connection reset后未自动拉起",
+      "severity": "P0",
+      "recommended_action": "新增非业务probe和受控repair守护，只守SSH隧道，不触发企业微信业务POST"
+    },
+    "F_docker_assets": {
+      "status": "completed",
+      "finding": "当前运行容器为jiege_v3_ollama/jiege_v3_redis/jiege_v3_n8n，均使用bind mount；旧卷旧镜像未清理",
+      "severity": "P1",
+      "recommended_action": "先备份、比对、确认归属，再分批清理旧卷和未用镜像"
+    },
+    "G_disk_growth": {
+      "status": "completed",
+      "finding": "D盘剩余约394.31GB，短期不紧张；主要增长源为WSL2、Docker、Ollama",
+      "severity": "P1",
+      "recommended_action": "建立每日资源增长监控和阈值告警"
+    },
+    "H_version_lock": {
+      "status": "completed",
+      "finding": "Python/Node/Docker Compose偏新，Python依赖和模型latest标签锁定不完整",
+      "severity": "P1",
+      "recommended_action": "建立版本锁定表、requirements冻结清单和四层升级窗口"
+    },
+    "I_directory_roles": {
+      "status": "completed",
+      "finding": "02扩展、03进化存在系统七目录与业务/能力模块同层编号冲突；00总管存在双06",
+      "severity": "P1",
+      "recommended_action": "短期补README、目录角色索引和适配层说明，不直接搬目录"
+    }
+  },
+  "gap_matrix": [
+    {
+      "id": "D2-P0-01",
+      "gap": "公网SSH反向隧道无持续守护",
+      "severity": "P0",
+      "status": "confirmed",
+      "recommended_action": "建非业务probe和受控repair"
+    },
+    {
+      "id": "D2-P1-01",
+      "gap": "Docker旧卷和旧镜像未完成归属清理",
+      "severity": "P1",
+      "status": "initial_inventory_done",
+      "recommended_action": "备份比对后分批清理"
+    },
+    {
+      "id": "D2-P1-02",
+      "gap": "D盘增长未形成每日趋势台账",
+      "severity": "P1",
+      "status": "thresholds_defined",
+      "recommended_action": "建资源增长监控日报"
+    },
+    {
+      "id": "D2-P1-03",
+      "gap": "依赖锁定和升级回滚治理不完整",
+      "severity": "P1",
+      "status": "confirmed",
+      "recommended_action": "建全系统版本锁定表"
+    },
+    {
+      "id": "D2-P1-04",
+      "gap": "目录编号与角色说明不足",
+      "severity": "P1",
+      "status": "confirmed",
+      "recommended_action": "补README和目录角色索引"
+    }
+  ],
+  "next_queue": {
+    "P0": [
+      "公网反向隧道守护设计与验收口径",
+      "只读probe脚本",
+      "受控repair脚本或参数",
+      "守护JSONL日志",
+      "隐藏后台计划任务"
+    ],
+    "P1": [
+      "Docker卷镜像清理预案",
+      "D盘资源增长监控日报",
+      "全系统版本锁定表",
+      "目录README和角色索引",
+      "智能体大脑适配层说明"
+    ],
+    "P2": [
+      "n8n干跑编排",
+      "非股票业务线按场景建设",
+      "进化系统规则沉淀"
+    ]
+  }
+}
+

@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <hta:application
+    applicationname="JiegeStartupStatus"
+    border="thin"
+    caption="yes"
+    maximizebutton="no"
+    minimizebutton="no"
+    showintaskbar="yes"
+    singleinstance="yes"
+    sysmenu="yes"
+    windowstate="normal" />
+  <title>Jiege Startup Status</title>
+  <style>
+    html, body {
+      margin: 0;
+      width: 460px;
+      height: 210px;
+      overflow: hidden;
+      font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+      background: #111827;
+      color: #f9fafb;
+    }
+    .wrap {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 24px;
+      background: linear-gradient(135deg, #111827, #1f2937 60%, #0f172a);
+    }
+    .row {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+    .ring {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      position: relative;
+      background: conic-gradient(#22c55e, #86efac, #22c55e);
+      animation: spin 1.2s linear infinite;
+      box-shadow: 0 0 26px rgba(34, 197, 94, .35);
+      flex: 0 0 auto;
+    }
+    .ring:after {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 50%;
+      background: #111827;
+    }
+    .mark {
+      position: absolute;
+      z-index: 2;
+      left: 23px;
+      top: 17px;
+      font-size: 30px;
+      font-weight: 700;
+      color: #86efac;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    p {
+      margin: 0;
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .foot {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 12px;
+    }
+    button {
+      border: 1px solid rgba(148, 163, 184, .35);
+      background: rgba(15, 23, 42, .8);
+      color: #e5e7eb;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .warn .ring { background: conic-gradient(#f59e0b, #fde68a, #f59e0b); }
+    .warn .mark { color: #fde68a; }
+    .bad .ring { background: conic-gradient(#ef4444, #fecaca, #ef4444); }
+    .bad .mark { color: #fecaca; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body onload="init()">
+<div id="wrap" class="wrap">
+  <div class="row">
+    <div class="ring"><div id="mark" class="mark">&#10003;</div></div>
+    <div>
+      <h1 id="title">&#x6770;&#x54E5;&#xFF0C;&#x60A8;&#x597D;&#xFF01;&#x667A;&#x80FD;&#x7CFB;&#x7EDF;&#x6B63;&#x5728;&#x51C6;&#x5907;&#x4E2D;&#x2026;</h1>
+      <p id="sub">&#x6B63;&#x5728;&#x7B49;&#x5F85;&#x540E;&#x53F0;&#x670D;&#x52A1;&#x548C;&#x5F00;&#x673A;&#x81EA;&#x68C0;&#x5C31;&#x7EEA;&#x3002;</p>
+    </div>
+  </div>
+  <div class="foot">
+    <span id="closeText">8 &#x79D2;&#x540E;&#x81EA;&#x52A8;&#x5173;&#x95ED;</span>
+    <button onclick="openReport()">&#x67E5;&#x770B;&#x62A5;&#x544A;</button>
+  </div>
+</div>
+<script type="text/javascript">
+var reportPath = "";
+var startedAt = new Date();
+var deadlineAt = new Date(startedAt.getTime() + 8 * 60 * 1000);
+var closeScheduled = false;
+
+function buildReportPath() {
+  try {
+    return "D:\\\u6770\u54e5\u667a\u80fd\u5316\u7cfb\u7edf\\00\u6770\u54e5\u7cfb\u7edf\u603b\u7ba1\\03\u6570\u636e\\\u5f00\u673a\u65bd\u5de5\u51c6\u5907\\startup_construction_preflight_latest.md";
+  } catch (e) {
+    return "";
+  }
+}
+
+function readReport() {
+  try {
+    var fso = new ActiveXObject("Scripting.FileSystemObject");
+    reportPath = buildReportPath();
+    if (!reportPath || !fso.FileExists(reportPath)) return { text: "", fresh: false };
+    var item = fso.GetFile(reportPath);
+    var file = fso.OpenTextFile(reportPath, 1, false, -1);
+    var text = file.ReadAll();
+    file.Close();
+    var modifiedAt = new Date(item.DateLastModified);
+    var fresh = modifiedAt.getTime() >= (startedAt.getTime() - 2 * 60 * 1000);
+    return { text: text, fresh: fresh };
+  } catch (e) {
+    return { text: "", fresh: false };
+  }
+}
+
+function contains(text, value) {
+  return text.indexOf(value) >= 0;
+}
+
+function openReport() {
+  try {
+    if (!reportPath) reportPath = buildReportPath();
+    new ActiveXObject("WScript.Shell").Run("notepad.exe \"" + reportPath + "\"", 1, false);
+  } catch (e) {}
+}
+
+function setText(id, value) {
+  document.getElementById(id).innerText = value;
+}
+
+function scheduleClose(ms) {
+  if (closeScheduled) return;
+  closeScheduled = true;
+  setTimeout(function(){ window.close(); }, ms);
+}
+
+function showPreparing() {
+  setText("title", "\u6770\u54e5\uff0c\u60a8\u597d\uff01\u667a\u80fd\u7cfb\u7edf\u6b63\u5728\u51c6\u5907\u4e2d\u2026");
+  setText("sub", "\u6b63\u5728\u7b49\u5f85\u540e\u53f0\u670d\u52a1\u548c\u5f00\u673a\u81ea\u68c0\u5c31\u7eea\u3002");
+  setText("mark", "...");
+  setText("closeText", "\u81ea\u68c0\u5b8c\u6210\u540e\u81ea\u52a8\u5173\u95ed");
+}
+
+function evaluateStatus() {
+  var result = readReport();
+  var text = result.text;
+  var ok = contains(text, "Ready for Codex construction: True") &&
+    contains(text, "V3 AI base healthcheck: True") &&
+    (contains(text, "Warnings\r\n\r\nnone") || contains(text, "Warnings\n\nnone"));
+  var failed = contains(text, "Ready for Codex construction: False") ||
+    contains(text, "V3 AI base healthcheck: False") ||
+    contains(text, "readiness chain failed");
+  var wrap = document.getElementById("wrap");
+
+  if (result.fresh && ok) {
+    setText("title", "\u6770\u54e5\uff0c\u60a8\u597d\uff01\u667a\u80fd\u7cfb\u7edf\u5df2\u7ecf\u4e3a\u60a8\u51c6\u5907\u597d\u4e86\uff01");
+    setText("sub", "\u5f00\u673a\u81ea\u68c0\u901a\u8fc7\uff0c\u540e\u53f0\u670d\u52a1\u5df2\u5c31\u7eea\u3002");
+    setText("mark", "\u2713");
+    setText("closeText", "8 \u79d2\u540e\u81ea\u52a8\u5173\u95ed");
+    scheduleClose(8000);
+  } else if ((result.fresh && failed) || new Date().getTime() >= deadlineAt.getTime()) {
+    wrap.className = "wrap warn";
+    setText("title", "\u6770\u54e5\uff0c\u7cfb\u7edf\u6709\u9879\u76ee\u9700\u8981\u67e5\u770b\u3002");
+    setText("sub", "\u81ea\u68c0\u5df2\u5b8c\u6210\u6216\u7b49\u5f85\u8d85\u65f6\uff0c\u5b58\u5728\u9700\u67e5\u770b\u9879\u3002");
+    setText("mark", "!");
+    setText("closeText", "30 \u79d2\u540e\u81ea\u52a8\u5173\u95ed");
+    scheduleClose(30000);
+  } else {
+    showPreparing();
+    setTimeout(evaluateStatus, 3000);
+  }
+}
+
+function init() {
+  window.resizeTo(480, 250);
+  window.moveTo(screen.availWidth - 510, screen.availHeight - 300);
+  showPreparing();
+  setTimeout(evaluateStatus, 1000);
+}
+
+try { window.onload = init; } catch (e) {}
+</script>
+</body>
+</html>

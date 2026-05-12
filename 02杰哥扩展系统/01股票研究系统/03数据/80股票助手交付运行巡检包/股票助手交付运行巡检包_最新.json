@@ -1,0 +1,68 @@
+{
+  "生成时间": "2026-04-30 10:02:41",
+  "规则文件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\01配置\\股票助手交付运行巡检规则.json",
+  "交付使用包": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\79股票助手交付使用包\\股票助手交付使用包_最新.json",
+  "端点探测": {
+    "本地股票助手": {
+      "地址": "http://127.0.0.1:19300/",
+      "可访问": true,
+      "状态码": 200,
+      "片段": "<!doctype html>\n<html lang=\"zh-CN\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>杰哥股票研究助手</title>\n  <style>\n    body { font-family: \"Microsoft YaHei\", Arial, sans-serif; margin: 0; background: #f6f7f9; color: #17202a; }\n    header { background: #15324b; color: white; padding: 22px 28px; "
+    },
+    "隔离n8n": {
+      "地址": "http://127.0.0.1:28679/",
+      "可访问": true,
+      "状态码": 200,
+      "片段": "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n\t\t<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\" />\n\t\t<link rel=\"icon\" href=\"/favicon.ico\" />\n\t\t<meta name=\"n8n:config:rest-endpoint\" content=\"cmVzdA==\""
+    }
+  },
+  "容器状态": {
+    "jiege_v3_n8n": {
+      "命令": [
+        "docker",
+        "ps",
+        "-a",
+        "--filter",
+        "name=jiege_v3_n8n",
+        "--format",
+        "{{.Names}}|{{.Status}}|{{.Ports}}"
+      ],
+      "返回码": 0,
+      "标准输出": "jiege_v3_n8n|Up 27 hours|127.0.0.1:28679->5678/tcp",
+      "标准错误": ""
+    },
+    "jiege_n8n保护对象": {
+      "命令": [
+        "docker",
+        "ps",
+        "-a",
+        "--filter",
+        "name=jiege_n8n",
+        "--format",
+        "{{.Names}}|{{.Status}}|{{.Ports}}"
+      ],
+      "返回码": 0,
+      "标准输出": "jiege_n8n|Exited (137) 27 hours ago|",
+      "标准错误": ""
+    }
+  },
+  "安全闸口": {
+    "企业微信真实发送": false,
+    "OpenClaw真实桥接": false,
+    "交易接口": false,
+    "旧系统写入": false
+  },
+  "是否适合继续交付施工": true,
+  "实际动作": {
+    "生成巡检包": true,
+    "重启服务": false,
+    "启用Webhook": false,
+    "触发Webhook": false,
+    "调用OpenClaw": false,
+    "发送企业微信": false,
+    "写旧系统": false,
+    "写正式库": false,
+    "调用券商接口": false,
+    "自动交易": false
+  }
+}

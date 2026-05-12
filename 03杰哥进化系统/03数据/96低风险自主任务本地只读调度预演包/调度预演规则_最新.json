@@ -1,0 +1,68 @@
+{
+  "name": "低风险自主任务本地只读调度预演规则",
+  "generated_at": "2026-05-08 19:46:57",
+  "based_on": {
+    "package": "93低风险自主任务队列准入与暂停闸口包",
+    "source_queue_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\93低风险自主任务队列准入与暂停闸口包\\自主任务队列候选_最新.json",
+    "source_rules_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\93低风险自主任务队列准入与暂停闸口包\\低风险任务准入规则_最新.json",
+    "source_pause_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\93低风险自主任务队列准入与暂停闸口包\\暂停闸口_最新.json"
+  },
+  "scope": "local_readonly_scheduler_preview_only",
+  "purpose": "把低风险候选队列转成本地只读调度预演，只预演排序、依赖和证据要求，不真实执行任务。",
+  "cron_like_preview": {
+    "enabled": false,
+    "scheduled": false,
+    "preview_only": true,
+    "example_expression": "0 */6 * * *",
+    "meaning": "仅用于展示未来可采用的类 cron 节奏，不注册计划任务，不启动后台进程。"
+  },
+  "manual_trigger_preview": {
+    "enabled": false,
+    "scheduled": false,
+    "preview_only": true,
+    "entry_hint": "人工触发也只允许运行本地预演脚本和验收脚本。",
+    "requires_human_confirmation_before_real_use": true
+  },
+  "pause_gate_check": {
+    "enabled": true,
+    "source": "第93包暂停闸口",
+    "check_before_sorting": true,
+    "pause_if_any_red_line_or_failure": true,
+    "when_paused": "只记录暂停原因和待人工复核事项，不执行任务。"
+  },
+  "evidence_required": {
+    "enabled": true,
+    "required_for_each_task": [
+      "source_candidate_id",
+      "preview_order",
+      "depends_on",
+      "safety_flags_all_false",
+      "dry_run_only_true",
+      "external_call_false",
+      "task_executed_false"
+    ]
+  },
+  "hard_red_line_confirmation": {
+    "auto_execute": false,
+    "external_call": false,
+    "real_send": false,
+    "reload_service": false,
+    "write_formal_rule": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false
+  },
+  "defaults": {
+    "scheduled": false,
+    "auto_execute": false,
+    "dry_run_only": true,
+    "external_call": false,
+    "real_send": false,
+    "reload_service": false,
+    "write_formal_rule": false
+  }
+}

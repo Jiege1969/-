@@ -1,0 +1,34 @@
+{
+  "asset_id": "VIDEO_AGENT_REVIEW_QUEUE_BLANK_REGISTER_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_register_not_real_queue_table",
+  "purpose": "Provide a blank register format for human review items in the shadow layer.",
+  "fields": [
+    "queue_item_id",
+    "source_gap_id",
+    "source_asset",
+    "review_queue_type",
+    "risk_level",
+    "assigned_reviewer",
+    "created_time",
+    "review_due_note",
+    "current_status",
+    "human_decision"
+  ],
+  "review_queue_type_enum": [
+    "input_clarification",
+    "platform_rule",
+    "asset_authorization",
+    "human_review",
+    "release_gate",
+    "redline_block"
+  ],
+  "real_system_triggered": {
+    "real_queue_created": false,
+    "wecom_notification_sent": false,
+    "formal_database_write": false
+  }
+}

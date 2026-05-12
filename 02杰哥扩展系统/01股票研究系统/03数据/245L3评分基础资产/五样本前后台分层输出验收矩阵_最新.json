@@ -1,0 +1,213 @@
+{
+  "name": "五样本前后台分层输出验收矩阵",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:32:51",
+  "asset_identity": "W1前后台分层输出验收矩阵",
+  "status": "shadow_acceptance",
+  "source_assets": {
+    "front_short_answer": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\前台结论型短答统一验收记录_最新.json",
+    "front_short_answer_exists": true,
+    "gate_matrix": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\L3报告生成前置闸口矩阵_最新.json",
+    "gate_matrix_exists": true,
+    "gate_count": 8
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "matrix": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "front_layer": {
+        "line_count": 5,
+        "object_line_clear": true,
+        "conclusion_line_present": true,
+        "main_reason_line_present": true,
+        "key_gap_line_present": true,
+        "confidence_line_present": true,
+        "no_forbidden_terms": true,
+        "allowed_for_shadow_front": true
+      },
+      "backend_layer": {
+        "must_keep_evidence": true,
+        "must_keep_missing": true,
+        "must_keep_confidence": true,
+        "must_keep_next_review": true,
+        "must_keep_source_assets": true,
+        "must_keep_gate_decisions": true
+      },
+      "layering_rule": {
+        "front_should_not_dump_indicators": true,
+        "front_should_not_hide_key_gap": true,
+        "backend_should_not_be_lost": true,
+        "real_wecom_send_allowed": false
+      }
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "front_layer": {
+        "line_count": 5,
+        "object_line_clear": true,
+        "conclusion_line_present": true,
+        "main_reason_line_present": true,
+        "key_gap_line_present": true,
+        "confidence_line_present": true,
+        "no_forbidden_terms": true,
+        "allowed_for_shadow_front": true
+      },
+      "backend_layer": {
+        "must_keep_evidence": true,
+        "must_keep_missing": true,
+        "must_keep_confidence": true,
+        "must_keep_next_review": true,
+        "must_keep_source_assets": true,
+        "must_keep_gate_decisions": true
+      },
+      "layering_rule": {
+        "front_should_not_dump_indicators": true,
+        "front_should_not_hide_key_gap": true,
+        "backend_should_not_be_lost": true,
+        "real_wecom_send_allowed": false
+      }
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "front_layer": {
+        "line_count": 5,
+        "object_line_clear": true,
+        "conclusion_line_present": true,
+        "main_reason_line_present": true,
+        "key_gap_line_present": true,
+        "confidence_line_present": true,
+        "no_forbidden_terms": true,
+        "allowed_for_shadow_front": true
+      },
+      "backend_layer": {
+        "must_keep_evidence": true,
+        "must_keep_missing": true,
+        "must_keep_confidence": true,
+        "must_keep_next_review": true,
+        "must_keep_source_assets": true,
+        "must_keep_gate_decisions": true
+      },
+      "layering_rule": {
+        "front_should_not_dump_indicators": true,
+        "front_should_not_hide_key_gap": true,
+        "backend_should_not_be_lost": true,
+        "real_wecom_send_allowed": false
+      }
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "front_layer": {
+        "line_count": 5,
+        "object_line_clear": true,
+        "conclusion_line_present": true,
+        "main_reason_line_present": true,
+        "key_gap_line_present": true,
+        "confidence_line_present": true,
+        "no_forbidden_terms": true,
+        "allowed_for_shadow_front": true
+      },
+      "backend_layer": {
+        "must_keep_evidence": true,
+        "must_keep_missing": true,
+        "must_keep_confidence": true,
+        "must_keep_next_review": true,
+        "must_keep_source_assets": true,
+        "must_keep_gate_decisions": true
+      },
+      "layering_rule": {
+        "front_should_not_dump_indicators": true,
+        "front_should_not_hide_key_gap": true,
+        "backend_should_not_be_lost": true,
+        "real_wecom_send_allowed": false
+      }
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "front_layer": {
+        "line_count": 5,
+        "object_line_clear": true,
+        "conclusion_line_present": true,
+        "main_reason_line_present": true,
+        "key_gap_line_present": true,
+        "confidence_line_present": true,
+        "no_forbidden_terms": true,
+        "allowed_for_shadow_front": true
+      },
+      "backend_layer": {
+        "must_keep_evidence": true,
+        "must_keep_missing": true,
+        "must_keep_confidence": true,
+        "must_keep_next_review": true,
+        "must_keep_source_assets": true,
+        "must_keep_gate_decisions": true
+      },
+      "layering_rule": {
+        "front_should_not_dump_indicators": true,
+        "front_should_not_hide_key_gap": true,
+        "backend_should_not_be_lost": true,
+        "real_wecom_send_allowed": false
+      }
+    }
+  ],
+  "global_rules": {
+    "front": [
+      "第一行必须明确股票名称和代码。",
+      "第二行先给结论。",
+      "原因只写最关键的1-2条，不堆后台指标。",
+      "关键缺口必须显式写出。",
+      "置信度和复核重点必须保留。"
+    ],
+    "backend": [
+      "保留evidence数组。",
+      "保留missing数组。",
+      "保留confidence理由。",
+      "保留next_review_date或下一复核重点。",
+      "保留闸口阻断原因。"
+    ],
+    "forbidden": [
+      "前台堆技术指标",
+      "后台证据链丢失",
+      "缺口不写",
+      "把影子短答说成真实企业微信已发送",
+      "出现买卖、下单、仓位或交易执行话术"
+    ]
+  },
+  "summary": {
+    "sample_count": 5,
+    "front_passed_count": 5,
+    "backend_required_count": 5,
+    "real_wecom_send_allowed": false,
+    "formal_entry_allowed": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

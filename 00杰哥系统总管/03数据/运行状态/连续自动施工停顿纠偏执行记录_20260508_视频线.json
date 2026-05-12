@@ -1,0 +1,21 @@
+{
+  "asset_id": "CONTINUOUS_CONSTRUCTION_STOP_CORRECTION_EXECUTION_VIDEO_20260508",
+  "created_at": "2026-05-08 12:39:00 +08:00",
+  "risk_level": "W1/R0",
+  "trigger": "用户指出不应阶段性停下等待确认",
+  "execution_rule": "收到质疑停顿类消息后，不只做解释，先读当前施工面板、一键接续施工包和本线索引，再自动推进一个低风险影子/回传类任务。",
+  "completed_task": "VIDEO_SCRIPT_QUALITY_PARALLEL_HANDOFF_CARD_001",
+  "new_outputs": [
+    "VIDEO_SCRIPT_QUALITY_PARALLEL_HANDOFF_CARD_001_成语故事质量参照给并行视频线回传短卡_v1.0.md/json",
+    "VIDEO_SCRIPT_QUALITY_PARALLEL_HANDOFF_CARD_001_R0_SELF_CHECK_20260508.md/json",
+    "VIDEO_SCRIPT_QUALITY_PARALLEL_HANDOFF_CARD_001_对齐回传记录_20260508.md/json"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_video_system": false
+  }
+}

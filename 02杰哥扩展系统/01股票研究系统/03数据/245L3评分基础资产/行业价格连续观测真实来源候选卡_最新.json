@@ -1,0 +1,139 @@
+{
+  "name": "行业价格连续观测真实来源候选卡",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 15:21:04",
+  "asset_identity": "W2_shadow_candidate_card",
+  "status": "candidate_only_not_connected",
+  "purpose": "登记行业价格连续观测的候选来源、字段和前台门禁，避免单点价格线索被误当作确定趋势。",
+  "observation_domains": [
+    {
+      "domain": "germanium_materials",
+      "display_name": "锗及小金属",
+      "priority": "P0",
+      "candidate_sources": [
+        "行业协会/公开报价快照",
+        "主流资讯终端人工摘录",
+        "上市公司公告中的价格描述"
+      ],
+      "candidate_fields": [
+        "产品名称",
+        "报价日期",
+        "报价区间",
+        "单位",
+        "同比/环比变化",
+        "来源链接或人工记录"
+      ],
+      "frontend_gate": "缺少连续两期价格观测时，前台不得声称价格趋势已确认。"
+    },
+    {
+      "domain": "chemical_materials",
+      "display_name": "化工材料",
+      "priority": "P0",
+      "candidate_sources": [
+        "公开商品价格快照",
+        "行业网站人工摘录",
+        "公司公告/调研纪要中的价格线索"
+      ],
+      "candidate_fields": [
+        "产品名称",
+        "地区/规格",
+        "报价日期",
+        "价格",
+        "涨跌幅",
+        "来源可信度"
+      ],
+      "frontend_gate": "缺少规格口径时，只能提示价格线索，不能做强趋势判断。"
+    },
+    {
+      "domain": "new_energy_materials",
+      "display_name": "新能源材料",
+      "priority": "P0",
+      "candidate_sources": [
+        "公开锂电材料价格快照",
+        "行业周报人工摘录",
+        "交易所/公司公告线索"
+      ],
+      "candidate_fields": [
+        "材料品类",
+        "规格",
+        "报价日期",
+        "均价",
+        "周/月变化",
+        "库存或供需备注"
+      ],
+      "frontend_gate": "缺少价格与库存/供需备注时，不得把价格波动直接解释为业绩变化。"
+    },
+    {
+      "domain": "logistics_bulk",
+      "display_name": "物流与大宗相关",
+      "priority": "P1",
+      "candidate_sources": [
+        "公开运价指数",
+        "大宗商品价格快照",
+        "公司经营公告"
+      ],
+      "candidate_fields": [
+        "指数名称",
+        "观察日期",
+        "指数值",
+        "变化方向",
+        "关联业务说明"
+      ],
+      "frontend_gate": "缺少业务关联说明时，不得将指数变化直接映射到单股结论。"
+    }
+  ],
+  "sample_mapping": [
+    {
+      "stock_name": "云南锗业",
+      "stock_code": "002428",
+      "domains": [
+        "germanium_materials"
+      ]
+    },
+    {
+      "stock_name": "正丹股份",
+      "stock_code": "300641",
+      "domains": [
+        "chemical_materials"
+      ]
+    },
+    {
+      "stock_name": "天齐锂业",
+      "stock_code": "002466",
+      "domains": [
+        "new_energy_materials"
+      ]
+    },
+    {
+      "stock_name": "浙商中拓",
+      "stock_code": "000906",
+      "domains": [
+        "logistics_bulk",
+        "chemical_materials"
+      ]
+    }
+  ],
+  "acceptance_rules": [
+    "必须保留来源、日期、规格、单位和连续观察期字段。",
+    "候选来源未人工核验前，不得写入正式数据源配置。",
+    "缺少连续两期观察时，前台不得使用趋势已确认类表达。",
+    "行业价格只能作为证据链字段，不能直接触发推荐或交易判断。"
+  ],
+  "summary": {
+    "domain_count": 4,
+    "sample_stock_count": 4,
+    "candidate_only": true
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  }
+}

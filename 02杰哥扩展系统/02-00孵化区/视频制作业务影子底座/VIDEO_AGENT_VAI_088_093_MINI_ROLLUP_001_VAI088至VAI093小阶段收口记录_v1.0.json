@@ -1,0 +1,37 @@
+{
+  "asset_id": "VIDEO_AGENT_VAI_088_093_MINI_ROLLUP_001",
+  "version": "v1.0",
+  "asset_type": "mini_stage_rollup",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "video_production_shadow_base_vai088_to_vai093",
+  "status": "draft",
+  "rollup_date": "2026-05-08",
+  "conclusion": "VAI088-VAI093 formed an explainable pre-publish shadow interaction loop for blocker reasons, next review actions, field consistency, and line indexing.",
+  "not_implied": [
+    "real_publish_capability",
+    "wecom_real_send_enabled",
+    "platform_connected",
+    "publishing_tool_connected"
+  ],
+  "assets": [
+    {"id": "VAI088", "asset": "VAI082_087_mini_rollup", "purpose": "roll up pre-publish summary and close-condition layer", "real_system_triggered": false},
+    {"id": "VAI089", "asset": "pre_publish_gate_final_overview", "purpose": "show key pre-publish gates", "real_system_triggered": false},
+    {"id": "VAI090", "asset": "wecom_view_publish_blocker_reply_sample", "purpose": "explain why publishing is blocked", "real_system_triggered": false},
+    {"id": "VAI091", "asset": "pre_publish_gate_overview_field_check", "purpose": "avoid gate field and state conflicts", "real_system_triggered": false},
+    {"id": "VAI092", "asset": "wecom_view_next_review_actions_reply_sample", "purpose": "show next review queues and required outputs", "real_system_triggered": false},
+    {"id": "VAI093", "asset": "line_asset_index_draft_v5", "purpose": "track VAI001-VAI090 inside video line", "real_system_triggered": false}
+  ],
+  "capabilities": [
+    "explain_publish_blocker_reasons",
+    "explain_next_review_actions",
+    "check_gate_overview_field_consistency",
+    "maintain_line_asset_index_drafts"
+  ],
+  "boundaries": {
+    "wecom_real_send": false,
+    "connect_platform": false,
+    "call_publish_tool": false,
+    "connect_n8n": false,
+    "modify_manager_or_formal_repository": false
+  }
+}

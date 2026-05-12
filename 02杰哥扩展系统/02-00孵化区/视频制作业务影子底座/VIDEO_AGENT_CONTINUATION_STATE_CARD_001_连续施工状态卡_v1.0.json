@@ -1,0 +1,41 @@
+{
+  "asset_id": "VIDEO_AGENT_CONTINUATION_STATE_CARD_001",
+  "name": "连续施工状态卡",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:52:00 +08:00",
+  "risk_level": "低风险",
+  "purpose": "固定视频制作线完成一轮后自动选择下一轮 W1/R0 影子施工的状态字段",
+  "state_fields": [
+    "当前施工轮次",
+    "已读总管面板",
+    "已读一键接续包",
+    "当前候选任务",
+    "候选来源",
+    "写入范围",
+    "风险等级",
+    "红线命中",
+    "本轮自检结果",
+    "本轮回传记录",
+    "下一轮自动候选"
+  ],
+  "auto_continue_rules": [
+    "每轮开始先只读总管面板和一键接续包",
+    "W1/R0 候选直接施工",
+    "缺少输入时转为缺口卡、字段清单、模板或自检报告",
+    "红线只登记阻断，不实施",
+    "完成一轮后自动选择下一轮候选"
+  ],
+  "boundary": {
+    "modify_manager_files": false,
+    "modify_public_components": false,
+    "modify_service_ports": false,
+    "call_real_model": false,
+    "read_real_assets": false,
+    "render": false,
+    "upload": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false
+  },
+  "real_system_triggered": false
+}

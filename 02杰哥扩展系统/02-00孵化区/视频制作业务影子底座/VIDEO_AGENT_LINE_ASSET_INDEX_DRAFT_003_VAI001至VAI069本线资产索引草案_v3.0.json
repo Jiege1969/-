@@ -1,0 +1,33 @@
+{
+  "asset_id": "VIDEO_AGENT_LINE_ASSET_INDEX_DRAFT_003",
+  "version": "v3.0",
+  "asset_type": "shadow_index_draft",
+  "construction_level": "W1/R0",
+  "scope": "video_production_shadow_base",
+  "status": "draft_not_written_to_manager_or_incubation_total_index",
+  "updated_date": "2026-05-08",
+  "positioning": "Internal shadow index draft for tracking VAI001-VAI069 asset groups; does not replace formal indexes or trigger manager integration.",
+  "groups": [
+    {"range": "VAI001-012", "topic": "video_factory_control_base", "representative_outputs": ["task_sheet", "compliance", "drafts", "adapters", "test_checklists"], "state": "shadow_base_formed"},
+    {"range": "VAI013-029", "topic": "r012_alignment_and_review_chain", "representative_outputs": ["pre_publish_review", "material_authorization", "script_originality", "review_packet"], "state": "review_chain_formed"},
+    {"range": "VAI030-041", "topic": "continuous_construction_governance", "representative_outputs": ["redline_block", "state_enum", "gate_consistency", "stage_rollup"], "state": "governance_layer_formed"},
+    {"range": "VAI042-053", "topic": "no_stop_and_index_drafts", "representative_outputs": ["no_stop_rule", "missing_input_to_gap", "maturity_snapshot"], "state": "continuous_construction_layer_formed"},
+    {"range": "VAI054-060", "topic": "status_query_and_close_receipts", "representative_outputs": ["state_transition", "review_question_template", "close_receipt"], "state": "interaction_template_layer_formed"},
+    {"range": "VAI061-063", "topic": "stage_rollup_and_field_consistency", "representative_outputs": ["stage_rollup", "gap_to_queue", "receipt_field_check"], "state": "rollup_check_layer_formed"},
+    {"range": "VAI064-066", "topic": "reply_quality_and_review_board", "representative_outputs": ["status_query_quality", "naming_conflict_check", "review_board_draft"], "state": "quality_check_layer_formed"},
+    {"range": "VAI067-069", "topic": "publish_refusal_and_intake_ledger", "representative_outputs": ["naming_scan_sample", "intake_ledger", "publish_refusal_reply"], "state": "block_reply_layer_formed"}
+  ],
+  "global_boundaries": {
+    "connect_real_model": false,
+    "call_real_video_audio_render_publish_tools": false,
+    "read_real_material_account_cookie_or_api_key": false,
+    "wecom_real_send": false,
+    "connect_n8n": false,
+    "write_formal_repository_or_modify_manager_public_component": false
+  },
+  "next_low_risk_candidates": [
+    "publish_refusal_reply_quality_check",
+    "review_queue_state_transition_sample",
+    "next_index_draft_after_vai070"
+  ]
+}

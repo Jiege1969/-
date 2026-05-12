@@ -1,0 +1,31 @@
+{
+  "closure_id": "VIDEO_AGENT_VAI_001_078_PHASE_CLOSURE_ACCEPTANCE_20260508",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "stage": "W1/R0",
+  "asset_identity": "shadow_phase_closure_not_formal_video_system",
+  "overall_conclusion": "VAI-001 to VAI-078 backfill review escalation, AI label confirmation, preview review, pre-publish four-piece checks, material authorization proof receipts, and a VAI070-to-VAI075 mini rollup into the shadow governance chain.",
+  "backfilled_assets": [
+    {"vai": "VAI-073", "asset": "VIDEO_AGENT_REVIEW_QUEUE_ESCALATION_RULE_001", "boundary": "not_real_task_routing"},
+    {"vai": "VAI-074", "asset": "VIDEO_AGENT_AI_LABEL_CONFIRMATION_RECEIPT_TEMPLATE_001", "boundary": "not_real_confirmation_receipt"},
+    {"vai": "VAI-075", "asset": "VIDEO_AGENT_PREVIEW_REVIEW_RECEIPT_TEMPLATE_001", "boundary": "does_not_mean_preview_was_generated"},
+    {"vai": "VAI-076", "asset": "VIDEO_AGENT_PRE_PUBLISH_FOUR_PIECE_CHECK_001", "boundary": "not_real_publish_permission"},
+    {"vai": "VAI-077", "asset": "VIDEO_AGENT_MATERIAL_AUTHORIZATION_PROOF_RECEIPT_TEMPLATE_001", "boundary": "does_not_read_real_material_proof"},
+    {"vai": "VAI-078", "asset": "VIDEO_AGENT_VAI_070_075_MINI_ROLLUP_001", "boundary": "not_formal_publish_chain"}
+  ],
+  "redline_status": {
+    "real_wecom_connected": false,
+    "n8n_connected": false,
+    "service_started_or_restarted": false,
+    "manager_public_formal_or_other_line_modified": false,
+    "real_material_account_credential_or_publish_platform_read": false,
+    "media_generation_render_transcode_upload_publish": false
+  },
+  "next_auto_queue": [
+    "publishing_release_confirmation_receipt_template",
+    "multi_platform_pre_publish_difference_check_draft",
+    "four_piece_gap_to_review_queue_sample",
+    "refresh_video_shadow_index_self_check_and_alignment_return"
+  ],
+  "latest_pointer": true
+}

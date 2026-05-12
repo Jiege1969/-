@@ -1,0 +1,49 @@
+{
+  "asset_id": "TAX_LOCAL_CALIBER_AND_DESENSITIZED_REVIEW_COMPLETION_CHECK_20260508",
+  "generated_at": "2026-05-08 06:48:08 +08:00",
+  "asset_identity": "税收业务影子底座 W1/R0 队列项完成核对记录",
+  "status": "只读核对记录，不是正式税务系统开工申请，不是地方口径结论，不是申报建议",
+  "source_queue_item": "补地方口径待补模板、脱敏复核样例结构",
+  "checked_files": {
+    "local_caliber_template": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收地方口径待补模板_v1.0.md",
+    "desensitized_review_structure": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收脱敏复核样例结构_v1.0.md",
+    "five_questions": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收业务_开工五问校准_v1.0.md",
+    "requirement_draft": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收业务需求草案_v1.0.md"
+  },
+  "conclusion": "税收业务队列第一项已补齐，不需要重复生成模板。",
+  "covered_fields": {
+    "local_caliber_template": [
+      "上位依据",
+      "地方来源",
+      "有效状态",
+      "与上位依据关系",
+      "适用地区",
+      "关键口径",
+      "风险提示",
+      "人工复核结论"
+    ],
+    "desensitized_review_structure": [
+      "脱敏样例编号",
+      "税收主题",
+      "政策依据",
+      "纳税人类型",
+      "业务描述",
+      "已提供字段",
+      "缺失字段",
+      "影子初步判断",
+      "人工修正",
+      "影子复盘说明"
+    ]
+  },
+  "next_recommendation": "下一步可转向本职工作业务队列项：补制度/流程资料模板、台账字段草案。",
+  "boundary": {
+    "login_etax": false,
+    "connect_finance_tax_software": false,
+    "read_real_enterprise_data": false,
+    "generate_final_tax_amount": false,
+    "generate_final_tax_opinion": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_tax_db": false
+  }
+}

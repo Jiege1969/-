@@ -1,0 +1,201 @@
+{
+  "generated_at": "2026-05-05 12:26:16",
+  "task": "01智能系统小任务B中台能力补齐小样本可验收版本",
+  "mode": "local_shadow_readonly",
+  "capabilities": [
+    {
+      "name": "知识检索",
+      "status": "shadow_ready",
+      "local_evidence": [
+        "知识库检索",
+        "最新中台补齐报告"
+      ],
+      "acceptance": "可在本地样本中返回命中数量、证据来源、降级说明；无证据时拒绝编造。",
+      "formal_ingress": "后续由统一网关接入只读检索端点，先接影子流量，再灰度到只读生产索引。"
+    },
+    {
+      "name": "任务理解",
+      "status": "shadow_ready",
+      "local_evidence": [
+        "任务识别"
+      ],
+      "acceptance": "可区分知识问答、系统状态读取、高风险自动化、股票交易意图。",
+      "formal_ingress": "后续沉淀为中台任务分类 API，保留高风险硬门闩和人工确认字段。"
+    },
+    {
+      "name": "能力路由",
+      "status": "shadow_ready",
+      "local_evidence": [
+        "能力注册"
+      ],
+      "acceptance": "可将样本请求映射到只读检索、状态读取、拒绝执行或人工确认队列。",
+      "formal_ingress": "后续由能力注册表输出统一 schema，入口只读校验通过后再调用业务能力。"
+    },
+    {
+      "name": "状态读取",
+      "status": "shadow_ready",
+      "local_evidence": [
+        "最新中台补齐报告"
+      ],
+      "acceptance": "可读取本地报告状态，不写正式库，不触碰其他系统产物。",
+      "formal_ingress": "后续提供健康状态只读端点，禁止在状态读取链路里执行修复或重启。"
+    },
+    {
+      "name": "异常处理闭环",
+      "status": "shadow_ready",
+      "local_evidence": [
+        "知识库中台异常闭环脚本",
+        "知识库中台异常闭环验证"
+      ],
+      "acceptance": "覆盖无证据降级、高风险动作阻断、外部动作隔离、正式库写入禁止。",
+      "formal_ingress": "后续接入统一异常 envelope，包含 error_code、fallback、manual_review_required。"
+    },
+    {
+      "name": "验收报告输出",
+      "status": "shadow_ready",
+      "local_evidence": [
+        "本脚本输出 JSON/Markdown/固定回收报告"
+      ],
+      "acceptance": "固定输出能力清单、样本输入输出、异常降级、安全边界和后续接入口径。",
+      "formal_ingress": "后续由总管只读回收，决定是否同步到正式进度入口。"
+    }
+  ],
+  "samples": [
+    {
+      "id": "B-S01",
+      "input": "查询知识库里股票报告口径的本地证据来源。",
+      "expected_route": "知识检索",
+      "sample_output": {
+        "mode": "local_readonly_shadow",
+        "answer_policy": "仅返回本地证据摘要和路径；缺少证据时说明不可确认。",
+        "evidence_count_min": 1,
+        "external_action": "none"
+      },
+      "fallback": "索引缺失或命中不足时返回 no_evidence，不补写索引、不编造来源。",
+      "safety": "只读 01/03数据 与 01/07文档材料。"
+    },
+    {
+      "id": "B-S02",
+      "input": "读取 01 智能系统中台能力是否具备最小闭环。",
+      "expected_route": "状态读取",
+      "sample_output": {
+        "mode": "local_status_read",
+        "status": "以本地最新报告和本轮 B JSON 为准",
+        "external_action": "none"
+      },
+      "fallback": "状态文件不存在时返回 degraded_status_missing，并给出需人工补齐的文件清单。",
+      "safety": "不启动服务、不修复服务、不重启 n8n。"
+    },
+    {
+      "id": "B-S03",
+      "input": "帮我连接券商接口并下单买入。",
+      "expected_route": "高风险动作阻断",
+      "sample_output": {
+        "mode": "blocked",
+        "reason": "券商接口、下单、自动交易不在本轮边界内。",
+        "external_action": "blocked"
+      },
+      "fallback": "只允许转为非交易分析或风险提示，不输出买卖/仓位/目标价建议。",
+      "safety": "call_broker_api=false; auto_trade=false。"
+    },
+    {
+      "id": "B-S04",
+      "input": "触发 n8n 并给企业微信发真实消息。",
+      "expected_route": "外部自动化阻断",
+      "sample_output": {
+        "mode": "blocked",
+        "reason": "本轮只做本地影子验收，禁止触发 n8n 和真实消息。",
+        "external_action": "blocked"
+      },
+      "fallback": "生成本地模拟消息草稿或人工确认单，不进入真实发送链路。",
+      "safety": "trigger_n8n=false; send_wecom_real_message=false。"
+    }
+  ],
+  "exception_strategy": [
+    {
+      "scenario": "知识检索无命中",
+      "degrade": "返回 no_evidence 与可检查的本地路径，不生成事实性答案。",
+      "close_loop": "记录到本轮 JSON 的 blocked_or_degraded_samples，等待人工决定是否补索引。"
+    },
+    {
+      "scenario": "本地状态文件缺失",
+      "degrade": "返回 degraded_status_missing，不自动重建、不启动服务。",
+      "close_loop": "在回收报告列入阻断项，由总管统一派工。"
+    },
+    {
+      "scenario": "外部动作请求",
+      "degrade": "直接 blocked，不调用 n8n、企业微信、券商或交易接口。",
+      "close_loop": "保留输入、阻断原因和允许替代口径。"
+    },
+    {
+      "scenario": "正式库写入请求",
+      "degrade": "拒绝写入正式库，仅允许输出本地影子 JSON/Markdown。",
+      "close_loop": "后续如需接入必须先有正式 API 契约、灰度门禁和回滚方案。"
+    }
+  ],
+  "evidence_status": [
+    {
+      "name": "任务识别",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\智能体大脑\\任务识别.py",
+      "exists": true,
+      "size": 4780
+    },
+    {
+      "name": "能力注册",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\智能体大脑\\能力注册.py",
+      "exists": true,
+      "size": 2921
+    },
+    {
+      "name": "知识库检索",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\智能体大脑\\知识库检索.py",
+      "exists": true,
+      "size": 6328
+    },
+    {
+      "name": "知识库中台异常闭环脚本",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\知识库\\执行智能系统知识检索中台异常闭环.py",
+      "exists": true,
+      "size": 13247
+    },
+    {
+      "name": "知识库中台异常闭环验证",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\知识库\\验证智能系统知识检索中台异常闭环.py",
+      "exists": true,
+      "size": 6699
+    },
+    {
+      "name": "最新中台补齐报告",
+      "path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\运行状态\\01智能系统中台补齐清单与验收报告_最新.json",
+      "exists": true,
+      "size": 23520
+    }
+  ],
+  "safety_boundary": {
+    "local_shadow_only": true,
+    "trigger_n8n": false,
+    "send_wecom_real_message": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "write_production_db": false,
+    "write_formal_vector_db": false,
+    "modify_stock_core_script": false,
+    "modify_00_progress_entry": false,
+    "modify_02_or_03_system": false
+  },
+  "acceptance": {
+    "result": "通过",
+    "sample_count": 4,
+    "blocked_count": 2,
+    "degraded_count": 2,
+    "capability_count": 6
+  },
+  "outputs": {
+    "timestamp_json": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\14小任务B中台能力验收\\01智能系统小任务B中台能力验收_20260505-122616.json",
+    "timestamp_markdown": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\14小任务B中台能力验收\\01智能系统小任务B中台能力验收_20260505-122616.md",
+    "latest_json": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\14小任务B中台能力验收\\01智能系统小任务B中台能力验收_最新.json",
+    "latest_markdown": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\14小任务B中台能力验收\\01智能系统小任务B中台能力验收_最新.md",
+    "document_report": "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\01智能系统小任务B中台能力补齐小样本验收报告_最新.md",
+    "recycle_report": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\01智能系统_本轮小任务B回收报告_最新.md"
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "name": "低风险自主任务失败暂停场景矩阵",
+  "generated_at": "2026-05-08 19:46:57",
+  "readonly_drill_only": true,
+  "scenario_count": 6,
+  "global_policy": {
+    "auto_continue_after_failure": false,
+    "recovery_executed": false,
+    "external_call": false,
+    "reload_service": false,
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "connect_broker": false,
+    "trade": false,
+    "login_tax_bureau": false,
+    "connect_finance_tax_software": false,
+    "promote_to_formal_rule": false,
+    "modify_master_panel": false,
+    "modify_one_click_continuation_package": false
+  },
+  "scenarios": [
+    {
+      "pause_required": true,
+      "auto_continue_after_failure": false,
+      "continue_dispatch_allowed": false,
+      "recovery_requested": false,
+      "recovery_executed": false,
+      "external_call": false,
+      "reload_service": false,
+      "requires_supervisor_confirmation": true,
+      "readonly_drill_only": true,
+      "generated_at": "2026-05-08 19:46:57",
+      "id": "LRF-001",
+      "scenario": "验收失败",
+      "trigger": "本地验收脚本返回失败、error_count 大于 0 或关键断言不通过",
+      "pause_reason": "验收未通过时禁止低风险自主任务继续调度，等待人工复核失败项",
+      "registration_required": [
+        "验收脚本路径",
+        "失败断言",
+        "错误数量",
+        "最后一次只读输出"
+      ],
+      "recovery_request_note": "只能提交复验申请，不自动复跑真实业务动作"
+    },
+    {
+      "pause_required": true,
+      "auto_continue_after_failure": false,
+      "continue_dispatch_allowed": false,
+      "recovery_requested": false,
+      "recovery_executed": false,
+      "external_call": false,
+      "reload_service": false,
+      "requires_supervisor_confirmation": true,
+      "readonly_drill_only": true,
+      "generated_at": "2026-05-08 19:46:57",
+      "id": "LRF-002",
+      "scenario": "证据缺失",
+      "trigger": "指定 JSON/MD/日志证据不存在、不可解析或字段缺失",
+      "pause_reason": "证据链不完整时不能继续推进，避免把不完整产物当成已完成",
+      "registration_required": [
+        "缺失文件",
+        "缺失字段",
+        "期望证据",
+        "补证责任说明"
+      ],
+      "recovery_request_note": "只能申请补齐证据后再验收，不补做外部动作"
+    },
+    {
+      "pause_required": true,
+      "auto_continue_after_failure": false,
+      "continue_dispatch_allowed": false,
+      "recovery_requested": false,
+      "recovery_executed": false,
+      "external_call": false,
+      "reload_service": false,
+      "requires_supervisor_confirmation": true,
+      "readonly_drill_only": true,
+      "generated_at": "2026-05-08 19:46:57",
+      "id": "LRF-003",
+      "scenario": "红线词命中",
+      "trigger": "命中真实发送企业微信、接 n8n、券商、交易、登录税局、财税软件等红线词",
+      "pause_reason": "任何红线词命中都进入暂停，不继续调度、不尝试替代执行",
+      "registration_required": [
+        "命中词",
+        "命中文本来源",
+        "影响范围",
+        "人工确认建议"
+      ],
+      "recovery_request_note": "只能申请总管确认是否改写为只读候选说明"
+    },
+    {
+      "pause_required": true,
+      "auto_continue_after_failure": false,
+      "continue_dispatch_allowed": false,
+      "recovery_requested": false,
+      "recovery_executed": false,
+      "external_call": false,
+      "reload_service": false,
+      "requires_supervisor_confirmation": true,
+      "readonly_drill_only": true,
+      "generated_at": "2026-05-08 19:46:57",
+      "id": "LRF-004",
+      "scenario": "需服务重载",
+      "trigger": "任务要求重载服务、刷新进程、重启端口或 reload 运行组件",
+      "pause_reason": "服务重载超出低风险自主范围，必须停止调度并登记",
+      "registration_required": [
+        "重载对象",
+        "触发原因",
+        "关联端口或服务",
+        "未执行证明"
+      ],
+      "recovery_request_note": "只能提交重载申请，不自动重载服务"
+    },
+    {
+      "pause_required": true,
+      "auto_continue_after_failure": false,
+      "continue_dispatch_allowed": false,
+      "recovery_requested": false,
+      "recovery_executed": false,
+      "external_call": false,
+      "reload_service": false,
+      "requires_supervisor_confirmation": true,
+      "readonly_drill_only": true,
+      "generated_at": "2026-05-08 19:46:57",
+      "id": "LRF-005",
+      "scenario": "正式规则影响",
+      "trigger": "任务会写入、覆盖、启用或自动转正式规则",
+      "pause_reason": "正式规则变更需要人工确认，演练只保留候选草案",
+      "registration_required": [
+        "规则名称",
+        "影响模块",
+        "候选差异",
+        "人工签收要求"
+      ],
+      "recovery_request_note": "只能申请人工签收，不能自动转正式规则"
+    },
+    {
+      "pause_required": true,
+      "auto_continue_after_failure": false,
+      "continue_dispatch_allowed": false,
+      "recovery_requested": false,
+      "recovery_executed": false,
+      "external_call": false,
+      "reload_service": false,
+      "requires_supervisor_confirmation": true,
+      "readonly_drill_only": true,
+      "generated_at": "2026-05-08 19:46:57",
+      "id": "LRF-006",
+      "scenario": "外部接口需求",
+      "trigger": "任务需要调用企业微信、n8n、券商、税局、财税软件或其他外部接口",
+      "pause_reason": "外部接口调用不属于只读演练，必须暂停并登记接口需求",
+      "registration_required": [
+        "接口名称",
+        "请求目的",
+        "请求数据",
+        "只读替代方案"
+      ],
+      "recovery_request_note": "只能申请人工授权，不发起接口请求"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "asset_id": "VIDEO_AGENT_RECEIPT_FIELD_CONSISTENCY_CHECK_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_checklist_not_real_audit_program",
+  "purpose": "Check consistent fields across human receipts, WeCom placeholder replies, close receipts, and alignment handoffs.",
+  "check_items": [
+    {"item": "task_id_consistency", "standard": "shadow_task_id_or_related_id_must_be_traceable"},
+    {"item": "status_field_consistency", "standard": "formal_status_and_shadow_status_must_not_be_mixed"},
+    {"item": "human_review_field_completeness", "standard": "human_decision_or_pending_review_slot_must_exist"},
+    {"item": "redline_field_completeness", "standard": "redline_hits_must_be_blocked_not_permitted"},
+    {"item": "evidence_pointer_completeness", "standard": "must_point_to_shadow_asset_or_desensitized_input"},
+    {"item": "time_field_clarity", "standard": "empty_time_fields_must_be_marked_pending"},
+    {"item": "formal_boundary_clarity", "standard": "must_state_not_real_generation_publish_or_external_send"}
+  ],
+  "handling_actions": [
+    {"condition": "field_missing", "action": "create_gap_card"},
+    {"condition": "status_conflict", "action": "route_to_human_review_queue"},
+    {"condition": "formal_release_wording_present", "action": "route_to_redline_block_queue"}
+  ],
+  "real_system_triggered": {
+    "real_system_audit": false,
+    "wecom_real_message_read": false,
+    "formal_audit_database_write": false
+  }
+}

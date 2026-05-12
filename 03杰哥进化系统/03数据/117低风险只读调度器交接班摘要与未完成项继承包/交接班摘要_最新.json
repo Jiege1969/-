@@ -1,0 +1,54 @@
+{
+  "名称": "低风险只读调度器交接班摘要",
+  "生成时间": "2026-05-08 21:17:36",
+  "版本": "v1-local-readonly-handoff",
+  "交接班窗口": {
+    "当前班次": "日内值守收口",
+    "接班班次": "下一轮只读接续",
+    "接续方式": "本地文件继承，不注册真实计划任务"
+  },
+  "本班已完成": [
+    "只读调度器连续干跑、漂移复核、红线失败注入、本地值守摘要等前置包已形成验收链路。",
+    "第十五轮并行调度索引已登记本包为 ROUND15-AR。",
+    "本包只落地 117 数据目录，不占用 113 历史目录。"
+  ],
+  "本班暂停项": [
+    "企业微信真实发送继续暂停。",
+    "n8n、webhook、系统计划任务注册继续暂停。",
+    "任何自动恢复未完成任务、自动跨日执行或写正式规则动作继续暂停。"
+  ],
+  "接班关注": [
+    "复核未完成项继承清单是否仍全部为本地预演。",
+    "接班后只能继续只读汇总和人工确认队列整理。",
+    "如需要真实通知、真实调度或自动恢复，必须先取得总管明确确认。"
+  ],
+  "验收口径": [
+    "数据目录必须为 117低风险只读调度器交接班摘要与未完成项继承包。",
+    "验证日志必须写入固定日志目录。",
+    "所有外部动作、自动恢复和正式规则写入字段必须为 false。"
+  ],
+  "readonly_only": true,
+  "local_file_only": true,
+  "handoff_summary_only": true,
+  "inheritance_preview_only": true,
+  "send_allowed": false,
+  "real_send": false,
+  "real_wecom_send": false,
+  "network_request": false,
+  "no_network_request": true,
+  "connect_n8n": false,
+  "trigger_n8n": false,
+  "no_n8n_trigger": true,
+  "auto_resume_task": false,
+  "auto_schedule_task": false,
+  "write_formal_rule": false,
+  "auto_promote_formal_rule": false,
+  "modify_supervisor_panel": false,
+  "modify_one_click_continuation_package": false,
+  "reload_service": false,
+  "delete_business_artifact": false,
+  "broker_connection": false,
+  "trade_order": false,
+  "tax_bureau_login": false,
+  "finance_tax_software_connection": false
+}

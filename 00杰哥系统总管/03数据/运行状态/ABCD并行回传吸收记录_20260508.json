@@ -1,0 +1,78 @@
+{
+  "asset_name": "ABCD并行回传吸收记录",
+  "generated_at": "2026-05-08",
+  "asset_identity": "总管侧 W1/R0 并行回传吸收记录",
+  "status": "absorbed",
+  "redline_count": 0,
+  "lines": [
+    {
+      "line": "A",
+      "business_line": "税收政策顾问",
+      "artifacts": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\PAR_TAX_20260508_输入条件与回执草案.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\PAR_TAX_20260508_输入条件与回执草案.json",
+        "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_TAX_20260508_受控试用回传摘要.md",
+        "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_TAX_20260508_受控试用回传摘要.json"
+      ],
+      "json_ok": true,
+      "redline_count": 0
+    },
+    {
+      "line": "B",
+      "business_line": "股票 L3 证据补齐",
+      "artifacts": [
+        "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_STOCK_20260508_L3受控试用证据补齐回执草案.md",
+        "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_STOCK_20260508_L3受控试用证据补齐回执草案.json"
+      ],
+      "json_ok": true,
+      "redline_count": 0
+    },
+    {
+      "line": "C",
+      "business_line": "视频影子工厂",
+      "artifacts": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\PAR_VIDEO_20260508_SCRIPT_REVIEW_RECEIPT_DRAFT.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\PAR_VIDEO_20260508_SCRIPT_REVIEW_RECEIPT_DRAFT.json"
+      ],
+      "json_ok": true,
+      "redline_count": 0
+    },
+    {
+      "line": "D",
+      "business_line": "企业微信接入层",
+      "artifacts": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\03数据\\16W1R0只读核查回执\\PAR_WECOM_20260508_W1_R0_企业微信接入层只读核查回执.md",
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置\\03数据\\16W1R0只读核查回执\\PAR_WECOM_20260508_W1_R0_企业微信接入层只读核查回执.json"
+      ],
+      "json_ok": true,
+      "redline_count": 0,
+      "check_result": "pass 17/17"
+    },
+    {
+      "line": "交付材料",
+      "business_line": "用户交付说明",
+      "artifacts": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\1-2-3-4-5-d\\PAR_DELIVERY_20260508_DAILY_USER_GUIDE.md",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\1-2-3-4-5-d\\PAR_DELIVERY_20260508_STABLE_CANDIDATE_GUIDE.md",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\1-2-3-4-5-d\\PAR_DELIVERY_20260508_BOUNDARY_AND_RECEIPT.md",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-05-08\\1-2-3-4-5-d\\PAR_DELIVERY_20260508_INDEX.json"
+      ],
+      "json_ok": true,
+      "redline_count": 0
+    }
+  ],
+  "delivery_status": {
+    "daily_delivery": "completed",
+    "stable_candidate_delivery": "completed",
+    "formal_stable_delivery": "requires_3_to_5_real_desensitized_or_readonly_trials_with_zero_redlines"
+  },
+  "boundaries": {
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "modify_service_script_or_restart": false,
+    "write_formal_db": false,
+    "formal_tax_action": false,
+    "broker_trade_action": false,
+    "video_render_upload_publish": false
+  }
+}

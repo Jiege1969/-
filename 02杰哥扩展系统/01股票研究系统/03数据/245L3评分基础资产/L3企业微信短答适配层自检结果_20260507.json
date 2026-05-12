@@ -1,0 +1,104 @@
+{
+  "名称": "L3企业微信短答适配层自检结果",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子自检结果",
+  "状态": "shadow_only",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "依据文件": [
+    "03数据/245L3评分基础资产/L3企业微信短答正式适配层接口契约_20260507.json",
+    "03数据/245L3评分基础资产/L3企业微信短答适配层验收规则_20260507.json",
+    "03数据/245L3评分基础资产/L3企业微信短答旧链路对照方案_20260507.json"
+  ],
+  "自检范围": [
+    "企业微信短答_云南锗业_财报补证影子样例_20260507.md",
+    "企业微信短答_天齐锂业_财报补证影子样例_20260507.md",
+    "企业微信短答_华虹公司_财报补证影子样例_20260507.md",
+    "企业微信短答_浙商中拓_财报补证影子样例_20260507.md",
+    "企业微信短答_正丹股份_财报补证影子样例_20260507.md"
+  ],
+  "检查项": {
+    "分析对象明确": "必须存在分析对象：股票名称（代码）",
+    "禁用交易词": [
+      "买入",
+      "卖出",
+      "下单",
+      "加仓",
+      "减仓",
+      "满仓",
+      "止盈",
+      "目标价"
+    ],
+    "财报旧债口径": [
+      "财报未接入",
+      "基本面暂无",
+      "用户需自行补财报"
+    ],
+    "空值占位": [
+      "null",
+      "未知价格",
+      "--",
+      "——"
+    ]
+  },
+  "样本结果": [
+    {
+      "股票": "云南锗业",
+      "代码": "sz002428",
+      "analysis_object_present": true,
+      "forbidden_trade_words": [],
+      "bad_debt_words": [],
+      "null_placeholder": false,
+      "blocking_count": 0
+    },
+    {
+      "股票": "天齐锂业",
+      "代码": "sz002466",
+      "analysis_object_present": true,
+      "forbidden_trade_words": [],
+      "bad_debt_words": [],
+      "null_placeholder": false,
+      "blocking_count": 0
+    },
+    {
+      "股票": "华虹公司",
+      "代码": "sh688347",
+      "analysis_object_present": true,
+      "forbidden_trade_words": [],
+      "bad_debt_words": [],
+      "null_placeholder": false,
+      "blocking_count": 0
+    },
+    {
+      "股票": "浙商中拓",
+      "代码": "sz000906",
+      "analysis_object_present": true,
+      "forbidden_trade_words": [],
+      "bad_debt_words": [],
+      "null_placeholder": false,
+      "blocking_count": 0
+    },
+    {
+      "股票": "正丹股份",
+      "代码": "sz300641",
+      "analysis_object_present": true,
+      "forbidden_trade_words": [],
+      "bad_debt_words": [],
+      "null_placeholder": false,
+      "blocking_count": 0
+    }
+  ],
+  "总体结论": {
+    "样本数": 5,
+    "阻断项": 0,
+    "结论": "五样本在对象明确、交易词拦截、财报旧债口径、空值占位四个硬项上通过影子自检。",
+    "仍不可正式接入原因": [
+      "该结果只验证影子短答文件，不等于正式企业微信入口已改造。",
+      "市场风格日表仍存在partial状态，正式强结论前需继续补全。",
+      "行业价格字段尚未统一接入，资源股、锂股、化工股仍需继续补行业价格证据。",
+      "正式脚本、正式配置、企业微信桥接、n8n、服务和外发链路均未获得W3确认，不能改。"
+    ]
+  }
+}

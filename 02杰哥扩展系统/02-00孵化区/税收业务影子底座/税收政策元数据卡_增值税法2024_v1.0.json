@@ -1,0 +1,50 @@
+﻿{
+    "version":  "1.0",
+    "status":  "shadow_metadata_card",
+    "document_id":  "TAX-LAW-VAT-2024",
+    "title":  "中华人民共和国增值税法",
+    "document_number":  "中华人民共和国主席令第四十一号",
+    "issuing_authority":  [
+                              "全国人民代表大会常务委员会"
+                          ],
+    "pass_date":  "2024-12-25",
+    "effective_date":  "2026-01-01",
+    "validity_status":  "current_effective_pending_article_review",
+    "source_url":  "https://www.npc.gov.cn/npc/c2/c30834/202412/t20241225_442038.html",
+    "source_level":  "national_law",
+    "trust_level":  "A",
+    "tax_type":  "增值税",
+    "legal_level":  "法律",
+    "business_scenario":  [
+                              "增值税基础依据",
+                              "软件产品增值税即征即退基础法律背景"
+                          ],
+    "keywords":  [
+                     "增值税",
+                     "增值税法",
+                     "应税交易",
+                     "纳税人",
+                     "税率"
+                 ],
+    "verification_status":  "official_source_registered_pending_article_review",
+    "can_enter_candidate_evidence":  true,
+    "can_generate_final_tax_conclusion":  false,
+    "required_output_label":  "待复核草案",
+    "relationship_to_existing_cards":  [
+                                           {
+                                               "related_document_id":  "TAX-DOC-2011-100",
+                                               "relationship":  "基础法律依据与具体优惠政策"
+                                           }
+                                       ],
+    "pending_checks":  [
+                           "逐条复核增值税法与软件产品优惠政策的关系",
+                           "复核增值税法施行后的优惠政策衔接公告",
+                           "复核增值税法实施条例和后续配套规定",
+                           "复核旧增值税暂行条例引用的当前适用状态"
+                       ],
+    "hierarchy_rank":  1,
+    "source_scope":  "国家级法律",
+    "conflict_with_higher_level":  "not_applicable_law_level",
+    "usable_as_basis":  true,
+    "usable_as_process_reference":  false
+}

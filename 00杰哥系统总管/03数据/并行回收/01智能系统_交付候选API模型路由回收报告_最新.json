@@ -1,0 +1,66 @@
+{
+  "report_id": "01智能系统_交付候选API模型路由回收报告_最新",
+  "task": "并行小任务H：01智能系统API/模型路由干跑验收与失败降级闭环",
+  "checked_at": "2026-05-05 14:29:14 +08:00",
+  "scope": {
+    "write_scope": [
+      "D:\\杰哥智能化系统\\01杰哥智能系统 下新增文件",
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\01智能系统_交付候选API模型路由回收报告_最新.md",
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\01智能系统_交付候选API模型路由回收报告_最新.json"
+    ],
+    "untouched_parallel_workers": [
+      "D:\\杰哥智能化系统\\02杰哥扩展系统",
+      "D:\\杰哥智能化系统\\03杰哥进化系统",
+      "其他00总管文件"
+    ]
+  },
+  "artifacts": [
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\delivery_candidate_api_model_route_dry_run_package_latest.json",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\standard_task_to_receipt_trace_latest.json",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\交付候选API模型路由干跑验收\\failure_fallback_matrix_latest.json",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\API契约\\01智能系统交付候选API模型路由干跑验收包_最新.md",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\07文档\\API契约\\delivery_candidate_api_model_route_dry_run_acceptance_latest.md",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\验证01智能系统交付候选API模型路由干跑验收包.ps1"
+  ],
+  "acceptance_coverage": [
+    "标准任务单字段与安全闸口",
+    "API契约请求/响应字段",
+    "模型路由标签选择",
+    "中台能力计划",
+    "失败码降级矩阵",
+    "receipt输出"
+  ],
+  "validation": {
+    "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"D:\\杰哥智能化系统\\01杰哥智能系统\\02脚本\\验证01智能系统交付候选API模型路由干跑验收包.ps1\"",
+    "mode": "read_only_local_parse",
+    "result": "PASS",
+    "total_checks": 90,
+    "failed_checks": 0,
+    "external_services_touched": false,
+    "real_model_invocation_touched": false
+  },
+  "safety_boundary": {
+    "dry_run": true,
+    "real_model_invocation_enabled": false,
+    "network_enabled_for_this_package": false,
+    "n8n_trigger_enabled": false,
+    "wecom_send_enabled": false,
+    "formal_database_write_enabled": false,
+    "broker_api_enabled": false,
+    "auto_trade_enabled": false,
+    "blocked_actions": [
+      "真实模型接口调用",
+      "n8n真实触发",
+      "企业微信真实发送",
+      "正式库写入",
+      "券商接口调用",
+      "自动交易或下单",
+      "外部网络请求"
+    ]
+  },
+  "blockers": {
+    "delivery_blockers": [],
+    "safety_blockers": [],
+    "parallel_conflict_risk": "low"
+  }
+}

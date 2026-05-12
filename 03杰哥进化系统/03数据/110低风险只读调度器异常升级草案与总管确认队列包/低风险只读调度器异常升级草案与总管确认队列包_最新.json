@@ -1,0 +1,39 @@
+{
+  "name": "低风险只读调度器异常升级草案与总管确认队列包",
+  "generated_at": "2026-05-08 20:28:39",
+  "readonly_draft_only": true,
+  "source_files": {
+    "source_injection_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\106低风险只读调度红线失败注入与自动暂停演练包\\失败注入样例_最新.json",
+    "source_pause_report_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\106低风险只读调度红线失败注入与自动暂停演练包\\自动暂停演练报告_最新.json"
+  },
+  "metrics": {
+    "rule_count": 6,
+    "queue_count": 6
+  },
+  "executed": false,
+  "auto_resume": false,
+  "external_call": false,
+  "reload_service": false,
+  "safety_confirmation": {
+    "executed": false,
+    "auto_resume": false,
+    "commands_executed": false,
+    "external_call": false,
+    "reload_service": false,
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "connect_broker": false,
+    "trade": false,
+    "login_tax_bureau": false,
+    "connect_finance_tax_software": false,
+    "promote_to_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false
+  },
+  "artifacts": {
+    "rule_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\110低风险只读调度器异常升级草案与总管确认队列包\\异常升级规则_最新.json",
+    "rule_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\110低风险只读调度器异常升级草案与总管确认队列包\\异常升级规则_最新.md",
+    "queue_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\110低风险只读调度器异常升级草案与总管确认队列包\\总管确认队列_最新.json",
+    "queue_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\110低风险只读调度器异常升级草案与总管确认队列包\\总管确认队列_最新.md"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "asset_id": "VIDEO_AGENT_PRE_PUBLISH_GATE_GAP_TO_REVIEW_MAPPING_001",
+  "version": "v1.0",
+  "asset_type": "gap_mapping_sample",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "pre_publish_gate_overview_gap_handling",
+  "status": "draft_sample",
+  "purpose": "Map pre-publish gate gaps to review queues and required outputs instead of stopping at a vague condition-insufficient message.",
+  "mappings": [
+    {"gate_gap": "generation_release_missing", "queue": "generation_release_review_queue", "required_output": "generation_release_receipt", "close_condition": "receipt_released", "real_execution": false},
+    {"gate_gap": "real_render_release_missing", "queue": "render_release_review_queue", "required_output": "render_release_receipt", "close_condition": "receipt_released", "real_execution": false},
+    {"gate_gap": "final_preview_missing", "queue": "preview_review_queue", "required_output": "preview_review_receipt", "close_condition": "receipt_passed", "real_execution": false},
+    {"gate_gap": "ai_label_missing", "queue": "publishing_compliance_review_queue", "required_output": "ai_label_confirmation_receipt", "close_condition": "receipt_confirmed", "real_execution": false},
+    {"gate_gap": "material_authorization_missing", "queue": "material_authorization_review_queue", "required_output": "material_authorization_proof_receipt", "close_condition": "receipt_passed_and_archived", "real_execution": false},
+    {"gate_gap": "multi_platform_check_missing", "queue": "platform_difference_review_queue", "required_output": "separate_check_receipt_per_platform", "close_condition": "all_platform_checks_complete", "real_execution": false},
+    {"gate_gap": "publishing_release_missing", "queue": "gate_consistency_review_queue", "required_output": "publishing_release_confirmation_receipt", "close_condition": "receipt_released", "real_execution": false},
+    {"gate_gap": "redline_blocker_exists", "queue": "redline_block_register", "required_output": "manager_decision_record", "close_condition": "manager_resolves_or_converts_to_reviewable_gap", "real_execution": false}
+  ],
+  "fixed_rules": [
+    "Each gap must have a review queue and required output.",
+    "Gap close conditions must be traceable.",
+    "Closing a gap does not equal real publishing.",
+    "Redline gaps cannot be closed by the video line itself."
+  ],
+  "boundaries": {
+    "create_real_queue": false,
+    "assign_real_people": false,
+    "wecom_real_send": false,
+    "trigger_publish": false
+  }
+}

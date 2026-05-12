@@ -1,0 +1,128 @@
+{
+  "生成时间": "2026-05-04 21:23:37",
+  "规则来源": "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统\\01配置\\企业微信n8n联动规则.json",
+  "工作流草案": {
+    "name": "企业微信助手本地预演工作流草案",
+    "created_at": "2026-05-04 21:23:37",
+    "active": false,
+    "nodes": [
+      {
+        "id": "wework-draft-01",
+        "name": "OpenClaw入站Webhook",
+        "type": "webhook-draft",
+        "position": [
+          260,
+          160
+        ],
+        "parameters": {
+          "职责": "接收OpenClaw标准请求",
+          "真实启用": false,
+          "说明": "草案节点，不导入n8n。"
+        }
+      },
+      {
+        "id": "wework-draft-02",
+        "name": "任务路由",
+        "type": "function-draft",
+        "position": [
+          520,
+          160
+        ],
+        "parameters": {
+          "职责": "根据标准字段路由到智能体大脑能力",
+          "真实启用": false,
+          "说明": "草案节点，不导入n8n。"
+        }
+      },
+      {
+        "id": "wework-draft-03",
+        "name": "智能体大脑调用",
+        "type": "http-request-draft",
+        "position": [
+          780,
+          160
+        ],
+        "parameters": {
+          "职责": "调用本机v3智能体大脑测试服务",
+          "真实启用": false,
+          "说明": "草案节点，不导入n8n。"
+        }
+      },
+      {
+        "id": "wework-draft-04",
+        "name": "统一消息出口",
+        "type": "local-queue-draft",
+        "position": [
+          1040,
+          160
+        ],
+        "parameters": {
+          "职责": "把响应交给统一消息出口预演队列",
+          "真实启用": false,
+          "说明": "草案节点，不导入n8n。"
+        }
+      }
+    ],
+    "connections": {
+      "OpenClaw入站Webhook": {
+        "main": [
+          [
+            {
+              "node": "任务路由",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "任务路由": {
+        "main": [
+          [
+            {
+              "node": "智能体大脑调用",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "智能体大脑调用": {
+        "main": [
+          [
+            {
+              "node": "统一消息出口",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "settings": {
+      "executionOrder": "v1",
+      "真实导入": false,
+      "启用Webhook": false
+    },
+    "field_mapping": {
+      "OpenClaw请求ID": "请求ID",
+      "OpenClaw用户输入": "用户输入",
+      "n8n路由目标": "能力名称",
+      "智能体响应": "回复内容",
+      "统一消息标题": "回复标题",
+      "统一消息优先级": "优先级"
+    },
+    "risk_notice": [
+      "不得导入n8n",
+      "不得启用真实Webhook",
+      "不得连接企业微信",
+      "不得真实发送消息",
+      "不得绕过统一消息出口"
+    ]
+  },
+  "节点数量": 4,
+  "是否导入n8n": false,
+  "是否启用Webhook": false,
+  "是否连接企业微信": false,
+  "是否真实发送": false,
+  "安全说明": "该文件是n8n草案结构，不会自动导入或启用。"
+}

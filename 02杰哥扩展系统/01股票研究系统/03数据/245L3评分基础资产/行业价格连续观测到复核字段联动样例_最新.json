@@ -1,0 +1,126 @@
+{
+  "name": "行业价格连续观测到复核字段联动样例",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 12:10:43",
+  "asset_identity": "W1行业价格连续观测到复核字段联动样例",
+  "status": "shadow_mapping_sample",
+  "not_formal_config": true,
+  "not_price_api": true,
+  "not_formal_database_write": true,
+  "records": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "002428"
+      },
+      "price_series": {
+        "commodity": "锗",
+        "frequency": "daily_or_weekly",
+        "source_status": "manual_or_api_pending"
+      },
+      "backend_missing_update": [
+        "锗价连续序列",
+        "最近观察日",
+        "价格变化幅度"
+      ],
+      "front_review_focus": "下一次复核重点看锗价是否连续走强，以及资源板块热度是否同步。",
+      "confidence_effect": "未补齐前最高不超过medium。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "002466"
+      },
+      "price_series": {
+        "commodity": "碳酸锂/氢氧化锂",
+        "frequency": "daily_or_weekly",
+        "source_status": "manual_or_api_pending"
+      },
+      "backend_missing_update": [
+        "锂价连续序列",
+        "库存/供需备注",
+        "最近观察日"
+      ],
+      "front_review_focus": "下一次复核重点看锂价企稳持续性和行业景气修复。",
+      "confidence_effect": "价格未企稳前不提高结论强度。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "688347"
+      },
+      "price_series": {
+        "commodity": "晶圆代工景气/半导体材料价格",
+        "frequency": "monthly_or_quarterly",
+        "source_status": "proxy_pending"
+      },
+      "backend_missing_update": [
+        "行业景气代理指标",
+        "产能利用率线索",
+        "价格或订单趋势"
+      ],
+      "front_review_focus": "下一次复核重点看半导体景气指标和产能利用率是否改善。",
+      "confidence_effect": "行业景气证据缺失时保持观察结论。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "000906"
+      },
+      "price_series": {
+        "commodity": "大宗商品综合价格",
+        "frequency": "daily_or_weekly",
+        "source_status": "proxy_pending"
+      },
+      "backend_missing_update": [
+        "相关商品价格篮子",
+        "经营现金流联动说明",
+        "最近观察日"
+      ],
+      "front_review_focus": "下一次复核重点看商品周期和经营现金流是否同步改善。",
+      "confidence_effect": "商品周期证据不足时不输出强结论。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "300641"
+      },
+      "price_series": {
+        "commodity": "TMA等核心化工品",
+        "frequency": "daily_or_weekly",
+        "source_status": "manual_or_api_pending"
+      },
+      "backend_missing_update": [
+        "核心产品价格连续序列",
+        "价差变化",
+        "最近观察日"
+      ],
+      "front_review_focus": "下一次复核重点看核心产品价格和价差是否继续改善。",
+      "confidence_effect": "产品价格缺失时只能保留观察结论。"
+    }
+  ],
+  "mapping_rules": [
+    "行业价格只作为结构化证据或缺口进入后台，不直接生成强结论。",
+    "前台只展示复核重点、证据缺口和置信度影响。",
+    "缺少连续价格序列时，资源、化工、周期类股票不得给high置信度。"
+  ],
+  "summary": {
+    "sample_count": 5,
+    "all_have_price_series": true,
+    "all_have_review_focus": true,
+    "all_have_confidence_effect": true,
+    "real_price_api_allowed": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

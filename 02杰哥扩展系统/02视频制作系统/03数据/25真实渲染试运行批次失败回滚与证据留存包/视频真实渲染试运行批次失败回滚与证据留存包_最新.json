@@ -1,0 +1,60 @@
+{
+  "名称": "视频真实渲染试运行批次失败回滚与证据留存包",
+  "包版本": "25",
+  "批次ID": "TRIAL-FAILURE-ROLLBACK-20260508-001",
+  "任务ID": "TRIAL-FAILURE-TASK-20260508-001",
+  "承接上一轮": "第24视频包：真实渲染试运行批次预检与白名单未生效闸口包",
+  "包结论": "白名单仍未生效；本包仅建立失败回滚和证据留存材料，不真实渲染。",
+  "产物": {
+    "失败场景矩阵": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\25真实渲染试运行批次失败回滚与证据留存包\\视频真实渲染试运行批次失败场景矩阵_最新.json",
+    "回滚动作清单": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\25真实渲染试运行批次失败回滚与证据留存包\\视频真实渲染试运行批次失败回滚动作清单_最新.json",
+    "证据留存索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\25真实渲染试运行批次失败回滚与证据留存包\\视频真实渲染试运行批次失败证据留存索引_最新.json"
+  },
+  "摘要": {
+    "失败场景数量": 5,
+    "回滚动作数量": 5,
+    "人工签收状态": "unsigned",
+    "留存期限": {
+      "retention_days": 180,
+      "retention_until": "2026-11-04",
+      "说明": "不少于180天；如人工复核要求更长留存期，以人工复核要求为准。"
+    }
+  },
+  "生成时间": "2026-05-08 19:00:41",
+  "error_count": 0,
+  "batch_allowed": false,
+  "whitelist_effective": false,
+  "trial_run_allowed": false,
+  "can_enter_real_render": false,
+  "real_render": false,
+  "publish": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "触发n8n": false,
+  "修改企业微信公共配置": false,
+  "修改总管面板": false,
+  "修改一键接续包": false,
+  "重载服务": false,
+  "readonly_flags_ascii": {
+    "batch_allowed": false,
+    "whitelist_effective": false,
+    "trial_run_allowed": false,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "publish": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false
+  }
+}

@@ -1,0 +1,1932 @@
+{
+  "name": "财报资金证据人工填写回执模板",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 09:55:26",
+  "asset_identity": "W1人工填写回执模板",
+  "status": "blank_template",
+  "source_assets": {
+    "collection_template": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本财报资金证据采集模板草案_最新.json",
+    "collection_template_exists": true
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "not_real_data_fetch": true,
+  "not_formal_database_write": true,
+  "receipts": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428",
+        "profile": "资源/小金属"
+      },
+      "field_group": "financial_report",
+      "display_name": "财报摘要",
+      "priority": "P0",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "report_period": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "revenue_yoy": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "net_profit_yoy": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "gross_margin": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "operating_cash_flow": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "debt_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "inventory_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "management_discussion_summary": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。"
+    },
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428",
+        "profile": "资源/小金属"
+      },
+      "field_group": "valuation",
+      "display_name": "估值位置",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "pe_ttm": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "pb": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "ps_ttm": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "industry_percentile": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "valuation_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。"
+    },
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428",
+        "profile": "资源/小金属"
+      },
+      "field_group": "capital_flow",
+      "display_name": "资金流向",
+      "priority": "P0",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "main_net_inflow_1d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "main_net_inflow_5d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "main_net_inflow_20d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "turnover_rate": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "volume_amount_rank": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "capital_flow_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "资金证据待采集，不能写资金面确认转强。"
+    },
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428",
+        "profile": "资源/小金属"
+      },
+      "field_group": "institution_holding",
+      "display_name": "机构持仓",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "institution_holding_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "fund_holding_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "top10_shareholder_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "northbound_or_qfii_status": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "institution_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。"
+    },
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428",
+        "profile": "资源/小金属"
+      },
+      "field_group": "unlock_reduction",
+      "display_name": "解禁/减持",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "next_unlock_date": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "unlock_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "announced_reduction_plan": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "reduction_progress": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "unlock_reduction_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466",
+        "profile": "锂资源"
+      },
+      "field_group": "financial_report",
+      "display_name": "财报摘要",
+      "priority": "P0",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "report_period": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "revenue_yoy": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "net_profit_yoy": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "gross_margin": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "operating_cash_flow": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "debt_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "inventory_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "management_discussion_summary": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466",
+        "profile": "锂资源"
+      },
+      "field_group": "valuation",
+      "display_name": "估值位置",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "pe_ttm": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "pb": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "ps_ttm": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "industry_percentile": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "valuation_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466",
+        "profile": "锂资源"
+      },
+      "field_group": "capital_flow",
+      "display_name": "资金流向",
+      "priority": "P0",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "main_net_inflow_1d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "main_net_inflow_5d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "main_net_inflow_20d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "turnover_rate": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "volume_amount_rank": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "capital_flow_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "资金证据待采集，不能写资金面确认转强。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466",
+        "profile": "锂资源"
+      },
+      "field_group": "institution_holding",
+      "display_name": "机构持仓",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "institution_holding_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "fund_holding_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "top10_shareholder_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "northbound_or_qfii_status": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "institution_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466",
+        "profile": "锂资源"
+      },
+      "field_group": "unlock_reduction",
+      "display_name": "解禁/减持",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "next_unlock_date": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "unlock_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "announced_reduction_plan": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "reduction_progress": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "unlock_reduction_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347",
+        "profile": "半导体制造"
+      },
+      "field_group": "financial_report",
+      "display_name": "财报摘要",
+      "priority": "P0",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "report_period": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "revenue_yoy": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "net_profit_yoy": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "gross_margin": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "operating_cash_flow": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "debt_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "inventory_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "management_discussion_summary": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347",
+        "profile": "半导体制造"
+      },
+      "field_group": "valuation",
+      "display_name": "估值位置",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "pe_ttm": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "pb": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "ps_ttm": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "industry_percentile": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "valuation_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347",
+        "profile": "半导体制造"
+      },
+      "field_group": "capital_flow",
+      "display_name": "资金流向",
+      "priority": "P0",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "main_net_inflow_1d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "main_net_inflow_5d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "main_net_inflow_20d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "turnover_rate": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "volume_amount_rank": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "capital_flow_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "资金证据待采集，不能写资金面确认转强。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347",
+        "profile": "半导体制造"
+      },
+      "field_group": "institution_holding",
+      "display_name": "机构持仓",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "institution_holding_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "fund_holding_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "top10_shareholder_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "northbound_or_qfii_status": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "institution_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347",
+        "profile": "半导体制造"
+      },
+      "field_group": "unlock_reduction",
+      "display_name": "解禁/减持",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "next_unlock_date": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "unlock_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "announced_reduction_plan": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "reduction_progress": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "unlock_reduction_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906",
+        "profile": "供应链服务"
+      },
+      "field_group": "financial_report",
+      "display_name": "财报摘要",
+      "priority": "P0",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "report_period": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "revenue_yoy": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "net_profit_yoy": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "gross_margin": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "operating_cash_flow": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "debt_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "inventory_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "management_discussion_summary": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906",
+        "profile": "供应链服务"
+      },
+      "field_group": "valuation",
+      "display_name": "估值位置",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "pe_ttm": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "pb": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "ps_ttm": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "industry_percentile": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "valuation_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906",
+        "profile": "供应链服务"
+      },
+      "field_group": "capital_flow",
+      "display_name": "资金流向",
+      "priority": "P0",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "main_net_inflow_1d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "main_net_inflow_5d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "main_net_inflow_20d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "turnover_rate": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "volume_amount_rank": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "capital_flow_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "资金证据待采集，不能写资金面确认转强。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906",
+        "profile": "供应链服务"
+      },
+      "field_group": "institution_holding",
+      "display_name": "机构持仓",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "institution_holding_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "fund_holding_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "top10_shareholder_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "northbound_or_qfii_status": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "institution_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906",
+        "profile": "供应链服务"
+      },
+      "field_group": "unlock_reduction",
+      "display_name": "解禁/减持",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "next_unlock_date": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "unlock_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "announced_reduction_plan": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "reduction_progress": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "unlock_reduction_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641",
+        "profile": "化工材料"
+      },
+      "field_group": "financial_report",
+      "display_name": "财报摘要",
+      "priority": "P0",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "report_period": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "revenue_yoy": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "net_profit_yoy": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "gross_margin": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "operating_cash_flow": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "debt_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "inventory_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "management_discussion_summary": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641",
+        "profile": "化工材料"
+      },
+      "field_group": "valuation",
+      "display_name": "估值位置",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "pe_ttm": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "pb": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "ps_ttm": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "industry_percentile": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "valuation_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641",
+        "profile": "化工材料"
+      },
+      "field_group": "capital_flow",
+      "display_name": "资金流向",
+      "priority": "P0",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "main_net_inflow_1d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "main_net_inflow_5d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "main_net_inflow_20d": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "turnover_rate": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "volume_amount_rank": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "capital_flow_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "资金证据待采集，不能写资金面确认转强。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641",
+        "profile": "化工材料"
+      },
+      "field_group": "institution_holding",
+      "display_name": "机构持仓",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "institution_holding_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "fund_holding_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "top10_shareholder_change": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "northbound_or_qfii_status": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "institution_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641",
+        "profile": "化工材料"
+      },
+      "field_group": "unlock_reduction",
+      "display_name": "解禁/减持",
+      "priority": "P1",
+      "receipt_status": "blank",
+      "filled_by": null,
+      "filled_at": null,
+      "source_package": {
+        "source_name": null,
+        "source_url": null,
+        "as_of_date": null,
+        "source_type": "manual_public_source_or_future_readonly_collection"
+      },
+      "field_receipts": {
+        "next_unlock_date": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "unlock_ratio": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "announced_reduction_plan": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "reduction_progress": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        },
+        "unlock_reduction_comment": {
+          "value": null,
+          "unit": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "review_note": null,
+          "can_enter_score": false
+        }
+      },
+      "ready_review": {
+        "ready": false,
+        "ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+        "reviewer": null,
+        "reviewed_at": null,
+        "blocking_reason": "尚未填写和复核，不能进入 L3 评分。"
+      },
+      "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。"
+    }
+  ],
+  "receipt_rules": [
+    "人工填写必须保留来源名称、来源链接、口径日期。",
+    "字段从 missing 到 candidate 后，必须经过复核才能变为 evidence_ready。",
+    "未 evidence_ready 的字段 can_enter_score 必须为 false。",
+    "回执模板本身不代表证据已补齐。",
+    "不得用回执空白字段生成强结论。"
+  ],
+  "summary": {
+    "receipt_count": 25,
+    "stock_count": 5,
+    "ready_count": 0,
+    "score_allowed_count": 0
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_adapter_write": true,
+    "not_score_write": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_real_data_fetch": true
+  }
+}

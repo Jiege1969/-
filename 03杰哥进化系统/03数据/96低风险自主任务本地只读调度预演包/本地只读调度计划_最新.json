@@ -1,0 +1,238 @@
+{
+  "name": "低风险自主任务本地只读调度计划",
+  "generated_at": "2026-05-08 19:46:57",
+  "based_on": "93低风险自主任务队列准入与暂停闸口包",
+  "defaults": {
+    "scheduled": false,
+    "auto_execute": false,
+    "dry_run_only": true,
+    "external_call": false,
+    "real_send": false,
+    "reload_service": false,
+    "write_formal_rule": false
+  },
+  "scheduler_state": "preview_only_not_registered",
+  "task_count": 8,
+  "tasks": [
+    {
+      "id": "LRS-001",
+      "name": "读取第93包候选队列快照",
+      "objective": "确认候选来源存在且只作为输入快照。",
+      "source_candidate_id": "LRQ-001",
+      "preview_order": 1,
+      "depends_on": [],
+      "scheduled": false,
+      "auto_execute": false,
+      "dry_run_only": true,
+      "external_call": false,
+      "real_send": false,
+      "reload_service": false,
+      "write_formal_rule": false,
+      "task_executed": false,
+      "execution_adapter": "none",
+      "allowed_action": "local_sort_and_dependency_preview_only",
+      "evidence_required": [
+        "source_candidate_id",
+        "preview_order",
+        "depends_on",
+        "task_executed_false"
+      ]
+    },
+    {
+      "id": "LRS-002",
+      "name": "扫描只读安全字段",
+      "objective": "检查 scheduled/auto_execute/external_call 等字段保持禁用。",
+      "source_candidate_id": "LRQ-002",
+      "preview_order": 2,
+      "depends_on": [
+        "LRS-001"
+      ],
+      "scheduled": false,
+      "auto_execute": false,
+      "dry_run_only": true,
+      "external_call": false,
+      "real_send": false,
+      "reload_service": false,
+      "write_formal_rule": false,
+      "task_executed": false,
+      "execution_adapter": "none",
+      "allowed_action": "local_sort_and_dependency_preview_only",
+      "evidence_required": [
+        "source_candidate_id",
+        "preview_order",
+        "depends_on",
+        "task_executed_false"
+      ]
+    },
+    {
+      "id": "LRS-003",
+      "name": "预演暂停闸口检查",
+      "objective": "套用第93包暂停闸口，只产生 pause_gate_check 结论。",
+      "source_candidate_id": "LRQ-003",
+      "preview_order": 3,
+      "depends_on": [
+        "LRS-002"
+      ],
+      "scheduled": false,
+      "auto_execute": false,
+      "dry_run_only": true,
+      "external_call": false,
+      "real_send": false,
+      "reload_service": false,
+      "write_formal_rule": false,
+      "task_executed": false,
+      "execution_adapter": "none",
+      "allowed_action": "local_sort_and_dependency_preview_only",
+      "evidence_required": [
+        "source_candidate_id",
+        "preview_order",
+        "depends_on",
+        "task_executed_false"
+      ]
+    },
+    {
+      "id": "LRS-004",
+      "name": "整理证据需求清单",
+      "objective": "列出每个候选进入调度预演所需证据字段。",
+      "source_candidate_id": "LRQ-004",
+      "preview_order": 4,
+      "depends_on": [
+        "LRS-003"
+      ],
+      "scheduled": false,
+      "auto_execute": false,
+      "dry_run_only": true,
+      "external_call": false,
+      "real_send": false,
+      "reload_service": false,
+      "write_formal_rule": false,
+      "task_executed": false,
+      "execution_adapter": "none",
+      "allowed_action": "local_sort_and_dependency_preview_only",
+      "evidence_required": [
+        "source_candidate_id",
+        "preview_order",
+        "depends_on",
+        "task_executed_false"
+      ]
+    },
+    {
+      "id": "LRS-005",
+      "name": "预演候选排序",
+      "objective": "按低风险、只读、依赖少优先的规则生成 preview_order。",
+      "source_candidate_id": "LRQ-005",
+      "preview_order": 5,
+      "depends_on": [
+        "LRS-004"
+      ],
+      "scheduled": false,
+      "auto_execute": false,
+      "dry_run_only": true,
+      "external_call": false,
+      "real_send": false,
+      "reload_service": false,
+      "write_formal_rule": false,
+      "task_executed": false,
+      "execution_adapter": "none",
+      "allowed_action": "local_sort_and_dependency_preview_only",
+      "evidence_required": [
+        "source_candidate_id",
+        "preview_order",
+        "depends_on",
+        "task_executed_false"
+      ]
+    },
+    {
+      "id": "LRS-006",
+      "name": "预演依赖链",
+      "objective": "只计算 depends_on，不启动任何真实任务。",
+      "source_candidate_id": "LRQ-006",
+      "preview_order": 6,
+      "depends_on": [
+        "LRS-005"
+      ],
+      "scheduled": false,
+      "auto_execute": false,
+      "dry_run_only": true,
+      "external_call": false,
+      "real_send": false,
+      "reload_service": false,
+      "write_formal_rule": false,
+      "task_executed": false,
+      "execution_adapter": "none",
+      "allowed_action": "local_sort_and_dependency_preview_only",
+      "evidence_required": [
+        "source_candidate_id",
+        "preview_order",
+        "depends_on",
+        "task_executed_false"
+      ]
+    },
+    {
+      "id": "LRS-007",
+      "name": "预演冲突与红线复核",
+      "objective": "确认不触达企业微信、n8n、券商、税局、财税软件和服务重载。",
+      "source_candidate_id": "LRQ-007",
+      "preview_order": 7,
+      "depends_on": [
+        "LRS-006"
+      ],
+      "scheduled": false,
+      "auto_execute": false,
+      "dry_run_only": true,
+      "external_call": false,
+      "real_send": false,
+      "reload_service": false,
+      "write_formal_rule": false,
+      "task_executed": false,
+      "execution_adapter": "none",
+      "allowed_action": "local_sort_and_dependency_preview_only",
+      "evidence_required": [
+        "source_candidate_id",
+        "preview_order",
+        "depends_on",
+        "task_executed_false"
+      ]
+    },
+    {
+      "id": "LRS-008",
+      "name": "汇总预演报告输入",
+      "objective": "为执行脚本准备只读报告材料。",
+      "source_candidate_id": "LRQ-008",
+      "preview_order": 8,
+      "depends_on": [
+        "LRS-007"
+      ],
+      "scheduled": false,
+      "auto_execute": false,
+      "dry_run_only": true,
+      "external_call": false,
+      "real_send": false,
+      "reload_service": false,
+      "write_formal_rule": false,
+      "task_executed": false,
+      "execution_adapter": "none",
+      "allowed_action": "local_sort_and_dependency_preview_only",
+      "evidence_required": [
+        "source_candidate_id",
+        "preview_order",
+        "depends_on",
+        "task_executed_false"
+      ]
+    }
+  ],
+  "hard_red_line_confirmation": {
+    "auto_execute": false,
+    "external_call": false,
+    "real_send": false,
+    "reload_service": false,
+    "write_formal_rule": false,
+    "trigger_n8n": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false
+  }
+}

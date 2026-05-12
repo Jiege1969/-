@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "name": "共享政策证据只读调用样例通用模板",
+  "asset_identity": "shared_policy_evidence_readonly_call_sample_template",
+  "risk_level": "W1",
+  "boundary": {
+    "production_interface": false,
+    "trigger_n8n": false,
+    "external_send": false,
+    "write_database": false,
+    "real_business_action": false
+  },
+  "required_sections": [
+    "调用输入",
+    "只读证据返回",
+    "业务内解释",
+    "禁止事项",
+    "验收标准"
+  ],
+  "required_call_input_fields": [
+    "requesting_system",
+    "query_intent",
+    "topic_keywords",
+    "expected_evidence_level",
+    "source",
+    "business_context"
+  ],
+  "required_evidence_fields": [
+    "evidence_id",
+    "title",
+    "document_number",
+    "issuing_authority",
+    "evidence_level",
+    "validity_status",
+    "source_url",
+    "source_path",
+    "extracted_conditions",
+    "topic_tags",
+    "risk_flags"
+  ],
+  "required_interpretation_fields": [
+    "allowed_use",
+    "forbidden_use",
+    "output_state",
+    "review_questions",
+    "next_action"
+  ],
+  "forbidden": [
+    "把证据写成正式结论",
+    "省略evidence_level",
+    "省略validity_status",
+    "把pending_review写成confirmed",
+    "写入覆盖删除政策库或业务库",
+    "触发n8n企业微信外发发布交易或审批"
+  ]
+}

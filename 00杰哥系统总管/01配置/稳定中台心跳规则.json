@@ -1,0 +1,85 @@
+﻿{
+  "名称": "稳定中台心跳规则",
+  "作用": "定义稳定智能体中台版的心跳快照检查范围和安全边界。",
+  "所属系统": "00杰哥系统总管",
+  "创建记录": "2026-04-27 创建稳定中台心跳规则。",
+  "安全边界": "只读检查和写入新系统日志；不重启服务；不触发n8n；不发送企业微信；不写旧系统。",
+  "当前口径": "股票四系统小闭环观察期。硬件天花板优先，不要求规划容器全常驻；只把当前主线入口、公网回调和已启用底座作为阻断项。",
+  "必检HTTP入口": [
+    {
+      "名称": "股票助手19300",
+      "URL": "http://127.0.0.1:19300/health",
+      "必须包含": "正常"
+    },
+    {
+      "名称": "股票企微桥接19302",
+      "URL": "http://127.0.0.1:19302/health",
+      "必须包含": "正常"
+    }
+  ],
+  "观察HTTP入口": [
+    {
+      "名称": "v3 n8n mother samples inactive health",
+      "URL": "http://127.0.0.1:28679/healthz",
+      "期望": "ok"
+    },
+    {
+      "名称": "v3 Ollama models",
+      "URL": "http://127.0.0.1:29134/api/tags",
+      "期望": "models"
+    },
+    {
+      "名称": "WSL OpenClaw Ollama dependency",
+      "URL": "http://127.0.0.1:11434/api/tags",
+      "期望": "models"
+    }
+  ],
+  "必检容器": [],
+  "观察容器": [
+    "jiege_stock_service",
+    "jiege_agent_gateway",
+    "jiege_agent_core",
+    "jiege_ops_guardian",
+    "jiege_voice_service",
+    "jiege_postgres",
+    "jiege_redis",
+    "jiege_n8n",
+    "jiege_ollama",
+    "ollama",
+    "n8n",
+    "redis"
+  ],
+  "必检日志": [
+    "日常可用版阶段报告",
+    "旧系统保护",
+    "第一批n8n受控闭环",
+    "总体验收"
+  ],
+  "关键日志阻断": {
+    "日常可用版阶段报告": false,
+    "旧系统保护": false,
+    "第一批n8n受控闭环": false,
+    "总体验收": false
+  },
+  "异常等级": {
+    "必检容器停止": "高",
+    "观察容器停止": "观察",
+    "必检HTTP入口不可用": "高",
+    "旧系统保护失败": "高",
+    "日常入口不可用": "中",
+    "任务队列为空": "低"
+  },
+  "禁止复发容器名": [
+    "jiege_agent_gateway",
+    "jiege_agent_core",
+    "jiege_ops_guardian",
+    "jiege_stock_service",
+    "jiege_voice_service",
+    "jiege_n8n",
+    "jiege_ollama",
+    "jiege_redis",
+    "jiege_postgres"
+  ],
+  "当前防复发说明": "Current containers are v3 only. Retired jiege_* names remain only as recurrence-prevention signatures."
+}
+

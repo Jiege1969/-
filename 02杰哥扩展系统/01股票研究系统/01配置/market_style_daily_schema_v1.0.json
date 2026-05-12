@@ -1,0 +1,465 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Market Style Daily Schema v1.0",
+  "version": "1.0",
+  "effective_date": "2026-05-07",
+  "description": "每日市场风格数据，用于单股L3分析中的市场风格适配分项计算。第一版采用简单、可解释、可复盘的结构。",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "数据对应的交易日。"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "cn",
+        "hk",
+        "us"
+      ],
+      "description": "市场区域。"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "confirmed",
+        "partial",
+        "failed"
+      ],
+      "description": "该交易日风格数据状态。draft/partial不得作为高置信度依据。"
+    },
+    "data_sources": {
+      "type": "array",
+      "description": "本日风格数据来源，便于复盘追溯。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "quote",
+              "index",
+              "sector",
+              "capital_flow",
+              "manual",
+              "other"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "success",
+              "partial",
+              "failed"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "type",
+          "status"
+        ]
+      }
+    },
+    "risk_appetite": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "description": "市场风险偏好得分，-1极低，0中性，1极高。"
+        },
+        "up_down_ratio": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "涨跌家数比，上涨家数/下跌家数。"
+        },
+        "up_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "down_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "limit_up_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "limit_down_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "total_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "两市总成交额，单位为亿元。"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "score",
+        "up_down_ratio",
+        "limit_up_count",
+        "limit_down_count",
+        "total_amount",
+        "evidence",
+        "missing"
+      ]
+    },
+    "sector_heat": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "top_sectors": {
+          "type": "array",
+          "description": "涨幅前5的板块。",
+          "items": {
+            "$ref": "#/definitions/sector_item"
+          }
+        },
+        "bottom_sectors": {
+          "type": "array",
+          "description": "跌幅前5的板块。",
+          "items": {
+            "$ref": "#/definitions/sector_item"
+          }
+        },
+        "hot_theme": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "当日最强势主题或概念。"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "top_sectors",
+        "bottom_sectors",
+        "hot_theme",
+        "evidence",
+        "missing"
+      ]
+    },
+    "size_style": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "big_small_ratio": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "沪深300涨跌幅 / 国证2000涨跌幅或类似比值。>1表示大盘强，<1表示小盘强。"
+        },
+        "large_index_change_pct": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "大盘代表指数涨跌幅，例如沪深300。"
+        },
+        "small_index_change_pct": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "小盘代表指数涨跌幅，例如国证2000。"
+        },
+        "dominant": {
+          "type": "string",
+          "enum": [
+            "large",
+            "small",
+            "balanced",
+            "unknown"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "big_small_ratio",
+        "dominant",
+        "evidence",
+        "missing"
+      ]
+    },
+    "liquidity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "total_amount_rank_percentile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1,
+          "description": "当日总成交额在近60个交易日中的分位数，越高越活跃。"
+        },
+        "activity_description": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "total_amount_rank_percentile",
+        "activity_description",
+        "evidence",
+        "missing"
+      ]
+    },
+    "final_adaptation_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 20,
+      "description": "最终市场风格适配得分，直接用于L3评分契约中的'市场风格适配'项。"
+    },
+    "moderate_coefficient": {
+      "type": "number",
+      "minimum": 0.85,
+      "maximum": 1.15,
+      "description": "温和调权系数，可乘到其他分项或总分上，但需谨慎使用。"
+    },
+    "notes_for_stock_type": {
+      "type": "string",
+      "description": "对特定类型股票，如资源股、科技股、消费股的适配备注。"
+    },
+    "overall_summary": {
+      "type": "string",
+      "description": "市场风格总体摘要。"
+    },
+    "missing_summary": {
+      "type": "string",
+      "description": "关键数据缺口摘要。"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "last_reviewed_at": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "date",
+    "market",
+    "status",
+    "data_sources",
+    "risk_appetite",
+    "sector_heat",
+    "size_style",
+    "liquidity",
+    "final_adaptation_score",
+    "moderate_coefficient",
+    "notes_for_stock_type",
+    "overall_summary",
+    "missing_summary",
+    "generated_at",
+    "last_reviewed_at"
+  ],
+  "definitions": {
+    "sector_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "change_pct": {
+          "type": "number"
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "change_pct"
+      ]
+    }
+  },
+  "example": {
+    "date": "2026-05-06",
+    "market": "cn",
+    "status": "draft",
+    "data_sources": [
+      {
+        "name": "manual_example",
+        "type": "manual",
+        "status": "success"
+      }
+    ],
+    "risk_appetite": {
+      "score": 0.6,
+      "up_down_ratio": 1.8,
+      "up_count": null,
+      "down_count": null,
+      "limit_up_count": 85,
+      "limit_down_count": 12,
+      "total_amount": 12500,
+      "evidence": [
+        "涨跌家数比1.8，市场整体偏强。",
+        "涨停85家、跌停12家，风险偏好较高。"
+      ],
+      "missing": [
+        "示例未给出具体上涨家数和下跌家数。"
+      ]
+    },
+    "sector_heat": {
+      "top_sectors": [
+        {
+          "name": "有色金属",
+          "change_pct": 3.2,
+          "source": "manual_example"
+        },
+        {
+          "name": "半导体材料",
+          "change_pct": 2.8,
+          "source": "manual_example"
+        },
+        {
+          "name": "稀土永磁",
+          "change_pct": 2.5,
+          "source": "manual_example"
+        },
+        {
+          "name": "军工",
+          "change_pct": 1.9,
+          "source": "manual_example"
+        },
+        {
+          "name": "电力",
+          "change_pct": 1.5,
+          "source": "manual_example"
+        }
+      ],
+      "bottom_sectors": [
+        {
+          "name": "旅游酒店",
+          "change_pct": -1.2,
+          "source": "manual_example"
+        },
+        {
+          "name": "酿酒",
+          "change_pct": -0.8,
+          "source": "manual_example"
+        }
+      ],
+      "hot_theme": "锗、镓出口管制",
+      "evidence": [
+        "有色金属、半导体材料、稀土永磁位列涨幅前列，资源与材料方向强。"
+      ],
+      "missing": []
+    },
+    "size_style": {
+      "big_small_ratio": 0.85,
+      "large_index_change_pct": null,
+      "small_index_change_pct": null,
+      "dominant": "small",
+      "evidence": [
+        "big_small_ratio为0.85，小盘风格相对占优。"
+      ],
+      "missing": [
+        "示例未给出沪深300和国证2000的具体涨跌幅。"
+      ]
+    },
+    "liquidity": {
+      "total_amount_rank_percentile": 0.92,
+      "activity_description": "成交额处于近60日高位，市场活跃。",
+      "evidence": [
+        "两市成交额12500亿元，近60日分位0.92。"
+      ],
+      "missing": []
+    },
+    "final_adaptation_score": 18,
+    "moderate_coefficient": 1.08,
+    "notes_for_stock_type": "资源股与小盘风格契合，且锗主题为当日强热点，适配度很高。",
+    "overall_summary": "示例日市场风险偏好较高，资源和半导体材料方向强，小盘风格占优，对锗相关资源股较友好。",
+    "missing_summary": "示例缺少具体上涨/下跌家数以及大小盘指数原始涨跌幅，正式评分时需补齐。",
+    "generated_at": "2026-05-07T00:00:00+08:00",
+    "last_reviewed_at": "2026-05-07"
+  },
+  "calculation_notes": {
+    "risk_appetite": "建议由涨跌家数比、涨停/跌停结构、主要指数涨跌综合得到，归一化到-1至1。",
+    "sector_heat": "建议按个股行业标签匹配当日前5/后5板块，并结合板块涨跌幅和持续性判断。",
+    "liquidity": "建议用全市场成交额相对近60个交易日分位计算。",
+    "size_style": "建议用沪深300与国证2000或类似大盘/小盘指数相对强弱计算。",
+    "final_adaptation_score": "建议从10分中性起步，根据风险偏好、行业热度、流动性、大小盘适配进行小幅加减分，最终限制在0-20。"
+  }
+}

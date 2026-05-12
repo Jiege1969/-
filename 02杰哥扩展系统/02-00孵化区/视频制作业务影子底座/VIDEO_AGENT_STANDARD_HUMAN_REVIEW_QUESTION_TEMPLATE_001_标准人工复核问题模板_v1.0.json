@@ -1,0 +1,47 @@
+{
+  "asset_id": "VIDEO_AGENT_STANDARD_HUMAN_REVIEW_QUESTION_TEMPLATE_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_review_template_not_formal_review_opinion",
+  "usage": [
+    "three_option_draft",
+    "partial_revision_draft",
+    "pre_publish_check_draft",
+    "wecom_reply_placeholder_draft"
+  ],
+  "fields": [
+    "review_item_id",
+    "related_shadow_task_id",
+    "related_asset",
+    "question_type",
+    "question_text",
+    "evidence_pointer",
+    "risk_level",
+    "suggested_shadow_action",
+    "human_decision",
+    "decision_time"
+  ],
+  "question_type_enum": [
+    "content",
+    "copyright",
+    "platform_rule",
+    "ai_label",
+    "privacy",
+    "release_gate",
+    "other"
+  ],
+  "risk_level_enum": [
+    "low",
+    "medium",
+    "high",
+    "blocking"
+  ],
+  "boundaries": {
+    "replace_human_review": false,
+    "formal_publish_opinion": false,
+    "confirm_real_generation_render_publish_or_send": false,
+    "read_wecom_credentials_or_real_messages": false
+  }
+}

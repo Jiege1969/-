@@ -1,0 +1,44 @@
+{
+  "task_id": "task-20260505-contract-shadow-001",
+  "source": "00总管/轻量任务契约层落地",
+  "created_at": "2026-05-05 13:46:08",
+  "user_intent": "将用户输入转成标准任务单，并在只读/影子状态下验证流转。",
+  "target_system": "00杰哥系统总管",
+  "task_type": "L1低风险影子",
+  "risk_level": "L1低风险影子",
+  "dry_run": true,
+  "real_action_allowed": false,
+  "inputs": {
+    "入口": "19302/FastAPI或企业微信桥接入口",
+    "原始请求": "生成一份系统状态摘要草稿"
+  },
+  "expected_output": {
+    "类型": "状态摘要草稿",
+    "写入位置": "03数据/任务契约/影子输出",
+    "禁止动作": [
+      "企业微信真实发送",
+      "n8n正式触发",
+      "正式库写入",
+      "券商接口",
+      "自动交易"
+    ]
+  },
+  "rollback_plan": {
+    "方式": "删除影子任务记录或标记为cancelled；不影响正式链路。",
+    "备份": "SQLite台账和JSON任务单均可按task_id追溯。"
+  },
+  "audit": {
+    "owner": "00总管",
+    "evidence_required": true,
+    "report_required": true
+  },
+  "human_confirm_required": false,
+  "timeout_seconds": 300,
+  "idempotency_key": "20260505-contract-shadow-001",
+  "status": "queued_shadow",
+  "receipt": {
+    "accepted": true,
+    "result": "仅入影子台账，不进入正式执行。",
+    "real_action_executed": false
+  }
+}

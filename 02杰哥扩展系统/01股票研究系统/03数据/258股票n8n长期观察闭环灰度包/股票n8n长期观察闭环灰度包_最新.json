@@ -1,0 +1,192 @@
+{
+  "生成时间": "2026-05-09 13:02:47",
+  "包名": "股票n8n长期观察闭环灰度包",
+  "当前结论": "方向修正为启用n8n参与长期分析和反馈闭环；真实发送仍走单人灰度闸口。",
+  "n8n定位": "调度器和闭环编排器，不是券商、不负责交易决策。",
+  "使用者目标吸收": [
+    "股票分析是长期过程，系统必须主动参与观察，不能只在被询问时响应。",
+    "n8n应负责定时触发分析、生成报告、推送给本人观察、收集反馈。",
+    "使用者近期主要工作是看分析内容是否全面、结果是否说到位。",
+    "进化系统负责把反馈沉淀为候选经验，但不自动转正式规则。"
+  ],
+  "闭环链路": [
+    "n8n定时或人工触发本地股票主动研究闭环。",
+    "股票系统生成研究报告、推送草案、发送前检查和日志。",
+    "企业微信灰度阶段只允许本人单条接收，禁止群发。",
+    "使用者回复反馈，例如：说到位、太空泛、少了财务、风险没讲清、这个口径保留。",
+    "股票反馈脚本把反馈写入本地日志。",
+    "进化系统把反馈和复盘结果整理成候选，不自动改正式规则。"
+  ],
+  "源入口状态": {
+    "本地主动研究闭环": {
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本\\运行股票主动研究闭环_本地.py",
+      "存在": true,
+      "大小": 6101
+    },
+    "n8n未激活编排草案": {
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本\\生成股票主动研究n8n未激活编排草案.py",
+      "存在": true,
+      "大小": 7880
+    },
+    "股票AI反馈记录": {
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本\\记录股票AI反馈.py",
+      "存在": true,
+      "大小": 5143
+    },
+    "进化反馈样本候选": {
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\生成股票复盘反馈样本接入候选包.py",
+      "存在": true,
+      "大小": 7390
+    },
+    "主动推送灰度巡检": {
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本\\执行股票主动推送灰度链路一键只读巡检.py",
+      "存在": true,
+      "大小": 9128
+    }
+  },
+  "工作流草案": {
+    "name": "股票长期观察闭环_灰度草案",
+    "active": false,
+    "draft_only": true,
+    "intended_mode": "n8n参与长期分析和反馈闭环；真实发送另走单人灰度闸口。",
+    "nodes": [
+      {
+        "name": "Schedule Trigger",
+        "type": "n8n-nodes-base.scheduleTrigger",
+        "active_requirement": "导入后初始保持active=false；灰度启用时只允许工作日低频触发。",
+        "purpose": "每天固定时间让股票系统主动参与分析。"
+      },
+      {
+        "name": "Run Local Stock Observation",
+        "type": "n8n-nodes-base.executeCommand",
+        "parameters": {
+          "command": "python \"D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本\\运行股票主动研究闭环_本地.py\" --no-complex"
+        },
+        "purpose": "生成本地股票研究报告、企业微信推送草案和发送前检查。"
+      },
+      {
+        "name": "Read Push Draft",
+        "type": "n8n-nodes-base.readBinaryFile",
+        "parameters": {
+          "filePath": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\136推送草案\\股票企微推送草案_最新.md"
+        },
+        "purpose": "读取准备推给使用者观察的报告草案。"
+      },
+      {
+        "name": "Single User Send Gate",
+        "type": "manual_or_controlled_gate",
+        "parameters": {
+          "allowed_receivers": [
+            "ChenXiaoJie"
+          ],
+          "max_messages_per_run": 1,
+          "group_send": false,
+          "broker_api": false,
+          "trade": false
+        },
+        "purpose": "只允许本人、单条、低频；真实发送必须另有确认令。"
+      },
+      {
+        "name": "Feedback Intake",
+        "type": "n8n-nodes-base.executeCommand",
+        "parameters": {
+          "command_template": "python \"D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本\\记录股票AI反馈.py\" --command \"{{feedback_text}}\""
+        },
+        "purpose": "把使用者对报告的反馈写入股票系统本地反馈日志。"
+      },
+      {
+        "name": "Evolution Candidate Sync",
+        "type": "n8n-nodes-base.executeCommand",
+        "parameters": {
+          "command": "python \"D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\生成股票复盘反馈样本接入候选包.py\""
+        },
+        "purpose": "把复盘和反馈整理为进化候选，不自动转正式规则。"
+      }
+    ],
+    "connections": {
+      "Schedule Trigger": [
+        "Run Local Stock Observation"
+      ],
+      "Run Local Stock Observation": [
+        "Read Push Draft"
+      ],
+      "Read Push Draft": [
+        "Single User Send Gate"
+      ],
+      "Feedback Intake": [
+        "Evolution Candidate Sync"
+      ]
+    },
+    "activation_stages": [
+      {
+        "阶段": "A",
+        "名称": "本地长期分析dry-run",
+        "n8n可参与": true,
+        "真实发送": false,
+        "说明": "n8n可定时或手动触发本地分析，只写本地报告和日志。"
+      },
+      {
+        "阶段": "B",
+        "名称": "单人推送灰度",
+        "n8n可参与": true,
+        "真实发送": "仅本人单条且受控确认",
+        "说明": "只允许ChenXiaoJie，且每次最多一条。"
+      },
+      {
+        "阶段": "C",
+        "名称": "反馈进化候选闭环",
+        "n8n可参与": true,
+        "真实发送": "沿用单人灰度限制",
+        "说明": "把使用者反馈和复盘结果转为进化候选，不自动生效为正式规则。"
+      }
+    ],
+    "hard_guards": {
+      "group_send": false,
+      "broker_api": false,
+      "trade": false,
+      "auto_formal_rule": false,
+      "service_reload": false
+    }
+  },
+  "当前放行判断": {
+    "允许n8n参与本地长期分析dry-run": true,
+    "允许n8n真实触发外部Webhook": false,
+    "允许企业微信单人真实灰度发送": "需要单独受控确认令和最终发送闸口",
+    "允许群发": false,
+    "允许券商接口": false,
+    "允许自动交易": false,
+    "允许自动转正式规则": false
+  },
+  "当前未执行动作": [
+    "未导入n8n工作流。",
+    "未启用n8n active=true。",
+    "未调用n8n API。",
+    "未真实发送企业微信。",
+    "未修改19310/19302服务。",
+    "未写进化正式规则。"
+  ],
+  "安全边界": {
+    "导入n8n": false,
+    "启用n8n工作流": false,
+    "触发n8n": false,
+    "真实发送企业微信": false,
+    "群发": false,
+    "调用券商接口": false,
+    "自动交易": false,
+    "自动转正式规则": false,
+    "重载19310": false,
+    "重载19302": false,
+    "修改总管面板": false,
+    "修改一键接续包": false
+  },
+  "实际动作": {
+    "写本地258灰度包": true,
+    "读取既有入口状态": true,
+    "导入n8n": false,
+    "启用n8n工作流": false,
+    "触发n8n": false,
+    "真实发送企业微信": false,
+    "调用券商接口": false,
+    "自动交易": false
+  }
+}

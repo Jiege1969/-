@@ -1,0 +1,134 @@
+{
+  "名称": "L3企业微信短答桥接dry-run验收",
+  "generated_at": "2026-05-08 06:55:37",
+  "status": "passed",
+  "samples": [
+    {
+      "question": "分析云南锗业",
+      "expected": "分析对象：云南锗业（sz002428）",
+      "checks": {
+        "assistant_completed": true,
+        "real_send_false": true,
+        "has_analysis_object": true,
+        "has_conclusion": true,
+        "has_missing": true,
+        "not_old_template": true,
+        "no_trade_words": true,
+        "frontend_reply_not_too_long": true,
+        "frontend_line_count_controlled": true,
+        "why_line_is_compressed": true
+      },
+      "blocking": [],
+      "passed": true,
+      "reply_length": 361,
+      "line_count": 9,
+      "why_line_length": 44,
+      "real_send": false,
+      "reply_preview": "![股票图形报告](http://43.167.210.211/wecom-bot/message?card=report_png&name=sz002428_%E6%9C%80%E6%96%B0.png&v=20260508-065534)\n\n分析对象：云南锗业（sz002428）\n结论：暂不建议关注。\n一句话：财报不再是空白：公司有收入增长和锗产业链地位，但利润、扣非和现金流偏弱，基本面只能算弱支撑。\n现在怎么处理：当前不提高研究优先级，先看观察条件是否重新成立。\n观察条件：价格回到78.60元-79.39元后不跌破75.39元；当天收盘价或当前实时价高于86.62元；当前只有1.05倍，没有达到活跃标准。\n风险线：跌破75.39元，或跌回78.60元下方且近5日成交活跃度低于平时的1.10倍，转为谨慎观察。\n为什么：技术未确认；基本面有支撑但不充分；政策有辅助，行业价未入账；市场适配16/20。\n缺口：锗锭具体价格、日期、单位尚未入账；锗锭尚未形成5个连续观测点；锗锭尚未形成20个连续观测点。\n说明：仅供研究参考，不构成投资建议，不作为买卖指令。"
+    },
+    {
+      "question": "分析天齐锂业",
+      "expected": "分析对象：天齐锂业（sz002466）",
+      "checks": {
+        "assistant_completed": true,
+        "real_send_false": true,
+        "has_analysis_object": true,
+        "has_conclusion": true,
+        "has_missing": true,
+        "not_old_template": true,
+        "no_trade_words": true,
+        "frontend_reply_not_too_long": true,
+        "frontend_line_count_controlled": true,
+        "why_line_is_compressed": true
+      },
+      "blocking": [],
+      "passed": true,
+      "reply_length": 371,
+      "line_count": 9,
+      "why_line_length": 38,
+      "real_send": false,
+      "reply_preview": "![股票图形报告](http://43.167.210.211/wecom-bot/message?card=report_png&name=sz002466_%E6%9C%80%E6%96%B0.png&v=20260508-065534)\n\n分析对象：天齐锂业（sz002466）\n结论：暂不建议关注。\n一句话：财报已明显修复：一季度收入和利润大幅增长，但现金流下降、2025年全年仍弱、锂价周期波动还没解除。\n现在怎么处理：当前不提高研究优先级，先看观察条件是否重新成立。\n观察条件：价格回到79.79元-80.59元后不跌破76.53元；当天收盘价或当前实时价高于87.93元；当前1.11倍，达到活跃标准。\n风险线：跌破76.53元，或跌回79.79元下方且近5日成交活跃度低于平时的1.10倍，转为谨慎观察。\n为什么：技术未确认；基本面偏弱；政策不强，行业价仅单点；市场适配16/20。\n缺口：电池级碳酸锂尚未形成5个连续观测点；电池级碳酸锂尚未形成20个连续观测点；价格与公司毛利、现金流产品暴露度的量化映射尚未完成。\n说明：仅供研究参考，不构成投资建议，不作为买卖指令。"
+    },
+    {
+      "question": "分析华虹公司",
+      "expected": "分析对象：华虹公司（sh688347）",
+      "checks": {
+        "assistant_completed": true,
+        "real_send_false": true,
+        "has_analysis_object": true,
+        "has_conclusion": true,
+        "has_missing": true,
+        "not_old_template": true,
+        "no_trade_words": true,
+        "frontend_reply_not_too_long": true,
+        "frontend_line_count_controlled": true,
+        "why_line_is_compressed": true
+      },
+      "blocking": [],
+      "passed": true,
+      "reply_length": 353,
+      "line_count": 9,
+      "why_line_length": 43,
+      "real_send": false,
+      "reply_preview": "![股票图形报告](http://43.167.210.211/wecom-bot/message?card=report_png&name=sh688347_%E6%9C%80%E6%96%B0.png&v=20260508-065535)\n\n分析对象：华虹公司（sh688347）\n结论：暂不建议关注。\n一句话：基本面不是空白：营收和现金流有支撑、半导体景气改善，但利润率和ROE偏弱，晶圆代工周期压力还在。\n现在怎么处理：当前不提高研究优先级，先看观察条件是否重新成立。\n观察条件：价格回到138.18元-139.56元后不跌破132.54元；当天收盘价或当前实时价高于152.28元；当前1.12倍，达到活跃标准。\n风险线：跌破132.54元，或跌回138.18元下方且近5日成交活跃度低于平时的1.10倍，转为谨慎观察。\n为什么：技术未确认；基本面有支撑但不充分；政策不强，行业价未入账；市场适配16/20。\n缺口：更高分受制于政策事件未结构化、2026一季报缺失晶圆代工经营拆分不足。\n说明：仅供研究参考，不构成投资建议，不作为买卖指令。"
+    },
+    {
+      "question": "分析浙商中拓",
+      "expected": "分析对象：浙商中拓（sz000906）",
+      "checks": {
+        "assistant_completed": true,
+        "real_send_false": true,
+        "has_analysis_object": true,
+        "has_conclusion": true,
+        "has_missing": true,
+        "not_old_template": true,
+        "no_trade_words": true,
+        "frontend_reply_not_too_long": true,
+        "frontend_line_count_controlled": true,
+        "why_line_is_compressed": true
+      },
+      "blocking": [],
+      "passed": true,
+      "reply_length": 337,
+      "line_count": 9,
+      "why_line_length": 38,
+      "real_send": false,
+      "reply_preview": "![股票图形报告](http://43.167.210.211/wecom-bot/message?card=report_png&name=sz000906_%E6%9C%80%E6%96%B0.png&v=20260508-065536)\n\n分析对象：浙商中拓（sz000906）\n结论：暂不建议关注。\n一句话：财报不是空白：收入和现金流改善，但扣非仍弱、ROE不高，供应链业务要重点看风控和周转。\n现在怎么处理：当前不提高研究优先级，先看观察条件是否重新成立。\n观察条件：价格回到6.34元-6.40元后不跌破5.98元；当天收盘价或当前实时价高于7.10元；当前只有0.21倍，没有达到活跃标准。\n风险线：跌破5.98元，或跌回6.34元下方且近5日成交活跃度低于平时的1.10倍，转为谨慎观察。\n为什么：技术未确认；基本面偏弱；政策不强，行业价未入账；市场适配16/20。\n缺口：更高分受制于成交不足、扣非弱、供应链风控字段缺失、政策事件仍需结构化补强。\n说明：仅供研究参考，不构成投资建议，不作为买卖指令。"
+    },
+    {
+      "question": "分析正丹股份",
+      "expected": "分析对象：正丹股份（sz300641）",
+      "checks": {
+        "assistant_completed": true,
+        "real_send_false": true,
+        "has_analysis_object": true,
+        "has_conclusion": true,
+        "has_missing": true,
+        "not_old_template": true,
+        "no_trade_words": true,
+        "frontend_reply_not_too_long": true,
+        "frontend_line_count_controlled": true,
+        "why_line_is_compressed": true
+      },
+      "blocking": [],
+      "passed": true,
+      "reply_length": 412,
+      "line_count": 9,
+      "why_line_length": 38,
+      "real_send": false,
+      "reply_preview": "![股票图形报告](http://43.167.210.211/wecom-bot/message?card=report_png&name=sz300641_%E6%9C%80%E6%96%B0.png&v=20260508-065537)\n\n分析对象：正丹股份（sz300641）\n结论：暂不建议关注。\n一句话：财报补上后更偏风险：2025年和2026年一季度收入利润都在下滑，当前基本面不支持提高关注。\n现在怎么处理：当前不提高研究优先级，先看观察条件是否重新成立。\n观察条件：当前17.84元低于承接区18.28元-18.46元，先不作为重点关注；当天收盘价或当前实时价高于19.27元；当前只有0.22倍，没有达到活跃标准。\n风险线：当前已低于20.04元风险线，维持风险复核；只要没有重新站回20.04元上方，就继续回避；若继续跌破17.59元，风险加重。\n为什么：技术未确认；基本面偏弱；政策不强，行业价未入账；市场适配16/20。\n缺口：更高分受制于价格低于修复区、成交不足、业绩下滑、产品价格资金证据缺失；偏苯三酸酐/TMA具体价格、日期、单位尚未入账；偏苯三酸酐/TMA尚未形成5个连续观测点。\n说明：仅供研究参考，不构成投资建议，不作为买卖指令。"
+    }
+  ],
+  "overall": {
+    "sample_count": 5,
+    "passed_count": 5,
+    "conclusion": "桥接dry-run通过"
+  },
+  "safety_boundary": {
+    "real_send": false,
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

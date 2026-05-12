@@ -1,0 +1,82 @@
+﻿{
+    "status":  "completed",
+    "stage":  "preopen",
+    "audit_only":  false,
+    "audit_flag_seen":  false,
+    "global_lock_acquired":  true,
+    "lock_acquired":  true,
+    "stock_root":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统",
+    "stock_script_dir":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本",
+    "planned_scripts":  [
+                            "生成股票n8n日内报告闭环与晨报推送策略包.py",
+                            "生成盘前出击排序报告.py",
+                            "生成股票日报质量评分.py"
+                        ],
+    "actions":  [
+                    {
+                        "script":  "生成股票n8n日内报告闭环与晨报推送策略包.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本\\生成股票n8n日内报告闭环与晨报推送策略包.py",
+                        "started_at":  "2026-05-09 22:38:44",
+                        "ended_at":  "2026-05-09 22:38:44",
+                        "exit_code":  0,
+                        "success":  true,
+                        "timed_out":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\stock_three_stage_scheduler_logs\\20260509-223844-preopen--1836777237.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\stock_three_stage_scheduler_logs\\20260509-223844-preopen--1836777237.err.log"
+                    },
+                    {
+                        "script":  "生成盘前出击排序报告.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本\\生成盘前出击排序报告.py",
+                        "started_at":  "2026-05-09 22:38:44",
+                        "ended_at":  "2026-05-09 22:38:44",
+                        "exit_code":  0,
+                        "success":  true,
+                        "timed_out":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\stock_three_stage_scheduler_logs\\20260509-223844-preopen--2033683635.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\stock_three_stage_scheduler_logs\\20260509-223844-preopen--2033683635.err.log"
+                    },
+                    {
+                        "script":  "生成股票日报质量评分.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\02脚本\\生成股票日报质量评分.py",
+                        "started_at":  "2026-05-09 22:38:44",
+                        "ended_at":  "2026-05-09 22:38:44",
+                        "exit_code":  0,
+                        "success":  true,
+                        "timed_out":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\stock_three_stage_scheduler_logs\\20260509-223844-preopen-1334293095.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\stock_three_stage_scheduler_logs\\20260509-223844-preopen-1334293095.err.log"
+                    }
+                ],
+    "safety":  {
+                   "ok":  true,
+                   "checks":  {
+                                  "gate_file_exists":  true,
+                                  "gate_boolean_true_count":  0,
+                                  "approval_file_exists":  true,
+                                  "approval_allows_real_send":  false,
+                                  "approval_wecom_real_send":  false,
+                                  "approval_auto_trade":  false,
+                                  "approval_broker_api":  false,
+                                  "approval_n8n_trigger":  false,
+                                  "real_send_latest_log_exists":  true,
+                                  "real_send_success_in_latest_log":  false
+                              },
+                   "inspected_paths":  {
+                                           "gate":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\01配置\\股票分析系统硬闸门配置.json",
+                                           "approval":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\138推送前放行包\\股票企微推送前放行包_最新.json",
+                                           "real_send_latest_log":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\企业微信主动研究灰度发送\\stock-active-research-wework-gray-send-最新真实.json"
+                                       }
+               },
+    "environment_locks":  {
+                              "STOCK_REAL_SEND":  "0",
+                              "STOCK_ENABLE_N8N_TRIGGER":  "0",
+                              "STOCK_ENABLE_BROKER_API":  "0",
+                              "STOCK_ENABLE_AUTO_TRADE":  "0"
+                          },
+    "started_by":  {
+                       "user":  "Administrator",
+                       "computer":  "杰哥",
+                       "pid":  24620
+                   },
+    "time":  "2026-05-09 22:38:44"
+}

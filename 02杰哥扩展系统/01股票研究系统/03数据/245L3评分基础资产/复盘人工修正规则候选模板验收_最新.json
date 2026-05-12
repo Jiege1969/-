@@ -1,0 +1,15 @@
+{
+  "name": "复盘人工修正规则候选模板验收",
+  "generated_at": "2026-05-08 10:16:09",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\复盘人工修正规则候选模板_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "candidate_count": 4,
+    "formal_rule_update_allowed_count": 0,
+    "weight_change_allowed_count": 0,
+    "pending_review_count": 4
+  },
+  "auto_continue_policy": "通过后继续进入下一低风险小闭环；不等待用户确认。"
+}

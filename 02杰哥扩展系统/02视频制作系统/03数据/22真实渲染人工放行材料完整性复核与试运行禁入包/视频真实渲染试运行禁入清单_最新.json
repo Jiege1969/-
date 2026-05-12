@@ -1,0 +1,104 @@
+{
+  "名称": "视频真实渲染试运行禁入清单",
+  "来源材料完整性复核": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\22真实渲染人工放行材料完整性复核与试运行禁入包\\视频真实渲染人工放行材料完整性复核_最新.json",
+  "禁入结论": "试运行禁入=true；任何真实渲染、真实视频生成或上传发布均不得开始。",
+  "禁入项": [
+    {
+      "动作": "试运行真实渲染",
+      "允许": false,
+      "原因": "人工放行材料未完整签收。"
+    },
+    {
+      "动作": "调用MoneyPrinterTurbo",
+      "允许": false,
+      "原因": "入口和依赖未人工确认。"
+    },
+    {
+      "动作": "执行magick",
+      "允许": false,
+      "原因": "本包禁止执行 ImageMagick 命令。"
+    },
+    {
+      "动作": "执行magick -version",
+      "允许": false,
+      "原因": "版本核对须人工另行执行，本包只读。"
+    },
+    {
+      "动作": "生成真实视频",
+      "允许": false,
+      "原因": "输出目录和测试素材未签收。"
+    },
+    {
+      "动作": "上传发布",
+      "允许": false,
+      "原因": "发布阻断保持，发布链路需独立放行。"
+    },
+    {
+      "动作": "接入n8n",
+      "允许": false,
+      "原因": "红线禁止。"
+    },
+    {
+      "动作": "修改企业微信公共配置",
+      "允许": false,
+      "原因": "红线禁止。"
+    },
+    {
+      "动作": "修改总管面板",
+      "允许": false,
+      "原因": "红线禁止。"
+    },
+    {
+      "动作": "修改一键接续包",
+      "允许": false,
+      "原因": "红线禁止。"
+    },
+    {
+      "动作": "重载服务",
+      "允许": false,
+      "原因": "红线禁止。"
+    }
+  ],
+  "生成时间": "2026-05-08 18:17:27",
+  "error_count": 0,
+  "试运行禁入": true,
+  "trial_run_forbidden": true,
+  "可进入真实渲染": false,
+  "can_enter_real_render": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "readonly_flags": {
+    "试运行禁入": true,
+    "可进入真实渲染": false,
+    "真实渲染": false,
+    "生成真实视频": false,
+    "上传发布": false,
+    "调用MoneyPrinterTurbo": false,
+    "执行magick": false,
+    "执行magick_version": false,
+    "触发n8n": false,
+    "修改企业微信公共配置": false,
+    "修改总管面板": false,
+    "修改一键接续包": false,
+    "重载服务": false
+  },
+  "readonly_flags_ascii": {
+    "trial_run_forbidden": true,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false
+  }
+}

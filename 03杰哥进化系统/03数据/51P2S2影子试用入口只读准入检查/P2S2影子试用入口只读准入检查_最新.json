@@ -1,0 +1,414 @@
+{
+  "id": "P2S2_SHADOW_TRIAL_ENTRY_READONLY_ADMISSION_CHECK",
+  "generated_at": "2026-05-09 09:23:50",
+  "status": "pass",
+  "summary": {
+    "artifact_count": 6,
+    "passed": 6,
+    "failed": 0,
+    "index_formal_claim_failed": 0,
+    "redline_false_check_count": 42
+  },
+  "artifacts": [
+    {
+      "id": "P2-S1-PACKAGE",
+      "line": "governor",
+      "md": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\稳定版正式收口_20260509\\P2_S1_三线影子续建执行包_20260509.md",
+      "json": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\稳定版正式收口_20260509\\P2_S1_三线影子续建执行包_20260509.json",
+      "md_exists": true,
+      "json_exists": true,
+      "index_hits": [],
+      "redline_false_checks": [
+        {
+          "字段": "trigger_n8n",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "send_wecom",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "write_formal_database",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "call_broker_or_trade_api",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "tax_filing_or_tax_external_action",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "render_upload_or_publish_video",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "claim_formal_capability",
+          "值": false,
+          "通过": true
+        }
+      ],
+      "warnings": [],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "TAX_DAILY_INTAKE_002",
+      "line": "tax",
+      "md": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\TAX_DAILY_INTAKE_002_脱敏问题接入空白卡_20260509.md",
+      "json": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\TAX_DAILY_INTAKE_002_脱敏问题接入空白卡_20260509.json",
+      "md_exists": true,
+      "json_exists": true,
+      "index_hits": [
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收影子底座索引_最新.md",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收影子底座索引_最新.json",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\孵化区影子底座总索引_最新.md",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\孵化区影子底座总索引_最新.json",
+          "命中": true
+        }
+      ],
+      "redline_false_checks": [
+        {
+          "字段": "formal_tax_opinion",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "tax_filing",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "invoice_action",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "tax_refund_action",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "external_send",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "trigger_n8n",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "send_wecom",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "write_formal_database",
+          "值": false,
+          "通过": true
+        }
+      ],
+      "warnings": [],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "TAX_DAILY_DRAFT_002",
+      "line": "tax",
+      "md": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\TAX_DAILY_DRAFT_002_待复核草案空白模板_20260509.md",
+      "json": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\TAX_DAILY_DRAFT_002_待复核草案空白模板_20260509.json",
+      "md_exists": true,
+      "json_exists": true,
+      "index_hits": [
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收影子底座索引_最新.md",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收影子底座索引_最新.json",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\孵化区影子底座总索引_最新.md",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\孵化区影子底座总索引_最新.json",
+          "命中": true
+        }
+      ],
+      "redline_false_checks": [
+        {
+          "字段": "trigger_n8n",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "send_wecom",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "write_formal_database",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "tax_filing",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "tax_external_action",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "claim_formal_opinion",
+          "值": false,
+          "通过": true
+        }
+      ],
+      "warnings": [],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "OFFICE_SHADOW_002",
+      "line": "office_work",
+      "md": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\本职工作业务影子底座\\OFFICE_SHADOW_002_流程资料登记_空白影子样例_v1.0.md",
+      "json": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\本职工作业务影子底座\\OFFICE_SHADOW_002_流程资料登记_空白影子样例_v1.0.json",
+      "md_exists": true,
+      "json_exists": true,
+      "index_hits": [
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\本职工作业务影子底座\\本职工作影子底座索引_最新.md",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\本职工作业务影子底座\\本职工作影子底座索引_最新.json",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\孵化区影子底座总索引_最新.md",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\孵化区影子底座总索引_最新.json",
+          "命中": true
+        }
+      ],
+      "redline_false_checks": [
+        {
+          "字段": "connect_oa",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "connect_erp",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "connect_finance_system",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "connect_hr_system",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "submit_approval",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "external_send",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "trigger_n8n",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "send_wecom",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "write_formal_database",
+          "值": false,
+          "通过": true
+        }
+      ],
+      "warnings": [
+        "MD边界提示不完整：不发送企业微信、不写正式库"
+      ],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "line": "video_production",
+      "md": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_P2_REVIEW_CHAIN_NEXT_001_脚本分镜素材授权发布门禁续建卡_20260509.md",
+      "json": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_P2_REVIEW_CHAIN_NEXT_001_脚本分镜素材授权发布门禁续建卡_20260509.json",
+      "md_exists": true,
+      "json_exists": true,
+      "index_hits": [
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\视频制作影子底座索引_最新.md",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\视频制作影子底座索引_最新.json",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\孵化区影子底座总索引_最新.md",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\孵化区影子底座总索引_最新.json",
+          "命中": true
+        }
+      ],
+      "redline_false_checks": [
+        {
+          "字段": "render_final_video",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "upload_video",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "publish_video",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "call_platform_api",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "trigger_n8n",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "send_wecom",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "write_formal_database",
+          "值": false,
+          "通过": true
+        }
+      ],
+      "warnings": [],
+      "errors": [],
+      "status": "pass"
+    },
+    {
+      "id": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "line": "shared_policy_evidence",
+      "md": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\P2_SHARED_POLICY_READONLY_NEXT_001_共享政策证据只读调用下一步卡_20260509.md",
+      "json": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\P2_SHARED_POLICY_READONLY_NEXT_001_共享政策证据只读调用下一步卡_20260509.json",
+      "md_exists": true,
+      "json_exists": true,
+      "index_hits": [
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\孵化区影子底座总索引_最新.md",
+          "命中": true
+        },
+        {
+          "索引": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\孵化区影子底座总索引_最新.json",
+          "命中": true
+        }
+      ],
+      "redline_false_checks": [
+        {
+          "字段": "trigger_n8n",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "send_wecom",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "write_formal_database",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "replace_business_line_judgment",
+          "值": false,
+          "通过": true
+        },
+        {
+          "字段": "claim_formal_capability",
+          "值": false,
+          "通过": true
+        }
+      ],
+      "warnings": [],
+      "errors": [],
+      "status": "pass"
+    }
+  ],
+  "index_formal_capability_claims": [
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收影子底座索引_最新.json",
+      "formal_capability_claim": false,
+      "status": "pass"
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\本职工作业务影子底座\\本职工作影子底座索引_最新.json",
+      "formal_capability_claim": false,
+      "status": "pass"
+    },
+    {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\视频制作影子底座索引_最新.json",
+      "formal_capability_claim": false,
+      "status": "pass"
+    }
+  ],
+  "conclusion": "P2-S1 影子试用入口可进入受控试用填卡前置阶段。",
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "name": "股票线第八批低风险续建队列",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 14:02:31",
+  "asset_identity": "W1/W2股票线低风险连续施工队列",
+  "status": "active",
+  "direction": "继续补政策事件库、市场风格日表、复盘闭环和统一刷新验收，强化L3证据结构化。",
+  "source_assets": {
+    "seventh_batch_acceptance_passed": true,
+    "seventh_batch_metrics": {
+      "check_count": 5,
+      "passed_count": 5,
+      "failed_count": 0,
+      "queue_completed_count": 5,
+      "queue_count": 5
+    }
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "construction_queue": [
+    {
+      "id": "STOCK-AUTO8-001",
+      "title": "政策事件库字段化补齐样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把政策事件的来源、方向、强度、暴露度、时效和缺口状态拆成结构化字段。",
+      "validation_asset": "政策事件库字段化补齐样例验收结果_最新.json",
+      "completed_at": "2026-05-08 13:30:37"
+    },
+    {
+      "id": "STOCK-AUTO8-002",
+      "title": "市场风格日表字段化补齐样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把风险偏好、板块热度、大小盘风格、流动性和前台影响拆成字段。",
+      "validation_asset": "市场风格日表字段化补齐样例验收结果_最新.json",
+      "completed_at": "2026-05-08 13:43:07"
+    },
+    {
+      "id": "STOCK-AUTO8-003",
+      "title": "复盘结果到规则候选二次门禁样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "确保复盘只生成经验候选，不自动改正式评分规则。",
+      "validation_asset": "复盘结果到规则候选二次门禁样例验收结果_最新.json",
+      "completed_at": "2026-05-08 13:44:29"
+    },
+    {
+      "id": "STOCK-AUTO8-004",
+      "title": "L3证据缺口统一刷新验收样例",
+      "risk_level": "W2",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "统一刷新前台门禁、财报资金、行业价格、政策事件和市场风格缺口状态。",
+      "validation_asset": "L3证据缺口统一刷新验收样例验收结果_最新.json",
+      "completed_at": "2026-05-08 13:59:31"
+    },
+    {
+      "id": "STOCK-AUTO8-005",
+      "title": "第八批统一影子验收总表",
+      "risk_level": "W2",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "汇总第八批影子资产验收状态，形成本批收口记录。",
+      "validation_asset": "股票线第八批统一影子验收总表验收结果_最新.json",
+      "completed_at": "2026-05-08 14:02:31"
+    }
+  ],
+  "blocked_queue": [
+    {
+      "id": "STOCK-AUTO8-BLOCK-001",
+      "title": "接入真实企业微信外发或正式入口",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "真实外发、正式入口、路由和服务变更属于红线事项，本业务线只登记阻断。"
+    },
+    {
+      "id": "STOCK-AUTO8-BLOCK-002",
+      "title": "接入券商接口或交易执行能力",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "股票系统定位为研究分析系统，不新增交易执行能力。"
+    }
+  ],
+  "summary": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  }
+}

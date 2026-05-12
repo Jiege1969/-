@@ -1,0 +1,48 @@
+{
+  "asset_id": "VIDEO_AGENT_WECOM_INCOMPLETE_MANAGER_DECISION_NEED_MORE_REPLY_001",
+  "name": "企业微信判断结果信息不完整需补充回执样例",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "视频制作系统",
+  "layer": "W1/W2 影子回执样例",
+  "status": "draft",
+  "terminal_role": "杰哥视频助理",
+  "input_example": "总管说这个可以继续，发吧。",
+  "reply_example": [
+    "杰哥，我收到这条判断结果，但当前信息还不完整，不能进入生成、渲染或发布。",
+    "还需要补齐：对应的视频任务ID；总管判断的范围；是否已经单独确认素材授权、AI标识和平台规范；是否仍需要视频线最终人工复核。",
+    "在这些信息补齐前，我只能登记为“判断结果信息不完整-待补充”，不会触发渲染、发布、企业微信真实外发或n8n。"
+  ],
+  "missing_fields_to_request": [
+    "视频任务ID",
+    "总管判断范围",
+    "生成放行/渲染放行/发布放行是否拆分",
+    "素材授权确认状态",
+    "AI标识确认状态",
+    "平台规范确认状态",
+    "是否仍需视频线最终人工复核"
+  ],
+  "state_suggestion": {
+    "当前状态": "判断结果信息不完整-待补充",
+    "下一步允许动作": [
+      "生成待补问题清单"
+    ],
+    "自动渲染": false,
+    "自动发布": false,
+    "真实外发": false
+  },
+  "boundary": {
+    "send_wecom": false,
+    "call_wecom_api": false,
+    "modify_public_wecom_component": false,
+    "read_manager_file": false,
+    "write_manager": false,
+    "trigger_n8n": false,
+    "call_real_model": false,
+    "read_material": false,
+    "render_video": false,
+    "upload_video": false,
+    "publish_video": false
+  }
+}
+

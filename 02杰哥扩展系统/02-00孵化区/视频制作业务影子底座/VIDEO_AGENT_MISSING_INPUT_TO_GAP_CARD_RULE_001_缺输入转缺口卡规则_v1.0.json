@@ -1,0 +1,20 @@
+{
+  "asset_id": "VIDEO_AGENT_MISSING_INPUT_TO_GAP_CARD_RULE_001",
+  "version": "v1.0",
+  "asset_type": "continuous_construction_rule",
+  "construction_level": "W1/R0",
+  "scope": "video_line_continuous_shadow_construction",
+  "status": "draft",
+  "purpose": "Convert missing context into gap cards, review questions, or placeholder templates instead of stopping construction when safe.",
+  "conversion_rules": [
+    {"missing_item": "user_original_idea", "auto_output": "input_condition_gap_card", "continue_construction": true},
+    {"missing_item": "platform_rule_link", "auto_output": "platform_rule_pending_review_card", "continue_construction": true},
+    {"missing_item": "material_authorization", "auto_output": "material_authorization_gap_card", "continue_construction": true},
+    {"missing_item": "final_preview", "auto_output": "preview_pending_review_card", "continue_construction": true},
+    {"missing_item": "ai_label_confirmation", "auto_output": "ai_label_confirmation_receipt_template", "continue_construction": true},
+    {"missing_item": "publish_platform_selection", "auto_output": "publish_target_gap_card", "continue_construction": true},
+    {"missing_item": "real_account_or_cookie", "auto_output": "redline_block_register", "continue_construction": false},
+    {"missing_item": "real_api_key", "auto_output": "redline_block_register", "continue_construction": false}
+  ],
+  "fixed_boundary": "Gap cards can state what is missing and who should review it, but cannot automatically fill real accounts, materials, configs, or platform authorization."
+}

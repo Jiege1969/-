@@ -1,0 +1,266 @@
+{
+  "name": "L3证据缺口统一刷新验收样例",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 13:59:22",
+  "asset_identity": "W2 L3证据缺口统一刷新验收样例",
+  "status": "shadow_refresh_acceptance",
+  "purpose": "统一刷新前台门禁、财报资金、行业价格、政策事件、市场风格和复盘门禁的证据缺口状态，防止后台缺证据时前台仍输出强结论。",
+  "not_formal_config": true,
+  "not_formal_entry": true,
+  "not_external_send": true,
+  "not_real_market_data": true,
+  "not_score_write": true,
+  "not_rule_update": true,
+  "refresh_contract": {
+    "frontend_rule": "第一行必须明确股票名称和代码，随后给结论；证据过程只作一句话原因，不堆指标。",
+    "backend_rule": "后台必须保留 evidence、missing、confidence、next_review_date、replay_candidate。",
+    "missing_rule": "任一关键证据缺失时必须写入 missing；关键缺口未关闭时 confidence 不得为 high。",
+    "score_rule": "L3评分只能读取结构化证据；样例状态不得写入正式评分。",
+    "replay_rule": "人工修正和复盘只进入经验候选，不能自动改正式规则。"
+  },
+  "source_validations": [
+    {
+      "key": "front_output_gate",
+      "label": "标准前台报告输出门禁",
+      "exists": true,
+      "passed": true,
+      "required_for_frontend": true,
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\标准前台报告输出门禁样例验收结果_最新.json",
+      "metrics": {
+        "gate_count": 7,
+        "sample_count": 3,
+        "forbidden_word_count": 0
+      },
+      "missing_effect": "若未通过，前台结论必须降级，后台 missing 必须显式列出"
+    },
+    {
+      "key": "fundamentals_capital",
+      "label": "财报资金证据",
+      "exists": true,
+      "passed": true,
+      "required_for_frontend": true,
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\财报资金证据字段化补齐样例验收结果_最新.json",
+      "metrics": {
+        "field_count": 5,
+        "sample_count": 5
+      },
+      "missing_effect": "若未通过，前台结论必须降级，后台 missing 必须显式列出"
+    },
+    {
+      "key": "industry_price",
+      "label": "行业价格连续观测",
+      "exists": true,
+      "passed": true,
+      "required_for_frontend": true,
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\行业价格连续观测字段化补齐样例验收结果_最新.json",
+      "metrics": {
+        "sample_count": 5,
+        "missing_or_partial_source_count": 5
+      },
+      "missing_effect": "若未通过，前台结论必须降级，后台 missing 必须显式列出"
+    },
+    {
+      "key": "policy_events",
+      "label": "政策事件库字段化",
+      "exists": true,
+      "passed": true,
+      "required_for_frontend": true,
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\政策事件库字段化补齐样例验收结果_最新.json",
+      "metrics": {
+        "sample_count": 3,
+        "ready_source_count": 0
+      },
+      "missing_effect": "若未通过，前台结论必须降级，后台 missing 必须显式列出"
+    },
+    {
+      "key": "market_style",
+      "label": "市场风格日表字段化",
+      "exists": true,
+      "passed": true,
+      "required_for_frontend": true,
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\市场风格日表字段化补齐样例验收结果_最新.json",
+      "metrics": {
+        "field_count": 10,
+        "sample_count": 3,
+        "real_market_data_ready": false
+      },
+      "missing_effect": "若未通过，前台结论必须降级，后台 missing 必须显式列出"
+    },
+    {
+      "key": "replay_rule_gate",
+      "label": "复盘结果到规则候选二次门禁",
+      "exists": true,
+      "passed": true,
+      "required_for_frontend": false,
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\复盘结果到规则候选二次门禁样例验收结果_最新.json",
+      "metrics": {
+        "gate_count": 4,
+        "sample_count": 3,
+        "any_formal_rule_update_allowed": false
+      },
+      "missing_effect": "若未通过，前台结论必须降级，后台 missing 必须显式列出"
+    }
+  ],
+  "samples": [
+    {
+      "stock_name": "云南锗业",
+      "stock_code": "002428",
+      "stock_type": "资源/半导体材料",
+      "frontend_first_line": "云南锗业（002428）：当前只能纳入观察，不能给强结论。",
+      "ready_evidence": [
+        "对象识别",
+        "前台短答门禁",
+        "政策事件字段框架",
+        "行业价格观测字段框架"
+      ],
+      "key_missing": [
+        "锗产品价格连续数据未接入真实日度来源",
+        "最新财报与资金证据未形成自动结构化得分",
+        "政策事件来源仍是样例/候选状态，未替换为真实可核验链接",
+        "市场风格日表未接入真实交易日数据"
+      ],
+      "conclusion_cap": "可纳入观察",
+      "confidence_cap": "medium",
+      "frontend_output_guard": "先给结论，再用一句话说明主要原因和缺口，不展开技术指标堆叠。",
+      "backend_required_fields": [
+        "evidence",
+        "missing",
+        "confidence",
+        "next_review_date",
+        "replay_candidate"
+      ]
+    },
+    {
+      "stock_name": "正丹股份",
+      "stock_code": "300641",
+      "stock_type": "化工",
+      "frontend_first_line": "正丹股份（300641）：结论上限为观察，等待产品价格和资金证据确认。",
+      "ready_evidence": [
+        "对象识别",
+        "前台短答门禁",
+        "新增样本验收",
+        "行业价格观测字段框架"
+      ],
+      "key_missing": [
+        "TMA/PTA等关键产品价格连续观测未接入真实来源",
+        "财报弹性与资金流向未结构化",
+        "政策事件未发现直接强驱动样例",
+        "市场风格对化工股的日度适配未接入真实数据"
+      ],
+      "conclusion_cap": "可纳入观察",
+      "confidence_cap": "medium",
+      "frontend_output_guard": "不得用短期涨跌代替产品价格和财报弹性证据。",
+      "backend_required_fields": [
+        "evidence",
+        "missing",
+        "confidence",
+        "next_review_date",
+        "replay_candidate"
+      ]
+    },
+    {
+      "stock_name": "浙商中拓",
+      "stock_code": "000906",
+      "stock_type": "供应链/大宗商品服务",
+      "frontend_first_line": "浙商中拓（000906）：目前偏低置信观察，核心缺口是财报质量和商品景气证据。",
+      "ready_evidence": [
+        "对象识别",
+        "前台短答门禁",
+        "新增样本验收"
+      ],
+      "key_missing": [
+        "营收、利润、现金流和负债质量未自动结构化",
+        "黑色/有色/大宗商品景气字段未形成连续观测",
+        "直接政策事件暴露度缺少可核验记录",
+        "市场风格日表未形成真实交易日适配"
+      ],
+      "conclusion_cap": "可纳入观察",
+      "confidence_cap": "low",
+      "frontend_output_guard": "若基本面和大宗景气缺口未补齐，不输出强推荐式表达。",
+      "backend_required_fields": [
+        "evidence",
+        "missing",
+        "confidence",
+        "next_review_date",
+        "replay_candidate"
+      ]
+    },
+    {
+      "stock_name": "三花智控",
+      "stock_code": "002050",
+      "stock_type": "制造/机器人/热管理",
+      "frontend_first_line": "三花智控（002050）：可观察，重点看业绩兑现和制造成长风格配合。",
+      "ready_evidence": [
+        "对象识别",
+        "前台短答门禁",
+        "财报资金字段框架"
+      ],
+      "key_missing": [
+        "机构资金和最新财报字段未形成自动复核记录",
+        "机器人/热管理产业证据仍缺真实来源连续更新",
+        "市场风格对制造成长股的适配未接入真实数据"
+      ],
+      "conclusion_cap": "可纳入观察",
+      "confidence_cap": "medium",
+      "frontend_output_guard": "可以说明产业逻辑，但必须同步提示业绩和风格证据缺口。",
+      "backend_required_fields": [
+        "evidence",
+        "missing",
+        "confidence",
+        "next_review_date",
+        "replay_candidate"
+      ]
+    },
+    {
+      "stock_name": "上纬新材",
+      "stock_code": "688585",
+      "stock_type": "新材料",
+      "frontend_first_line": "上纬新材（688585）：暂不建议强关注，证据缺口较多。",
+      "ready_evidence": [
+        "对象识别",
+        "前台短答门禁"
+      ],
+      "key_missing": [
+        "财报资金证据不足",
+        "核心产品价格和行业景气缺少连续来源",
+        "政策事件暴露度未形成有效样例",
+        "市场风格日表未接入真实数据"
+      ],
+      "conclusion_cap": "暂不建议关注",
+      "confidence_cap": "low",
+      "frontend_output_guard": "缺口较多时前台优先给风险和待补，不用概念标签抬高结论。",
+      "backend_required_fields": [
+        "evidence",
+        "missing",
+        "confidence",
+        "next_review_date",
+        "replay_candidate"
+      ]
+    }
+  ],
+  "summary": {
+    "source_validation_count": 6,
+    "source_validation_exists_count": 6,
+    "source_validation_passed_count": 6,
+    "all_sources_present": true,
+    "all_required_sources_passed": true,
+    "sample_count": 5,
+    "high_confidence_allowed_count": 0,
+    "formal_score_write_allowed": false,
+    "real_external_send_allowed": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  }
+}

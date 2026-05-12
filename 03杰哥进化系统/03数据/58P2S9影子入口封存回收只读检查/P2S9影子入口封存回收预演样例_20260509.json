@@ -1,0 +1,96 @@
+{
+  "sample_only": true,
+  "sealed_items": [
+    {
+      "source_receipt_id": "P2S7-RECEIPT-001",
+      "material_id": "VIRTUAL-P2S5-CASE-001",
+      "target_line": "tax",
+      "target_entry": "TAX_DAILY_INTAKE_002",
+      "seal_bucket": "ready_shadow_preview",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "pass",
+      "next_allowed_action": "等待人工复核后再决定是否填写对应影子入口"
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-002",
+      "material_id": "VIRTUAL-P2S5-CASE-002",
+      "target_line": "office_work",
+      "target_entry": "OFFICE_SHADOW_002",
+      "seal_bucket": "ready_shadow_preview",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "pass",
+      "next_allowed_action": "等待人工复核后再决定是否填写对应影子入口"
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-003",
+      "material_id": "VIRTUAL-P2S5-CASE-003",
+      "target_line": "video_production",
+      "target_entry": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "seal_bucket": "ready_shadow_preview",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "pass",
+      "next_allowed_action": "等待人工复核后再决定是否填写对应影子入口"
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-004",
+      "material_id": "VIRTUAL-P2S5-CASE-004",
+      "target_line": "shared_policy_evidence",
+      "target_entry": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "seal_bucket": "ready_shadow_preview",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "pass",
+      "next_allowed_action": "等待人工复核后再决定是否填写对应影子入口"
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-005",
+      "material_id": "VIRTUAL-P2S5-CASE-005",
+      "target_line": "pause",
+      "target_entry": "gap_or_redline_record",
+      "seal_bucket": "pause_gap_archive",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "pass",
+      "next_allowed_action": "只记录缺口、来源不清或条件不足，不生成业务结论"
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-006",
+      "material_id": "VIRTUAL-P2S5-CASE-006",
+      "target_line": "pause",
+      "target_entry": "gap_or_redline_record",
+      "seal_bucket": "blocked_redline_archive",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "blocked",
+      "next_allowed_action": "阻断并进入问题回收，不进入任何业务入口"
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-007",
+      "material_id": "VIRTUAL-P2S5-CASE-007",
+      "target_line": "pause",
+      "target_entry": "gap_or_redline_record",
+      "seal_bucket": "pause_gap_archive",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "pass",
+      "next_allowed_action": "只记录缺口、来源不清或条件不足，不生成业务结论"
+    }
+  ]
+}

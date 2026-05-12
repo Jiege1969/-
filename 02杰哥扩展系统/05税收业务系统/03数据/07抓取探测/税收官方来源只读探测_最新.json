@@ -1,0 +1,186 @@
+{
+  "生成时间": "2026-04-26 23:06:53",
+  "配置来源": "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\01配置\\税收真实抓取灰度配置.json",
+  "探测类型": "官方来源只读探测",
+  "是否下载正文": false,
+  "是否写入正式政策目录": false,
+  "是否写入向量库": false,
+  "是否触发n8n": false,
+  "是否企微推送": false,
+  "结果": [
+    {
+      "名称": "国家税务总局政策法规库",
+      "入口": "https://fgk.chinatax.gov.cn/",
+      "允许域名": [
+        "fgk.chinatax.gov.cn"
+      ],
+      "连通状态": "成功",
+      "HTTP状态": 200,
+      "最终地址": "https://fgk.chinatax.gov.cn/",
+      "内容类型": "text/html",
+      "证书校验状态": "系统证书链校验",
+      "读取字节数": 49696,
+      "是否截断": false,
+      "候选链接数量": 6,
+      "候选链接": [
+        {
+          "标题": "政策法规",
+          "链接": "https://fgk.chinatax.gov.cn/zcfgk/index.html",
+          "来源入口": "https://fgk.chinatax.gov.cn/"
+        },
+        {
+          "标题": "政策导航",
+          "链接": "https://fgk.chinatax.gov.cn/zcfgk/c100028/zcwj.html?siteCode=bm29000002&searchWord=&type=&pageSize=10&pageNum=0&orderBy=5&column=政策法规%2C政策解读%2C政策指引&label=文字政策解读%2C法律%2C行政法规%2C国务院文件%2C税务部门规章%2C税务规范性文件%2C财税文件%2C其他文件%2C工作通知%2C政策指引&likeDoc=0&wordPlace=0&wordPlace=0&indexCode=1",
+          "来源入口": "https://fgk.chinatax.gov.cn/"
+        },
+        {
+          "标题": "工作通知",
+          "链接": "https://fgk.chinatax.gov.cn/zcfgk/c102424/listflfg.html",
+          "来源入口": "https://fgk.chinatax.gov.cn/"
+        },
+        {
+          "标题": "政策解读",
+          "链接": "https://fgk.chinatax.gov.cn/zcfgk/c100015/list_zcjd.html",
+          "来源入口": "https://fgk.chinatax.gov.cn/"
+        },
+        {
+          "标题": "税费政策我来讲",
+          "链接": "https://fgk.chinatax.gov.cn/zcfgk/c103096/list_zcjd_video.html",
+          "来源入口": "https://fgk.chinatax.gov.cn/"
+        },
+        {
+          "标题": "政策指引",
+          "链接": "https://fgk.chinatax.gov.cn/zcfgk/c100022/publist_zczy.html",
+          "来源入口": "https://fgk.chinatax.gov.cn/"
+        }
+      ],
+      "错误": "",
+      "耗时秒": 0.16
+    },
+    {
+      "名称": "国家税务总局官网",
+      "入口": "https://www.chinatax.gov.cn/",
+      "允许域名": [
+        "www.chinatax.gov.cn",
+        "chinatax.gov.cn"
+      ],
+      "连通状态": "成功",
+      "HTTP状态": 200,
+      "最终地址": "https://www.chinatax.gov.cn/",
+      "内容类型": "text/html",
+      "证书校验状态": "系统证书链校验",
+      "读取字节数": 140817,
+      "是否截断": false,
+      "候选链接数量": 8,
+      "候选链接": [
+        {
+          "标题": "政策法规",
+          "链接": "https://fgk.chinatax.gov.cn",
+          "来源入口": "https://www.chinatax.gov.cn/"
+        },
+        {
+          "标题": "组图丨税收宣传月：普法走进青少年，依法纳税记心间",
+          "链接": "https://www.chinatax.gov.cn/chinatax/c103137/c5249138/content.html",
+          "来源入口": "https://www.chinatax.gov.cn/"
+        },
+        {
+          "标题": "组图丨税收宣传月：合规经营守底线 智慧办税优体验",
+          "链接": "https://www.chinatax.gov.cn/chinatax/c103137/c5248956/content.html",
+          "来源入口": "https://www.chinatax.gov.cn/"
+        },
+        {
+          "标题": "湖北：税收服务地方重大战略能力显著提升",
+          "链接": "https://www.chinatax.gov.cn/chinatax/c102920/c5237178/content.html",
+          "来源入口": "https://www.chinatax.gov.cn/"
+        },
+        {
+          "标题": "[央视新闻联播] 第35个全国税收宣传月正式启动",
+          "链接": "https://www.chinatax.gov.cn/chinatax/n810351/c102272/c5248677/content.html",
+          "来源入口": "https://www.chinatax.gov.cn/"
+        },
+        {
+          "标题": "[央视新闻直播间] 诚信纳税 促进税收营商环境更加优化",
+          "链接": "https://www.chinatax.gov.cn/chinatax/n810351/c102272/c5248676/content.html",
+          "来源入口": "https://www.chinatax.gov.cn/"
+        },
+        {
+          "标题": "[新华社] 税务部门首次集中曝光偷逃消费税案件",
+          "链接": "https://www.chinatax.gov.cn/chinatax/n810219/n810780/c5249021/content.html",
+          "来源入口": "https://www.chinatax.gov.cn/"
+        },
+        {
+          "标题": "[法治日报] 《国家税务总局2025年法治政府建设情况报告》公布 统筹推进税收法治建设高质量发展",
+          "链接": "https://www.chinatax.gov.cn/chinatax/n810219/n810780/c5249011/content.html",
+          "来源入口": "https://www.chinatax.gov.cn/"
+        }
+      ],
+      "错误": "",
+      "耗时秒": 0.22
+    },
+    {
+      "名称": "财政部税政司",
+      "入口": "https://szs.mof.gov.cn/",
+      "允许域名": [
+        "szs.mof.gov.cn"
+      ],
+      "连通状态": "成功",
+      "HTTP状态": 200,
+      "最终地址": "https://szs.mof.gov.cn/",
+      "内容类型": "text/html",
+      "证书校验状态": "系统证书链校验",
+      "读取字节数": 15492,
+      "是否截断": false,
+      "候选链接数量": 8,
+      "候选链接": [
+        {
+          "标题": "政策发布",
+          "链接": "https://szs.mof.gov.cn/zhengcefabu/",
+          "来源入口": "https://szs.mof.gov.cn/"
+        },
+        {
+          "标题": "政策解读",
+          "链接": "https://szs.mof.gov.cn/zhengcejiedu/",
+          "来源入口": "https://szs.mof.gov.cn/"
+        },
+        {
+          "标题": "构建新时代企业所得税制度体系 促进...",
+          "链接": "https://szs.mof.gov.cn/gongzuodongtai/202209/t20220930_3844078.htm",
+          "来源入口": "https://szs.mof.gov.cn/"
+        },
+        {
+          "标题": "《中华人民共和国增值税法实施条例（征求意见稿...",
+          "链接": "https://szs.mof.gov.cn/gongzuodongtai/202508/t20250811_3969788.htm",
+          "来源入口": "https://szs.mof.gov.cn/"
+        },
+        {
+          "标题": "《中华人民共和国税收征收管理法（修订征求意见...",
+          "链接": "https://szs.mof.gov.cn/gongzuodongtai/202503/t20250328_3960962.htm",
+          "来源入口": "https://szs.mof.gov.cn/"
+        },
+        {
+          "标题": "增值税法通过！自2026年1月1日起施行",
+          "链接": "https://szs.mof.gov.cn/gongzuodongtai/202412/t20241225_3950444.htm",
+          "来源入口": "https://szs.mof.gov.cn/"
+        },
+        {
+          "标题": "关于调整平潭综合实验区有关增值税和消费税退税...",
+          "链接": "https://szs.mof.gov.cn/zhengcefabu/202604/t20260415_3987667.htm",
+          "来源入口": "https://szs.mof.gov.cn/"
+        },
+        {
+          "标题": "关于发布《长期资产进项税额抵扣暂行办法》的公告",
+          "链接": "https://szs.mof.gov.cn/zhengcefabu/202602/t20260202_3983105.htm",
+          "来源入口": "https://szs.mof.gov.cn/"
+        }
+      ],
+      "错误": "",
+      "耗时秒": 0.25
+    }
+  ],
+  "统计": {
+    "入口数量": 3,
+    "连通成功数量": 3,
+    "候选链接数量": 22
+  },
+  "安全说明": "候选链接只表示官方入口页面发现的候选地址，不代表已经形成正式政策依据。"
+}

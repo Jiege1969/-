@@ -1,0 +1,162 @@
+{
+  "名称": "复盘闭环验收",
+  "generated_at": "2026-05-08 06:55:31",
+  "asset_identity": "自动验收报告",
+  "status": "passed",
+  "auto_weight_adjustment_status": "not_enabled_manual_review_only",
+  "summary": {
+    "evidence_file_types": 7,
+    "existing_evidence_types": 7,
+    "blocking_count": 0,
+    "warning_count": 0
+  },
+  "evidence_files": [
+    {
+      "key": "runtime_ledger_verify",
+      "pattern": "stock-review-ledger-runtime-verify-*.json",
+      "exists": true,
+      "count": 1,
+      "latest_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\复盘闭环\\stock-review-ledger-runtime-verify-最新.json",
+      "latest_mtime": "2026-04-30 10:01:48",
+      "json_keys": [
+        "生成时间",
+        "通过",
+        "失败",
+        "检查项",
+        "结论"
+      ],
+      "contains_auto_trade_true": false,
+      "contains_external_send_true": false,
+      "contains_n8n_true": false
+    },
+    {
+      "key": "minimal_review_verify",
+      "pattern": "stock-minimal-review-loop-verify-*.json",
+      "exists": true,
+      "count": 1,
+      "latest_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\股票研究最小闭环演练\\stock-minimal-review-loop-verify-最新.json",
+      "latest_mtime": "2026-04-30 08:22:57",
+      "json_keys": [
+        "生成时间",
+        "通过",
+        "失败",
+        "检查项",
+        "结论"
+      ],
+      "contains_auto_trade_true": false,
+      "contains_external_send_true": false,
+      "contains_n8n_true": false
+    },
+    {
+      "key": "minimal_review_run",
+      "pattern": "stock-minimal-review-loop-run-*.json",
+      "exists": true,
+      "count": 1,
+      "latest_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\股票研究最小闭环演练\\stock-minimal-review-loop-run-最新.json",
+      "latest_mtime": "2026-04-30 08:21:13",
+      "json_keys": [
+        "生成时间",
+        "规则文件",
+        "阶段",
+        "执行结果",
+        "验收文件",
+        "检查项",
+        "通过",
+        "失败",
+        "结论",
+        "安全边界"
+      ],
+      "contains_auto_trade_true": false,
+      "contains_external_send_true": false,
+      "contains_n8n_true": false
+    },
+    {
+      "key": "l5_review_verify",
+      "pattern": "stock-l5-review-loop-verify-*.json",
+      "exists": true,
+      "count": 1,
+      "latest_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\L5复盘联动\\stock-l5-review-loop-verify-最新.json",
+      "latest_mtime": "2026-04-30 10:01:56",
+      "json_keys": [
+        "生成时间",
+        "通过",
+        "失败",
+        "检查项",
+        "结论"
+      ],
+      "contains_auto_trade_true": false,
+      "contains_external_send_true": false,
+      "contains_n8n_true": false
+    },
+    {
+      "key": "l5_review_run",
+      "pattern": "stock-l5-review-loop-run-*.json",
+      "exists": true,
+      "count": 1,
+      "latest_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\L5复盘联动\\stock-l5-review-loop-run-最新.json",
+      "latest_mtime": "2026-04-30 10:01:56",
+      "json_keys": [
+        "生成时间",
+        "规则文件",
+        "执行数量",
+        "执行结果",
+        "输出文件",
+        "安全边界"
+      ],
+      "contains_auto_trade_true": false,
+      "contains_external_send_true": false,
+      "contains_n8n_true": false
+    },
+    {
+      "key": "weight_back_calibration_placeholder",
+      "pattern": "trial-pool-300-review-weight-back-calibration-placeholder-verify-*.json",
+      "exists": true,
+      "count": 1,
+      "latest_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\复盘权重反校准占位账本\\trial-pool-300-review-weight-back-calibration-placeholder-verify-最新.json",
+      "latest_mtime": "2026-04-30 21:36:16",
+      "json_keys": [
+        "生成时间",
+        "通过",
+        "失败",
+        "检查项",
+        "输出文件"
+      ],
+      "contains_auto_trade_true": false,
+      "contains_external_send_true": false,
+      "contains_n8n_true": false
+    },
+    {
+      "key": "review_due_checklist",
+      "pattern": "*review-due-manual-checklist-verify-*.json",
+      "exists": true,
+      "count": 2,
+      "latest_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\复盘到期提醒与人工填写清单\\trial-pool-300-review-due-manual-checklist-verify-最新.json",
+      "latest_mtime": "2026-05-04 21:43:03",
+      "json_keys": [
+        "生成时间",
+        "通过",
+        "失败",
+        "检查项",
+        "输出文件"
+      ],
+      "contains_auto_trade_true": false,
+      "contains_external_send_true": false,
+      "contains_n8n_true": false
+    }
+  ],
+  "formal_weight_script_candidates": [],
+  "blocking": [],
+  "warnings": [],
+  "front_output_rule": {
+    "can_say": "复盘闭环具备本地账本和人工复核沉淀能力",
+    "cannot_say": "规则权重会自动调整或系统会自动修正式评分规则",
+    "human_feedback_rule": "人工修正只进入复盘/经验候选，不能自动改正式规则"
+  },
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_auto_weight_change": true
+  }
+}

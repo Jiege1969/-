@@ -1,0 +1,60 @@
+{
+  "id": "VIDEO_AGENT_TRIAL_OUTPUT_QUALITY_CHECKLIST_001",
+  "name": "试运行输出质量检查清单",
+  "asset_identity": "video_creation_agent_shadow_trial_output_quality_checklist",
+  "stage": "W1_R0",
+  "status": "text_quality_checklist_no_media_generation",
+  "checks": [
+    {
+      "category": "output_identity",
+      "question": "is_it_marked_as_review_draft",
+      "fail_action": "add_draft_statement"
+    },
+    {
+      "category": "input_grounding",
+      "question": "is_it_based_only_on_desensitized_summary_without_unprovided_facts",
+      "fail_action": "remove_fabricated_content"
+    },
+    {
+      "category": "three_option_structure",
+      "question": "are_there_no_more_than_three_options",
+      "fail_action": "remove_extra_options"
+    },
+    {
+      "category": "clarification_question",
+      "question": "does_it_ask_only_one_key_question_at_a_time",
+      "fail_action": "merge_or_simplify"
+    },
+    {
+      "category": "asset_authorization",
+      "question": "does_it_keep_authorization_pending_verification",
+      "fail_action": "add_pending_verification_item"
+    },
+    {
+      "category": "platform_rules",
+      "question": "does_it_keep_platform_rule_pending_verification",
+      "fail_action": "add_pending_verification_item"
+    },
+    {
+      "category": "originality",
+      "question": "does_it_flag_originality_and_infringement_risk",
+      "fail_action": "add_review_question"
+    },
+    {
+      "category": "ai_labeling",
+      "question": "does_it_flag_ai_labeling_platform_review",
+      "fail_action": "add_review_question"
+    },
+    {
+      "category": "redline_boundary",
+      "question": "does_it_avoid_generation_render_publish_or_external_send_commitment",
+      "fail_action": "downgrade_to_shadow_draft"
+    },
+    {
+      "category": "human_review",
+      "question": "does_it_list_manual_confirmation_items",
+      "fail_action": "add_confirmation_items"
+    }
+  ],
+  "pass_meaning": "text_draft_quality_more_complete_only_not_generation_publish_or_external_send_approval"
+}

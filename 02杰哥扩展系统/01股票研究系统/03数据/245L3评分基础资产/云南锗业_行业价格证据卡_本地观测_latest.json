@@ -1,0 +1,98 @@
+{
+  "名称": "云南锗业行业价格证据卡",
+  "版本": "2026-05-08-local-observation-v1",
+  "生成日期": "2026-05-08",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "正式候选证据卡",
+  "状态": "source_registered",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "stock": {
+    "name": "云南锗业",
+    "code": "002428",
+    "display_code": "sz002428",
+    "industry": "稀有金属/半导体材料",
+    "stock_type": "资源股"
+  },
+  "tracked_products": [
+    {
+      "product_name": "锗锭",
+      "product_code": "germanium_ingot",
+      "relevance_to_stock": "云南锗业核心行业价格跟踪项。",
+      "exposure_weight": 0.95,
+      "direction_rule": "锗价持续上行通常对公司收入和利润预期偏正向；锗价回落或无趋势会削弱政策利好兑现。"
+    }
+  ],
+  "source_status": {
+    "source_registered": true,
+    "price_value_available": false,
+    "trend_available": false,
+    "spread_available": false,
+    "formal_chain_status": "not_integrated"
+  },
+  "sources": [
+    {
+      "source_name": "行业价格数据源候选清单",
+      "source_url": "03数据/245L3评分基础资产/行业价格数据源候选清单_20260507.json",
+      "source_type": "行业数据平台",
+      "coverage": "锗锭",
+      "source_role": "待人工复核",
+      "checked_at": "2026-05-08"
+    }
+  ],
+  "price_observations": [],
+  "trend_summary": {
+    "level": "source_registered",
+    "trend_5": {
+      "status": "insufficient",
+      "window": 5,
+      "available_points": 0,
+      "direction": "unknown",
+      "change_pct": null
+    },
+    "trend_20": {
+      "status": "insufficient",
+      "window": 20,
+      "available_points": 0,
+      "direction": "unknown",
+      "change_pct": null
+    },
+    "latest_price": null,
+    "latest_date": null
+  },
+  "industry_price_shadow_score": {
+    "score": 2,
+    "max_score": 10,
+    "score_reason": "锗锭来源已登记但价格尚未入账，暂不能作为提高关注等级的依据。",
+    "positive_evidence": [],
+    "negative_evidence": [
+      "锗锭具体价格、日期、单位尚未入账。",
+      "锗锭尚未形成5个连续观测点。",
+      "锗锭尚未形成20个连续观测点。"
+    ],
+    "confidence": "low"
+  },
+  "front_output_compression": {
+    "one_sentence": "锗锭来源已登记但价格尚未入账，暂不能作为提高关注等级的依据。",
+    "user_facing_reason": "行业价格只作为研究证据之一，不能单独决定关注等级。",
+    "do_not_say": [
+      "价格已经确认反转",
+      "行业价格足以单独提高关注等级",
+      "可以因为行业价格直接转强"
+    ]
+  },
+  "missing": [
+    "锗锭具体价格、日期、单位尚未入账。",
+    "锗锭尚未形成5个连续观测点。",
+    "锗锭尚未形成20个连续观测点。",
+    "价格与公司毛利、现金流和产品暴露度的量化映射尚未完成。"
+  ],
+  "safety_boundary": {
+    "only_for_research": true,
+    "not_investment_advice": true,
+    "not_buy_sell_signal": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

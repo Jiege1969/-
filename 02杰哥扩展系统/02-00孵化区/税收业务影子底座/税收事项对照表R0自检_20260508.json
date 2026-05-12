@@ -1,0 +1,29 @@
+{
+  "id": "TAX_MATTER_COMPARISON_R0_SELF_CHECK_20260508",
+  "generated_at": "2026-05-08",
+  "asset_identity": "tax_shadow_w1_r0_self_check",
+  "result": "passed",
+  "checked_assets": [
+    "税收事项对照表_软件产品即征即退_vs_研发费用加计扣除_20260508.md",
+    "税收事项对照表_软件产品即征即退_vs_研发费用加计扣除_20260508.json"
+  ],
+  "pre_read": {
+    "manager_panel": true,
+    "continuation_package": true,
+    "blocker_fix_alignment_return": true,
+    "matter_matching_fix_card": true
+  },
+  "boundary_check": {
+    "login_e_tax_bureau": false,
+    "read_real_tax_system": false,
+    "formal_tax_opinion": false,
+    "deterministic_refund_or_deduction_amount": false,
+    "write_formal_tax_database": false,
+    "modify_wecom_service_script": false
+  },
+  "command_verification": {
+    "json_parse_failures": 0,
+    "tax_index_registered": true,
+    "real_system_triggered": false
+  }
+}

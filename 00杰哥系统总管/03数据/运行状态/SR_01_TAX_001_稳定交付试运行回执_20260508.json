@@ -1,0 +1,25 @@
+{
+  "task_id": "SR-01-TAX-001",
+  "batch": "SR-01",
+  "execution_time": "2026-05-08 19:12:00 +08:00",
+  "business_line": "税收政策顾问",
+  "risk_level": "W1/R0",
+  "input_summary": "软件产品即征即退类脱敏问题入口映射验收",
+  "source_asset": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收入口映射验收样例_软件产品即征即退_20260508.md",
+  "status": "completed",
+  "redline_hit": false,
+  "output_summary": "软件产品即征即退进入对应链路，研发费用加计扣除进入研发费用链路，模糊问题先澄清。",
+  "evidence": ["税收入口映射验收样例 5 个用例均通过"],
+  "missing": ["正式税务意见关闭", "真实财税系统接入关闭", "地方执行口径仍需人工复核"],
+  "confidence": "W1/R0 入口映射置信度高；正式办理不评价",
+  "boundary_flags": {
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "write_formal_db": false,
+    "modify_service_script": false,
+    "restart_19310_19302": false,
+    "login_tax_system": false,
+    "formal_tax_opinion": false
+  },
+  "needs_manager_ruling": false
+}

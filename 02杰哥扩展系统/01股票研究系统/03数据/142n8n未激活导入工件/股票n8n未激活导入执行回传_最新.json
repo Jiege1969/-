@@ -1,0 +1,112 @@
+{
+  "名称": "股票 n8n 未激活导入执行回传",
+  "生成时间": "2026-05-09 13:58:21",
+  "任务": "执行股票 n8n 未激活导入，并保持 active=false",
+  "用户确认文本": "我确认执行股票 n8n 未激活导入，导入后必须保持 active=false，不启用、不触发、不真实发送企业微信。",
+  "范围": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统",
+  "使用既有材料": [
+    "139n8n主动研究编排草案",
+    "142n8n未激活导入工件",
+    "38n8n导入前只读审计",
+    "65n8n未激活导入人工确认回执模板",
+    "66/67/68/69 n8n隔离与导入材料"
+  ],
+  "导入前最终核验": {
+    "报告": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\38n8n导入前只读审计\\股票n8n未激活导入前最终核验_最新.json",
+    "pass": 16,
+    "fail": 0,
+    "结论": "通过：142未激活导入工件具备导入前人工确认条件；仍需人工明确确认后才可进入未激活导入步骤。"
+  },
+  "导入前快照": {
+    "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\n8n未激活导入\\stock-n8n-pre-import-workflows-snapshot-最新.json",
+    "sha256": "98e48ea4f6ab58d1ab062c9c900f82b1bb397872516cc020cf4fd42e09995935"
+  },
+  "导入动作": {
+    "执行记录": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\n8n未激活导入\\stock-active-research-n8n-inactive-import-最新.json",
+    "目标容器": "jiege_v3_n8n",
+    "目标工作流": "股票主动研究闭环_文件桥接未激活",
+    "使用142最新工件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\142n8n未激活导入工件\\股票主动研究闭环_n8n未激活导入_最新.json",
+    "工件active": false,
+    "是否新增导入n8n": false,
+    "已存在未重复导入": true,
+    "说明": "目标工作流已存在且保持未激活，本次未重复导入。"
+  },
+  "导入后工作流": {
+    "id": "ZkzsB6MdxlC3VMxY",
+    "name": "股票主动研究闭环_文件桥接未激活",
+    "active": false,
+    "node_count": 4,
+    "node_types": [
+      "n8n-nodes-base.manualTrigger",
+      "n8n-nodes-base.executeCommand",
+      "n8n-nodes-base.set",
+      "n8n-nodes-base.stickyNote"
+    ]
+  },
+  "导入后快照": {
+    "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\n8n未激活导入\\stock-n8n-post-import-workflows-snapshot-最新.json",
+    "sha256": "98e48ea4f6ab58d1ab062c9c900f82b1bb397872516cc020cf4fd42e09995935"
+  },
+  "导入后核验": {
+    "报告": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\n8n未激活导入\\stock-n8n-inactive-import-post-verify-最新.json",
+    "pass": 15,
+    "fail": 0,
+    "当前只读复核": {
+      "核验时间": "2026-05-09 13:58:21",
+      "核验方式": "docker exec jiege_v3_n8n n8n export:workflow --all --output /tmp/...；仅读取导出JSON，不执行/不启用/不触发",
+      "workflow_total": 5,
+      "target_match_count": 1,
+      "workflow_id": "ZkzsB6MdxlC3VMxY",
+      "workflow_name": "股票主动研究闭环_文件桥接未激活",
+      "active": false,
+      "node_count": 4,
+      "node_types": [
+        "n8n-nodes-base.manualTrigger",
+        "n8n-nodes-base.executeCommand",
+        "n8n-nodes-base.set",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "webhook_node_count": 0,
+      "credentials_field_count": 0,
+      "wework_send_node_count": 0,
+      "broker_trade_node_count": 0,
+      "checks": {
+        "工作流存在": true,
+        "active=false": true,
+        "无webhook真实触发": true,
+        "无credentials": true,
+        "无企业微信真实发送节点": true,
+        "无券商交易节点": true
+      }
+    }
+  },
+  "执行记录只读抽查": {
+    "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\04日志\\n8n未激活导入\\n8n-target-execution-readonly-after-import-最新.json",
+    "判定": {
+      "工作流存在": true,
+      "active_false": true,
+      "triggerCount_0": true,
+      "webhook登记为0": true,
+      "本轮日期无执行记录": true,
+      "存在历史执行记录": true
+    },
+    "历史执行说明": "execution_count_total 为历史记录；本轮只核验 2026-05-09 无新增执行记录，且本轮未执行手动触发、webhook触发或active=true启用。"
+  },
+  "红线动作": {
+    "启用n8n": false,
+    "active_true": false,
+    "触发n8n": false,
+    "手动触发": false,
+    "webhook真实触发": false,
+    "真实发送企业微信": false,
+    "群发": false,
+    "接券商": false,
+    "交易": false,
+    "重载19310": false,
+    "重载19302": false,
+    "修改总管面板": false,
+    "修改一键接续包": false
+  },
+  "是否需要总管确认": "本次未激活导入回传不需要；若后续启用、触发、真实发送企业微信、群发或接券商/交易，必须另行总管/人工确认。",
+  "结论": "通过：目标工作流存在，id=ZkzsB6MdxlC3VMxY，active=false；未启用、未触发、未真实发送企业微信；无credentials、无webhook节点、无企业微信真实发送节点、无券商/交易节点。"
+}

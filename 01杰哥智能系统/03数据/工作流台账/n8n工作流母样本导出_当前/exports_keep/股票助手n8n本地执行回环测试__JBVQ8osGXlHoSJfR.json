@@ -1,0 +1,22 @@
+{
+  "id": "JBVQ8osGXlHoSJfR",
+  "name": "股票助手n8n本地执行回环测试",
+  "active": 0,
+  "triggerCount": 0,
+  "createdAt": "2026-04-28 15:38:47.980",
+  "updatedAt": "2026-04-28 15:38:47.980",
+  "isArchived": 0,
+  "versionCounter": 1,
+  "description": null,
+  "node_count": 2,
+  "node_types": [
+    "n8n-nodes-base.executeWorkflowTrigger",
+    "n8n-nodes-base.set"
+  ],
+  "node_names": [
+    "本地执行触发器",
+    "生成本地回环响应"
+  ],
+  "webhook_like": false,
+  "wecom_like": false
+}

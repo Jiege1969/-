@@ -1,0 +1,14 @@
+{
+  "name": "标准股票分析格式前台短答范本样例验收结果",
+  "generated_at": "2026-05-08 12:46:19",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "sample_count": 5,
+    "included_new_samples": [
+      "正丹股份",
+      "浙商中拓"
+    ],
+    "forbidden_word_count": 0
+  }
+}

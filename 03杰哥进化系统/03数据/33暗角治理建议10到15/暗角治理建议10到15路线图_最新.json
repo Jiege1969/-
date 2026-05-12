@@ -1,0 +1,34 @@
+{
+  "report_name": "暗角治理建议10到15路线图",
+  "record_time": "2026-05-06 06:39:22 +08:00",
+  "done_now": [
+    "建议十一：依赖清单全枚举第一版",
+    "建议十三：暗角落只读扫描第一版"
+  ],
+  "rules_or_templates_landed": [
+    "建议十：数据资产双副本规则",
+    "建议十二：只读验收五问模板",
+    "建议十五：月度档案注记模板"
+  ],
+  "next_queue": [
+    "serviceraj 人工安全复核",
+    "AI_* / DailyWorkPlan / WSL_AutoStart 旧计划任务归属",
+    "WSL bashrc 旧 Ollama 路径治理预案",
+    "数据资产台账",
+    "提示词版本化",
+    "只读验收报告自动化",
+    "系统档案日"
+  ],
+  "safety": {
+    "readonly_scan": true,
+    "modified_tasks": false,
+    "modified_startup": false,
+    "modified_hosts": false,
+    "modified_firewall": false,
+    "modified_wsl": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "call_broker_api": false,
+    "auto_trade": false
+  }
+}

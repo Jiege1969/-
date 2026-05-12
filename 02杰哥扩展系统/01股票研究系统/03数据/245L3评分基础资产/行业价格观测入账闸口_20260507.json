@@ -1,0 +1,73 @@
+{
+  "名称": "行业价格观测入账闸口",
+  "日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子闸口规则",
+  "状态": "shadow_only",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "目的": "防止把行业价格来源线索、单点报价或媒体摘要误写成正式行业价格趋势证据。",
+  "入账等级": [
+    {
+      "level": "source_registered",
+      "含义": "只登记来源入口和产品映射，没有价格值。",
+      "前台口径": "行业价格仍待入账，暂不能作为提高关注等级的依据。"
+    },
+    {
+      "level": "single_observation",
+      "含义": "有一个可公开复核的价格点，包含日期、产品、单位、价格和来源。",
+      "前台口径": "行业价格有单点线索，但还缺连续趋势，只能弱支撑。"
+    },
+    {
+      "level": "trend_ready",
+      "含义": "有连续历史价格，可计算5日和20日趋势。",
+      "前台口径": "行业价格趋势对结论有支撑/不支持，但仍需结合技术、财报、政策和市场风格。"
+    },
+    {
+      "level": "company_linked",
+      "含义": "价格趋势已经和公司收入、毛利、现金流、产品暴露度形成映射。",
+      "前台口径": "行业价格与公司基本面方向一致/冲突，可影响L3行业价格分和置信度。"
+    }
+  ],
+  "硬性要求": [
+    "价格必须有日期。",
+    "价格必须有产品名和单位。",
+    "价格必须有来源URL或可追溯来源名称。",
+    "会员或授权数据不得绕过权限入账。",
+    "只有单点价格时不得写趋势反转。",
+    "只有行业价格时不得单独输出强结论。"
+  ],
+  "本次入账样例": {
+    "stock": "天齐锂业",
+    "display_code": "sz002466",
+    "product": "电池级碳酸锂",
+    "level": "single_observation",
+    "price_mid": 187500,
+    "unit": "元/吨",
+    "change_abs": 10500,
+    "change_pct": 0.0593,
+    "source": "上海有色网SMM新能源材料页",
+    "front_output": "碳酸锂价格单点数据偏积极，但还缺连续趋势和利润弹性拆分，只能弱支撑天齐锂业的观察结论。"
+  },
+  "仍未入账": [
+    {
+      "stock": "云南锗业",
+      "product": "锗锭",
+      "reason": "本轮未取得可公开复核的具体价格点，保持source_registered。"
+    },
+    {
+      "stock": "正丹股份",
+      "product": "偏苯三酸酐/TMA",
+      "reason": "本轮仅登记候选来源和行业线索，未取得可公开复核的当日价格点，保持source_registered。"
+    }
+  ],
+  "安全边界": {
+    "only_for_research": true,
+    "not_investment_advice": true,
+    "not_buy_sell_signal": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_external_send": true
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "asset_id": "VIDEO_AGENT_PRE_PUBLISH_BLOCKER_SUMMARY_RECEIPT_001",
+  "version": "v1.0",
+  "asset_type": "blocker_summary_receipt_template",
+  "construction_level": "W1/R0",
+  "scope": "pre_publish_four_piece_multi_platform_gate_consistency_blocker_summary",
+  "status": "draft_template",
+  "purpose": "Summarize why publishing cannot proceed, which review queues own the blockers, and what should happen next without triggering real publishing.",
+  "summary_fields": [
+    "summary_id",
+    "task_id",
+    "checked_scope",
+    "blocker_count",
+    "blockers",
+    "mapped_review_queues",
+    "highest_risk_level",
+    "publish_decision",
+    "next_action",
+    "real_system_triggered"
+  ],
+  "blocker_item_fields": [
+    "blocker_id",
+    "blocker_type",
+    "blocker_reason",
+    "review_queue",
+    "owner_role",
+    "close_condition"
+  ],
+  "fixed_rules": [
+    "If any redline blocker exists, publish_decision must be blocked.",
+    "If any four-piece item is missing, publish_decision must be pending_supplement_or_blocked.",
+    "If multi-platform check is incomplete, do not conclude one-click all-platform publishing is ready.",
+    "This template only summarizes blockers and does not supplement, send messages, or publish."
+  ],
+  "boundaries": {
+    "execute_supplement": false,
+    "send_message": false,
+    "publish": false
+  }
+}

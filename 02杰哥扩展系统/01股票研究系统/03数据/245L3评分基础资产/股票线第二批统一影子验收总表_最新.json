@@ -1,0 +1,131 @@
+{
+  "name": "股票线第二批统一影子验收总表",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:45:22",
+  "asset_identity": "W2第二批统一影子验收总表",
+  "status": "passed",
+  "source_assets": {
+    "second_queue": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票线第二批低风险续建队列_最新.json",
+    "second_queue_completed_count": 5,
+    "second_queue_queued_count": 1
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_real_refresh": true,
+  "not_score_write": true,
+  "checks": [
+    {
+      "key": "l3_report_gate_matrix",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\L3报告生成前置闸口矩阵验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "source_count": 6,
+        "source_passed_count": 6,
+        "gate_count": 8,
+        "formal_entry_allowed": false,
+        "real_wecom_allowed": false,
+        "auto_weight_change_allowed": false
+      }
+    },
+    {
+      "key": "front_backend_layering",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本前后台分层输出验收矩阵验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "sample_count": 5,
+        "front_passed_count": 5,
+        "backend_required_count": 5,
+        "real_wecom_send_allowed": false,
+        "formal_entry_allowed": false
+      }
+    },
+    {
+      "key": "financial_capital_gap",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\财报资金缺口主动暴露规则验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "stock_count": 5,
+        "receipt_count": 25,
+        "ready_count": 0,
+        "score_allowed_count": 0,
+        "front_gap_required_count": 5
+      }
+    },
+    {
+      "key": "industry_price_entry_check",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\行业价格连续观测入账前检查清单验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "stock_count": 5,
+        "required_observation_points": 25,
+        "existing_observation_points": 1,
+        "trend_ready_count": 0,
+        "score_allowed_count": 0,
+        "ledger_entry_allowed_count": 0
+      }
+    },
+    {
+      "key": "policy_candidate_blocking",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\政策事件候选到入库阻断清单验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "candidate_count": 5,
+        "entry_allowed_count": 0,
+        "score_allowed_count": 0,
+        "blocked_count": 5
+      }
+    },
+    {
+      "key": "second_queue",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票线第二批低风险续建队列验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "queue_count": 6,
+        "completed_count": 5,
+        "queued_count": 1,
+        "blocked_count": 2
+      }
+    }
+  ],
+  "summary": {
+    "check_count": 6,
+    "exists_count": 6,
+    "passed_count": 6,
+    "failed_count": 0,
+    "allow_shadow_acceptance_claim": true,
+    "allow_real_wecom_send": false,
+    "allow_formal_entry": false,
+    "allow_formal_score_update": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

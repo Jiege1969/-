@@ -1,0 +1,96 @@
+{
+  "version": "1.2",
+  "updated_at": "2026-05-07 23:49:35 +08:00",
+  "asset_identity": "tax_policy_advisor_daily_shadow_trial_intake_ledger",
+  "risk_level": "W1",
+  "status": "daily_shadow_trial_ready_not_formal_tax_system",
+  "boundary": {
+    "formal_tax_opinion": false,
+    "tax_filing": false,
+    "tax_refund_execution": false,
+    "invoice_execution": false,
+    "external_send": false,
+    "trigger_n8n": false,
+    "connect_tax_system": false,
+    "write_formal_tax_database": false
+  },
+  "purpose": [
+    "record_desensitized_real_questions",
+    "record_shadow_draft_status",
+    "record_evidence_gaps",
+    "record_review_handoff",
+    "record_boundary_check"
+  ],
+  "precheck_fields": [
+    {
+      "name": "desensitization",
+      "pass_standard": "不含客户姓名、身份证号、完整账号、密码、登录信息、税控信息",
+      "fail_action": "要求用户重新脱敏"
+    },
+    {
+      "name": "requested_output",
+      "pass_standard": "属于政策分析、资料清单、适用条件、测算前置字段、待复核报告",
+      "fail_action": "正式意见或真实办理请求暂停"
+    },
+    {
+      "name": "minimum_input",
+      "pass_standard": "至少有 business_question、business_scenario、requested_output",
+      "fail_action": "先补字段"
+    },
+    {
+      "name": "evidence_source",
+      "pass_standard": "优先用已登记政策卡、指引卡、官方来源或待补标记",
+      "fail_action": "不得编造政策"
+    },
+    {
+      "name": "amount_boundary",
+      "pass_standard": "只列字段、公式口径和缺口",
+      "fail_action": "不输出未经复核金额"
+    }
+  ],
+  "ledger": [
+    {
+      "trial_id": "TAX-DAILY-001",
+      "intake_date": "2026-05-07",
+      "question_summary": "软件产品即征即退条件初筛、资料清单和测算前置",
+      "requested_output": "适用条件初筛 + 资料清单 + 测算前置字段",
+      "desensitization_status": "已脱敏",
+      "draft_status": "draft",
+      "main_evidence": ["财税〔2011〕100号元数据卡", "税收政策指引卡", "字段化样例", "测算前置字段清单"],
+      "main_gaps": ["一般纳税人身份", "地区", "期间", "收入拆分", "软件材料", "销项税额", "进项税额", "地方口径"],
+      "review_handoff": "待人工复核回执",
+      "boundary_violation": false,
+      "status": "草案已出",
+      "intake_sample_md": "TAX_DAILY_INTAKE_001_软件产品即征即退脱敏接入样例_v1.0.md",
+      "intake_sample_json": "TAX_DAILY_INTAKE_001_软件产品即征即退脱敏接入样例_v1.0.json",
+      "draft_md": "TAX_DAILY_DRAFT_001_软件产品即征即退待复核草案_v1.0.md",
+      "draft_json": "TAX_DAILY_DRAFT_001_软件产品即征即退待复核草案_v1.0.json"
+    }
+  ],
+  "status_terms": {
+    "待接入": "还没有真实问题或问题未脱敏",
+    "输入待补": "缺业务场景、输出目标、地区、期间或资料",
+    "草案已出": "已生成待复核草案，但未人工复核",
+    "待人工复核": "需要用户、专业人员或主管口径确认",
+    "已复核可沉淀": "有人工回执，可进入复盘或进化候选",
+    "已阻断": "命中正式意见、申报、退税、开票、外发、接系统等红线"
+  },
+  "handoff_chain": [
+    "真实问题",
+    "脱敏输入卡",
+    "运行检查清单",
+    "待复核草案",
+    "日常试用台账",
+    "人工复核回执",
+    "复盘字段清单",
+    "进化候选"
+  ],
+  "w3_stop_conditions": [
+    "直接申报",
+    "直接办理退税",
+    "开具发票",
+    "登录电子税务局或财税软件",
+    "接 n8n 或企业微信",
+    "输出正式税务意见或可直接外发文本"
+  ]
+}

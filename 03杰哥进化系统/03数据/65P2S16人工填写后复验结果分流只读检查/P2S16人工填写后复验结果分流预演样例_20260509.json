@@ -1,0 +1,81 @@
+{
+  "sample_only": true,
+  "routing_items": [
+    {
+      "recheck_receipt_id": "P2S15-POST-MANUAL-FILL-RECHECK-001",
+      "source_manual_fill_task_id": "P2S14-MANUAL-FILL-TASK-001",
+      "target_line": "tax",
+      "target_entry": "TAX_DAILY_INTAKE_002",
+      "human_filled": false,
+      "recheck_statuses": {
+        "json_parse_check": "pending_manual_fill",
+        "redline_false_check": "pending_manual_fill",
+        "target_entry_status_check": "pending_manual_fill",
+        "readonly_shadow_regression": "pending_manual_fill"
+      },
+      "routing_result": "waiting_manual_fill",
+      "ready_for_shadow_draft_candidate": false,
+      "write_target_entry": false,
+      "auto_generate_business_conclusion": false,
+      "release_form": false,
+      "formal_capability_claim": false
+    },
+    {
+      "recheck_receipt_id": "P2S15-POST-MANUAL-FILL-RECHECK-002",
+      "source_manual_fill_task_id": "P2S14-MANUAL-FILL-TASK-002",
+      "target_line": "office_work",
+      "target_entry": "OFFICE_SHADOW_002",
+      "human_filled": false,
+      "recheck_statuses": {
+        "json_parse_check": "pending_manual_fill",
+        "redline_false_check": "pending_manual_fill",
+        "target_entry_status_check": "pending_manual_fill",
+        "readonly_shadow_regression": "pending_manual_fill"
+      },
+      "routing_result": "waiting_manual_fill",
+      "ready_for_shadow_draft_candidate": false,
+      "write_target_entry": false,
+      "auto_generate_business_conclusion": false,
+      "release_form": false,
+      "formal_capability_claim": false
+    },
+    {
+      "recheck_receipt_id": "P2S15-POST-MANUAL-FILL-RECHECK-003",
+      "source_manual_fill_task_id": "P2S14-MANUAL-FILL-TASK-003",
+      "target_line": "video_production",
+      "target_entry": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "human_filled": false,
+      "recheck_statuses": {
+        "json_parse_check": "pending_manual_fill",
+        "redline_false_check": "pending_manual_fill",
+        "target_entry_status_check": "pending_manual_fill",
+        "readonly_shadow_regression": "pending_manual_fill"
+      },
+      "routing_result": "waiting_manual_fill",
+      "ready_for_shadow_draft_candidate": false,
+      "write_target_entry": false,
+      "auto_generate_business_conclusion": false,
+      "release_form": false,
+      "formal_capability_claim": false
+    },
+    {
+      "recheck_receipt_id": "P2S15-POST-MANUAL-FILL-RECHECK-004",
+      "source_manual_fill_task_id": "P2S14-MANUAL-FILL-TASK-004",
+      "target_line": "shared_policy_evidence",
+      "target_entry": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "human_filled": false,
+      "recheck_statuses": {
+        "json_parse_check": "pending_manual_fill",
+        "redline_false_check": "pending_manual_fill",
+        "target_entry_status_check": "pending_manual_fill",
+        "readonly_shadow_regression": "pending_manual_fill"
+      },
+      "routing_result": "waiting_manual_fill",
+      "ready_for_shadow_draft_candidate": false,
+      "write_target_entry": false,
+      "auto_generate_business_conclusion": false,
+      "release_form": false,
+      "formal_capability_claim": false
+    }
+  ]
+}

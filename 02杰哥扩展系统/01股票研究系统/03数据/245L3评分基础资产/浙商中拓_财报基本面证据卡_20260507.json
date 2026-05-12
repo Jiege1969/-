@@ -1,0 +1,107 @@
+{
+  "名称": "浙商中拓财报基本面证据卡",
+  "版本": "shadow_v1.0",
+  "生成日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子证据卡",
+  "状态": "shadow_only",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "stock": {
+    "name": "浙商中拓",
+    "code": "sz000906",
+    "display_code": "000906.SZ"
+  },
+  "source_status": {
+    "local_company_snapshot": "missing_financial_fields",
+    "external_public_disclosure_used": true,
+    "structured_into_l3_shadow": true,
+    "formal_chain_status": "not_integrated"
+  },
+  "sources": [
+    {
+      "source_name": "浙商中拓2025年年度报告摘要/公告资料",
+      "source_url": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225163037.PDF",
+      "source_type": "上市公司公告",
+      "evidence_scope": "2025年年度财务指标和经营概况",
+      "checked_at": "2026-05-07"
+    },
+    {
+      "source_name": "浙商中拓2026年第一季度报告",
+      "source_url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225215336.PDF",
+      "source_type": "上市公司公告",
+      "evidence_scope": "2026年一季度主要财务指标",
+      "checked_at": "2026-05-07"
+    }
+  ],
+  "financial_metrics": {
+    "annual_2025": {
+      "revenue_yuan": 235502449037.04,
+      "revenue_yoy_pct": 16.48,
+      "net_profit_parent_yuan": 222716219.56,
+      "net_profit_parent_yoy_pct": 225.66,
+      "deducted_net_profit_yuan": -168001280.93,
+      "deducted_net_profit_yoy_pct": -268.19,
+      "operating_cashflow_yuan": 737363926.06,
+      "operating_cashflow_yoy_pct": 136.89,
+      "roe_weighted_pct": 3.89,
+      "basic_eps_yuan": 0.26
+    },
+    "q1_2026": {
+      "revenue_yuan": 56086285216.46,
+      "revenue_yoy_pct": 11.46,
+      "net_profit_parent_yuan": 186538467.16,
+      "net_profit_parent_yoy_pct": -2.82,
+      "deducted_net_profit_yuan": 175236016.92,
+      "deducted_net_profit_yoy_pct": 395.50,
+      "basic_eps_yuan": 0.26
+    }
+  },
+  "business_evidence": [
+    "公司定位为产业链组织者和供应链管理者，主营供应链集成服务。",
+    "经营品类覆盖黑色金属、有色金属、能源化工、再生资源、汽车等大宗商品和产业客户场景。",
+    "收入规模大，但供应链服务利润率通常较薄，对风控、资金周转和商品价格波动敏感。",
+    "2025年营收增长、归母净利润明显修复，经营现金流转正改善。",
+    "2025年扣非净利润为负，说明非经常性损益或经营质量仍需拆分；2026年一季度归母净利润略降，修复持续性仍需观察。"
+  ],
+  "fundamental_capital_shadow_score": {
+    "score": 9,
+    "max_score": 20,
+    "score_reason": "营收规模和现金流改善提供支撑，2025年归母净利润大幅修复；但扣非净利润为负、ROE不高、供应链业务利润率薄且受商品价格和信用风控影响，基本面只能弱到中性支撑。",
+    "positive_evidence": [
+      "2025年营业收入2355.02亿元，同比增长16.48%。",
+      "2025年归母净利润2.23亿元，同比增长225.66%。",
+      "2025年经营现金流净额7.37亿元，同比增长136.89%。",
+      "2026年一季度扣非净利润同比增长395.50%。"
+    ],
+    "negative_evidence": [
+      "2025年扣非净利润为-1.68亿元。",
+      "2025年加权ROE仅3.89%，盈利效率不高。",
+      "2026年一季度归母净利润同比下降2.82%。",
+      "供应链业务受商品价格、信用风险、资金成本和库存周转影响较大。"
+    ],
+    "missing": [
+      "主营品类毛利率、库存周转、应收账款和信用减值未进入结构化字段。",
+      "大宗商品价格和供应链景气未接入市场风格/行业价格字段。",
+      "资金流、机构持仓、解禁减持未合并。"
+    ],
+    "confidence": "medium"
+  },
+  "front_output_compression": {
+    "one_sentence": "财报不是空白：收入和现金流改善，但扣非仍弱、ROE不高，供应链业务要重点看风控和周转。",
+    "user_facing_reason": "浙商中拓适合作为供应链服务修复观察股，不能只看收入规模就给强结论。",
+    "do_not_say": [
+      "财报未接入",
+      "收入规模大所以强",
+      "供应链业务等同于高利润成长股"
+    ]
+  },
+  "safety_boundary": {
+    "only_for_research": true,
+    "not_investment_advice": true,
+    "not_buy_sell_signal": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

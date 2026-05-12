@@ -1,0 +1,27 @@
+{
+  "asset_id": "VIDEO_AGENT_FOUR_PIECE_GAP_TO_REVIEW_SAMPLE_001",
+  "version": "v1.0",
+  "asset_type": "gap_routing_sample",
+  "construction_level": "W1/R0",
+  "scope": "pre_publish_four_piece_gap_handling",
+  "status": "draft_sample",
+  "purpose": "Show how missing four-piece pre-publish materials route to review queues instead of stopping vaguely or triggering real publishing.",
+  "samples": [
+    {"missing_item": "final_preview_review", "task_state": "publish_pending_confirmation", "queue": "preview_review_queue", "receipt_output": "preview_pending_review_receipt", "publish": false},
+    {"missing_item": "ai_label_confirmation", "task_state": "publish_pending_confirmation", "queue": "publishing_compliance_review_queue", "receipt_output": "ai_label_confirmation_pending_receipt", "publish": false},
+    {"missing_item": "material_authorization_proof", "task_state": "publish_pending_confirmation", "queue": "material_authorization_review_queue", "receipt_output": "material_authorization_pending_receipt", "publish": false},
+    {"missing_item": "publishing_release_confirmation", "task_state": "publish_pending_confirmation", "queue": "gate_consistency_review_queue", "receipt_output": "publishing_release_pending_receipt", "publish": false},
+    {"missing_item": "multiple_items", "task_state": "publish_pending_confirmation", "queue": "parallel_review_queues", "receipt_output": "four_piece_gap_summary", "publish": false}
+  ],
+  "fixed_rules": [
+    "Each gap must have a clear review queue.",
+    "Multiple gaps may enter multiple queues in parallel but require a summary.",
+    "If any gap remains open, publishing remains blocked.",
+    "Queue receipts are not releases."
+  ],
+  "boundaries": {
+    "create_real_task": false,
+    "assign_real_people": false,
+    "execute_publish": false
+  }
+}

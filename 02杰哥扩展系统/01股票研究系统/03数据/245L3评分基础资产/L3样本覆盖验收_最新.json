@@ -1,0 +1,104 @@
+{
+  "名称": "L3样本覆盖验收",
+  "generated_at": "2026-05-08 06:55:31",
+  "asset_identity": "自动验收报告",
+  "status": "passed",
+  "summary": {
+    "sample_count": 5,
+    "passed_count": 5,
+    "blocking_count": 0,
+    "warning_count": 2
+  },
+  "samples": [
+    {
+      "name": "云南锗业",
+      "code": "sz002428",
+      "require_industry_price": true,
+      "score_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\云南锗业_sz002428_最新.json",
+      "fundamental_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\云南锗业_财报基本面证据卡_20260507.json",
+      "industry_price_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\云南锗业_行业价格证据卡_本地观测_latest.json",
+      "short_answer_validation": true,
+      "bridge_dry_run_validation": true,
+      "short_reply_length": 360,
+      "bridge_reply_length": 361,
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "name": "天齐锂业",
+      "code": "sz002466",
+      "require_industry_price": true,
+      "score_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\天齐锂业_sz002466_最新.json",
+      "fundamental_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\天齐锂业_财报基本面证据卡_20260507.json",
+      "industry_price_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\天齐锂业_行业价格证据卡_本地观测_latest.json",
+      "short_answer_validation": true,
+      "bridge_dry_run_validation": true,
+      "short_reply_length": 370,
+      "bridge_reply_length": 371,
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    },
+    {
+      "name": "华虹公司",
+      "code": "sh688347",
+      "require_industry_price": false,
+      "score_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\华虹公司_sh688347_财报补证影子版_20260507.json",
+      "fundamental_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\华虹公司_财报基本面证据卡_20260507.json",
+      "industry_price_card": "",
+      "short_answer_validation": true,
+      "bridge_dry_run_validation": true,
+      "short_reply_length": 352,
+      "bridge_reply_length": 353,
+      "blocking": [],
+      "warnings": [
+        "未强制要求行业价格卡；前台不得把行业价格写成已入账"
+      ],
+      "passed": true
+    },
+    {
+      "name": "浙商中拓",
+      "code": "sz000906",
+      "require_industry_price": false,
+      "score_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\浙商中拓_sz000906_财报补证影子版_20260507.json",
+      "fundamental_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\浙商中拓_财报基本面证据卡_20260507.json",
+      "industry_price_card": "",
+      "short_answer_validation": true,
+      "bridge_dry_run_validation": true,
+      "short_reply_length": 336,
+      "bridge_reply_length": 337,
+      "blocking": [],
+      "warnings": [
+        "未强制要求行业价格卡；前台不得把行业价格写成已入账"
+      ],
+      "passed": true
+    },
+    {
+      "name": "正丹股份",
+      "code": "sz300641",
+      "require_industry_price": true,
+      "score_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\单股L3评分\\正丹股份_sz300641_财报补证影子版_20260507.json",
+      "fundamental_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\正丹股份_财报基本面证据卡_20260507.json",
+      "industry_price_card": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\正丹股份_行业价格证据卡_本地观测_latest.json",
+      "short_answer_validation": true,
+      "bridge_dry_run_validation": true,
+      "short_reply_length": 411,
+      "bridge_reply_length": 412,
+      "blocking": [],
+      "warnings": [],
+      "passed": true
+    }
+  ],
+  "blocking": [],
+  "warnings": [
+    "华虹公司：未强制要求行业价格卡；前台不得把行业价格写成已入账",
+    "浙商中拓：未强制要求行业价格卡；前台不得把行业价格写成已入账"
+  ],
+  "safety_boundary": {
+    "not_external_send": true,
+    "not_n8n": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

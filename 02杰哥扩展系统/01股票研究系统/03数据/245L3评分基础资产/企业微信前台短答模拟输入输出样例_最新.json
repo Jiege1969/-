@@ -1,0 +1,202 @@
+{
+  "name": "企业微信前台短答模拟输入输出样例",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:04:18",
+  "asset_identity": "W1企业微信前台短答影子输入输出样例",
+  "status": "shadow_io_sample",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_service_change": true,
+  "records": [
+    {
+      "input_channel": "wecom_shadow",
+      "input_text": "云南锗业现在怎么样",
+      "real_wecom_send_allowed": false,
+      "formal_entry_allowed": false,
+      "resolved_stock": {
+        "name": "云南锗业",
+        "code": "002428"
+      },
+      "simulated_front_answer": "云南锗业（002428）\n结论：可纳入观察。\n主要原因：锗相关政策与资源品主题具备催化，但财报、资金和连续价格证据仍需补齐。\n关键缺口：缺少最新财报结构化摘要、锗价连续观测和资金/机构证据的自动入账结果。\n置信度：medium；下一次重点复核：复核锗价、成交额、板块热度与公告变化。",
+      "backend_trace_required": {
+        "evidence": [
+          "对象已识别",
+          "前台输出按结论型短答格式生成"
+        ],
+        "missing": [
+          "缺少最新财报结构化摘要、锗价连续观测和资金/机构证据的自动入账结果。"
+        ],
+        "confidence_reason": "影子样例仅验证输出契约，真实分数必须读取结构化证据后生成。",
+        "next_review_focus": "复核锗价、成交额、板块热度与公告变化。",
+        "gate_decisions": {
+          "object_first": true,
+          "evidence_before_judgment": true,
+          "missing_explicit": true,
+          "real_wecom_send": false,
+          "formal_entry_write": false
+        },
+        "source_assets": [
+          "L3评分契约",
+          "股票对象识别验收",
+          "前台结论型短答统一验收记录"
+        ]
+      }
+    },
+    {
+      "input_channel": "wecom_shadow",
+      "input_text": "天齐锂业能看吗",
+      "real_wecom_send_allowed": false,
+      "formal_entry_allowed": false,
+      "resolved_stock": {
+        "name": "天齐锂业",
+        "code": "002466"
+      },
+      "simulated_front_answer": "天齐锂业（002466）\n结论：可纳入观察。\n主要原因：锂资源属性明确，行业价格若企稳会改善研究价值，但当前行业景气和盈利修复证据不足。\n关键缺口：缺少锂价连续观测、最新财报拆解和资金趋势的结构化证据。\n置信度：medium；下一次重点复核：复核锂价、库存、盈利弹性和板块相对强弱。",
+      "backend_trace_required": {
+        "evidence": [
+          "对象已识别",
+          "前台输出按结论型短答格式生成"
+        ],
+        "missing": [
+          "缺少锂价连续观测、最新财报拆解和资金趋势的结构化证据。"
+        ],
+        "confidence_reason": "影子样例仅验证输出契约，真实分数必须读取结构化证据后生成。",
+        "next_review_focus": "复核锂价、库存、盈利弹性和板块相对强弱。",
+        "gate_decisions": {
+          "object_first": true,
+          "evidence_before_judgment": true,
+          "missing_explicit": true,
+          "real_wecom_send": false,
+          "formal_entry_write": false
+        },
+        "source_assets": [
+          "L3评分契约",
+          "股票对象识别验收",
+          "前台结论型短答统一验收记录"
+        ]
+      }
+    },
+    {
+      "input_channel": "wecom_shadow",
+      "input_text": "华虹公司现在怎么样",
+      "real_wecom_send_allowed": false,
+      "formal_entry_allowed": false,
+      "resolved_stock": {
+        "name": "华虹公司",
+        "code": "688347"
+      },
+      "simulated_front_answer": "华虹公司（688347）\n结论：可纳入观察。\n主要原因：半导体国产化方向具备中长期研究价值，但当前仍要看景气、产能利用率和估值消化。\n关键缺口：缺少半导体景气指标、最新财报质量和机构资金变化的结构化证据。\n置信度：medium；下一次重点复核：复核晶圆代工景气、政策证据和财报毛利率趋势。",
+      "backend_trace_required": {
+        "evidence": [
+          "对象已识别",
+          "前台输出按结论型短答格式生成"
+        ],
+        "missing": [
+          "缺少半导体景气指标、最新财报质量和机构资金变化的结构化证据。"
+        ],
+        "confidence_reason": "影子样例仅验证输出契约，真实分数必须读取结构化证据后生成。",
+        "next_review_focus": "复核晶圆代工景气、政策证据和财报毛利率趋势。",
+        "gate_decisions": {
+          "object_first": true,
+          "evidence_before_judgment": true,
+          "missing_explicit": true,
+          "real_wecom_send": false,
+          "formal_entry_write": false
+        },
+        "source_assets": [
+          "L3评分契约",
+          "股票对象识别验收",
+          "前台结论型短答统一验收记录"
+        ]
+      }
+    },
+    {
+      "input_channel": "wecom_shadow",
+      "input_text": "浙商中拓怎么样",
+      "real_wecom_send_allowed": false,
+      "formal_entry_allowed": false,
+      "resolved_stock": {
+        "name": "浙商中拓",
+        "code": "000906"
+      },
+      "simulated_front_answer": "浙商中拓（000906）\n结论：暂不建议强结论。\n主要原因：供应链业务受商品周期和经营现金流影响较大，缺少足够行业与资金证据前不应给强判断。\n关键缺口：缺少最新财报经营现金流、商品价格联动和资金/机构证据。\n置信度：low；下一次重点复核：复核经营现金流、负债结构、商品周期和公告事项。",
+      "backend_trace_required": {
+        "evidence": [
+          "对象已识别",
+          "前台输出按结论型短答格式生成"
+        ],
+        "missing": [
+          "缺少最新财报经营现金流、商品价格联动和资金/机构证据。"
+        ],
+        "confidence_reason": "影子样例仅验证输出契约，真实分数必须读取结构化证据后生成。",
+        "next_review_focus": "复核经营现金流、负债结构、商品周期和公告事项。",
+        "gate_decisions": {
+          "object_first": true,
+          "evidence_before_judgment": true,
+          "missing_explicit": true,
+          "real_wecom_send": false,
+          "formal_entry_write": false
+        },
+        "source_assets": [
+          "L3评分契约",
+          "股票对象识别验收",
+          "前台结论型短答统一验收记录"
+        ]
+      }
+    },
+    {
+      "input_channel": "wecom_shadow",
+      "input_text": "正丹股份现在怎么看",
+      "real_wecom_send_allowed": false,
+      "formal_entry_allowed": false,
+      "resolved_stock": {
+        "name": "正丹股份",
+        "code": "300641"
+      },
+      "simulated_front_answer": "正丹股份（300641）\n结论：可纳入观察。\n主要原因：化工品价格与景气弹性较强，若价格连续观测确认改善，研究价值会提升。\n关键缺口：缺少核心产品价格连续观测、最新财报利润弹性和资金承接证据。\n置信度：medium；下一次重点复核：复核TMA等产品价格、订单景气和资金承接变化。",
+      "backend_trace_required": {
+        "evidence": [
+          "对象已识别",
+          "前台输出按结论型短答格式生成"
+        ],
+        "missing": [
+          "缺少核心产品价格连续观测、最新财报利润弹性和资金承接证据。"
+        ],
+        "confidence_reason": "影子样例仅验证输出契约，真实分数必须读取结构化证据后生成。",
+        "next_review_focus": "复核TMA等产品价格、订单景气和资金承接变化。",
+        "gate_decisions": {
+          "object_first": true,
+          "evidence_before_judgment": true,
+          "missing_explicit": true,
+          "real_wecom_send": false,
+          "formal_entry_write": false
+        },
+        "source_assets": [
+          "L3评分契约",
+          "股票对象识别验收",
+          "前台结论型短答统一验收记录"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "sample_count": 5,
+    "object_clear_count": 5,
+    "shadow_output_count": 5,
+    "real_wecom_send_allowed": false,
+    "formal_entry_allowed": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

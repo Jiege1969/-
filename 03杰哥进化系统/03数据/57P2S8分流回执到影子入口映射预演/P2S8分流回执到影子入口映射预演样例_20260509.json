@@ -1,0 +1,150 @@
+{
+  "sample_only": true,
+  "mappings": [
+    {
+      "source_receipt_id": "P2S7-RECEIPT-001",
+      "material_id": "VIRTUAL-P2S5-CASE-001",
+      "target_line": "tax",
+      "target_entry": "TAX_DAILY_INTAKE_002",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "pass",
+      "mapped_fields": {
+        "source_type": "用户提供",
+        "taxpayer_profile": "待人工从脱敏材料填写",
+        "tax_item_or_scenario": "待人工从脱敏材料填写",
+        "target_output": "待复核草案前置",
+        "known_basis": "待补",
+        "missing_materials": "待补",
+        "human_review_required": true
+      }
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-002",
+      "material_id": "VIRTUAL-P2S5-CASE-002",
+      "target_line": "office_work",
+      "target_entry": "OFFICE_SHADOW_002",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "pass",
+      "mapped_fields": {
+        "source_materials": "VIRTUAL-P2S5-CASE-002",
+        "input_summary": "待人工从授权材料填写",
+        "output_draft": "待复核",
+        "basis_or_reference": "待补",
+        "human_review_required": true
+      }
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-003",
+      "material_id": "VIRTUAL-P2S5-CASE-003",
+      "target_line": "video_production",
+      "target_entry": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "pass",
+      "mapped_fields": {
+        "related_project": "待填写",
+        "script_source": "VIRTUAL-P2S5-CASE-003",
+        "storyboard_source": "待填写",
+        "asset_source": "待填写",
+        "platform_rule_source": "待填写",
+        "release_gate": "closed",
+        "human_review_required": true
+      }
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-004",
+      "material_id": "VIRTUAL-P2S5-CASE-004",
+      "target_line": "shared_policy_evidence",
+      "target_entry": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "pass",
+      "mapped_fields": {
+        "target_business_line": "待填写",
+        "policy_source": "virtual_sample_only",
+        "query_purpose": "依据候选只读登记",
+        "expected_use": "只提供出处、有效性线索和适用边界提示",
+        "human_review_required": true
+      }
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-005",
+      "material_id": "VIRTUAL-P2S5-CASE-005",
+      "target_line": "pause",
+      "target_entry": "gap_or_redline_record",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "pass",
+      "mapped_fields": {
+        "pause_reasons": [
+          "授权未确认",
+          "敏感内容未脱敏"
+        ],
+        "redline_status": "pass",
+        "redline_reasons": [
+          "无"
+        ],
+        "next_allowed_action": "只记录缺口",
+        "human_review_required": true
+      }
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-006",
+      "material_id": "VIRTUAL-P2S5-CASE-006",
+      "target_line": "pause",
+      "target_entry": "gap_or_redline_record",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "blocked",
+      "mapped_fields": {
+        "pause_reasons": [
+          "命中真实执行请求"
+        ],
+        "redline_status": "blocked",
+        "redline_reasons": [
+          "命中真实执行请求"
+        ],
+        "next_allowed_action": "暂停",
+        "human_review_required": true
+      }
+    },
+    {
+      "source_receipt_id": "P2S7-RECEIPT-007",
+      "material_id": "VIRTUAL-P2S5-CASE-007",
+      "target_line": "pause",
+      "target_entry": "gap_or_redline_record",
+      "preview_only": true,
+      "write_target_entry": false,
+      "human_review_required": true,
+      "formal_capability_claim": false,
+      "redline_status": "pass",
+      "mapped_fields": {
+        "pause_reasons": [
+          "来源不清",
+          "授权未确认",
+          "敏感内容未脱敏"
+        ],
+        "redline_status": "pass",
+        "redline_reasons": [
+          "无"
+        ],
+        "next_allowed_action": "只记录缺口",
+        "human_review_required": true
+      }
+    }
+  ]
+}

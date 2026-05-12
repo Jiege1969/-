@@ -1,0 +1,10 @@
+{
+  "name": "企业微信模拟问答回归验收样例验收结果",
+  "generated_at": "2026-05-08 13:15:05",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "qa_count": 5,
+    "forbidden_word_count": 0
+  }
+}

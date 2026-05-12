@@ -1,0 +1,204 @@
+{
+  "名称": "视频真实渲染环境只读识别增强包",
+  "生成时间": "2026-05-08 17:37:55",
+  "阶段": "真实渲染环境只读识别",
+  "候选路径存在性": [
+    {
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统",
+      "存在": true,
+      "是目录": true,
+      "是文件": false
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\19真实渲染环境只读识别增强包",
+      "存在": true,
+      "是目录": true,
+      "是文件": false
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\02脚本",
+      "存在": true,
+      "是目录": true,
+      "是文件": false
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据",
+      "存在": true,
+      "是目录": true,
+      "是文件": false
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\04日志",
+      "存在": true,
+      "是目录": true,
+      "是文件": false
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\00杰哥系统总管",
+      "存在": true,
+      "是目录": true,
+      "是文件": false
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\01杰哥智能系统",
+      "存在": true,
+      "是目录": true,
+      "是文件": false
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统",
+      "存在": true,
+      "是目录": true,
+      "是文件": false
+    },
+    {
+      "路径": "D:\\杰哥智能化系统\\03杰哥进化系统",
+      "存在": true,
+      "是目录": true,
+      "是文件": false
+    }
+  ],
+  "ImageMagick命令名识别": {
+    "命令名": "magick",
+    "PATH命令名可找到": false,
+    "解析到的命令路径": "",
+    "识别方式": "shutil.which，仅做 PATH 级命令名解析；未执行 magick 或 magick -version",
+    "PATH条目数": 29
+  },
+  "MoneyPrinterTurbo候选目录识别": [
+    {
+      "候选目录": "D:\\杰哥智能化系统\\MoneyPrinterTurbo",
+      "目录存在": false,
+      "入口文件只读识别": {
+        "start.bat": {
+          "路径": "D:\\杰哥智能化系统\\MoneyPrinterTurbo\\start.bat",
+          "存在": false
+        },
+        "app/main.py": {
+          "路径": "D:\\杰哥智能化系统\\MoneyPrinterTurbo\\app\\main.py",
+          "存在": false
+        },
+        "webui/Main.py": {
+          "路径": "D:\\杰哥智能化系统\\MoneyPrinterTurbo\\webui\\Main.py",
+          "存在": false
+        }
+      },
+      "含任一入口文件": false,
+      "是否调用入口": false
+    },
+    {
+      "候选目录": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\MoneyPrinterTurbo",
+      "目录存在": false,
+      "入口文件只读识别": {
+        "start.bat": {
+          "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\MoneyPrinterTurbo\\start.bat",
+          "存在": false
+        },
+        "app/main.py": {
+          "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\MoneyPrinterTurbo\\app\\main.py",
+          "存在": false
+        },
+        "webui/Main.py": {
+          "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\MoneyPrinterTurbo\\webui\\Main.py",
+          "存在": false
+        }
+      },
+      "含任一入口文件": false,
+      "是否调用入口": false
+    },
+    {
+      "候选目录": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\05外部工具\\MoneyPrinterTurbo",
+      "目录存在": false,
+      "入口文件只读识别": {
+        "start.bat": {
+          "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\05外部工具\\MoneyPrinterTurbo\\start.bat",
+          "存在": false
+        },
+        "app/main.py": {
+          "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\05外部工具\\MoneyPrinterTurbo\\app\\main.py",
+          "存在": false
+        },
+        "webui/Main.py": {
+          "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\05外部工具\\MoneyPrinterTurbo\\webui\\Main.py",
+          "存在": false
+        }
+      },
+      "含任一入口文件": false,
+      "是否调用入口": false
+    },
+    {
+      "候选目录": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06渲染工具\\MoneyPrinterTurbo",
+      "目录存在": false,
+      "入口文件只读识别": {
+        "start.bat": {
+          "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06渲染工具\\MoneyPrinterTurbo\\start.bat",
+          "存在": false
+        },
+        "app/main.py": {
+          "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06渲染工具\\MoneyPrinterTurbo\\app\\main.py",
+          "存在": false
+        },
+        "webui/Main.py": {
+          "路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06渲染工具\\MoneyPrinterTurbo\\webui\\Main.py",
+          "存在": false
+        }
+      },
+      "含任一入口文件": false,
+      "是否调用入口": false
+    },
+    {
+      "候选目录": "D:\\MoneyPrinterTurbo",
+      "目录存在": false,
+      "入口文件只读识别": {
+        "start.bat": {
+          "路径": "D:\\MoneyPrinterTurbo\\start.bat",
+          "存在": false
+        },
+        "app/main.py": {
+          "路径": "D:\\MoneyPrinterTurbo\\app\\main.py",
+          "存在": false
+        },
+        "webui/Main.py": {
+          "路径": "D:\\MoneyPrinterTurbo\\webui\\Main.py",
+          "存在": false
+        }
+      },
+      "含任一入口文件": false,
+      "是否调用入口": false
+    },
+    {
+      "候选目录": "C:\\MoneyPrinterTurbo",
+      "目录存在": false,
+      "入口文件只读识别": {
+        "start.bat": {
+          "路径": "C:\\MoneyPrinterTurbo\\start.bat",
+          "存在": false
+        },
+        "app/main.py": {
+          "路径": "C:\\MoneyPrinterTurbo\\app\\main.py",
+          "存在": false
+        },
+        "webui/Main.py": {
+          "路径": "C:\\MoneyPrinterTurbo\\webui\\Main.py",
+          "存在": false
+        }
+      },
+      "含任一入口文件": false,
+      "是否调用入口": false
+    }
+  ],
+  "当前真实动作": {
+    "执行magick": false,
+    "执行magick_version": false,
+    "调用MoneyPrinterTurbo": false,
+    "真实渲染": false,
+    "生成真实视频": false,
+    "上传发布": false,
+    "触发n8n": false,
+    "修改企业微信公共配置": false,
+    "修改总管面板": false,
+    "修改一键接续包": false,
+    "重载服务": false
+  },
+  "安全结论": "本包仅完成真实渲染环境只读识别，不具备进入真实渲染的放行能力。"
+}

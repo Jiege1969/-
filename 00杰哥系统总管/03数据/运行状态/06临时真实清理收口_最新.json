@@ -1,0 +1,95 @@
+﻿{
+    "report":  "06临时真实清理收口",
+    "generated_at":  "2026-05-06 07:55:04 +08:00",
+    "principle":  "能证实无当前依赖的06临时旧项，导出最低必要证据后直接删除；保留仍被脚本读取的_latest入口",
+    "first_pass":  {
+                       "report":  "06临时真实清理收口",
+                       "generated_at":  "2026-05-06 07:54:07 +08:00",
+                       "principle":  "能证实无当前依赖的06临时旧项，导出最低必要证据后直接删除；保留仍被脚本读取的_latest入口",
+                       "evidence_dir":  "第30轮原始证据目录已清债删除；删除数量、保留项、剩余项和安全边界已固化在本_latest收口报告。",
+                       "deleted_top_items":  238,
+                       "deleted_files":  245,
+                       "deleted_bytes":  3675542,
+                       "deleted_mb":  3.505,
+                       "preserved":  [
+                                         "D:\\杰哥智能化系统\\00杰哥系统总管\\06临时\\README.md",
+                                         "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时\\日常任务入口演练\\任务队列_最新.jsonl",
+                                         "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时\\日常任务入口演练\\日常任务队列看板.md",
+                                         "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时\\日常任务入口演练\\人工确认单\\日常任务人工确认单_最新.json/md",
+                                         "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时\\日常任务入口演练\\放行预案\\日常任务放行预案_最新.json/md"
+                                     ],
+                       "remaining":  [
+                                         {
+                                             "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\06临时",
+                                             "files":  1,
+                                             "bytes":  616
+                                         },
+                                         {
+                                             "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时",
+                                             "files":  8,
+                                             "bytes":  24349
+                                         },
+                                         {
+                                             "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\06临时",
+                                             "files":  0,
+                                             "bytes":  0
+                                         }
+                                     ],
+                       "safety":  {
+                                      "stopped_services":  false,
+                                      "triggered_n8n":  false,
+                                      "sent_wecom":  false,
+                                      "called_broker_api":  false,
+                                      "auto_trade":  false,
+                                      "deleted_database":  false,
+                                      "deleted_model":  false,
+                                      "deleted_backup":  false
+                                  }
+                   },
+    "second_pass":  {
+                        "evidence_dir":  "第30轮原始证据目录已清债删除；删除数量、保留项、剩余项和安全边界已固化在本_latest收口报告。",
+                        "deleted_top_items":  3,
+                        "deleted_files":  2,
+                        "deleted_bytes":  1742,
+                        "deleted_mb":  0.002,
+                        "empty_dirs_removed":  0
+                    },
+    "total_deleted_files":  247,
+    "total_deleted_mb":  3.507,
+    "remaining":  [
+                      {
+                          "path":  "D:\\杰哥智能化系统\\00杰哥系统总管\\06临时",
+                          "files":  1,
+                          "bytes":  616
+                      },
+                      {
+                          "path":  "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时",
+                          "files":  6,
+                          "bytes":  22607
+                      },
+                      {
+                          "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\06临时",
+                          "files":  0,
+                          "bytes":  0
+                      }
+                  ],
+    "preserved":  [
+                      "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时\\日常任务入口演练\\任务队列_最新.jsonl",
+                      "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时\\日常任务入口演练\\日常任务队列看板.md",
+                      "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时\\日常任务入口演练\\人工确认单\\日常任务人工确认单_最新.json",
+                      "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时\\日常任务入口演练\\人工确认单\\日常任务人工确认单_最新.md",
+                      "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时\\日常任务入口演练\\放行预案\\日常任务放行预案_最新.json",
+                      "D:\\杰哥智能化系统\\01杰哥智能系统\\06临时\\日常任务入口演练\\放行预案\\日常任务放行预案_最新.md"
+                  ],
+    "safety":  {
+                   "stopped_services":  false,
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false,
+                   "deleted_database":  false,
+                   "deleted_model":  false,
+                   "deleted_backup":  false
+               },
+    "第30轮原始证据清债说明":  "第30轮原始证据目录已清债删除；删除数量、保留项、剩余项和安全边界已固化在本_latest收口报告。"
+}

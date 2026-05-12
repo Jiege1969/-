@@ -1,0 +1,78 @@
+{
+  "生成日期": "2026-05-05",
+  "任务": "第四批并行小任务K-人工复核单",
+  "样本类型": "人工复核单",
+  "复核单编号": "K-REVIEW-001",
+  "引用路径": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\06人工复核\\人工复核单样本_20260505_小任务K.json",
+  "关联样本": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\06人工复核\\内容整理样本_20260505_小任务K.json",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\06人工复核\\格式转换影子样本_20260505_小任务K.json"
+  ],
+  "人工复核字段": {
+    "review_required": true,
+    "reviewer": "",
+    "review_time": "",
+    "review_status": "pending_manual_review",
+    "review_result": "not_approved_for_real_conversion",
+    "review_signature_required": true,
+    "review_comment": ""
+  },
+  "复核检查项": [
+    {
+      "检查项": "引用路径",
+      "要求": "样本必须使用本地绝对路径且位于允许写入范围",
+      "默认结论": "待人工确认"
+    },
+    {
+      "检查项": "人工复核字段",
+      "要求": "必须包含 reviewer、review_time、review_status、review_result、review_signature_required",
+      "默认结论": "待人工确认"
+    },
+    {
+      "检查项": "真实转换禁用",
+      "要求": "allow_real_conversion=false 且 allow_batch_conversion=false",
+      "默认结论": "已阻断"
+    },
+    {
+      "检查项": "回滚字段",
+      "要求": "必须包含 rollback_required、rollback_mode、rollback_action 或 rollback_target、rollback_confirm_required",
+      "默认结论": "待人工确认"
+    },
+    {
+      "检查项": "安全边界",
+      "要求": "不得触发 n8n、企业微信真实消息、正式库、券商接口、自动交易",
+      "默认结论": "已阻断"
+    }
+  ],
+  "放行规则": {
+    "本轮是否允许放行真实转换": false,
+    "放行所需额外条件": [
+      "另起正式审批任务",
+      "明确真实源文件授权",
+      "明确输出路径和回滚方案",
+      "人工签字后仍不得自动触发外部系统"
+    ],
+    "默认动作": "block_real_conversion"
+  },
+  "执行开关": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_output_file_generation": false,
+    "allow_delete_move_overwrite": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_wecom_real_message": false,
+    "allow_formal_library_write": false,
+    "allow_broker_api": false,
+    "allow_auto_trade": false
+  },
+  "回滚字段": {
+    "rollback_required": true,
+    "rollback_mode": "review_reject_or_hold",
+    "rollback_action": "复核不通过或字段缺失时，仅保留样本记录并阻断真实转换",
+    "rollback_owner": "人工复核人",
+    "rollback_confirm_required": true
+  },
+  "降级语": "本复核单仅用于人工判断影子样本是否完整；本轮不放行真实批量转换。"
+}

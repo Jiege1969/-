@@ -1,0 +1,39 @@
+{
+  "asset_id": "VIDEO_AGENT_WECOM_PUBLISH_COMMAND_REFUSAL_REPLY_001",
+  "version": "v1.0",
+  "asset_type": "wecom_placeholder_reply_sample",
+  "construction_level": "W1/R0",
+  "scope": "publish_command_when_release_conditions_are_incomplete",
+  "status": "draft_sample_no_real_send",
+  "input_command_sample": "发布 VF-20260508-003 到抖音、小红书、视频号",
+  "reply_sample": {
+    "received_command": "VF-20260508-003 publish command draft received.",
+    "decision": "real_publish_blocked",
+    "reasons": [
+      "Publishing release list is not confirmed.",
+      "Final preview has not passed human review.",
+      "Platform AI-generated content label is not confirmed.",
+      "Material authorization proof is not archived."
+    ],
+    "review_queues": [
+      "publishing_compliance_review_queue",
+      "preview_review_queue",
+      "material_authorization_review_queue"
+    ],
+    "next_action": "Complete human review and publishing release first.",
+    "real_system_triggered": false
+  },
+  "fixed_refusal_rules": [
+    "Missing publishing release must be refused.",
+    "Missing real render release must be refused.",
+    "Missing preview must be refused.",
+    "Missing AI label confirmation must be refused.",
+    "Missing material authorization must be refused.",
+    "Requests involving real accounts, Cookie, API Key, n8n, or external-send interfaces must enter redline blocker registration."
+  ],
+  "boundaries": {
+    "call_wecom": false,
+    "trigger_publish_tool": false,
+    "connect_n8n": false
+  }
+}

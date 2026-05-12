@@ -1,0 +1,25 @@
+{
+  "生成时间": "2026-05-08 05:45:08",
+  "状态": "完成",
+  "输入": "登录指引 B站 账号=creator",
+  "路由": "杰哥视频助理发布指令",
+  "目标系统": "02杰哥扩展系统/02视频制作系统",
+  "回复": "登录指引已生成，暂不自动打开登录窗口。\n平台：bilibili\n账号：creator\n请在本机终端执行：\n\"D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\" bilibili login --account creator\n登录完成后执行检查：\n\"D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\" bilibili check --account creator\n如果出现二维码，请在本机扫码；B站二维码也可能生成在 social-auto-upload 目录下的 qrcode.png。",
+  "reply_text": "登录指引已生成，暂不自动打开登录窗口。\n平台：bilibili\n账号：creator\n请在本机终端执行：\n\"D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\" bilibili login --account creator\n登录完成后执行检查：\n\"D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\" bilibili check --account creator\n如果出现二维码，请在本机扫码；B站二维码也可能生成在 social-auto-upload 目录下的 qrcode.png。",
+  "real_send": false,
+  "n8n": false,
+  "企业微信模拟回复": {
+    "msgtype": "markdown",
+    "markdown": {
+      "content": "【杰哥视频助理】\n登录指引已生成，暂不自动打开登录窗口。\n平台：bilibili\n账号：creator\n请在本机终端执行：\n\"D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\" bilibili login --account creator\n登录完成后执行检查：\n\"D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\" bilibili check --account creator\n如果出现二维码，请在本机扫码；B站二维码也可能生成在 social-auto-upload 目录下的 qrcode.png。"
+    }
+  },
+  "安全边界": {
+    "真实发送企业微信": false,
+    "触发n8n": false,
+    "绕过发布放行清单": false,
+    "自动发布": false
+  },
+  "login_command": "\"D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\" bilibili login --account creator",
+  "check_command": "\"D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\06临时\\social-auto-upload\\.venv\\Scripts\\sau.exe\" bilibili check --account creator"
+}

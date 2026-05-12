@@ -1,0 +1,30 @@
+{
+  "asset_id": "VIDEO_AGENT_SHADOW_STATE_ENUM_001",
+  "name": "影子任务状态枚举对照表",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:22:00 +08:00",
+  "risk_level": "低风险",
+  "states": [
+    "shadow_intake",
+    "shadow_routed",
+    "shadow_draft_ready",
+    "shadow_review_pending",
+    "shadow_revision_needed",
+    "shadow_blocked",
+    "shadow_generation_gate_pending",
+    "shadow_render_gate_pending",
+    "shadow_preview_pending",
+    "shadow_publish_gate_pending",
+    "shadow_closed"
+  ],
+  "constraints": [
+    "任何状态都不能直接触发真实渲染或发布",
+    "shadow_closed 不代表正式上线或真实完成",
+    "命中红线时必须进入 shadow_blocked",
+    "放行待确认状态必须拆分生成、真实渲染、发布"
+  ],
+  "boundary": {
+    "modify_formal_state_machine": false,
+    "real_system_triggered": false
+  }
+}

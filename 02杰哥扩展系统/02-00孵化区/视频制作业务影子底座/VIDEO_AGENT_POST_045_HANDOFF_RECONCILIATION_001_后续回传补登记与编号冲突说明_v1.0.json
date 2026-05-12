@@ -1,0 +1,50 @@
+{
+  "asset_id": "VIDEO_AGENT_POST_045_HANDOFF_RECONCILIATION_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_reconciliation_note_not_formal_index_permission",
+  "purpose": "Reconcile existing post-045 handoff assets that were present on disk but not fully carried by the latest phase closure.",
+  "existing_handoff_groups": [
+    {
+      "group": "VAI-045-047",
+      "topics": [
+        "index_merge_precheck",
+        "continuous_queue_next",
+        "no_stop_execution_rule"
+      ],
+      "handling": "keep_historical_file_names_and_register_as_shadow_reference"
+    },
+    {
+      "group": "VAI-048-050",
+      "topics": [
+        "shadow_task_trace_fields",
+        "release_conflict_sample",
+        "wecom_command_reply_placeholder_sample"
+      ],
+      "handling": "keep_historical_file_names_and_register_as_shadow_reference"
+    },
+    {
+      "group": "VAI-051-053",
+      "topics": [
+        "stage_maturity_snapshot",
+        "missing_input_to_gap_card_rule",
+        "continuous_asset_index_draft_v2"
+      ],
+      "handling": "keep_historical_file_names_and_register_as_shadow_reference"
+    }
+  ],
+  "numbering_note": "VAI-045 was already used by the VAI001-to-VAI042 summary card. The historical VAI-045-047 handoff file is retained as a historical handoff group; this reconciliation note is registered as VAI-054.",
+  "real_system_triggered": {
+    "model_api": false,
+    "material_read": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "service_or_port_change": false,
+    "manager_or_public_component_change": false
+  },
+  "next_pointer": "VIDEO_AGENT_VAI_001_054_阶段总收口验收_20260508"
+}

@@ -1,0 +1,35 @@
+{
+  "asset_id": "VIDEO_AGENT_SHADOW_INDEX_UPDATE_DRAFT_001",
+  "name": "本线影子底座索引更新草案",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:35:00 +08:00",
+  "risk_level": "低风险",
+  "purpose": "整理 VAI030 至 VAI041 新增影子资产，供后续决定是否合并到本线索引",
+  "index_candidates": [
+    {"id": "VAI030", "asset": "连续施工状态卡", "category": "连续施工层"},
+    {"id": "VAI031", "asset": "红线阻断登记簿模板", "category": "红线阻断层"},
+    {"id": "VAI032", "asset": "影子资产地图更新规则", "category": "资产治理层"},
+    {"id": "VAI033", "asset": "发布前门禁缺口卡", "category": "发布门禁层"},
+    {"id": "VAI034", "asset": "真实渲染放行缺口卡", "category": "渲染门禁层"},
+    {"id": "VAI035", "asset": "企业微信回执草案模板", "category": "回执草案层"},
+    {"id": "VAI036", "asset": "放行状态一致性检查清单", "category": "状态一致性层"},
+    {"id": "VAI037", "asset": "人工复核问题优先级规则", "category": "人工复核层"},
+    {"id": "VAI038", "asset": "影子任务关闭条件清单", "category": "闭环验收层"},
+    {"id": "VAI039", "asset": "影子任务状态枚举对照表", "category": "状态枚举层"},
+    {"id": "VAI040", "asset": "视频助理命令到状态变更预演表", "category": "命令预演层"},
+    {"id": "VAI041", "asset": "本阶段资产补齐收口报告", "category": "阶段收口层"}
+  ],
+  "merge_precheck": [
+    "JSON 可解析",
+    "只写影子底座",
+    "未触发真实系统",
+    "未声明正式上线",
+    "保留总管整合边界"
+  ],
+  "boundary": {
+    "overwrite_local_index": false,
+    "write_manager_index": false,
+    "write_formal_db": false,
+    "real_system_triggered": false
+  }
+}

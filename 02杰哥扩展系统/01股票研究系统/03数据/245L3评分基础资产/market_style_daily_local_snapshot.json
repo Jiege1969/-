@@ -1,0 +1,112 @@
+{
+  "date": "2026-04-30",
+  "market": "cn",
+  "status": "partial",
+  "data_sources": [
+    {
+      "name": "重点关注池公开行情快照_最新.json",
+      "type": "quote",
+      "status": "success"
+    },
+    {
+      "name": "股票专家市场总览_最新.json",
+      "type": "sector",
+      "status": "success"
+    }
+  ],
+  "risk_appetite": {
+    "score": 0.04,
+    "up_down_ratio": 1.0339,
+    "up_count": 61,
+    "down_count": 59,
+    "limit_up_count": 1,
+    "limit_down_count": 0,
+    "total_amount": 4785.59,
+    "evidence": [
+      "本地重点关注池样本共124只，上涨61只、下跌59只。",
+      "样本成交额合计约4785.59亿元。"
+    ],
+    "missing": [
+      "当前仅为重点关注池样本，不是全市场涨跌家数。",
+      "未接入正式两市涨停/跌停全量统计。"
+    ]
+  },
+  "sector_heat": {
+    "top_sectors": [
+      {
+        "name": "综合",
+        "change_pct": 6.8196,
+        "source": "03数据/185专家市场总览/股票专家市场总览_最新.json"
+      },
+      {
+        "name": "畜牧业",
+        "change_pct": 5.1515,
+        "source": "03数据/185专家市场总览/股票专家市场总览_最新.json"
+      },
+      {
+        "name": "半导体",
+        "change_pct": 4.3426,
+        "source": "03数据/185专家市场总览/股票专家市场总览_最新.json"
+      },
+      {
+        "name": "煤炭",
+        "change_pct": -1.3811,
+        "source": "03数据/185专家市场总览/股票专家市场总览_最新.json"
+      },
+      {
+        "name": "废弃资源综合利用业",
+        "change_pct": -5.1867,
+        "source": "03数据/185专家市场总览/股票专家市场总览_最新.json"
+      }
+    ],
+    "bottom_sectors": [
+      {
+        "name": "废弃资源综合利用业",
+        "change_pct": -5.1867,
+        "source": "03数据/185专家市场总览/股票专家市场总览_最新.json"
+      },
+      {
+        "name": "煤炭",
+        "change_pct": -1.3811,
+        "source": "03数据/185专家市场总览/股票专家市场总览_最新.json"
+      }
+    ],
+    "hot_theme": "综合",
+    "evidence": [
+      "强势方向来自专家市场总览中的行业强度估算。",
+      "该估算基于样本股等权统计，尚未接入正式申万行业指数。"
+    ],
+    "missing": [
+      "缺正式申万行业指数或行业价格数据。",
+      "缺全市场板块涨跌幅前5/后5。"
+    ]
+  },
+  "size_style": {
+    "big_small_ratio": null,
+    "large_index_change_pct": null,
+    "small_index_change_pct": null,
+    "dominant": "unknown",
+    "evidence": [],
+    "missing": [
+      "缺沪深300与国证2000等大小盘指数相对强弱。"
+    ]
+  },
+  "liquidity": {
+    "total_amount_rank_percentile": null,
+    "activity_description": "仅有重点关注池样本成交额合计，不能替代两市总成交额近60日分位。",
+    "evidence": [
+      "重点关注池样本成交额合计约4785.59亿元。"
+    ],
+    "missing": [
+      "缺两市总成交额。",
+      "缺近60个交易日成交额分位。"
+    ]
+  },
+  "final_adaptation_score": 13,
+  "moderate_coefficient": 1.03,
+  "notes_for_stock_type": "当前风格表来自局部样本，只能作为资源股市场环境的低置信度参考；正式L3需接入全市场宽度、正式板块指数和大小盘指数。",
+  "overall_summary": "本地样本风险偏好约0.04，强势方向以综合为代表；因缺全市场宽度和大小盘指数，市场风格适配维持partial状态。",
+  "missing_summary": "缺全市场涨跌家数、正式板块涨跌幅、两市成交额近60日分位、沪深300/国证2000相对强弱。",
+  "generated_at": "2026-05-07T15:40:49+08:00",
+  "last_reviewed_at": "2026-05-07"
+}

@@ -1,0 +1,127 @@
+{
+  "asset_id": "VIDEO_SCRIPT_QUALITY_ACCEPTANCE_TABLE_001",
+  "asset_name": "成语故事脚本质量验收表",
+  "business_line": "视频制作业务影子底座",
+  "created_at": "2026-05-08 11:26:30 +08:00",
+  "risk_level": "W1/R0",
+  "asset_identity": "成语故事脚本草案质量验收表，不是正式脚本生成器，不是渲染或发布许可",
+  "source_assets": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_SCRIPT_QUALITY_FIX_CARD_001_成语故事内容质量纠偏卡_v1.0.md",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_AGENT_TRIAL_OUTPUT_QUALITY_CHECKLIST_001_试运行输出质量检查清单_v1.0.md"
+  ],
+  "acceptance_goal": "把成语故事要真的写出成语内容变成可检查的文本质量门槛",
+  "pass_items": [
+    {
+      "id": "Q-001",
+      "item": "成语明确",
+      "pass_standard": "明确写出一个具体成语；用户指定成语时必须使用用户指定成语",
+      "fail_pattern": "只说一个成语故事或替换成其他成语",
+      "action": "退回改稿"
+    },
+    {
+      "id": "Q-002",
+      "item": "释义准确",
+      "pass_standard": "用简洁语言解释成语含义",
+      "fail_pattern": "没有释义，或释义和成语无关",
+      "action": "退回补充"
+    },
+    {
+      "id": "Q-003",
+      "item": "故事具体",
+      "pass_standard": "有人物、动作、冲突和结果",
+      "fail_pattern": "只有这里讲故事或泛泛建议",
+      "action": "退回重写"
+    },
+    {
+      "id": "Q-004",
+      "item": "短视频结构",
+      "pass_standard": "包含开头钩子、3到5段正文、结尾启发或反转",
+      "fail_pattern": "只有标题/正文/结尾空壳",
+      "action": "退回补结构"
+    },
+    {
+      "id": "Q-005",
+      "item": "受众适配",
+      "pass_standard": "语言风格与用户指定受众匹配；未指定时默认通俗易懂",
+      "fail_pattern": "对小学生仍用生硬抽象话术",
+      "action": "退回改风格"
+    },
+    {
+      "id": "Q-006",
+      "item": "分镜可执行",
+      "pass_standard": "每段至少给出可拍摄或可生成的画面提示",
+      "fail_pattern": "分镜只是画面好看或出现故事",
+      "action": "退回补画面"
+    },
+    {
+      "id": "Q-007",
+      "item": "原创表达",
+      "pass_standard": "避免机械模板句和重复套话，有具体表达",
+      "fail_pattern": "多段重复这个故事告诉我们",
+      "action": "退回去模板化"
+    },
+    {
+      "id": "Q-008",
+      "item": "合规待复核",
+      "pass_standard": "明确素材授权、平台规范、AI标识、原创性待复核",
+      "fail_pattern": "直接说可发布",
+      "action": "阻断进入放行"
+    },
+    {
+      "id": "Q-009",
+      "item": "人工问题",
+      "pass_standard": "至少列出3个需要人工确认的问题",
+      "fail_pattern": "没有人工确认项",
+      "action": "退回补问题"
+    }
+  ],
+  "block_items": [
+    {
+      "id": "B-001",
+      "item": "空模板",
+      "description": "只输出栏目名，没有具体故事内容"
+    },
+    {
+      "id": "B-002",
+      "item": "成语错配",
+      "description": "用户指定掩耳盗铃，却写成其他成语或泛化为某个成语"
+    },
+    {
+      "id": "B-003",
+      "item": "放行越界",
+      "description": "声称可直接渲染、上传、发布或外发"
+    },
+    {
+      "id": "B-004",
+      "item": "真实素材越界",
+      "description": "要求读取用户真实素材目录、平台账号或发布后台"
+    },
+    {
+      "id": "B-005",
+      "item": "外部链路越界",
+      "description": "触发企业微信真实发送、n8n、渲染器、发布器或模型调用许可"
+    }
+  ],
+  "acceptance_output_fields": [
+    "验收结论",
+    "命中必过项",
+    "命中否决项",
+    "主要问题",
+    "建议改稿",
+    "人工复核问题",
+    "边界确认"
+  ],
+  "next_w1_r0_task": "建立掩耳盗铃高质量脚本影子样例并用本表验收",
+  "boundary_flags": {
+    "read_real_media": false,
+    "render_video": false,
+    "upload_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_script": false
+  },
+  "self_check": {
+    "passed": true,
+    "boundary_kept": true
+  }
+}

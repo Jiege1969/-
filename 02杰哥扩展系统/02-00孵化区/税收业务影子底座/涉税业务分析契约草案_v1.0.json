@@ -1,0 +1,104 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "name": "涉税业务分析契约草案",
+  "asset_identity": "tax_business_analysis_expert_shadow_contract_draft",
+  "risk_level": "W1",
+  "boundary": {
+    "formal_tax_conclusion_rule": false,
+    "write_formal_database": false,
+    "connect_e_tax_bureau": false,
+    "connect_finance_tax_software": false,
+    "trigger_n8n": false,
+    "wecom_send": false,
+    "external_send": false
+  },
+  "positioning": "依据国家政策和可信证据，对具体涉税业务形成政策顾问式待复核分析。",
+  "input_fields": [
+    "business_question",
+    "tax_type",
+    "business_scenario",
+    "entity_profile",
+    "period",
+    "region",
+    "provided_materials",
+    "requested_output"
+  ],
+  "evidence_fields": [
+    "policy_evidence",
+    "evidence_level",
+    "validity_status",
+    "official_source",
+    "effective_period",
+    "extracted_conditions",
+    "local_practice",
+    "evidence_gap"
+  ],
+  "analysis_output_fields": [
+    "analysis_object",
+    "policy_match",
+    "business_fact_breakdown",
+    "applicability_analysis",
+    "material_checklist",
+    "calculation_prerequisites",
+    "risk_points",
+    "missing",
+    "confidence",
+    "review_questions",
+    "next_action"
+  ],
+  "confidence_states": [
+    {
+      "state": "draft",
+      "meaning": "初步草案，证据或业务事实不完整",
+      "allowed_output": "方向、依据候选、待补项"
+    },
+    {
+      "state": "evidence_ready",
+      "meaning": "证据链较完整，但未人工复核",
+      "allowed_output": "待复核分析结论"
+    },
+    {
+      "state": "pending_review",
+      "meaning": "已形成分析报告，等待人工确认",
+      "allowed_output": "复核问题和风险点"
+    },
+    {
+      "state": "human_reviewed",
+      "meaning": "人工已复核并留下回执",
+      "allowed_output": "可作为样例沉淀，不自动升级为正式规则"
+    }
+  ],
+  "avoid_states": [
+    "confirmed_conclusion"
+  ],
+  "hard_rules": [
+    "没有政策依据或证据层级时，不输出强结论。",
+    "missing 不得为空壳；未知项必须写待补或待核验。",
+    "地方口径、窗口经验、历史做法不得覆盖国家政策。",
+    "字段不足或未经复核时，不给确定金额。",
+    "人工修正进入样例或候选，不自动改正式规则。",
+    "不申报、不退税执行、不开票、不外发正式意见。"
+  ],
+  "transferable_methods_from_stock": [
+    "契约先行",
+    "结构化证据",
+    "evidence/missing/confidence",
+    "状态分层",
+    "前后台分层",
+    "人工复核沉淀"
+  ],
+  "stock_specific_do_not_copy": [
+    "股票L3权重",
+    "K线",
+    "均线",
+    "MACD",
+    "RSI",
+    "承接区",
+    "转强线",
+    "风险线",
+    "股票代码",
+    "行情源",
+    "交易语义"
+  ]
+}

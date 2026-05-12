@@ -1,0 +1,70 @@
+﻿{
+  "名称": "视频真实渲染白名单申请材料完整度判定包",
+  "package_id": "VIDEO-REAL-RENDER-WHITELIST-APPLICATION-COMPLETENESS-20260508-001",
+  "产物": {
+    "材料清单JSON": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请材料清单_最新.json",
+    "材料清单MD": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请材料清单_最新.md",
+    "完整度判定报告JSON": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请材料完整度判定报告_最新.json",
+    "完整度判定报告MD": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请材料完整度判定报告_最新.md",
+    "缺口补齐待办JSON": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请缺口补齐待办_最新.json",
+    "缺口补齐待办MD": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请缺口补齐待办_最新.md"
+  },
+  "材料清单摘要": {
+    "材料项数量": 8,
+    "状态": {
+      "环境识别": "pending",
+      "素材授权": "pending",
+      "输出目录隔离": "pending",
+      "失败回滚": "pending",
+      "证据留存": "pending",
+      "人工签收": "pending",
+      "试运行范围": "pending",
+      "发布隔离": "pending"
+    }
+  },
+  "完整度统计": {
+    "pass_count": 0,
+    "pending_count": 8,
+    "block_count": 0
+  },
+  "待办数量": 8,
+  "当前结论": "whitelist_effective=false，can_enter_real_render=false；等待人工补齐和总管确认。",
+  "生成时间": "2026-05-08 19:33:40",
+  "error_count": 0,
+  "whitelist_effective": false,
+  "can_enter_real_render": false,
+  "real_render": false,
+  "publish": false,
+  "requires_supervisor_confirmation": true,
+  "白名单已生效": false,
+  "可进入真实渲染": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "触发n8n": false,
+  "修改企业微信公共配置": false,
+  "修改总管面板": false,
+  "修改一键接续包": false,
+  "重载服务": false,
+  "需要总管人工确认": true,
+  "readonly_flags_ascii": {
+    "whitelist_effective": false,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "publish": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false,
+    "requires_supervisor_confirmation": true
+  }
+}

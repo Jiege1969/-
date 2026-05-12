@@ -1,0 +1,48 @@
+{
+  "record_id": "VIDEO_AGENT_VAI_088_090_HANDOFF_20260508",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "work_scope": "W1/W2 low-risk shadow construction",
+  "round_summary": [
+    "Created VAI082-VAI087 mini-stage rollup.",
+    "Created pre-publish gate final overview card.",
+    "Created WeCom view-publish-blocker-reasons reply sample."
+  ],
+  "changed_files": [
+    "VIDEO_AGENT_VAI_082_087_MINI_ROLLUP_001_VAI082至VAI087小阶段收口记录_v1.0.md",
+    "VIDEO_AGENT_VAI_082_087_MINI_ROLLUP_001_VAI082至VAI087小阶段收口记录_v1.0.json",
+    "VIDEO_AGENT_PRE_PUBLISH_GATE_FINAL_OVERVIEW_001_发布前门禁最终总览卡_v1.0.md",
+    "VIDEO_AGENT_PRE_PUBLISH_GATE_FINAL_OVERVIEW_001_发布前门禁最终总览卡_v1.0.json",
+    "VIDEO_AGENT_WECOM_VIEW_PUBLISH_BLOCKER_REPLY_SAMPLE_001_企业微信查看发布阻断原因回执样例_v1.0.md",
+    "VIDEO_AGENT_WECOM_VIEW_PUBLISH_BLOCKER_REPLY_SAMPLE_001_企业微信查看发布阻断原因回执样例_v1.0.json",
+    "VIDEO_AGENT_VAI_088_090_对齐回传记录_20260508.md",
+    "VIDEO_AGENT_VAI_088_090_对齐回传记录_20260508.json"
+  ],
+  "risk_level": "low",
+  "real_system_triggered": {
+    "model_api": false,
+    "material_read": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "real_account_cookie_or_api_key_read": false,
+    "platform_upload_or_publish": false,
+    "service_port_manager_public_or_formal_change": false
+  },
+  "requires_manager_integration": false,
+  "manager_integration_note": "Real WeCom route integration for blocker inquiry must return to manager decision.",
+  "next_suggestions": [
+    "Create pre-publish gate overview field consistency check.",
+    "Create WeCom view-next-review-actions reply sample.",
+    "Create VAI001-VAI090 line asset index draft v5."
+  ],
+  "self_check": {
+    "read_panel_and_start_package_first": true,
+    "write_scope_limited_to_video_shadow_base": true,
+    "json_validated_by_convertfrom_json": true,
+    "scan_hits_are_no_connection_no_execution_block_or_shadow_reply_statements": true,
+    "no_real_execution": true,
+    "no_manager_public_service_formal_or_other_line_changes": true
+  }
+}

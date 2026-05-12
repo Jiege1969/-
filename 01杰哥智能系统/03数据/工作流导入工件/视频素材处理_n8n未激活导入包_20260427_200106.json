@@ -1,0 +1,139 @@
+{
+  "生成时间": "2026-04-27 20:01:06",
+  "阶段": "第2层-视频素材处理未激活导入工件生成",
+  "目标工作流": "视频素材处理",
+  "导入目标容器": "jiege_n8n",
+  "导入目标地址": "http://127.0.0.1:18679",
+  "工作流工件": {
+    "name": "视频素材处理",
+    "active": false,
+    "nodes": [
+      {
+        "parameters": {},
+        "id": "c865b192-7d6d-47a8-861b-44ed9d3eed65",
+        "name": "手动触发",
+        "type": "n8n-nodes-base.manualTrigger",
+        "typeVersion": 1,
+        "position": [
+          260,
+          260
+        ]
+      },
+      {
+        "parameters": {
+          "mode": "manual",
+          "duplicateItem": false,
+          "assignments": {
+            "assignments": [
+              {
+                "id": "90778178-e38d-4586-bd16-2eb7b5668385",
+                "name": "状态",
+                "value": "dry_run_only",
+                "type": "string"
+              },
+              {
+                "id": "33749028-176d-4df4-8904-bd932b63900c",
+                "name": "工作流名",
+                "value": "视频素材处理",
+                "type": "string"
+              },
+              {
+                "id": "57016d08-c327-4fbf-93ac-2b3ee508c98d",
+                "name": "执行摘要",
+                "value": "未激活导入验证工件，仅用于确认视频素材处理链路，不复制、不移动、不转码、不生成真实媒体。",
+                "type": "string"
+              },
+              {
+                "id": "d8f0d574-92c9-4552-acf9-e2749a07a04e",
+                "name": "风险提示",
+                "value": "当前不启用Webhook，不调用剪辑软件，不上传发布，不发送企业微信。",
+                "type": "string"
+              },
+              {
+                "id": "7e6fd2c6-3c48-4e16-b530-dcea18342bdf",
+                "name": "是否需要人工复核",
+                "value": true,
+                "type": "boolean"
+              }
+            ]
+          }
+        },
+        "id": "ddbb1cdb-90cf-4c14-8cb2-cddd996d228b",
+        "name": "生成只读视频素材响应",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          520,
+          260
+        ]
+      },
+      {
+        "parameters": {
+          "content": "视频素材处理未激活导入工件\\n生成时间：2026-04-27 20:01:06\\n安全边界：无Webhook、无凭据、不复制素材、不转码、不调用剪辑软件、不外发。",
+          "height": 260,
+          "width": 380,
+          "color": 6
+        },
+        "id": "f239eee7-39fd-4c2a-80c7-3794f3c361c8",
+        "name": "安全边界说明",
+        "type": "n8n-nodes-base.stickyNote",
+        "typeVersion": 1,
+        "position": [
+          260,
+          20
+        ]
+      }
+    ],
+    "connections": {
+      "手动触发": {
+        "main": [
+          [
+            {
+              "node": "生成只读视频素材响应",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "settings": {
+      "executionOrder": "v1",
+      "saveManualExecutions": true
+    },
+    "staticData": null,
+    "pinData": {},
+    "tags": [],
+    "meta": {
+      "jiege_v3_gray_import": true,
+      "target": "jiege_n8n",
+      "must_remain_inactive": true,
+      "generated_at": "2026-04-27 20:01:06",
+      "no_media_mutation": true,
+      "no_editor_call": true
+    }
+  },
+  "安全检查": {
+    "active": false,
+    "包含Webhook节点": false,
+    "包含凭据": false,
+    "复制素材": false,
+    "移动素材": false,
+    "转码素材": false,
+    "调用剪辑软件": false,
+    "发送企业微信": false,
+    "接入税收业务": false,
+    "是否调用n8nAPI": false,
+    "是否执行导入": false
+  },
+  "是否调用n8nAPI": false,
+  "是否执行导入": false,
+  "是否启用Webhook": false,
+  "是否触发真实工作流": false,
+  "是否发送企业微信": false,
+  "是否复制素材": false,
+  "是否移动素材": false,
+  "是否转码素材": false,
+  "是否调用剪辑软件": false,
+  "是否接入税收业务": false
+}

@@ -1,0 +1,22 @@
+{
+  "asset_id": "VIDEO_AGENT_GAP_SAMPLE_LIBRARY_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_sample_library_not_real_case_database",
+  "purpose": "Provide common gap examples for shadow classification, clarification, review routing, and redline blocking.",
+  "samples": [
+    {"sample_id": "GAP-SAMPLE-001", "gap_type": "missing_shadow_task_id", "typical_description": "user_asks_progress_without_task_id", "target_queue": "input_clarification_queue", "shadow_handling": "request_shadow_task_id"},
+    {"sample_id": "GAP-SAMPLE-002", "gap_type": "missing_platform_rule", "typical_description": "target_platform_not_provided", "target_queue": "platform_rule_review_queue", "shadow_handling": "request_platform_or_rule_source"},
+    {"sample_id": "GAP-SAMPLE-003", "gap_type": "missing_asset_authorization", "typical_description": "asset_used_without_authorization_context", "target_queue": "asset_authorization_review_queue", "shadow_handling": "complete_authorization_fields"},
+    {"sample_id": "GAP-SAMPLE-004", "gap_type": "missing_human_decision", "typical_description": "draft_created_without_human_review", "target_queue": "human_review_queue", "shadow_handling": "keep_pending_review"},
+    {"sample_id": "GAP-SAMPLE-005", "gap_type": "release_gate_unclear", "typical_description": "user_asks_whether_it_can_be_published", "target_queue": "release_gate_review_queue", "shadow_handling": "return_gate_gap_without_release"},
+    {"sample_id": "GAP-SAMPLE-006", "gap_type": "real_system_request", "typical_description": "user_requests_direct_publish_or_send", "target_queue": "redline_block_queue", "shadow_handling": "register_block"}
+  ],
+  "real_system_triggered": {
+    "real_case_database_read": false,
+    "real_material_read": false,
+    "wecom_real_message_read": false
+  }
+}

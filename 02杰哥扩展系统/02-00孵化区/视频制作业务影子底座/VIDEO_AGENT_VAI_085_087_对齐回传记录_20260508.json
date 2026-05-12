@@ -1,0 +1,48 @@
+{
+  "record_id": "VIDEO_AGENT_VAI_085_087_HANDOFF_20260508",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "work_scope": "W1/R0 low-risk shadow construction",
+  "round_summary": [
+    "Created pre-publish blocker close-condition checklist.",
+    "Created multi-platform check failure reply sample.",
+    "Created VAI001-VAI084 line asset index draft v4."
+  ],
+  "changed_files": [
+    "VIDEO_AGENT_PRE_PUBLISH_BLOCKER_CLOSE_CONDITION_001_发布前阻断关闭条件清单_v1.0.md",
+    "VIDEO_AGENT_PRE_PUBLISH_BLOCKER_CLOSE_CONDITION_001_发布前阻断关闭条件清单_v1.0.json",
+    "VIDEO_AGENT_MULTI_PLATFORM_CHECK_FAILURE_REPLY_SAMPLE_001_多平台检查未通过回执样例_v1.0.md",
+    "VIDEO_AGENT_MULTI_PLATFORM_CHECK_FAILURE_REPLY_SAMPLE_001_多平台检查未通过回执样例_v1.0.json",
+    "VIDEO_AGENT_LINE_ASSET_INDEX_DRAFT_004_VAI001至VAI084本线资产索引草案_v4.0.md",
+    "VIDEO_AGENT_LINE_ASSET_INDEX_DRAFT_004_VAI001至VAI084本线资产索引草案_v4.0.json",
+    "VIDEO_AGENT_VAI_085_087_对齐回传记录_20260508.md",
+    "VIDEO_AGENT_VAI_085_087_对齐回传记录_20260508.json"
+  ],
+  "risk_level": "low",
+  "real_system_triggered": {
+    "model_api": false,
+    "material_read": false,
+    "render": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "real_account_cookie_or_api_key_read": false,
+    "platform_upload_or_publish": false,
+    "service_port_manager_public_or_formal_change": false
+  },
+  "requires_manager_integration": false,
+  "manager_integration_note": "Future integration of index v4 into the incubation total index requires precheck and manager decision.",
+  "next_suggestions": [
+    "Create VAI082-VAI087 mini-stage rollup.",
+    "Create pre-publish gate final overview card.",
+    "Create WeCom view-publish-blocker-reasons reply sample."
+  ],
+  "self_check": {
+    "read_panel_and_start_package_first": true,
+    "write_scope_limited_to_video_shadow_base": true,
+    "json_validated_by_convertfrom_json": true,
+    "scan_hits_are_pre_publish_block_no_connection_or_index_boundary_statements": true,
+    "no_real_execution": true,
+    "no_manager_public_service_formal_or_other_line_changes": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "asset_id": "VIDEO_AGENT_PENDING_REVIEW_COVER_QUALITY_CHECK_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_quality_check_not_real_delivery_review",
+  "purpose": "Check whether pending-review output covers clearly mark shadow identity, human review status, redline status, gaps, and formal-execution prohibitions.",
+  "check_items": [
+    {"item": "shadow_identity_clear", "pass_standard": "must_state_not_formal_video_system_output"},
+    {"item": "review_status_clear", "pass_standard": "review_status_must_be_pending_human_review"},
+    {"item": "formal_execution_forbidden", "pass_standard": "formal_execution_allowed_must_be_false"},
+    {"item": "redline_status_clear", "pass_standard": "redline_category_must_be_listed_when_hit"},
+    {"item": "gaps_clear", "pass_standard": "missing_fields_must_be_listed"},
+    {"item": "human_review_clear", "pass_standard": "human_review_items_must_be_listed"},
+    {"item": "boundary_statement_complete", "pass_standard": "must_state_no_generation_render_publish_or_external_send"}
+  ],
+  "failure_handling": [
+    {"condition": "missing_shadow_identity", "action": "return_to_cover_template_completion"},
+    {"condition": "formal_execution_permission_present", "action": "route_to_redline_block_reply"},
+    {"condition": "missing_human_review_items", "action": "route_to_review_queue_blank_register"}
+  ],
+  "real_system_triggered": {
+    "real_delivery_review": false,
+    "publish_permission": false,
+    "wecom_real_send": false
+  }
+}

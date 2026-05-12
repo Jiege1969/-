@@ -1,0 +1,33 @@
+{
+  "asset_id": "VIDEO_AGENT_GAP_TO_REVIEW_QUEUE_MAPPING_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_mapping_not_real_queue",
+  "purpose": "Map shadow gaps to human-review queues so gaps are not misrepresented as conclusions.",
+  "mapping_rules": [
+    {"gap_type": "missing_shadow_task_id", "target_review_queue": "input_clarification_queue", "risk_level": "medium", "shadow_action": "request_task_id_or_context"},
+    {"gap_type": "missing_platform_rule", "target_review_queue": "platform_rule_review_queue", "risk_level": "high", "shadow_action": "complete_platform_rule_source_card"},
+    {"gap_type": "missing_asset_authorization", "target_review_queue": "asset_authorization_review_queue", "risk_level": "high", "shadow_action": "complete_asset_authorization_fields"},
+    {"gap_type": "missing_human_decision", "target_review_queue": "human_review_queue", "risk_level": "medium", "shadow_action": "wait_for_human_receipt"},
+    {"gap_type": "release_gate_unclear", "target_review_queue": "release_gate_review_queue", "risk_level": "blocking", "shadow_action": "register_block_do_not_release"},
+    {"gap_type": "real_system_request", "target_review_queue": "redline_block_queue", "risk_level": "blocking", "shadow_action": "register_redline_and_convert_to_shadow_alternative"}
+  ],
+  "output_fields": [
+    "gap_id",
+    "gap_type",
+    "source_asset",
+    "target_review_queue",
+    "risk_level",
+    "shadow_action",
+    "human_review_required",
+    "formal_execution_allowed"
+  ],
+  "real_system_triggered": {
+    "real_queue_created": false,
+    "wecom_real_send": false,
+    "formal_task_database_write": false,
+    "formal_rule_upgrade": false
+  }
+}

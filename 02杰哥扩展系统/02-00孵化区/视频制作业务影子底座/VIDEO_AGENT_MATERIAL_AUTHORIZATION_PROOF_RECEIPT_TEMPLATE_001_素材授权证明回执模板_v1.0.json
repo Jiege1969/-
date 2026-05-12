@@ -1,0 +1,53 @@
+{
+  "asset_id": "VIDEO_AGENT_MATERIAL_AUTHORIZATION_PROOF_RECEIPT_TEMPLATE_001",
+  "version": "v1.0",
+  "asset_type": "human_review_receipt_template",
+  "construction_level": "W1/R0",
+  "scope": "material_authorization_proof_review",
+  "status": "draft_template",
+  "purpose": "Record whether materials have traceable authorization proof without reading libraries, downloading materials, or calling external material APIs.",
+  "fields": [
+    "receipt_id",
+    "task_id",
+    "material_id",
+    "material_type",
+    "source_name",
+    "source_url_or_note",
+    "license_type",
+    "commercial_use_allowed",
+    "attribution_required",
+    "proof_archived",
+    "reviewer",
+    "review_result",
+    "blocker_reason",
+    "real_system_triggered"
+  ],
+  "blank_receipt": {
+    "receipt_id": "to_be_filled",
+    "task_id": "to_be_filled",
+    "material_id": "to_be_filled",
+    "material_type": "to_be_filled",
+    "source_name": "to_be_filled",
+    "source_url_or_note": "to_be_filled",
+    "license_type": "pending_confirmation",
+    "commercial_use_allowed": "pending_confirmation",
+    "attribution_required": "pending_confirmation",
+    "proof_archived": "pending_confirmation",
+    "reviewer": "to_be_filled",
+    "review_result": "pending_confirmation",
+    "blocker_reason": "to_be_filled",
+    "real_system_triggered": false
+  },
+  "fixed_rules": [
+    "Missing material authorization proof blocks real render and publishing.",
+    "Source name alone is not authorization proof.",
+    "If attribution is required but attribution method is unconfirmed, publishing remains blocked.",
+    "This template must not trigger material read, download, upload, render, or publish."
+  ],
+  "boundaries": {
+    "read_material_library": false,
+    "download_material": false,
+    "call_external_material_api": false,
+    "upload_render_or_publish": false
+  }
+}

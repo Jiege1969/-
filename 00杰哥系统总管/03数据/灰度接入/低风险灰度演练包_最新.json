@@ -1,0 +1,134 @@
+{
+  "生成时间": "2026-04-27 20:52:07",
+  "阶段": "第1层-导入前演练",
+  "设计来源": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\灰度接入\\低风险灰度接入设计_最新.json",
+  "演练项": [
+    {
+      "工作流名": "系统状态巡检",
+      "Webhook路径": "/webhook/jiege-v3/系统状态巡检",
+      "测试负载": {
+        "source": "jiege-v3-gray-rehearsal",
+        "mode": "local-dry-run",
+        "workflow": "系统状态巡检",
+        "message": "本地演练请求：系统状态巡检",
+        "require_real_send": false
+      },
+      "预期响应": {
+        "status": "dry_run_only",
+        "workflow": "系统状态巡检",
+        "real_action": false,
+        "message": "只返回本地演练结果，不触发真实动作"
+      },
+      "回滚核对表": [
+        "确认工作流保持未激活",
+        "确认Webhook未启用",
+        "确认自动触发未启用",
+        "确认统一消息出口未真实发送",
+        "确认总体验收通过"
+      ],
+      "是否导入n8n": false,
+      "是否启用Webhook": false,
+      "是否触发真实工作流": false,
+      "是否发送企业微信": false
+    },
+    {
+      "工作流名": "知识库问答增强",
+      "Webhook路径": "/webhook/jiege-v3/知识库问答增强",
+      "测试负载": {
+        "source": "jiege-v3-gray-rehearsal",
+        "mode": "local-dry-run",
+        "workflow": "知识库问答增强",
+        "message": "本地演练请求：知识库问答增强",
+        "require_real_send": false
+      },
+      "预期响应": {
+        "status": "dry_run_only",
+        "workflow": "知识库问答增强",
+        "real_action": false,
+        "message": "只返回本地演练结果，不触发真实动作"
+      },
+      "回滚核对表": [
+        "确认工作流保持未激活",
+        "确认Webhook未启用",
+        "确认自动触发未启用",
+        "确认统一消息出口未真实发送",
+        "确认总体验收通过"
+      ],
+      "是否导入n8n": false,
+      "是否启用Webhook": false,
+      "是否触发真实工作流": false,
+      "是否发送企业微信": false
+    },
+    {
+      "工作流名": "办公材料生成",
+      "Webhook路径": "/webhook/jiege-v3/办公材料生成",
+      "测试负载": {
+        "source": "jiege-v3-gray-rehearsal",
+        "mode": "local-dry-run",
+        "workflow": "办公材料生成",
+        "message": "本地演练请求：办公材料生成",
+        "require_real_send": false
+      },
+      "预期响应": {
+        "status": "dry_run_only",
+        "workflow": "办公材料生成",
+        "real_action": false,
+        "message": "只返回本地演练结果，不触发真实动作"
+      },
+      "回滚核对表": [
+        "确认工作流保持未激活",
+        "确认Webhook未启用",
+        "确认自动触发未启用",
+        "确认统一消息出口未真实发送",
+        "确认总体验收通过"
+      ],
+      "是否导入n8n": false,
+      "是否启用Webhook": false,
+      "是否触发真实工作流": false,
+      "是否发送企业微信": false
+    },
+    {
+      "工作流名": "视频素材处理",
+      "Webhook路径": "/webhook/jiege-v3/视频素材处理",
+      "测试负载": {
+        "source": "jiege-v3-gray-rehearsal",
+        "mode": "local-dry-run",
+        "workflow": "视频素材处理",
+        "message": "本地演练请求：视频素材处理",
+        "require_real_send": false
+      },
+      "预期响应": {
+        "status": "dry_run_only",
+        "workflow": "视频素材处理",
+        "real_action": false,
+        "message": "只返回本地演练结果，不触发真实动作"
+      },
+      "回滚核对表": [
+        "确认工作流保持未激活",
+        "确认Webhook未启用",
+        "确认自动触发未启用",
+        "确认统一消息出口未真实发送",
+        "确认总体验收通过"
+      ],
+      "是否导入n8n": false,
+      "是否启用Webhook": false,
+      "是否触发真实工作流": false,
+      "是否发送企业微信": false
+    }
+  ],
+  "全局验收口径": [
+    "测试负载只在本地文件中生成",
+    "预期响应不代表真实n8n执行结果",
+    "任何真实导入必须另行确认",
+    "任一真实动作开关被打开则停止"
+  ],
+  "统计": {
+    "演练项数量": 4,
+    "回滚核对项数量": 20
+  },
+  "是否导入n8n": false,
+  "是否启用Webhook": false,
+  "是否触发真实工作流": false,
+  "是否发送企业微信": false,
+  "是否接入税收业务": false
+}

@@ -1,0 +1,39 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SHADOW_TASK_CARD_002_ALIGNMENT_RETURN",
+  "created_at": "2026-05-08 14:07:00 +08:00",
+  "risk_level": "W1/R0",
+  "target_line": "video_shadow_base_and_parallel_video_construction_line",
+  "action": "create_blank_shadow_task_card_for_wang_yang_bu_lao",
+  "absorbed_points": [
+    "IDIOM-002_advanced_from_candidate_to_blank_task_card",
+    "no_concrete_script_generated",
+    "only_manual_fill_fields_and_minimum_acceptance_defined",
+    "next_step_must_not_auto_generate_script_or_enter_production_chain"
+  ],
+  "next_candidates": [
+    {
+      "id": "NEXT-001",
+      "task": "create_wang_yang_bu_lao_draft_fill_receipt_template",
+      "boundary": "human_fill_result_receipt_only_no_auto_script"
+    },
+    {
+      "id": "NEXT-002",
+      "task": "create_idiom_story_series_review_receipt_blank_template",
+      "boundary": "human_feedback_receipt_only_no_generation_release"
+    },
+    {
+      "id": "NEXT-003",
+      "task": "create_initial_topic_status_change_log_template",
+      "boundary": "status_change_record_only_no_real_task"
+    }
+  ],
+  "redline_flags": {
+    "real_script_generation": false,
+    "real_video_task_creation": false,
+    "real_rendering": false,
+    "real_publishing": false,
+    "wecom_real_send": false,
+    "n8n": false,
+    "formal_script_or_config_change": false
+  }
+}

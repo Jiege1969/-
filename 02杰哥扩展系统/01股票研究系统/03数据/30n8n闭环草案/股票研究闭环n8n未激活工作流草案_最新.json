@@ -1,0 +1,192 @@
+{
+  "name": "股票研究分析观察验证提炼闭环_未激活草案",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "人工触发闭环演练",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "command": "python '/mnt/d/杰哥智能化系统/02杰哥扩展系统/01股票研究系统/02脚本/生成研究决策复盘闭环蓝图.py'"
+      },
+      "id": "execute-1",
+      "name": "生成闭环蓝图",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        260,
+        300
+      ],
+      "notes": "未激活草案节点。正式导入前需人工核对容器路径、Python环境和执行权限。"
+    },
+    {
+      "parameters": {
+        "command": "python '/mnt/d/杰哥智能化系统/02杰哥扩展系统/01股票研究系统/02脚本/运行股票日常研究链路.py'"
+      },
+      "id": "execute-2",
+      "name": "运行日常研究",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        520,
+        300
+      ],
+      "notes": "未激活草案节点。正式导入前需人工核对容器路径、Python环境和执行权限。"
+    },
+    {
+      "parameters": {
+        "command": "python '/mnt/d/杰哥智能化系统/02杰哥扩展系统/01股票研究系统/02脚本/验证技术指标计算链路.py'"
+      },
+      "id": "execute-3",
+      "name": "计算技术指标",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        780,
+        300
+      ],
+      "notes": "未激活草案节点。正式导入前需人工核对容器路径、Python环境和执行权限。"
+    },
+    {
+      "parameters": {
+        "command": "python '/mnt/d/杰哥智能化系统/02杰哥扩展系统/01股票研究系统/02脚本/生成重点关注池候选池.py'"
+      },
+      "id": "execute-4",
+      "name": "生成候选池",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        300
+      ],
+      "notes": "未激活草案节点。正式导入前需人工核对容器路径、Python环境和执行权限。"
+    },
+    {
+      "parameters": {
+        "command": "python '/mnt/d/杰哥智能化系统/02杰哥扩展系统/01股票研究系统/02脚本/运行L5日报复盘联动链路.py'"
+      },
+      "id": "execute-5",
+      "name": "运行L5复盘联动",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        300
+      ],
+      "notes": "未激活草案节点。正式导入前需人工核对容器路径、Python环境和执行权限。"
+    },
+    {
+      "parameters": {
+        "command": "python '/mnt/d/杰哥智能化系统/02杰哥扩展系统/01股票研究系统/02脚本/验证复盘账本可运行.py'"
+      },
+      "id": "execute-6",
+      "name": "验证四本账",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        300
+      ],
+      "notes": "未激活草案节点。正式导入前需人工核对容器路径、Python环境和执行权限。"
+    }
+  ],
+  "connections": {
+    "人工触发闭环演练": {
+      "main": [
+        [
+          {
+            "node": "生成闭环蓝图",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "生成闭环蓝图": {
+      "main": [
+        [
+          {
+            "node": "运行日常研究",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "运行日常研究": {
+      "main": [
+        [
+          {
+            "node": "计算技术指标",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "计算技术指标": {
+      "main": [
+        [
+          {
+            "node": "生成候选池",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "生成候选池": {
+      "main": [
+        [
+          {
+            "node": "运行L5复盘联动",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "运行L5复盘联动": {
+      "main": [
+        [
+          {
+            "node": "验证四本账",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "tags": [
+    "股票研究",
+    "闭环演练",
+    "未激活",
+    "人工确认"
+  ],
+  "meta": {
+    "生成时间": "2026-04-30 08:21:13",
+    "规则文件": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\01配置\\股票研究最小闭环演练规则.json",
+    "安全边界": {
+      "触发n8n": false,
+      "发送企业微信": false,
+      "写旧系统": false,
+      "写正式库": false,
+      "调用券商接口": false,
+      "自动交易": false
+    },
+    "说明": "本文件仅为n8n未激活工作流草案，不自动导入、不自动启用。"
+  }
+}

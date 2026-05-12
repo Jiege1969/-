@@ -1,0 +1,91 @@
+{
+  "名称": "03进化系统_交付候选自动评审接入证据",
+  "创建日期": "2026-05-05",
+  "所属系统": "03杰哥进化系统",
+  "任务批次": "并行小任务J",
+  "证据版本": "auto-review-admission-evidence-v1",
+  "产物路径": {
+    "规则卡JSON": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\29交付候选自动评审接入规则包\\交付候选自动评审接入规则卡_最新.json",
+    "规则卡MD": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\29交付候选自动评审接入规则包\\交付候选自动评审接入规则卡_最新.md",
+    "审计清单JSON": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\29交付候选自动评审接入规则包\\交付候选自动评审审计清单_最新.json",
+    "审计清单MD": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\29交付候选自动评审接入规则包\\交付候选自动评审审计清单_最新.md",
+    "反退化样例JSON": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\29交付候选自动评审接入规则包\\反退化检查样例_最新.json",
+    "反退化样例MD": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\29交付候选自动评审接入规则包\\反退化检查样例_最新.md",
+    "只读验证脚本": "D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\验证交付候选自动评审接入规则包.py",
+    "回收报告MD": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\03进化系统_交付候选自动评审接入回收报告_最新.md",
+    "回收报告JSON": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\03进化系统_交付候选自动评审接入回收报告_最新.json"
+  },
+  "影子接入声明": {
+    "center_role": "rule_deposit_only",
+    "second_center_created": false,
+    "source_originals_added": false,
+    "openclaw_original_added": false,
+    "hermes_original_added": false,
+    "imported_runtime_dependency": false,
+    "task_contract": {
+      "dry_run": true,
+      "real_action_requested": false,
+      "external_service_requested": false,
+      "required_fields_count": 15
+    },
+    "redis": {
+      "role": "shadow_mapping_or_cache",
+      "real_action_queue": false,
+      "permission_release": false,
+      "upgrade_ready": false,
+      "official_progress_source": false
+    },
+    "n8n": {
+      "mode": "dry_run_only",
+      "workflow_import": false,
+      "workflow_enabled": false,
+      "workflow_triggered": false,
+      "webhook_called": false
+    },
+    "real_action_gate": {
+      "enabled": false,
+      "mode": "single_line_manual_gate",
+      "multi_gate_release": false,
+      "real_actions_triggered": 0
+    },
+    "stock_scope": "analysis_only",
+    "broker_api_called": false,
+    "order_created": false,
+    "auto_trade": false,
+    "recycle_report": {
+      "format_version": "parallel-recycle-v1",
+      "md_exists": true,
+      "json_exists": true,
+      "real_actions_triggered": 0,
+      "safety_boundary_present": true,
+      "parallel_boundary_present": true
+    },
+    "progress": {
+      "claim_basis": "verified_local_artifacts",
+      "validator_passed": true,
+      "blockers": 0,
+      "claimed_complete": true,
+      "global_progress_modified": false
+    }
+  },
+  "安全边界": {
+    "触发n8n": false,
+    "导入n8n工作流": false,
+    "启用n8n工作流": false,
+    "调用webhook": false,
+    "发送企业微信": false,
+    "写正式库": false,
+    "调用Redis服务": false,
+    "调用券商接口": false,
+    "自动交易": false,
+    "下单": false,
+    "外部网络调用": false
+  },
+  "并行协作边界": {
+    "未修改01智能系统文件": true,
+    "未修改02扩展系统文件": true,
+    "未修改00总管非并行回收文件": true,
+    "未回退已有修改": true,
+    "03内写入方式": "仅新增本任务规则包与只读验证脚本"
+  }
+}

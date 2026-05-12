@@ -1,0 +1,49 @@
+﻿{
+    "report":  "WSL2一致性备份执行收口",
+    "generated_at":  "2026-05-06 09:41:58 +08:00",
+    "target":  "F:\\系统备份\\WSL2一致性备份_20260506_090045",
+    "manifest":  "F:\\系统备份\\WSL2一致性备份_20260506_090045\\backup_manifest.json",
+    "copied":  [
+                   {
+                       "source":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\WSL2\\docker-desktop\\disk\\docker_data.vhdx",
+                       "destination":  "F:\\系统备份\\WSL2一致性备份_20260506_090045\\docker_data.vhdx",
+                       "source_bytes":  117365014528,
+                       "destination_bytes":  117365014528,
+                       "source_sha256":  "8F8306B196C780A9923C25E6CE402159E8F33D27ACB672A53CC3E6F3A9F410B0",
+                       "destination_sha256":  "8F8306B196C780A9923C25E6CE402159E8F33D27ACB672A53CC3E6F3A9F410B0",
+                       "match":  true
+                   },
+                   {
+                       "source":  "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\WSL2\\Ubuntu-24.04\\ext4.vhdx",
+                       "destination":  "F:\\系统备份\\WSL2一致性备份_20260506_090045\\ext4.vhdx",
+                       "source_bytes":  85931851776,
+                       "destination_bytes":  85931851776,
+                       "source_sha256":  "BD08232A7320EB7EBC753037F1B8D2EE0337083B8C2994CD42EA3871C850E5A8",
+                       "destination_sha256":  "BD08232A7320EB7EBC753037F1B8D2EE0337083B8C2994CD42EA3871C850E5A8",
+                       "match":  true
+                   }
+               ],
+    "all_hashes_match":  true,
+    "secondary_health_after_warmup":  {
+                                          "n8n":  200,
+                                          "ollama":  200,
+                                          "ollama_body_len":  4625,
+                                          "redis_tcp":  true
+                                      },
+    "final_acceptance":  {
+                             "passed":  true,
+                             "note":  "Initial n8n check hit startup connection close; secondary warmup validation passed."
+                         },
+    "script":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\维护\\Invoke-WSL2ConsistentBackup.ps1",
+    "script_sha256_after_encoding_fix":  "88C286E6AC4315A5408F8247E0187BE75CBF80B7B22A6A4FD16174D70C7FAAEE",
+    "ledger":  "F:\\系统备份\\备份总台账_最新.md/json",
+    "safety":  {
+                   "stopped_docker_wsl":  true,
+                   "hot_copy":  false,
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false,
+                   "deleted_data":  false
+               }
+}

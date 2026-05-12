@@ -1,0 +1,109 @@
+{
+  "name": "视频素材处理",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "8a0c8679-2ca1-4ccd-811c-bd9470338af7",
+      "name": "手动触发",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        260,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "95d7fb93-8059-433e-bbcf-71335ad6da4f",
+              "name": "状态",
+              "value": "dry_run_only",
+              "type": "string"
+            },
+            {
+              "id": "173e5060-b7f9-4fa8-bb74-72f7a7cf2f64",
+              "name": "工作流名",
+              "value": "视频素材处理",
+              "type": "string"
+            },
+            {
+              "id": "6392274c-d569-4533-9519-2bf459d3bc7b",
+              "name": "执行摘要",
+              "value": "未激活导入验证工件，仅用于确认视频素材处理链路，不复制、不移动、不转码、不生成真实媒体。",
+              "type": "string"
+            },
+            {
+              "id": "80002a91-078c-4002-821d-46341daee4e9",
+              "name": "风险提示",
+              "value": "当前不启用Webhook，不调用剪辑软件，不上传发布，不发送企业微信。",
+              "type": "string"
+            },
+            {
+              "id": "b818a986-f09a-454d-9a6e-afbd72d03cf7",
+              "name": "是否需要人工复核",
+              "value": true,
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      "id": "be5a65c1-c94b-47b5-8fd4-2f4db02a7593",
+      "name": "生成只读视频素材响应",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        520,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "视频素材处理未激活导入工件\\n生成时间：2026-04-27 20:15:47\\n安全边界：无Webhook、无凭据、不复制素材、不转码、不调用剪辑软件、不外发。",
+        "height": 260,
+        "width": 380,
+        "color": 6
+      },
+      "id": "10c26bc5-5774-4741-8c4c-1d16e6ee4b98",
+      "name": "安全边界说明",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        260,
+        20
+      ]
+    }
+  ],
+  "connections": {
+    "手动触发": {
+      "main": [
+        [
+          {
+            "node": "生成只读视频素材响应",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "staticData": null,
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "jiege_v3_gray_import": true,
+    "target": "jiege_n8n",
+    "must_remain_inactive": true,
+    "generated_at": "2026-04-27 20:15:47",
+    "no_media_mutation": true,
+    "no_editor_call": true
+  }
+}

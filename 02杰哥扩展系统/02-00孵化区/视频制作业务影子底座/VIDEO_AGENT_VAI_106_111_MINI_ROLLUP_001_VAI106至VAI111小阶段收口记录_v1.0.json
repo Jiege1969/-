@@ -1,0 +1,84 @@
+{
+  "asset_id": "VIDEO_AGENT_VAI_106_111_MINI_ROLLUP_001",
+  "name": "VAI106至VAI111小阶段收口记录",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "视频制作系统",
+  "layer": "W1/W2 影子收口层",
+  "status": "draft",
+  "covered_range": [
+    {
+      "id": "VAI106",
+      "asset": "VAI100至VAI105小阶段收口记录"
+    },
+    {
+      "id": "VAI107",
+      "asset": "提交总管判断缺口卡"
+    },
+    {
+      "id": "VAI108",
+      "asset": "企业微信提交总管判断阻断回执样例"
+    },
+    {
+      "id": "VAI109",
+      "asset": "VAI001至VAI108本线资产索引草案v8"
+    },
+    {
+      "id": "VAI110",
+      "asset": "总管判断返回视频线影子接收卡"
+    },
+    {
+      "id": "VAI111",
+      "asset": "企业微信总管判断结果已收到但仍需人工复核回执样例"
+    }
+  ],
+  "stage_conclusion": "VAI106至VAI111已把交回总管判断和总管判断回流拆成两个方向：向外只登记需总管判断，向内只进入视频线人工复核。",
+  "capabilities": [
+    {
+      "capability": "需总管判断登记",
+      "asset": "提交总管判断缺口卡",
+      "boundary": "只登记，不代写总管"
+    },
+    {
+      "capability": "请求上交阻断回复",
+      "asset": "企业微信提交总管判断阻断回执",
+      "boundary": "只定义话术，不真实外发"
+    },
+    {
+      "capability": "判断结果回流接收",
+      "asset": "总管判断返回视频线影子接收卡",
+      "boundary": "只接收摘要，不读取总管文件"
+    },
+    {
+      "capability": "判断结果回执",
+      "asset": "总管判断结果已收到回执样例",
+      "boundary": "只进入人工复核，不执行"
+    },
+    {
+      "capability": "资产索引更新",
+      "asset": "本线资产索引v8",
+      "boundary": "只整理本线，不写正式库"
+    }
+  ],
+  "remaining_gaps": [
+    "判断结果信息不完整时需要退回缺口卡模板",
+    "本线资产索引需要继续追到VAI111",
+    "后续可补人工复核后仍不同意执行的回执样例"
+  ],
+  "boundary": {
+    "modify_manager_panel": false,
+    "modify_startup_package": false,
+    "modify_public_wecom_component": false,
+    "trigger_n8n": false,
+    "modify_service_script": false,
+    "modify_formal_video_system": false,
+    "modify_other_business_line": false,
+    "call_real_model": false,
+    "read_real_material": false,
+    "render_video": false,
+    "upload_video": false,
+    "publish_video": false,
+    "send_wecom": false
+  }
+}
+

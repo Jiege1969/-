@@ -1,0 +1,103 @@
+﻿{
+    "generated_at":  "2026-05-09 07:11:19",
+    "action":  "remove_residual_old_root_after_source_disabled",
+    "target":  "D:\\01杰哥智能系统",
+    "item_count":  17,
+    "source_fix":  {
+                       "external_actions":  {
+                                                "wecom_send":  false,
+                                                "broker_api":  false,
+                                                "n8n_trigger":  false,
+                                                "production_db_write":  false
+                                            },
+                       "official_docker_desktop_stack":  "kept_running",
+                       "ubuntu_docker_service":  "disabled_and_inactive"
+                   },
+    "sample_items":  [
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据",
+                             "Length":  null,
+                             "LastWriteTime":  "\/Date(1778280811201)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\ollama",
+                             "Length":  null,
+                             "LastWriteTime":  "\/Date(1778280811761)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\qdrant",
+                             "Length":  null,
+                             "LastWriteTime":  "\/Date(1778280811453)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\redis",
+                             "Length":  null,
+                             "LastWriteTime":  "\/Date(1778281854695)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\ollama\\blobs",
+                             "Length":  null,
+                             "LastWriteTime":  "\/Date(1778280811744)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\ollama\\id_ed25519",
+                             "Length":  387,
+                             "LastWriteTime":  "\/Date(1778280811732)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\ollama\\id_ed25519.pub",
+                             "Length":  81,
+                             "LastWriteTime":  "\/Date(1778280811735)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\qdrant\\aliases",
+                             "Length":  null,
+                             "LastWriteTime":  "\/Date(1778280811481)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\qdrant\\collections",
+                             "Length":  null,
+                             "LastWriteTime":  "\/Date(1778280811445)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\qdrant\\.qdrant_fs_check",
+                             "Length":  36864,
+                             "LastWriteTime":  "\/Date(1778280811415)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\qdrant\\raft_state.json",
+                             "Length":  355,
+                             "LastWriteTime":  "\/Date(1778280811424)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\qdrant\\aliases\\data.json",
+                             "Length":  2,
+                             "LastWriteTime":  "\/Date(1778280811463)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\redis\\appendonlydir",
+                             "Length":  null,
+                             "LastWriteTime":  "\/Date(1778280811371)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\redis\\dump.rdb",
+                             "Length":  88,
+                             "LastWriteTime":  "\/Date(1778281854693)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\redis\\appendonlydir\\appendonly.aof.1.base.rdb",
+                             "Length":  88,
+                             "LastWriteTime":  "\/Date(1778280811363)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\redis\\appendonlydir\\appendonly.aof.1.incr.aof",
+                             "Length":  0,
+                             "LastWriteTime":  "\/Date(1778280811371)\/"
+                         },
+                         {
+                             "FullName":  "D:\\01杰哥智能系统\\03数据\\redis\\appendonlydir\\appendonly.aof.manifest",
+                             "Length":  88,
+                             "LastWriteTime":  "\/Date(1778280811371)\/"
+                         }
+                     ]
+}

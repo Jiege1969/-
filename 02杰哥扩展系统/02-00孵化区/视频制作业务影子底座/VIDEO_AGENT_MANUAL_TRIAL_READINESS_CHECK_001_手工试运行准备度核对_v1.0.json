@@ -1,0 +1,59 @@
+{
+  "id": "VIDEO_AGENT_MANUAL_TRIAL_READINESS_CHECK_001",
+  "name": "手工试运行准备度核对",
+  "asset_identity": "video_creation_agent_manual_trial_readiness_check",
+  "stage": "W1_R0",
+  "status": "readiness_check_not_launch_permission",
+  "checks": [
+    {
+      "category": "input",
+      "item": "desensitized_video_idea_available",
+      "current_status": "pending_user_provided",
+      "if_not_met": "use_intake_prompt_template_do_not_fabricate"
+    },
+    {
+      "category": "trial_packet",
+      "item": "input_output_packet_available",
+      "current_status": "available",
+      "reference": "VIDEO_AGENT_SHADOW_TRIAL_IO_PACKET_001"
+    },
+    {
+      "category": "operation_card",
+      "item": "operation_steps_available",
+      "current_status": "available",
+      "reference": "VIDEO_AGENT_SHADOW_TRIAL_OPERATION_CARD_001"
+    },
+    {
+      "category": "run_check",
+      "item": "field_and_redline_check_available",
+      "current_status": "available",
+      "reference": "VIDEO_AGENT_SHADOW_RUN_CHECKLIST_001"
+    },
+    {
+      "category": "quality_check",
+      "item": "text_quality_check_available",
+      "current_status": "available",
+      "reference": "VIDEO_AGENT_TRIAL_OUTPUT_QUALITY_CHECKLIST_001"
+    },
+    {
+      "category": "human_review",
+      "item": "review_questions_and_receipt_template_available",
+      "current_status": "available"
+    },
+    {
+      "category": "redline_block",
+      "item": "block_register_available",
+      "current_status": "available",
+      "handling": "record_only_no_execution"
+    }
+  ],
+  "conclusion": "ready_for_user_provided_desensitized_idea_and_manual_shadow_trial_only",
+  "forbidden_capabilities": [
+    "real_wechat_entry",
+    "model_call",
+    "real_asset_read",
+    "render",
+    "publish",
+    "external_send"
+  ]
+}

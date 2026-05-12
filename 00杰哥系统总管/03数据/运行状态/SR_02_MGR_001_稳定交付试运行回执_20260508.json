@@ -1,0 +1,25 @@
+{
+  "task_id": "SR-02-MGR-001",
+  "batch": "SR-02",
+  "execution_time": "2026-05-08 19:20:00 +08:00",
+  "business_line": "总管协调层",
+  "risk_level": "W1/R0",
+  "input_summary": "第二批候选执行顺序与回传格式核对",
+  "source_asset": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\CTRL_CAND_MGR_002_第二批候选执行顺序与回传格式核对_20260508.md",
+  "status": "completed",
+  "redline_hit": false,
+  "output_summary": "总管协调层具备回传吸收口径，只做顺序、格式、边界和裁定，不替业务线生成正式业务结论。",
+  "evidence": ["第二批候选顺序、回传字段、暂停触发和自检均已建立"],
+  "missing": ["稳定交付最终确认仍需 SR-03 组合复核"],
+  "confidence": "总管协调与回传格式置信度高；正式上线不评价",
+  "boundary_flags": {
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "write_formal_db": false,
+    "modify_service_script": false,
+    "restart_19310_19302": false,
+    "call_model_api": false,
+    "trade_tax_video_real_action": false
+  },
+  "needs_manager_ruling": false
+}

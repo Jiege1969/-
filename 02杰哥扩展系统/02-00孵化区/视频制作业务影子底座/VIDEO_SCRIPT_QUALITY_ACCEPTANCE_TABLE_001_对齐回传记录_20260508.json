@@ -1,0 +1,36 @@
+{
+  "asset_id": "VIDEO_SCRIPT_QUALITY_ACCEPTANCE_TABLE_001_ALIGNMENT_RETURN_20260508",
+  "asset_name": "VIDEO_SCRIPT_QUALITY_ACCEPTANCE_TABLE_001对齐回传记录",
+  "created_at": "2026-05-08 11:26:30 +08:00",
+  "asset_identity": "视频制作影子底座W1/R0对齐回传记录",
+  "source": "受控试用结论中视频流程可用但内容质量需优化",
+  "completed": [
+    "建立成语故事脚本质量验收表",
+    "拆出9个必过项",
+    "拆出5个一票否决项"
+  ],
+  "delivery_impact": {
+    "video_idea_to_task": "流程可用",
+    "draft_view": "流程可用",
+    "idiom_story_quality": "已建立验收门槛，仍需样例验证",
+    "real_render_publish": "仍禁止",
+    "wecom_real_send_n8n": "仍禁止"
+  },
+  "next_w1_r0": [
+    "建立掩耳盗铃高质量脚本影子样例",
+    "用本验收表跑一次样例质量验收",
+    "把结果回传给视频线阶段总收口"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "render_video": false,
+    "upload_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_script": false
+  },
+  "self_check": {
+    "risk_level": "W1/R0",
+    "boundary_kept": true
+  }
+}

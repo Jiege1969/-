@@ -1,0 +1,116 @@
+{
+  "name": "股票线第七批低风险续建队列",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 13:16:49",
+  "asset_identity": "W1/W2股票线低风险连续施工队列",
+  "status": "active",
+  "direction": "继续把股票分析系统从可生成样例推进为可门禁、可字段化、可刷新验收的前台结论型研究系统。",
+  "source_assets": {
+    "sixth_batch_acceptance_passed": true,
+    "sixth_batch_metrics": {
+      "check_count": 5,
+      "passed_count": 5,
+      "failed_count": 0,
+      "queue_completed_count": 5,
+      "queue_count": 5
+    }
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "construction_queue": [
+    {
+      "id": "STOCK-AUTO7-001",
+      "title": "标准前台报告输出门禁样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把企业微信前台回答必须满足的对象、结论、主因、缺口、置信度、复核提醒和禁止项做成门禁样例。",
+      "validation_asset": "标准前台报告输出门禁样例验收结果_最新.json",
+      "completed_at": "2026-05-08 13:05:44"
+    },
+    {
+      "id": "STOCK-AUTO7-002",
+      "title": "财报资金证据字段化补齐样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把财报、估值、机构、资金证据拆成结构化字段和缺口状态，服务前台结论上限。",
+      "validation_asset": "财报资金证据字段化补齐样例验收结果_最新.json",
+      "completed_at": "2026-05-08 13:10:51"
+    },
+    {
+      "id": "STOCK-AUTO7-003",
+      "title": "行业价格连续观测字段化补齐样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把锗价、化工品价格、大宗商品景气等行业价格线索拆成连续观测字段和复核状态。",
+      "validation_asset": "行业价格连续观测字段化补齐样例验收结果_最新.json",
+      "completed_at": "2026-05-08 13:13:16"
+    },
+    {
+      "id": "STOCK-AUTO7-004",
+      "title": "企业微信模拟问答回归验收样例",
+      "risk_level": "W2",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "仅本地模拟企业微信提问和回答，不真实发送，验收前台短答是否符合门禁。",
+      "validation_asset": "企业微信模拟问答回归验收样例验收结果_最新.json",
+      "completed_at": "2026-05-08 13:15:05"
+    },
+    {
+      "id": "STOCK-AUTO7-005",
+      "title": "第七批统一影子验收总表",
+      "risk_level": "W2",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "汇总第七批影子资产验收状态，形成本批收口记录。",
+      "validation_asset": "股票线第七批统一影子验收总表验收_最新.json",
+      "completed_at": "2026-05-08 13:16:49"
+    }
+  ],
+  "blocked_queue": [
+    {
+      "id": "STOCK-AUTO7-BLOCK-001",
+      "title": "把门禁样例接入企业微信真实发送链路",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "企业微信真实外发、路由和正式入口属于红线事项，本业务线只登记阻断，不实施。"
+    },
+    {
+      "id": "STOCK-AUTO7-BLOCK-002",
+      "title": "把门禁样例写入正式报告生成配置",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "正式配置和正式脚本入口属于W3，必须交回总管判断。"
+    },
+    {
+      "id": "STOCK-AUTO7-BLOCK-003",
+      "title": "新增买卖、下单、仓位调整或自动交易能力",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "股票系统定位为研究分析系统，不新增交易执行能力。"
+    }
+  ],
+  "summary": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 3
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  }
+}

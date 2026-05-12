@@ -1,0 +1,89 @@
+{
+  "version": "1.0",
+  "time": "2026-05-07",
+  "status": "completed_static_round",
+  "round_name": "智能体底座到业务影子施工收口",
+  "completed": [
+    "待复核草案通用模板",
+    "人工修正样本格式",
+    "股票母本只读提取模板",
+    "税收影子底座三件套",
+    "股票母本只读提取报告",
+    "税收官方来源入口补强",
+    "财税2011_100税收政策元数据卡",
+    "下阶段施工方案",
+    "当前施工面板和一键接续包同步",
+    "股票母本可复用能力清单"
+    ,"税收影子样例模板符合性检查"
+    ,"税收影子人工修正空白样本实例"
+    ,"去业务化通用能力Schema"
+    ,"软件产品即征即退测算前置字段清单"
+    ,"软件产品即征即退政策指引卡"
+    ,"税收影子底座索引"
+    ,"中华人民共和国增值税法元数据卡"
+    ,"税收政策下载筛选规程"
+  ],
+  "official_tax_sources_checked": [
+    "https://www.chinatax.gov.cn/",
+    "https://fgk.chinatax.gov.cn/",
+    "https://www.mof.gov.cn/",
+    "https://szs.mof.gov.cn/zhengcefabu/"
+  ],
+  "metadata_cards": [
+    {
+      "document_id": "TAX-DOC-2011-100",
+      "document_number": "财税〔2011〕100号",
+      "title": "财政部 国家税务总局关于软件产品增值税政策的通知",
+      "source_url": "https://fgk.chinatax.gov.cn/zcfgk/c102416/c5204304/content.html",
+      "status": "shadow_card_registered"
+    },
+    {
+      "document_id": "TAX-LAW-VAT-2024",
+      "document_number": "中华人民共和国主席令第四十一号",
+      "title": "中华人民共和国增值税法",
+      "source_url": "https://www.npc.gov.cn/npc/c2/c30834/202412/t20241225_442038.html",
+      "status": "shadow_card_registered"
+    }
+  ],
+  "stock_mother": {
+    "source_report": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\股票母本回收\\股票母本只读提取报告_v1.0.md",
+    "reusable_capability_list": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\股票母本回收\\股票母本可复用能力清单_v1.0.json",
+    "reusable_capability_count": 8,
+    "modified_stock_system": false
+  },
+  "generic_capability_schema": "D:\\杰哥智能化系统\\03杰哥进化系统\\规则库\\去业务化通用能力Schema_v1.0.json",
+  "tax_shadow_chain": {
+    "shadow_sample": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\软件产品即征即退_影子样例_v1.0.md",
+    "template_check": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\软件产品即征即退_影子样例_模板符合性检查_v1.0.md",
+    "calculation_prerequisite_fields": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\软件产品即征即退_测算前置字段清单_v1.0.md",
+    "blank_review_sample": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\人工修正样本\\TAX_SHADOW_001_软件即征即退_空白复核样本_v1.0.json"
+  },
+  "tax_shadow_index": {
+    "md": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收影子底座索引_最新.md",
+    "json": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收影子底座索引_最新.json"
+  },
+  "tax_download_method": {
+    "rule_file": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\税收政策下载筛选规程_v1.0.md",
+    "core_correction": "先使用官方政策库有效状态筛选，再登记或下载政策文件",
+    "auto_download": false
+  },
+  "safety_boundary": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_db": false,
+    "call_model_inference": false,
+    "run_stock_business_script": false,
+    "run_tax_business_script": false,
+    "call_broker": false,
+    "auto_trade": false,
+    "place_order": false,
+    "delete_files": false,
+    "restart_service": false
+  },
+  "next_steps": [
+    "按一个真实税收政策文件登记完整元数据卡片",
+    "结构化股票母本可复用能力清单",
+    "用待复核草案模板检查税收影子样例",
+    "用人工修正样本格式创建第一条空白样本实例"
+  ]
+}

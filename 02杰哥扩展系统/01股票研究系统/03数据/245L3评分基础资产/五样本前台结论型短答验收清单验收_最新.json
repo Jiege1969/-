@@ -1,0 +1,14 @@
+{
+  "name": "五样本前台结论型短答验收清单验收",
+  "generated_at": "2026-05-08 08:42:27",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本前台结论型短答验收清单_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "sample_count": 5,
+    "pass_count": 0,
+    "needs_revision_count": 5
+  },
+  "next_step": "可继续生成五样本前台结论型短答修订样例；仍不得写企业微信正式入口。"
+}

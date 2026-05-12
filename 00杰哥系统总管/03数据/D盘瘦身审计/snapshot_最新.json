@@ -1,0 +1,388 @@
+﻿{
+    "generated_at":  "2026-05-13 07:47:39",
+    "root":  "D:\\杰哥智能化系统",
+    "note":  "Read-only snapshot. No external system modified. No data migrated. No secret read.",
+    "disk":  [
+                 {
+                     "name":  "C",
+                     "used_gb":  89.42,
+                     "free_gb":  60.59
+                 },
+                 {
+                     "name":  "D",
+                     "used_gb":  405.36,
+                     "free_gb":  375.84
+                 },
+                 {
+                     "name":  "E",
+                     "used_gb":  5.3,
+                     "free_gb":  460.46
+                 },
+                 {
+                     "name":  "F",
+                     "used_gb":  288.95,
+                     "free_gb":  3437.06
+                 }
+             ],
+    "gpu":  {
+                "name":  "NVIDIA GeForce RTX 3090",
+                "driver_version":  "595.79",
+                "memory_total_mib":  24576,
+                "memory_used_mib":  580,
+                "memory_free_mib":  23743,
+                "temperature_gpu":  41,
+                "power_draw_w":  "39.97",
+                "power_limit_w":  "350.00",
+                "utilization_gpu_percent":  4
+            },
+    "docker_containers":  {
+
+                          },
+    "docker_images":  {
+
+                      },
+    "listening_ports":  [
+                            {
+                                "LocalAddress":  "::",
+                                "LocalPort":  135,
+                                "OwningProcess":  1900,
+                                "ProcessName":  "svchost"
+                            },
+                            {
+                                "LocalAddress":  "0.0.0.0",
+                                "LocalPort":  135,
+                                "OwningProcess":  1900,
+                                "ProcessName":  "svchost"
+                            },
+                            {
+                                "LocalAddress":  "::",
+                                "LocalPort":  445,
+                                "OwningProcess":  4,
+                                "ProcessName":  "System"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  4001,
+                                "OwningProcess":  2832,
+                                "ProcessName":  "QQ"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  4301,
+                                "OwningProcess":  2832,
+                                "ProcessName":  "QQ"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  4310,
+                                "OwningProcess":  2832,
+                                "ProcessName":  "QQ"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  4709,
+                                "OwningProcess":  7384,
+                                "ProcessName":  "wpscloudsvr"
+                            },
+                            {
+                                "LocalAddress":  "0.0.0.0",
+                                "LocalPort":  5040,
+                                "OwningProcess":  8976,
+                                "ProcessName":  "svchost"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  5283,
+                                "OwningProcess":  2832,
+                                "ProcessName":  "QQ"
+                            },
+                            {
+                                "LocalAddress":  "::",
+                                "LocalPort":  5357,
+                                "OwningProcess":  4,
+                                "ProcessName":  "System"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  5801,
+                                "OwningProcess":  18644,
+                                "ProcessName":  "python"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  5802,
+                                "OwningProcess":  18620,
+                                "ProcessName":  "python"
+                            },
+                            {
+                                "LocalAddress":  "::",
+                                "LocalPort":  7680,
+                                "OwningProcess":  20732,
+                                "ProcessName":  "svchost"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  7890,
+                                "OwningProcess":  18732,
+                                "ProcessName":  "mihomo"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  9210,
+                                "OwningProcess":  2832,
+                                "ProcessName":  "QQ"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  14013,
+                                "OwningProcess":  5160,
+                                "ProcessName":  "Weixin"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  14016,
+                                "OwningProcess":  5160,
+                                "ProcessName":  "Weixin"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  14019,
+                                "OwningProcess":  5160,
+                                "ProcessName":  "Weixin"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  14022,
+                                "OwningProcess":  5160,
+                                "ProcessName":  "Weixin"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  14023,
+                                "OwningProcess":  5160,
+                                "ProcessName":  "Weixin"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  14122,
+                                "OwningProcess":  8836,
+                                "ProcessName":  "Sparkle"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  19300,
+                                "OwningProcess":  8400,
+                                "ProcessName":  "python"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  19302,
+                                "OwningProcess":  17044,
+                                "ProcessName":  "python"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  19310,
+                                "OwningProcess":  14676,
+                                "ProcessName":  "python"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  20290,
+                                "OwningProcess":  5972,
+                                "ProcessName":  "GameViewerServer"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  28100,
+                                "OwningProcess":  8008,
+                                "ProcessName":  "python"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  38324,
+                                "OwningProcess":  8836,
+                                "ProcessName":  "Sparkle"
+                            },
+                            {
+                                "LocalAddress":  "127.0.0.1",
+                                "LocalPort":  47131,
+                                "OwningProcess":  5972,
+                                "ProcessName":  "GameViewerServer"
+                            },
+                            {
+                                "LocalAddress":  "::",
+                                "LocalPort":  49664,
+                                "OwningProcess":  1512,
+                                "ProcessName":  "lsass"
+                            },
+                            {
+                                "LocalAddress":  "0.0.0.0",
+                                "LocalPort":  49664,
+                                "OwningProcess":  1512,
+                                "ProcessName":  "lsass"
+                            },
+                            {
+                                "LocalAddress":  "::",
+                                "LocalPort":  49665,
+                                "OwningProcess":  1412,
+                                "ProcessName":  "wininit"
+                            },
+                            {
+                                "LocalAddress":  "0.0.0.0",
+                                "LocalPort":  49665,
+                                "OwningProcess":  1412,
+                                "ProcessName":  "wininit"
+                            },
+                            {
+                                "LocalAddress":  "0.0.0.0",
+                                "LocalPort":  49666,
+                                "OwningProcess":  2372,
+                                "ProcessName":  "svchost"
+                            },
+                            {
+                                "LocalAddress":  "::",
+                                "LocalPort":  49666,
+                                "OwningProcess":  2372,
+                                "ProcessName":  "svchost"
+                            },
+                            {
+                                "LocalAddress":  "::",
+                                "LocalPort":  49667,
+                                "OwningProcess":  3196,
+                                "ProcessName":  "svchost"
+                            },
+                            {
+                                "LocalAddress":  "0.0.0.0",
+                                "LocalPort":  49667,
+                                "OwningProcess":  3196,
+                                "ProcessName":  "svchost"
+                            },
+                            {
+                                "LocalAddress":  "::",
+                                "LocalPort":  49668,
+                                "OwningProcess":  4364,
+                                "ProcessName":  "spoolsv"
+                            },
+                            {
+                                "LocalAddress":  "0.0.0.0",
+                                "LocalPort":  49668,
+                                "OwningProcess":  4364,
+                                "ProcessName":  "spoolsv"
+                            },
+                            {
+                                "LocalAddress":  "::",
+                                "LocalPort":  49669,
+                                "OwningProcess":  1484,
+                                "ProcessName":  "services"
+                            },
+                            {
+                                "LocalAddress":  "0.0.0.0",
+                                "LocalPort":  49669,
+                                "OwningProcess":  1484,
+                                "ProcessName":  "services"
+                            }
+                        ],
+    "http_checks":  [
+                        {
+                            "url":  "tcp://127.0.0.1:18080",
+                            "ok":  true,
+                            "status_code":  null,
+                            "role":  "historical local agent gateway port; cloud 18080 is separate tunnel loopback",
+                            "required":  false,
+                            "current_scope":  "historical port; expected closed; tcp listen check only, no HTTP touch",
+                            "listener_count":  0
+                        },
+                        {
+                            "url":  "tcp://127.0.0.1:18100",
+                            "ok":  true,
+                            "status_code":  null,
+                            "role":  "historical local agent core port",
+                            "required":  false,
+                            "current_scope":  "historical port; expected closed; tcp listen check only, no HTTP touch",
+                            "listener_count":  0
+                        },
+                        {
+                            "url":  "tcp://127.0.0.1:18200",
+                            "ok":  true,
+                            "status_code":  null,
+                            "role":  "historical local ops guardian port",
+                            "required":  false,
+                            "current_scope":  "historical port; expected closed; tcp listen check only, no HTTP touch",
+                            "listener_count":  0
+                        },
+                        {
+                            "url":  "tcp://127.0.0.1:18300",
+                            "ok":  true,
+                            "status_code":  null,
+                            "role":  "historical reserved stock service port",
+                            "required":  false,
+                            "current_scope":  "historical port; expected closed; tcp listen check only, no HTTP touch",
+                            "listener_count":  0
+                        },
+                        {
+                            "url":  "tcp://127.0.0.1:18400",
+                            "ok":  true,
+                            "status_code":  null,
+                            "role":  "historical local voice service port",
+                            "required":  false,
+                            "current_scope":  "historical port; expected closed; tcp listen check only, no HTTP touch",
+                            "listener_count":  0
+                        },
+                        {
+                            "url":  "tcp://127.0.0.1:18679",
+                            "ok":  true,
+                            "status_code":  null,
+                            "role":  "historical local n8n port",
+                            "required":  false,
+                            "current_scope":  "historical port; expected closed; tcp listen check only, no HTTP touch",
+                            "listener_count":  0
+                        },
+                        {
+                            "url":  "http://127.0.0.1:28679/healthz",
+                            "ok":  false,
+                            "error":  "无法连接到远程服务器",
+                            "role":  "current v3 n8n",
+                            "required":  true,
+                            "current_scope":  "current dependency"
+                        },
+                        {
+                            "url":  "tcp://127.0.0.1:19134",
+                            "ok":  true,
+                            "status_code":  null,
+                            "role":  "historical local stock Ollama port",
+                            "required":  false,
+                            "current_scope":  "historical port; expected closed; tcp listen check only, no HTTP touch",
+                            "listener_count":  0
+                        },
+                        {
+                            "url":  "http://127.0.0.1:29134/api/tags",
+                            "ok":  false,
+                            "error":  "无法连接到远程服务器",
+                            "role":  "current v3 Ollama",
+                            "required":  true,
+                            "current_scope":  "current dependency"
+                        },
+                        {
+                            "url":  "http://127.0.0.1:28100/health",
+                            "ok":  true,
+                            "status_code":  200,
+                            "role":  "current v3 agent brain",
+                            "required":  true,
+                            "current_scope":  "current dependency"
+                        },
+                        {
+                            "url":  "http://127.0.0.1:11434/api/tags",
+                            "ok":  false,
+                            "error":  "无法连接到远程服务器",
+                            "role":  "current WSL OpenClaw Ollama dependency",
+                            "required":  true,
+                            "current_scope":  "current dependency"
+                        }
+                    ],
+    "v3_inventory":  {
+                         "directory_count":  3382,
+                         "file_count":  42295,
+                         "total_kb":  346014734.94
+                     }
+}

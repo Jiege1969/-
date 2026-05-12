@@ -1,0 +1,26 @@
+﻿{
+    "report":  "WSL2一致性备份执行器收口",
+    "generated_at":  "2026-05-06 08:57:43 +08:00",
+    "script":  "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\维护\\Invoke-WSL2ConsistentBackup.ps1",
+    "sha256":  "E2622CBC77A5BEAD5AEBDD3879F0D5CD483ADE7D40EAF88D6713C7FF0CCD7E36",
+    "dry_run_without_gate":  "passed_refused_without_stopping_services",
+    "execution_gate":  "must pass -IUnderstandStopDockerAndWsl during controlled maintenance window",
+    "behavior":  [
+                     "record pre status",
+                     "wsl --shutdown",
+                     "wait until no Running distro",
+                     "copy VHDX to F backup target",
+                     "hash source and destination",
+                     "restart Docker Desktop when default executable exists",
+                     "GET-only n8n/Ollama and TCP Redis validation",
+                     "write manifest"
+                 ],
+    "safety":  {
+                   "stopped_services_in_validation":  false,
+                   "stopped_wsl_in_validation":  false,
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false
+               }
+}

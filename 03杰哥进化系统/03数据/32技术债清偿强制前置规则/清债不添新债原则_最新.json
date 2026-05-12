@@ -1,0 +1,74 @@
+﻿{
+    "rule":  "清债不添新债原则",
+    "date":  "2026-05-06",
+    "principle":  "technical debt cleanup must reduce tails instead of creating new pending debt",
+    "applies_to":  [
+                       "work_objects",
+                       "codex_and_agent_construction_logic",
+                       "jiege_intelligent_agent_system_all_links"
+                   ],
+    "direct_close_conditions":  [
+                                    "referenced_path_missing",
+                                    "no_current_runtime_dependency",
+                                    "no_formal_business_ownership",
+                                    "replaced_by_current_named_task_directory_or_service",
+                                    "clear_risk_and_retention_increases_noise"
+                                ],
+    "direct_close_method":  [
+                                "export_minimum_necessary_evidence",
+                                "delete_fix_or_remove_persistence_entry",
+                                "validate_current_mainline_capability",
+                                "update_panel_context_and_closeout_report_in_same_round"
+                            ],
+    "observe_only_conditions":  [
+                                    "dependency_unclear",
+                                    "impact_unclear",
+                                    "formal_business_data_involved",
+                                    "wecom_n8n_broker_autotrade_gate_involved",
+                                    "mainline_docker_volume_model_database_or_backup_involved"
+                                ],
+    "forbidden":  [
+                      "turn_clear_old_debt_into_indefinite_observation",
+                      "use_disable_later_as_substitute_for_clear_disposition",
+                      "create_heavy_process_for_small_evidence_clear_issues",
+                      "treat_archive_observe_later_as_done",
+                      "push_technical_dependency_judgment_back_to_user_when_evidence_is_sufficient",
+                      "let_reports_ledgers_or_context_packages_accumulate_new_unclosed_queues"
+                  ],
+    "constructor_self_constraints":  [
+                                         "verify_then_judge_then_close",
+                                         "export_minimum_evidence_then_act_when_no_dependency_and_risk_is_clear",
+                                         "validate_mainline_after_action",
+                                         "fix_self_introduced_side_effects_in_the_same_round",
+                                         "final_report_must_distinguish_closed_items_from_true_remaining_gaps"
+                                     ],
+    "allowed_defer_reasons":  [
+                                  "requires_shutdown_or_maintenance_window",
+                                  "formal_high_value_data_consistency_involved",
+                                  "external_real_action_hard_gate_involved",
+                                  "evidence_insufficient_and_action_may_cause_harm"
+                              ],
+    "system_link_requirements":  {
+                                     "scheduled_tasks":  "missing referenced script and no current dependency means export evidence then delete",
+                                     "firewall_and_environment":  "dead path with no dependency means export evidence then remove_or_fix",
+                                     "n8n":  "do not activate before ownership risk rollback and gate fields are complete",
+                                     "prompts":  "prompt changes must be versioned and rollbackable",
+                                     "backup":  "small high value assets get current snapshot; large runtime assets need consistency strategy",
+                                     "logs_and_temp":  "按未来核查价值和保留期清理；需要复盘/审计/回滚/验收的问题日志保留，仅属已解决工作流水账的日志读取确认后删除，不把无效流水账压缩归档成新债。",
+                                     "context_panel":  "keep only current effective posture and true remaining gaps"
+                                 },
+    "applied_examples":  [
+                             "AI_AutoEvolve",
+                             "AI_Backup",
+                             "AI_HealthCheck",
+                             "AI_WeeklyCleanup",
+                             "DailyWorkPlan",
+                             "WSL_AutoStart",
+                             "serviceraj"
+                         ],
+    "log_cleanup_decision_rule":  {
+                                      "retain":  "今后需要核查的问题、故障、异常、误判、回滚、验收、审计、安全边界、人工确认日志必须保留或提升为证据链。",
+                                      "delete":  "仅属于工作流水账且当时问题已解决处理、关键结论已有收口报告或台账记录的日志，读取确认无未来核查价值后删除。",
+                                      "forbidden":  "不得把确认无效的日志压缩归档成新债；不得把有核查价值的问题日志按普通流水账删除。"
+                                  }
+}

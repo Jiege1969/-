@@ -1,0 +1,34 @@
+{
+  "id": "P2-S14-SHADOW-ENTRY-MANUAL-FILL-TASK-PACKET-RECEIPT-20260509",
+  "executed_at": "2026-05-09 13:04:00 +08:00",
+  "execution_type": "readonly_preview",
+  "status": "pass",
+  "command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S14影子入口人工填写任务包只读检查.py'",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\63P2S14影子入口人工填写任务包只读检查\\P2S14影子入口人工填写任务包只读检查_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\63P2S14影子入口人工填写任务包只读检查\\P2S14影子入口人工填写任务包只读检查_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\63P2S14影子入口人工填写任务包只读检查\\P2S14影子入口人工填写任务包样例_20260509.json"
+  ],
+  "summary": {
+    "task_count": 4,
+    "passed": 4,
+    "failed": 0,
+    "candidate_field_count": 25,
+    "must_remain_false_count": 31,
+    "write_target_entry": 0,
+    "auto_fill_shadow_entry": 0
+  },
+  "conclusion": "影子入口人工填写任务包检查通过；4 份任务包仅列出人工填写字段、保持字段和复验步骤，0 项写入口或自动填写。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

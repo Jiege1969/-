@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "trial_id": "TAX_ADVISOR_TRIAL_001",
+  "name": "软件产品即征即退影子试运行",
+  "asset_identity": "tax_policy_advisor_shadow_trial_run_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "formal_tax_opinion": false,
+    "tax_filing": false,
+    "tax_refund_execution": false,
+    "invoice_execution": false,
+    "external_send": false,
+    "trigger_n8n": false
+  },
+  "trial_input": {
+    "business_question": "我们有软件产品收入，想判断是否可能适用软件产品增值税即征即退政策，需要准备哪些资料？",
+    "requested_output": ["适用条件", "资料清单", "测算前置字段", "待复核报告"],
+    "tax_type": "增值税",
+    "business_scenario": "软件产品增值税即征即退",
+    "entity_profile": "待补",
+    "region": "待补",
+    "period": "待补",
+    "amount_or_scale": "待补",
+    "provided_materials": "待补",
+    "known_policy": ["财税〔2011〕100号", "国家税务总局软件产品即征即退政策指引"],
+    "special_risk": ["收入拆分", "是否自行开发生产", "嵌入式软件", "地方材料要求待核实"]
+  },
+  "analysis_object": {
+    "tax_type": "增值税",
+    "policy": "财税〔2011〕100号",
+    "business_matter": "软件产品销售收入是否可能进入即征即退条件分析",
+    "region": "待补",
+    "period": "待补",
+    "status": "draft"
+  },
+  "policy_evidence": [
+    {
+      "title": "财政部 国家税务总局关于软件产品增值税政策的通知",
+      "document_number": "财税〔2011〕100号",
+      "evidence_level": "国家级主管机关规范性文件",
+      "validity_status": "现行有效状态需以官方政策法规库展示为准",
+      "source_url": "https://fgk.chinatax.gov.cn/zcfgk/c102416/c5204304/content.html"
+    },
+    {
+      "title": "一文了解：软件产品增值税即征即退政策",
+      "document_number": "无",
+      "evidence_level": "国家级官方公开指引",
+      "validity_status": "待人工复核",
+      "source_url": "https://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5235447/content.html"
+    }
+  ],
+  "business_fact_breakdown": [
+    {"field": "是否为增值税一般纳税人", "status": "missing", "effect": "主体条件无法判断"},
+    {"field": "是否销售软件产品", "status": "missing", "effect": "产品条件无法判断"},
+    {"field": "是否自行开发生产", "status": "missing", "effect": "研发生产条件无法判断"},
+    {"field": "软件/硬件/服务/维护培训收入是否拆分", "status": "missing", "effect": "税负和收入口径无法测算"},
+    {"field": "是否有软件著作权、检测证明、登记材料", "status": "missing", "effect": "材料条件无法判断"},
+    {"field": "所属期、申报期", "status": "missing", "effect": "政策时效和期间匹配无法判断"},
+    {"field": "地方主管税务机关材料要求", "status": "missing", "effect": "办理口径无法判断"}
+  ],
+  "applicability_analysis": {
+    "known": ["存在国家级政策依据和官方指引，可作为候选证据"],
+    "to_prove": ["增值税一般纳税人身份", "软件产品属性", "自行开发生产或进口软件本地化改造后对外销售", "实际税负超过3%的测算资料", "相关证明、登记或当地要求材料"],
+    "risk_of_non_applicability": ["非一般纳税人", "外购转售", "收入无法拆分", "非软件产品收入"]
+  },
+  "material_gaps": ["纳税人身份或主管税务机关认定材料", "软件产品收入明细", "收入拆分资料", "软件著作权/检测证明/登记材料", "销项税额/进项税额/收入金额/税率/所属期", "当地主管税务机关材料要求或办理口径"],
+  "calculation_prerequisites": ["软件产品销售额", "销项税额", "可归属进项税额", "实际税负", "超过3%部分", "收入拆分口径", "所属期"],
+  "risk_points": ["政策存在不等于企业业务一定满足条件", "总局指引不能替代政策原文和地方执行口径", "地方材料要求、软件产品证明材料和收入拆分口径是关键缺口", "嵌入式软件、外购转售、混合销售或服务收入混同会提高风险", "不得外发或直接用于申报退税开票"],
+  "review_questions": [
+    "企业是否为增值税一般纳税人？",
+    "软件产品收入是否可从硬件、服务、维护培训收入中清晰拆分？",
+    "软件产品是否为自行开发生产，是否涉及外购转售或嵌入式软件？",
+    "是否已有软件著作权、检测证明、登记材料或当地税务机关要求材料？",
+    "所属期和申报期是什么？",
+    "是否有销项税额、进项税额、税率、收入明细等测算字段？",
+    "当地主管税务机关是否有补充材料或办理口径？"
+  ],
+  "next_action": ["用户补充纳税人身份、收入拆分、软件证明材料和所属期", "按测算前置字段清单整理数据", "人工复核政策有效状态和地方口径", "复核后可把修正意见写入人工修正样本或进化候选"],
+  "trial_record": {
+    "topic": "软件产品增值税即征即退",
+    "status": "draft",
+    "main_gaps": ["纳税人身份", "收入拆分", "证明材料", "期间", "地方口径", "测算字段"],
+    "boundary_violation": false,
+    "next_step": "补资料并人工复核"
+  },
+  "standard_disclaimer": "本输出为影子版待复核分析草案，不是正式税务意见。涉及申报、退税、开票、外发或正式采用前，必须由人工和专业人员复核。"
+}

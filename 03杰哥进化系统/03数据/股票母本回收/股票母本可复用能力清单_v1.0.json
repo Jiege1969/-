@@ -1,0 +1,85 @@
+{
+  "version": "1.0",
+  "status": "active_shadow_mother_sample",
+  "source_report": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\股票母本回收\\股票母本只读提取报告_v1.0.md",
+  "business_line": "股票研究系统",
+  "positioning": "成熟样本，不是机械模板",
+  "reusable_capabilities": [
+    {
+      "id": "STOCK-MOTHER-001",
+      "name": "非执行边界",
+      "source_behavior": "股票系统明确分析系统不是交易系统",
+      "reuse_to": ["税收", "内容", "视频", "本职工作"],
+      "reuse_method": "业务输出默认草案，不自动执行外部动作"
+    },
+    {
+      "id": "STOCK-MOTHER-002",
+      "name": "只读预检",
+      "source_behavior": "执行前只读审计、刷新前状态、灰度前快照",
+      "reuse_to": ["所有业务线"],
+      "reuse_method": "正式动作前先做R0核查"
+    },
+    {
+      "id": "STOCK-MOTHER-003",
+      "name": "候选判断",
+      "source_behavior": "候选池、关注条件、转强条件、风险线",
+      "reuse_to": ["税收", "内容", "视频"],
+      "reuse_method": "给候选依据、候选草案和待核事项，不直接给最终动作"
+    },
+    {
+      "id": "STOCK-MOTHER-004",
+      "name": "风险提示",
+      "source_behavior": "风险观察线、失效条件、非投资建议",
+      "reuse_to": ["所有业务线"],
+      "reuse_method": "输出中显式列风险点和缓解方式"
+    },
+    {
+      "id": "STOCK-MOTHER-005",
+      "name": "人工闸口",
+      "source_behavior": "真实灰度、外发、交易相关动作均需人工确认",
+      "reuse_to": ["所有高风险业务线"],
+      "reuse_method": "外发、写库、上线、服务变更前人工确认"
+    },
+    {
+      "id": "STOCK-MOTHER-006",
+      "name": "复盘沉淀",
+      "source_behavior": "复盘账本、复盘进化闭环",
+      "reuse_to": ["进化系统", "税收", "内容", "视频"],
+      "reuse_method": "人工修正进入样本，不自动成为正式规则"
+    },
+    {
+      "id": "STOCK-MOTHER-007",
+      "name": "灰度回滚",
+      "source_behavior": "真实灰度前快照、回滚预案、人工确认",
+      "reuse_to": ["企业微信", "税收", "知识库", "视频"],
+      "reuse_method": "先影子样例，再灰度验证，保留回滚路径"
+    },
+    {
+      "id": "STOCK-MOTHER-008",
+      "name": "禁用态工作流草案",
+      "source_behavior": "n8n未激活导入、禁用态契约",
+      "reuse_to": ["所有工作流类业务"],
+      "reuse_method": "先禁用态草案，不直接激活工作流"
+    }
+  ],
+  "stock_specific_capabilities": [
+    "高频行情刷新",
+    "盘中资源保护",
+    "股票技术指标",
+    "单股短回复",
+    "券商或交易相关拦截"
+  ],
+  "forbidden_reuse": [
+    "机械复制股票目录结构",
+    "复制股票高频刷新到低频业务",
+    "复制股票交易语境到非股票业务",
+    "把股票分析观察条件包装成执行建议"
+  ],
+  "safety_boundary": {
+    "modified_stock_system": false,
+    "ran_stock_business_script": false,
+    "called_broker": false,
+    "auto_trade": false,
+    "place_order": false
+  }
+}

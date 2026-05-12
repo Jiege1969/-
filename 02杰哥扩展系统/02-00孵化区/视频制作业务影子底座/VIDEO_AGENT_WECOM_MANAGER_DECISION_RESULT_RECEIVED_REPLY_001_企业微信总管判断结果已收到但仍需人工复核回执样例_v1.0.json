@@ -1,0 +1,42 @@
+{
+  "asset_id": "VIDEO_AGENT_WECOM_MANAGER_DECISION_RESULT_RECEIVED_REPLY_001",
+  "name": "企业微信总管判断结果已收到但仍需人工复核回执样例",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "视频制作系统",
+  "layer": "W1/W2 影子回执样例",
+  "status": "draft",
+  "terminal_role": "杰哥视频助理",
+  "input_example": "总管已经判断 VF-20260508-003 可以继续复核。",
+  "reply_example": [
+    "杰哥，收到。",
+    "我已按影子接收口径记录：任务 VF-20260508-003 有一条“总管判断结果已带回”的信息。",
+    "当前可继续的是视频线人工复核，不是自动渲染或发布。",
+    "后续仍需要核对：判断范围是生成、渲染、发布还是只允许继续复核；是否有单独的生成放行和发布放行；素材授权、AI标识、平台规范是否仍有缺口。",
+    "本次没有读取总管文件、没有企业微信真实外发、没有触发n8n、没有渲染或发布。"
+  ],
+  "state_suggestion": {
+    "当前状态": "总管判断结果已收到-待视频线人工复核",
+    "下一步允许动作": [
+      "生成复核问题清单",
+      "生成最终确认清单"
+    ],
+    "自动渲染": false,
+    "自动发布": false,
+    "真实外发": false
+  },
+  "boundary": {
+    "send_wecom": false,
+    "call_wecom_api": false,
+    "modify_public_wecom_component": false,
+    "read_manager_file": false,
+    "write_manager": false,
+    "trigger_n8n": false,
+    "call_real_model": false,
+    "read_material": false,
+    "render_video": false,
+    "upload_video": false,
+    "publish_video": false
+  }
+}
+

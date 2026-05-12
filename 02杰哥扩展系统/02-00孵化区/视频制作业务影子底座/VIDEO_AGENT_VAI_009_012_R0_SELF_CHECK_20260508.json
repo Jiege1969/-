@@ -1,0 +1,73 @@
+{
+  "id": "VIDEO_AGENT_VAI_009_012_R0_SELF_CHECK_20260508",
+  "asset_identity": "video_production_shadow_base_self_check",
+  "stage": "W1_R0",
+  "date": "2026-05-08",
+  "result": "passed",
+  "checked_assets": [
+    {
+      "id": "VAI-009",
+      "name": "conversation_state_blank_sample",
+      "md": "VIDEO_AGENT_CONVERSATION_STATE_SAMPLE_001_会话状态空白样例_v1.0.md",
+      "json": "VIDEO_AGENT_CONVERSATION_STATE_SAMPLE_001_会话状态空白样例_v1.0.json",
+      "result": "passed",
+      "note": "blank sample only, not real conversation, no LLM or vector database"
+    },
+    {
+      "id": "VAI-010",
+      "name": "three_option_blank_sample",
+      "md": "VIDEO_AGENT_THREE_OPTION_SAMPLE_001_三候选输出空白样例_v1.0.md",
+      "json": "VIDEO_AGENT_THREE_OPTION_SAMPLE_001_三候选输出空白样例_v1.0.json",
+      "result": "passed",
+      "note": "text structure only, no media generation or publishing task"
+    },
+    {
+      "id": "VAI-011",
+      "name": "clarification_state_mapping_rehearsal",
+      "md": "VIDEO_AGENT_CLARIFICATION_STATE_MAPPING_001_澄清问题到会话状态映射预演_v1.0.md",
+      "json": "VIDEO_AGENT_CLARIFICATION_STATE_MAPPING_001_澄清问题到会话状态映射预演_v1.0.json",
+      "result": "passed",
+      "note": "draft mapping only, no formal entry or router change"
+    },
+    {
+      "id": "VAI-012",
+      "name": "shadow_input_intake_sample",
+      "md": "VIDEO_AGENT_SHADOW_INPUT_INTAKE_SAMPLE_001_影子用户输入接收样例_v1.0.md",
+      "json": "VIDEO_AGENT_SHADOW_INPUT_INTAKE_SAMPLE_001_影子用户输入接收样例_v1.0.json",
+      "result": "passed",
+      "note": "manual shadow intake only, not real Enterprise WeChat entry"
+    }
+  ],
+  "boundary_check": {
+    "modify_formal_video_scripts": false,
+    "call_real_model_api": false,
+    "call_external_video_voice_cover_publish_engine": false,
+    "read_real_assets": false,
+    "generate_image_audio_subtitle_cover_video": false,
+    "render_transcode_edit_compose": false,
+    "upload_publish_external_send": false,
+    "trigger_n8n": false,
+    "real_wechat_send": false,
+    "read_or_save_wechat_credentials": false,
+    "start_or_restart_service": false,
+    "modify_19310_or_19302": false,
+    "write_formal_rule_database": false
+  },
+  "next_shadow_queue": [
+    {
+      "priority": "P1",
+      "item": "video_agent_shadow_run_checklist",
+      "boundary": "field and redline check only, no service call"
+    },
+    {
+      "priority": "P1",
+      "item": "shadow_input_to_three_option_chain_rehearsal",
+      "boundary": "text flow only, no media generation"
+    },
+    {
+      "priority": "P2",
+      "item": "video_agent_human_receipt_intake_template",
+      "boundary": "human feedback intake only, no formal rule upgrade"
+    }
+  ]
+}

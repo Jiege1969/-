@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 05:47:44 +08:00",
+  "candidate_id": "VIDEO_EVOLUTION_CANDIDATE_001",
+  "source_task_id": "VF-20260508-003",
+  "source_topic": "讲讲掩耳盗铃这个成语的故事",
+  "asset_identity": "video_round012_review_experience_evolution_candidate_blank_record",
+  "risk_level": "W1",
+  "status": "blank_candidate_pending_human_fill",
+  "candidate_identity": "evolution_candidate_not_formal_rule",
+  "boundary": {
+    "write_formal_rule_library": false,
+    "modify_formal_video_system": false,
+    "modify_video_system_task": false,
+    "modify_formal_script_generator": false,
+    "modify_release_lists": false,
+    "read_real_assets": false,
+    "render": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false,
+    "send_wecom": false,
+    "trigger_n8n": false
+  },
+  "source_chain": {
+    "revision_receipt_template": "VIDEO_FACTORY_R012_REVISION_RECEIPT_001_脚本分镜修正验收回执模板_v1.0.md",
+    "evolution_mapping_draft": "VIDEO_FACTORY_R012_EVOLUTION_MAPPING_001_复核经验到进化候选映射草案_v1.0.md",
+    "script_review_checklist": "VIDEO_FACTORY_R012_SCRIPT_REVIEW_001_脚本草案去AI感与原创性复核清单_v1.0.md",
+    "storyboard_review_checklist": "VIDEO_FACTORY_R012_STORYBOARD_REVIEW_001_分镜素材授权复核清单_v1.0.md"
+  },
+  "blank_fields": {
+    "source_receipt": "待人工填写",
+    "experience_type": "待填写",
+    "original_problem": "待填写",
+    "human_revision_method": "待填写",
+    "effect_after_revision": "待填写",
+    "review_conclusion": "待填写",
+    "transferable_scope": "待填写",
+    "non_transferable_scope": "待填写",
+    "risk_notes": "待填写",
+    "more_case_validation_required": true,
+    "recommend_formal_rule_library": false
+  },
+  "fill_constraints": [
+    "must_come_from_human_filled_receipt",
+    "must_link_to_original_problem_and_human_revision",
+    "must_state_transferable_and_non_transferable_scope",
+    "platform_ai_label_asset_authorization_or_release_experience_requires_source_or_authorization_basis",
+    "single_candidate_must_not_be_upgraded_to_formal_rule_directly"
+  ],
+  "can_write_formal_rule_library": false,
+  "self_check": "[自检: VIDEO_EVOLUTION_CANDIDATE_001已完成, 风险等级: W1, 产物: 掩耳盗铃复核经验空白候选记录md/json, 边界: 守住了。]"
+}

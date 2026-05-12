@@ -1,0 +1,80 @@
+﻿{
+    "status":  "quality_score_failed",
+    "system_slug":  "knowledge-traceable-qa",
+    "system_name":  "知识库可追溯问答框",
+    "audit_only":  false,
+    "global_lock_acquired":  true,
+    "system_lock_acquired":  true,
+    "system_root":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库可追溯问答框",
+    "system_script_dir":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库可追溯问答框\\02脚本",
+    "planned_scripts":  [
+                            "生成知识库可追溯问答框交付包.py",
+                            "验证知识库可追溯问答框交付包.py"
+                        ],
+    "scorer":  "生成知识库可追溯问答框日报质量评分.py",
+    "actions":  [
+                    {
+                        "script":  "生成知识库可追溯问答框交付包.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库可追溯问答框\\02脚本\\生成知识库可追溯问答框交付包.py",
+                        "started_at":  "2026-05-09 19:43:41",
+                        "ended_at":  "2026-05-09 19:43:41",
+                        "exit_code":  null,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194341-knowledge-traceable-qa-55Sf5oiQ55+l6K+G5bqT5Y+v6L+95rqv6Zeu562U5qGG5Lqk5LuY5YyFLnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194341-knowledge-traceable-qa-55Sf5oiQ55+l6K+G5bqT5Y+v6L+95rqv6Zeu562U5qGG5Lqk5LuY5YyFLnB5.err.log"
+                    },
+                    {
+                        "script":  "验证知识库可追溯问答框交付包.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库可追溯问答框\\02脚本\\验证知识库可追溯问答框交付包.py",
+                        "started_at":  "2026-05-09 19:43:41",
+                        "ended_at":  "2026-05-09 19:43:41",
+                        "exit_code":  null,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194341-knowledge-traceable-qa-6aqM6K+B55+l6K+G5bqT5Y+v6L+95rqv6Zeu562U5qGG5Lqk5LuY5YyFLnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194341-knowledge-traceable-qa-6aqM6K+B55+l6K+G5bqT5Y+v6L+95rqv6Zeu562U5qGG5Lqk5LuY5YyFLnB5.err.log"
+                    },
+                    {
+                        "script":  "生成知识库可追溯问答框日报质量评分.py",
+                        "path":  "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库可追溯问答框\\02脚本\\生成知识库可追溯问答框日报质量评分.py",
+                        "started_at":  "2026-05-09 19:43:41",
+                        "ended_at":  "2026-05-09 19:43:42",
+                        "exit_code":  null,
+                        "success":  false,
+                        "timed_out":  false,
+                        "missing":  false,
+                        "stdout_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194341-knowledge-traceable-qa-55Sf5oiQ55+l6K+G5bqT5Y+v6L+95rqv6Zeu562U5qGG5pel5oql6LSo6YeP6K+E5YiGLnB5.out.log",
+                        "stderr_log":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\业务子系统每日唤醒日志\\20260509-194341-knowledge-traceable-qa-55Sf5oiQ55+l6K+G5bqT5Y+v6L+95rqv6Zeu562U5qGG5pel5oql6LSo6YeP6K+E5YiGLnB5.err.log"
+                    }
+                ],
+    "safety":  {
+                   "real_wecom_send":  false,
+                   "n8n_trigger":  false,
+                   "broker_api":  false,
+                   "auto_trade":  false,
+                   "formal_output":  false,
+                   "real_conversion":  false,
+                   "real_render":  false
+               },
+    "environment_locks":  {
+                              "STOCK_REAL_SEND":  "0",
+                              "STOCK_ENABLE_N8N_TRIGGER":  "0",
+                              "STOCK_ENABLE_BROKER_API":  "0",
+                              "STOCK_ENABLE_AUTO_TRADE":  "0",
+                              "WECOM_REAL_SEND":  "0",
+                              "WEWORK_REAL_SEND":  "0",
+                              "ENABLE_N8N_TRIGGER":  "0",
+                              "ENABLE_FORMAL_OUTPUT":  "0",
+                              "ENABLE_REAL_CONVERSION":  "0",
+                              "ENABLE_REAL_RENDER":  "0"
+                          },
+    "started_by":  {
+                       "user":  "Administrator",
+                       "computer":  "杰哥",
+                       "pid":  424
+                   },
+    "time":  "2026-05-09 19:43:42"
+}

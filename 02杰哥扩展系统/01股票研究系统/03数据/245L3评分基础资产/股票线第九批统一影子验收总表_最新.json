@@ -1,0 +1,111 @@
+{
+  "name": "股票线第九批统一影子验收总表",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 15:21:26",
+  "asset_identity": "W2 股票线第九批统一影子验收总表",
+  "status": "shadow_batch_acceptance",
+  "purpose": "汇总第九批低风险续建资产，确认真实数据源接入前准备不越权。",
+  "not_formal_config": true,
+  "not_formal_entry": true,
+  "not_external_send": true,
+  "not_formal_database_write": true,
+  "not_trade": true,
+  "checks": [
+    {
+      "batch_item": "STOCK-AUTO9-001",
+      "label": "前台结论型短答压缩回归样例",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\前台结论型短答压缩回归样例验收结果_最新.json",
+      "exists": true,
+      "passed": true,
+      "metrics": {
+        "sample_count": 5,
+        "real_external_send_allowed": false,
+        "trade_action_allowed": false
+      }
+    },
+    {
+      "batch_item": "STOCK-AUTO9-002",
+      "label": "财报资金真实来源接入前字段候选卡",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\财报资金真实来源接入前字段候选卡_最新.json",
+      "exists": true,
+      "passed": true,
+      "metrics": {
+        "field_domain_count": 5,
+        "sample_stock_count": 5,
+        "p0_domain_count": 2,
+        "candidate_only": true
+      }
+    },
+    {
+      "batch_item": "STOCK-AUTO9-003",
+      "label": "行业价格连续观测真实来源候选卡",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\行业价格连续观测真实来源候选卡_最新.json",
+      "exists": true,
+      "passed": true,
+      "metrics": {
+        "domain_count": 4,
+        "sample_stock_count": 4,
+        "candidate_only": true
+      }
+    },
+    {
+      "batch_item": "STOCK-AUTO9-004",
+      "label": "政策事件真实来源替换准备清单",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\政策事件真实来源替换准备清单_最新.json",
+      "exists": true,
+      "passed": true,
+      "metrics": {
+        "source_group_count": 3,
+        "checklist_count": 5,
+        "candidate_only": true
+      }
+    },
+    {
+      "batch_item": "STOCK-AUTO9-QUEUE",
+      "label": "股票线第九批低风险续建队列验收",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票线第九批低风险续建队列验收_最新.json",
+      "exists": true,
+      "passed": true,
+      "metrics": {
+        "queue_count": 5,
+        "completed_count": 5,
+        "queued_count": 0,
+        "blocked_count": 2
+      }
+    }
+  ],
+  "queue_summary": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "remaining_blockers": [
+    "真实财报资金接口未接入",
+    "真实行业价格连续数据源未接入",
+    "政策事件真实来源未替换正式库",
+    "企业微信真实外发、券商接口、交易能力继续阻断"
+  ],
+  "summary": {
+    "check_count": 5,
+    "passed_count": 5,
+    "failed_count": 0,
+    "queue_completed_count": 5,
+    "queue_count": 5,
+    "real_system_triggered": false
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "名称": "五样本政策事件缺口队列验收",
+  "validated_at": "2026-05-08 07:36:54",
+  "status": "passed",
+  "task_count": 5,
+  "errors": [],
+  "tasks": [
+    {
+      "stock": "云南锗业",
+      "code": "sz002428",
+      "classification": "structured_policy_ready",
+      "matched_event_count": 1,
+      "policy_score_allowed": true
+    },
+    {
+      "stock": "天齐锂业",
+      "code": "sz002466",
+      "classification": "no_direct_structured_policy",
+      "matched_event_count": 0,
+      "policy_score_allowed": false
+    },
+    {
+      "stock": "华虹公司",
+      "code": "sh688347",
+      "classification": "candidate_policy_needed",
+      "matched_event_count": 0,
+      "policy_score_allowed": false
+    },
+    {
+      "stock": "浙商中拓",
+      "code": "sz000906",
+      "classification": "no_direct_structured_policy",
+      "matched_event_count": 0,
+      "policy_score_allowed": false
+    },
+    {
+      "stock": "正丹股份",
+      "code": "sz300641",
+      "classification": "no_direct_structured_policy",
+      "matched_event_count": 0,
+      "policy_score_allowed": false
+    }
+  ],
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_external_fetch": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_delete_or_move_old_assets": true,
+    "not_formal_database_write": true,
+    "not_policy_event_write": true,
+    "not_score_write": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

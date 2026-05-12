@@ -1,0 +1,34 @@
+{
+  "asset_id": "VIDEO_SCRIPT_SERIES_STRUCTURE_001_ALIGNMENT_RETURN",
+  "created_at": "2026-05-08 12:56:00 +08:00",
+  "risk_level": "W1/R0",
+  "source": "continuous_auto_construction_after_user_stop_frustration",
+  "completed": [
+    "建立成语故事系列栏目统一结构草案",
+    "区分30秒和60秒版本结构",
+    "保留人工复核、素材授权、AI标识和平台规范边界",
+    "登记下一步W1/R0候选"
+  ],
+  "impact": {
+    "idiom_story_series_structure": "available",
+    "duration_structure": "30s_and_60s_distinguished",
+    "human_review_retained": true,
+    "generation_render_publish": "forbidden",
+    "wecom_real_send_or_n8n": "forbidden",
+    "formal_video_system_modified": false
+  },
+  "next_w1_r0_candidates": [
+    "掩耳盗铃30秒影子改写空白任务卡",
+    "成语故事系列栏目首批选题登记表",
+    "成语故事系列栏目人工复核问题通用模板"
+  ],
+  "boundary_flags": {
+    "read_real_media": false,
+    "call_model": false,
+    "render_or_publish": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_formal_video_system": false,
+    "release_for_generation_render_publish": false
+  }
+}

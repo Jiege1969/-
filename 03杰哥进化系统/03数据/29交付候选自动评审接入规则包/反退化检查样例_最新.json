@@ -1,0 +1,224 @@
+{
+  "名称": "03进化系统_交付候选自动评审反退化检查样例",
+  "创建日期": "2026-05-05",
+  "所属系统": "03杰哥进化系统",
+  "任务批次": "并行小任务J",
+  "说明": "用于验证自动评审接入规则不会退化为第二中枢、真实动作放行、外部服务触发或虚高进度。",
+  "样例版本": "anti-regression-v1",
+  "反退化样例": [
+    {
+      "样例ID": "AR-SAFE-001",
+      "名称": "合规交付候选",
+      "输入摘要": {
+        "center_role": "rule_deposit_only",
+        "second_center_created": false,
+        "source_originals_added": false,
+        "task_contract": {
+          "dry_run": true,
+          "real_action_requested": false,
+          "external_service_requested": false
+        },
+        "redis": {
+          "role": "shadow_mapping_or_cache",
+          "real_action_queue": false,
+          "permission_release": false,
+          "upgrade_ready": false
+        },
+        "n8n": {
+          "mode": "dry_run_only",
+          "workflow_import": false,
+          "workflow_enabled": false,
+          "workflow_triggered": false,
+          "webhook_called": false
+        },
+        "stock_scope": "analysis_only",
+        "progress": {
+          "claim_basis": "verified_local_artifacts",
+          "validator_passed": true,
+          "blockers": 0
+        }
+      },
+      "期望结论": "pass",
+      "命中规则": [
+        "ARC-001",
+        "ARC-002",
+        "ARC-003",
+        "ARC-004",
+        "ARC-005",
+        "ARC-006",
+        "ARC-007",
+        "ARC-008",
+        "ARC-009"
+      ]
+    },
+    {
+      "样例ID": "AR-BLOCK-001",
+      "名称": "试图新增第二中枢",
+      "输入摘要": {
+        "center_role": "scheduler_center",
+        "second_center_created": true
+      },
+      "期望结论": "block",
+      "命中规则": [
+        "ARC-001"
+      ],
+      "阻断理由": "03进化不能替代00总管成为状态、回收或系统级进度中枢。"
+    },
+    {
+      "样例ID": "AR-BLOCK-002",
+      "名称": "引入OpenClaw/Hermes原件",
+      "输入摘要": {
+        "openclaw_original_added": true,
+        "hermes_original_added": false,
+        "imported_runtime_dependency": true
+      },
+      "期望结论": "block",
+      "命中规则": [
+        "ARC-002"
+      ],
+      "阻断理由": "只允许沉淀抽象规则，不允许新增原件或运行依赖。"
+    },
+    {
+      "样例ID": "AR-BLOCK-003",
+      "名称": "任务契约跳过dry_run",
+      "输入摘要": {
+        "task_contract": {
+          "dry_run": false,
+          "real_action_requested": true,
+          "external_service_requested": false
+        }
+      },
+      "期望结论": "block",
+      "命中规则": [
+        "ARC-003"
+      ],
+      "阻断理由": "交付候选必须dry_run优先，真实动作请求必须关闭。"
+    },
+    {
+      "样例ID": "AR-BLOCK-004",
+      "名称": "Redis升级为真实动作队列",
+      "输入摘要": {
+        "redis": {
+          "role": "real_action_queue",
+          "real_action_queue": true,
+          "permission_release": true,
+          "upgrade_ready": true
+        }
+      },
+      "期望结论": "block",
+      "命中规则": [
+        "ARC-004"
+      ],
+      "阻断理由": "Redis不得承担真实动作队列、权限放行或进度权威。"
+    },
+    {
+      "样例ID": "AR-BLOCK-005",
+      "名称": "n8n workflow被启用或触发",
+      "输入摘要": {
+        "n8n": {
+          "mode": "active",
+          "workflow_import": true,
+          "workflow_enabled": true,
+          "workflow_triggered": true,
+          "webhook_called": true
+        }
+      },
+      "期望结论": "block",
+      "命中规则": [
+        "ARC-005"
+      ],
+      "阻断理由": "本包不得导入、启用、触发n8n或调用webhook。"
+    },
+    {
+      "样例ID": "AR-BLOCK-006",
+      "名称": "真实动作闸门默认开启",
+      "输入摘要": {
+        "real_action_gate": {
+          "enabled": true,
+          "multi_gate_release": true
+        },
+        "real_actions_triggered": 1
+      },
+      "期望结论": "block",
+      "命中规则": [
+        "ARC-006"
+      ],
+      "阻断理由": "真实动作必须默认关闭，并经00总管单线人工闸门。"
+    },
+    {
+      "样例ID": "AR-BLOCK-007",
+      "名称": "股票分析退化为交易指令",
+      "输入摘要": {
+        "stock_scope": "trade_signal",
+        "broker_api_called": true,
+        "order_created": true,
+        "auto_trade": true
+      },
+      "期望结论": "block",
+      "命中规则": [
+        "ARC-007"
+      ],
+      "阻断理由": "股票范围必须保持analysis_only，不得下单或自动交易。"
+    },
+    {
+      "样例ID": "AR-BLOCK-008",
+      "名称": "回收报告格式缺失",
+      "输入摘要": {
+        "recycle_report": {
+          "format_version": "free_text",
+          "md_exists": true,
+          "json_exists": false,
+          "real_actions_triggered": null,
+          "safety_boundary_present": false
+        }
+      },
+      "期望结论": "block",
+      "命中规则": [
+        "ARC-008"
+      ],
+      "阻断理由": "并行回收必须md/json双文件齐备，且包含安全边界和真实动作数量。"
+    },
+    {
+      "样例ID": "AR-BLOCK-009",
+      "名称": "进度虚高",
+      "输入摘要": {
+        "progress": {
+          "claim_basis": "estimate",
+          "validator_passed": false,
+          "blockers": 2,
+          "claimed_complete": true
+        }
+      },
+      "期望结论": "block",
+      "命中规则": [
+        "ARC-009"
+      ],
+      "阻断理由": "未验收或阻断项未清零时不得声称完成。"
+    },
+    {
+      "样例ID": "AR-BLOCK-010",
+      "名称": "外部服务真实触发",
+      "输入摘要": {
+        "external_calls": {
+          "n8n": true,
+          "enterprise_wechat": true,
+          "broker_api": false,
+          "public_network": true
+        }
+      },
+      "期望结论": "block",
+      "命中规则": [
+        "ARC-005",
+        "ARC-006"
+      ],
+      "阻断理由": "本包只允许本地只读验证，外部服务触发为阻断。"
+    }
+  ],
+  "安全边界": {
+    "触发n8n": false,
+    "发送企业微信": false,
+    "调用券商接口": false,
+    "自动交易": false,
+    "外部网络调用": false
+  }
+}

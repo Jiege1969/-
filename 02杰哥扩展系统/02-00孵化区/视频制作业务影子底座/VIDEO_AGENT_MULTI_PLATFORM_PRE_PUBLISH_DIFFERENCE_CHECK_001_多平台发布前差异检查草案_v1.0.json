@@ -1,0 +1,33 @@
+{
+  "asset_id": "VIDEO_AGENT_MULTI_PLATFORM_PRE_PUBLISH_DIFFERENCE_CHECK_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_check_draft_not_real_platform_publish_config",
+  "purpose": "List platform-specific pre-publish differences for human review without connecting to any platform.",
+  "difference_items": [
+    {"item": "title_length", "review_question": "whether_target_platform_title_length_differs", "shadow_handling": "route_to_platform_rule_review"},
+    {"item": "description_copy", "review_question": "whether_platform_specific_description_is_needed", "shadow_handling": "route_to_copy_review"},
+    {"item": "tags", "review_question": "whether_tag_count_or_sensitive_term_rules_differ", "shadow_handling": "route_to_platform_rule_review"},
+    {"item": "cover", "review_question": "whether_cover_ratio_or_text_rules_differ", "shadow_handling": "route_to_cover_review"},
+    {"item": "ai_label", "review_question": "whether_ai_generated_or_assisted_label_is_required", "shadow_handling": "route_to_ai_label_review"},
+    {"item": "material_authorization", "review_question": "whether_extra_authorization_proof_is_required", "shadow_handling": "route_to_asset_authorization_review"},
+    {"item": "publish_time", "review_question": "whether_campaign_time_or_region_limit_applies", "shadow_handling": "route_to_human_review"}
+  ],
+  "output_fields": [
+    "platform_difference_check_id",
+    "target_platforms",
+    "difference_items",
+    "missing_platform_rules",
+    "human_review_items",
+    "release_blocking_items"
+  ],
+  "real_system_triggered": {
+    "platform_api_connection": false,
+    "publish_configuration_generated": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false
+  }
+}

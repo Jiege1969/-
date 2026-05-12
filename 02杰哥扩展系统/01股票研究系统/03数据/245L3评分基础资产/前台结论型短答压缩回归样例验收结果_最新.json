@@ -1,0 +1,11 @@
+{
+  "name": "前台结论型短答压缩回归样例验收结果",
+  "generated_at": "2026-05-08 14:05:43",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "sample_count": 5,
+    "real_external_send_allowed": false,
+    "trade_action_allowed": false
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "contract_id": "VIDEO_AGENT_HUMAN_GATE_UPGRADE_001",
+  "name": "人工门禁升级清单",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:30:00 +08:00",
+  "asset_identity": "视频创作智能体 W1/R0 人工门禁升级清单",
+  "risk_level": "W1/R0",
+  "scope": "只定义人工门禁，不执行生成、渲染、上传、发布或外发",
+  "gates": [
+    {"name": "创意确认门禁", "input": ["用户想法", "目标受众", "风格"], "pass_condition": "用户确认方向", "allows_after_pass": "进入文案草案", "still_forbidden": "生成成片"},
+    {"name": "文案确认门禁", "input": ["标题", "开头", "正文", "结尾"], "pass_condition": "用户确认文案或修改范围", "allows_after_pass": "进入分镜草案", "still_forbidden": "锁死后续素材"},
+    {"name": "分镜确认门禁", "input": ["镜头列表", "画幅", "节奏"], "pass_condition": "用户确认镜头方向", "allows_after_pass": "进入素材授权核对", "still_forbidden": "读取真实素材"},
+    {"name": "素材授权门禁", "input": ["素材来源", "授权范围", "隐私"], "pass_condition": "来源和授权清楚", "allows_after_pass": "进入生成预检", "still_forbidden": "自动下载或搬运素材"},
+    {"name": "AI标识门禁", "input": ["AI生成比例", "配音", "封面"], "pass_condition": "标识要求明确", "allows_after_pass": "进入生成预检", "still_forbidden": "规避平台标识"},
+    {"name": "生成放行门禁", "input": ["文案", "分镜", "素材", "AI标识"], "pass_condition": "人工单独放行生成", "allows_after_pass": "进入真实渲染放行讨论", "still_forbidden": "发布放行"},
+    {"name": "真实渲染放行门禁", "input": ["生成放行", "素材授权", "渲染配置"], "pass_condition": "人工单独放行真实渲染", "allows_after_pass": "未来可讨论执行器适配", "still_forbidden": "自动发布"},
+    {"name": "成品预览门禁", "input": ["本地成片", "日志", "风险"], "pass_condition": "人工看过并确认", "allows_after_pass": "进入发布预检", "still_forbidden": "自动发布"},
+    {"name": "发布放行门禁", "input": ["平台", "标题", "标签", "封面", "账号", "AI标识"], "pass_condition": "人工单独放行发布", "allows_after_pass": "未来可讨论发布辅助", "still_forbidden": "绕过平台规则"}
+  ],
+  "forced_rules": {
+    "generation_release_separate_from_render_release": true,
+    "render_release_separate_from_publish_release": true,
+    "simple_publish_phrase_means_publish_precheck_only": true,
+    "publish_requires_finished_preview": true,
+    "real_publish_is_w3": true
+  },
+  "boundary": {
+    "generate_video": false,
+    "render": false,
+    "upload": false,
+    "publish": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "modify_19310_or_19302": false
+  },
+  "formal_capability_claim": false
+}

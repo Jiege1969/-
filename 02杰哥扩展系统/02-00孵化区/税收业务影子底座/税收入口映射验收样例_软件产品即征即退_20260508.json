@@ -1,0 +1,69 @@
+{
+  "asset_name": "税收入口映射验收样例_软件产品即征即退",
+  "generated_at": "2026-05-08 18:50:07 +08:00",
+  "asset_identity": "税收业务影子底座 W1/R0 入口映射验收样例",
+  "source_assets": [
+    "受控试用阻断修复清单_20260508.md",
+    "税收事项匹配纠偏卡_软件产品即征即退_20260508.md",
+    "税收事项对照表_软件产品即征即退_vs_研发费用加计扣除_20260508.md"
+  ],
+  "status": "passed",
+  "closed_blocker": "P0 税收事项匹配纠偏",
+  "cases": [
+    {
+      "id": "TAX-MAP-001",
+      "input": "软件产品即征即退需要什么资料？",
+      "expected_route": "软件产品即征即退资料清单",
+      "result": "passed"
+    },
+    {
+      "id": "TAX-MAP-002",
+      "input": "软件产品税负超过3%怎么退？",
+      "expected_route": "软件产品即征即退测算前置字段",
+      "result": "passed"
+    },
+    {
+      "id": "TAX-MAP-003",
+      "input": "软件产品退税能不能享受？",
+      "expected_route": "软件产品即征即退适用条件待复核草案",
+      "result": "passed"
+    },
+    {
+      "id": "TAX-MAP-004",
+      "input": "研发费用加计扣除怎么归集？",
+      "expected_route": "研发费用加计扣除链路",
+      "result": "passed"
+    },
+    {
+      "id": "TAX-MAP-005",
+      "input": "软件企业有哪些税收优惠？",
+      "expected_route": "clarification_required",
+      "result": "passed"
+    }
+  ],
+  "allowed_output_fields": [
+    "政策依据链",
+    "适用条件字段",
+    "资料缺口",
+    "测算前置字段",
+    "风险点",
+    "人工复核问题"
+  ],
+  "forbidden_outputs": [
+    "确定退税金额",
+    "正式税务意见",
+    "申报建议",
+    "电子税务局办理步骤",
+    "真实账套读取结论"
+  ],
+  "boundaries": {
+    "login_tax_system": false,
+    "read_real_finance_system": false,
+    "formal_tax_opinion": false,
+    "definite_refund_amount": false,
+    "filing_advice": false,
+    "write_formal_tax_db": false,
+    "modify_wecom_service_script": false,
+    "trigger_n8n": false
+  }
+}

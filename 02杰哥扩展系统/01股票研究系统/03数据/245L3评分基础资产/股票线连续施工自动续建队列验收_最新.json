@@ -1,0 +1,14 @@
+{
+  "name": "股票线连续施工自动续建队列验收",
+  "generated_at": "2026-05-08 10:18:26",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票线连续施工自动续建队列_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "queue_count": 6,
+    "blocked_count": 2,
+    "completed_count": 6,
+    "queued_count": 0
+  }
+}

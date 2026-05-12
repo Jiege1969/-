@@ -1,0 +1,107 @@
+{
+  "name": "业务子系统日报质量透明面板",
+  "generated_at": "2026-05-13 07:50:01",
+  "summary": {
+    "total": 7,
+    "pass": 6,
+    "warning": 1,
+    "blocked": 0,
+    "defect": 0,
+    "highest_alert": 0,
+    "missing_or_not_run": 0
+  },
+  "items": [
+    {
+      "system_name": "视频制作系统",
+      "score": 100,
+      "overall_status": "pass",
+      "generated_at": "2026-05-13 07:35:18",
+      "timeliness_ok": true,
+      "output_ok": true,
+      "template_ok": true,
+      "universal_laws_ok": true,
+      "source": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\子系统评分\\video-production-daily-quality-score-最新.json"
+    },
+    {
+      "system_name": "本职工作系统",
+      "score": 100,
+      "overall_status": "pass",
+      "generated_at": "2026-05-12 07:25:02",
+      "timeliness_ok": true,
+      "output_ok": true,
+      "template_ok": true,
+      "universal_laws_ok": true,
+      "source": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\子系统评分\\office-work-daily-quality-score-最新.json"
+    },
+    {
+      "system_name": "内容处理系统",
+      "score": 100,
+      "overall_status": "pass",
+      "generated_at": "2026-05-12 07:30:02",
+      "timeliness_ok": true,
+      "output_ok": true,
+      "template_ok": true,
+      "universal_laws_ok": true,
+      "source": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\子系统评分\\content-processing-daily-quality-score-最新.json"
+    },
+    {
+      "system_name": "税收业务系统",
+      "score": 100,
+      "overall_status": "pass",
+      "generated_at": "2026-05-12 07:35:02",
+      "timeliness_ok": true,
+      "output_ok": true,
+      "template_ok": true,
+      "universal_laws_ok": true,
+      "source": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\子系统评分\\tax-business-daily-quality-score-最新.json"
+    },
+    {
+      "system_name": "企业微信助手系统",
+      "score": 100,
+      "overall_status": "pass",
+      "generated_at": "2026-05-11 07:40:42",
+      "timeliness_ok": true,
+      "output_ok": true,
+      "template_ok": true,
+      "universal_laws_ok": true,
+      "source": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\子系统评分\\wecom-assistant-daily-quality-score-最新.json"
+    },
+    {
+      "system_name": "知识库可追溯问答框",
+      "score": 100,
+      "overall_status": "pass",
+      "generated_at": "2026-05-11 07:45:02",
+      "timeliness_ok": true,
+      "output_ok": true,
+      "template_ok": true,
+      "universal_laws_ok": true,
+      "source": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\子系统评分\\knowledge-traceable-qa-daily-quality-score-最新.json"
+    },
+    {
+      "system_name": "知识库系统",
+      "score": 60,
+      "overall_status": "warning",
+      "generated_at": "2026-05-12 07:50:01",
+      "timeliness_ok": true,
+      "output_ok": false,
+      "template_ok": true,
+      "universal_laws_ok": true,
+      "source": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\业务子系统质量透明面板\\子系统评分\\knowledge-base-daily-quality-score-最新.json"
+    }
+  ],
+  "interpretation": {
+    "naked": [],
+    "lazy_or_stale": [
+      "知识库系统"
+    ],
+    "talking_nonsense": [],
+    "law_breakers": [],
+    "highest_alert": []
+  },
+  "safety": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_business_db": false,
+    "call_trade_or_external_execute_api": false
+  }
+}

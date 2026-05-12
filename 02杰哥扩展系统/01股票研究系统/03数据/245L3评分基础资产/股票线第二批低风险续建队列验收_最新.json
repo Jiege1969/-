@@ -1,0 +1,15 @@
+{
+  "name": "股票线第二批低风险续建队列验收",
+  "generated_at": "2026-05-08 10:45:55",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票线第二批低风险续建队列_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "queue_count": 6,
+    "completed_count": 6,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "auto_continue_policy": "通过后自动执行第二批第一项；不等待用户确认。"
+}

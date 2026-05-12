@@ -1,0 +1,197 @@
+﻿{
+  "id": "PAR_VIDEO_20260508_SCRIPT_REVIEW_RECEIPT_DRAFT",
+  "generated_date": "2026-05-08",
+  "parallel_line": "C",
+  "title": "视频影子工厂受控试用脚本复核回执草案",
+  "risk_level": "W1/R0",
+  "source_reference": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_SCRIPT_SAMPLE_001_质量验收记录_20260508.md",
+  "scope": "新选题、新脚本、脚本修正版进入人工复核前的检查回执",
+  "status": "draft",
+  "quality_required_items": [
+    {
+      "id": "Q-001",
+      "name": "选题明确",
+      "rule": "成语、故事、知识点或核心主题必须清楚，不得只写泛泛标题",
+      "receipt_status": "待填写"
+    },
+    {
+      "id": "Q-002",
+      "name": "含义准确",
+      "rule": "成语释义、知识点解释、价值判断不得明显错误或误导",
+      "receipt_status": "待填写"
+    },
+    {
+      "id": "Q-003",
+      "name": "故事具体",
+      "rule": "必须有人物、动作、冲突、转折或结果，不能只有空泛说教",
+      "receipt_status": "待填写"
+    },
+    {
+      "id": "Q-004",
+      "name": "短视频结构完整",
+      "rule": "至少包含开头钩子、正文展开、结尾启发或收束",
+      "receipt_status": "待填写"
+    },
+    {
+      "id": "Q-005",
+      "name": "受众适配",
+      "rule": "语言、节奏、抽象程度和表达方式要匹配目标受众",
+      "receipt_status": "待填写"
+    },
+    {
+      "id": "Q-006",
+      "name": "分镜可执行",
+      "rule": "每个关键段落应有画面提示或分镜承接，不要求读取真实素材",
+      "receipt_status": "待填写"
+    },
+    {
+      "id": "Q-007",
+      "name": "原创表达",
+      "rule": "避免空模板、机械占位、明显洗稿或大段复制",
+      "receipt_status": "待填写"
+    },
+    {
+      "id": "Q-008",
+      "name": "合规待复核项齐备",
+      "rule": "明确列出素材授权、平台规范、AI标识、原创性和隐私等待复核项",
+      "receipt_status": "待填写"
+    },
+    {
+      "id": "Q-009",
+      "name": "人工复核问题齐备",
+      "rule": "至少列出人工需要判断的问题，不把系统草案当成最终结论",
+      "receipt_status": "待填写"
+    }
+  ],
+  "blocking_items": [
+    {
+      "id": "B-001",
+      "name": "空模板、占位符、无正文或无分镜",
+      "action": "直接退回，不进入人工复核"
+    },
+    {
+      "id": "B-002",
+      "name": "选题与正文错配，或成语、知识点解释明显错误",
+      "action": "直接退回修正"
+    },
+    {
+      "id": "B-003",
+      "name": "明示或暗示已经放行生成、渲染、上传、发布、外发",
+      "action": "暂停并回传总管"
+    },
+    {
+      "id": "B-004",
+      "name": "要求读取真实素材、真实音频、真实字幕、真实封面或账号后台",
+      "action": "暂停并回传总管"
+    },
+    {
+      "id": "B-005",
+      "name": "使用未授权素材却标为可用，或跳过授权核验",
+      "action": "暂停并回传总管"
+    },
+    {
+      "id": "B-006",
+      "name": "涉及侵权、隐私、未成年人不当内容、违法违规或平台明显禁限内容",
+      "action": "暂停并回传总管"
+    },
+    {
+      "id": "B-007",
+      "name": "调用视频引擎、模型生成、TTS、渲染器、上传器、发布器或n8n",
+      "action": "暂停并回传总管"
+    },
+    {
+      "id": "B-008",
+      "name": "修改正式脚本库、正式放行清单、企业微信服务脚本或服务配置",
+      "action": "暂停并回传总管"
+    }
+  ],
+  "asset_and_platform_review_items": [
+    {
+      "category": "素材清单",
+      "fields": [
+        "图片",
+        "视频",
+        "音乐",
+        "音效",
+        "字体",
+        "配音",
+        "字幕",
+        "封面"
+      ],
+      "minimum_requirement": "只登记待复核字段，不读取真实素材"
+    },
+    {
+      "category": "授权证明",
+      "fields": [
+        "来源",
+        "授权类型",
+        "使用范围",
+        "商用限制",
+        "署名要求",
+        "有效期"
+      ],
+      "minimum_requirement": "缺失时标为待补，不得默认可用"
+    },
+    {
+      "category": "平台规范",
+      "fields": [
+        "平台",
+        "分区",
+        "时长",
+        "画幅",
+        "分辨率",
+        "标题",
+        "标签",
+        "简介",
+        "活动规则"
+      ],
+      "minimum_requirement": "缺失时不得发布"
+    },
+    {
+      "category": "发布门禁",
+      "fields": [
+        "生成放行",
+        "预览放行",
+        "发布放行",
+        "外发放行"
+      ],
+      "minimum_requirement": "必须分别登记，不得互相继承"
+    }
+  ],
+  "receipt_draft_fields": {
+    "receipt_id": "PAR-VIDEO-RECEIPT-YYYYMMDD-XXX",
+    "review_object": "待填写：选题名或脚本编号",
+    "script_version": "待填写",
+    "target_platform": "待填写",
+    "target_audience": "待填写",
+    "target_duration": "待填写",
+    "quality_required_result": "待填写：全部通过 / 有待补 / 不通过",
+    "blocking_items_hit": "待填写：0 / 具体编号",
+    "asset_authorization_status": "待填写：已列待核 / 待补清单 / 命中阻断",
+    "platform_rules_status": "待填写：已列待核 / 待补清单 / 命中阻断",
+    "ai_label_status": "待填写：不涉及 / 待人工判断 / 命中阻断",
+    "human_review_questions": "待填写",
+    "suggested_flow": "待填写：进入人工复核 / 退回修正 / 暂停并请总管裁定",
+    "reviewer": "待填写",
+    "review_time": "待填写"
+  },
+  "red_line_hit_count": 0,
+  "needs_manager_ruling": false,
+  "boundary_confirmation": {
+    "read_real_assets": false,
+    "read_real_audio_subtitle_cover_or_account_backend": false,
+    "rendered": false,
+    "uploaded": false,
+    "published": false,
+    "external_sent": false,
+    "triggered_n8n": false,
+    "sent_wecom": false,
+    "called_video_engine_tts_uploader_or_publisher": false,
+    "modified_formal_script_library": false,
+    "modified_release_checklist": false,
+    "modified_wecom_service_script": false,
+    "modified_service_config": false,
+    "modified_other_business_line_files": false
+  },
+  "completion_conclusion": "已基于样本质量验收记录抽象出新选题和新脚本进入人工复核前的回执草案；当前仅新增影子底座内PAR_VIDEO_20260508_*文件，不构成生成、渲染、上传、发布或外发许可。"
+}

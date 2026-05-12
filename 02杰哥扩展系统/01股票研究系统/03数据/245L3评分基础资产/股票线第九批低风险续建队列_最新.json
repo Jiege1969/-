@@ -1,0 +1,103 @@
+{
+  "name": "股票线第九批低风险续建队列",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 15:21:17",
+  "asset_identity": "W1/W2 股票线低风险连续施工队列",
+  "status": "active",
+  "direction": "继续强化使用者前台感知、真实数据源接入前准备和统一影子验收。",
+  "source_assets": {
+    "eighth_batch_acceptance_passed": true,
+    "eighth_batch_asset": "股票线第八批统一影子验收总表验收结果_最新.json"
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "construction_queue": [
+    {
+      "id": "STOCK-AUTO9-001",
+      "title": "前台结论型短答压缩回归样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "把后台 evidence/missing/confidence 压缩为企业微信前台结论型短答，避免用户看到技术指标堆叠。",
+      "validation_asset": "前台结论型短答压缩回归样例验收结果_最新.json",
+      "completed_at": "2026-05-08 14:05:51"
+    },
+    {
+      "id": "STOCK-AUTO9-002",
+      "title": "财报资金真实来源接入前字段候选卡",
+      "risk_level": "W2",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "只登记财报、估值、机构、资金字段的候选来源和缺口，不接正式接口、不写正式配置。",
+      "validation_asset": "财报资金真实来源接入前字段候选卡_最新.json",
+      "completed_at": "2026-05-08 15:21:17"
+    },
+    {
+      "id": "STOCK-AUTO9-003",
+      "title": "行业价格连续观测真实来源候选卡",
+      "risk_level": "W2",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "只登记锗、化工、新材料等价格连续观测候选来源和字段，不接生产数据源。",
+      "validation_asset": "行业价格连续观测真实来源候选卡_最新.json",
+      "completed_at": "2026-05-08 15:21:17"
+    },
+    {
+      "id": "STOCK-AUTO9-004",
+      "title": "政策事件真实来源替换准备清单",
+      "risk_level": "W2",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "为政策事件库从样例走向真实来源做只读准备清单，保持人工复核和来源链接待补。",
+      "validation_asset": "政策事件真实来源替换准备清单_最新.json",
+      "completed_at": "2026-05-08 15:21:17"
+    },
+    {
+      "id": "STOCK-AUTO9-005",
+      "title": "第九批统一影子验收总表",
+      "risk_level": "W2",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "汇总第九批影子资产验收状态并登记剩余阻断。",
+      "validation_asset": "股票线第九批统一影子验收总表_最新.json",
+      "completed_at": "2026-05-08 15:21:17"
+    }
+  ],
+  "blocked_queue": [
+    {
+      "id": "STOCK-AUTO9-BLOCK-001",
+      "title": "企业微信真实外发、正式入口或路由变更",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "企业微信真实外发、正式入口和路由变更属于红线事项，本业务线只登记阻断。"
+    },
+    {
+      "id": "STOCK-AUTO9-BLOCK-002",
+      "title": "券商接口、自动交易、下单或仓位调整",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "股票系统定位为研究分析系统，不新增交易执行能力。"
+    }
+  ],
+  "summary": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_order": true,
+    "not_position_adjustment": true
+  }
+}

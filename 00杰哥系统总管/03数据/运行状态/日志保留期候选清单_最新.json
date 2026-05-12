@@ -1,0 +1,29 @@
+﻿{
+    "report":  "日志保留期候选清单",
+    "generated_at":  "2026-05-06 14:36:21",
+    "status":  "已收口",
+    "conclusion":  "旧候选229个已完成内容复核并彻底删除；当前_latest不再保留旧候选明细。",
+    "former_candidate_count":  229,
+    "former_candidate_bytes":  557512,
+    "current_pending_delete":  [
+
+                               ],
+    "current_pending_compress":  [
+
+                                 ],
+    "current_candidate_count":  0,
+    "superseded_by":  "日志保留期内容复核后彻底删除收口_最新.json",
+    "rule":  [
+                 "未来日志候选清单只保留当前待处理对象。",
+                 "已删除对象不得继续挂在_latest候选明细中。",
+                 "保留未来核查价值的证据日志进入证据台账；仅施工流水和已解决轮询痕迹当轮删除。"
+             ],
+    "safety":  {
+                   "deleted_business_data":  false,
+                   "called_broker_api":  false,
+                   "sent_wecom":  false,
+                   "auto_trade":  false,
+                   "deleted_database":  false,
+                   "triggered_n8n":  false
+               }
+}

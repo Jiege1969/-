@@ -1,0 +1,29 @@
+{
+  "asset_id": "VIDEO_AGENT_PRE_PUBLISH_BLOCKER_CLOSE_CONDITION_001",
+  "version": "v1.0",
+  "asset_type": "blocker_close_condition_checklist",
+  "construction_level": "W1/R0",
+  "scope": "pre_publish_blockers_four_piece_gaps_multi_platform_check_gaps",
+  "status": "draft",
+  "purpose": "Define when pre-publish blockers can close in the shadow layer without treating replies as publishing permission.",
+  "close_conditions": [
+    {"blocker_type": "preview_not_reviewed", "close_condition": "preview_review_receipt_passed", "proof": "receipt_id", "after_close_state": "preview_review_passed_shadow", "auto_publish": false},
+    {"blocker_type": "ai_label_not_confirmed", "close_condition": "ai_label_confirmation_receipt_confirmed", "proof": "receipt_id", "after_close_state": "ai_label_confirmed_shadow", "auto_publish": false},
+    {"blocker_type": "material_authorization_missing", "close_condition": "authorization_receipt_passed_and_archived", "proof": "receipt_id", "after_close_state": "material_authorized_shadow", "auto_publish": false},
+    {"blocker_type": "publishing_release_missing", "close_condition": "publishing_release_receipt_released", "proof": "receipt_id", "after_close_state": "publish_release_confirmed_shadow", "auto_publish": false},
+    {"blocker_type": "platform_rule_missing", "close_condition": "platform_rule_review_completed", "proof": "review_record_id", "after_close_state": "platform_rule_checked_shadow", "auto_publish": false},
+    {"blocker_type": "multi_platform_check_incomplete", "close_condition": "each_platform_has_separate_check_receipt", "proof": "receipt_list", "after_close_state": "platform_checks_complete_shadow", "auto_publish": false},
+    {"blocker_type": "redline_blocker", "close_condition": "manager_explicitly_resolves_or_converts_to_reviewable_gap", "proof": "manager_decision_record", "after_close_state": "manager_review_required", "auto_publish": false}
+  ],
+  "fixed_rules": [
+    "Blocker closure only closes shadow blockers and does not equal real publishing.",
+    "Closure proof must trace to receipts or manager decision records.",
+    "If any closure proof is missing, the blocker remains open.",
+    "Redline blockers cannot be closed by the business line itself."
+  ],
+  "boundaries": {
+    "close_real_system_task": false,
+    "write_formal_repository": false,
+    "trigger_publish": false
+  }
+}

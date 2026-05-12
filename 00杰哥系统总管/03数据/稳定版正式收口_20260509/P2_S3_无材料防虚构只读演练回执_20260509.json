@@ -1,0 +1,34 @@
+{
+  "id": "P2-S3-NO-MATERIAL-ANTI-FABRICATION-RECEIPT-20260509",
+  "executed_at": "2026-05-09 09:30:33 +08:00",
+  "execution_type": "readonly_drill",
+  "status": "pass",
+  "command": "python 'D:\\杰哥智能化系统\\03杰哥进化系统\\02脚本\\执行P2S3无材料防虚构只读演练.py'",
+  "outputs": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\52P2S3无材料防虚构只读演练\\P2S3无材料防虚构只读演练_最新.md",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\52P2S3无材料防虚构只读演练\\P2S3无材料防虚构只读演练_最新.json"
+  ],
+  "summary": {
+    "target_count": 5,
+    "passed": 5,
+    "failed": 0,
+    "field_check_count": 38,
+    "redline_check_count": 35
+  },
+  "fixes_applied": [
+    {
+      "issue": "共享政策证据卡中否定式边界声明被禁词扫描误判",
+      "action": "演练器增加否定语境识别，不把不等于、不得、不能、不代表、不替代、不是等语境当作正向结论"
+    }
+  ],
+  "conclusion": "无真实材料时，影子入口保持空白、待复核、门禁关闭和红线关闭；未发现自动生成业务结论。",
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

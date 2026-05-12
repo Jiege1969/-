@@ -1,0 +1,40 @@
+{
+  "名称": "n8n干跑编排适配草案",
+  "版本": "2026-05-05",
+  "定位": "n8n只消费dry_run任务样例并返回回执草案；本轮不导入、不启用、不触发正式workflow。",
+  "默认开关": {
+    "active": false,
+    "dry_run": true,
+    "real_send": false,
+    "write_formal_db": false,
+    "real_media_convert": false,
+    "broker_api": false,
+    "auto_trade": false
+  },
+  "输入": [
+    "task_id",
+    "risk_level",
+    "dry_run",
+    "payload_json"
+  ],
+  "输出": [
+    "task_id",
+    "status",
+    "receipt",
+    "evidence_path"
+  ],
+  "允许干跑场景": [
+    "只读拉取",
+    "草稿生成",
+    "验收报告流转",
+    "内部文件整理"
+  ],
+  "禁止正式场景": [
+    "企业微信真实发送",
+    "外部接口写入",
+    "正式媒体转换",
+    "自动发布",
+    "券商接口",
+    "自动交易"
+  ]
+}

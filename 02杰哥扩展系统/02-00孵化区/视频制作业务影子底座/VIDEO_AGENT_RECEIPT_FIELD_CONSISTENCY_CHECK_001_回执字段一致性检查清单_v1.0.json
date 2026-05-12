@@ -1,0 +1,23 @@
+{
+  "asset_id": "VIDEO_AGENT_RECEIPT_FIELD_CONSISTENCY_CHECK_001",
+  "version": "v1.0",
+  "asset_type": "checklist",
+  "construction_level": "W1/R0",
+  "scope": "wecom_placeholder_receipts_human_review_receipts_close_receipts_alignment_handoffs",
+  "status": "draft",
+  "purpose": "Ensure receipts can support traceability instead of being only conversational replies.",
+  "required_fields_by_receipt_type": {
+    "wecom_placeholder_receipt": ["task_id", "source_channel", "current_state", "missing_inputs", "redline_blocks", "next_action", "real_system_triggered"],
+    "human_review_receipt": ["task_id", "current_state", "review_result", "missing_inputs", "redline_blocks", "next_action", "real_system_triggered"],
+    "close_receipt": ["task_id", "current_state", "review_result", "redline_blocks", "next_action", "real_system_triggered"],
+    "alignment_handoff": ["current_state", "redline_blocks", "next_action", "real_system_triggered", "handoff_file", "changed_files"]
+  },
+  "consistency_rules": [
+    "If a receipt mentions real action fields, it must include real_system_triggered false or a redline blocker.",
+    "current_state must come from the shadow state enum and must not be a formal publishing state.",
+    "If missing_inputs is empty, the receipt must explain why the shadow task can close.",
+    "next_action cannot be a real action such as direct publish or direct render.",
+    "Alignment handoff records must list changed files."
+  ],
+  "failure_handling": "On failure, generate a field gap list only; do not modify public WeCom config, real interfaces, or formal repositories."
+}

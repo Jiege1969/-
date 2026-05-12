@@ -1,0 +1,14 @@
+{
+  "name": "后台证据链到前台短答字段映射草案验收",
+  "generated_at": "2026-05-08 09:18:11",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\后台证据链到前台短答字段映射草案_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "front_field_count": 5,
+    "backend_priority_count": 5,
+    "formalization_blocker_count": 3
+  },
+  "next_step": "可继续生成五样本后台到前台字段映射验收样例；不得写正式企业微信入口。"
+}

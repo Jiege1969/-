@@ -1,0 +1,197 @@
+{
+  "生成时间": "2026-05-05 13:30:00",
+  "任务批次": "第六批并行小任务X",
+  "所属系统": "02杰哥扩展系统/07知识库系统",
+  "清单类型": "formal_write_precheck_readonly_load_candidates",
+  "执行模式": "local_readonly_preview_only",
+  "候选数量": 5,
+  "哈希算法": "sha256(source + newline + snippet)",
+  "正式写入状态": {
+    "写正式知识库": false,
+    "写正式向量库": false,
+    "写正式数据库": false,
+    "调用真实外部API": false,
+    "触发n8n": false,
+    "企业微信真实发送": false,
+    "调用券商接口": false,
+    "自动交易": false,
+    "触碰本职工作系统": false
+  },
+  "字段契约": [
+    "candidate_id",
+    "来源",
+    "片段",
+    "哈希",
+    "时效",
+    "人工复核",
+    "不可写原因",
+    "回滚"
+  ],
+  "候选清单": [
+    {
+      "candidate_id": "KB-LOAD-X-001",
+      "来源": {
+        "source_type": "local_markdown",
+        "source_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\01企业微信可追溯问答接入\\知识库可追溯问答企业微信接入灰度包_最新.md#一回答契约",
+        "source_status": "exists"
+      },
+      "片段": "企业微信知识库助手返回必须包含 answer_summary、evidence_snippets、citation_paths、source_status、downgrade_reply、cannot_answer_boundary、safety_flags。",
+      "哈希": "0a76153e7e9f90e8de79f4fe60a19871ecf4dc41b710a6fb35ffe58e3dd9614c",
+      "时效": {
+        "evidence_date": "2026-05-05",
+        "freshness_status": "current_for_local_preview",
+        "formal_validity": "not_claimed",
+        "staleness_boundary": "仅作为正式写入前的只读装载候选，不代表正式知识库口径。"
+      },
+      "人工复核": {
+        "required": true,
+        "status": "pending_review",
+        "review_focus": "字段契约是否完整，是否允许进入正式写入审批。"
+      },
+      "不可写原因": [
+        "本轮目标是正式写入前只读装载候选清单。",
+        "尚未完成人工复核与总管放行。",
+        "不得写正式知识库、向量库或数据库。"
+      ],
+      "回滚": {
+        "rollback_needed_for_formal_store": false,
+        "rollback_action": "如候选被驳回，仅删除或标记本离线候选记录；无需回滚正式库，因为未发生正式写入。",
+        "rollback_scope": [
+          "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\03只读装载候选清单\\知识库正式写入前只读装载候选清单_20260505_小任务X.json"
+        ]
+      }
+    },
+    {
+      "candidate_id": "KB-LOAD-X-002",
+      "来源": {
+        "source_type": "local_markdown",
+        "source_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\01企业微信可追溯问答接入\\知识库可追溯问答企业微信接入灰度包_最新.md#三降级回答模板",
+        "source_status": "exists"
+      },
+      "片段": "证据过旧时需要总管或归属系统确认最新来源后再答。",
+      "哈希": "603d794bfae30d6d66436291f379c79ee61e77517cd72f05e195df4d6b28acbd",
+      "时效": {
+        "evidence_date": "2026-05-05",
+        "freshness_status": "stale_for_formal_claim",
+        "formal_validity": "not_claimed",
+        "staleness_boundary": "可说明历史预演规则存在，不能裁定当前正式生效口径。"
+      },
+      "人工复核": {
+        "required": true,
+        "status": "pending_review",
+        "review_focus": "确认该降级语是否仍适用于最新正式写入流程。"
+      },
+      "不可写原因": [
+        "该片段明确要求总管或归属系统确认最新来源。",
+        "存在正式口径时效风险。",
+        "未完成人工复核前只能只读装载。"
+      ],
+      "回滚": {
+        "rollback_needed_for_formal_store": false,
+        "rollback_action": "候选驳回时标记为 rejected_stale，不触碰正式库。",
+        "rollback_scope": [
+          "offline_candidate_record_only"
+        ]
+      }
+    },
+    {
+      "candidate_id": "KB-LOAD-X-003",
+      "来源": {
+        "source_type": "local_json",
+        "source_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\02证据索引小样本\\知识库证据索引小样本_20260505_小任务M.json#KB-EVID-M-003",
+        "source_status": "exists"
+      },
+      "片段": "无证据时不允许用记忆、猜测或模型生成内容补足。",
+      "哈希": "0c6b10928fb3aba849b792f51139b2b4dee1d2cce59860821ab8c4bdca5e1495",
+      "时效": {
+        "evidence_date": "2026-05-05",
+        "freshness_status": "current_for_missing_evidence_boundary",
+        "formal_validity": "not_claimed",
+        "staleness_boundary": "该片段是缺证降级边界，不是可写知识正文。"
+      },
+      "人工复核": {
+        "required": true,
+        "status": "pending_review",
+        "review_focus": "确认缺证规则是否作为拦截规则保留，而非写入知识正文。"
+      },
+      "不可写原因": [
+        "该候选描述的是缺证拦截规则，不是正式知识答案。",
+        "不能用作补足事实的来源。",
+        "缺少可回答事实证据。"
+      ],
+      "回滚": {
+        "rollback_needed_for_formal_store": false,
+        "rollback_action": "候选驳回时从只读候选清单移除；正式库无变更。",
+        "rollback_scope": [
+          "offline_candidate_record_only"
+        ]
+      }
+    },
+    {
+      "candidate_id": "KB-LOAD-X-004",
+      "来源": {
+        "source_type": "local_markdown",
+        "source_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\07文档\\知识库可追溯问答接入企业微信助手边界说明.md#固定边界",
+        "source_status": "exists"
+      },
+      "片段": "不写正式知识库、正式向量库、正式数据库或旧系统；不触发企业微信真实发送、Webhook、n8n、response_url。",
+      "哈希": "ddbc4712e8200184c45b1a5d4d116c67b53734322e824ed4508e11fa750cb5a0",
+      "时效": {
+        "evidence_date": "2026-05-05",
+        "freshness_status": "current_for_safety_boundary",
+        "formal_validity": "not_claimed",
+        "staleness_boundary": "该边界只约束本轮离线只读装载，不构成正式系统授权。"
+      },
+      "人工复核": {
+        "required": true,
+        "status": "pending_review",
+        "review_focus": "确认所有真实外发、写库和自动化动作仍保持关闭。"
+      },
+      "不可写原因": [
+        "片段本身声明不得写正式库或触发外部动作。",
+        "本轮无正式库授权。",
+        "安全边界优先级高于装载便利性。"
+      ],
+      "回滚": {
+        "rollback_needed_for_formal_store": false,
+        "rollback_action": "保留为只读安全边界候选；如后续策略变化，新增版本，不覆盖本记录。",
+        "rollback_scope": [
+          "offline_candidate_record_only"
+        ]
+      }
+    },
+    {
+      "candidate_id": "KB-LOAD-X-005",
+      "来源": {
+        "source_type": "local_markdown",
+        "source_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\01企业微信可追溯问答接入\\知识库可追溯问答企业微信接入灰度包_最新.md#样例D",
+        "source_status": "exists"
+      },
+      "片段": "股票样本必须继承只分析不交易硬闸门；股票意图不得输出买卖、仓位、目标价、下单建议。",
+      "哈希": "37711ee275a4c93a03c0b307bffe3230a0c1926f412ceeb2fbe0447b0b72ffbd",
+      "时效": {
+        "evidence_date": "2026-05-05",
+        "freshness_status": "current_for_trade_safety_boundary",
+        "formal_validity": "not_claimed",
+        "staleness_boundary": "即使作为候选存在，也不能升级为交易建议、券商调用或自动交易。"
+      },
+      "人工复核": {
+        "required": true,
+        "status": "pending_review",
+        "review_focus": "确认该片段仅作为交易意图拦截边界，不进入可执行交易知识。"
+      },
+      "不可写原因": [
+        "涉及股票交易意图硬边界。",
+        "不得输出买卖、仓位、目标价、下单或自动交易建议。",
+        "不得调用券商接口。"
+      ],
+      "回滚": {
+        "rollback_needed_for_formal_store": false,
+        "rollback_action": "候选驳回时标记为 rejected_trade_boundary；正式库、券商接口和交易系统均无变更。",
+        "rollback_scope": [
+          "offline_candidate_record_only"
+        ]
+      }
+    }
+  ]
+}

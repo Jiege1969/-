@@ -1,0 +1,103 @@
+{
+  "生成日期": "2026-05-05",
+  "任务": "第六批并行小任务Y-02扩展/内容处理单样本真实输出前最终确认包",
+  "适用系统": "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统",
+  "执行性质": "真实输出前最终确认包字段预案",
+  "输出真实文件": false,
+  "真实转换": false,
+  "批量转换": false,
+  "触发n8n": false,
+  "企业微信真实发送": false,
+  "写正式库": false,
+  "调用券商接口": false,
+  "自动交易": false,
+  "触碰本职工作系统": false,
+  "确认包字段": {
+    "input": {
+      "必填": true,
+      "字段": [
+        "input_id",
+        "source_reference_path",
+        "source_reference_type",
+        "authorization_status",
+        "input_scope_note",
+        "source_read_performed"
+      ]
+    },
+    "output_preview": {
+      "必填": true,
+      "字段": [
+        "preview_id",
+        "preview_format",
+        "preview_content_summary",
+        "preview_metadata",
+        "no_real_output_file",
+        "real_file_path"
+      ]
+    },
+    "manual_confirmation": {
+      "必填": true,
+      "字段": [
+        "confirm_required",
+        "confirm_status",
+        "confirmer",
+        "confirm_time",
+        "confirm_result",
+        "signature_required"
+      ]
+    },
+    "risk": {
+      "必填": true,
+      "字段": [
+        "risk_level",
+        "risk_items",
+        "sensitive_info_check",
+        "external_send_check",
+        "formal_write_check",
+        "risk_clearance_status"
+      ]
+    },
+    "rollback": {
+      "必填": true,
+      "字段": [
+        "rollback_required",
+        "rollback_mode",
+        "rollback_scope",
+        "rollback_action",
+        "rollback_confirm_required"
+      ]
+    },
+    "release_block_conditions": {
+      "必填": true,
+      "字段": [
+        "block_if_input_missing",
+        "block_if_no_manual_confirmation",
+        "block_if_risk_not_cleared",
+        "block_if_real_output_requested",
+        "block_if_batch_or_external_action",
+        "block_action"
+      ]
+    }
+  },
+  "统一动作开关": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_output_file_generation": false,
+    "allow_delete_move_overwrite": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_wecom_real_message": false,
+    "allow_formal_library_write": false,
+    "allow_broker_api": false,
+    "allow_auto_trade": false
+  },
+  "样本输出": [
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\08真实输出前最终确认包\\样本01_字段完整待人工确认_20260505_小任务Y.json",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\08真实输出前最终确认包\\样本02_输入缺失禁出_20260505_小任务Y.json",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\08真实输出前最终确认包\\样本03_风险未解除禁出_20260505_小任务Y.json",
+    "D:\\杰哥智能化系统\\02杰哥扩展系统\\04内容处理系统\\03数据\\08真实输出前最终确认包\\样本04_人工确认缺失禁出_20260505_小任务Y.json"
+  ],
+  "默认禁出结论": "本确认包仅用于真实输出前人工判断字段完整性和风险边界；本轮不生成真实输出文件，不执行真实转换、批量转换、外发、自动化或正式库写入。",
+  "安全边界": "本轮只写Markdown/JSON确认包样本和报告，不读取或改写真实业务文档，不触发n8n，不发送企业微信真实消息，不调用券商接口，不自动交易，不写正式库，不碰本职工作系统。"
+}

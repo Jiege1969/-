@@ -1,0 +1,42 @@
+{
+  "asset_id": "VIDEO_AGENT_SHADOW_TASK_TRACE_FIELDS_001",
+  "version": "v1.0",
+  "asset_type": "field_list",
+  "construction_level": "W1/R0",
+  "scope": "video_shadow_tasks_drafts_review_cards_release_gap_cards",
+  "status": "draft",
+  "purpose": "Define traceable fields for video production shadow tasks without entering real execution.",
+  "fields": [
+    {"name": "shadow_task_id", "type": "string", "required": true, "description": "Shadow task id such as VAI-SHADOW-20260508-001."},
+    {"name": "source_channel", "type": "enum", "required": true, "allowed_values": ["command_line_draft", "wecom_draft", "manual_entry", "handoff整理"], "description": "Input source; WeCom is a placeholder channel only."},
+    {"name": "source_message_id", "type": "string", "required": false, "description": "Optional source message id placeholder; does not trigger external send."},
+    {"name": "user_intent_summary", "type": "string", "required": true, "description": "Summary of user intent."},
+    {"name": "current_state", "type": "enum", "required": true, "description": "Shadow state, not formal production state."},
+    {"name": "review_owner", "type": "string", "required": false, "description": "Human reviewer."},
+    {"name": "missing_inputs", "type": "list", "required": true, "description": "Missing materials, authorization, platform rules, or confirmation items."},
+    {"name": "generation_gate_state", "type": "enum", "required": true, "description": "Generation release status."},
+    {"name": "render_gate_state", "type": "enum", "required": true, "description": "Real render release status."},
+    {"name": "publish_gate_state", "type": "enum", "required": true, "description": "Publishing release status."},
+    {"name": "redline_blocks", "type": "list", "required": true, "description": "Registered redline blockers."},
+    {"name": "next_shadow_action", "type": "string", "required": true, "description": "Next shadow action."},
+    {"name": "real_system_triggered", "type": "boolean", "required": true, "default": false, "description": "Must remain false in this phase."},
+    {"name": "handoff_record", "type": "string", "required": false, "description": "Alignment handoff record filename."}
+  ],
+  "state_enum": [
+    "draft",
+    "pending_review",
+    "review_questions_open",
+    "generation_release_pending",
+    "render_release_pending",
+    "preview_pending",
+    "publish_release_pending",
+    "blocked_by_redline",
+    "shadow_closed"
+  ],
+  "boundaries": {
+    "database_schema_change": false,
+    "formal_repository_write": false,
+    "wecom_real_send": false,
+    "real_render_or_publish": false
+  }
+}

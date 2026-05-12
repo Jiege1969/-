@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "date": "2026-05-07",
+  "trial_id": "TAX_ADVISOR_TRIAL_003",
+  "name": "全文有效政策候选筛选说明影子试运行",
+  "asset_identity": "tax_policy_advisor_shadow_trial_run_sample",
+  "risk_level": "W1",
+  "boundary": {
+    "run_script": false,
+    "download_attachment": false,
+    "write_formal_tax_database": false,
+    "formal_tax_opinion": false,
+    "tax_filing": false,
+    "tax_refund_execution": false,
+    "external_send": false,
+    "trigger_n8n": false
+  },
+  "trial_input": {
+    "business_question": "国家税务总局政策法规库里筛选即征即退 + 全文有效后，结果能说明什么？能不能直接当作业务适用依据？",
+    "requested_output": ["候选证据说明", "筛选口径", "不能等于适用结论"],
+    "tax_type": "增值税",
+    "business_scenario": "即征即退政策候选筛选",
+    "entity_profile": "不涉及具体企业",
+    "region": "国家层",
+    "period": "待补",
+    "provided_materials": ["税收政策库操作演练_全文有效检索_即征即退_v1.0"],
+    "known_policy": ["候选政策列表，非单一政策"]
+  },
+  "analysis_object": {
+    "tax_type": "增值税",
+    "policy_scope": "即征即退相关全文有效候选政策",
+    "search_portal": "国家税务总局政策法规库",
+    "search_word": "即征即退",
+    "validity_filter": "全文有效",
+    "status": "evidence_ready"
+  },
+  "readonly_rehearsal_evidence": {
+    "search_portal": "https://fgk.chinatax.gov.cn/zcfgk/c100028/search.html",
+    "search_word": "即征即退",
+    "validity_filter": "全文有效",
+    "total": 8,
+    "returned_count": 8,
+    "r0_script": "R0_国家税务总局政策库_全文有效检索.ps1",
+    "write_formal_tax_db": false,
+    "download_attachment": false,
+    "generate_final_tax_conclusion": false
+  },
+  "representative_candidates": [
+    {
+      "title": "国家税务总局关于调整增值税即征即退优惠政策管理措施有关问题的公告",
+      "document_number": "国家税务总局公告2011年第60号",
+      "validity_status": "全文有效",
+      "current_use": "候选政策证据，待打开正文复核"
+    },
+    {
+      "title": "国家税务总局关于纳税人既享受增值税即征即退、先征后退政策又享受免抵退税政策有关问题的公告",
+      "document_number": "国家税务总局公告2011年第69号",
+      "validity_status": "全文有效",
+      "current_use": "候选政策证据，待打开正文复核"
+    },
+    {
+      "title": "国家税务总局关于进一步优化增值税优惠政策办理程序及服务有关事项的公告",
+      "document_number": "国家税务总局公告2021年第4号",
+      "validity_status": "全文有效",
+      "current_use": "候选政策证据，待打开正文复核"
+    }
+  ],
+  "can_indicate": ["来源可信度较高", "有效状态较清楚", "可作为候选清单", "可减少废止误用"],
+  "cannot_indicate": ["某企业一定适用", "某政策就是核心依据", "可以申报或退税", "可得出金额"],
+  "review_path": ["人工打开官方页面", "复核标题、文号、发文机关、正文、时效、关联政策", "判断政策类型", "登记独立政策元数据卡", "进入具体业务分析契约"],
+  "risk_points": ["全文有效是证据状态，不是业务适用结论", "候选政策需要逐条打开正文复核", "即征即退相关政策可能覆盖不同行业、优惠和办理程序", "地方材料和办理口径仍需后续补充"],
+  "review_questions": [
+    "当前具体业务是哪一种即征即退事项？",
+    "候选政策是实体适用条件、办理程序，还是衔接公告？",
+    "候选政策正文是否仍显示全文有效？",
+    "是否存在上位法、后续公告或配套政策需要同时引用？",
+    "是否需要为某个候选政策登记独立元数据卡？"
+  ],
+  "trial_record": {
+    "topic": "全文有效政策候选筛选说明",
+    "status": "evidence_ready",
+    "main_gaps": ["正文逐条复核", "政策类型判断", "具体业务事实", "地方口径"],
+    "boundary_violation": false,
+    "next_step": "逐条打开候选政策并登记元数据卡"
+  },
+  "standard_disclaimer": "本输出为影子版待复核分析草案，不是正式税务意见。涉及申报、退税、开票、外发或正式采用前，必须由人工和专业人员复核。"
+}

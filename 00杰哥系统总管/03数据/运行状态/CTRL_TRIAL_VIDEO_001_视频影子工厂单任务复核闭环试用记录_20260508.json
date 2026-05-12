@@ -1,0 +1,117 @@
+{
+  "asset_id": "CTRL_TRIAL_VIDEO_001_SINGLE_TASK_REVIEW_LOOP_TRIAL_20260508",
+  "asset_name": "CTRL-TRIAL-VIDEO-001 视频影子工厂单任务复核闭环试用记录",
+  "created_at": "2026-05-08",
+  "task_id": "CTRL-TRIAL-VIDEO-001",
+  "asset_identity": "总管侧 W1/R0 视频受控试用任务执行记录",
+  "bound_video_task_id": "VF-20260508-003",
+  "is_generation_release": false,
+  "is_publish_release": false,
+  "is_formal_video_system_change": false,
+  "source_inputs": [
+    {
+      "name": "复核链路状态快照",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_FACTORY_R012_CHAIN_STATUS_001_掩耳盗铃复核链路状态快照_v1.0.md",
+      "role": "确认链路已形成，当前仍待人工修正和回执"
+    },
+    {
+      "name": "人工复核工作包",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_FACTORY_R012_HUMAN_REVIEW_PACKET_001_掩耳盗铃人工复核工作包_v1.0.md",
+      "role": "汇总脚本、分镜、门禁和素材阻断项"
+    },
+    {
+      "name": "生成/发布放行核对",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_FACTORY_R012_GATE_001_生成发布放行清单只读核对_v1.0.md",
+      "role": "确认最新任务未生成放行、未发布放行"
+    },
+    {
+      "name": "发布前复核问题清单",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_FACTORY_R012_REVIEW_002_掩耳盗铃发布前待复核问题清单_v1.0.md",
+      "role": "确认平台、素材、AI标识、原创性等待复核问题"
+    }
+  ],
+  "scan_result": {
+    "general_red_line_hit": false,
+    "specific_red_line_hit": false,
+    "allow_w1_r0_trial": true,
+    "pause_reason": "",
+    "allowed_scope": "总管侧记录视频影子工厂单任务复核闭环，不改正式视频任务单或放行清单，不渲染、不发布",
+    "next_artifact": "CTRL-TRIAL-VIDEO-001 视频影子工厂单任务复核闭环试用记录"
+  },
+  "loop_status": [
+    {
+      "step": "任务识别",
+      "status": "VF-20260508-003",
+      "manager_judgement": "可作为单任务试用对象"
+    },
+    {
+      "step": "脚本/分镜预演",
+      "status": "已有草案",
+      "manager_judgement": "可继续人工复核和修正"
+    },
+    {
+      "step": "发布前复核",
+      "status": "待人工复核",
+      "manager_judgement": "不满足发布条件"
+    },
+    {
+      "step": "生成门禁",
+      "status": "未登记最新任务放行",
+      "manager_judgement": "不得渲染"
+    },
+    {
+      "step": "发布门禁",
+      "status": "未登记最新任务放行",
+      "manager_judgement": "不得上传或发布"
+    },
+    {
+      "step": "人工复核工作包",
+      "status": "已形成",
+      "manager_judgement": "可作为并行视频线交接包"
+    },
+    {
+      "step": "修正验收/回执",
+      "status": "模板已存在，待填写",
+      "manager_judgement": "回执不等于放行"
+    },
+    {
+      "step": "进化候选",
+      "status": "空白候选，未验证",
+      "manager_judgement": "不得升级正式规则"
+    }
+  ],
+  "blocking_items": [
+    "生成放行缺失",
+    "发布放行缺失",
+    "脚本待修正",
+    "分镜素材字段缺失",
+    "平台规则待补",
+    "进化候选未验证"
+  ],
+  "absorption_conclusion": {
+    "can_absorb": true,
+    "needs_manager_ruling": false,
+    "allow_real_render": false,
+    "allow_upload_or_publish": false,
+    "allow_wecom_outbound": false,
+    "allow_write_formal_rules": false
+  },
+  "task_status": "completed",
+  "next_recommended_task": "CTRL-TRIAL-WECOM-001",
+  "boundary_flags": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_db": false,
+    "run_video_business_script": false,
+    "read_real_media_assets": false,
+    "login_platform_account": false,
+    "call_external_material_api": false,
+    "real_transcode_edit_render_upload_publish": false,
+    "modify_formal_video_task": false,
+    "modify_generation_or_publish_release_list": false,
+    "modify_service_script": false,
+    "restart_19310_or_19302": false,
+    "delete_move_archive_old_directory": false
+  },
+  "self_check_line": "[自检: CTRL-TRIAL-VIDEO-001已完成, 风险等级: W1/R0, 产物: 视频影子工厂单任务复核闭环试用记录, 边界: 守住了。]"
+}

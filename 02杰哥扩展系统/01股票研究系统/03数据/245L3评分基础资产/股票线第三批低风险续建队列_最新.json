@@ -1,0 +1,103 @@
+{
+  "name": "股票线第三批低风险续建队列",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 11:26:50",
+  "asset_identity": "W1第三批连续施工队列",
+  "status": "active",
+  "source_assets": {
+    "second_queue": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票线第二批低风险续建队列_最新.json",
+    "second_queue_completed_count": 6,
+    "second_queue_queued_count": 0
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_real_refresh": true,
+  "not_score_write": true,
+  "construction_queue": [
+    {
+      "id": "STOCK-AUTO3-001",
+      "title": "股票提问对象识别与别名映射验收",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "用户问股票时，第一行必须明确股票名称和代码；别名和简称不得误配。",
+      "validation_asset": "股票提问对象识别与别名映射验收结果_最新.json",
+      "completed_at": "2026-05-08 10:51:16"
+    },
+    {
+      "id": "STOCK-AUTO3-002",
+      "title": "企业微信前台短答模拟输入输出样例",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "只生成本地影子输入输出样例，不真实发送企业微信。",
+      "validation_asset": "企业微信前台短答模拟输入输出样例验收结果_最新.json",
+      "completed_at": "2026-05-08 11:05:03"
+    },
+    {
+      "id": "STOCK-AUTO3-003",
+      "title": "置信度上限与缺口联动矩阵",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "关键证据缺失时自动限制confidence和结论强度。",
+      "validation_asset": "置信度上限与缺口联动矩阵验收结果_最新.json",
+      "completed_at": "2026-05-08 11:18:26"
+    },
+    {
+      "id": "STOCK-AUTO3-004",
+      "title": "下一次复核日期与复核重点模板",
+      "risk_level": "W1",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "每份影子报告必须给下一次复核重点，不把缺口丢掉。",
+      "validation_asset": "下一次复核日期与复核重点模板验收结果_最新.json",
+      "completed_at": "2026-05-08 11:23:32"
+    },
+    {
+      "id": "STOCK-AUTO3-005",
+      "title": "第三批统一影子验收总表",
+      "risk_level": "W2",
+      "status": "completed",
+      "requires_user_confirmation": false,
+      "goal": "汇总第三批队列验收结果。",
+      "validation_asset": "股票线第三批统一影子验收总表验收_最新.json",
+      "completed_at": "2026-05-08 11:26:50"
+    }
+  ],
+  "blocked_queue": [
+    {
+      "id": "STOCK-AUTO3-BLOCK-001",
+      "title": "企业微信真实发送",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "真实外发必须交回总管判断。"
+    },
+    {
+      "id": "STOCK-AUTO3-BLOCK-002",
+      "title": "正式入口或正式配置接入",
+      "risk_level": "W3",
+      "status": "blocked_register_only",
+      "reason": "正式入口/配置必须交回总管判断。"
+    }
+  ],
+  "summary": {
+    "queue_count": 5,
+    "completed_count": 5,
+    "queued_count": 0,
+    "blocked_count": 2
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

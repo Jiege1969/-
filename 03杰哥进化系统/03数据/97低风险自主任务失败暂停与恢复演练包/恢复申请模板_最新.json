@@ -1,0 +1,51 @@
+{
+  "name": "低风险自主任务恢复申请模板",
+  "generated_at": "2026-05-08 19:46:57",
+  "template_version": "readonly-drill-v1",
+  "recovery_requested": false,
+  "recovery_executed": false,
+  "requires_supervisor_confirmation": true,
+  "external_call": false,
+  "reload_service": false,
+  "auto_continue_after_failure": false,
+  "readonly_drill_only": true,
+  "allowed_status": [
+    "draft",
+    "submitted_for_supervisor_confirmation",
+    "rejected",
+    "approved_for_manual_handling"
+  ],
+  "default_status": "draft",
+  "fields": {
+    "request_id": "",
+    "source_scenario_id": "",
+    "source_scenario": "",
+    "failure_summary": "",
+    "evidence_paths": [],
+    "pause_registration_path": "",
+    "requested_recovery_scope": "仅申请人工复核或只读复验",
+    "supervisor_confirmation": {
+      "required": true,
+      "confirmed": false,
+      "confirmed_by": "",
+      "confirmed_at": ""
+    },
+    "execution_confirmation": {
+      "recovery_executed": false,
+      "executor": "",
+      "executed_at": "",
+      "execution_note": "本模板默认不执行恢复动作"
+    }
+  },
+  "forbidden_recovery_actions": [
+    "真实发送企业微信",
+    "连接或触发 n8n",
+    "连接券商或交易",
+    "登录税局",
+    "连接财税软件",
+    "自动转正式规则",
+    "修改总管面板",
+    "修改一键接续包",
+    "重载服务"
+  ]
+}

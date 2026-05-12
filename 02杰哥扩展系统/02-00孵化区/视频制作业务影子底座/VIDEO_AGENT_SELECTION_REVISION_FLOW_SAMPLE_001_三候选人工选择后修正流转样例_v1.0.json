@@ -1,0 +1,29 @@
+{
+  "id": "VIDEO_AGENT_SELECTION_REVISION_FLOW_SAMPLE_001",
+  "name": "三候选人工选择后修正流转样例",
+  "asset_identity": "video_creation_agent_shadow_selection_revision_flow_sample",
+  "stage": "W1_R0",
+  "status": "blank_sample_not_real_revision_workflow",
+  "boundary": {
+    "media_generation": false,
+    "modify_formal_script": false,
+    "publish_approval": false,
+    "formal_task_write": false
+  },
+  "fields": {
+    "flow_id": "VAI-REV-FLOW-0000",
+    "linked_receipt_id": "to_be_filled",
+    "human_action": "to_be_filled",
+    "base_option": "to_be_filled",
+    "revision_scope": "to_be_filled",
+    "revision_feedback_summary": "to_be_filled_desensitized",
+    "output_state": "revision_draft_pending_review",
+    "remaining_review_items": [],
+    "next_step": "to_be_filled"
+  },
+  "forbidden_interpretations": [
+    "human_selection_not_final_script",
+    "revision_flow_not_formal_file_edit",
+    "revision_pass_not_generation_render_or_publish_approval"
+  ]
+}

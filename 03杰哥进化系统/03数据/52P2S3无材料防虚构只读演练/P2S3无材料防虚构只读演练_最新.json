@@ -1,0 +1,492 @@
+{
+  "id": "P2S3_NO_MATERIAL_ANTI_FABRICATION_READONLY_DRILL",
+  "generated_at": "2026-05-09 09:30:27",
+  "status": "pass",
+  "summary": {
+    "target_count": 5,
+    "passed": 5,
+    "failed": 0,
+    "field_check_count": 38,
+    "redline_check_count": 35
+  },
+  "targets": [
+    {
+      "id": "TAX_DAILY_INTAKE_002",
+      "line": "tax",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\TAX_DAILY_INTAKE_002_脱敏问题接入空白卡_20260509.json",
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "field_checks": [
+        {
+          "字段": "status",
+          "实际值": "blank_waiting_for_desensitized_input",
+          "期望值": "blank_waiting_for_desensitized_input",
+          "通过": true
+        },
+        {
+          "字段": "fields.business_question",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "fields.taxpayer_profile",
+          "实际值": "待填写，仅限脱敏描述",
+          "期望值": "待填写，仅限脱敏描述",
+          "通过": true
+        },
+        {
+          "字段": "fields.tax_item_or_scenario",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "fields.target_output",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "precheck.desensitized",
+          "实际值": "待确认",
+          "期望值": "待确认",
+          "通过": true
+        },
+        {
+          "字段": "precheck.can_enter_shadow_analysis",
+          "实际值": "待人工确认",
+          "期望值": "待人工确认",
+          "通过": true
+        },
+        {
+          "字段": "fields.human_review_required",
+          "实际值": true,
+          "期望值": true,
+          "通过": true
+        },
+        {
+          "字段": "not_formal_tax_opinion",
+          "实际值": true,
+          "期望值": true,
+          "通过": true
+        }
+      ],
+      "redline_checks": [
+        {
+          "字段": "formal_tax_opinion",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "tax_filing",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "invoice_action",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "tax_refund_action",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "external_send",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "trigger_n8n",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "send_wecom",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "write_formal_database",
+          "实际值": false,
+          "通过": true
+        }
+      ],
+      "generated_term_hits": []
+    },
+    {
+      "id": "TAX_DAILY_DRAFT_002",
+      "line": "tax",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\税收业务影子底座\\TAX_DAILY_DRAFT_002_待复核草案空白模板_20260509.json",
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "field_checks": [
+        {
+          "字段": "status",
+          "实际值": "blank_template",
+          "期望值": "blank_template",
+          "通过": true
+        },
+        {
+          "字段": "fields.user_question_summary",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "fields.analysis_draft",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "fields.human_review_status",
+          "实际值": "待复核",
+          "期望值": "待复核",
+          "通过": true
+        },
+        {
+          "字段": "not_formal_tax_opinion",
+          "实际值": true,
+          "期望值": true,
+          "通过": true
+        }
+      ],
+      "redline_checks": [
+        {
+          "字段": "trigger_n8n",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "send_wecom",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "write_formal_database",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "tax_filing",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "tax_external_action",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "claim_formal_opinion",
+          "实际值": false,
+          "通过": true
+        }
+      ],
+      "generated_term_hits": []
+    },
+    {
+      "id": "OFFICE_SHADOW_002",
+      "line": "office_work",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\本职工作业务影子底座\\OFFICE_SHADOW_002_流程资料登记_空白影子样例_v1.0.json",
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "field_checks": [
+        {
+          "字段": "status",
+          "实际值": "blank_shadow_sample",
+          "期望值": "blank_shadow_sample",
+          "通过": true
+        },
+        {
+          "字段": "source_materials",
+          "实际值": "待用户提供",
+          "期望值": "待用户提供",
+          "通过": true
+        },
+        {
+          "字段": "output_draft",
+          "实际值": "待复核",
+          "期望值": "待复核",
+          "通过": true
+        },
+        {
+          "字段": "human_review_required",
+          "实际值": true,
+          "期望值": true,
+          "通过": true
+        },
+        {
+          "字段": "not_formal_work_material",
+          "实际值": true,
+          "期望值": true,
+          "通过": true
+        }
+      ],
+      "redline_checks": [
+        {
+          "字段": "connect_oa",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "connect_erp",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "connect_finance_system",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "connect_hr_system",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "submit_approval",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "external_send",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "trigger_n8n",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "send_wecom",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "write_formal_database",
+          "实际值": false,
+          "通过": true
+        }
+      ],
+      "generated_term_hits": []
+    },
+    {
+      "id": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "line": "video_production",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_P2_REVIEW_CHAIN_NEXT_001_脚本分镜素材授权发布门禁续建卡_20260509.json",
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "field_checks": [
+        {
+          "字段": "status",
+          "实际值": "blank_waiting_for_review_materials",
+          "期望值": "blank_waiting_for_review_materials",
+          "通过": true
+        },
+        {
+          "字段": "review_object.related_project",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "review_object.script_source",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "review_object.storyboard_source",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "review_object.asset_source",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "review_object.platform_rule_source",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "review_object.human_review_required",
+          "实际值": true,
+          "期望值": true,
+          "通过": true
+        },
+        {
+          "字段": "not_release_ready",
+          "实际值": true,
+          "期望值": true,
+          "通过": true
+        },
+        {
+          "字段": "review_chain.script_review",
+          "实际值": "待复核",
+          "期望值": "待复核",
+          "通过": true
+        },
+        {
+          "字段": "review_chain.storyboard_review",
+          "实际值": "待复核",
+          "期望值": "待复核",
+          "通过": true
+        },
+        {
+          "字段": "review_chain.asset_authorization_review",
+          "实际值": "待复核",
+          "期望值": "待复核",
+          "通过": true
+        },
+        {
+          "字段": "review_chain.platform_rule_review",
+          "实际值": "待复核",
+          "期望值": "待复核",
+          "通过": true
+        },
+        {
+          "字段": "review_chain.release_gate",
+          "实际值": "closed",
+          "期望值": "closed",
+          "通过": true
+        }
+      ],
+      "redline_checks": [
+        {
+          "字段": "render_final_video",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "upload_video",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "publish_video",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "call_platform_api",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "trigger_n8n",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "send_wecom",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "write_formal_database",
+          "实际值": false,
+          "通过": true
+        }
+      ],
+      "generated_term_hits": []
+    },
+    {
+      "id": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "line": "shared_policy_evidence",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\P2_SHARED_POLICY_READONLY_NEXT_001_共享政策证据只读调用下一步卡_20260509.json",
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "field_checks": [
+        {
+          "字段": "status",
+          "实际值": "blank_waiting_for_readonly_validation",
+          "期望值": "blank_waiting_for_readonly_validation",
+          "通过": true
+        },
+        {
+          "字段": "fields.target_business_line",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "fields.policy_source",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "fields.query_purpose",
+          "实际值": "待填写",
+          "期望值": "待填写",
+          "通过": true
+        },
+        {
+          "字段": "fields.human_review_required",
+          "实际值": true,
+          "期望值": true,
+          "通过": true
+        },
+        {
+          "字段": "not_formal_business_conclusion",
+          "实际值": true,
+          "期望值": true,
+          "通过": true
+        }
+      ],
+      "redline_checks": [
+        {
+          "字段": "trigger_n8n",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "send_wecom",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "write_formal_database",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "replace_business_line_judgment",
+          "实际值": false,
+          "通过": true
+        },
+        {
+          "字段": "claim_formal_capability",
+          "实际值": false,
+          "通过": true
+        }
+      ],
+      "generated_term_hits": []
+    }
+  ],
+  "conclusion": "无真实材料时，影子入口保持空白、待复核、门禁关闭和红线关闭；未发现自动生成业务结论。",
+  "forbidden_actions": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

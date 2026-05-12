@@ -1,0 +1,182 @@
+{
+  "task": "01智能系统第三批小任务G正式API化影子契约与知识检索灰度门禁",
+  "version": "shadow-g-2026-05-05",
+  "generated_at": "2026-05-05 12:45:47",
+  "api_contract": {
+    "endpoint_shadow": "POST /shadow/v1/intelligence/qa",
+    "formal_endpoint_candidate": "POST /api/v1/intelligence/qa",
+    "request_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "required": true,
+        "desc": "调用方生成的幂等请求号。"
+      },
+      {
+        "name": "user_id",
+        "type": "string",
+        "required": true,
+        "desc": "本地影子用户标识，不接真实账号系统。"
+      },
+      {
+        "name": "question",
+        "type": "string",
+        "required": true,
+        "desc": "待回答问题。"
+      },
+      {
+        "name": "retrieval_scope",
+        "type": "array[string]",
+        "required": true,
+        "desc": "只允许 local_shadow_knowledge。"
+      },
+      {
+        "name": "evidence_policy",
+        "type": "string",
+        "required": true,
+        "desc": "must_cite_local_evidence。"
+      },
+      {
+        "name": "gray_gate",
+        "type": "object",
+        "required": true,
+        "desc": "灰度门禁字段。"
+      },
+      {
+        "name": "safety_boundary",
+        "type": "object",
+        "required": true,
+        "desc": "调用方声明安全边界。"
+      },
+      {
+        "name": "dry_run",
+        "type": "boolean",
+        "required": true,
+        "desc": "必须为 true。"
+      }
+    ],
+    "response_fields": [
+      {
+        "name": "request_id",
+        "type": "string",
+        "required": true,
+        "desc": "回显请求号。"
+      },
+      {
+        "name": "status",
+        "type": "enum",
+        "required": true,
+        "values": [
+          "ok",
+          "degraded",
+          "blocked"
+        ]
+      },
+      {
+        "name": "error_code",
+        "type": "enum",
+        "required": true,
+        "values": [
+          "OK",
+          "NO_EVIDENCE",
+          "OUT_OF_SCOPE",
+          "EXTERNAL_ACTION_BLOCKED",
+          "GRAY_GATE_CLOSED",
+          "CONTRACT_VALIDATION_FAILED"
+        ]
+      },
+      {
+        "name": "answer",
+        "type": "string",
+        "required": true,
+        "desc": "只基于本地影子证据的回答；无证据时为空。"
+      },
+      {
+        "name": "evidence",
+        "type": "array[object]",
+        "required": true,
+        "desc": "本地证据 path、title、quote_digest。"
+      },
+      {
+        "name": "fallback",
+        "type": "object",
+        "required": true,
+        "desc": "降级原因和替代口径。"
+      },
+      {
+        "name": "safety_boundary",
+        "type": "object",
+        "required": true,
+        "desc": "实际执行边界回显。"
+      },
+      {
+        "name": "external_effect",
+        "type": "string",
+        "required": true,
+        "desc": "必须为 none 或 blocked。"
+      }
+    ],
+    "error_codes": {
+      "OK": "正常返回，且至少有一条本地影子证据。",
+      "NO_EVIDENCE": "本地影子样本无证据，返回降级说明，不编造答案。",
+      "OUT_OF_SCOPE": "问题超出 01 智能系统正式 API 化影子契约范围。",
+      "EXTERNAL_ACTION_BLOCKED": "请求触发外部 API、真实消息、n8n、券商、交易或写正式库，被硬阻断。",
+      "GRAY_GATE_CLOSED": "灰度门禁未满足，仅允许本地影子样本。",
+      "CONTRACT_VALIDATION_FAILED": "请求字段、响应字段或安全边界字段不满足契约。"
+    },
+    "degrade_return": {
+      "NO_EVIDENCE": {
+        "status": "degraded",
+        "answer": "",
+        "fallback_message": "未在本地影子样本中找到可引用证据，本轮不生成事实性回答。"
+      },
+      "OUT_OF_SCOPE": {
+        "status": "blocked",
+        "answer": "",
+        "fallback_message": "问题超出 01 智能系统正式 API 化影子契约范围，可改为本地影子问答或契约字段检查。"
+      },
+      "EXTERNAL_ACTION_BLOCKED": {
+        "status": "blocked",
+        "answer": "",
+        "fallback_message": "真实外部动作已阻断，可生成本地模拟草稿或人工确认单。"
+      }
+    }
+  },
+  "gray_gate_plan": {
+    "gate_status": "closed_for_real_gateway",
+    "allowed_stage": "local_shadow_samples_only",
+    "allowed_data_source": [
+      "03数据/知识库/15第三批小任务G正式API影子契约灰度门禁"
+    ],
+    "forbidden": [
+      "接真实网关",
+      "写正式库",
+      "调用真实外部API",
+      "触发n8n",
+      "发送企业微信真实消息",
+      "调用券商接口",
+      "自动交易或下单"
+    ],
+    "promote_conditions": [
+      "契约 JSON 可解析且字段齐全",
+      "4 类样本全部通过验证",
+      "错误码、降级语和安全边界字段全部命中",
+      "人工审批后才允许进入只读影子流量"
+    ]
+  },
+  "safety_boundary": {
+    "mode": "local_shadow_only",
+    "allowed_input_source": "local_shadow_samples",
+    "connect_real_gateway": false,
+    "write_production_db": false,
+    "write_formal_vector_db": false,
+    "call_external_api": false,
+    "trigger_n8n": false,
+    "send_wecom_real_message": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "place_order": false,
+    "modify_02_or_03_system": false,
+    "require_human_approval_for_gray": true
+  }
+}

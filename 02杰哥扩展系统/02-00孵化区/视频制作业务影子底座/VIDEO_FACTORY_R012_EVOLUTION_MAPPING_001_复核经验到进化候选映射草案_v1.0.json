@@ -1,0 +1,91 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-08 05:44:05 +08:00",
+  "mapping_id": "VIDEO_FACTORY_R012_EVOLUTION_MAPPING_001",
+  "task_id": "VF-20260508-003",
+  "asset_identity": "video_factory_round012_review_experience_to_evolution_candidate_mapping_shadow_draft",
+  "risk_level": "W1",
+  "status": "shadow_draft_pending_human_review",
+  "boundary": {
+    "write_formal_rule_library": false,
+    "modify_formal_video_system": false,
+    "modify_video_system_task": false,
+    "modify_release_lists": false,
+    "read_real_assets": false,
+    "render": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false,
+    "send_wecom": false,
+    "trigger_n8n": false
+  },
+  "source_files": [
+    "VIDEO_FACTORY_R012_REVISION_RECEIPT_001_脚本分镜修正验收回执模板_v1.0.md",
+    "VIDEO_FACTORY_R012_SCRIPT_REVIEW_001_脚本草案去AI感与原创性复核清单_v1.0.md",
+    "VIDEO_FACTORY_R012_STORYBOARD_REVIEW_001_分镜素材授权复核清单_v1.0.md",
+    "影子到进化候选记录模板_v1.0.md",
+    "人工修正样本格式_v1.0.json"
+  ],
+  "candidate_experience_types": [
+    {
+      "type": "去AI感表达",
+      "candidate_condition": "多次复核都证明某类表达能显著减少模板感",
+      "candidate_direction": "视频脚本表达经验候选",
+      "forbidden_direct_action": "不直接改正式脚本生成器"
+    },
+    {
+      "type": "成语故事结构",
+      "candidate_condition": "故事本体到现代场景到原创观点的结构稳定有效",
+      "candidate_direction": "成语或传统文化脚本结构候选",
+      "forbidden_direct_action": "不套到所有视频类型"
+    },
+    {
+      "type": "素材授权字段",
+      "candidate_condition": "某些字段反复成为阻断项",
+      "candidate_direction": "视频素材授权字段候选",
+      "forbidden_direct_action": "不自动放行素材"
+    },
+    {
+      "type": "AI标识处理",
+      "candidate_condition": "平台规则确认后形成稳定要求",
+      "candidate_direction": "平台发布合规候选",
+      "forbidden_direct_action": "不自动发布或外发"
+    },
+    {
+      "type": "分镜隐私处理",
+      "candidate_condition": "聊天窗口、人物、地点等处理方式被人工复核通过",
+      "candidate_direction": "分镜隐私处理候选",
+      "forbidden_direct_action": "不读取真实素材做验证"
+    }
+  ],
+  "not_candidate": [
+    "single_human_preference_without_review_reason",
+    "task_specific_copy_not_transferable",
+    "platform_rule_experience_without_confirmed_source",
+    "asset_handling_experience_without_authorization",
+    "real_render_publish_wecom_or_n8n_execution_action"
+  ],
+  "suggested_candidate_fields": [
+    "候选ID",
+    "来源任务",
+    "来源回执",
+    "经验类型",
+    "原始问题",
+    "人工修正",
+    "复核结论",
+    "可迁移范围",
+    "不可迁移范围",
+    "风险提示",
+    "是否建议进入规则库"
+  ],
+  "preconditions": [
+    "receipt_must_be_filled_by_human",
+    "experience_source_problem_and_revision_must_be_stated",
+    "transferable_and_non_transferable_scope_must_be_stated",
+    "candidate_identity_must_be_preserved",
+    "platform_asset_or_release_related_experience_requires_separate_human_confirmation"
+  ],
+  "can_generate_evolution_candidate_draft": true,
+  "can_write_formal_rule_library": false,
+  "self_check": "[自检: VIDEO_FACTORY_R012_EVOLUTION_MAPPING_001已完成, 风险等级: W1, 产物: 复核经验到进化候选映射草案md/json, 边界: 守住了。]"
+}

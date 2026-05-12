@@ -1,0 +1,23 @@
+﻿{
+    "report":  "日志保留期压缩归档执行收口",
+    "generated_at":  "2026-05-06 14:36:21",
+    "status":  "已被彻底删除收口取代",
+    "conclusion":  "旧压缩归档只是过渡动作，内容复核后已删除压缩包、manifest、归档目录和229个原始流水日志；当前不保留压缩副本。",
+    "former_archived_files":  229,
+    "former_archived_bytes":  557512,
+    "archive_removed":  true,
+    "superseded_by":  "日志保留期内容复核后彻底删除收口_最新.json",
+    "recurrence_rule":  [
+                            "无未来核查价值的日志不再压缩留存。",
+                            "确需保留的日志必须说明未来核查用途并进入证据分级台账。",
+                            "过渡压缩包若内容复核判定无价值，应同步删除，不形成新备份债。"
+                        ],
+    "safety":  {
+                   "deleted_business_data":  false,
+                   "called_broker_api":  false,
+                   "sent_wecom":  false,
+                   "auto_trade":  false,
+                   "deleted_database":  false,
+                   "triggered_n8n":  false
+               }
+}

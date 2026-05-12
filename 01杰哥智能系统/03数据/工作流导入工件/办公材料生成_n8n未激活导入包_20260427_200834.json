@@ -1,0 +1,133 @@
+{
+  "生成时间": "2026-04-27 20:08:34",
+  "阶段": "第2层-办公材料生成未激活导入工件生成",
+  "目标工作流": "办公材料生成",
+  "导入目标容器": "jiege_n8n",
+  "导入目标地址": "http://127.0.0.1:18679",
+  "工作流工件": {
+    "name": "办公材料生成",
+    "active": false,
+    "nodes": [
+      {
+        "parameters": {},
+        "id": "5f8032d4-1579-43d9-8541-7d85e61bb661",
+        "name": "手动触发",
+        "type": "n8n-nodes-base.manualTrigger",
+        "typeVersion": 1,
+        "position": [
+          260,
+          260
+        ]
+      },
+      {
+        "parameters": {
+          "mode": "manual",
+          "duplicateItem": false,
+          "assignments": {
+            "assignments": [
+              {
+                "id": "ae8e0e26-3c08-4a1e-9ee2-ac648fe08394",
+                "name": "状态",
+                "value": "dry_run_only",
+                "type": "string"
+              },
+              {
+                "id": "5e5cb1e8-653e-4510-a896-9c596d6baf3d",
+                "name": "工作流名",
+                "value": "办公材料生成",
+                "type": "string"
+              },
+              {
+                "id": "fa08c1e7-71f7-4cf4-b969-2afa319a91e6",
+                "name": "执行摘要",
+                "value": "未激活导入验证工件，仅用于确认办公材料生成链路，不生成真实文档、不读取真实业务材料。",
+                "type": "string"
+              },
+              {
+                "id": "98b4c840-3f66-4afc-8fb2-9eac27d7608a",
+                "name": "风险提示",
+                "value": "当前不启用Webhook，不写正式文件，不发送企业微信，不接入税收业务。",
+                "type": "string"
+              },
+              {
+                "id": "10b0be4c-f1a9-49ed-b2e5-c479b602fea4",
+                "name": "是否需要人工复核",
+                "value": true,
+                "type": "boolean"
+              }
+            ]
+          }
+        },
+        "id": "b883aa3b-f774-4eab-86dc-fb13465d7ad8",
+        "name": "生成只读办公材料响应",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          520,
+          260
+        ]
+      },
+      {
+        "parameters": {
+          "content": "办公材料生成未激活导入工件\\n生成时间：2026-04-27 20:08:34\\n安全边界：无Webhook、无凭据、不生成真实文档、不外发。",
+          "height": 240,
+          "width": 360,
+          "color": 4
+        },
+        "id": "17f60ac6-1940-4ce4-b7f1-35303215a63e",
+        "name": "安全边界说明",
+        "type": "n8n-nodes-base.stickyNote",
+        "typeVersion": 1,
+        "position": [
+          260,
+          20
+        ]
+      }
+    ],
+    "connections": {
+      "手动触发": {
+        "main": [
+          [
+            {
+              "node": "生成只读办公材料响应",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "settings": {
+      "executionOrder": "v1",
+      "saveManualExecutions": true
+    },
+    "staticData": null,
+    "pinData": {},
+    "tags": [],
+    "meta": {
+      "jiege_v3_gray_import": true,
+      "target": "jiege_n8n",
+      "must_remain_inactive": true,
+      "generated_at": "2026-04-27 20:08:34",
+      "no_real_document_output": true,
+      "no_wework_send": true
+    }
+  },
+  "安全检查": {
+    "active": false,
+    "包含Webhook节点": false,
+    "包含凭据": false,
+    "生成真实办公材料": false,
+    "发送企业微信": false,
+    "接入税收业务": false,
+    "是否调用n8nAPI": false,
+    "是否执行导入": false
+  },
+  "是否调用n8nAPI": false,
+  "是否执行导入": false,
+  "是否启用Webhook": false,
+  "是否触发真实工作流": false,
+  "是否发送企业微信": false,
+  "是否生成真实办公材料": false,
+  "是否接入税收业务": false
+}

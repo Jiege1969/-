@@ -1,0 +1,74 @@
+﻿{
+  "report": "n8n工作流母样本提纯收口",
+  "generated_at": "2026-05-06 07:43:00 +08:00",
+  "principle": "keep useful mother samples; delete duplicate or obsolete inactive workflows after evidence export",
+  "before": {
+    "workflow_entity": 34,
+    "shared_workflow": 34,
+    "workflow_history": 34,
+    "execution_entity": 43,
+    "execution_data": 43,
+    "active_count": 0
+  },
+  "after": {
+    "workflow_entity": 5,
+    "shared_workflow": 5,
+    "workflow_history": 5,
+    "workflow_statistics": 2,
+    "execution_entity": 3,
+    "execution_data": 3,
+    "active_count": 0,
+    "sqlite_integrity_check": "ok",
+    "n8n_container": "running",
+    "n8n_http_status": 200,
+    "blood_probe_ready": true,
+    "blood_probe_failed_count": 0
+  },
+  "kept_mother_samples": [
+    {
+      "id": "ZkzsB6MdxlC3VMxY",
+      "name": "股票主动研究闭环_文件桥接未激活",
+      "role": "股票主动研究文件桥接"
+    },
+    {
+      "id": "h0xpxp9rPrUSqk1G",
+      "name": "股票主动研究闭环_桥接未激活",
+      "role": "股票主动研究桥接"
+    },
+    {
+      "id": "un0S6SrQSCIsjuhn",
+      "name": "股票助手企业微信Webhook桥接入口未激活v2",
+      "role": "企业微信Webhook桥接入口v2"
+    },
+    {
+      "id": "JBVQ8osGXlHoSJfR",
+      "name": "股票助手n8n本地执行回环测试",
+      "role": "本地执行回环测试"
+    },
+    {
+      "id": "urKB3BwGfDWQMKb5",
+      "name": "股票助手企业微信查询适配器未激活导入件",
+      "role": "企业微信查询适配器"
+    }
+  ],
+  "deleted_count": 29,
+  "evidence_dir": "D:/杰哥智能化系统/01杰哥智能系统/03数据/工作流台账/n8n工作流母样本导出_当前",
+  "updated_ledgers": [
+    "D:/杰哥智能化系统/01杰哥智能系统/03数据/工作流台账/n8n工作流资产台账_最新.json",
+    "D:/杰哥智能化系统/01杰哥智能系统/03数据/工作流台账/n8n工作流母样本台账_最新.json"
+  ],
+  "rollback": [
+    "restore database.before.sqlite for full rollback",
+    "reimport JSON from exports_delete for selective rollback"
+  ],
+  "safety": {
+    "triggered_n8n_workflow": false,
+    "called_webhook": false,
+    "sent_wecom": false,
+    "called_broker_api": false,
+    "auto_trade": false,
+    "deleted_credentials": false,
+    "deleted_docker_assets": false
+  }
+}
+

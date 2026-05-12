@@ -1,0 +1,2098 @@
+{
+  "name": "五样本财报资金证据采集模板草案",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 09:37:38",
+  "asset_identity": "W1空白采集模板草案",
+  "status": "draft",
+  "source_assets": {
+    "route_map": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本财报资金证据补齐路线图_最新.json",
+    "route_map_exists": true
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "not_real_data_fetch": true,
+  "not_formal_database_write": true,
+  "templates": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428",
+        "profile": "资源/小金属"
+      },
+      "asset_identity": "W1空白采集模板",
+      "status": "draft",
+      "stock_specific_fields": {
+        "锗业务收入/毛利占比": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "锗业务收入/毛利占比 待填；未填前不得进入评分。"
+        },
+        "锗价变化对毛利弹性": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "锗价变化对毛利弹性 待填；未填前不得进入评分。"
+        },
+        "出口管制后订单或价格兑现证据": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "出口管制后订单或价格兑现证据 待填；未填前不得进入评分。"
+        }
+      },
+      "evidence_groups": [
+        {
+          "field_group": "financial_report",
+          "display_name": "财报摘要",
+          "priority": "P0",
+          "minimum_ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+          "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "report_period": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "report_period 待填；未填前不得进入评分。"
+            },
+            "revenue_yoy": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "revenue_yoy 待填；未填前不得进入评分。"
+            },
+            "net_profit_yoy": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "net_profit_yoy 待填；未填前不得进入评分。"
+            },
+            "gross_margin": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "gross_margin 待填；未填前不得进入评分。"
+            },
+            "operating_cash_flow": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "operating_cash_flow 待填；未填前不得进入评分。"
+            },
+            "debt_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "debt_ratio 待填；未填前不得进入评分。"
+            },
+            "inventory_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "inventory_change 待填；未填前不得进入评分。"
+            },
+            "management_discussion_summary": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "management_discussion_summary 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "report_period",
+              "revenue_yoy",
+              "net_profit_yoy",
+              "gross_margin",
+              "operating_cash_flow"
+            ]
+          }
+        },
+        {
+          "field_group": "valuation",
+          "display_name": "估值位置",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+          "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "pe_ttm": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "pe_ttm 待填；未填前不得进入评分。"
+            },
+            "pb": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "pb 待填；未填前不得进入评分。"
+            },
+            "ps_ttm": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "ps_ttm 待填；未填前不得进入评分。"
+            },
+            "industry_percentile": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "industry_percentile 待填；未填前不得进入评分。"
+            },
+            "valuation_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "valuation_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "pe_ttm",
+              "pb",
+              "ps_ttm",
+              "industry_percentile",
+              "valuation_comment"
+            ]
+          }
+        },
+        {
+          "field_group": "capital_flow",
+          "display_name": "资金流向",
+          "priority": "P0",
+          "minimum_ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+          "front_gap_wording": "资金证据待采集，不能写资金面确认转强。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "main_net_inflow_1d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_1d 待填；未填前不得进入评分。"
+            },
+            "main_net_inflow_5d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_5d 待填；未填前不得进入评分。"
+            },
+            "main_net_inflow_20d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_20d 待填；未填前不得进入评分。"
+            },
+            "turnover_rate": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "turnover_rate 待填；未填前不得进入评分。"
+            },
+            "volume_amount_rank": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "volume_amount_rank 待填；未填前不得进入评分。"
+            },
+            "capital_flow_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "capital_flow_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "main_net_inflow_1d",
+              "main_net_inflow_5d",
+              "main_net_inflow_20d",
+              "turnover_rate",
+              "volume_amount_rank"
+            ]
+          }
+        },
+        {
+          "field_group": "institution_holding",
+          "display_name": "机构持仓",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+          "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "institution_holding_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "institution_holding_ratio 待填；未填前不得进入评分。"
+            },
+            "fund_holding_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "fund_holding_change 待填；未填前不得进入评分。"
+            },
+            "top10_shareholder_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "top10_shareholder_change 待填；未填前不得进入评分。"
+            },
+            "northbound_or_qfii_status": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "northbound_or_qfii_status 待填；未填前不得进入评分。"
+            },
+            "institution_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "institution_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "institution_holding_ratio",
+              "fund_holding_change",
+              "top10_shareholder_change",
+              "northbound_or_qfii_status",
+              "institution_comment"
+            ]
+          }
+        },
+        {
+          "field_group": "unlock_reduction",
+          "display_name": "解禁/减持",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+          "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "next_unlock_date": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "next_unlock_date 待填；未填前不得进入评分。"
+            },
+            "unlock_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "unlock_ratio 待填；未填前不得进入评分。"
+            },
+            "announced_reduction_plan": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "announced_reduction_plan 待填；未填前不得进入评分。"
+            },
+            "reduction_progress": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "reduction_progress 待填；未填前不得进入评分。"
+            },
+            "unlock_reduction_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "unlock_reduction_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "next_unlock_date",
+              "unlock_ratio",
+              "announced_reduction_plan",
+              "reduction_progress",
+              "unlock_reduction_comment"
+            ]
+          }
+        }
+      ],
+      "front_answer_constraint": "财报/资金证据未达到 evidence_ready 前，前台只能写缺口，不能强化基本面或资金结论。",
+      "overall_ready": false,
+      "overall_score_status": "not_scored_until_evidence_ready"
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466",
+        "profile": "锂资源"
+      },
+      "asset_identity": "W1空白采集模板",
+      "status": "draft",
+      "stock_specific_fields": {
+        "碳酸锂价格对盈利敏感性": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "碳酸锂价格对盈利敏感性 待填；未填前不得进入评分。"
+        },
+        "资产减值或库存影响": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "资产减值或库存影响 待填；未填前不得进入评分。"
+        },
+        "现金流和负债压力": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "现金流和负债压力 待填；未填前不得进入评分。"
+        }
+      },
+      "evidence_groups": [
+        {
+          "field_group": "financial_report",
+          "display_name": "财报摘要",
+          "priority": "P0",
+          "minimum_ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+          "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "report_period": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "report_period 待填；未填前不得进入评分。"
+            },
+            "revenue_yoy": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "revenue_yoy 待填；未填前不得进入评分。"
+            },
+            "net_profit_yoy": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "net_profit_yoy 待填；未填前不得进入评分。"
+            },
+            "gross_margin": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "gross_margin 待填；未填前不得进入评分。"
+            },
+            "operating_cash_flow": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "operating_cash_flow 待填；未填前不得进入评分。"
+            },
+            "debt_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "debt_ratio 待填；未填前不得进入评分。"
+            },
+            "inventory_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "inventory_change 待填；未填前不得进入评分。"
+            },
+            "management_discussion_summary": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "management_discussion_summary 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "report_period",
+              "revenue_yoy",
+              "net_profit_yoy",
+              "gross_margin",
+              "operating_cash_flow"
+            ]
+          }
+        },
+        {
+          "field_group": "valuation",
+          "display_name": "估值位置",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+          "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "pe_ttm": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "pe_ttm 待填；未填前不得进入评分。"
+            },
+            "pb": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "pb 待填；未填前不得进入评分。"
+            },
+            "ps_ttm": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "ps_ttm 待填；未填前不得进入评分。"
+            },
+            "industry_percentile": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "industry_percentile 待填；未填前不得进入评分。"
+            },
+            "valuation_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "valuation_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "pe_ttm",
+              "pb",
+              "ps_ttm",
+              "industry_percentile",
+              "valuation_comment"
+            ]
+          }
+        },
+        {
+          "field_group": "capital_flow",
+          "display_name": "资金流向",
+          "priority": "P0",
+          "minimum_ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+          "front_gap_wording": "资金证据待采集，不能写资金面确认转强。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "main_net_inflow_1d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_1d 待填；未填前不得进入评分。"
+            },
+            "main_net_inflow_5d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_5d 待填；未填前不得进入评分。"
+            },
+            "main_net_inflow_20d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_20d 待填；未填前不得进入评分。"
+            },
+            "turnover_rate": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "turnover_rate 待填；未填前不得进入评分。"
+            },
+            "volume_amount_rank": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "volume_amount_rank 待填；未填前不得进入评分。"
+            },
+            "capital_flow_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "capital_flow_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "main_net_inflow_1d",
+              "main_net_inflow_5d",
+              "main_net_inflow_20d",
+              "turnover_rate",
+              "volume_amount_rank"
+            ]
+          }
+        },
+        {
+          "field_group": "institution_holding",
+          "display_name": "机构持仓",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+          "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "institution_holding_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "institution_holding_ratio 待填；未填前不得进入评分。"
+            },
+            "fund_holding_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "fund_holding_change 待填；未填前不得进入评分。"
+            },
+            "top10_shareholder_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "top10_shareholder_change 待填；未填前不得进入评分。"
+            },
+            "northbound_or_qfii_status": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "northbound_or_qfii_status 待填；未填前不得进入评分。"
+            },
+            "institution_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "institution_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "institution_holding_ratio",
+              "fund_holding_change",
+              "top10_shareholder_change",
+              "northbound_or_qfii_status",
+              "institution_comment"
+            ]
+          }
+        },
+        {
+          "field_group": "unlock_reduction",
+          "display_name": "解禁/减持",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+          "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "next_unlock_date": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "next_unlock_date 待填；未填前不得进入评分。"
+            },
+            "unlock_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "unlock_ratio 待填；未填前不得进入评分。"
+            },
+            "announced_reduction_plan": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "announced_reduction_plan 待填；未填前不得进入评分。"
+            },
+            "reduction_progress": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "reduction_progress 待填；未填前不得进入评分。"
+            },
+            "unlock_reduction_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "unlock_reduction_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "next_unlock_date",
+              "unlock_ratio",
+              "announced_reduction_plan",
+              "reduction_progress",
+              "unlock_reduction_comment"
+            ]
+          }
+        }
+      ],
+      "front_answer_constraint": "财报/资金证据未达到 evidence_ready 前，前台只能写缺口，不能强化基本面或资金结论。",
+      "overall_ready": false,
+      "overall_score_status": "not_scored_until_evidence_ready"
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347",
+        "profile": "半导体制造"
+      },
+      "asset_identity": "W1空白采集模板",
+      "status": "draft",
+      "stock_specific_fields": {
+        "产能利用率": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "产能利用率 待填；未填前不得进入评分。"
+        },
+        "晶圆代工景气": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "晶圆代工景气 待填；未填前不得进入评分。"
+        },
+        "研发投入和折旧压力": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "研发投入和折旧压力 待填；未填前不得进入评分。"
+        }
+      },
+      "evidence_groups": [
+        {
+          "field_group": "financial_report",
+          "display_name": "财报摘要",
+          "priority": "P0",
+          "minimum_ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+          "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "report_period": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "report_period 待填；未填前不得进入评分。"
+            },
+            "revenue_yoy": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "revenue_yoy 待填；未填前不得进入评分。"
+            },
+            "net_profit_yoy": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "net_profit_yoy 待填；未填前不得进入评分。"
+            },
+            "gross_margin": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "gross_margin 待填；未填前不得进入评分。"
+            },
+            "operating_cash_flow": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "operating_cash_flow 待填；未填前不得进入评分。"
+            },
+            "debt_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "debt_ratio 待填；未填前不得进入评分。"
+            },
+            "inventory_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "inventory_change 待填；未填前不得进入评分。"
+            },
+            "management_discussion_summary": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "management_discussion_summary 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "report_period",
+              "revenue_yoy",
+              "net_profit_yoy",
+              "gross_margin",
+              "operating_cash_flow"
+            ]
+          }
+        },
+        {
+          "field_group": "valuation",
+          "display_name": "估值位置",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+          "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "pe_ttm": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "pe_ttm 待填；未填前不得进入评分。"
+            },
+            "pb": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "pb 待填；未填前不得进入评分。"
+            },
+            "ps_ttm": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "ps_ttm 待填；未填前不得进入评分。"
+            },
+            "industry_percentile": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "industry_percentile 待填；未填前不得进入评分。"
+            },
+            "valuation_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "valuation_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "pe_ttm",
+              "pb",
+              "ps_ttm",
+              "industry_percentile",
+              "valuation_comment"
+            ]
+          }
+        },
+        {
+          "field_group": "capital_flow",
+          "display_name": "资金流向",
+          "priority": "P0",
+          "minimum_ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+          "front_gap_wording": "资金证据待采集，不能写资金面确认转强。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "main_net_inflow_1d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_1d 待填；未填前不得进入评分。"
+            },
+            "main_net_inflow_5d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_5d 待填；未填前不得进入评分。"
+            },
+            "main_net_inflow_20d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_20d 待填；未填前不得进入评分。"
+            },
+            "turnover_rate": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "turnover_rate 待填；未填前不得进入评分。"
+            },
+            "volume_amount_rank": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "volume_amount_rank 待填；未填前不得进入评分。"
+            },
+            "capital_flow_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "capital_flow_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "main_net_inflow_1d",
+              "main_net_inflow_5d",
+              "main_net_inflow_20d",
+              "turnover_rate",
+              "volume_amount_rank"
+            ]
+          }
+        },
+        {
+          "field_group": "institution_holding",
+          "display_name": "机构持仓",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+          "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "institution_holding_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "institution_holding_ratio 待填；未填前不得进入评分。"
+            },
+            "fund_holding_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "fund_holding_change 待填；未填前不得进入评分。"
+            },
+            "top10_shareholder_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "top10_shareholder_change 待填；未填前不得进入评分。"
+            },
+            "northbound_or_qfii_status": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "northbound_or_qfii_status 待填；未填前不得进入评分。"
+            },
+            "institution_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "institution_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "institution_holding_ratio",
+              "fund_holding_change",
+              "top10_shareholder_change",
+              "northbound_or_qfii_status",
+              "institution_comment"
+            ]
+          }
+        },
+        {
+          "field_group": "unlock_reduction",
+          "display_name": "解禁/减持",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+          "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "next_unlock_date": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "next_unlock_date 待填；未填前不得进入评分。"
+            },
+            "unlock_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "unlock_ratio 待填；未填前不得进入评分。"
+            },
+            "announced_reduction_plan": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "announced_reduction_plan 待填；未填前不得进入评分。"
+            },
+            "reduction_progress": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "reduction_progress 待填；未填前不得进入评分。"
+            },
+            "unlock_reduction_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "unlock_reduction_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "next_unlock_date",
+              "unlock_ratio",
+              "announced_reduction_plan",
+              "reduction_progress",
+              "unlock_reduction_comment"
+            ]
+          }
+        }
+      ],
+      "front_answer_constraint": "财报/资金证据未达到 evidence_ready 前，前台只能写缺口，不能强化基本面或资金结论。",
+      "overall_ready": false,
+      "overall_score_status": "not_scored_until_evidence_ready"
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906",
+        "profile": "供应链服务"
+      },
+      "asset_identity": "W1空白采集模板",
+      "status": "draft",
+      "stock_specific_fields": {
+        "供应链业务毛利率": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "供应链业务毛利率 待填；未填前不得进入评分。"
+        },
+        "应收/存货周转": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "应收/存货周转 待填；未填前不得进入评分。"
+        },
+        "大宗商品价格波动风险": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "大宗商品价格波动风险 待填；未填前不得进入评分。"
+        }
+      },
+      "evidence_groups": [
+        {
+          "field_group": "financial_report",
+          "display_name": "财报摘要",
+          "priority": "P0",
+          "minimum_ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+          "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "report_period": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "report_period 待填；未填前不得进入评分。"
+            },
+            "revenue_yoy": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "revenue_yoy 待填；未填前不得进入评分。"
+            },
+            "net_profit_yoy": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "net_profit_yoy 待填；未填前不得进入评分。"
+            },
+            "gross_margin": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "gross_margin 待填；未填前不得进入评分。"
+            },
+            "operating_cash_flow": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "operating_cash_flow 待填；未填前不得进入评分。"
+            },
+            "debt_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "debt_ratio 待填；未填前不得进入评分。"
+            },
+            "inventory_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "inventory_change 待填；未填前不得进入评分。"
+            },
+            "management_discussion_summary": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "management_discussion_summary 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "report_period",
+              "revenue_yoy",
+              "net_profit_yoy",
+              "gross_margin",
+              "operating_cash_flow"
+            ]
+          }
+        },
+        {
+          "field_group": "valuation",
+          "display_name": "估值位置",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+          "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "pe_ttm": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "pe_ttm 待填；未填前不得进入评分。"
+            },
+            "pb": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "pb 待填；未填前不得进入评分。"
+            },
+            "ps_ttm": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "ps_ttm 待填；未填前不得进入评分。"
+            },
+            "industry_percentile": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "industry_percentile 待填；未填前不得进入评分。"
+            },
+            "valuation_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "valuation_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "pe_ttm",
+              "pb",
+              "ps_ttm",
+              "industry_percentile",
+              "valuation_comment"
+            ]
+          }
+        },
+        {
+          "field_group": "capital_flow",
+          "display_name": "资金流向",
+          "priority": "P0",
+          "minimum_ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+          "front_gap_wording": "资金证据待采集，不能写资金面确认转强。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "main_net_inflow_1d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_1d 待填；未填前不得进入评分。"
+            },
+            "main_net_inflow_5d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_5d 待填；未填前不得进入评分。"
+            },
+            "main_net_inflow_20d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_20d 待填；未填前不得进入评分。"
+            },
+            "turnover_rate": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "turnover_rate 待填；未填前不得进入评分。"
+            },
+            "volume_amount_rank": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "volume_amount_rank 待填；未填前不得进入评分。"
+            },
+            "capital_flow_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "capital_flow_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "main_net_inflow_1d",
+              "main_net_inflow_5d",
+              "main_net_inflow_20d",
+              "turnover_rate",
+              "volume_amount_rank"
+            ]
+          }
+        },
+        {
+          "field_group": "institution_holding",
+          "display_name": "机构持仓",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+          "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "institution_holding_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "institution_holding_ratio 待填；未填前不得进入评分。"
+            },
+            "fund_holding_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "fund_holding_change 待填；未填前不得进入评分。"
+            },
+            "top10_shareholder_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "top10_shareholder_change 待填；未填前不得进入评分。"
+            },
+            "northbound_or_qfii_status": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "northbound_or_qfii_status 待填；未填前不得进入评分。"
+            },
+            "institution_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "institution_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "institution_holding_ratio",
+              "fund_holding_change",
+              "top10_shareholder_change",
+              "northbound_or_qfii_status",
+              "institution_comment"
+            ]
+          }
+        },
+        {
+          "field_group": "unlock_reduction",
+          "display_name": "解禁/减持",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+          "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "next_unlock_date": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "next_unlock_date 待填；未填前不得进入评分。"
+            },
+            "unlock_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "unlock_ratio 待填；未填前不得进入评分。"
+            },
+            "announced_reduction_plan": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "announced_reduction_plan 待填；未填前不得进入评分。"
+            },
+            "reduction_progress": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "reduction_progress 待填；未填前不得进入评分。"
+            },
+            "unlock_reduction_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "unlock_reduction_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "next_unlock_date",
+              "unlock_ratio",
+              "announced_reduction_plan",
+              "reduction_progress",
+              "unlock_reduction_comment"
+            ]
+          }
+        }
+      ],
+      "front_answer_constraint": "财报/资金证据未达到 evidence_ready 前，前台只能写缺口，不能强化基本面或资金结论。",
+      "overall_ready": false,
+      "overall_score_status": "not_scored_until_evidence_ready"
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641",
+        "profile": "化工材料"
+      },
+      "asset_identity": "W1空白采集模板",
+      "status": "draft",
+      "stock_specific_fields": {
+        "TMA价格兑现": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "TMA价格兑现 待填；未填前不得进入评分。"
+        },
+        "毛利率持续性": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "毛利率持续性 待填；未填前不得进入评分。"
+        },
+        "产能和客户集中度": {
+          "value": null,
+          "source_name": null,
+          "source_url": null,
+          "as_of_date": null,
+          "evidence_status": "missing",
+          "review_status": "pending_review",
+          "note": "产能和客户集中度 待填；未填前不得进入评分。"
+        }
+      },
+      "evidence_groups": [
+        {
+          "field_group": "financial_report",
+          "display_name": "财报摘要",
+          "priority": "P0",
+          "minimum_ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+          "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "report_period": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "report_period 待填；未填前不得进入评分。"
+            },
+            "revenue_yoy": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "revenue_yoy 待填；未填前不得进入评分。"
+            },
+            "net_profit_yoy": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "net_profit_yoy 待填；未填前不得进入评分。"
+            },
+            "gross_margin": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "gross_margin 待填；未填前不得进入评分。"
+            },
+            "operating_cash_flow": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "operating_cash_flow 待填；未填前不得进入评分。"
+            },
+            "debt_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "debt_ratio 待填；未填前不得进入评分。"
+            },
+            "inventory_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "inventory_change 待填；未填前不得进入评分。"
+            },
+            "management_discussion_summary": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "management_discussion_summary 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "report_period",
+              "revenue_yoy",
+              "net_profit_yoy",
+              "gross_margin",
+              "operating_cash_flow"
+            ]
+          }
+        },
+        {
+          "field_group": "valuation",
+          "display_name": "估值位置",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+          "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "pe_ttm": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "pe_ttm 待填；未填前不得进入评分。"
+            },
+            "pb": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "pb 待填；未填前不得进入评分。"
+            },
+            "ps_ttm": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "ps_ttm 待填；未填前不得进入评分。"
+            },
+            "industry_percentile": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "industry_percentile 待填；未填前不得进入评分。"
+            },
+            "valuation_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "valuation_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "pe_ttm",
+              "pb",
+              "ps_ttm",
+              "industry_percentile",
+              "valuation_comment"
+            ]
+          }
+        },
+        {
+          "field_group": "capital_flow",
+          "display_name": "资金流向",
+          "priority": "P0",
+          "minimum_ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+          "front_gap_wording": "资金证据待采集，不能写资金面确认转强。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "main_net_inflow_1d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_1d 待填；未填前不得进入评分。"
+            },
+            "main_net_inflow_5d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_5d 待填；未填前不得进入评分。"
+            },
+            "main_net_inflow_20d": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "main_net_inflow_20d 待填；未填前不得进入评分。"
+            },
+            "turnover_rate": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "turnover_rate 待填；未填前不得进入评分。"
+            },
+            "volume_amount_rank": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "volume_amount_rank 待填；未填前不得进入评分。"
+            },
+            "capital_flow_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "capital_flow_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "main_net_inflow_1d",
+              "main_net_inflow_5d",
+              "main_net_inflow_20d",
+              "turnover_rate",
+              "volume_amount_rank"
+            ]
+          }
+        },
+        {
+          "field_group": "institution_holding",
+          "display_name": "机构持仓",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+          "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "institution_holding_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "institution_holding_ratio 待填；未填前不得进入评分。"
+            },
+            "fund_holding_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "fund_holding_change 待填；未填前不得进入评分。"
+            },
+            "top10_shareholder_change": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "top10_shareholder_change 待填；未填前不得进入评分。"
+            },
+            "northbound_or_qfii_status": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "northbound_or_qfii_status 待填；未填前不得进入评分。"
+            },
+            "institution_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "institution_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "institution_holding_ratio",
+              "fund_holding_change",
+              "top10_shareholder_change",
+              "northbound_or_qfii_status",
+              "institution_comment"
+            ]
+          }
+        },
+        {
+          "field_group": "unlock_reduction",
+          "display_name": "解禁/减持",
+          "priority": "P1",
+          "minimum_ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+          "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。",
+          "score_status": "not_scored_until_evidence_ready",
+          "fields": {
+            "next_unlock_date": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "next_unlock_date 待填；未填前不得进入评分。"
+            },
+            "unlock_ratio": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "unlock_ratio 待填；未填前不得进入评分。"
+            },
+            "announced_reduction_plan": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "announced_reduction_plan 待填；未填前不得进入评分。"
+            },
+            "reduction_progress": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "reduction_progress 待填；未填前不得进入评分。"
+            },
+            "unlock_reduction_comment": {
+              "value": null,
+              "source_name": null,
+              "source_url": null,
+              "as_of_date": null,
+              "evidence_status": "missing",
+              "review_status": "pending_review",
+              "note": "unlock_reduction_comment 待填；未填前不得进入评分。"
+            }
+          },
+          "ready_check": {
+            "ready": false,
+            "reason": "模板为空白草案，尚未采集任何真实证据。",
+            "required_before_scoring": [
+              "next_unlock_date",
+              "unlock_ratio",
+              "announced_reduction_plan",
+              "reduction_progress",
+              "unlock_reduction_comment"
+            ]
+          }
+        }
+      ],
+      "front_answer_constraint": "财报/资金证据未达到 evidence_ready 前，前台只能写缺口，不能强化基本面或资金结论。",
+      "overall_ready": false,
+      "overall_score_status": "not_scored_until_evidence_ready"
+    }
+  ],
+  "summary": {
+    "sample_count": 5,
+    "group_count": 25,
+    "blank_field_count": 220,
+    "ready_count": 0
+  },
+  "input_rules": [
+    "每个字段必须有 value、source_name、source_url、as_of_date、evidence_status、review_status。",
+    "evidence_status 只能从 missing 变为 candidate，再经人工或规则验收变为 evidence_ready。",
+    "未达到 evidence_ready 前不得进入 L3 评分。",
+    "字段可以人工填写或后续只读采集，但本模板不抓取真实数据。"
+  ],
+  "quality_gates": [
+    "五个样本均必须生成采集模板。",
+    "每个样本必须覆盖财报摘要、估值位置、资金流向、机构持仓、解禁/减持。",
+    "所有字段默认 missing，不能预填假数据或示例值冒充证据。",
+    "必须保留 source_name、source_url、as_of_date 和 review_status。",
+    "不得写企业微信入口、正式库、评分结果或交易能力。"
+  ],
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_adapter_write": true,
+    "not_score_write": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_real_data_fetch": true
+  }
+}

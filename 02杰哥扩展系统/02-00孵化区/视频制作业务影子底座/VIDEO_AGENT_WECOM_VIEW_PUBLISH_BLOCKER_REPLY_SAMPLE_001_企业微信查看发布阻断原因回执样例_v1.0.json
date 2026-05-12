@@ -1,0 +1,40 @@
+{
+  "asset_id": "VIDEO_AGENT_WECOM_VIEW_PUBLISH_BLOCKER_REPLY_SAMPLE_001",
+  "version": "v1.0",
+  "asset_type": "wecom_placeholder_reply_sample",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "user_asks_why_publishing_is_blocked",
+  "status": "draft_sample_no_real_send",
+  "input_command_sample": "查看 VF-20260508-003 发布阻断原因",
+  "reply_sample": {
+    "task_id": "VF-20260508-003",
+    "current_decision": "cannot_enter_real_publish",
+    "blocker_reasons": [
+      "final_preview_review_missing_or_failed",
+      "ai_label_confirmation_receipt_missing",
+      "material_authorization_proof_not_archived",
+      "xiaohongshu_and_shipinhao_platform_checks_pending",
+      "publishing_release_confirmation_receipt_missing"
+    ],
+    "review_queues": [
+      "preview_review_queue",
+      "publishing_compliance_review_queue",
+      "material_authorization_review_queue",
+      "platform_difference_review_queue",
+      "gate_consistency_review_queue"
+    ],
+    "next_action": "complete_the_required_receipts_first; after completion, human final confirmation is still required and no auto-publish occurs",
+    "real_system_triggered": false
+  },
+  "fixed_rules": [
+    "Reply must explain specific publishing blockers.",
+    "Reply must list review queues.",
+    "Reply must remind that completion does not auto-publish.",
+    "This sample does not call WeCom APIs or send real messages."
+  ],
+  "boundaries": {
+    "call_wecom_api": false,
+    "send_real_message": false,
+    "trigger_publish": false
+  }
+}

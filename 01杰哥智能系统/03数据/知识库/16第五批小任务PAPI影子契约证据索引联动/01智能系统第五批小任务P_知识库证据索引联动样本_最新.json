@@ -1,0 +1,28 @@
+{
+  "task": "01智能系统第五批小任务P_知识库证据索引联动样本",
+  "generated_at": "2026-05-05 13:03:07",
+  "index_mode": "local_shadow_evidence_index_only",
+  "staleness_threshold_days": 30,
+  "records": [
+    {
+      "evidence_id": "P-EV-001",
+      "title": "01智能API影子契约本地执行边界",
+      "source_path": "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\知识库\\16第五批小任务PAPI影子契约证据索引联动\\01智能系统第五批小任务P_API影子契约_最新.json",
+      "source_type": "local_shadow_contract",
+      "updated_at": "2026-05-05",
+      "age_days": 0,
+      "freshness": "fresh",
+      "claim_digest": "影子契约只允许本地 dry_run，不调用真实外部 API，不写正式库。"
+    },
+    {
+      "evidence_id": "P-EV-002",
+      "title": "旧版知识库证据索引说明",
+      "source_path": "D:/杰哥智能化系统/01杰哥智能系统/03数据/知识库/历史影子证据/旧版索引样本.md",
+      "source_type": "local_shadow_legacy_note",
+      "updated_at": "2026-03-01",
+      "age_days": 65,
+      "freshness": "stale",
+      "claim_digest": "旧索引样本仅可作为历史参考，不能当作当前事实。"
+    }
+  ]
+}

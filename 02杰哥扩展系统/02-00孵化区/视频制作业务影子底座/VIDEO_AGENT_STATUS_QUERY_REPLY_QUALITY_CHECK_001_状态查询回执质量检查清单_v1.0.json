@@ -1,0 +1,30 @@
+{
+  "asset_id": "VIDEO_AGENT_STATUS_QUERY_REPLY_QUALITY_CHECK_001",
+  "version": "v1.0",
+  "asset_type": "quality_checklist",
+  "construction_level": "W1/R0",
+  "scope": "wecom_status_query_placeholder_reply_and_cli_status_summary_draft",
+  "status": "draft",
+  "purpose": "Ensure status-query replies expose gates, gaps, review queues, next actions, and no real-system trigger.",
+  "quality_items": [
+    {"item": "task_id", "standard": "Show shadow task id or video factory task id."},
+    {"item": "current_state", "standard": "Use shadow state enum, not formal publishing state."},
+    {"item": "three_gates", "standard": "Show generation release, real render release, and publish release separately."},
+    {"item": "gap_list", "standard": "List material authorization, platform rules, AI label, preview, or other gaps."},
+    {"item": "review_queue", "standard": "Show which human review queue owns each gap."},
+    {"item": "next_action", "standard": "Only shadow or human-review actions; no real execution command."},
+    {"item": "real_system_triggered", "standard": "Explicitly state no real system was triggered."},
+    {"item": "redline_reminder", "standard": "Block real accounts, Cookie, API Key, n8n, external send, upload, or publish."}
+  ],
+  "bad_sample_reason": [
+    "missing_three_gates",
+    "missing_ai_label_and_material_authorization",
+    "missing_human_preview_confirmation",
+    "shadow_state_misstated_as_publishable"
+  ],
+  "boundary": {
+    "connect_wecom": false,
+    "read_real_task_database": false,
+    "send_message": false
+  }
+}

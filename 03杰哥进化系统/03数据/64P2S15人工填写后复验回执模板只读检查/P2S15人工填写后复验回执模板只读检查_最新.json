@@ -1,0 +1,72 @@
+{
+  "id": "P2S15_POST_MANUAL_FILL_RECHECK_RECEIPT_TEMPLATE_READONLY_CHECK",
+  "generated_at": "2026-05-09 13:20:19",
+  "status": "pass",
+  "summary": {
+    "receipt_count": 4,
+    "passed": 4,
+    "failed": 0,
+    "human_filled": 0,
+    "ready_for_shadow_draft_candidate": 0,
+    "write_target_entry": 0,
+    "auto_generate_business_conclusion": 0,
+    "release_forms": 0,
+    "formal_capability_claim": 0
+  },
+  "recheck_sample_path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\64P2S15人工填写后复验回执模板只读检查\\P2S15人工填写后复验回执空白样例_20260509.json",
+  "checks": [
+    {
+      "recheck_receipt_id": "P2S15-POST-MANUAL-FILL-RECHECK-001",
+      "source_manual_fill_task_id": "P2S14-MANUAL-FILL-TASK-001",
+      "target_line": "tax",
+      "target_entry": "TAX_DAILY_INTAKE_002",
+      "human_filled": false,
+      "ready_for_shadow_draft_candidate": false,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "recheck_receipt_id": "P2S15-POST-MANUAL-FILL-RECHECK-002",
+      "source_manual_fill_task_id": "P2S14-MANUAL-FILL-TASK-002",
+      "target_line": "office_work",
+      "target_entry": "OFFICE_SHADOW_002",
+      "human_filled": false,
+      "ready_for_shadow_draft_candidate": false,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "recheck_receipt_id": "P2S15-POST-MANUAL-FILL-RECHECK-003",
+      "source_manual_fill_task_id": "P2S14-MANUAL-FILL-TASK-003",
+      "target_line": "video_production",
+      "target_entry": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+      "human_filled": false,
+      "ready_for_shadow_draft_candidate": false,
+      "status": "pass",
+      "errors": []
+    },
+    {
+      "recheck_receipt_id": "P2S15-POST-MANUAL-FILL-RECHECK-004",
+      "source_manual_fill_task_id": "P2S14-MANUAL-FILL-TASK-004",
+      "target_line": "shared_policy_evidence",
+      "target_entry": "P2_SHARED_POLICY_READONLY_NEXT_001",
+      "human_filled": false,
+      "ready_for_shadow_draft_candidate": false,
+      "status": "pass",
+      "errors": []
+    }
+  ],
+  "conclusion": "人工填写后复验回执模板检查通过；4 份空白复验回执均保持待人工填写状态，0 项写入口、0 项业务结论、0 项正式放行。",
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

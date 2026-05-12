@@ -1,0 +1,72 @@
+{
+  "sample_id": "R-SAMPLE-02-MISSING-INPUT-DEGRADE",
+  "sample_type": "输入缺失降级",
+  "status": "degraded_missing_input",
+  "input_reference": {
+    "input_id": "missing-input-002",
+    "source_reference_path": "",
+    "source_reference_type": "missing",
+    "source_exists_status": "missing_or_not_declared",
+    "authorization_status": "unknown",
+    "input_scope_note": "未提供可追溯输入引用，禁止推测读取路径，禁止搜索真实业务文档补齐。"
+  },
+  "processing_plan": {
+    "plan_id": "R-PLAN-02",
+    "allowed_shadow_steps": [
+      "记录缺失原因",
+      "生成降级提示",
+      "列出后续人工补齐字段"
+    ],
+    "blocked_real_steps": [
+      "自动扫描素材目录",
+      "读取真实业务文档",
+      "转换或批量转换",
+      "生成真实输出文件"
+    ],
+    "format_intent": "degrade_to_missing_input_notice",
+    "sensitive_check_required": true,
+    "batch_check_required": true
+  },
+  "expected_output": {
+    "shadow_output_package_id": "R-SHADOW-PACKAGE-002",
+    "expected_files": [],
+    "expected_metadata": {
+      "missing_fields": [
+        "source_reference_path",
+        "authorization_status",
+        "input_scope_note"
+      ],
+      "next_manual_action": "由人工补充输入引用和授权状态后重新登记。"
+    },
+    "no_real_output_file": true,
+    "degrade_notice": "输入引用缺失，降级为登记待补齐；不得读取、推测、转换或外发任何真实文档。"
+  },
+  "manual_review": {
+    "review_required": true,
+    "reviewer": "人工复核人待填",
+    "review_time": "人工复核时填写",
+    "review_status": "hold",
+    "review_result": "not_approved_for_real_conversion",
+    "review_signature_required": true
+  },
+  "rollback": {
+    "rollback_required": true,
+    "rollback_mode": "hold_and_request_input_reference",
+    "rollback_target": "missing_input_shadow_record",
+    "rollback_action": "保留缺失登记，不创建输出包，不触碰任何用户文档。",
+    "rollback_confirm_required": true
+  },
+  "action_switches": {
+    "allow_real_conversion": false,
+    "allow_batch_conversion": false,
+    "allow_source_file_write": false,
+    "allow_output_file_generation": false,
+    "allow_delete_move_overwrite": false,
+    "allow_external_send": false,
+    "allow_n8n": false,
+    "allow_wecom_real_message": false,
+    "allow_formal_library_write": false,
+    "allow_broker_api": false,
+    "allow_auto_trade": false
+  }
+}

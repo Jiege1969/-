@@ -1,0 +1,721 @@
+{
+  "name": "五样本财报资金证据补齐路线图",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 09:35:00",
+  "asset_identity": "W1证据补齐路线图",
+  "status": "draft",
+  "source_assets": {
+    "capital_card_summary": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\五样本资金机构解禁证据卡候选_最新.json",
+    "gap_report": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\L3五样本证据缺口优先级报告_最新.json",
+    "capital_card_summary_exists": true,
+    "gap_report_exists": true
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "purpose": "把财报、估值、资金、机构、解禁旧债拆成可采集字段、前台缺口话术和验收条件。",
+  "global_evidence_groups": [
+    {
+      "field_group": "financial_report",
+      "display_name": "财报摘要",
+      "priority": "P0",
+      "fields": [
+        "report_period",
+        "revenue_yoy",
+        "net_profit_yoy",
+        "gross_margin",
+        "operating_cash_flow",
+        "debt_ratio",
+        "inventory_change",
+        "management_discussion_summary"
+      ],
+      "minimum_ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+      "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。"
+    },
+    {
+      "field_group": "valuation",
+      "display_name": "估值位置",
+      "priority": "P1",
+      "fields": [
+        "pe_ttm",
+        "pb",
+        "ps_ttm",
+        "industry_percentile",
+        "valuation_comment"
+      ],
+      "minimum_ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+      "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。"
+    },
+    {
+      "field_group": "capital_flow",
+      "display_name": "资金流向",
+      "priority": "P0",
+      "fields": [
+        "main_net_inflow_1d",
+        "main_net_inflow_5d",
+        "main_net_inflow_20d",
+        "turnover_rate",
+        "volume_amount_rank",
+        "capital_flow_comment"
+      ],
+      "minimum_ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+      "front_gap_wording": "资金证据待采集，不能写资金面确认转强。"
+    },
+    {
+      "field_group": "institution_holding",
+      "display_name": "机构持仓",
+      "priority": "P1",
+      "fields": [
+        "institution_holding_ratio",
+        "fund_holding_change",
+        "top10_shareholder_change",
+        "northbound_or_qfii_status",
+        "institution_comment"
+      ],
+      "minimum_ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+      "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。"
+    },
+    {
+      "field_group": "unlock_reduction",
+      "display_name": "解禁/减持",
+      "priority": "P1",
+      "fields": [
+        "next_unlock_date",
+        "unlock_ratio",
+        "announced_reduction_plan",
+        "reduction_progress",
+        "unlock_reduction_comment"
+      ],
+      "minimum_ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+      "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。"
+    }
+  ],
+  "stock_routes": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428",
+        "profile": "资源/小金属"
+      },
+      "evidence_groups": [
+        {
+          "field_group": "financial_report",
+          "display_name": "财报摘要",
+          "priority": "P0",
+          "fields": [
+            "report_period",
+            "revenue_yoy",
+            "net_profit_yoy",
+            "gross_margin",
+            "operating_cash_flow",
+            "debt_ratio",
+            "inventory_change",
+            "management_discussion_summary"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+          "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "valuation",
+          "display_name": "估值位置",
+          "priority": "P1",
+          "fields": [
+            "pe_ttm",
+            "pb",
+            "ps_ttm",
+            "industry_percentile",
+            "valuation_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+          "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "capital_flow",
+          "display_name": "资金流向",
+          "priority": "P0",
+          "fields": [
+            "main_net_inflow_1d",
+            "main_net_inflow_5d",
+            "main_net_inflow_20d",
+            "turnover_rate",
+            "volume_amount_rank",
+            "capital_flow_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+          "front_gap_wording": "资金证据待采集，不能写资金面确认转强。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "institution_holding",
+          "display_name": "机构持仓",
+          "priority": "P1",
+          "fields": [
+            "institution_holding_ratio",
+            "fund_holding_change",
+            "top10_shareholder_change",
+            "northbound_or_qfii_status",
+            "institution_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+          "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "unlock_reduction",
+          "display_name": "解禁/减持",
+          "priority": "P1",
+          "fields": [
+            "next_unlock_date",
+            "unlock_ratio",
+            "announced_reduction_plan",
+            "reduction_progress",
+            "unlock_reduction_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+          "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        }
+      ],
+      "stock_specific_fields": [
+        "锗业务收入/毛利占比",
+        "锗价变化对毛利弹性",
+        "出口管制后订单或价格兑现证据"
+      ],
+      "front_answer_rule": "财报/资金证据未达到 evidence_ready 前，前台只能写缺口，不能强化基本面或资金结论。",
+      "next_collection_order": [
+        "financial_report",
+        "capital_flow",
+        "institution_holding",
+        "unlock_reduction",
+        "valuation"
+      ]
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466",
+        "profile": "锂资源"
+      },
+      "evidence_groups": [
+        {
+          "field_group": "financial_report",
+          "display_name": "财报摘要",
+          "priority": "P0",
+          "fields": [
+            "report_period",
+            "revenue_yoy",
+            "net_profit_yoy",
+            "gross_margin",
+            "operating_cash_flow",
+            "debt_ratio",
+            "inventory_change",
+            "management_discussion_summary"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+          "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "valuation",
+          "display_name": "估值位置",
+          "priority": "P1",
+          "fields": [
+            "pe_ttm",
+            "pb",
+            "ps_ttm",
+            "industry_percentile",
+            "valuation_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+          "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "capital_flow",
+          "display_name": "资金流向",
+          "priority": "P0",
+          "fields": [
+            "main_net_inflow_1d",
+            "main_net_inflow_5d",
+            "main_net_inflow_20d",
+            "turnover_rate",
+            "volume_amount_rank",
+            "capital_flow_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+          "front_gap_wording": "资金证据待采集，不能写资金面确认转强。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "institution_holding",
+          "display_name": "机构持仓",
+          "priority": "P1",
+          "fields": [
+            "institution_holding_ratio",
+            "fund_holding_change",
+            "top10_shareholder_change",
+            "northbound_or_qfii_status",
+            "institution_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+          "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "unlock_reduction",
+          "display_name": "解禁/减持",
+          "priority": "P1",
+          "fields": [
+            "next_unlock_date",
+            "unlock_ratio",
+            "announced_reduction_plan",
+            "reduction_progress",
+            "unlock_reduction_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+          "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        }
+      ],
+      "stock_specific_fields": [
+        "碳酸锂价格对盈利敏感性",
+        "资产减值或库存影响",
+        "现金流和负债压力"
+      ],
+      "front_answer_rule": "财报/资金证据未达到 evidence_ready 前，前台只能写缺口，不能强化基本面或资金结论。",
+      "next_collection_order": [
+        "financial_report",
+        "capital_flow",
+        "institution_holding",
+        "unlock_reduction",
+        "valuation"
+      ]
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347",
+        "profile": "半导体制造"
+      },
+      "evidence_groups": [
+        {
+          "field_group": "financial_report",
+          "display_name": "财报摘要",
+          "priority": "P0",
+          "fields": [
+            "report_period",
+            "revenue_yoy",
+            "net_profit_yoy",
+            "gross_margin",
+            "operating_cash_flow",
+            "debt_ratio",
+            "inventory_change",
+            "management_discussion_summary"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+          "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "valuation",
+          "display_name": "估值位置",
+          "priority": "P1",
+          "fields": [
+            "pe_ttm",
+            "pb",
+            "ps_ttm",
+            "industry_percentile",
+            "valuation_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+          "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "capital_flow",
+          "display_name": "资金流向",
+          "priority": "P0",
+          "fields": [
+            "main_net_inflow_1d",
+            "main_net_inflow_5d",
+            "main_net_inflow_20d",
+            "turnover_rate",
+            "volume_amount_rank",
+            "capital_flow_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+          "front_gap_wording": "资金证据待采集，不能写资金面确认转强。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "institution_holding",
+          "display_name": "机构持仓",
+          "priority": "P1",
+          "fields": [
+            "institution_holding_ratio",
+            "fund_holding_change",
+            "top10_shareholder_change",
+            "northbound_or_qfii_status",
+            "institution_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+          "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "unlock_reduction",
+          "display_name": "解禁/减持",
+          "priority": "P1",
+          "fields": [
+            "next_unlock_date",
+            "unlock_ratio",
+            "announced_reduction_plan",
+            "reduction_progress",
+            "unlock_reduction_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+          "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        }
+      ],
+      "stock_specific_fields": [
+        "产能利用率",
+        "晶圆代工景气",
+        "研发投入和折旧压力"
+      ],
+      "front_answer_rule": "财报/资金证据未达到 evidence_ready 前，前台只能写缺口，不能强化基本面或资金结论。",
+      "next_collection_order": [
+        "financial_report",
+        "capital_flow",
+        "institution_holding",
+        "unlock_reduction",
+        "valuation"
+      ]
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906",
+        "profile": "供应链服务"
+      },
+      "evidence_groups": [
+        {
+          "field_group": "financial_report",
+          "display_name": "财报摘要",
+          "priority": "P0",
+          "fields": [
+            "report_period",
+            "revenue_yoy",
+            "net_profit_yoy",
+            "gross_margin",
+            "operating_cash_flow",
+            "debt_ratio",
+            "inventory_change",
+            "management_discussion_summary"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+          "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "valuation",
+          "display_name": "估值位置",
+          "priority": "P1",
+          "fields": [
+            "pe_ttm",
+            "pb",
+            "ps_ttm",
+            "industry_percentile",
+            "valuation_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+          "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "capital_flow",
+          "display_name": "资金流向",
+          "priority": "P0",
+          "fields": [
+            "main_net_inflow_1d",
+            "main_net_inflow_5d",
+            "main_net_inflow_20d",
+            "turnover_rate",
+            "volume_amount_rank",
+            "capital_flow_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+          "front_gap_wording": "资金证据待采集，不能写资金面确认转强。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "institution_holding",
+          "display_name": "机构持仓",
+          "priority": "P1",
+          "fields": [
+            "institution_holding_ratio",
+            "fund_holding_change",
+            "top10_shareholder_change",
+            "northbound_or_qfii_status",
+            "institution_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+          "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "unlock_reduction",
+          "display_name": "解禁/减持",
+          "priority": "P1",
+          "fields": [
+            "next_unlock_date",
+            "unlock_ratio",
+            "announced_reduction_plan",
+            "reduction_progress",
+            "unlock_reduction_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+          "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        }
+      ],
+      "stock_specific_fields": [
+        "供应链业务毛利率",
+        "应收/存货周转",
+        "大宗商品价格波动风险"
+      ],
+      "front_answer_rule": "财报/资金证据未达到 evidence_ready 前，前台只能写缺口，不能强化基本面或资金结论。",
+      "next_collection_order": [
+        "financial_report",
+        "capital_flow",
+        "institution_holding",
+        "unlock_reduction",
+        "valuation"
+      ]
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641",
+        "profile": "化工材料"
+      },
+      "evidence_groups": [
+        {
+          "field_group": "financial_report",
+          "display_name": "财报摘要",
+          "priority": "P0",
+          "fields": [
+            "report_period",
+            "revenue_yoy",
+            "net_profit_yoy",
+            "gross_margin",
+            "operating_cash_flow",
+            "debt_ratio",
+            "inventory_change",
+            "management_discussion_summary"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有最近一期财报期间、营收同比、净利同比、现金流和管理层讨论摘要。",
+          "front_gap_wording": "财报摘要待补，不能把基本面写成确认改善。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "valuation",
+          "display_name": "估值位置",
+          "priority": "P1",
+          "fields": [
+            "pe_ttm",
+            "pb",
+            "ps_ttm",
+            "industry_percentile",
+            "valuation_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有当前估值指标和行业分位，且注明口径日期。",
+          "front_gap_wording": "估值分位待补，不能判断便宜或偏贵。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "capital_flow",
+          "display_name": "资金流向",
+          "priority": "P0",
+          "fields": [
+            "main_net_inflow_1d",
+            "main_net_inflow_5d",
+            "main_net_inflow_20d",
+            "turnover_rate",
+            "volume_amount_rank",
+            "capital_flow_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有 1日、5日、20日主力净流入或替代口径，并注明来源。",
+          "front_gap_wording": "资金证据待采集，不能写资金面确认转强。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "institution_holding",
+          "display_name": "机构持仓",
+          "priority": "P1",
+          "fields": [
+            "institution_holding_ratio",
+            "fund_holding_change",
+            "top10_shareholder_change",
+            "northbound_or_qfii_status",
+            "institution_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有最近一期机构持仓或前十大股东变化，且注明报告期。",
+          "front_gap_wording": "机构持仓证据待补，不能写机构持续加仓。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        },
+        {
+          "field_group": "unlock_reduction",
+          "display_name": "解禁/减持",
+          "priority": "P1",
+          "fields": [
+            "next_unlock_date",
+            "unlock_ratio",
+            "announced_reduction_plan",
+            "reduction_progress",
+            "unlock_reduction_comment"
+          ],
+          "current_status": "missing_or_candidate",
+          "score_status": "not_scored_until_evidence_ready",
+          "minimum_ready_condition": "至少有未来 90 日解禁和已公告减持计划的检查结果。",
+          "front_gap_wording": "解禁/减持证据待补，不能写压力已经释放。",
+          "allowed_action_now": "登记待补字段和验收口径",
+          "blocked_action": "自动抓取真实数据、写正式库、改评分或写企业微信入口"
+        }
+      ],
+      "stock_specific_fields": [
+        "TMA价格兑现",
+        "毛利率持续性",
+        "产能和客户集中度"
+      ],
+      "front_answer_rule": "财报/资金证据未达到 evidence_ready 前，前台只能写缺口，不能强化基本面或资金结论。",
+      "next_collection_order": [
+        "financial_report",
+        "capital_flow",
+        "institution_holding",
+        "unlock_reduction",
+        "valuation"
+      ]
+    }
+  ],
+  "summary": {
+    "sample_count": 5,
+    "field_group_count_per_stock": 5,
+    "total_route_items": 25,
+    "p0_group_count_per_stock": 2,
+    "p1_group_count_per_stock": 3
+  },
+  "quality_gates": [
+    "每只股票必须覆盖财报摘要、估值位置、资金流向、机构持仓、解禁/减持。",
+    "每组证据必须有字段清单、最低 ready 条件和前台缺口话术。",
+    "证据未 ready 前 score_status 必须保持 not_scored_until_evidence_ready。",
+    "不得用空值、横杠或模型推断冒充财报/资金结论。",
+    "不得自动抓取真实账号数据、不得外发、不得交易。"
+  ],
+  "formalization_blockers": [
+    {
+      "action": "接入真实行情/财报/资金数据源并写正式库",
+      "risk_level": "W3",
+      "handling": "本轮只登记路线图，不实施；交回总管判断。"
+    },
+    {
+      "action": "把补齐路线写入企业微信短答适配器、正式入口或服务脚本",
+      "risk_level": "W3",
+      "handling": "只登记阻断，不实施。"
+    },
+    {
+      "action": "新增买入、卖出、下单、仓位调整、券商接口或自动交易",
+      "risk_level": "W3",
+      "handling": "禁止新增；股票线保持研究分析系统定位。"
+    }
+  ],
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_adapter_write": true,
+    "not_score_write": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "VIDEO_AGENT_VAI_021_023_R0_SELF_CHECK_20260508",
+  "asset_identity": "video_production_shadow_base_self_check",
+  "stage": "W1_R0",
+  "date": "2026-05-08",
+  "result": "passed",
+  "checked_assets": [
+    {
+      "id": "VAI-021",
+      "name": "asset_relationship_map",
+      "result": "passed",
+      "note": "document relationship map only, not service orchestration"
+    },
+    {
+      "id": "VAI-022",
+      "name": "shadow_trial_io_packet",
+      "result": "passed",
+      "note": "manual shadow trial packet only, no real WeChat entry"
+    },
+    {
+      "id": "VAI-023",
+      "name": "phase_maturity_snapshot",
+      "result": "passed",
+      "note": "R0-L2 maturity snapshot only, not launch permission"
+    }
+  ],
+  "boundary_check": {
+    "modify_formal_video_scripts": false,
+    "call_real_model_api": false,
+    "call_external_video_voice_cover_publish_engine": false,
+    "read_real_assets": false,
+    "generate_image_audio_subtitle_cover_video": false,
+    "render_transcode_edit_compose": false,
+    "upload_publish_external_send": false,
+    "trigger_n8n": false,
+    "real_wechat_send": false,
+    "read_or_save_wechat_credentials": false,
+    "start_or_restart_service": false,
+    "modify_19310_or_19302": false,
+    "write_formal_rule_database": false
+  },
+  "next_shadow_queue": [
+    "desensitized_video_idea_shadow_trial_sample",
+    "vai_shadow_asset_gap_list",
+    "trial_human_review_question_list"
+  ]
+}

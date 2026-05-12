@@ -1,0 +1,98 @@
+{
+  "version": "1.0",
+  "checked_at": "2026-05-08 06:27:05 +08:00",
+  "asset_identity": "wecom_access_layer_demotion_alignment_readonly_record",
+  "risk_level": "W1/R0",
+  "status": "readonly_alignment_record_not_service_change",
+  "authoritative_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\企业微信接入设置",
+  "legacy_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\06企业微信助手系统",
+  "conclusion": "Keep enterprise WeCom capability as access layer / communication adapter / safety gate, not as an independent sixth business system.",
+  "verified_facts": {
+    "authoritative_path_exists": true,
+    "legacy_path_still_exists": true,
+    "new_readme_positioning_is_access_layer_not_business_hub": true,
+    "five_terminals_registered": true,
+    "terminal_division_verify_pass": false,
+    "terminal_division_verify_pass_count": 8,
+    "terminal_division_verify_total": 9,
+    "terminal_division_failure_reason": "stock assistant display template mismatch, not terminal responsibility error",
+    "real_send": false,
+    "n8n": false,
+    "broker_interface": false,
+    "auto_trade": false
+  },
+  "terminal_alignment": [
+    {
+      "remembered_name": "杰哥股票分析助手",
+      "registered_name": "杰哥股票分析助手",
+      "conclusion": "matched",
+      "boundary": "stock research only, no trading"
+    },
+    {
+      "remembered_name": "杰哥的股票分析专家",
+      "registered_name": "杰哥的股票分析专家",
+      "conclusion": "mostly_matched",
+      "boundary": "recommendation and market overview, no real proactive sending"
+    },
+    {
+      "remembered_name": "杰哥系统总管",
+      "registered_name": "杰哥系统管家",
+      "conclusion": "name_corrected",
+      "boundary": "system status, progress, self-check, continuation package"
+    },
+    {
+      "remembered_name": "杰哥视频整理",
+      "registered_name": "杰哥视频助理",
+      "conclusion": "name_corrected",
+      "boundary": "video production, materials, script, storyboard, publish plan, no auto publish"
+    },
+    {
+      "remembered_name": "杰哥工作秘书",
+      "registered_name": "杰哥工作秘书",
+      "conclusion": "mostly_matched",
+      "boundary": "office materials and tax data, tax remains preview/suspended not formal filing"
+    }
+  ],
+  "open_alignment_items": [
+    {
+      "item": "legacy_readme_still_system_wording",
+      "risk": "W1_or_W2_boundary",
+      "suggestion": "mark legacy path as compatibility entry after confirmation"
+    },
+    {
+      "item": "documentation_wait_bridge_vs_connected_conflict",
+      "risk": "W1",
+      "suggestion": "update documentation to connected callback plus real send disabled"
+    },
+    {
+      "item": "shadow_plan_rule_wait_bridge_status",
+      "risk": "W2_likely",
+      "suggestion": "confirm before changing config JSON"
+    },
+    {
+      "item": "generic_reply_prefix_still_jiege_unified_assistant",
+      "risk": "W2",
+      "suggestion": "confirm before changing service entry script"
+    },
+    {
+      "item": "pycache_contains_old_path_strings",
+      "risk": "R0_or_W1",
+      "suggestion": "ignore as cache unless cleanup is explicitly confirmed"
+    },
+    {
+      "item": "stock_assistant_template_verify_one_failure",
+      "risk": "W2",
+      "suggestion": "handle under stock output template verification, not under access layer demotion"
+    }
+  ],
+  "boundary": {
+    "delete_legacy_path": false,
+    "modify_service_script": false,
+    "restart_service_19310": false,
+    "real_send_wecom": false,
+    "trigger_n8n": false,
+    "modify_business_logic": false,
+    "modify_stock_template": false
+  },
+  "self_check": "[自检: 企业微信接入层降级对齐核实已完成, 风险等级: W1/R0, 产物: 企业微信接入层降级对齐核实_20260508.md/json, 边界: 守住了。]"
+}

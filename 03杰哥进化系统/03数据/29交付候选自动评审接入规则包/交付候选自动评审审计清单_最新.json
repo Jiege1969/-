@@ -1,0 +1,104 @@
+{
+  "名称": "03进化系统_交付候选自动评审审计清单",
+  "创建日期": "2026-05-05",
+  "所属系统": "03杰哥进化系统",
+  "任务批次": "并行小任务J",
+  "格式版本": "auto-review-audit-v1",
+  "说明": "所有检查项均为阻断项；本清单只用于交付候选接入自动评审前的本地只读检查。",
+  "检查项": [
+    {
+      "检查项ID": "DCA-001",
+      "名称": "总管唯一中枢",
+      "阻断项": true,
+      "检查逻辑": "center_role必须为rule_deposit_only，second_center_created必须为false。",
+      "失败处理": "阻断接入，退回候选包，要求回收与状态仍交00总管。"
+    },
+    {
+      "检查项ID": "DCA-002",
+      "名称": "不新增OpenClaw/Hermes原件",
+      "阻断项": true,
+      "检查逻辑": "source_originals_added、openclaw_original_added、hermes_original_added、imported_runtime_dependency必须均为false。",
+      "失败处理": "阻断接入，只允许保留抽象规则说明。"
+    },
+    {
+      "检查项ID": "DCA-003",
+      "名称": "任务契约dry_run优先",
+      "阻断项": true,
+      "检查逻辑": "任务契约必填字段完整，dry_run=true，real_action_requested=false，external_service_requested=false。",
+      "失败处理": "阻断接入，补齐任务契约并转为干跑。"
+    },
+    {
+      "检查项ID": "DCA-004",
+      "名称": "Redis升级门槛",
+      "阻断项": true,
+      "检查逻辑": "redis.real_action_queue=false，redis.permission_release=false，redis.upgrade_ready=false，redis.official_progress_source=false。",
+      "失败处理": "阻断接入，Redis只能保留影子映射或缓存候选。"
+    },
+    {
+      "检查项ID": "DCA-005",
+      "名称": "n8n升级门槛",
+      "阻断项": true,
+      "检查逻辑": "n8n.workflow_import、workflow_enabled、workflow_triggered、webhook_called必须均为false。",
+      "失败处理": "阻断接入，保持dry_run_only。"
+    },
+    {
+      "检查项ID": "DCA-006",
+      "名称": "真实动作闸门",
+      "阻断项": true,
+      "检查逻辑": "real_action_gate.enabled=false，multi_gate_release=false；真实动作数量必须为0。",
+      "失败处理": "阻断接入，补充人工审批、复核、回滚和kill switch后仍只进入候选。"
+    },
+    {
+      "检查项ID": "DCA-007",
+      "名称": "股票analysis-only",
+      "阻断项": true,
+      "检查逻辑": "stock_scope必须为analysis_only，broker_api_called/order_created/auto_trade必须为false。",
+      "失败处理": "阻断接入，股票候选只能保留分析和复盘。"
+    },
+    {
+      "检查项ID": "DCA-008",
+      "名称": "并行小任务回收格式统一",
+      "阻断项": true,
+      "检查逻辑": "回收报告必须写入00总管并行回收区，格式版本为parallel-recycle-v1，且md/json双文件齐备。",
+      "失败处理": "阻断接入，按固定字段重写回收报告。"
+    },
+    {
+      "检查项ID": "DCA-009",
+      "名称": "进度不得虚高",
+      "阻断项": true,
+      "检查逻辑": "progress.claim_basis必须为verified_local_artifacts，validator_passed=true，blockers=0。",
+      "失败处理": "阻断接入，不得提高完成度或写系统级进度。"
+    },
+    {
+      "检查项ID": "DCA-010",
+      "名称": "外部服务零触发",
+      "阻断项": true,
+      "检查逻辑": "n8n、企业微信、Redis服务、券商接口、外部网络调用均不得触发。",
+      "失败处理": "阻断接入，撤销真实动作入口并保留审计记录。"
+    },
+    {
+      "检查项ID": "DCA-011",
+      "名称": "安全阻断不按失败处理",
+      "阻断项": true,
+      "检查逻辑": "候选包不得把安全边界关闭解读为任务失败，也不得因此绕过闸门。",
+      "失败处理": "阻断接入，重写验收口径为安全阻断=合规边界。"
+    },
+    {
+      "检查项ID": "DCA-012",
+      "名称": "本地证据齐备",
+      "阻断项": true,
+      "检查逻辑": "规则卡、审计清单、反退化样例、证据JSON和只读验证脚本必须齐备且可解析。",
+      "失败处理": "阻断接入，补齐本地证据后重新只读验收。"
+    }
+  ],
+  "安全边界": {
+    "触发n8n": false,
+    "调用webhook": false,
+    "发送企业微信": false,
+    "写正式库": false,
+    "调用Redis服务": false,
+    "调用券商接口": false,
+    "自动交易": false,
+    "外部网络调用": false
+  }
+}

@@ -1,0 +1,55 @@
+﻿{
+    "名称":  "摸清家底找差距第八轮收口",
+    "生成时间":  "2026-05-06 11:09:04",
+    "原则":  "清债不添新债：证实无依赖的旧项当轮删除；证实当前依赖的项修正/登记，不留坏链。",
+    "已落地":  {
+                "本轮验收报告":  "第31轮旧轮次验收报告已清债删除；验收结论已固化在对应_latest收口报告、当前验收报告_最新和第31轮收口报告。",
+                "五月注记骨架":  "D:\\杰哥智能化系统\\03杰哥进化系统\\月度档案\\2026-05系统档案日注记.md",
+                "只读验收模板":  "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\验收模板.md",
+                "系统档案日模板":  "D:\\杰哥智能化系统\\03杰哥进化系统\\月度档案\\系统档案日月度注记模板_最新.md",
+                "暗角扫描清理记录":  "第30轮原始暗角扫描流水已清债删除；hosts、WSL、启动项、防火墙和第八轮清理结论已固化在暗角落只读扫描报告_最新与摸清家底找差距第八轮收口_最新。/json",
+                "系统档案日规则":  "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\34系统档案日\\系统档案日规则_最新.md"
+            },
+    "已清理":  [
+                "Windows 防火墙：删除 12 条指向不存在 Ollama/Python/旧企业微信路径的入站规则。",
+                "Windows 防火墙：删除 2 条指向 F:\\娱乐\\游戏\\steam\\Steam.exe 的 Steam 旧路径规则，保留 F:\\steam 有效规则。",
+                "用户 Path：删除 D:\\Miniconda3 系列 5 项和 Python310 系列 2 项死路径。",
+                "用户环境变量：删除不存在的 HF_HOME=D:\\huggingface_cache。",
+                "注册表启动项：删除 AMDNoiseSuppression、OneDriveSetup、RunLoader 三个指向不存在 exe 的 Run 项。",
+                "WSL crontab：删除指向 /mnt/d/00杰哥系统总管 旧路径的 ollama_health.sh 与 wsl_boot.sh 两行。",
+                "WSL systemd：删除未启用且引用旧路径的 stock-http-server.service、stock-bot.service。"
+            ],
+    "已修复":  "WSL systemd：历史口径已覆盖；第八轮曾恢复 openclaw-gateway.service，第十轮已确认重复并删除。",
+    "证实保留":  [
+                 "Windows 计划任务：8 个 杰哥智能化系统_* 任务脚本路径均存在，保留。",
+                 "hosts：仅 localhost 与 Docker Desktop 映射，保留。",
+                 "WSL crontab：历史口径已覆盖；第十轮已删除两条 net-auto cron 与 /opt/jiege-net-auto。",
+                 "WSL systemd：历史口径已覆盖；第十轮后仅 openclaw.service enabled/active，openclaw-gateway.service not-found/inactive。",
+                 "Docker/Python/企业微信/Steam 当前有效防火墙规则路径存在，保留。"
+             ],
+    "安全边界":  {
+                 "自动交易":  false,
+                 "发送企业微信":  false,
+                 "删除业务数据":  false,
+                 "调用券商接口":  false,
+                 "触发n8n":  false
+             },
+    "最终只读验收":  {
+                   "n8n":  "200",
+                   "Ollama":  "200",
+                   "Redis":  "PONG",
+                   "Docker":  "3 容器 Up，命名卷 0",
+                   "D盘旧根目录":  "D:\\01杰哥智能系统 不存在",
+                   "注册表死启动项":  "AMDNoiseSuppression/OneDriveSetup/RunLoader 剩余 0",
+                   "防火墙死规则":  "清理范围内剩余 0",
+                   "环境变量死路径":  "Miniconda3/Python310/huggingface_cache 剩余 0，HF_HOME_User=null",
+                   "WSLCrontab":  "历史口径已覆盖：第十轮后 jiege 用户无 crontab，/opt/jiege-net-auto absent；旧 /mnt/d/00... 命中 0",
+                   "WSLSystemd":  "历史口径已覆盖：第十轮后仅 openclaw.service enabled/active；stock旧service文件不存在；重复 gateway service 文件不存在",
+                   "关键JSON":  "第八轮收口与验收报告均可解析",
+                   "文档编码":  "验收模板/系统档案日规则/面板/接续包控制字符0，坏字节标记0",
+                   "稳定中台只读巡检":  "3/3 通过，D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\稳定中台\\stable-hub-readonly-patrol-20260506-111143.json",
+                   "稳定中台巡检闭环":  "8/8 通过，D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\稳定中台\\stable-hub-patrol-verify-20260506-111143.json"
+               },
+    "第30轮原始扫描流水清债说明":  "第30轮原始暗角扫描流水已清债删除；hosts、WSL、启动项、防火墙和第八轮清理结论已固化在暗角落只读扫描报告_最新与摸清家底找差距第八轮收口_最新。",
+    "第31轮旧验收报告清债说明":  "第31轮旧轮次验收报告已清债删除；验收结论已固化在对应_latest收口报告、当前验收报告_最新和第31轮收口报告。"
+}

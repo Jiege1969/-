@@ -1,0 +1,60 @@
+﻿{
+    "title":  "摸清家底找差距第十轮收口",
+    "updated_at":  "2026-05-06 11:45:34",
+    "principle":  "清债不添新债：证实无依赖当轮删除；证实当前依赖登记为资产；误判即时纠偏。",
+    "cleaned":  [
+                    "迁移 Codex scratch 下 3 组并行扫描证据到 D 盘暗角扫描证据目录，scratch 根目录清零。",
+                    "删除 WSL 旧 jiege-boot-self-check.service 与 broken ollama.service wants 链接。",
+                    "删除 WSL 用户级重复 openclaw-gateway.service 及 default.target.wants 链接；保留 active 的 openclaw.service 作为唯一 OpenClaw gateway 入口。",
+                    "删除 jiege 用户 crontab 中两条 /opt/jiege-net-auto/auto-proxy-switch.sh 分钟级任务；删除 /opt/jiege-net-auto；确认生成的代理 profile 与 Docker proxy drop-in 均不存在。",
+                    "删除 /home/jiege/.openclaw.backup.20260426_0755 旧整目录快照；删除 .openclaw 下所有 .bak/.backup/n8n_backup 配置碎片，复核剩余 0。",
+                    "取消 WSL auditd.service 自启并 reset-failed；不卸载系统包，只消除 WSL 不适配导致的 failed 噪声。"
+                ],
+    "retained":  [
+                     "openclaw.service：enabled + active，当前 OpenClaw gateway 正式入口。",
+                     "WSL localhost:11434 Ollama：OpenClaw openclaw.json 当前 baseUrl 依赖，保留。",
+                     "wecom-forwarder.service：enabled + active，监听 127.0.0.1:18888，未停止、未触发。",
+                     "Docker v3 三容器：jiege_v3_ollama、jiege_v3_redis、jiege_v3_n8n，继续作为主线中台容器。",
+                     "第十轮并行扫描原始证据目录：13 文件，904529 bytes，作为本轮可复核证据保留。"
+                 ],
+    "validation":  {
+                       "n8n_health":  200,
+                       "ollama_29134":  200,
+                       "redis":  "PONG",
+                       "docker_named_volumes":  0,
+                       "old_root_D_01_exists":  false,
+                       "n8n_controlled_enable":  "true; workflows=5; all inactive",
+                       "stable_patrol":  "通过 3, 失败 0",
+                       "stable_verify":  "通过 8, 失败 0",
+                       "codex_scratch_items":  0,
+                       "evidence_files":  13,
+                       "evidence_bytes":  904529,
+                       "wsl_openclaw":  "openclaw.service enabled/active; openclaw-gateway.service not-found/inactive",
+                       "wsl_crontab_jiege":  "no crontab for jiege",
+                       "wsl_netauto":  "absent",
+                       "wsl_openclaw_backup_fragments":  0,
+                       "wsl_old_unit_files":  0,
+                       "wsl_wecom_forwarder":  "enabled/active; 127.0.0.1:18888 listening",
+                       "wsl_ollama_11434":  "listening; retained as OpenClaw dependency",
+                       "wsl_failed_units":  0,
+                       "auditd":  "disabled, package not removed"
+                   },
+    "reports":  {
+                    "report_md":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\摸清家底找差距第十轮收口_最新.md",
+                    "report_json":  "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\摸清家底找差距第十轮收口_最新.json",
+                    "acceptance_md":  "第31轮旧轮次验收报告已清债删除；验收结论已固化在对应_latest收口报告、当前验收报告_最新和第31轮收口报告。",
+                    "acceptance_json":  "第31轮旧轮次验收报告已清债删除；验收结论已固化在对应_latest收口报告、当前验收报告_最新和第31轮收口报告。",
+                    "evidence_dir":  "第30轮原始暗角证据目录已清债删除；判断结论、删除对象、验收结果和安全边界已固化在对应_latest收口报告。"
+                },
+    "safety":  [
+                   "未触发 n8n workflow/webhook",
+                   "未发送企业微信消息",
+                   "未调用券商接口",
+                   "未自动交易",
+                   "未执行 docker prune",
+                   "未删除当前运行数据目录"
+               ],
+    "remaining_gap":  "本轮范围内无待观察尾巴；若继续第十一轮，建议转向文档口径互相覆盖/旧报告矛盾清债。",
+    "第30轮原始证据清债说明":  "第30轮原始暗角证据目录已清债删除；判断结论、删除对象、验收结果和安全边界已固化在对应_latest收口报告。",
+    "第31轮旧验收报告清债说明":  "第31轮旧轮次验收报告已清债删除；验收结论已固化在对应_latest收口报告、当前验收报告_最新和第31轮收口报告。"
+}

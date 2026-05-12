@@ -1,0 +1,16 @@
+{
+  "name": "财报资金缺口主动暴露规则验收结果",
+  "generated_at": "2026-05-08 10:37:07",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\财报资金缺口主动暴露规则验收_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "stock_count": 5,
+    "receipt_count": 25,
+    "ready_count": 0,
+    "score_allowed_count": 0,
+    "front_gap_required_count": 5
+  },
+  "auto_continue_policy": "通过后继续执行第二批下一小闭环；不等待用户确认。"
+}

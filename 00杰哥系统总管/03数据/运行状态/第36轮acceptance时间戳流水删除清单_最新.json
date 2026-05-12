@@ -1,0 +1,175 @@
+﻿{
+    "施工轮次":  "第36轮",
+    "施工名":  "acceptance时间戳流水清债",
+    "删除目录":  "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\acceptance",
+    "删除判定":  "仅保留v3-acceptance-最新.json；历史timestamp stdout/stderr/json为重复验收流水，无当前链路必须依赖。运行v3总体验收.ps1已改为只写最新，避免复发。",
+    "删除文件数":  45587,
+    "删除大小MB":  22.85,
+    "删除前文件数":  45588,
+    "删除后文件数":  1,
+    "删除后时间戳文件数":  0,
+    "保留文件":  "v3-acceptance-最新.json",
+    "主要模式":  [
+                 {
+                     "Count":  293,
+                     "Name":  "prebuild_check-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  293,
+                     "Name":  "prebuild_check-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  293,
+                     "Name":  "v3-acceptance-\u003cts\u003e.json"
+                 },
+                 {
+                     "Count":  293,
+                     "Name":  "read_only_status_check-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  293,
+                     "Name":  "read_only_status_check-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  293,
+                     "Name":  "annotation_check-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  293,
+                     "Name":  "agent_brain_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  293,
+                     "Name":  "agent_brain_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  293,
+                     "Name":  "annotation_check-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  292,
+                     "Name":  "prebuild_check_\u003cts\u003e.log"
+                 },
+                 {
+                     "Count":  292,
+                     "Name":  "prebuild_check_\u003cts\u003e.json"
+                 },
+                 {
+                     "Count":  287,
+                     "Name":  "knowledge_base_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  287,
+                     "Name":  "knowledge_base_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  285,
+                     "Name":  "stock_base_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  285,
+                     "Name":  "stock_base_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  277,
+                     "Name":  "video_base_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  277,
+                     "Name":  "video_base_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  275,
+                     "Name":  "work_base_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  275,
+                     "Name":  "work_base_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  268,
+                     "Name":  "workflow_base_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  268,
+                     "Name":  "workflow_base_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  267,
+                     "Name":  "message_outlet_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  267,
+                     "Name":  "message_outlet_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  266,
+                     "Name":  "openclaw_gateway_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  266,
+                     "Name":  "openclaw_gateway_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  265,
+                     "Name":  "n8n_import_review_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  265,
+                     "Name":  "n8n_import_review_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  264,
+                     "Name":  "real_dependency_readonly_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  264,
+                     "Name":  "real_dependency_readonly_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  262,
+                     "Name":  "evolution_base_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  262,
+                     "Name":  "evolution_base_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  253,
+                     "Name":  "wework_assistant_base_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  253,
+                     "Name":  "wework_assistant_base_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  250,
+                     "Name":  "content_processing_base_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  250,
+                     "Name":  "content_processing_base_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  239,
+                     "Name":  "low_risk_gray_access_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  239,
+                     "Name":  "low_risk_gray_access_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  215,
+                     "Name":  "old_system_protection_verify-\u003cts\u003e.err.log"
+                 },
+                 {
+                     "Count":  215,
+                     "Name":  "old_system_protection_verify-\u003cts\u003e.out.log"
+                 },
+                 {
+                     "Count":  214,
+                     "Name":  "first_batch_n8n_controlled_verify-\u003cts\u003e.out.log"
+                 }
+             ],
+    "生成时间":  "2026-05-06 18:10:25"
+}

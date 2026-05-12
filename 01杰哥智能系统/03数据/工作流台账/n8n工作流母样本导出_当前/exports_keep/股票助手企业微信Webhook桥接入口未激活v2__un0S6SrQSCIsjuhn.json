@@ -1,0 +1,26 @@
+{
+  "id": "un0S6SrQSCIsjuhn",
+  "name": "股票助手企业微信Webhook桥接入口未激活v2",
+  "active": 0,
+  "triggerCount": 0,
+  "createdAt": "2026-04-28 16:14:34.232",
+  "updatedAt": "2026-04-28 16:14:34.232",
+  "isArchived": 0,
+  "versionCounter": 1,
+  "description": null,
+  "node_count": 4,
+  "node_types": [
+    "n8n-nodes-base.webhook",
+    "n8n-nodes-base.httpRequest",
+    "n8n-nodes-base.respondToWebhook",
+    "n8n-nodes-base.stickyNote"
+  ],
+  "node_names": [
+    "股票桥接Webhook入口",
+    "调用股票桥接入口19302",
+    "返回桥接结果",
+    "安全边界说明"
+  ],
+  "webhook_like": true,
+  "wecom_like": true
+}

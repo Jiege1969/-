@@ -1,0 +1,123 @@
+{
+  "date": "2026-05-07",
+  "market": "cn",
+  "status": "confirmed",
+  "data_sources": [
+    {
+      "name": "东方财富A股全市场行情列表",
+      "type": "quote",
+      "status": "success"
+    },
+    {
+      "name": "东方财富行业板块行情",
+      "type": "sector",
+      "status": "success"
+    },
+    {
+      "name": "东方财富指数日线",
+      "type": "index",
+      "status": "success"
+    }
+  ],
+  "risk_appetite": {
+    "score": 0.73,
+    "up_down_ratio": 1.8023,
+    "up_count": 3246,
+    "down_count": 1801,
+    "limit_up_count": 153,
+    "limit_down_count": 14,
+    "total_amount": 31436.15,
+    "evidence": [
+      "全市场样本5528只，上涨3246只、下跌1801只，涨跌家数比1.8023。",
+      "涨停约153只，跌停约14只。",
+      "全A样本成交额合计约31436.15亿元。"
+    ],
+    "missing": []
+  },
+  "sector_heat": {
+    "top_sectors": [
+      {
+        "name": "通信线缆及配套",
+        "change_pct": 6.65,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "国际工程",
+        "change_pct": 5.35,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "机床工具",
+        "change_pct": 5.27,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "激光设备",
+        "change_pct": 5.27,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "文字媒体",
+        "change_pct": 4.9,
+        "source": "东方财富公开板块行情"
+      }
+    ],
+    "bottom_sectors": [
+      {
+        "name": "教育运营及其他",
+        "change_pct": -7.97,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "氨纶",
+        "change_pct": -5.54,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "氮肥",
+        "change_pct": -4.57,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "动力煤",
+        "change_pct": -4.5,
+        "source": "东方财富公开板块行情"
+      },
+      {
+        "name": "煤化工",
+        "change_pct": -4.28,
+        "source": "东方财富公开板块行情"
+      }
+    ],
+    "hot_theme": "通信线缆及配套",
+    "evidence": [
+      "行业板块热度来自东方财富公开板块行情涨跌幅排序。"
+    ],
+    "missing": []
+  },
+  "size_style": {
+    "big_small_ratio": 0.2474,
+    "large_index_change_pct": 0.48,
+    "small_index_change_pct": 1.94,
+    "dominant": "small",
+    "evidence": [
+      "沪深300涨跌幅0.48%，国证2000涨跌幅1.94%，相对差-1.46。"
+    ],
+    "missing": []
+  },
+  "liquidity": {
+    "total_amount_rank_percentile": 0.9833,
+    "activity_description": "指数口径两市成交额近60日分位为0.9833。",
+    "evidence": [
+      "上证指数与深证成指成交额合计约31439.56亿元，近60日分位0.9833。"
+    ],
+    "missing": []
+  },
+  "final_adaptation_score": 16,
+  "moderate_coefficient": 1.06,
+  "notes_for_stock_type": "该表为全市场通用风格底表。单股L3评分仍需结合个股行业标签计算行业适配，不能仅凭市场强弱直接提高个股结论。",
+  "overall_summary": "市场风险偏好0.73，热点板块为通信线缆及配套，大小盘风格为small，流动性分位为0.9833。",
+  "missing_summary": "无关键缺口，可作为confirmed市场风格证据。",
+  "generated_at": "2026-05-08T06:55:30+08:00",
+  "last_reviewed_at": "2026-05-08"
+}

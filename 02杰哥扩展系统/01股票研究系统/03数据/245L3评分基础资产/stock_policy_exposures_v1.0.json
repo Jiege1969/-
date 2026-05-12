@@ -1,0 +1,20 @@
+[
+  {
+    "event_id": "POL-2023-001",
+    "stock_code": "002428",
+    "stock_name": "云南锗业",
+    "exposure": 0.95,
+    "exposure_direction": "受益",
+    "exposure_reason": "云南锗业主营业务与锗材料、锗产品高度相关，是A股中锗主题辨识度较高的公司。镓、锗相关物项出口管制提高锗资源战略属性和市场关注度，对其议价能力和估值预期具有较强映射。",
+    "last_reviewed_at": "2026-05-07"
+  },
+  {
+    "event_id": "POL-2023-001",
+    "stock_code": "600497",
+    "stock_name": "驰宏锌锗",
+    "exposure": 0.55,
+    "exposure_direction": "受益",
+    "exposure_reason": "公司名称和业务中包含锗相关资源属性，但具体收益弹性需结合锗业务收入占比、产量、成本和价格传导能力复核，暂按中等偏高暴露度处理。",
+    "last_reviewed_at": "2026-05-07"
+  }
+]

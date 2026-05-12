@@ -1,0 +1,46 @@
+{
+  "id": "CONTROLLED_TRIAL_BLOCKER_FIX_LIST_20260508",
+  "generated_at": "2026-05-08",
+  "asset_identity": "manager_side_w1_r0_controlled_trial_blocker_fix_queue",
+  "source": "controlled_trial_validation_feedback",
+  "formal_launch_approval": false,
+  "overall_status": "controlled_trial_delivery_closed",
+  "delivery_statement": {
+    "allowed": "enterprise_wechat_controlled_trial_version",
+    "not_allowed": "formal_online_or_real_actions"
+  },
+  "blockers": [
+    {
+      "priority": "P0",
+      "id": "TAX-MATCH-SOFTWARE-VAT-REFUND-20260508",
+      "system": "tax_shadow_base_and_work_secretary_entry",
+      "problem": "software product VAT immediate refund was matched to R&D expense super deduction",
+      "expected_fix": "software product VAT immediate refund must route to the software product immediate refund advisor chain; if uncertain, ask clarification instead of wrong mapping",
+      "risk_level": "W1_R0",
+      "handoff_file": "税收事项匹配纠偏卡_软件产品即征即退_20260508.md/json",
+      "closeout_evidence": "税收入口映射验收样例_软件产品即征即退_20260508.md/json",
+      "status": "closed_for_w1_r0_delivery"
+    },
+    {
+      "priority": "P1",
+      "id": "VIDEO-SCRIPT-QUALITY-IDIOM-STORY-20260508",
+      "system": "video_production_shadow_base",
+      "problem": "idiom story task returns generic template instead of actual idiom content",
+      "expected_fix": "idiom story output must include idiom, meaning, story outline, draft script, storyboard hints and review questions",
+      "risk_level": "W1_R0",
+      "handoff_file": "VIDEO_SCRIPT_QUALITY_FIX_CARD_001_成语故事内容质量纠偏卡_v1.0.md/json",
+      "closeout_evidence": "VIDEO_SCRIPT_SAMPLE_001_质量验收记录_20260508.md/json",
+      "status": "closed_for_w1_r0_delivery"
+    }
+  ],
+  "blocked_actions": {
+    "modify_wecom_service_script": false,
+    "restart_19310_or_19302": false,
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "write_formal_tax_database": false,
+    "write_formal_video_rules": false,
+    "formal_tax_opinion": false,
+    "video_render_upload_publish": false
+  }
+}

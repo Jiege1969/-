@@ -1,0 +1,40 @@
+{
+  "asset_id": "VIDEO_AGENT_AI_LABEL_CONFIRMATION_RECEIPT_TEMPLATE_001",
+  "version": "v1.0",
+  "asset_type": "human_confirmation_receipt_template",
+  "construction_level": "W1/R0",
+  "scope": "pre_publish_ai_generated_content_label_confirmation",
+  "status": "draft_template",
+  "purpose": "Record whether a human confirmed AI-generated content labeling before publishing, without operating platforms.",
+  "fields": [
+    "receipt_id",
+    "task_id",
+    "platform",
+    "ai_label_required",
+    "ai_label_confirmed",
+    "confirmation_method",
+    "confirmer",
+    "confirmation_time",
+    "remaining_gap",
+    "publish_gate_effect",
+    "real_system_triggered"
+  ],
+  "blank_receipt": {
+    "receipt_id": "to_be_filled",
+    "task_id": "to_be_filled",
+    "platform": "to_be_filled",
+    "ai_label_required": "pending_confirmation",
+    "ai_label_confirmed": "pending_confirmation",
+    "confirmation_method": "to_be_filled",
+    "confirmer": "to_be_filled",
+    "confirmation_time": "to_be_filled",
+    "remaining_gap": "to_be_filled",
+    "publish_gate_effect": "does_not_independently_release_publishing",
+    "real_system_triggered": false
+  },
+  "fixed_rules": [
+    "AI label confirmation is one pre-publish condition and does not equal publishing release.",
+    "If AI label is not confirmed, publish commands must be refused.",
+    "This template must not trigger platform operations."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "政策事件库字段化补齐样例验收结果",
+  "generated_at": "2026-05-08 13:30:36",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "sample_count": 3,
+    "ready_source_count": 0
+  }
+}

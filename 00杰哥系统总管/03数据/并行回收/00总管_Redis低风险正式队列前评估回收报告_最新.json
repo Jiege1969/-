@@ -1,0 +1,85 @@
+{
+  "report_id": "00总管_Redis低风险正式队列前评估回收报告_最新",
+  "task": "并行小任务E：Redis Streams低风险正式队列前评估包",
+  "checked_at": "2026-05-05 14:10:00 +08:00",
+  "owner": "00总管",
+  "scope": {
+    "write_scope": [
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\任务契约\\RedisStreams低风险正式队列前评估包_最新.json",
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\任务契约\\RedisStreams低风险正式队列前评估包_最新.md",
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\验证Redis低风险正式队列前评估包.py",
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_Redis低风险正式队列前评估回收报告_最新.md",
+      "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_Redis低风险正式队列前评估回收报告_最新.json"
+    ],
+    "parallel_worker_files_touched": false,
+    "existing_files_reverted": false
+  },
+  "artifacts": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\任务契约\\RedisStreams低风险正式队列前评估包_最新.json",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\任务契约\\RedisStreams低风险正式队列前评估包_最新.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\验证Redis低风险正式队列前评估包.py",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_Redis低风险正式队列前评估回收报告_最新.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\并行回收\\00总管_Redis低风险正式队列前评估回收报告_最新.json"
+  ],
+  "coverage": {
+    "stream_fields": true,
+    "consumer_group": true,
+    "ack": true,
+    "pending": true,
+    "retry": true,
+    "dead_letter": true,
+    "idempotency": true,
+    "sqlite_ledger": true,
+    "failure_recovery": true,
+    "gpu_queueing": true,
+    "resource_assessment": true,
+    "formal_upgrade_gates": true
+  },
+  "state_assessment": {
+    "from": "shadow_mapping_only",
+    "to": "low_risk_formal_candidate",
+    "formal_queue_enabled": false,
+    "redis_connection_allowed": false,
+    "service_start_allowed": false,
+    "conclusion": "静态评估包完成，可作为低风险正式队列候选设计输入；不得直接启用正式队列。"
+  },
+  "validation": {
+    "command": "python \"D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\验证Redis低风险正式队列前评估包.py\"",
+    "mode": "read_only_local_parse",
+    "result": "PASS",
+    "total_checks": 28,
+    "failed_checks": 0,
+    "external_services_touched": false
+  },
+  "blocked_actions": [
+    "连接真实Redis",
+    "启动服务",
+    "触发n8n",
+    "发送企业微信",
+    "写正式库",
+    "调用券商接口",
+    "自动交易",
+    "外部网络请求"
+  ],
+  "remaining_gates_before_formal_enablement": [
+    "本地shadow replay不少于100条且幂等冲突不重复执行",
+    "pending接管、三次重试、dead-letter归档和人工回收演练通过",
+    "SQLite台账字段、事务边界、状态流转、receipt路径抽样审计通过",
+    "CPU/内存/磁盘/GPU/PENDING观测阈值确认",
+    "人工变更单与回滚计划签字后再创建真实stream/group"
+  ],
+  "safety_boundary": {
+    "connect_real_redis": false,
+    "start_service": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "call_broker_api": false,
+    "auto_trade": false
+  },
+  "blockers": {
+    "delivery_blockers": [],
+    "safety_blockers": [],
+    "parallel_conflict_risk": "low"
+  }
+}

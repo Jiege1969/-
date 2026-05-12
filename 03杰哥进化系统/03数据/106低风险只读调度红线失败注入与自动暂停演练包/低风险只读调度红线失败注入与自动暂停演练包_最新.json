@@ -1,0 +1,31 @@
+{
+  "name": "低风险只读调度红线失败注入与自动暂停演练包",
+  "generated_at": "2026-05-08 20:12:33",
+  "readonly_text_simulation_only": true,
+  "metrics": {
+    "injection_count": 6,
+    "supervisor_item_count": 6
+  },
+  "safety_confirmation": {
+    "commands_executed": false,
+    "external_call": false,
+    "reload_service": false,
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "connect_broker": false,
+    "trade": false,
+    "login_tax_bureau": false,
+    "connect_finance_tax_software": false,
+    "write_formal_rule": false,
+    "promote_to_formal_rule": false,
+    "real_video_publish": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false
+  },
+  "artifacts": {
+    "injection_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\106低风险只读调度红线失败注入与自动暂停演练包\\失败注入样例_最新.json",
+    "injection_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\106低风险只读调度红线失败注入与自动暂停演练包\\失败注入样例_最新.md",
+    "supervisor_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\106低风险只读调度红线失败注入与自动暂停演练包\\总管确认事项清单_最新.json",
+    "supervisor_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\106低风险只读调度红线失败注入与自动暂停演练包\\总管确认事项清单_最新.md"
+  }
+}

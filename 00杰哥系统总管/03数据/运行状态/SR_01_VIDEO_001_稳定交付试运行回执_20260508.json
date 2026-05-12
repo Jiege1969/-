@@ -1,0 +1,25 @@
+{
+  "task_id": "SR-01-VIDEO-001",
+  "batch": "SR-01",
+  "execution_time": "2026-05-08 19:12:00 +08:00",
+  "business_line": "视频影子工厂",
+  "risk_level": "W1/R0",
+  "input_summary": "成语故事脚本质量验收样例",
+  "source_asset": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\VIDEO_SCRIPT_SAMPLE_001_质量验收记录_20260508.md",
+  "status": "completed",
+  "redline_hit": false,
+  "output_summary": "掩耳盗铃高质量脚本样例验收通过，文本草案可进入人工复核，不代表生成或发布放行。",
+  "evidence": ["9 个必过项通过", "5 个一票否决项未命中"],
+  "missing": ["目标时长", "画面风格", "素材/配乐/字体/音效授权"],
+  "confidence": "文本草案质量置信度高；真实制作和发布不评价",
+  "boundary_flags": {
+    "wecom_real_send": false,
+    "trigger_n8n": false,
+    "write_formal_db": false,
+    "modify_service_script": false,
+    "restart_19310_19302": false,
+    "read_real_materials": false,
+    "video_render_upload_publish": false
+  },
+  "needs_manager_ruling": false
+}

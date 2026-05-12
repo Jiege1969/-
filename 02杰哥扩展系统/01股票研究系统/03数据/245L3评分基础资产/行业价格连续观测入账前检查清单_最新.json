@@ -1,0 +1,224 @@
+{
+  "name": "行业价格连续观测入账前检查清单",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 10:41:00",
+  "asset_identity": "W1行业价格入账前检查清单",
+  "status": "shadow_checklist",
+  "source_assets": {
+    "receipt_template": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\行业价格观测人工填报回执模板_最新.json",
+    "receipt_template_exists": true,
+    "receipt_validation": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\行业价格观测人工填报回执模板验收_最新.json",
+    "receipt_validation_passed": true
+  },
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "not_adapter_write": true,
+  "not_score_write": true,
+  "not_real_data_fetch": true,
+  "checklists": [
+    {
+      "stock": {
+        "name": "云南锗业",
+        "code": "sz002428"
+      },
+      "product_code": "germanium_ingot",
+      "product_name": "锗锭",
+      "indicator_type": "metal_price",
+      "current_observation_count": 0,
+      "target_min_observation_count": 5,
+      "entry_gates": {
+        "public_or_authorized_source": false,
+        "observation_date_complete": false,
+        "value_or_direction_complete": false,
+        "unit_or_caliber_complete": false,
+        "source_name_complete": false,
+        "source_url_complete": false,
+        "checked_at_complete": false,
+        "same_caliber_continuity": false,
+        "minimum_5_points_for_trend": false,
+        "minimum_20_points_for_strong_trend": false,
+        "human_review_passed": false
+      },
+      "entry_decision": {
+        "can_enter_observation_ledger": false,
+        "can_enter_trend_evidence": false,
+        "can_enter_score": false,
+        "blocking_reason": "行业价格/景气观测点不足或字段未复核，不能写趋势确认，也不能进入L3加分。"
+      },
+      "front_wording": {
+        "when_less_than_5": "行业价格/景气观测点不足，不能写趋势确认。",
+        "when_5_to_19": "已有连续观测基础，可写弱趋势参考，但不能写强趋势。",
+        "when_20_plus": "连续观测较充分，可结合财报和公司暴露度写趋势影响，但仍需后台保留来源链。"
+      }
+    },
+    {
+      "stock": {
+        "name": "天齐锂业",
+        "code": "sz002466"
+      },
+      "product_code": "battery_grade_lithium_carbonate",
+      "product_name": "电池级碳酸锂",
+      "indicator_type": "chemical_material_price",
+      "current_observation_count": 1,
+      "target_min_observation_count": 5,
+      "entry_gates": {
+        "public_or_authorized_source": false,
+        "observation_date_complete": false,
+        "value_or_direction_complete": false,
+        "unit_or_caliber_complete": false,
+        "source_name_complete": false,
+        "source_url_complete": false,
+        "checked_at_complete": false,
+        "same_caliber_continuity": false,
+        "minimum_5_points_for_trend": false,
+        "minimum_20_points_for_strong_trend": false,
+        "human_review_passed": false
+      },
+      "entry_decision": {
+        "can_enter_observation_ledger": false,
+        "can_enter_trend_evidence": false,
+        "can_enter_score": false,
+        "blocking_reason": "行业价格/景气观测点不足或字段未复核，不能写趋势确认，也不能进入L3加分。"
+      },
+      "front_wording": {
+        "when_less_than_5": "行业价格/景气观测点不足，不能写趋势确认。",
+        "when_5_to_19": "已有连续观测基础，可写弱趋势参考，但不能写强趋势。",
+        "when_20_plus": "连续观测较充分，可结合财报和公司暴露度写趋势影响，但仍需后台保留来源链。"
+      }
+    },
+    {
+      "stock": {
+        "name": "华虹公司",
+        "code": "sh688347"
+      },
+      "product_code": "wafer_foundry_cycle_indicator",
+      "product_name": "晶圆代工景气指标",
+      "indicator_type": "industry_cycle_indicator",
+      "current_observation_count": 0,
+      "target_min_observation_count": 5,
+      "entry_gates": {
+        "public_or_authorized_source": false,
+        "observation_date_complete": false,
+        "value_or_direction_complete": false,
+        "unit_or_caliber_complete": false,
+        "source_name_complete": false,
+        "source_url_complete": false,
+        "checked_at_complete": false,
+        "same_caliber_continuity": false,
+        "minimum_5_points_for_trend": false,
+        "minimum_20_points_for_strong_trend": false,
+        "human_review_passed": false
+      },
+      "entry_decision": {
+        "can_enter_observation_ledger": false,
+        "can_enter_trend_evidence": false,
+        "can_enter_score": false,
+        "blocking_reason": "行业价格/景气观测点不足或字段未复核，不能写趋势确认，也不能进入L3加分。"
+      },
+      "front_wording": {
+        "when_less_than_5": "行业价格/景气观测点不足，不能写趋势确认。",
+        "when_5_to_19": "已有连续观测基础，可写弱趋势参考，但不能写强趋势。",
+        "when_20_plus": "连续观测较充分，可结合财报和公司暴露度写趋势影响，但仍需后台保留来源链。"
+      }
+    },
+    {
+      "stock": {
+        "name": "浙商中拓",
+        "code": "sz000906"
+      },
+      "product_code": "bulk_supply_chain_cycle_indicator",
+      "product_name": "大宗商品/供应链景气指标",
+      "indicator_type": "business_cycle_indicator",
+      "current_observation_count": 0,
+      "target_min_observation_count": 5,
+      "entry_gates": {
+        "public_or_authorized_source": false,
+        "observation_date_complete": false,
+        "value_or_direction_complete": false,
+        "unit_or_caliber_complete": false,
+        "source_name_complete": false,
+        "source_url_complete": false,
+        "checked_at_complete": false,
+        "same_caliber_continuity": false,
+        "minimum_5_points_for_trend": false,
+        "minimum_20_points_for_strong_trend": false,
+        "human_review_passed": false
+      },
+      "entry_decision": {
+        "can_enter_observation_ledger": false,
+        "can_enter_trend_evidence": false,
+        "can_enter_score": false,
+        "blocking_reason": "行业价格/景气观测点不足或字段未复核，不能写趋势确认，也不能进入L3加分。"
+      },
+      "front_wording": {
+        "when_less_than_5": "行业价格/景气观测点不足，不能写趋势确认。",
+        "when_5_to_19": "已有连续观测基础，可写弱趋势参考，但不能写强趋势。",
+        "when_20_plus": "连续观测较充分，可结合财报和公司暴露度写趋势影响，但仍需后台保留来源链。"
+      }
+    },
+    {
+      "stock": {
+        "name": "正丹股份",
+        "code": "sz300641"
+      },
+      "product_code": "trimellitic_anhydride_tma",
+      "product_name": "偏苯三酸酐/TMA",
+      "indicator_type": "chemical_product_price",
+      "current_observation_count": 0,
+      "target_min_observation_count": 5,
+      "entry_gates": {
+        "public_or_authorized_source": false,
+        "observation_date_complete": false,
+        "value_or_direction_complete": false,
+        "unit_or_caliber_complete": false,
+        "source_name_complete": false,
+        "source_url_complete": false,
+        "checked_at_complete": false,
+        "same_caliber_continuity": false,
+        "minimum_5_points_for_trend": false,
+        "minimum_20_points_for_strong_trend": false,
+        "human_review_passed": false
+      },
+      "entry_decision": {
+        "can_enter_observation_ledger": false,
+        "can_enter_trend_evidence": false,
+        "can_enter_score": false,
+        "blocking_reason": "行业价格/景气观测点不足或字段未复核，不能写趋势确认，也不能进入L3加分。"
+      },
+      "front_wording": {
+        "when_less_than_5": "行业价格/景气观测点不足，不能写趋势确认。",
+        "when_5_to_19": "已有连续观测基础，可写弱趋势参考，但不能写强趋势。",
+        "when_20_plus": "连续观测较充分，可结合财报和公司暴露度写趋势影响，但仍需后台保留来源链。"
+      }
+    }
+  ],
+  "global_entry_rules": [
+    "每条观测必须包含日期、数值或方向、单位或口径、来源名称、来源URL、核验时间。",
+    "不足5个连续、同口径、可复核观测点，不得写趋势确认。",
+    "5到19个连续观测点，只能写弱趋势参考。",
+    "20个及以上连续观测点，才允许考虑强趋势表述，但仍需结合财报和公司业务暴露度。",
+    "媒体摘要只能作为线索，不能替代原始价格来源。",
+    "未通过人工复核前，can_enter_score必须为false。"
+  ],
+  "summary": {
+    "stock_count": 5,
+    "required_observation_points": 25,
+    "existing_observation_points": 1,
+    "trend_ready_count": 0,
+    "score_allowed_count": 0,
+    "ledger_entry_allowed_count": 0
+  },
+  "safety_boundary": {
+    "not_n8n": true,
+    "not_external_send": true,
+    "not_service_restart": true,
+    "not_19310": true,
+    "not_real_account": true,
+    "not_formal_database_write": true,
+    "not_formal_config": true,
+    "not_entrypoint": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

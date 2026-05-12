@@ -1,0 +1,54 @@
+{
+  "card_id": "VIDEO_P2_REVIEW_CHAIN_NEXT_001",
+  "generated_at": "2026-05-09",
+  "business_line": "video_production_shadow",
+  "status": "blank_waiting_for_review_materials",
+  "nature": "shadow_review_chain_continuation",
+  "not_release_ready": true,
+  "review_object": {
+    "related_project": "待填写",
+    "script_source": "待填写",
+    "storyboard_source": "待填写",
+    "asset_source": "待填写",
+    "platform_rule_source": "待填写",
+    "release_target": "待填写",
+    "human_review_required": true
+  },
+  "review_chain": [
+    {
+      "step": "script_review",
+      "status": "待复核",
+      "pass_condition": "主题、事实、表达、原创性、风险点均有人工确认"
+    },
+    {
+      "step": "storyboard_review",
+      "status": "待复核",
+      "pass_condition": "分镜与脚本一致，画面表达不误导"
+    },
+    {
+      "step": "asset_authorization_review",
+      "status": "待复核",
+      "pass_condition": "素材来源、授权、可用范围清楚"
+    },
+    {
+      "step": "platform_rule_review",
+      "status": "待复核",
+      "pass_condition": "平台限制、敏感表达、标识要求已确认"
+    },
+    {
+      "step": "release_gate",
+      "status": "closed",
+      "pass_condition": "仅人工明确放行后才可进入发布前流程"
+    }
+  ],
+  "forbidden_actions": {
+    "render_final_video": false,
+    "upload_video": false,
+    "publish_video": false,
+    "call_platform_api": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false
+  },
+  "next_step": "有真实脚本、分镜、素材和平台规则后填卡；没有材料时只记录缺口"
+}

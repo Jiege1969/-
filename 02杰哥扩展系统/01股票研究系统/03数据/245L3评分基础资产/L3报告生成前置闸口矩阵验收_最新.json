@@ -1,0 +1,17 @@
+{
+  "name": "L3报告生成前置闸口矩阵验收",
+  "generated_at": "2026-05-08 10:28:16",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\L3报告生成前置闸口矩阵_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "source_count": 6,
+    "source_passed_count": 6,
+    "gate_count": 8,
+    "formal_entry_allowed": false,
+    "real_wecom_allowed": false,
+    "auto_weight_change_allowed": false
+  },
+  "auto_continue_policy": "通过后继续执行第二批下一小闭环；不等待用户确认。"
+}

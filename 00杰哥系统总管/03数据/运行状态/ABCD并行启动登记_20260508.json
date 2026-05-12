@@ -1,0 +1,53 @@
+{
+  "asset_name": "ABCD并行启动登记",
+  "generated_at": "2026-05-08",
+  "asset_identity": "总管侧 W1/R0 并行启动登记",
+  "status": "dispatched",
+  "user_copy_paste_required": false,
+  "lines": [
+    {
+      "line": "A",
+      "role": "税收政策顾问试用线",
+      "agent": "Einstein",
+      "agent_id": "019e0745-9e16-7231-a99e-a99d70a2b2fb",
+      "write_prefix": "PAR_TAX_20260508_*",
+      "status": "dispatched"
+    },
+    {
+      "line": "B",
+      "role": "股票 L3 证据补齐线",
+      "agent": "Dirac",
+      "agent_id": "019e0745-9e61-7533-8e30-cb278d8c5615",
+      "write_prefix": "PAR_STOCK_20260508_*",
+      "status": "dispatched"
+    },
+    {
+      "line": "C",
+      "role": "视频影子工厂复核线",
+      "agent": "Hilbert",
+      "agent_id": "019e0745-9e98-7be2-bd8c-3dbe473ee403",
+      "write_prefix": "PAR_VIDEO_20260508_*",
+      "status": "dispatched"
+    },
+    {
+      "line": "D",
+      "role": "企业微信接入层核查线",
+      "agent": "Newton",
+      "agent_id": "019e0745-9eb6-7f10-a355-3f1996bdf05e",
+      "write_prefix": "PAR_WECOM_20260508_*",
+      "status": "dispatched"
+    }
+  ],
+  "boundaries": {
+    "modify_current_panel": false,
+    "modify_handoff_package": false,
+    "modify_wecom_service_script": false,
+    "trigger_n8n": false,
+    "wecom_real_send": false,
+    "write_formal_db": false,
+    "login_real_system": false,
+    "trade": false,
+    "tax_filing": false,
+    "video_render_upload_publish": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "asset_id": "VIDEO_AGENT_HUMAN_RECEIPT_ARCHIVE_SAMPLE_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_archive_sample_not_real_archive_database",
+  "purpose": "Show how human review receipts can be archived in the shadow layer with traceability.",
+  "fields": [
+    "receipt_id",
+    "related_shadow_task_id",
+    "reviewer",
+    "review_time",
+    "decision_type",
+    "decision_note",
+    "related_draft_assets",
+    "next_shadow_action"
+  ],
+  "decision_type_enum": [
+    "accept_shadow",
+    "revise_shadow",
+    "block_redline",
+    "need_more_info"
+  ],
+  "archive_rules": [
+    "human_receipt_only_changes_shadow_task_status",
+    "receipt_does_not_release_real_generation_render_publish_or_send",
+    "transferable_experience_goes_to_evolution_candidate_not_formal_rule"
+  ],
+  "real_system_triggered": {
+    "real_database_write": false,
+    "real_user_read": false,
+    "historical_audit_overwrite": false
+  }
+}

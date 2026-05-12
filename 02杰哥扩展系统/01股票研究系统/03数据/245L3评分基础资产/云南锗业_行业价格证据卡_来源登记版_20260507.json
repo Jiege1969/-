@@ -1,0 +1,88 @@
+{
+  "名称": "云南锗业行业价格证据卡",
+  "版本": "2026-05-07-shadow-v1",
+  "生成日期": "2026-05-07",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "影子证据卡",
+  "状态": "source_registered",
+  "not_formal_config": true,
+  "not_entrypoint": true,
+  "not_external_send": true,
+  "stock": {
+    "name": "云南锗业",
+    "code": "002428",
+    "display_code": "sz002428",
+    "industry": "稀有金属/半导体材料",
+    "stock_type": "资源股"
+  },
+  "tracked_products": [
+    {
+      "product_name": "锗锭",
+      "product_code": "germanium_ingot",
+      "relevance_to_stock": "云南锗业锗产品暴露度高，锗价变化会影响产品售价、利润预期和政策事件兑现强度。",
+      "exposure_weight": 0.95,
+      "direction_rule": "锗价持续上行通常对公司收入和利润预期偏正向；锗价回落或无趋势会削弱政策利好兑现。"
+    }
+  ],
+  "source_status": {
+    "source_registered": true,
+    "price_value_available": false,
+    "trend_available": false,
+    "spread_available": false,
+    "formal_chain_status": "not_integrated"
+  },
+  "sources": [
+    {
+      "source_name": "上海有色网SMM-锗价格页",
+      "source_url": "https://hq.smm.cn/h5/germanium-price",
+      "source_type": "公开价格页",
+      "coverage": "锗锭价格线索",
+      "source_role": "行情线索",
+      "checked_at": "2026-05-07"
+    },
+    {
+      "source_name": "上海有色网SMM-小金属价格方法论",
+      "source_url": "https://www.smm.cn/evt/methodology/pdf/minor-metals.pdf",
+      "source_type": "价格方法论",
+      "coverage": "小金属价格采价和口径说明",
+      "source_role": "方法论核验",
+      "checked_at": "2026-05-07"
+    }
+  ],
+  "price_observations": [],
+  "industry_price_shadow_score": {
+    "score": 2,
+    "max_score": 10,
+    "score_reason": "来源入口已登记，但尚未形成合法价格观测和5日/20日趋势，只能作为待入账线索。",
+    "positive_evidence": [
+      "已明确云南锗业需要跟踪锗锭价格。",
+      "已登记SMM锗价格入口和小金属价格方法论。"
+    ],
+    "negative_evidence": [
+      "尚未写入具体价格、单位、日期和趋势。",
+      "尚未与财报利润、政策事件和市场风格交叉验证。"
+    ],
+    "confidence": "low"
+  },
+  "front_output_compression": {
+    "one_sentence": "锗价来源已登记但价格尚未入账，暂不能把锗价作为提高关注等级的依据。",
+    "user_facing_reason": "系统已经知道云南锗业应跟踪锗锭价格，但还没有形成可复核的价格趋势。",
+    "do_not_say": [
+      "锗价已经支撑强结论",
+      "锗价确认反转",
+      "行业价格已充分支撑重点关注"
+    ]
+  },
+  "missing": [
+    "锗锭具体价格、日期、单位尚未入账。",
+    "锗价5日和20日趋势尚未计算。",
+    "锗价与云南锗业财报利润弹性的映射尚未复核。"
+  ],
+  "safety_boundary": {
+    "only_for_research": true,
+    "not_investment_advice": true,
+    "not_buy_sell_signal": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true
+  }
+}

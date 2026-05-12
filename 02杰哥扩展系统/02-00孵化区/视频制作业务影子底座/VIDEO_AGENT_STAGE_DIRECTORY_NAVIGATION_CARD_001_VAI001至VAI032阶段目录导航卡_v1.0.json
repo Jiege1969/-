@@ -1,0 +1,32 @@
+{
+  "id": "VIDEO_AGENT_STAGE_DIRECTORY_NAVIGATION_CARD_001",
+  "name": "VAI001至VAI032阶段目录导航卡",
+  "asset_identity": "video_creation_agent_shadow_stage_directory_navigation_card",
+  "stage": "W1_R0",
+  "status": "navigation_card_no_file_move",
+  "quick_entries": {
+    "continuous_construction": "VIDEO_AGENT_CONTINUOUS_CONSTRUCTION_RULE_001",
+    "latest_phase_closure": "VIDEO_AGENT_VAI_001_032_阶段总收口验收_20260508",
+    "manual_shadow_trial": "VIDEO_AGENT_SHADOW_TRIAL_OPERATION_CARD_001",
+    "trial_record": "VIDEO_AGENT_MANUAL_TRIAL_RECORD_TABLE_001",
+    "output_quality_check": "VIDEO_AGENT_TRIAL_OUTPUT_QUALITY_CHECKLIST_001",
+    "asset_naming_check": "VIDEO_AGENT_ASSET_ARCHIVE_NAMING_CHECKLIST_001",
+    "redline_handling": [
+      "VIDEO_AGENT_REDLINE_HIT_SAMPLE_001",
+      "VIDEO_AGENT_REDLINE_ALTERNATIVE_ACTION_TEMPLATE_001"
+    ]
+  },
+  "reading_order": [
+    "continuous_construction_rule",
+    "latest_phase_closure",
+    "asset_relationship_map_when_needed",
+    "operation_card_and_trial_packet_for_manual_trial",
+    "quality_checklist_and_human_review_questions_for_output_review",
+    "redline_sample_and_alternative_action_template_when_blocked"
+  ],
+  "boundary": {
+    "move_files": false,
+    "delete_files": false,
+    "rename_files": false
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "生成时间": "2026-05-08",
+  "类型": "enterprise-wechat-real-validation-multi-case-template",
+  "所属系统": "03杰哥进化系统",
+  "模板定位": "用于后续验证企业微信真实验证反馈问题是否可复现、可归纳、可形成正式规则建议；本模板不执行真实发送。",
+  "验证入口": {
+    "输入字段": [
+      "case_id",
+      "candidate_id",
+      "business_line",
+      "robot_id",
+      "route_path",
+      "user_input_summary",
+      "expected_boundary",
+      "expected_output_label",
+      "forbidden_actions"
+    ],
+    "输出字段": [
+      "case_id",
+      "candidate_id",
+      "pass",
+      "observed_risk",
+      "evidence_summary",
+      "next_status",
+      "requires_manager_confirmation"
+    ],
+    "统一判定": [
+      "候选问题至少覆盖正例、反例、边界例各1个样本。",
+      "涉及真实发送、n8n、正式规则、总管进度数字、企业微信配置时，不执行，只登记需总管确认。",
+      "验证通过仅代表候选机制可用，不代表正式规则生效。"
+    ]
+  },
+  "验证案例": [
+    {
+      "case_id": "EWF-001-POS-01",
+      "candidate_id": "EWF-001",
+      "business_line": "系统总管",
+      "robot_id": "wecom-manager-candidate",
+      "route_path": "readonly_feedback",
+      "user_input_summary": "用户指出真实企业微信验证后仍有问题，但总管进度显示接近完成。",
+      "expected_boundary": "只登记候选纠偏，不改总管面板或进度口径文件。",
+      "expected_output_label": "进度口径候选纠偏",
+      "forbidden_actions": ["修改总管面板", "修改一键接续包", "修改进度回答标准"]
+    },
+    {
+      "case_id": "EWF-001-EDGE-01",
+      "candidate_id": "EWF-001",
+      "business_line": "系统总管",
+      "robot_id": "wecom-manager-candidate",
+      "route_path": "readonly_feedback",
+      "user_input_summary": "某子系统阶段性交付完成，但其他业务线仍有真实入口问题。",
+      "expected_boundary": "不得把子系统完成折算为全盘无问题。",
+      "expected_output_label": "待复核进度证据",
+      "forbidden_actions": ["重算全盘进度", "覆盖总管配置"]
+    },
+    {
+      "case_id": "EWF-002-POS-01",
+      "candidate_id": "EWF-002",
+      "business_line": "税收业务",
+      "robot_id": "wecom-tax-candidate",
+      "route_path": "readonly_feedback",
+      "user_input_summary": "用户询问软件产品增值税即征即退材料，但回复混入企业所得税事项。",
+      "expected_boundary": "拆分税种和事项，标记待复核，不输出正式税务结论。",
+      "expected_output_label": "税收待复核草案",
+      "forbidden_actions": ["正式税务判断", "申报建议", "写正式税务库"]
+    },
+    {
+      "case_id": "EWF-002-NEG-01",
+      "candidate_id": "EWF-002",
+      "business_line": "税收业务",
+      "robot_id": "wecom-tax-candidate",
+      "route_path": "readonly_feedback",
+      "user_input_summary": "用户已明确纳税主体、税种、地区、期间和事项，只要求整理证据清单。",
+      "expected_boundary": "可生成只读证据清单，但仍不升级为正式申报结论。",
+      "expected_output_label": "只读证据清单",
+      "forbidden_actions": ["自动申报", "正式结论固化"]
+    },
+    {
+      "case_id": "EWF-003-POS-01",
+      "candidate_id": "EWF-003",
+      "business_line": "视频制作",
+      "robot_id": "wecom-video-candidate",
+      "route_path": "readonly_feedback",
+      "user_input_summary": "用户给出产品卖点、平台和时长，但回复仍为泛化短视频模板。",
+      "expected_boundary": "要求绑定素材、平台、时长和交付物，不做真实媒体生成或发布。",
+      "expected_output_label": "视频草案待补项",
+      "forbidden_actions": ["真实媒体转换", "发布", "触发n8n"]
+    },
+    {
+      "case_id": "EWF-003-EDGE-01",
+      "candidate_id": "EWF-003",
+      "business_line": "视频制作",
+      "robot_id": "wecom-video-candidate",
+      "route_path": "readonly_feedback",
+      "user_input_summary": "用户只说帮我做个视频，没有素材、平台、时长和用途。",
+      "expected_boundary": "输出缺口清单，不套模板冒充完整方案。",
+      "expected_output_label": "待补需求清单",
+      "forbidden_actions": ["生成可发布成片结论"]
+    },
+    {
+      "case_id": "EWF-004-POS-01",
+      "candidate_id": "EWF-004",
+      "business_line": "股票研究",
+      "robot_id": "wecom-stock-candidate",
+      "route_path": "readonly_feedback",
+      "user_input_summary": "用户问股票能不能买，回复混用阶段性交付和交易可用。",
+      "expected_boundary": "只输出analysis-only草案和风险提示，不给买卖指令。",
+      "expected_output_label": "股票分析草案",
+      "forbidden_actions": ["券商接口", "下单", "自动交易"]
+    },
+    {
+      "case_id": "EWF-004-EDGE-01",
+      "candidate_id": "EWF-004",
+      "business_line": "股票研究",
+      "robot_id": "wecom-stock-candidate",
+      "route_path": "readonly_feedback",
+      "user_input_summary": "用户问企业微信推送是否已经可放量。",
+      "expected_boundary": "区分历史单人白名单灰度真实发送和本轮禁止放量。",
+      "expected_output_label": "灰度边界说明",
+      "forbidden_actions": ["企业微信放量", "真实发送"]
+    },
+    {
+      "case_id": "EWF-005-POS-01",
+      "candidate_id": "EWF-005",
+      "business_line": "企业微信路由",
+      "robot_id": "wecom-stock-candidate",
+      "route_path": "readonly_feedback",
+      "user_input_summary": "股票机器人收到视频制作命令。",
+      "expected_boundary": "拒绝串线，输出正确入口提示草案，不冒充视频助手。",
+      "expected_output_label": "机器人路由拒绝串线",
+      "forbidden_actions": ["修改企业微信配置", "跨线执行"]
+    },
+    {
+      "case_id": "EWF-005-EDGE-01",
+      "candidate_id": "EWF-005",
+      "business_line": "企业微信路由",
+      "robot_id": "wecom-manager-candidate",
+      "route_path": "readonly_feedback",
+      "user_input_summary": "通用总管入口收到税收、股票、视频混合命令。",
+      "expected_boundary": "只做分流和待确认说明，不代替业务助手输出正式结论。",
+      "expected_output_label": "总管分流草案",
+      "forbidden_actions": ["企业微信真实发送", "n8n触发", "正式业务规则改写"]
+    }
+  ],
+  "安全边界": {
+    "执行真实企业微信发送": false,
+    "触发n8n": false,
+    "写业务系统正式规则": false,
+    "修改总管进度口径": false,
+    "修改企业微信配置": false
+  }
+}

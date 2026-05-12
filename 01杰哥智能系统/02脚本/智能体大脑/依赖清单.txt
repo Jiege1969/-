@@ -1,0 +1,10 @@
+# Name: agent-brain-requirements.txt
+# Purpose: Python dependencies for the v3 agent brain test service.
+# Trigger: Installed into .venv before starting the test service.
+# Dependencies: Python pip inside the local venv.
+# Owner system: 01 core system.
+# Safety: Install only inside D:\杰哥智能化系统\01杰哥智能系统\02脚本\智能体大脑\.venv.
+# Change log: 2026-04-26 created for alpha test service.
+
+fastapi==0.115.6
+uvicorn[standard]==0.32.1

@@ -1,0 +1,552 @@
+{
+  "名称": "视频真实渲染白名单申请只读完整度检查",
+  "检查模式": "readonly_completeness_check_only",
+  "检查结果": [
+    {
+      "检查项": "材料清单JSON存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请材料清单_最新.json"
+    },
+    {
+      "检查项": "材料清单MD存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请材料清单_最新.md"
+    },
+    {
+      "检查项": "完整度判定报告JSON存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请材料完整度判定报告_最新.json"
+    },
+    {
+      "检查项": "完整度判定报告MD存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请材料完整度判定报告_最新.md"
+    },
+    {
+      "检查项": "缺口补齐待办JSON存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请缺口补齐待办_最新.json"
+    },
+    {
+      "检查项": "缺口补齐待办MD存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请缺口补齐待办_最新.md"
+    },
+    {
+      "检查项": "总包JSON存在",
+      "通过": true,
+      "详情": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请材料完整度判定包_最新.json"
+    },
+    {
+      "检查项": "材料清单覆盖八项必备材料",
+      "通过": true,
+      "详情": [
+        "环境识别",
+        "素材授权",
+        "输出目录隔离",
+        "失败回滚",
+        "证据留存",
+        "人工签收",
+        "试运行范围",
+        "发布隔离"
+      ]
+    },
+    {
+      "检查项": "材料清单不少于八项",
+      "通过": true,
+      "详情": 8
+    },
+    {
+      "检查项": "完整度报告覆盖八项必备材料",
+      "通过": true,
+      "详情": [
+        "环境识别",
+        "素材授权",
+        "输出目录隔离",
+        "失败回滚",
+        "证据留存",
+        "人工签收",
+        "试运行范围",
+        "发布隔离"
+      ]
+    },
+    {
+      "检查项": "完整度报告仅使用 pass/pending/block",
+      "通过": true,
+      "详情": [
+        {
+          "item_id": "environment_identification",
+          "name": "环境识别",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有部分材料，但仍需人工确认或补齐。"
+        },
+        {
+          "item_id": "material_authorization",
+          "name": "素材授权",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有部分材料，但仍需人工确认或补齐。"
+        },
+        {
+          "item_id": "output_directory_isolation",
+          "name": "输出目录隔离",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+        },
+        {
+          "item_id": "failure_rollback",
+          "name": "失败回滚",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+        },
+        {
+          "item_id": "evidence_retention",
+          "name": "证据留存",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+        },
+        {
+          "item_id": "manual_signoff",
+          "name": "人工签收",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+        },
+        {
+          "item_id": "trial_scope",
+          "name": "试运行范围",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+        },
+        {
+          "item_id": "publish_isolation",
+          "name": "发布隔离",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+        }
+      ]
+    },
+    {
+      "检查项": "完整度报告逐项包含 pass/pending/block 布尔字段",
+      "通过": true,
+      "详情": [
+        {
+          "item_id": "environment_identification",
+          "name": "环境识别",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有部分材料，但仍需人工确认或补齐。"
+        },
+        {
+          "item_id": "material_authorization",
+          "name": "素材授权",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有部分材料，但仍需人工确认或补齐。"
+        },
+        {
+          "item_id": "output_directory_isolation",
+          "name": "输出目录隔离",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+        },
+        {
+          "item_id": "failure_rollback",
+          "name": "失败回滚",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+        },
+        {
+          "item_id": "evidence_retention",
+          "name": "证据留存",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+        },
+        {
+          "item_id": "manual_signoff",
+          "name": "人工签收",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+        },
+        {
+          "item_id": "trial_scope",
+          "name": "试运行范围",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+        },
+        {
+          "item_id": "publish_isolation",
+          "name": "发布隔离",
+          "status": "pending",
+          "pass": false,
+          "pending": true,
+          "block": false,
+          "human_confirm_required": true,
+          "判定说明": "已有引用材料；仍需人工签收后才能进入下一阶段。"
+        }
+      ]
+    },
+    {
+      "检查项": "缺口补齐待办不自动补齐",
+      "通过": true,
+      "详情": [
+        {
+          "todo_id": "TODO-01",
+          "item_id": "environment_identification",
+          "name": "环境识别",
+          "status": "pending",
+          "需要人工提供或确认": "人工确认候选环境与当前机器/账号范围一致。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-02",
+          "item_id": "material_authorization",
+          "name": "素材授权",
+          "status": "pending",
+          "需要人工提供或确认": "人工提供或签收授权证明，不由脚本补齐。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-03",
+          "item_id": "output_directory_isolation",
+          "name": "输出目录隔离",
+          "status": "pending",
+          "需要人工提供或确认": "人工确认隔离目录和清理规则。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-04",
+          "item_id": "failure_rollback",
+          "name": "失败回滚",
+          "status": "pending",
+          "需要人工提供或确认": "人工确认回滚边界和责任人。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-05",
+          "item_id": "evidence_retention",
+          "name": "证据留存",
+          "status": "pending",
+          "需要人工提供或确认": "人工确认留存期限与审计口径。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-06",
+          "item_id": "manual_signoff",
+          "name": "人工签收",
+          "status": "pending",
+          "需要人工提供或确认": "人工最终签收；当前不得让白名单生效。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-07",
+          "item_id": "trial_scope",
+          "name": "试运行范围",
+          "status": "pending",
+          "需要人工提供或确认": "人工确认试运行范围，不默认扩展。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-08",
+          "item_id": "publish_isolation",
+          "name": "发布隔离",
+          "status": "pending",
+          "需要人工提供或确认": "人工确认发布链路仍关闭。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        }
+      ]
+    },
+    {
+      "检查项": "缺口补齐待办列出人工提供或确认事项",
+      "通过": true,
+      "详情": [
+        {
+          "todo_id": "TODO-01",
+          "item_id": "environment_identification",
+          "name": "环境识别",
+          "status": "pending",
+          "需要人工提供或确认": "人工确认候选环境与当前机器/账号范围一致。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-02",
+          "item_id": "material_authorization",
+          "name": "素材授权",
+          "status": "pending",
+          "需要人工提供或确认": "人工提供或签收授权证明，不由脚本补齐。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-03",
+          "item_id": "output_directory_isolation",
+          "name": "输出目录隔离",
+          "status": "pending",
+          "需要人工提供或确认": "人工确认隔离目录和清理规则。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-04",
+          "item_id": "failure_rollback",
+          "name": "失败回滚",
+          "status": "pending",
+          "需要人工提供或确认": "人工确认回滚边界和责任人。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-05",
+          "item_id": "evidence_retention",
+          "name": "证据留存",
+          "status": "pending",
+          "需要人工提供或确认": "人工确认留存期限与审计口径。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-06",
+          "item_id": "manual_signoff",
+          "name": "人工签收",
+          "status": "pending",
+          "需要人工提供或确认": "人工最终签收；当前不得让白名单生效。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-07",
+          "item_id": "trial_scope",
+          "name": "试运行范围",
+          "status": "pending",
+          "需要人工提供或确认": "人工确认试运行范围，不默认扩展。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        },
+        {
+          "todo_id": "TODO-08",
+          "item_id": "publish_isolation",
+          "name": "发布隔离",
+          "status": "pending",
+          "需要人工提供或确认": "人工确认发布链路仍关闭。",
+          "不得自动补齐": true,
+          "补齐后动作": "重新运行只读完整度检查；仍需总管人工确认，且不得自动生效白名单。"
+        }
+      ]
+    },
+    {
+      "检查项": "材料清单红线字段保持关闭且需要总管人工确认",
+      "通过": true,
+      "详情": {
+        "whitelist_effective": false,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "publish": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false,
+        "requires_supervisor_confirmation": true
+      }
+    },
+    {
+      "检查项": "材料清单error_count=0",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查项": "完整度判定报告红线字段保持关闭且需要总管人工确认",
+      "通过": true,
+      "详情": {
+        "whitelist_effective": false,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "publish": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false,
+        "requires_supervisor_confirmation": true
+      }
+    },
+    {
+      "检查项": "完整度判定报告error_count=0",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查项": "缺口补齐待办红线字段保持关闭且需要总管人工确认",
+      "通过": true,
+      "详情": {
+        "whitelist_effective": false,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "publish": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false,
+        "requires_supervisor_confirmation": true
+      }
+    },
+    {
+      "检查项": "缺口补齐待办error_count=0",
+      "通过": true,
+      "详情": 0
+    },
+    {
+      "检查项": "总包红线字段保持关闭且需要总管人工确认",
+      "通过": true,
+      "详情": {
+        "whitelist_effective": false,
+        "can_enter_real_render": false,
+        "real_render": false,
+        "generate_real_video": false,
+        "publish": false,
+        "upload_publish": false,
+        "call_money_printer_turbo": false,
+        "execute_magick": false,
+        "execute_magick_version": false,
+        "trigger_n8n": false,
+        "modify_wecom_public_config": false,
+        "modify_supervisor_panel": false,
+        "modify_one_click_continuation_pack": false,
+        "reload_service": false,
+        "requires_supervisor_confirmation": true
+      }
+    },
+    {
+      "检查项": "总包error_count=0",
+      "通过": true,
+      "详情": 0
+    }
+  ],
+  "错误项": [],
+  "检查结论": "通过；材料完整度包结构齐备，但白名单未生效，不能进入真实渲染。",
+  "产物路径": {
+    "材料清单": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请材料清单_最新.json",
+    "完整度判定报告": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请材料完整度判定报告_最新.json",
+    "缺口补齐待办": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请缺口补齐待办_最新.json",
+    "只读完整度检查": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\26真实渲染白名单申请材料完整度判定包\\视频真实渲染白名单申请只读完整度检查_最新.json"
+  },
+  "生成时间": "2026-05-08 19:33:20",
+  "error_count": 0,
+  "whitelist_effective": false,
+  "can_enter_real_render": false,
+  "real_render": false,
+  "publish": false,
+  "requires_supervisor_confirmation": true,
+  "白名单已生效": false,
+  "可进入真实渲染": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "触发n8n": false,
+  "修改企业微信公共配置": false,
+  "修改总管面板": false,
+  "修改一键接续包": false,
+  "重载服务": false,
+  "需要总管人工确认": true,
+  "readonly_flags_ascii": {
+    "whitelist_effective": false,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "publish": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false,
+    "requires_supervisor_confirmation": true
+  }
+}

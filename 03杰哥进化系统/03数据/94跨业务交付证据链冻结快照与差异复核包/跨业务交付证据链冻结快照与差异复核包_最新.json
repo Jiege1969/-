@@ -1,0 +1,257 @@
+{
+  "name": "跨业务交付证据链冻结快照与差异复核包",
+  "generated_at": "2026-05-08T19:37:48",
+  "readonly": true,
+  "error_count": 0,
+  "missing_count": 0,
+  "diff_count": 0,
+  "source_manifest": {
+    "name": "跨业务交付证据源清单",
+    "generated_at": "2026-05-08T19:37:48",
+    "readonly": true,
+    "source_count": 10,
+    "required_categories": [
+      "企业微信公共接入层日常巡检",
+      "日常总回归",
+      "税收入口门禁验收",
+      "第九轮调度验收",
+      "第八轮调度验收",
+      "股票展示口径一致性",
+      "股票影子验收",
+      "自主巡检快照",
+      "视频渲染发布阻断"
+    ],
+    "sources": [
+      {
+        "id": "CB-EVID-001",
+        "category": "企业微信公共接入层日常巡检",
+        "business": "企业微信公共层",
+        "name": "企业微信接入层只读核查回执",
+        "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_WECOM_20260508_D_企业微信接入层只读核查回执.json"
+      },
+      {
+        "id": "CB-EVID-002",
+        "category": "税收入口门禁验收",
+        "business": "税收业务",
+        "name": "税收企业微信正式入口发送门禁验收",
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\03数据\\32税收企业微信正式入口\\税收企业微信正式入口发送门禁验收_最新.json"
+      },
+      {
+        "id": "CB-EVID-003",
+        "category": "股票展示口径一致性",
+        "business": "股票研究系统",
+        "name": "股票展示口径一致性验收",
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\246展示口径修复\\股票展示口径一致性验收_最新.json"
+      },
+      {
+        "id": "CB-EVID-004",
+        "category": "股票影子验收",
+        "business": "股票研究系统",
+        "name": "股票线第九批统一影子验收总表验收结果",
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票线第九批统一影子验收总表验收结果_最新.json"
+      },
+      {
+        "id": "CB-EVID-005",
+        "category": "视频渲染发布阻断",
+        "business": "视频制作系统",
+        "name": "视频真实渲染禁用态检查",
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\08本地整理门禁\\视频真实渲染禁用态检查_最新.json"
+      },
+      {
+        "id": "CB-EVID-006",
+        "category": "视频渲染发布阻断",
+        "business": "视频制作系统",
+        "name": "最终发布启用门禁",
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\测试与审核\\最终发布启用门禁\\最终发布启用门禁_最新.json"
+      },
+      {
+        "id": "CB-EVID-007",
+        "category": "日常总回归",
+        "business": "进化系统",
+        "name": "日常可用交付版一键只读总回归验收",
+        "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用交付版一键只读总回归验收\\daily-usable-readonly-regression-verify-最新.json"
+      },
+      {
+        "id": "CB-EVID-008",
+        "category": "自主巡检快照",
+        "business": "进化系统",
+        "name": "日常可用版自主巡检快照",
+        "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\40日常可用版自主巡检快照\\日常可用版自主巡检快照_最新.json"
+      },
+      {
+        "id": "CB-EVID-009",
+        "category": "第八轮调度验收",
+        "business": "进化系统",
+        "name": "第八轮放行材料一致性并行调度索引包验收",
+        "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第八轮放行材料一致性并行调度索引包验收\\parallel-round8-release-material-consistency-verify-最新.json"
+      },
+      {
+        "id": "CB-EVID-010",
+        "category": "第九轮调度验收",
+        "business": "进化系统",
+        "name": "第九轮签收回滚与留痕并行调度索引包验收",
+        "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第九轮签收回滚与留痕并行调度索引包验收\\parallel-round9-signoff-rollback-evidence-verify-最新.json"
+      }
+    ],
+    "safety_boundary": {
+      "readonly": true,
+      "real_wecom_send": false,
+      "connect_n8n": false,
+      "trigger_n8n": false,
+      "connect_broker": false,
+      "trade": false,
+      "login_tax_bureau": false,
+      "connect_finance_tax_software": false,
+      "promote_to_formal_rule": false,
+      "modify_master_panel": false,
+      "modify_one_click_continuation_package": false,
+      "reload_service": false
+    }
+  },
+  "snapshot": {
+    "name": "跨业务交付证据链冻结快照",
+    "generated_at": "2026-05-08T19:37:48",
+    "readonly": true,
+    "source_count": 10,
+    "missing_count": 0,
+    "entries": [
+      {
+        "id": "CB-EVID-001",
+        "category": "企业微信公共接入层日常巡检",
+        "business": "企业微信公共层",
+        "name": "企业微信接入层只读核查回执",
+        "path": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\PAR_WECOM_20260508_D_企业微信接入层只读核查回执.json",
+        "exists": true,
+        "size": 5292,
+        "sha256": "b5bb8679e570059993b8e96e6a7ae4058849a72b56ee52aeae12b3d8ff2324ac",
+        "mtime": "2026-05-08T19:13:25"
+      },
+      {
+        "id": "CB-EVID-002",
+        "category": "税收入口门禁验收",
+        "business": "税收业务",
+        "name": "税收企业微信正式入口发送门禁验收",
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\05税收业务系统\\03数据\\32税收企业微信正式入口\\税收企业微信正式入口发送门禁验收_最新.json",
+        "exists": true,
+        "size": 5859,
+        "sha256": "f0d26ce408513315338c32f0b832ecbbbd55c697a3a9bef3bc039900c894550e",
+        "mtime": "2026-05-08T14:10:19"
+      },
+      {
+        "id": "CB-EVID-003",
+        "category": "股票展示口径一致性",
+        "business": "股票研究系统",
+        "name": "股票展示口径一致性验收",
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\246展示口径修复\\股票展示口径一致性验收_最新.json",
+        "exists": true,
+        "size": 4874,
+        "sha256": "864372628a6a891272bdb389d114a5f40fd7bee2108861ae7db0a683b6f3ed9b",
+        "mtime": "2026-05-08T19:35:31"
+      },
+      {
+        "id": "CB-EVID-004",
+        "category": "股票影子验收",
+        "business": "股票研究系统",
+        "name": "股票线第九批统一影子验收总表验收结果",
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\股票线第九批统一影子验收总表验收结果_最新.json",
+        "exists": true,
+        "size": 335,
+        "sha256": "da5a4d46452e34ee0e3cc411896cccdacaf751a61a7e6a7e6c9b43acbfedc99f",
+        "mtime": "2026-05-08T19:35:31"
+      },
+      {
+        "id": "CB-EVID-005",
+        "category": "视频渲染发布阻断",
+        "business": "视频制作系统",
+        "name": "视频真实渲染禁用态检查",
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\08本地整理门禁\\视频真实渲染禁用态检查_最新.json",
+        "exists": true,
+        "size": 2762,
+        "sha256": "5e83db2075b2a059a55e2b58756b87d455c0402978b5918809c0da3aec79e04a",
+        "mtime": "2026-05-08T19:35:31"
+      },
+      {
+        "id": "CB-EVID-006",
+        "category": "视频渲染发布阻断",
+        "business": "视频制作系统",
+        "name": "最终发布启用门禁",
+        "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\测试与审核\\最终发布启用门禁\\最终发布启用门禁_最新.json",
+        "exists": true,
+        "size": 2243,
+        "sha256": "820e17ba8afea83db5ed00018de54154271ebf58cb8cbb6144936fe5336fd1f0",
+        "mtime": "2026-05-08T11:01:13"
+      },
+      {
+        "id": "CB-EVID-007",
+        "category": "日常总回归",
+        "business": "进化系统",
+        "name": "日常可用交付版一键只读总回归验收",
+        "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\日常可用交付版一键只读总回归验收\\daily-usable-readonly-regression-verify-最新.json",
+        "exists": true,
+        "size": 243,
+        "sha256": "3928d724422ef007906f2a99c31eef63eaa2e5ef48303c26edd967cc75b4e17e",
+        "mtime": "2026-05-08T19:35:36"
+      },
+      {
+        "id": "CB-EVID-008",
+        "category": "自主巡检快照",
+        "business": "进化系统",
+        "name": "日常可用版自主巡检快照",
+        "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\40日常可用版自主巡检快照\\日常可用版自主巡检快照_最新.json",
+        "exists": true,
+        "size": 65831,
+        "sha256": "84b7fc1476836b986aec16fdc4bcdb78c01f6e9ac31f2379c6e86c47424d2cb9",
+        "mtime": "2026-05-08T19:35:28"
+      },
+      {
+        "id": "CB-EVID-009",
+        "category": "第八轮调度验收",
+        "business": "进化系统",
+        "name": "第八轮放行材料一致性并行调度索引包验收",
+        "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第八轮放行材料一致性并行调度索引包验收\\parallel-round8-release-material-consistency-verify-最新.json",
+        "exists": true,
+        "size": 220,
+        "sha256": "05a2365d36c688d8c806efb79417be75d2775bc4a555687b890d3e7d4976840d",
+        "mtime": "2026-05-08T18:51:30"
+      },
+      {
+        "id": "CB-EVID-010",
+        "category": "第九轮调度验收",
+        "business": "进化系统",
+        "name": "第九轮签收回滚与留痕并行调度索引包验收",
+        "path": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\第九轮签收回滚与留痕并行调度索引包验收\\parallel-round9-signoff-rollback-evidence-verify-最新.json",
+        "exists": true,
+        "size": 220,
+        "sha256": "80279e0b0aaa4bdf16e9622f2cbf41543bd4419945ad1a80706a662671663e90",
+        "mtime": "2026-05-08T19:02:08"
+      }
+    ]
+  },
+  "diff_report": {
+    "name": "跨业务交付证据链只读差异复核报告",
+    "generated_at": "2026-05-08T19:37:48",
+    "readonly": true,
+    "baseline_created": true,
+    "baseline_path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\94跨业务交付证据链冻结快照与差异复核包\\冻结基线_最新.json",
+    "snapshot_path": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\94跨业务交付证据链冻结快照与差异复核包\\冻结快照_最新.json",
+    "source_count": 10,
+    "missing_count": 0,
+    "diff_count": 0,
+    "missing": [],
+    "diffs": []
+  },
+  "safety_boundary": {
+    "readonly": true,
+    "real_wecom_send": false,
+    "connect_n8n": false,
+    "trigger_n8n": false,
+    "connect_broker": false,
+    "trade": false,
+    "login_tax_bureau": false,
+    "connect_finance_tax_software": false,
+    "promote_to_formal_rule": false,
+    "modify_master_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false
+  }
+}

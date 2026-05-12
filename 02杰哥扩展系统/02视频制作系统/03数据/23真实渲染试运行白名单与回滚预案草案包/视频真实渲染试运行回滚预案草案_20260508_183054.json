@@ -1,0 +1,97 @@
+{
+  "名称": "视频真实渲染试运行回滚预案草案",
+  "状态": "draft_only",
+  "回滚结论": "回滚预案仅为草案；不会触发试运行、真实渲染或服务变更。",
+  "承接来源": {
+    "第22包总包": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\22真实渲染人工放行材料完整性复核与试运行禁入包\\视频真实渲染人工放行材料完整性复核与试运行禁入包_最新.json",
+    "第22包摘要": {
+      "第22包总包存在": true,
+      "第22包试运行禁入清单存在": true,
+      "第22包只读复核存在": true,
+      "第22包名称": "视频真实渲染人工放行材料完整性复核与试运行禁入包",
+      "第22包结论": "材料待人工补齐；试运行禁入；不可进入真实渲染。",
+      "第22包只读复核结论": "只读复核通过；材料仍待人工补齐，试运行禁入保持 true。",
+      "第22包error_count": 0,
+      "第22包试运行禁入": true,
+      "第22包可进入真实渲染": false,
+      "第22包真实渲染": false,
+      "第22包生成真实视频": false,
+      "第22包上传发布": false,
+      "第22包调用MoneyPrinterTurbo": false,
+      "第22包执行magick": false,
+      "第22包执行magick_version": false
+    }
+  },
+  "触发条件草案": [
+    "MoneyPrinterTurbo调用异常或入口不一致。",
+    "ImageMagick可用性异常、版本不一致或命令失败。",
+    "输出目录越界、容量不足、权限异常或生成产物不可追溯。",
+    "素材授权、任务编号、日志留存或人工签收任一缺失。",
+    "出现上传发布、n8n、企业微信、总管面板、一键接续或服务重载迹象。"
+  ],
+  "回滚步骤草案": [
+    "立即确认 whitelist_effective=false、trial_run_allowed=false。",
+    "停止扩大任务范围，保持真实渲染禁入。",
+    "隔离并清点测试输出目录内临时产物。",
+    "记录失败原因、输入摘要、任务编号、时间戳和责任人。",
+    "恢复到第22包试运行禁入口径，并标记需要人工复核。",
+    "形成回滚签收记录后再进入下一轮草案修订。"
+  ],
+  "临时产物处理": [
+    "仅允许清点和登记隔离测试目录内临时文件。",
+    "真实视频、发布产物、外部平台记录均不得生成。",
+    "清理动作须由人工另行批准；本草案包不执行删除或清理命令。"
+  ],
+  "配置恢复要求": [
+    "不得修改企业微信公共配置。",
+    "不得修改总管面板。",
+    "不得修改一键接续包。",
+    "不得重载服务。"
+  ],
+  "日志留存要求": [
+    "保留回滚触发原因、处置步骤、人工签收与只读核对报告。",
+    "保留第22包承接关系与本包草案版本。"
+  ],
+  "人工确认签收": {
+    "签收状态": "未签收",
+    "必须签收角色": [
+      "总管",
+      "视频制作负责人",
+      "回滚负责人"
+    ],
+    "签收前是否可执行回滚预案": false
+  },
+  "生成时间": "2026-05-08 18:30:54",
+  "error_count": 0,
+  "whitelist_effective": false,
+  "trial_run_allowed": false,
+  "trial_run_forbidden": true,
+  "can_enter_real_render": false,
+  "真实渲染": false,
+  "生成真实视频": false,
+  "上传发布": false,
+  "调用MoneyPrinterTurbo": false,
+  "执行magick": false,
+  "执行magick_version": false,
+  "触发n8n": false,
+  "修改企业微信公共配置": false,
+  "修改总管面板": false,
+  "修改一键接续包": false,
+  "重载服务": false,
+  "readonly_flags_ascii": {
+    "whitelist_effective": false,
+    "trial_run_allowed": false,
+    "can_enter_real_render": false,
+    "real_render": false,
+    "generate_real_video": false,
+    "upload_publish": false,
+    "call_money_printer_turbo": false,
+    "execute_magick": false,
+    "execute_magick_version": false,
+    "trigger_n8n": false,
+    "modify_wecom_public_config": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_pack": false,
+    "reload_service": false
+  }
+}

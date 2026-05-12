@@ -1,0 +1,119 @@
+{
+  "version": "1.0",
+  "round": "013",
+  "updated_at": "2026-05-07",
+  "mode": "R0_static_status_anchor",
+  "source": [
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\施工轮次\\施工轮次台账_最新.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\施工规划\\轮次012业务线搭建状态总览\\业务线能力矩阵_最新.md",
+    "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\轮次012业务线搭建状态总览_最新.md"
+  ],
+  "summary": {
+    "mainline": "多业务线可观察搭建",
+    "current_round_closed": "012",
+    "next_round": "014",
+    "recommended_next_action": "R0清债许可验证脚本最小实现",
+    "red_items_count": 0,
+    "yellow_items_count": 4
+  },
+  "business_lines": [
+    {
+      "name": "股票研究系统",
+      "level": "L4_candidate",
+      "health": "Yellow",
+      "capabilities": ["成熟母本", "真实灰度预案", "回滚预案", "企业微信入口经验"],
+      "next_action": "保护母本，不扩散旧双写模式",
+      "forbidden": ["自动交易", "券商真实动作", "越权自启", "未经人工确认的灰度动作"]
+    },
+    {
+      "name": "知识库可追溯问答框",
+      "level": "L2",
+      "health": "Green",
+      "capabilities": ["有证据问答", "弱证据降级", "无证据闭口", "跨业务线字段承接"],
+      "next_action": "作为证据底座继续复用",
+      "forbidden": ["正式入库", "自动发布回答"]
+    },
+    {
+      "name": "税收业务系统",
+      "level": "L2",
+      "health": "Yellow",
+      "capabilities": ["只读证据链草案入口", "知识库联动"],
+      "next_action": "建立政策来源台账样例",
+      "forbidden": ["正式税务结论", "自动申报", "真实政策抓取"]
+    },
+    {
+      "name": "内容处理系统",
+      "level": "L2",
+      "health": "Green",
+      "capabilities": ["原文证据草案复核验收闭环", "知识库联动", "视频脚本输入源"],
+      "next_action": "继续作为视频脚本输入源",
+      "forbidden": ["真实批量转换", "覆盖原文", "外发", "自动发布"]
+    },
+    {
+      "name": "视频制作系统",
+      "level": "L2",
+      "health": "Green",
+      "capabilities": ["素材需求草案", "脚本草案", "分镜草案", "人工复核", "内容知识库联动"],
+      "next_action": "保持影子制作，不放行真实渲染",
+      "forbidden": ["真实素材读取", "转码", "剪辑", "渲染", "字幕", "封面", "发布"]
+    },
+    {
+      "name": "企业微信助手系统",
+      "level": "L1_candidate",
+      "health": "Yellow",
+      "capabilities": ["股票入口链路经验"],
+      "next_action": "暂不扩到非股票业务",
+      "forbidden": ["非股票业务自动外发", "自动通知", "工作流触发"]
+    },
+    {
+      "name": "总管治理底座",
+      "level": "L2",
+      "health": "Yellow",
+      "capabilities": ["施工铁律v3.1", "轮次制", "清债队列", "状态同步"],
+      "next_action": "实现R0许可验证脚本最小只读版",
+      "forbidden": ["宣称硬拦截已上线", "自动修改规则", "自动清债"]
+    }
+  ],
+  "items": {
+    "red": [],
+    "yellow": [
+      {
+        "id": "Y-001",
+        "description": "R0_verify_cleanup_permissions 为 planned_not_active",
+        "next_action": "轮次014实现最小只读判定脚本"
+      },
+      {
+        "id": "Y-002",
+        "description": "Q-001 双写源头仍存在",
+        "next_action": "轮次015以后选择1-2个可再生报告脚本做收口试点"
+      },
+      {
+        "id": "Y-003",
+        "description": "税收政策来源台账未成型",
+        "next_action": "后续独立样例轮次处理"
+      },
+      {
+        "id": "Y-004",
+        "description": "企业微信非股票业务通知未建预案",
+        "next_action": "暂不放量，等状态雷达稳定后再做"
+      }
+    ]
+  },
+  "safety": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_official_db": false,
+    "call_model_inference": false,
+    "run_business_scripts": false,
+    "delete_data": false,
+    "move_materials": false,
+    "read_real_media": false,
+    "transcode": false,
+    "edit_video": false,
+    "render_video": false,
+    "publish": false,
+    "broker_api": false,
+    "auto_trade": false,
+    "restart_service": false
+  }
+}

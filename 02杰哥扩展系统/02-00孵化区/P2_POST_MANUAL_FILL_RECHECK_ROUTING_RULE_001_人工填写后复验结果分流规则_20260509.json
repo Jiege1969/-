@@ -1,0 +1,40 @@
+{
+  "rule_id": "P2_POST_MANUAL_FILL_RECHECK_ROUTING_RULE_001",
+  "generated_at": "2026-05-09",
+  "stage": "P2-S16",
+  "status": "readonly_recheck_routing_rule_not_draft_generator",
+  "purpose": "规定人工填写后复验结果如何分流，避免空白、失败或阻断回执被误推进到影子草案候选",
+  "input_dependency": "P2-S15 人工填写后复验回执空白样例",
+  "required_rechecks": [
+    "json_parse_check",
+    "redline_false_check",
+    "target_entry_status_check",
+    "readonly_shadow_regression"
+  ],
+  "routing": {
+    "waiting_manual_fill": "human_filled=false 或任一复验项为 pending_manual_fill",
+    "problem_recovery": "任一复验项为 fail",
+    "blocked_redline_recovery": "任一复验项为 blocked",
+    "shadow_draft_candidate_discussion": "human_filled=true 且四项复验均为 pass"
+  },
+  "hard_rules": {
+    "routing_is_draft_generator": false,
+    "write_target_entry": false,
+    "auto_generate_business_conclusion": false,
+    "release_form": false,
+    "formal_capability_claim": false,
+    "shadow_draft_candidate_is_not_formal_capability": true
+  },
+  "forbidden_actions": {
+    "read_real_material": false,
+    "scan_user_directory": false,
+    "write_target_entry": false,
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "write_formal_database": false,
+    "restart_service": false,
+    "trade": false,
+    "tax_filing": false,
+    "render_or_publish_video": false
+  }
+}

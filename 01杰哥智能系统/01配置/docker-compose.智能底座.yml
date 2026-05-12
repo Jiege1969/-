@@ -1,0 +1,54 @@
+# ============================================================
+# Name: docker-compose.v3-ai-base.yml
+# Purpose: Run the v3 Ollama and Redis base services for the new system.
+# Trigger: powershell -ExecutionPolicy Bypass -File 执行智能底座受控启动.ps1
+# Owner system: 01 core system.
+# Dependencies: Docker Desktop, NVIDIA container runtime, ollama/ollama:0.20.5, redis:7.2.5-alpine.
+# Safety: Uses only D:\杰哥智能化系统 data paths and local ports; does not stop old jiege_* services, does not send messages, does not write old system data, and does not call broker APIs or trading.
+# Change log: 2026-04-28 created v3 AI base compose.
+# ============================================================
+
+services:
+  ollama:
+    image: ollama/ollama:0.20.5
+    container_name: jiege_v3_ollama
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:29134:11434"
+    volumes:
+      - 'D:\杰哥智能化系统\01杰哥智能系统\03数据\ollama:/root/.ollama'
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_NUM_PARALLEL=2
+      - TZ=Asia/Shanghai
+    entrypoint:
+      - /bin/sh
+      - -lc
+    command: >
+      "
+        mkdir -p /root/.ollama/models &&
+        if [ -d /root/.ollama/blobs ]; then cp -rl /root/.ollama/blobs /root/.ollama/models/ 2>/dev/null || true; fi &&
+        if [ -d /root/.ollama/manifests ]; then cp -rl /root/.ollama/manifests /root/.ollama/models/ 2>/dev/null || true; fi &&
+        exec ollama serve
+      "
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  redis:
+    image: redis:7.2.5-alpine
+    container_name: jiege_v3_redis
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:26379:6379"
+    volumes:
+      - 'D:\杰哥智能化系统\01杰哥智能系统\03数据\redis:/data'
+    command: redis-server --appendonly yes --maxmemory 2gb --maxmemory-policy allkeys-lru
+
+networks:
+  default:
+    name: jiege_v3_ai_base_network

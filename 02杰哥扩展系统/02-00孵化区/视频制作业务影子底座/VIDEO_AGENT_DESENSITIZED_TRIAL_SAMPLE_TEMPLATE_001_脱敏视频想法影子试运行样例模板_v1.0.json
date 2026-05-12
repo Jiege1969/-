@@ -1,0 +1,33 @@
+{
+  "id": "VIDEO_AGENT_DESENSITIZED_TRIAL_SAMPLE_TEMPLATE_001",
+  "name": "脱敏视频想法影子试运行样例模板",
+  "asset_identity": "video_creation_agent_shadow_desensitized_trial_sample_template",
+  "stage": "W1_R0",
+  "status": "blank_template_no_fake_real_video_idea",
+  "boundary": {
+    "invent_real_user_idea": false,
+    "call_model": false,
+    "media_generation": false,
+    "publish": false,
+    "read_asset_path": false
+  },
+  "fields": {
+    "sample_id": "VAI-TRIAL-SAMPLE-0000",
+    "linked_trial_id": "to_be_filled",
+    "desensitized_user_idea_summary": "to_be_filled",
+    "target_platform": "pending_verification",
+    "target_audience": "to_be_filled",
+    "content_topic": "to_be_filled",
+    "expected_style": "to_be_filled",
+    "asset_source_note": "pending_verification",
+    "real_person_trademark_or_copyright_material": "pending_verification",
+    "initial_redline_scan": "pending_check",
+    "allowed_output": "clarification_question_or_three_option_text_draft",
+    "manual_review_items": []
+  },
+  "forbidden": [
+    "do_not_fabricate_user_idea",
+    "do_not_read_user_asset_path",
+    "do_not_generate_video_voice_subtitle_cover_or_publish_task"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "任务编号": "第七批并行小任务AE",
+  "索引名称": "知识库侧企微联合只读证据索引",
+  "生成时间": "2026-05-05 13:18:45 +08:00",
+  "执行模式": "knowledge_evidence_index_readonly_for_wecom_joint_acceptance",
+  "正式写入状态": {
+    "写正式知识库": false,
+    "写正式向量库": false,
+    "写正式数据库": false,
+    "调用真实外部API": false,
+    "触发企业微信真实发送": false,
+    "触发response_url": false,
+    "触发Webhook": false,
+    "触发n8n": false,
+    "调用券商接口": false,
+    "自动交易": false,
+    "触碰本职工作系统": false
+  },
+  "证据字段契约": [
+    "evidence_id",
+    "source_path",
+    "source_status",
+    "answerability",
+    "evidence_snippets",
+    "citation_paths",
+    "freshness",
+    "downgrade_reply",
+    "cannot_answer_boundary",
+    "rollback"
+  ],
+  "证据索引": [
+    {
+      "evidence_id": "AE-KB-001",
+      "source_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\02证据索引小样本\\知识库证据索引小样本_20260505_小任务M.json#KB-EVID-M-001",
+      "source_status": "exists",
+      "answerability": "answerable_with_evidence",
+      "evidence_snippets": [
+        "企业微信知识库助手返回必须包含 answer_summary、evidence_snippets、citation_paths、source_status、downgrade_reply、cannot_answer_boundary、safety_flags。"
+      ],
+      "citation_paths": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\01企业微信可追溯问答接入\\知识库可追溯问答企业微信接入灰度包_最新.md#一回答契约"
+      ],
+      "freshness": "current_for_local_preview_not_formal_claim",
+      "downgrade_reply": "",
+      "cannot_answer_boundary": "不能声明已经写入正式知识库或已经接入企业微信真实发送。",
+      "rollback": "仅移除或标记本地离线索引；正式库无回滚。"
+    },
+    {
+      "evidence_id": "AE-KB-002",
+      "source_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\02证据索引小样本\\知识库证据索引小样本_20260505_小任务M.json#KB-EVID-M-003",
+      "source_status": "missing",
+      "answerability": "cannot_answer_missing_evidence",
+      "evidence_snippets": [],
+      "citation_paths": [],
+      "freshness": "no_evidence",
+      "downgrade_reply": "我现在没有可追溯来源路径，不能把这个说成确定结论；请提供资料路径或转人工复核。",
+      "cannot_answer_boundary": "不能声称客户已确认、不能声称企业微信已上线、不能触发真实查询或外发求证。",
+      "rollback": "block_all_missing_evidence；不触发任何外部动作。"
+    },
+    {
+      "evidence_id": "AE-KB-003",
+      "source_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\03只读装载候选清单\\知识库正式写入前只读装载候选清单_20260505_小任务X.json#KB-LOAD-X-004",
+      "source_status": "exists",
+      "answerability": "blocked_out_of_scope",
+      "evidence_snippets": [
+        "不写正式知识库、正式向量库、正式数据库或旧系统；不触发企业微信真实发送、Webhook、n8n、response_url。"
+      ],
+      "citation_paths": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\07文档\\知识库可追溯问答接入企业微信助手边界说明.md#固定边界"
+      ],
+      "freshness": "current_for_safety_boundary",
+      "downgrade_reply": "当前只做本地只读验收，不外发、不写库、不触发自动化。",
+      "cannot_answer_boundary": "不能执行企业微信真实发送、不能写正式库、不能调用外部接口完成动作。",
+      "rollback": "保留为只读安全边界候选；策略变化时新增版本，不覆盖本记录。"
+    },
+    {
+      "evidence_id": "AE-KB-004",
+      "source_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\03只读装载候选清单\\知识库正式写入前只读装载候选清单_20260505_小任务X.json#KB-LOAD-X-005",
+      "source_status": "exists",
+      "answerability": "blocked_trade_intent_downgrade",
+      "evidence_snippets": [
+        "股票样本必须继承只分析不交易硬闸门；股票意图不得输出买卖、仓位、目标价、下单建议。"
+      ],
+      "citation_paths": [
+        "D:\\杰哥智能化系统\\02杰哥扩展系统\\07知识库系统\\03数据\\01企业微信可追溯问答接入\\知识库可追溯问答企业微信接入灰度包_最新.md#样例D"
+      ],
+      "freshness": "current_for_trade_safety_boundary",
+      "downgrade_reply": "股票链路只做研究分析和风险提示，不提供买卖、仓位、目标价、下单或自动交易建议。",
+      "cannot_answer_boundary": "不得调用券商接口、不得生成交易委托、不得给出买卖/仓位/目标价/下单建议。",
+      "rollback": "block_all_trade_boundary；正式库、券商接口和交易系统均无变更。"
+    }
+  ],
+  "验收结论": "通过；该索引只服务企业微信与知识库联合只读验收，不构成正式知识库写入。"
+}

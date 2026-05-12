@@ -1,0 +1,23 @@
+﻿{
+    "report":  "施工者尾巴清理收口",
+    "generated_at":  "2026-05-06 10:05:38 +08:00",
+    "deleted_workspace_scratch_files":  11,
+    "deleted_workspace_scratch_bytes":  4018415,
+    "fixed_docs":  [
+                       "D:\\杰哥智能化系统\\00杰哥系统总管\\07文档\\当前施工面板.md",
+                       "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\开工上下文\\一键接续施工包_最新.md"
+                   ],
+    "fixed_issues":  [
+                         "removed_control_characters_from_ready_failed_count_text",
+                         "replaced_literal_scriptHash_with_actual_SHA256"
+                     ],
+    "decision":  "不为旧债又添新债同样约束施工者；Codex工作区临时副本和接续文本瑕疵已同轮收口。",
+    "safety":  {
+                   "deleted_system_assets":  false,
+                   "deleted_backups":  false,
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false
+               }
+}

@@ -1,0 +1,112 @@
+{
+  "asset_id": "VIDEO_AGENT_VISION_ALIGNMENT_20260508",
+  "asset_name": "视频创作智能体愿景吸收与并行施工指令",
+  "created_at": "2026-05-08 09:07:15 +08:00",
+  "asset_identity": "总管侧W1/R0视频创作智能体愿景吸收与并行施工指令",
+  "source_input": "用户转述的视频制作系统愿景与外部建议",
+  "target_parallel_window": "负责视频制作系统搭建的并行对话框",
+  "risk_level": "W1/R0",
+  "is_formal_llm_agent_permission": false,
+  "is_engine_integration_permission": false,
+  "is_render_permission": false,
+  "is_publish_permission": false,
+  "is_wecom_real_send_permission": false,
+  "alignment_conclusion": "愿景方向正确，但当前只吸收为视频创作智能体W1/R0影子升级蓝图，不直接接入真实大模型、渲染器、TTS、发布器或企业微信真实外发。",
+  "absorbed_layers": [
+    {
+      "external_suggestion": "对话记忆体",
+      "current_absorption": "会话状态字段契约和创作历史索引草案",
+      "boundary": "不接真实LLM记忆库，不写向量库"
+    },
+    {
+      "external_suggestion": "意图路由",
+      "current_absorption": "视频意图分类表和路由决策草案",
+      "boundary": "不替换现有运行脚本逻辑"
+    },
+    {
+      "external_suggestion": "动态执行与反馈",
+      "current_absorption": "局部修正请求契约和锁定段落/可改段落规则",
+      "boundary": "不自动重写正式脚本"
+    },
+    {
+      "external_suggestion": "多样性预览",
+      "current_absorption": "候选开场/分镜方案输出模板",
+      "boundary": "不生成真实图片、音频或视频"
+    },
+    {
+      "external_suggestion": "MoneyPrinterTurbo/HappyHorse/Qwen-TTS/PostBot",
+      "current_absorption": "外部引擎适配契约草案",
+      "boundary": "不安装、不调用、不配置密钥、不登录平台"
+    }
+  ],
+  "assigned_w1_tasks": [
+    {
+      "task_id": "VAI-001",
+      "task_name": "视频创作智能体会话状态契约草案",
+      "suggested_filename": "VIDEO_AGENT_CONVERSATION_STATE_CONTRACT_001_会话状态契约草案_v1.0.md/json",
+      "write_scope": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\",
+      "boundary": "只做字段契约，不接真实LLM，不写向量库，不改正式视频系统脚本"
+    },
+    {
+      "task_id": "VAI-002",
+      "task_name": "视频意图路由分类表草案",
+      "suggested_filename": "VIDEO_AGENT_INTENT_ROUTING_001_意图路由分类表草案_v1.0.md/json",
+      "write_scope": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\",
+      "boundary": "只做分类表和路由草案，不替换task_generator.py，不修改企业微信路由服务"
+    },
+    {
+      "task_id": "VAI-003",
+      "task_name": "局部修正契约草案",
+      "suggested_filename": "VIDEO_AGENT_PARTIAL_REVISION_CONTRACT_001_局部修正契约草案_v1.0.md/json",
+      "write_scope": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\",
+      "boundary": "不自动改正式草案，不生成成片，不放行生成或发布"
+    },
+    {
+      "task_id": "VAI-004",
+      "task_name": "外部引擎适配契约草案",
+      "suggested_filename": "VIDEO_AGENT_ENGINE_ADAPTER_CONTRACT_001_外部引擎适配契约草案_v1.0.md/json",
+      "write_scope": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\",
+      "boundary": "只做适配契约，不安装、不调用、不配置密钥、不登录平台、不渲染、不配音、不发布"
+    },
+    {
+      "task_id": "VAI-005",
+      "task_name": "视频智能体人工门禁升级清单",
+      "suggested_filename": "VIDEO_AGENT_HUMAN_GATE_UPGRADE_001_人工门禁升级清单_v1.0.md/json",
+      "write_scope": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02-00孵化区\\视频制作业务影子底座\\",
+      "boundary": "生成放行和发布放行继续拆分，任何真实发布仍属W3"
+    }
+  ],
+  "must_pause_actions": [
+    "改造video_factory_chat.py为真实LLMAgent",
+    "写入真实APIKey、Token、企业微信凭据",
+    "调用DeepSeek、通义千问、Qwen-TTS或其他模型API",
+    "调用MoneyPrinterTurbo、HappyHorse、PostBot",
+    "读取真实视频、音频、字幕、封面素材",
+    "真实配音、转码、剪辑、渲染、上传或发布",
+    "启动n8n、Webhook或服务重启",
+    "修改企业微信真实发送配置",
+    "把一次人工反馈直接写入正式规则库"
+  ],
+  "boundary_flags": {
+    "modify_formal_video_script": false,
+    "call_model_api": false,
+    "call_external_engine": false,
+    "read_real_media": false,
+    "render_video": false,
+    "upload_video": false,
+    "publish_video": false,
+    "send_wecom": false,
+    "trigger_n8n": false,
+    "modify_wecom_service": false,
+    "restart_service": false,
+    "write_formal_rule": false
+  },
+  "self_check": {
+    "panel_read": true,
+    "handoff_package_read": true,
+    "video_r012_chain_aligned": true,
+    "parallel_instruction_created": true,
+    "boundary_kept": true,
+    "json_parse_required": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "政策事件单股暴露度人工复核回执模板验收",
+  "generated_at": "2026-05-08 10:06:37",
+  "asset_path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\245L3评分基础资产\\政策事件单股暴露度人工复核回执模板_最新.json",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "metrics": {
+    "receipt_count": 5,
+    "stock_count": 5,
+    "matched_event_stock_count": 1,
+    "policy_score_ready_count": 0,
+    "score_allowed_count": 0
+  },
+  "auto_continue_policy": "通过后继续进入下一低风险小闭环；不等待用户确认。"
+}

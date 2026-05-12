@@ -1,0 +1,195 @@
+{
+  "name": "三业务正式规则申请人工签收流转定义",
+  "version": "three-business-rule-signoff-flow-v1",
+  "generated_at": "2026-05-08 18:59:51",
+  "based_on_package_86": true,
+  "source_files": [
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\三业务正式规则申请草案冲突扫描与签收台账包_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\三业务正式规则申请草案扫描示例_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\三业务草案冲突扫描结果_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\冲突扫描规则_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\签收台账_最新.json",
+    "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\86三业务正式规则申请草案冲突扫描与签收台账包\\签收台账字段_最新.json"
+  ],
+  "businesses": [
+    "税收",
+    "股票",
+    "视频"
+  ],
+  "required_states": [
+    "待签收",
+    "需补正",
+    "总管已确认",
+    "可申请正式生效",
+    "已驳回",
+    "回滚待确认"
+  ],
+  "states": [
+    {
+      "state": "待签收",
+      "meaning": "第86包草案冲突扫描与签收台账产物已具备，只等待人工签收人读取。",
+      "entry_condition": "冲突扫描材料存在，formal_rule_effective=false，write_formal_rule=false。",
+      "allowed_next_states": [
+        "需补正",
+        "总管已确认",
+        "已驳回"
+      ],
+      "requires_supervisor_confirmation": false,
+      "operator": "人工签收人",
+      "write_formal_rule": false,
+      "auto_apply": false
+    },
+    {
+      "state": "需补正",
+      "meaning": "人工签收发现材料、边界、回滚说明或红线声明不完整。",
+      "entry_condition": "任一必填签收字段缺失，或回滚校验项不完整。",
+      "allowed_next_states": [
+        "待签收",
+        "已驳回"
+      ],
+      "requires_supervisor_confirmation": false,
+      "operator": "人工签收人",
+      "write_formal_rule": false,
+      "auto_apply": false
+    },
+    {
+      "state": "总管已确认",
+      "meaning": "总管已人工确认签收结论，但仍不代表正式生效。",
+      "entry_condition": "人工签收通过，且总管确认记录完整。",
+      "allowed_next_states": [
+        "可申请正式生效",
+        "回滚待确认",
+        "已驳回"
+      ],
+      "requires_supervisor_confirmation": true,
+      "operator": "总管",
+      "write_formal_rule": false,
+      "auto_apply": false
+    },
+    {
+      "state": "可申请正式生效",
+      "meaning": "材料只允许进入正式生效申请队列，不允许本包自动写正式规则。",
+      "entry_condition": "总管已确认，回滚校验清单已覆盖税收、股票、视频三业务。",
+      "allowed_next_states": [
+        "回滚待确认",
+        "已驳回"
+      ],
+      "requires_supervisor_confirmation": true,
+      "operator": "总管",
+      "write_formal_rule": false,
+      "auto_apply": false
+    },
+    {
+      "state": "已驳回",
+      "meaning": "人工或总管驳回本次正式规则申请材料。",
+      "entry_condition": "命中红线、缺少回滚办法、业务边界不清或人工明确驳回。",
+      "allowed_next_states": [
+        "待签收"
+      ],
+      "requires_supervisor_confirmation": false,
+      "operator": "人工签收人或总管",
+      "write_formal_rule": false,
+      "auto_apply": false
+    },
+    {
+      "state": "回滚待确认",
+      "meaning": "进入回滚复核等待态，仅做回滚入口、快照和验收材料确认，不执行回滚。",
+      "entry_condition": "总管要求回滚复核，或可申请正式生效前需补充回滚证据。",
+      "allowed_next_states": [
+        "待签收",
+        "总管已确认",
+        "已驳回"
+      ],
+      "requires_supervisor_confirmation": true,
+      "operator": "总管",
+      "write_formal_rule": false,
+      "auto_apply": false
+    }
+  ],
+  "transitions": [
+    {
+      "from": "待签收",
+      "to": "需补正",
+      "condition": "材料缺项或红线声明不足"
+    },
+    {
+      "from": "待签收",
+      "to": "总管已确认",
+      "condition": "人工签收通过并提交总管确认"
+    },
+    {
+      "from": "待签收",
+      "to": "已驳回",
+      "condition": "命中不可补正红线"
+    },
+    {
+      "from": "需补正",
+      "to": "待签收",
+      "condition": "补正后重新提交人工签收"
+    },
+    {
+      "from": "需补正",
+      "to": "已驳回",
+      "condition": "补正失败或拒绝补正"
+    },
+    {
+      "from": "总管已确认",
+      "to": "可申请正式生效",
+      "condition": "总管确认且回滚校验通过"
+    },
+    {
+      "from": "总管已确认",
+      "to": "回滚待确认",
+      "condition": "总管要求回滚复核"
+    },
+    {
+      "from": "总管已确认",
+      "to": "已驳回",
+      "condition": "总管驳回"
+    },
+    {
+      "from": "可申请正式生效",
+      "to": "回滚待确认",
+      "condition": "申请前发现需补充回滚证据"
+    },
+    {
+      "from": "可申请正式生效",
+      "to": "已驳回",
+      "condition": "申请前发现红线冲突"
+    },
+    {
+      "from": "回滚待确认",
+      "to": "待签收",
+      "condition": "回滚材料补齐后重新签收"
+    },
+    {
+      "from": "回滚待确认",
+      "to": "总管已确认",
+      "condition": "回滚复核通过并回到总管确认态"
+    },
+    {
+      "from": "回滚待确认",
+      "to": "已驳回",
+      "condition": "回滚入口或快照不可确认"
+    }
+  ],
+  "guard_flags": {
+    "formal_rule_effective": false,
+    "write_formal_rule": false,
+    "auto_apply": false,
+    "rollback_executed": false,
+    "requires_supervisor_confirmation": true
+  },
+  "forbidden_actions": {
+    "真实发送企业微信": false,
+    "接n8n": false,
+    "接券商": false,
+    "交易": false,
+    "登录税局": false,
+    "接财税软件": false,
+    "自动转正式规则": false,
+    "改总管面板": false,
+    "改一键接续包": false,
+    "重载服务": false
+  }
+}

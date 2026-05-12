@@ -1,0 +1,39 @@
+{
+  "asset_id": "VIDEO_AGENT_DESENSITIZATION_FAILURE_GAP_CARD_001",
+  "version": "v1.0",
+  "date": "2026-05-08",
+  "business_line": "video_production_shadow_base",
+  "construction_level": "W1/R0",
+  "status": "shadow_gap_card_not_real_data_processing_record",
+  "purpose": "Record why sensitive input cannot enter the shadow trial chain and what action is required.",
+  "fields": [
+    "gap_id",
+    "source_input_id",
+    "failure_category",
+    "sensitive_summary",
+    "required_action",
+    "redline_hit",
+    "allowed_next_step",
+    "not_saved_content_statement"
+  ],
+  "failure_category_enum": [
+    "personal_information",
+    "credential",
+    "real_asset",
+    "customer_information",
+    "publish_instruction",
+    "other"
+  ],
+  "rules": [
+    "do_not_quote_sensitive_original_text",
+    "do_not_save_credentials_cookies_tokens_or_real_asset_paths",
+    "stop_draft_chain_when_desensitization_fails",
+    "register_block_when_real_system_processing_is_requested"
+  ],
+  "real_system_triggered": {
+    "real_personal_data_processing": false,
+    "real_data_cleaning": false,
+    "formal_privacy_register_write": false,
+    "credential_saved": false
+  }
+}

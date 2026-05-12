@@ -1,0 +1,132 @@
+{
+  "生成时间": "2026-04-27 20:29:18",
+  "阶段": "第2层-知识库问答增强未激活导入工件生成",
+  "目标工作流": "知识库问答增强",
+  "导入目标容器": "jiege_n8n",
+  "导入目标地址": "http://127.0.0.1:18679",
+  "工作流工件": {
+    "name": "知识库问答增强",
+    "active": false,
+    "nodes": [
+      {
+        "parameters": {},
+        "id": "bb9f3200-59d3-40ae-a687-fef9e109aaca",
+        "name": "手动触发",
+        "type": "n8n-nodes-base.manualTrigger",
+        "typeVersion": 1,
+        "position": [
+          260,
+          260
+        ]
+      },
+      {
+        "parameters": {
+          "mode": "manual",
+          "duplicateItem": false,
+          "assignments": {
+            "assignments": [
+              {
+                "id": "6e138987-8e90-4a29-a2b4-cf5cb481a0cf",
+                "name": "状态",
+                "value": "dry_run_only",
+                "type": "string"
+              },
+              {
+                "id": "84bc92ad-10f9-48ae-bd94-8a858a92c330",
+                "name": "工作流名",
+                "value": "知识库问答增强",
+                "type": "string"
+              },
+              {
+                "id": "966f091c-a45a-4594-bcfc-fe30d1db87f6",
+                "name": "执行摘要",
+                "value": "未激活导入验证工件，仅用于确认知识库问答增强链路，不写入向量库或数据库。",
+                "type": "string"
+              },
+              {
+                "id": "49528a56-136b-49f1-85b3-bc36c81f13e8",
+                "name": "风险提示",
+                "value": "当前不启用Webhook，不读取真实外部资料，不写Qdrant/PostgreSQL。",
+                "type": "string"
+              },
+              {
+                "id": "699a1910-3354-42f2-9897-cf3b0dc10607",
+                "name": "是否需要人工复核",
+                "value": true,
+                "type": "boolean"
+              }
+            ]
+          }
+        },
+        "id": "44c7598c-3af0-403c-afc8-2dc2acab02b9",
+        "name": "生成只读知识库响应",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.4,
+        "position": [
+          520,
+          260
+        ]
+      },
+      {
+        "parameters": {
+          "content": "知识库问答增强未激活导入工件\\n生成时间：2026-04-27 20:29:18\\n安全边界：无Webhook、无凭据、不写Qdrant、不写PostgreSQL、无外发。",
+          "height": 240,
+          "width": 360,
+          "color": 5
+        },
+        "id": "ef7187a2-c222-4494-9e5f-e25229ac4927",
+        "name": "安全边界说明",
+        "type": "n8n-nodes-base.stickyNote",
+        "typeVersion": 1,
+        "position": [
+          260,
+          20
+        ]
+      }
+    ],
+    "connections": {
+      "手动触发": {
+        "main": [
+          [
+            {
+              "node": "生成只读知识库响应",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "settings": {
+      "executionOrder": "v1",
+      "saveManualExecutions": true
+    },
+    "staticData": null,
+    "pinData": {},
+    "tags": [],
+    "meta": {
+      "jiege_v3_gray_import": true,
+      "target": "jiege_n8n",
+      "must_remain_inactive": true,
+      "generated_at": "2026-04-27 20:29:18",
+      "no_qdrant_write": true,
+      "no_postgres_write": true
+    }
+  },
+  "安全检查": {
+    "active": false,
+    "包含Webhook节点": false,
+    "包含凭据": false,
+    "写Qdrant": false,
+    "写PostgreSQL": false,
+    "是否调用n8nAPI": false,
+    "是否执行导入": false
+  },
+  "是否调用n8nAPI": false,
+  "是否执行导入": false,
+  "是否启用Webhook": false,
+  "是否触发真实工作流": false,
+  "是否发送企业微信": false,
+  "是否写Qdrant": false,
+  "是否写PostgreSQL": false
+}

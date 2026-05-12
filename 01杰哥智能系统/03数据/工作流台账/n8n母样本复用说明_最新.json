@@ -1,0 +1,148 @@
+{
+  "generated_at": "2026-05-06 08:10:00 +08:00",
+  "purpose": "说明 34 个 n8n 工作流提纯为 5 个母样本后的复用边界、安全边界和禁止复制项。",
+  "sources": [
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本台账_最新.json",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n工作流母样本台账_最新.md",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n逐工作流归属风险回滚台账_最新.json",
+    "D:\\杰哥智能化系统\\01杰哥智能系统\\03数据\\工作流台账\\n8n逐工作流归属风险回滚台账_最新.md"
+  ],
+  "post_prune_state": {
+    "original_workflow_count": 34,
+    "mother_sample_count": 5,
+    "active_count": 0,
+    "inactive_count": 5,
+    "integrity_check": "ok"
+  },
+  "reuse_global_rules": [
+    "只复用 n8n 流程结构，不复用股票研究业务语义。",
+    "复制件必须改名、重新归属、重填门禁字段，并保持 active=false。",
+    "不得复制真实 Webhook 地址、企业微信目标、鉴权信息、token、cookie、密钥、本地命令路径或 execution 数据。",
+    "进入生产前必须完成注册表、草案清单、业务归属、风险等级和回滚方式登记。"
+  ],
+  "forbidden_stock_business_semantics": [
+    "股票主动研究、股票助手、研究闭环、查询适配器等名称不得直接作为新业务结论或生产用途。",
+    "不得复制股票策略、选股逻辑、风险判断、交易暗示、研报结论或任何可被理解为投资建议的字段。",
+    "测试回环不得被解释为真实生产链路。"
+  ],
+  "mother_samples": [
+    {
+      "id": "ZkzsB6MdxlC3VMxY",
+      "name": "股票主动研究闭环_文件桥接未激活",
+      "risk": "中",
+      "node_types": [
+        "n8n-nodes-base.manualTrigger",
+        "n8n-nodes-base.executeCommand",
+        "n8n-nodes-base.set",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "reuse_boundary": "可复用为人工触发、本地命令、结构化输出的文件桥接骨架。",
+      "copyable_structure": [
+        "Manual Trigger 到 Execute Command 的人工启动结构",
+        "Execute Command 到 Set 的输出字段整理结构",
+        "Sticky Note 的说明模板结构"
+      ],
+      "forbidden_copy": [
+        "股票主动研究语义",
+        "真实文件路径和命令参数",
+        "股票标的、研究结论和投研判断"
+      ],
+      "safety_boundary": "保持 inactive；命令内容必须重写并经人工审查。"
+    },
+    {
+      "id": "h0xpxp9rPrUSqk1G",
+      "name": "股票主动研究闭环_桥接未激活",
+      "risk": "中",
+      "node_types": [
+        "n8n-nodes-base.manualTrigger",
+        "n8n-nodes-base.executeCommand",
+        "n8n-nodes-base.set",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "reuse_boundary": "可复用为人工触发、桥接命令、标准字段的通用桥接骨架。",
+      "copyable_structure": [
+        "人工触发入口",
+        "桥接命令节点位置",
+        "Set 节点的字段归一化方式"
+      ],
+      "forbidden_copy": [
+        "股票研究闭环业务含义",
+        "真实桥接命令和运行目录",
+        "任何可触达生产系统的参数"
+      ],
+      "safety_boundary": "保持 inactive；复制后先作为草案登记，不得直接导入启用。"
+    },
+    {
+      "id": "un0S6SrQSCIsjuhn",
+      "name": "股票助手企业微信Webhook桥接入口未激活v2",
+      "risk": "高",
+      "node_types": [
+        "n8n-nodes-base.webhook",
+        "n8n-nodes-base.httpRequest",
+        "n8n-nodes-base.respondToWebhook",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "reuse_boundary": "仅可复用 Webhook 入站、请求转发、响应闭环的结构。",
+      "copyable_structure": [
+        "Webhook 到 HTTP Request 的入站转发结构",
+        "HTTP Request 到 Respond to Webhook 的响应结构",
+        "错误和状态字段的占位设计"
+      ],
+      "forbidden_copy": [
+        "企业微信业务语义",
+        "Webhook 路径、外部 URL、鉴权头和 token",
+        "真实收件人、群机器人或消息模板"
+      ],
+      "safety_boundary": "高风险；只能在隔离环境复制结构，生产连接必须重新申请和审计。"
+    },
+    {
+      "id": "JBVQ8osGXlHoSJfR",
+      "name": "股票助手n8n本地执行回环测试",
+      "risk": "中",
+      "node_types": [
+        "n8n-nodes-base.executeWorkflowTrigger",
+        "n8n-nodes-base.set"
+      ],
+      "reuse_boundary": "可复用为子工作流入参、字段映射、回环测试的最小骨架。",
+      "copyable_structure": [
+        "Execute Workflow Trigger 子工作流入口",
+        "Set 节点的测试字段映射",
+        "最小回环验证结构"
+      ],
+      "forbidden_copy": [
+        "股票助手业务语义",
+        "把测试链路当作生产链路",
+        "真实生产入参或用户数据"
+      ],
+      "safety_boundary": "仅用于离线回环结构参考；不得连接真实上游或下游。"
+    },
+    {
+      "id": "urKB3BwGfDWQMKb5",
+      "name": "股票助手企业微信查询适配器未激活导入件",
+      "risk": "高",
+      "node_types": [
+        "n8n-nodes-base.manualTrigger",
+        "n8n-nodes-base.set",
+        "n8n-nodes-base.code",
+        "n8n-nodes-base.stickyNote"
+      ],
+      "reuse_boundary": "可复用为人工触发、参数整理、代码适配的查询适配器骨架。",
+      "copyable_structure": [
+        "Manual Trigger 到 Set 的参数准备结构",
+        "Set 到 Code 的适配器处理结构",
+        "Sticky Note 的门禁说明结构"
+      ],
+      "forbidden_copy": [
+        "股票查询语义",
+        "企业微信查询入口语义",
+        "Code 节点中的真实业务逻辑、密钥或外部系统参数"
+      ],
+      "safety_boundary": "高风险；Code 节点只可参考输入输出契约，业务代码必须重写并审查。"
+    }
+  ],
+  "safety": {
+    "triggered_n8n": false,
+    "called_webhook": false,
+    "sent_wecom": false
+  }
+}

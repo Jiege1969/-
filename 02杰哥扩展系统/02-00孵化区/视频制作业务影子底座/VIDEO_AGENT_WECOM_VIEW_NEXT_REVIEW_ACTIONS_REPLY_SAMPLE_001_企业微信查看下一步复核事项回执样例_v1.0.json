@@ -1,0 +1,33 @@
+{
+  "asset_id": "VIDEO_AGENT_WECOM_VIEW_NEXT_REVIEW_ACTIONS_REPLY_SAMPLE_001",
+  "version": "v1.0",
+  "asset_type": "wecom_placeholder_reply_sample",
+  "construction_level": "W1/W2_low_risk_shadow",
+  "scope": "user_asks_next_review_actions",
+  "status": "draft_sample_no_real_send",
+  "input_command_sample": "查看 VF-20260508-003 下一步复核事项",
+  "reply_sample": {
+    "task_id": "VF-20260508-003",
+    "next_review_items": [
+      {"item": "final_preview_review", "queue": "preview_review_queue", "required_output": "preview_review_receipt"},
+      {"item": "ai_label_confirmation", "queue": "publishing_compliance_review_queue", "required_output": "ai_label_confirmation_receipt"},
+      {"item": "material_authorization_proof", "queue": "material_authorization_review_queue", "required_output": "material_authorization_proof_receipt"},
+      {"item": "multi_platform_pre_publish_check", "queue": "platform_difference_review_queue", "required_output": "separate_check_receipt_per_platform"},
+      {"item": "publishing_release_confirmation", "queue": "gate_consistency_review_queue", "required_output": "publishing_release_confirmation_receipt"}
+    ],
+    "note": "After these items are complete, human final confirmation is still required and no auto-publish occurs.",
+    "real_system_triggered": false
+  },
+  "fixed_rules": [
+    "Reply lists review actions only and does not trigger review systems.",
+    "Reply must show queue and required output for each item.",
+    "Reply must remind that completion does not auto-publish.",
+    "This sample does not call WeCom APIs or send real messages."
+  ],
+  "boundaries": {
+    "call_wecom_api": false,
+    "send_real_message": false,
+    "trigger_review_system": false,
+    "trigger_publish": false
+  }
+}

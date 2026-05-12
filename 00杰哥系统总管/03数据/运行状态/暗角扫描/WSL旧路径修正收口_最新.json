@@ -1,0 +1,36 @@
+﻿{
+    "report":  "WSL旧路径修正收口",
+    "generated_at":  "2026-05-06 07:10:00 +08:00",
+    "target":  "Ubuntu-24.04:/home/jiege/.bashrc",
+    "before":  {
+                   "old_ollama_models_path":  "/mnt/d/01杰哥智能系统/03数据/ollama/models",
+                   "old_ollama_host":  "localhost:11435",
+                   "old_alias":  "docker exec ollama ollama",
+                   "missing_cmd_validator_dependency":  true
+               },
+    "after":  {
+                  "ollama_models":  "/mnt/d/杰哥智能化系统/01杰哥智能系统/03数据/ollama/models",
+                  "ollama_host":  "127.0.0.1:29134",
+                  "alias":  "docker exec jiege_v3_ollama ollama",
+                  "docker_guard_uses_missing_validator":  false
+              },
+    "evidence_dirs":  [
+                          "第30轮原始暗角证据目录已清债删除；判断结论、删除对象、验收结果和安全边界已固化在对应_latest收口报告。",
+                          "第30轮原始暗角证据目录已清债删除；判断结论、删除对象、验收结果和安全边界已固化在对应_latest收口报告。"
+                      ],
+    "validation":  {
+                       "crlf_hits":  0,
+                       "bash_syntax_ok":  true,
+                       "ollama_models_path_exists":  true,
+                       "ollama_version":  "0.20.5",
+                       "bloodline_services_touched":  false
+                   },
+    "safety":  {
+                   "triggered_n8n":  false,
+                   "sent_wecom":  false,
+                   "called_broker_api":  false,
+                   "auto_trade":  false,
+                   "deleted_formal_data":  false
+               },
+    "第30轮原始证据清债说明":  "第30轮原始暗角证据目录已清债删除；判断结论、删除对象、验收结果和安全边界已固化在对应_latest收口报告。"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "低风险只读调度干跑结果漂移复核与幂等校验包",
+  "generated_at": "2026-05-08 20:13:44",
+  "pass": true,
+  "error_count": 0,
+  "errors": [],
+  "outputs": {
+    "rules_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\105低风险只读调度干跑结果漂移复核与幂等校验包\\漂移规则_最新.json",
+    "rules_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\105低风险只读调度干跑结果漂移复核与幂等校验包\\漂移规则_最新.md",
+    "idempotency_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\105低风险只读调度干跑结果漂移复核与幂等校验包\\幂等校验报告_最新.json",
+    "idempotency_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\105低风险只读调度干跑结果漂移复核与幂等校验包\\幂等校验报告_最新.md",
+    "drift_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\105低风险只读调度干跑结果漂移复核与幂等校验包\\漂移复核报告_最新.json",
+    "drift_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\105低风险只读调度干跑结果漂移复核与幂等校验包\\漂移复核报告_最新.md",
+    "package_json": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\105低风险只读调度干跑结果漂移复核与幂等校验包\\低风险只读调度干跑结果漂移复核与幂等校验包_最新.json",
+    "package_md": "D:\\杰哥智能化系统\\03杰哥进化系统\\03数据\\105低风险只读调度干跑结果漂移复核与幂等校验包\\低风险只读调度干跑结果漂移复核与幂等校验包_最新.md"
+  },
+  "fixed_verify_log": "D:\\杰哥智能化系统\\03杰哥进化系统\\04日志\\低风险只读调度干跑结果漂移复核与幂等校验包验收\\low-risk-readonly-scheduler-drift-idempotency-verify-最新.json",
+  "actual_execution": false,
+  "copy_source_files": false,
+  "move_source_files": false,
+  "source_files_modified": false,
+  "external_call": false,
+  "reload_service": false,
+  "hard_red_line_confirmation": {
+    "real_wecom_send": false,
+    "trigger_n8n": false,
+    "external_call": false,
+    "broker_connection": false,
+    "trade_order": false,
+    "tax_bureau_login": false,
+    "finance_tax_software_connection": false,
+    "auto_promote_formal_rule": false,
+    "modify_supervisor_panel": false,
+    "modify_one_click_continuation_package": false,
+    "reload_service": false,
+    "actual_execution": false,
+    "copy_source_files": false,
+    "move_source_files": false,
+    "source_files_modified": false
+  }
+}

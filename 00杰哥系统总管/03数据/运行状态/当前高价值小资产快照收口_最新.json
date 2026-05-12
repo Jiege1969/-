@@ -1,0 +1,35 @@
+{
+  "report": "当前高价值小资产快照收口",
+  "generated_at": "2026-05-06 07:21:00 +08:00",
+  "snapshot_path": "F:/系统备份/当前高价值小资产快照_20260506_071440",
+  "groups": 13,
+  "files": 54452,
+  "size_gb": 0.56,
+  "included": [
+    "00总管配置脚本数据文档",
+    "01智能系统配置脚本n8n知识库工作流草案工作流导入工件文档",
+    "02扩展系统/01股票研究系统",
+    "03进化系统"
+  ],
+  "excluded_large_assets": [
+    "WSL2 VHDX",
+    "Ollama model blobs",
+    "local tool runtime cache"
+  ],
+  "n8n_sqlite_validation": {
+    "integrity_check": "ok",
+    "table_count": 53,
+    "workflow_entity": 34,
+    "execution_entity": 43,
+    "shared_workflow": 34
+  },
+  "backup_ledger_updated": true,
+  "safety": {
+    "stopped_docker_or_wsl": false,
+    "triggered_n8n": false,
+    "sent_wecom": false,
+    "called_broker_api": false,
+    "auto_trade": false,
+    "deleted_formal_data": false
+  }
+}

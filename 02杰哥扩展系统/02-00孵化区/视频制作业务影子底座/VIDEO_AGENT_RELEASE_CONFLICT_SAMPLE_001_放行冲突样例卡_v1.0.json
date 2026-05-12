@@ -1,0 +1,59 @@
+{
+  "asset_id": "VIDEO_AGENT_RELEASE_CONFLICT_SAMPLE_001",
+  "version": "v1.0",
+  "asset_type": "shadow_sample_card",
+  "construction_level": "W1/R0",
+  "scope": "generation_render_publish_gate_check",
+  "status": "draft",
+  "purpose": "Clarify that generation release, real render release, and publishing release are separate gates.",
+  "conflict_samples": [
+    {
+      "id": "RC-001",
+      "generation_gate": "released",
+      "render_gate": "pending",
+      "publish_gate": "pending",
+      "judgement": "cannot_render_or_publish",
+      "action": "register_render_release_gap"
+    },
+    {
+      "id": "RC-002",
+      "generation_gate": "released",
+      "render_gate": "released",
+      "publish_gate": "pending",
+      "judgement": "may_record_preview_but_cannot_publish",
+      "action": "register_publish_confirmation_gap"
+    },
+    {
+      "id": "RC-003",
+      "generation_gate": "pending",
+      "render_gate": "released",
+      "publish_gate": "released",
+      "judgement": "precondition_conflict",
+      "action": "return_all_to_human_review"
+    },
+    {
+      "id": "RC-004",
+      "generation_gate": "rejected",
+      "render_gate": "released",
+      "publish_gate": "released",
+      "judgement": "rejection_overrides_later_gates",
+      "action": "block_real_actions"
+    },
+    {
+      "id": "RC-005",
+      "generation_gate": "released",
+      "render_gate": "released",
+      "publish_gate": "released",
+      "judgement": "still_requires_platform_rules_and_material_authorization",
+      "action": "keep_blocked_until_gaps_are_clear"
+    }
+  ],
+  "fixed_rules": [
+    "Any rejected precondition blocks later gates.",
+    "Publishing release cannot imply generation or real render release.",
+    "Generation release is not real render release.",
+    "Real render release is not publishing release.",
+    "Material authorization, platform rules, AI labeling, and human confirmation must be complete before any real action."
+  ],
+  "output_boundary": "When conflict appears, output pending-review questions or blocker records, not execution commands."
+}

@@ -1,0 +1,46 @@
+﻿{
+    "version":  "1.0",
+    "status":  "shadow_metadata_card",
+    "document_id":  "TAX-DOC-2011-100",
+    "title":  "财政部 国家税务总局关于软件产品增值税政策的通知",
+    "document_number":  "财税〔2011〕100号",
+    "issuing_authority":  [
+                              "财政部",
+                              "国家税务总局"
+                          ],
+    "publish_date":  "2011-10-13",
+    "effective_date":  "pending_manual_review",
+    "validity_status":  "verify_against_official_policy_database",
+    "source_url":  "https://fgk.chinatax.gov.cn/zcfgk/c102416/c5204304/content.html",
+    "source_level":  "national",
+    "trust_level":  "A",
+    "tax_type":  "增值税",
+    "business_scenario":  [
+                              "软件产品增值税即征即退"
+                          ],
+    "legal_level":  "规范性文件",
+    "keywords":  [
+                     "软件产品",
+                     "增值税",
+                     "即征即退",
+                     "嵌入式软件",
+                     "自行开发"
+                 ],
+    "verification_status":  "official_source_registered_pending_article_review",
+    "can_enter_candidate_evidence":  true,
+    "can_generate_final_tax_conclusion":  false,
+    "required_output_label":  "待复核草案",
+    "pending_checks":  [
+                           "逐条复核官方条文",
+                           "复核当前有效状态",
+                           "复核当地主管税务机关申报材料要求",
+                           "复核软件著作权或软件产品登记等材料要求",
+                           "复核收入构成和嵌入式软件情形"
+                       ],
+    "linked_shadow_sample":  "软件产品即征即退_影子样例_v1.0.md",
+    "hierarchy_rank":  3,
+    "source_scope":  "国家级主管机关政策",
+    "conflict_with_higher_level":  "not_found_pending_review_against_current_law_and_updates",
+    "usable_as_basis":  true,
+    "usable_as_process_reference":  false
+}

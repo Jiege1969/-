@@ -1,0 +1,77 @@
+{
+  "id": "VIDEO_AGENT_SHADOW_RUN_CHECKLIST_001",
+  "name": "影子运行检查清单",
+  "asset_identity": "video_creation_agent_shadow_run_checklist",
+  "stage": "W1_R0",
+  "status": "checklist_not_runner",
+  "boundary": {
+    "call_model": false,
+    "wechat_integration": false,
+    "trigger_n8n": false,
+    "renderer_or_publisher": false,
+    "formal_entry_write": false
+  },
+  "checks": [
+    {
+      "order": 1,
+      "item": "input_source",
+      "pass_condition": "manual_shadow_input_or_desensitized_transcript",
+      "fail_action": "reject_real_entry_and_return_to_registration"
+    },
+    {
+      "order": 2,
+      "item": "user_question_summary",
+      "pass_condition": "desensitized_no_account_phone_secret_full_asset_path",
+      "fail_action": "desensitize_or_record_blocker"
+    },
+    {
+      "order": 3,
+      "item": "initial_intent",
+      "pass_condition": "classified_into_known_intent_type",
+      "fail_action": "route_to_clarification_question"
+    },
+    {
+      "order": 4,
+      "item": "platform_rule_status",
+      "pass_condition": "source_registered_or_pending_verification_marked",
+      "fail_action": "mark_pending_verification_no_publishable_conclusion"
+    },
+    {
+      "order": 5,
+      "item": "asset_authorization_status",
+      "pass_condition": "authorization_registered_or_pending_verification_marked",
+      "fail_action": "mark_pending_verification_no_generation"
+    },
+    {
+      "order": 6,
+      "item": "generation_request",
+      "pass_condition": "no_direct_image_voice_subtitle_cover_or_video_generation_request",
+      "fail_action": "redline_block"
+    },
+    {
+      "order": 7,
+      "item": "publish_external_send_request",
+      "pass_condition": "no_upload_publish_wechat_send_or_n8n_flow_request",
+      "fail_action": "redline_block"
+    },
+    {
+      "order": 8,
+      "item": "output_type",
+      "pass_condition": "clarification_three_option_review_checklist_or_receipt_summary_only",
+      "fail_action": "downgrade_to_review_draft"
+    }
+  ],
+  "allowed_after_pass": [
+    "clarification_question",
+    "up_to_three_text_option_drafts",
+    "human_review_checklist",
+    "alignment_return_record"
+  ],
+  "forbidden_after_pass": [
+    "media_generation",
+    "render_transcode_edit_voice_subtitle_cover_video",
+    "upload_publish_external_send",
+    "trigger_n8n_or_real_wechat_send",
+    "formal_video_entry_or_rule_database_write"
+  ]
+}

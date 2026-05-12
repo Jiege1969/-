@@ -1,0 +1,43 @@
+﻿{
+  "report_name": "血脉分钟级探针收口_最新",
+  "time": "2026-05-06 06:16",
+  "status": "passed",
+  "task_name": "杰哥智能化系统_血脉分钟级只读探针",
+  "task_state": "Ready",
+  "last_task_result": 0,
+  "last_run_time": "2026-05-06 06:16:24",
+  "latest_status": "ready",
+  "latest_ready": true,
+  "failed_count": 0,
+  "json_parse_passed": true,
+  "jsonl_lines": 3,
+  "files": {
+    "probe_script": "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\blood_probe_minutely.ps1",
+    "hidden_launcher": "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\hidden_start_blood_probe.vbs",
+    "register_script": "D:\\杰哥智能化系统\\00杰哥系统总管\\02脚本\\register_blood_probe_task.ps1",
+    "latest_json": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\血脉分钟级探针_最新.json",
+    "latest_md": "D:\\杰哥智能化系统\\00杰哥系统总管\\03数据\\运行状态\\血脉分钟级探针_最新.md",
+    "jsonl_log": "D:\\杰哥智能化系统\\00杰哥系统总管\\04日志\\血脉分钟级监测\\blood-probe.jsonl"
+  },
+  "corrected_port_mapping": {
+    "redis": 26379,
+    "n8n": 28679,
+    "ollama": 29134
+  },
+  "safety": {
+    "trigger_n8n": false,
+    "send_wecom": false,
+    "call_broker_api": false,
+    "auto_trade": false,
+    "restart_service": false,
+    "delete_data": false,
+    "repair_service": false
+  },
+  "next_steps": [
+    "骨架周检探针",
+    "基因资源探针",
+    "事件链台账",
+    "人工超控入口",
+    "业务线交付契约"
+  ]
+}

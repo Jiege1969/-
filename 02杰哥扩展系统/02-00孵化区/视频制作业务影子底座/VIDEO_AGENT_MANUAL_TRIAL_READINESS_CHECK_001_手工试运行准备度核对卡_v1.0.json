@@ -1,0 +1,71 @@
+{
+  "asset_id": "VIDEO_AGENT_MANUAL_TRIAL_READINESS_CHECK_001",
+  "vai_id": "VAI-040",
+  "name": "手工试运行准备度核对卡",
+  "version": "v1.0",
+  "generated_at": "2026-05-08 13:12:00 +08:00",
+  "business_line": "video_production_shadow_base",
+  "stage": "W1_R0",
+  "asset_identity": "video_creation_agent_manual_shadow_trial_readiness_check",
+  "formal_video_system": false,
+  "purpose": "check whether a manual shadow trial has minimum input, draft, review, receipt and redline readiness",
+  "readiness_levels": {
+    "R0_NOT_READY": "basic input or redline scan missing",
+    "R0_PARTIAL": "input readable but review or receipt chain incomplete",
+    "R0_READY": "input, draft, review, receipt and redline chain ready for manual shadow trial",
+    "R0_BLOCKED": "real render, publish, external send, service or credential redline hit"
+  },
+  "minimum_conditions": [
+    "input_source",
+    "creative_goal",
+    "platform_assumption",
+    "audience_or_style",
+    "modifiable_scope",
+    "confirmed_content_split",
+    "platform_rules",
+    "asset_authorization",
+    "ai_label_status",
+    "human_review_questions",
+    "receipt_intake",
+    "redline_scan"
+  ],
+  "allowed_outputs": [
+    "reviewable_text_draft",
+    "three_option_opening_or_storyboard_draft",
+    "clarification_questions",
+    "partial_revision_suggestion",
+    "platform_and_asset_gap",
+    "human_review_question_list",
+    "receipt_draft",
+    "evolution_candidate_draft"
+  ],
+  "blocked_outputs": [
+    "publishable_final_video_claim",
+    "real_render",
+    "voice_generation",
+    "subtitle_generation",
+    "cover_generation",
+    "edit_or_transcode",
+    "platform_login",
+    "upload",
+    "publish",
+    "postbot",
+    "wecom_real_send",
+    "n8n_webhook",
+    "read_real_assets",
+    "read_credentials",
+    "formal_rule_upgrade"
+  ],
+  "boundary": {
+    "read_real_assets": false,
+    "call_model": false,
+    "call_tts": false,
+    "call_renderer": false,
+    "call_publisher": false,
+    "wechat_real_send": false,
+    "trigger_n8n": false,
+    "service_started_or_restarted": false,
+    "formal_config_modified": false,
+    "old_assets_moved_deleted_or_renamed": false
+  }
+}

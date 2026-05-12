@@ -1,0 +1,56 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-05-08 00:05:18 +08:00",
+  "gate_check_id": "VIDEO_FACTORY_R012_GATE_001",
+  "name": "生成/发布放行清单只读核对",
+  "asset_identity": "video_factory_round012_generation_publish_gate_readonly_check_record",
+  "risk_level": "W1",
+  "boundary": {
+    "modify_generation_release_list": false,
+    "modify_publish_release_list": false,
+    "modify_video_system_task": false,
+    "render": false,
+    "upload": false,
+    "publish": false,
+    "external_send": false,
+    "send_wecom": false,
+    "trigger_n8n": false
+  },
+  "checked_objects": {
+    "latest_task": {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\视频工厂任务单_最新.json",
+      "task_id": "VF-20260508-003",
+      "status": "预演中",
+      "allow_real_render": false,
+      "allow_auto_publish": false
+    },
+    "generation_release_list": {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\放行清单\\视频生成放行清单_最新.md",
+      "listed_task_id": "VF-20260508-001",
+      "release_status": "待确认"
+    },
+    "publish_release_list": {
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\02视频制作系统\\03数据\\18轮次012视频工厂总控层\\放行清单\\视频发布放行清单_最新.md",
+      "listed_task_id": "VF-20260508-001",
+      "generation_status": "待生成",
+      "publish_release_status": "待确认"
+    }
+  },
+  "key_finding": "最新任务 VF-20260508-003 尚未出现在生成放行清单和发布放行清单中。",
+  "status_mapping": {
+    "previewing": "可继续脚本/分镜预演和人工复核，不能推导生成放行",
+    "generation_released": "可进入真实渲染或生成预览，但不代表发布",
+    "generated_pending_preview": "可人工预览成品，但不代表发布",
+    "publish_pending_confirmation": "可做发布前检查，但不代表发布",
+    "publish_released": "仅在人工明确放行后进入发布辅助流程"
+  },
+  "forbidden_inferences": [
+    "VF-20260508-003已生成放行",
+    "VF-20260508-003已发布放行",
+    "脚本草案或分镜草案已可直接渲染",
+    "平台合规",
+    "版权安全",
+    "可发布"
+  ],
+  "conclusion": "VF-20260508-003 当前仍为预演任务。生成放行清单和发布放行清单均未放行该任务；后续若要生成或发布，必须由视频系统和人工复核流程单独登记，不得自动继承。"
+}

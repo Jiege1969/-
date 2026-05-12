@@ -1,0 +1,43 @@
+{
+  "名称": "行业价格观测账本",
+  "版本": "1.0",
+  "生成日期": "2026-05-08",
+  "所属系统": "02杰哥扩展系统/01股票研究系统",
+  "资产身份": "正式候选数据账本",
+  "状态": "active",
+  "用途": "保存可公开复核或授权允许入账的行业价格观测点，用于生成行业价格趋势证据卡。",
+  "入账边界": [
+    "每条观测必须有产品、日期、价格、单位、来源名称和来源URL。",
+    "会员或授权数据只有在授权允许内部研究使用时才能入账。",
+    "媒体摘要只作为线索，不能替代原始价格源。",
+    "不足5个连续交易日价格时，不得生成trend_ready结论。"
+  ],
+  "observations": [
+    {
+      "product_code": "battery_grade_lithium_carbonate",
+      "product_name": "电池级碳酸锂",
+      "price_date": "2026-05-07",
+      "price_mid": 187500,
+      "price_low": null,
+      "price_high": null,
+      "unit": "元/吨",
+      "currency": "CNY",
+      "change_abs": 10500,
+      "change_pct": 0.0593,
+      "source_name": "上海有色网SMM新能源材料页",
+      "source_url": "https://newenergy.smm.cn/",
+      "source_role": "公开价格页单点观测",
+      "checked_at": "2026-05-07",
+      "authorization_status": "public_page_observation",
+      "notes": "仅作为单点观测，不得写成趋势反转。"
+    }
+  ],
+  "安全边界": {
+    "only_for_research": true,
+    "not_investment_advice": true,
+    "not_buy_sell_signal": true,
+    "not_broker_interface": true,
+    "not_auto_trade": true,
+    "not_external_send": true
+  }
+}

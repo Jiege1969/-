@@ -1,0 +1,199 @@
+{
+  "name": "股票主动研究闭环_文件桥接未激活",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "8b55be31-33cc-4207-b595-10f4d157476a",
+      "name": "手动触发",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "command": "mkdir -p /home/node/.n8n/jiege_bridge && printf '{\"task\":\"stock_active_research\",\"mode\":\"inactive_intraday_loop\",\"stage\":\"manual_test_or_schedule\",\"created_at\":\"%s\"}\\n' \"$(date -Iseconds)\" > /home/node/.n8n/jiege_bridge/stock_active_research_trigger.json && cat /home/node/.n8n/jiege_bridge/stock_active_research_trigger.json"
+      },
+      "id": "728dd8c7-12c8-4299-b72f-a1bf35b665ba",
+      "name": "写入宿主机股票研究触发文件",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        520,
+        260
+      ],
+      "notes": "向n8n共享目录写入触发文件；宿主机受控脚本读取后运行股票闭环。"
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "duplicateItem": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d5193ec6-a494-4952-a302-104c619e2d46",
+              "name": "状态",
+              "value": "inactive_import_only",
+              "type": "string"
+            },
+            {
+              "id": "133184cb-a796-4f05-8718-bec7c239904c",
+              "name": "工作流名",
+              "value": "股票主动研究闭环_文件桥接未激活",
+              "type": "string"
+            },
+            {
+              "id": "1a56ac2f-be59-4dd4-b6dd-5ef9c26479ec",
+              "name": "桥接方式",
+              "value": "n8n共享目录触发文件",
+              "type": "string"
+            },
+            {
+              "id": "23fbe54d-49b2-432e-8185-719c8a2edf4b",
+              "name": "触发文件",
+              "value": "/home/node/.n8n/jiege_bridge/stock_active_research_trigger.json",
+              "type": "string"
+            },
+            {
+              "id": "68a93e59-7f46-4519-bdc2-4228e70e5d64",
+              "name": "AI分析报告",
+              "value": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\135分层日报\\AI分析报告_最新.md",
+              "type": "string"
+            },
+            {
+              "id": "f50187dd-e2b2-4562-ab8c-d476f131769a",
+              "name": "企微推送草案",
+              "value": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\136推送草案\\股票企微推送草案_最新.md",
+              "type": "string"
+            },
+            {
+              "id": "b26a7575-54bb-4aed-bb81-5f1b0612365a",
+              "name": "日内报告闭环策略",
+              "value": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\260股票n8n日内报告闭环与晨报推送策略包\\股票n8n日内报告闭环与晨报推送策略包_最新.json",
+              "type": "string"
+            },
+            {
+              "id": "2155d25a-840d-4ff0-815f-18b116d59093",
+              "name": "收市后每日观察",
+              "value": "15:40-18:30；生成分层日报、候选池和第二天候选推荐草案。",
+              "type": "string"
+            },
+            {
+              "id": "1b01bf5a-99c4-4146-a51f-2fe8e9329d24",
+              "name": "半夜宏观规律分析",
+              "value": "00:30-05:30；复盘前日推送、行业轮动、更优候选和风险纠偏。",
+              "type": "string"
+            },
+            {
+              "id": "9e6cc2fd-f60f-4392-8e7f-1c9ee7f764f9",
+              "name": "开市前晨报推送",
+              "value": "08:20-08:40；仅本人单条晨报灰度闸口，不群发。",
+              "type": "string"
+            },
+            {
+              "id": "e05b2df0-53b6-4b93-b41e-7e01424b8941",
+              "name": "学习沉淀",
+              "value": "推送、纠偏、用户反馈和晚间复盘均进入学习沉淀账与进化候选。",
+              "type": "string"
+            },
+            {
+              "id": "644973ae-45ed-4a8e-99d4-13ab1483f9b2",
+              "name": "是否需要人工复核",
+              "value": true,
+              "type": "boolean"
+            },
+            {
+              "id": "cd7e810d-e615-40ed-90b1-f9bf1149b125",
+              "name": "安全声明",
+              "value": "未激活导入；无Webhook；无真实发送节点；无券商接口；无自动交易。",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "id": "2dbca6f9-3dfa-4c83-9994-de787df2574d",
+      "name": "输出本地结果路径",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "股票主动研究闭环文件桥接未激活导入工件\\n生成时间：2026-05-09 13:25:09\\n日内节奏：全天轻量随问随答；15:40-18:30收市观察；00:30-05:30半夜规律复盘；08:20-08:40开市前晨报。\\n安全边界：active=false；无Webhook；无n8n凭据；无企业微信真实发送节点；无券商接口；无自动交易。\\n用途：n8n写触发文件，宿主机受控脚本消费触发并运行股票主动研究闭环。",
+        "height": 260,
+        "width": 420,
+        "color": 4
+      },
+      "id": "7075252d-05c9-4208-a9b0-7726f5d52316",
+      "name": "安全边界说明",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -40
+      ]
+    }
+  ],
+  "connections": {
+    "手动触发": {
+      "main": [
+        [
+          {
+            "node": "写入宿主机股票研究触发文件",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "写入宿主机股票研究触发文件": {
+      "main": [
+        [
+          {
+            "node": "输出本地结果路径",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  },
+  "staticData": null,
+  "pinData": {},
+  "tags": [],
+  "meta": {
+    "jiege_stock_active_research": true,
+    "target": "jiege_v3_n8n",
+    "must_remain_inactive": true,
+    "generated_at": "2026-05-09 13:25:09",
+    "intraday_report_loop": true,
+    "strategy_package": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\260股票n8n日内报告闭环与晨报推送策略包\\股票n8n日内报告闭环与晨报推送策略包_最新.json",
+    "schedule_plan": [
+      {
+        "name": "收市后每日观察",
+        "time": "15:40-18:30",
+        "real_send": false
+      },
+      {
+        "name": "半夜宏观规律分析",
+        "time": "00:30-05:30",
+        "real_send": false
+      },
+      {
+        "name": "开市前晨报推送",
+        "time": "08:20-08:40",
+        "real_send": "single-user-gate-only"
+      }
+    ]
+  }
+}

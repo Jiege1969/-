@@ -1,0 +1,161 @@
+# -*- coding: utf-8 -*-
+"""生成企业微信模拟问答回归验收样例。"""
+
+from __future__ import annotations
+
+import json
+from datetime import datetime
+from pathlib import Path
+
+
+BASE_DIR = Path(r"D:\杰哥智能化系统\02杰哥扩展系统\01股票研究系统")
+DATA_DIR = BASE_DIR / "03数据" / "245L3评分基础资产"
+JSON_OUT = DATA_DIR / "企业微信模拟问答回归验收样例_最新.json"
+MD_OUT = DATA_DIR / "企业微信模拟问答回归验收样例_最新.md"
+
+
+SIMULATED_QA = [
+    {
+        "question": "云南锗业现在怎么样",
+        "stock_name": "云南锗业",
+        "stock_code": "002428",
+        "answer": {
+            "first_line": "云南锗业（002428）：可纳入观察。",
+            "one_sentence": "政策和资源属性有支撑，但财报、锗价和资金证据还没补齐，暂不输出强结论。",
+            "main_reasons": ["锗相关政策事件候选有支撑", "资源品主题与市场风格适配", "技术结构只作辅助确认"],
+            "key_missing": ["P0：财报和盈利质量未结构化", "P0：锗价连续观测待补"],
+            "confidence_text": "置信度中等，主要受财报和价格连续数据缺口限制。",
+            "review_hint": "下一次优先复核财报、锗价和资金证据。",
+        },
+    },
+    {
+        "question": "正丹股份还能看吗",
+        "stock_name": "正丹股份",
+        "stock_code": "300641",
+        "answer": {
+            "first_line": "正丹股份（300641）：可纳入观察。",
+            "one_sentence": "产品价格和盈利弹性值得跟踪，但关键证据未连续验证前只保留观察。",
+            "main_reasons": ["化工品价格弹性线索值得跟踪", "新增样本已纳入验收"],
+            "key_missing": ["P0：核心产品价格连续数据待补", "P0：最新财报盈利弹性待复核"],
+            "confidence_text": "置信度中等，关键取决于价格和财报能否连续验证。",
+            "review_hint": "下一次优先复核核心产品价格、财报和资金承接。",
+        },
+    },
+    {
+        "question": "浙商中拓现在怎么样",
+        "stock_name": "浙商中拓",
+        "stock_code": "000906",
+        "answer": {
+            "first_line": "浙商中拓（000906）：可纳入观察。",
+            "one_sentence": "作为新增样本可以观察，但财报、经营现金流和资金证据未补齐，置信度偏低。",
+            "main_reasons": ["供应链和大宗商品属性待验证", "新增样本已纳入验收", "财报资金证据决定结论上限"],
+            "key_missing": ["P0：财报与经营现金流待结构化", "P1：大宗商品景气和资金流向待补"],
+            "confidence_text": "置信度偏低，主要受财报和经营现金流缺口限制。",
+            "review_hint": "下一次优先复核财报、经营现金流和大宗商品景气证据。",
+        },
+    },
+    {
+        "question": "三花智控怎么样",
+        "stock_name": "三花智控",
+        "stock_code": "002050",
+        "answer": {
+            "first_line": "三花智控（002050）：可纳入观察。",
+            "one_sentence": "产业位置较清晰，但资金、机构和估值证据缺口仍在，暂不提高结论强度。",
+            "main_reasons": ["产业链位置较清晰", "基本面验证价值较高", "资金机构证据仍需补齐"],
+            "key_missing": ["P0：估值位置待补", "P1：机构和资金变化待补"],
+            "confidence_text": "置信度中等，受估值、机构和资金证据缺口限制。",
+            "review_hint": "下一次优先复核财报摘要、估值位置和机构资金变化。",
+        },
+    },
+    {
+        "question": "上纬新材现在能关注吗",
+        "stock_name": "上纬新材",
+        "stock_code": "688585",
+        "answer": {
+            "first_line": "上纬新材（688585）：暂不建议关注。",
+            "one_sentence": "当前证据主要停留在局部技术面，财报、行业和资金证据不足。",
+            "main_reasons": ["结构化财报证据不足", "行业景气证据不足"],
+            "key_missing": ["P0：财报与盈利质量证据缺失", "P0：行业景气与订单价格线索缺失"],
+            "confidence_text": "置信度低，缺口集中在财报、行业和资金证据。",
+            "review_hint": "下一次先补财报和行业价格/需求证据。",
+        },
+    },
+]
+
+
+def main() -> None:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    asset = {
+        "name": "企业微信模拟问答回归验收样例",
+        "version": "v1.0",
+        "generated_at": now,
+        "asset_identity": "W2本地模拟问答回归样例",
+        "status": "shadow_wecom_simulation",
+        "purpose": "本地模拟用户在企业微信里询问股票，验收前台回答是否符合对象、结论、依据、缺口、置信度和复核提醒门禁。",
+        "not_real_wecom_send": True,
+        "not_external_send": True,
+        "not_formal_entry": True,
+        "not_trade_advice": True,
+        "simulated_qa": SIMULATED_QA,
+        "gate_expectation": {
+            "must_include_first_line_identity": True,
+            "max_main_reasons": 3,
+            "must_include_missing": True,
+            "must_include_confidence": True,
+            "must_include_review_hint": True,
+            "must_not_include_backend_indicator_dump": True,
+            "must_not_include_trade_action": True,
+        },
+        "summary": {"qa_count": len(SIMULATED_QA), "all_local_simulation": True, "real_wecom_send_allowed": False},
+        "safety_boundary": {
+            "not_n8n": True,
+            "not_external_send": True,
+            "not_service_restart": True,
+            "not_19310": True,
+            "not_real_account": True,
+            "not_formal_database_write": True,
+            "not_formal_config": True,
+            "not_entrypoint": True,
+            "not_broker_interface": True,
+            "not_auto_trade": True,
+            "not_order": True,
+            "not_position_adjustment": True,
+        },
+    }
+    JSON_OUT.write_text(json.dumps(asset, ensure_ascii=False, indent=2), encoding="utf-8")
+    lines = [
+        "# 企业微信模拟问答回归验收样例",
+        "",
+        f"- 生成时间：{now}",
+        "- 资产身份：W2本地模拟问答回归样例",
+        "- 真实企业微信发送：否",
+        "- 交易建议：否",
+        "",
+    ]
+    for item in SIMULATED_QA:
+        ans = item["answer"]
+        lines.extend(
+            [
+                f"## 问：{item['question']}",
+                "",
+                ans["first_line"],
+                "",
+                ans["one_sentence"],
+                "",
+                "主要依据：" + "；".join(ans["main_reasons"]) + "。",
+                "",
+                "关键缺口：" + "；".join(ans["key_missing"]) + "。",
+                "",
+                ans["confidence_text"],
+                "",
+                "复核提醒：" + ans["review_hint"],
+                "",
+            ]
+        )
+    MD_OUT.write_text("\n".join(lines), encoding="utf-8")
+    print(json.dumps({"status": "ok", "summary": asset["summary"]}, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()
