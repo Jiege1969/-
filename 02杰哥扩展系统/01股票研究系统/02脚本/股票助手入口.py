@@ -134,7 +134,16 @@ PUBLIC_CALLBACK_STATUS_SCRIPT = ROOT / "02脚本" / "查看股票公网回调状
 def load_json(path: Path, default: Any = None) -> Any:
     if not path.exists():
         return default
-    return json.loads(path.read_text(encoding="utf-8-sig"))
+    raw = path.read_bytes()
+    last_error: Exception | None = None
+    for encoding in ("utf-8-sig", "utf-8", "gb18030"):
+        try:
+            return json.loads(raw.decode(encoding))
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            last_error = exc
+    if default is not None:
+        return default
+    raise last_error or ValueError(f"无法读取JSON文件：{path}")
 
 
 def write_json(path: Path, data: dict[str, Any]) -> None:
@@ -1069,15 +1078,53 @@ def classify_report_feedback(question: str) -> str:
     return "未分类反馈"
 
 
+def classify_feedback_learning_lane(question: str, feedback_type: str) -> dict[str, str]:
+    text = normalize_report_feedback_text(question)
+    feedback_type = str(feedback_type or "")
+    if any(term in text for term in ("候选不合理", "候选", "股票池", "名单", "入池", "剔除", "推荐不合理")):
+        return {
+            "主分类": "股票池",
+            "子分类": "候选质量与观察池",
+            "复盘动作": "复核候选来源、入池理由、保留或降级依据。",
+            "优先级": "P1",
+        }
+    if any(term in text for term in ("指标", "触发线", "风险线", "价格", "成交量", "放量", "倍", "站稳", "跌破", "算出来", "条件不清楚")):
+        return {
+            "主分类": "指标",
+            "子分类": "具体条件与数值阈值",
+            "复盘动作": "复核价格、成交量、风险线和触发线是否已算成前台可读数字。",
+            "优先级": "P1",
+        }
+    if any(term in text for term in ("不准", "不对", "判断", "模型", "评分", "星级", "强烈关注", "误判")) or feedback_type in ("分析结果不准", "分析结果不对"):
+        return {
+            "主分类": "模型",
+            "子分类": "判断偏差与评分口径",
+            "复盘动作": "进入判断偏差复盘，只沉淀为进化候选，不自动改正式规则。",
+            "优先级": "P0",
+        }
+    return {
+        "主分类": "三阶段报告",
+        "子分类": "前台表达与报告结构",
+        "复盘动作": "复核报告是否少讲过程、多讲结论，并补齐可读性、风险和详情入口。",
+        "优先级": "P1",
+    }
+
+
 def record_report_feedback(question: str, stock: dict[str, Any] | None) -> dict[str, Any]:
     existing = load_json(USER_FEEDBACK_LOG_PATH, {}) or {"名称": "股票AI反馈日志", "反馈记录": []}
     records = existing.get("反馈记录", [])
     if not isinstance(records, list):
         records = []
     stock = stock or {}
+    feedback_type = classify_report_feedback(question)
+    learning_lane = classify_feedback_learning_lane(question, feedback_type)
     event = {
         "时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "反馈类型": classify_report_feedback(question),
+        "反馈类型": feedback_type,
+        "学习沉淀主分类": learning_lane["主分类"],
+        "学习沉淀子分类": learning_lane["子分类"],
+        "复盘动作": learning_lane["复盘动作"],
+        "复盘优先级": learning_lane["优先级"],
         "代码": stock.get("代码") or stock.get("code") or "",
         "名称": stock.get("名称") or stock.get("name") or "",
         "行业": stock.get("行业") or stock.get("细分领域") or "",
@@ -1092,6 +1139,12 @@ def record_report_feedback(question: str, stock: dict[str, Any] | None) -> dict[
         "名称": "股票AI反馈日志",
         "更新时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "反馈数量": len(records),
+        "学习沉淀分类说明": {
+            "三阶段报告": "处理报告结构、表达可读性、风险解释、详情入口和企业微信阅读体验。",
+            "股票池": "处理候选不合理、入池/剔除、观察池保留和名单质量问题。",
+            "指标": "处理价格、成交量、风险线、触发线、站稳/跌破等具体数值条件。",
+            "模型": "处理判断不准、评分偏差、星级口径和强烈关注误判问题。",
+        },
         "反馈记录": records,
         "安全边界": {
             "是否自动交易": False,
@@ -1117,9 +1170,12 @@ def build_report_feedback_reply(question: str) -> dict[str, Any]:
     result = record_report_feedback(question, stock)
     stock_text = stock_display_name(stock) if stock else "本次报告"
     feedback_type = result["事件"]["反馈类型"]
+    learning_lane = result["事件"].get("学习沉淀主分类", "三阶段报告")
+    replay_action = result["事件"].get("复盘动作", "进入晚间复盘和进化候选。")
     reply = "\n".join([
         f"收到，已把“{stock_text}：{feedback_type}”记入反馈日志。",
-        "这条已经进入使用-反馈-改进闭环；不会自动改正式规则，会进入晚间复盘和进化候选。",
+        f"这条已经进入使用-反馈-改进闭环，归到“{learning_lane}”施工线；不会自动改正式规则。",
+        f"下一步：{replay_action}",
         "如果是报告展示需求，系统会优先按企业微信阅读体验处理，比如增加财务依据、风险解释、行业逻辑或单股详情入口。",
         "你可以继续追问：为什么这样判断 / 风险具体是什么 / 明天还看不看；也可以直接说“不准、不对、不好用、看不懂”。",
     ])
