@@ -38,6 +38,65 @@ TOPIC_OWNER_LANES = {
     "报告": "quality_evidence",
 }
 
+DUPLICATE_NUMBER_OWNER_RULES = {
+    "01": {
+        "owner_lane": "sample_pool",
+        "policy": "keep_stock_pool_primary_and_review_migration_assets",
+        "merge_preconditions": [
+            "confirm_migration_assets_are_source_records",
+            "build_parent_index_before_any_rename",
+        ],
+    },
+    "149": {
+        "owner_lane": "quality_evidence",
+        "policy": "keep_financial_review_index_as_parent",
+        "merge_preconditions": [
+            "link_financial_review_outputs_to_existing_index",
+            "do_not_merge_until_review_paths_are_documented",
+        ],
+    },
+    "186": {
+        "owner_lane": "quality_evidence",
+        "policy": "keep_financial_review_panel_as_parent_and_report_v21_as_template",
+        "merge_preconditions": [
+            "separate_template_from_live_quality_panel",
+            "record_template_owner_before_reuse",
+        ],
+    },
+    "195": {
+        "owner_lane": "quality_evidence",
+        "policy": "separate_risk_evidence_account_from_import_execution",
+        "merge_preconditions": [
+            "keep_evidence_account_readable_before_import_execution",
+            "confirm_import_execution_is_manual_or_controlled",
+        ],
+    },
+    "243": {
+        "owner_lane": "safe_boundary",
+        "policy": "keep_delivery_status_as_parent_and_auto_trade_block_as_safety_child",
+        "merge_preconditions": [
+            "preserve_auto_trade_blocking_evidence",
+            "do_not_enable_any_external_action",
+        ],
+    },
+    "283": {
+        "owner_lane": "sample_pool",
+        "policy": "split_recommendation_engine_from_frontend_terminal_roles",
+        "merge_preconditions": [
+            "confirm_engine_outputs_feed_sample_pool",
+            "confirm_frontend_terminal_split_is_only_presentation_layer",
+        ],
+    },
+    "286": {
+        "owner_lane": "sample_pool",
+        "policy": "keep_sample_room_acceptance_as_parent_and_review_performance_workstream",
+        "merge_preconditions": [
+            "keep_sample_room_acceptance_gate_ci_guarded",
+            "review_assistant_performance_work_as_related_child",
+        ],
+    },
+}
+
 
 def classify_directory_name(name: str) -> str:
     if any(term in name for term in INDEX_TERMS):
@@ -66,16 +125,35 @@ def choose_duplicate_action(roles: list[dict[str, str]]) -> str:
     return "assign_owner_lane_before_renaming_or_merging"
 
 
+def duplicate_owner_rule(number: str, roles: list[dict[str, str]]) -> dict[str, Any]:
+    rule = DUPLICATE_NUMBER_OWNER_RULES.get(number)
+    if rule is not None:
+        return dict(rule)
+    return {
+        "owner_lane": "stock_system_general",
+        "policy": choose_duplicate_action(roles),
+        "merge_preconditions": [
+            "assign_owner_lane",
+            "confirm_no_runtime_dependency",
+            "record_manual_review_before_any_rename",
+        ],
+    }
+
+
 def build_duplicate_index(maturity_report: dict[str, Any]) -> list[dict[str, Any]]:
     items: list[dict[str, Any]] = []
     for candidate in maturity_report["duplicate_number_candidates"]:
         roles = directory_roles(candidate["directories"])
+        owner_rule = duplicate_owner_rule(candidate["number"], roles)
         items.append(
             {
                 "number": candidate["number"],
                 "count": candidate["count"],
                 "directories": roles,
                 "action": choose_duplicate_action(roles),
+                "owner_lane": owner_rule["owner_lane"],
+                "policy": owner_rule["policy"],
+                "merge_preconditions": owner_rule["merge_preconditions"],
             }
         )
     return items
@@ -122,6 +200,7 @@ def next_queue(duplicate_index: list[dict[str, Any]], topic_index: list[dict[str
                 "kind": "duplicate_number",
                 "target": item["number"],
                 "action": item["action"],
+                "owner_lane": item["owner_lane"],
             }
         )
     for item in topic_index[:5]:
@@ -130,6 +209,7 @@ def next_queue(duplicate_index: list[dict[str, Any]], topic_index: list[dict[str
                 "kind": "semantic_overlap",
                 "target": item["term"],
                 "action": item["action"],
+                "owner_lane": item["owner_lane"],
             }
         )
     return queue
@@ -146,7 +226,8 @@ def render_markdown(index: dict[str, Any]) -> str:
     ]
     if index["next_queue"]:
         for item in index["next_queue"]:
-            lines.append(f"- `{item['kind']}` `{item['target']}`: {item['action']}")
+            owner = item.get("owner_lane", "-")
+            lines.append(f"- `{item['kind']}` `{item['target']}` -> `{owner}`: {item['action']}")
     else:
         lines.append("- none")
 
@@ -154,7 +235,11 @@ def render_markdown(index: dict[str, Any]) -> str:
     if index["duplicate_index"]:
         for item in index["duplicate_index"][:20]:
             roles = "; ".join(f"{role['name']} [{role['role']}]" for role in item["directories"])
-            lines.append(f"- `{item['number']}` count={item['count']}: {item['action']}; {roles}")
+            preconditions = ", ".join(item["merge_preconditions"])
+            lines.append(
+                f"- `{item['number']}` -> `{item['owner_lane']}` count={item['count']}: "
+                f"{item['action']}; policy={item['policy']}; preconditions={preconditions}; {roles}"
+            )
     else:
         lines.append("- none")
 

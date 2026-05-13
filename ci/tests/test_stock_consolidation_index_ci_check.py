@@ -23,6 +23,13 @@ class StockConsolidationIndexCiCheckTests(unittest.TestCase):
             "keep_parent_index_and_link_related_artifacts",
         )
 
+    def test_duplicate_owner_rule_assigns_known_owner_lane(self):
+        roles = consolidation.directory_roles(["149金融专项复核", "149金融专项复核索引"])
+        rule = consolidation.duplicate_owner_rule("149", roles)
+
+        self.assertEqual(rule["owner_lane"], "quality_evidence")
+        self.assertIn("link_financial_review_outputs_to_existing_index", rule["merge_preconditions"])
+
     def test_build_duplicate_index_adds_actions(self):
         maturity_report = {
             "duplicate_number_candidates": [
@@ -37,12 +44,16 @@ class StockConsolidationIndexCiCheckTests(unittest.TestCase):
 
         self.assertEqual(index[0]["number"], "149")
         self.assertEqual(index[0]["action"], "keep_parent_index_and_link_related_artifacts")
+        self.assertEqual(index[0]["owner_lane"], "quality_evidence")
+        self.assertEqual(index[0]["policy"], "keep_financial_review_index_as_parent")
 
     def test_build_consolidation_index_passes_for_current_stock_system(self):
         index = consolidation.build_consolidation_index()
 
         self.assertEqual(index["ci_gate_status"], "pass")
         self.assertTrue(index["next_queue"])
+        self.assertTrue(any(item.get("owner_lane") == "sample_pool" for item in index["next_queue"]))
+        self.assertTrue(any(item.get("owner_lane") == "manual_review" for item in index["next_queue"]))
         self.assertIn("duplicate_index", index)
         self.assertIn("topic_index", index)
 
@@ -53,6 +64,7 @@ class StockConsolidationIndexCiCheckTests(unittest.TestCase):
         self.assertIn("Next Queue", markdown)
         self.assertIn("Duplicate Number Index", markdown)
         self.assertIn("Topic Index", markdown)
+        self.assertIn("preconditions=", markdown)
 
 
 if __name__ == "__main__":
