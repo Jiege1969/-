@@ -46,11 +46,16 @@ class SafeCiCheckTests(unittest.TestCase):
         commands = safe_ci_check.circleci_executable_lines(config.read_text(encoding="utf-8"))
         self.assertTrue(commands)
         self.assertIn("python ci/stock_sample_room_ci_check.py", commands)
+        self.assertIn("python ci/stock_mainline_ci_check.py", commands)
         self.assertIn("python ci/safe_ci_check.py", commands)
         self.assertTrue(set(commands).issubset(safe_ci_check.ALLOWED_CIRCLECI_COMMANDS))
 
     def test_stock_sample_room_ci_wrapper_exists(self):
         wrapper = safe_ci_check.ROOT / "ci" / "stock_sample_room_ci_check.py"
+        self.assertTrue(wrapper.exists())
+
+    def test_stock_mainline_ci_wrapper_exists(self):
+        wrapper = safe_ci_check.ROOT / "ci" / "stock_mainline_ci_check.py"
         self.assertTrue(wrapper.exists())
 
 
