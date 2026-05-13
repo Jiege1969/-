@@ -1,0 +1,255 @@
+{
+  "名称": "股票样本房本地验收面板",
+  "生成时间": "2026-05-13 16:36:58",
+  "定位": "股票系统作为样本房，沉淀可复用的分析、验收、边界和回灌机制。",
+  "结论": "需复核",
+  "检查资产数": 13,
+  "状态统计": {
+    "pass": 11,
+    "review": 2
+  },
+  "分组统计": {
+    "样本双账": {
+      "pass": 3
+    },
+    "方法内核": {
+      "review": 1,
+      "pass": 1
+    },
+    "通用判断": {
+      "pass": 1
+    },
+    "推荐引擎": {
+      "pass": 1
+    },
+    "证据核验": {
+      "pass": 1,
+      "review": 1
+    },
+    "安全边界": {
+      "pass": 2
+    },
+    "企业微信边界": {
+      "pass": 1
+    },
+    "交付闭环": {
+      "pass": 1
+    }
+  },
+  "红线命中数": 0,
+  "红线命中": [],
+  "本地机制复用关系": [
+    {
+      "stock_sample_room_need": "样本双账",
+      "existing_mechanism": "270杰哥推荐方法内核",
+      "reuse_reason": "成功样本和失败对照同时存在，降低幸存者偏差。"
+    },
+    {
+      "stock_sample_room_need": "标准工作流",
+      "existing_mechanism": "274杰哥推荐方法工作流固化验收",
+      "reuse_reason": "先数据地基、再量价、再行业、再前台表达、最后复盘。"
+    },
+    {
+      "stock_sample_room_need": "通用可迁移方法",
+      "existing_mechanism": "281股票通用分析判断机制验收",
+      "reuse_reason": "股票样本房沉淀的是可迁移判断机制，不是照搬股票专有逻辑。"
+    },
+    {
+      "stock_sample_room_need": "环境适配推荐",
+      "existing_mechanism": "284环境自适应三级漏斗推荐引擎验收",
+      "reuse_reason": "先判市场环境，再选择主指标、辅助指标和风险闸门。"
+    },
+    {
+      "stock_sample_room_need": "外部动作红线",
+      "existing_mechanism": "150报告安全边界 + 243自动交易屏蔽 + 257只读巡检",
+      "reuse_reason": "研究助手只输出分析和待复核材料，不触发真实发送、n8n、券商或交易。"
+    }
+  ],
+  "资产检查": [
+    {
+      "group": "样本双账",
+      "name": "强势成功样本库",
+      "path": "03数据/270杰哥推荐方法内核/强势成功样本库_最新.json",
+      "exists": true,
+      "bytes": 422692,
+      "json_ok": true,
+      "record_count": 150,
+      "pass_signal": false,
+      "redline_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "group": "样本双账",
+      "name": "失败对照样本库",
+      "path": "03数据/270杰哥推荐方法内核/失败对照样本库_最新.json",
+      "exists": true,
+      "bytes": 419620,
+      "json_ok": true,
+      "record_count": 150,
+      "pass_signal": false,
+      "redline_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "group": "样本双账",
+      "name": "当前候选相似度识别",
+      "path": "03数据/270杰哥推荐方法内核/当前候选股相似度识别_最新.json",
+      "exists": true,
+      "bytes": 6490660,
+      "json_ok": true,
+      "record_count": 2000,
+      "pass_signal": false,
+      "redline_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "group": "方法内核",
+      "name": "杰哥推荐方法内核验收",
+      "path": "03数据/270杰哥推荐方法内核/杰哥推荐方法内核验收_最新.json",
+      "exists": true,
+      "bytes": 1554,
+      "json_ok": true,
+      "record_count": 2,
+      "pass_signal": false,
+      "redline_true_hits": [],
+      "status": "review",
+      "problems": [
+        "missing_pass_signal"
+      ]
+    },
+    {
+      "group": "方法内核",
+      "name": "杰哥推荐工作流固化验收",
+      "path": "03数据/274杰哥推荐方法工作流固化验收/杰哥推荐方法工作流固化验收_最新.json",
+      "exists": true,
+      "bytes": 10197,
+      "json_ok": true,
+      "record_count": 13,
+      "pass_signal": true,
+      "redline_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "group": "通用判断",
+      "name": "股票通用分析判断机制验收",
+      "path": "03数据/281股票通用分析判断机制验收/股票通用分析判断机制验收_最新.json",
+      "exists": true,
+      "bytes": 1514,
+      "json_ok": true,
+      "record_count": 5,
+      "pass_signal": true,
+      "redline_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "group": "推荐引擎",
+      "name": "环境自适应三级漏斗推荐引擎验收",
+      "path": "03数据/284环境自适应三级漏斗推荐引擎验收/环境自适应三级漏斗推荐引擎验收_最新.json",
+      "exists": true,
+      "bytes": 1063,
+      "json_ok": true,
+      "record_count": 0,
+      "pass_signal": true,
+      "redline_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "group": "证据核验",
+      "name": "股票证据核验总览面板",
+      "path": "03数据/180证据核验总览面板/股票证据核验总览面板_最新.json",
+      "exists": true,
+      "bytes": 15427,
+      "json_ok": true,
+      "record_count": 10,
+      "pass_signal": false,
+      "redline_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "group": "证据核验",
+      "name": "股票报告证据源映射验收",
+      "path": "03数据/219股票报告证据源映射/股票报告证据源映射预览验收_最新.json",
+      "exists": true,
+      "bytes": 4232,
+      "json_ok": true,
+      "record_count": 14,
+      "pass_signal": false,
+      "redline_true_hits": [],
+      "status": "review",
+      "problems": [
+        "missing_pass_signal"
+      ]
+    },
+    {
+      "group": "安全边界",
+      "name": "报告安全边界检查",
+      "path": "03数据/150报告安全边界检查/股票系统报告安全边界检查_最新.json",
+      "exists": true,
+      "bytes": 2161,
+      "json_ok": true,
+      "record_count": 14,
+      "pass_signal": true,
+      "redline_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "group": "安全边界",
+      "name": "自动交易屏蔽加固验收",
+      "path": "03数据/243股票自动交易屏蔽加固/股票自动交易屏蔽加固验收_最新.json",
+      "exists": true,
+      "bytes": 3506,
+      "json_ok": true,
+      "record_count": 8,
+      "pass_signal": true,
+      "redline_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "group": "企业微信边界",
+      "name": "主动推送灰度链路一键只读巡检",
+      "path": "03数据/257主动推送灰度链路一键只读巡检包/股票主动推送灰度链路一键只读巡检_最新.json",
+      "exists": true,
+      "bytes": 3631,
+      "json_ok": true,
+      "record_count": 12,
+      "pass_signal": true,
+      "redline_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "group": "交付闭环",
+      "name": "股票研究系统交付闭环验收",
+      "path": "03数据/237股票研究系统交付闭环验收/股票研究系统交付闭环验收报告验收_最新.json",
+      "exists": true,
+      "bytes": 6776,
+      "json_ok": true,
+      "record_count": 15,
+      "pass_signal": true,
+      "redline_true_hits": [],
+      "status": "pass",
+      "problems": []
+    }
+  ],
+  "下一步建议": [
+    "先复核 杰哥推荐方法内核验收：missing_pass_signal",
+    "先复核 股票报告证据源映射验收：missing_pass_signal"
+  ],
+  "安全边界": {
+    "真实发送企业微信": false,
+    "触发n8n": false,
+    "触发Webhook": false,
+    "调用券商接口": false,
+    "自动交易": false,
+    "写正式库": false
+  }
+}
