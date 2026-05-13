@@ -293,6 +293,10 @@ def build_watch_text(context: dict[str, Any]) -> str:
             return ""
         pieces = [item.strip("，,；。 ") for item in re.split(r"[；。]", text) if item.strip("，,；。 ")]
         if prefer_current:
+            current = next((item for item in pieces if "当前成交额" in item or "当前成交量" in item), "")
+            threshold = next((item for item in pieces if "1.10倍" in item or "活跃线" in item), "")
+            if current and threshold:
+                return f"{current}，{threshold}"
             for item in pieces:
                 if "当前" in item:
                     return item
@@ -305,8 +309,8 @@ def build_watch_text(context: dict[str, Any]) -> str:
     if not parts:
         return "关键价格、成交或时间条件未完整生成，本次不输出价位型强结论。"
     text = "；".join(parts[:3])
-    if len(text) > 180:
-        text = text[:179] + "…"
+    if len(text) > 240:
+        text = text[:239] + "…"
     return text.rstrip("。") + "。"
 
 

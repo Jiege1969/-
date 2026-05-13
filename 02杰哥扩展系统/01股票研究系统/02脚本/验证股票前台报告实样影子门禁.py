@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """验证股票前台报告实样影子门禁。
 
-验证目标不是强行要求当前真实报告全部通过，而是确认影子门禁能稳定读到真实报告、
-能给出缺口清单，并且不会把否定式安全边界误判成真实外发或交易执行。
+验证目标是确认影子门禁能稳定读到真实报告、缺口清单已清零，
+并且不会把否定式安全边界误判成真实外发或交易执行。
 """
 
 from __future__ import annotations
@@ -48,8 +48,8 @@ def main() -> None:
             errors.append(f"{item.get('file', '未知报告')} 缺少缺口字段")
         if item.get("hard_forbidden_hits"):
             errors.append(f"{item.get('file', '未知报告')} 出现真实硬禁词：{item['hard_forbidden_hits']}")
-    if asset.get("review_total", 0) == 0:
-        errors.append("当前阶段应至少识别一类前台报告表达复核点")
+    if not asset.get("overall_passed"):
+        errors.append("真实单股报告必须清零必改缺口和复核提示后才能通过")
     result = {
         "name": "股票前台报告实样影子门禁验收",
         "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),

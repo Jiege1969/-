@@ -1122,15 +1122,16 @@ def position_text(latest: float | None, support: float | None, pressure: float |
 
 def volume_structure_text(row: dict[str, Any] | None, indicator: dict[str, Any] | None) -> str:
     volume_ratio = current_volume_ratio(row, indicator)
-    amount = (row or {}).get("成交额")
+    thresholds = build_front_volume_thresholds(row, volume_ratio, 1.10, 1.30)
     if volume_ratio is not None:
         if volume_ratio >= 1.3:
-            return f"量能明显放大，近5日成交活跃度约为平时的{volume_ratio:.2f}倍，说明资金参与度抬升。"
+            return f"量能明显放大，近5日成交活跃度约为平时的{volume_ratio:.2f}倍，说明资金参与度抬升。{thresholds}。"
         if volume_ratio >= 1.1:
-            return f"量能温和放大，近5日成交活跃度约为平时的{volume_ratio:.2f}倍，资金有参与但还没到强确认。"
-        return f"量能没有明显放大，近5日成交活跃度约为平时的{volume_ratio:.2f}倍，说明资金确认度不足。"
+            return f"量能温和放大，近5日成交活跃度约为平时的{volume_ratio:.2f}倍，资金有参与但还没到强确认。{thresholds}。"
+        return f"量能没有明显放大，近5日成交活跃度约为平时的{volume_ratio:.2f}倍，说明资金确认度不足。{thresholds}。"
+    amount = (row or {}).get("成交额")
     if amount not in (None, "", "-"):
-        return f"当前可见成交额为{amount}，但成交活跃倍数未补齐，先按价格条件验证。"
+        return f"当前可见成交额为{format_amount_yuan(amount)}，但成交活跃倍数未补齐，先按价格条件验证。"
     return "当前成交活跃倍数未补齐，先按价格条件验证，不用空泛分数替代量价判断。"
 
 
@@ -3401,6 +3402,61 @@ def format_volume_ratio(value: Any) -> str:
     return f"{number:.2f}"
 
 
+def format_amount_yuan(value: Any) -> str:
+    number = to_float(value)
+    if number is None:
+        return "-"
+    absolute = abs(number)
+    if absolute >= 100_000_000:
+        return f"{number / 100_000_000:.2f}亿元"
+    if absolute >= 10_000:
+        return f"{number / 10_000:.2f}万元"
+    return f"{number:.0f}元"
+
+
+def format_volume_hands(value: Any) -> str:
+    number = to_float(value)
+    if number is None:
+        return "-"
+    if abs(number) >= 10_000:
+        return f"{number / 10_000:.2f}万手"
+    return f"{number:.0f}手"
+
+
+def build_front_volume_thresholds(
+    quote: dict[str, Any] | None,
+    volume_ratio: float | None,
+    active_line: float,
+    strong_line: float,
+) -> str:
+    """把成交活跃倍数翻译成前台可直接看的成交额/成交量阈值。"""
+    if volume_ratio is None or volume_ratio <= 0:
+        amount = quote_number(quote, "成交额", "turnover")
+        if amount is not None:
+            return f"当前成交额{format_amount_yuan(amount)}；近5日均额和放量达标线未入库，本次不输出放量达标结论。"
+        volume = quote_number(quote, "成交量", "volume")
+        if volume is not None:
+            return f"当前成交量{format_volume_hands(volume)}；近5日均量和放量达标线未入库，本次不输出放量达标结论。"
+        return "成交额、成交量和近5日均值未入库，本次不输出放量达标结论。"
+    amount = quote_number(quote, "成交额", "turnover")
+    if amount is not None and amount > 0:
+        avg_amount = amount / volume_ratio
+        return (
+            f"当前成交额{format_amount_yuan(amount)}；按当前5日口径折算，近5日平均成交额约"
+            f"{format_amount_yuan(avg_amount)}，1.10倍活跃线约{format_amount_yuan(avg_amount * active_line)}，"
+            f"1.30倍明显活跃线约{format_amount_yuan(avg_amount * strong_line)}"
+        )
+    volume = quote_number(quote, "成交量", "volume")
+    if volume is not None and volume > 0:
+        avg_volume = volume / volume_ratio
+        return (
+            f"当前成交量{format_volume_hands(volume)}；按当前5日口径折算，近5日平均成交量约"
+            f"{format_volume_hands(avg_volume)}，1.10倍活跃线约{format_volume_hands(avg_volume * active_line)}，"
+            f"1.30倍明显活跃线约{format_volume_hands(avg_volume * strong_line)}"
+        )
+    return "成交额或成交量未入库，无法把成交活跃倍数折算成具体金额或手数，本次不输出放量达标结论。"
+
+
 def strip_html_tags(value: Any) -> str:
     return html.unescape(re.sub(r"<[^>]+>", "", str(value or ""))).strip()
 
@@ -3723,6 +3779,7 @@ def build_numeric_watch_rules(row: dict[str, Any] | None, indicator: dict[str, A
     strong_line_price = format_price(strong) if strong is not None else points.get("目标压力位", "-")
     active_plain = f"近5日成交活跃度达到平时的{active_line:.2f}倍以上"
     strong_plain = f"近5日成交活跃度达到平时的{strong_line:.2f}倍以上"
+    volume_thresholds = build_front_volume_thresholds(quote, volume_ratio, active_line, strong_line)
     if volume_ratio is None and is_realtime_quote_row(quote):
         volume_current = "实时源未返回量比"
         volume_result = "不使用旧量比替代盘中事实"
@@ -3742,7 +3799,7 @@ def build_numeric_watch_rules(row: dict[str, Any] | None, indicator: dict[str, A
             "承接区": support_zone,
             "承接标准": f"当前{format_price(latest)}低于承接区{support_zone}，先不作为重点研究；重新站回{format_price(support)}上方并且不再跌回{weak_line}下方，才算止跌修复。",
             "转强标准": f"当天收盘价或当前实时价高于{strong_line_price}；更稳妥看连续2个交易日收盘价都高于{strong_line_price}，同时{active_plain}。",
-            "成交标准": f"成交活跃就是{active_plain}；明显活跃就是{strong_plain}。{volume_current}，{volume_result}。",
+            "成交标准": f"{volume_thresholds}；成交活跃就是{active_plain}；明显活跃就是{strong_plain}。{volume_current}，{volume_result}。",
             "风险标准": f"当前已低于{risk_line}风险线，维持风险复核；只要没有重新站回{risk_line}上方，就继续回避；若继续跌破{weak_line}，风险加重。",
             "下一步": f"先等两个修复信号：一是重新站回{format_price(support)}上方并稳住；二是站上{strong_line_price}且成交活跃度达标。未出现前不列为重点研究。",
             "数据状态": "可用",
@@ -3752,7 +3809,7 @@ def build_numeric_watch_rules(row: dict[str, Any] | None, indicator: dict[str, A
         "承接区": support_zone,
         "承接标准": f"价格回到{support_zone}后不跌破{risk_line}；当天收盘价或当前实时价重新站上{format_price(support)}，视为承接成立。",
         "转强标准": f"当天收盘价或当前实时价高于{strong_line_price}；更稳妥看连续2个交易日收盘价都高于{strong_line_price}，同时{active_plain}。",
-        "成交标准": f"成交活跃就是{active_plain}；明显活跃就是{strong_plain}。{volume_current}，{volume_result}。",
+        "成交标准": f"{volume_thresholds}；成交活跃就是{active_plain}；明显活跃就是{strong_plain}。{volume_current}，{volume_result}。",
         "风险标准": f"跌破{risk_line}，或跌回{format_price(support)}下方且近5日成交活跃度低于平时的{active_line:.2f}倍，转为谨慎观察。",
         "下一步": f"只等两个信号：一是承接区{support_zone}按标准成立；二是站上{strong_line_price}且成交活跃度达标。",
         "数据状态": "可用",
@@ -3950,6 +4007,30 @@ def front_action_text(level: str, watch_rules: dict[str, str], points: dict[str,
         return "先回避。只有修复区重新站稳、转强线有效突破、成交活跃度达标，才重新纳入观察。"
     strong_line = points.get("目标压力位", "-")
     return f"{level}，但现价不追。低位看{watch_rules.get('承接区', '-')}能否稳住；上攻看{strong_line}能否站上。两者都不满足就继续观察。"
+
+
+def front_follow_watch_lines(watch_rules: dict[str, str], points: dict[str, str], evidence_gap: str) -> list[str]:
+    """报告末尾只留下三个可执行观察点，避免泛泛写“继续改善”。"""
+    if watch_rules.get("数据状态") == "证据不足":
+        return [
+            "- 只盯行情和技术指标是否补齐；补齐前不生成价位型结论。",
+            "- 只盯风险观察线是否生成；没有风险线不提高研究优先级。",
+            f"- 只盯证据缺口：{str(evidence_gap or '财报/公告/行业价格待核验').rstrip('。')}。",
+        ]
+    support_zone = watch_rules.get("承接区", "-")
+    strong_line = points.get("目标压力位", "-")
+    risk_line = points.get("防守位", "-")
+    volume_lines = split_front_rule(watch_rules.get("成交标准", ""))
+    volume_detail = next((line for line in volume_lines if "当前成交额" in line or "当前成交量" in line), "")
+    volume_status = next((line for line in reversed(volume_lines) if "当前" in line and ("达标" in line or "活跃" in line or "刷新" in line)), "")
+    volume_text = "；".join(line for line in [volume_detail, volume_status] if line) or watch_rules.get("成交标准", "成交活跃度待确认")
+    risk_text = split_front_rule(watch_rules.get("风险标准", ""))
+    first_risk = risk_text[0] if risk_text else f"跌破{risk_line}就转为谨慎观察"
+    return [
+        f"- 只盯价格：承接看{support_zone}，转强只认{strong_line}，两者都不满足就继续观察。",
+        f"- 只盯成交：{volume_text}。",
+        f"- 只盯失效：{first_risk}。",
+    ]
 
 
 def build_l3_wecom_short_reply_if_available(
@@ -4458,6 +4539,7 @@ def build_wecom_stock_report(
     risk_front_lines = [f"- {line}" for line in split_front_rule(watch_rules["风险标准"])]
     risk_front_lines.extend(extra_risk_front_lines)
     action_lines = [f"- {line}" for line in split_front_rule(action_text)]
+    follow_watch_lines = front_follow_watch_lines(watch_rules, points, evidence_gap)
     return "\n".join([
         f"![股票图形报告]({card['公网PNGURL']})",
         "",
@@ -4496,11 +4578,8 @@ def build_wecom_stock_report(
         "六、长期成长质量复核",
         *growth_quality_lines,
         "",
-        "七、后续跟踪重点",
-        "- 是否守住风险线。",
-        "- 成交量是否持续改善。",
-        "- 是否重新进入重点研究层。",
-        "- 财报、公告和行业证据是否补齐。",
+        "七、后续只盯这3件事",
+        *follow_watch_lines,
         "",
         "说明：本页为研究报告，仅供研究参考，不构成投资建议，不作为买卖指令；不自动交易。",
     ])

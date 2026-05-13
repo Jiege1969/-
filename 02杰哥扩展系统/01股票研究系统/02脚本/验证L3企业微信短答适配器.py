@@ -79,10 +79,15 @@ def validate_reply(question: str, expected_name: str, expected_code: str, text: 
         "has_missing": "缺口：" in text,
         "has_safety_note": "仅供研究参考" in text and "不作为买卖指令" in text,
         "no_forbidden_trade_words": not trade_hits,
+        "has_computed_volume_threshold": (
+            ("成交额" not in text and "成交量" not in text)
+            or ("当前成交额" in text or "当前成交量" in text)
+            and ("1.10倍活跃线" in text or "放量达标线" in text)
+        ),
         "no_old_finance_debt_words": all(word not in text for word in ["财报未接入", "基本面暂无", "用户需自行补财报"]),
         "no_null_placeholder": all(word not in text for word in ["null", "未知价格", "--", "——"]),
-        "frontend_reply_not_too_long": len(text) <= 500,
-        "frontend_line_count_controlled": len(lines) <= 10,
+        "frontend_reply_not_too_long": len(text) <= 650,
+        "frontend_line_count_controlled": len(lines) <= 11,
         "why_after_action_and_risk": line_index.get("现在怎么处理", 99) < line_index.get("为什么", -1) and line_index.get("风险线", 99) < line_index.get("为什么", -1),
         "why_line_is_frontend_summary": bool(why_line) and len(why_line) <= 110,
         "why_line_has_no_truncation": bool(why_line) and "…" not in why_line,
