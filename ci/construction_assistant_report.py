@@ -190,6 +190,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI stock-system runtime artifact governance for evidence and live status hygiene",
         "path": "ci/stock_runtime_artifact_governance_ci_check.py",
     },
+    {
+        "name": "stock_frontend_message_contract_ci_checker",
+        "role": "CircleCI stock-system frontend message contract for computed conditions and two-robot report expression",
+        "path": "ci/stock_frontend_message_contract_ci_check.py",
+    },
 ]
 
 
