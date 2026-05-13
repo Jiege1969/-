@@ -44,6 +44,41 @@ STOP_TERMS = [
     "服务重启",
 ]
 
+LOCAL_WORKFLOW_MECHANISMS = [
+    {
+        "circleci_logic": "trigger",
+        "local_mechanism": "开工触发和施工面板",
+        "path": "00杰哥系统总管/07文档/当前施工面板.md",
+        "reuse_rule": "复用现有施工面板，不新增平行入口。",
+    },
+    {
+        "circleci_logic": "standard_steps",
+        "local_mechanism": "开工上下文和接续包",
+        "path": "00杰哥系统总管/03数据/开工上下文/一键接续施工包_最新.md",
+        "reuse_rule": "复用接续包读取顺序，不另造施工流程。",
+    },
+    {
+        "circleci_logic": "readonly_environment",
+        "local_mechanism": "全系统只读总检",
+        "path": "00杰哥系统总管/03数据/运行状态/全系统只读总检与设计纲领对齐审计_最新.json",
+        "reuse_rule": "只读检查优先，禁止把检查变成真实执行。",
+    },
+    {
+        "circleci_logic": "pass_fail_gate",
+        "local_mechanism": "模块验收标准",
+        "path": "00杰哥系统总管/01配置/machine/acceptance_criteria.json",
+        "reuse_rule": "沿用已有验收标准，只补缺失检查项。",
+    },
+    {
+        "circleci_logic": "log_and_feedback",
+        "local_mechanism": "施工计划与经验回灌",
+        "path": "00杰哥系统总管/07文档/下一阶段施工计划_摸清家底转搭建主线_v1.0.md",
+        "reuse_rule": "验收结果回到总管和进化系统，不沉淀孤立规则。",
+    },
+]
+
+CLOUD_CI_BOUNDARY = "CircleCI only guards repository commits; local construction decisions stay in the D-drive system."
+
 
 @dataclass(frozen=True)
 class GitChange:
@@ -110,6 +145,16 @@ def path_info(relative_path: str) -> dict[str, Any]:
     }
 
 
+def local_workflow_mechanism_status() -> list[dict[str, Any]]:
+    mechanisms: list[dict[str, Any]] = []
+    for mechanism in LOCAL_WORKFLOW_MECHANISMS:
+        item = dict(mechanism)
+        item["exists"] = (ROOT / item["path"]).exists()
+        item["action"] = "reuse_existing" if item["exists"] else "gap_to_fill"
+        mechanisms.append(item)
+    return mechanisms
+
+
 def build_report() -> dict[str, Any]:
     changes = parse_status_short(run_git("status", "--short"))
     categories: dict[str, int] = {}
@@ -128,6 +173,9 @@ def build_report() -> dict[str, Any]:
         "gitlinks": gitlinks(),
         "key_status_files": [path_info(path) for path in KEY_STATUS_PATHS],
         "redline_stop_terms": STOP_TERMS,
+        "cloud_ci_boundary": CLOUD_CI_BOUNDARY,
+        "integration_principle": "reuse existing local mechanisms before adding new ones",
+        "local_workflow_mechanisms": local_workflow_mechanism_status(),
         "recommendation": recommend_next_step(changes),
     }
 
@@ -172,6 +220,16 @@ def render_markdown(report: dict[str, Any]) -> str:
         state = "present" if item["exists"] else "missing"
         size = item["bytes"] if item["bytes"] is not None else "-"
         lines.append(f"- `{item['path']}`: {state}, bytes={size}")
+
+    lines.extend(["", "## Local Workflow Absorption"])
+    lines.append(f"- Boundary: {report['cloud_ci_boundary']}")
+    lines.append(f"- Principle: {report['integration_principle']}")
+    for item in report["local_workflow_mechanisms"]:
+        lines.append(
+            "- "
+            f"`{item['circleci_logic']}` -> `{item['local_mechanism']}`: "
+            f"{item['action']}; `{item['path']}`; {item['reuse_rule']}"
+        )
 
     lines.extend(["", "## Redline Stop Terms"])
     for term in report["redline_stop_terms"]:

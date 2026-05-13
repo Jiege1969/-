@@ -34,6 +34,9 @@ class ConstructionAssistantReportTests(unittest.TestCase):
                 "gitlinks": [],
                 "key_status_files": [],
                 "redline_stop_terms": ["n8n"],
+                "cloud_ci_boundary": "CircleCI only guards repository commits",
+                "integration_principle": "reuse existing local mechanisms before adding new ones",
+                "local_workflow_mechanisms": [],
                 "recommendation": "continue_low_risk_construction",
             }
         )
@@ -46,6 +49,41 @@ class ConstructionAssistantReportTests(unittest.TestCase):
             "00杰哥系统总管/03数据/运行状态/全系统只读总检与设计纲领对齐审计_最新.json",
             report.KEY_STATUS_PATHS,
         )
+
+    def test_local_workflow_mechanisms_prefer_reuse(self):
+        mechanisms = report.local_workflow_mechanism_status()
+        self.assertTrue(mechanisms)
+        self.assertTrue(any(item["circleci_logic"] == "trigger" for item in mechanisms))
+        self.assertTrue(any(item["action"] == "reuse_existing" for item in mechanisms))
+
+    def test_render_markdown_contains_local_absorption_section(self):
+        report_data = {
+            "branch": "main",
+            "head": "abc",
+            "tracked_files": 1,
+            "dirty_files": 0,
+            "dirty_categories": {},
+            "gitlinks": [],
+            "key_status_files": [],
+            "redline_stop_terms": [],
+            "cloud_ci_boundary": "CircleCI only guards repository commits",
+            "integration_principle": "reuse existing local mechanisms before adding new ones",
+            "local_workflow_mechanisms": [
+                {
+                    "circleci_logic": "trigger",
+                    "local_mechanism": "开工触发和施工面板",
+                    "path": "00杰哥系统总管/07文档/当前施工面板.md",
+                    "reuse_rule": "复用现有施工面板，不新增平行入口。",
+                    "exists": True,
+                    "action": "reuse_existing",
+                }
+            ],
+            "recommendation": "continue_low_risk_construction",
+        }
+        markdown = report.render_markdown(report_data)
+        self.assertIn("Local Workflow Absorption", markdown)
+        self.assertIn("reuse_existing", markdown)
+        self.assertIn("CircleCI only guards repository commits", markdown)
 
 
 if __name__ == "__main__":
