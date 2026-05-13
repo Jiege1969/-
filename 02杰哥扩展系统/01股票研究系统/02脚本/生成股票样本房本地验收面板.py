@@ -88,6 +88,12 @@ SAMPLE_ROOM_ASSETS = [
         "require_pass": True,
     },
     {
+        "group": "业务闭环",
+        "name": "单股前台闭环对齐包验收",
+        "path": "03数据/290股票单股前台闭环对齐包/股票单股前台闭环对齐包验收_最新.json",
+        "require_pass": True,
+    },
+    {
         "group": "安全边界",
         "name": "报告安全边界检查",
         "path": "03数据/150报告安全边界检查/股票系统报告安全边界检查_最新.json",

@@ -1,0 +1,156 @@
+{
+  "名称": "股票单股前台闭环对齐包",
+  "版本": "v1.0",
+  "生成时间": "2026-05-14 07:05:47",
+  "标的": {
+    "名称": "永鼎股份",
+    "代码": "sh600105",
+    "展示代码": "600105.SH"
+  },
+  "阶段结论": "本地影子闭环可交付",
+  "可交付": true,
+  "资产数量": 8,
+  "通过资产数": 8,
+  "待补齐资产数": 0,
+  "前台报告表达缺口": {
+    "必改缺口数": 3,
+    "复核提示数": 8,
+    "处理口径": "不阻断本地链路交付，但进入下一轮前台报告生成器优化；重点补齐具体价量阈值和后续只盯事项。"
+  },
+  "闭环链路": [
+    "单股标准报告v2",
+    "股票报告证据源映射",
+    "企业微信短回复 dry-run",
+    "每日推送总表只读巡检",
+    "股票前台报告实样影子门禁"
+  ],
+  "资产检查": [
+    {
+      "id": "single_report",
+      "name": "单股标准报告v2",
+      "role": "承载当前单股分析正文、价格、风险线、证据缺口",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\135分层日报\\单股标准报告v2_最新.md",
+      "exists": true,
+      "sha256": "74f720860a7710398d821620f5ccf0f81181ac72b043d3924ee3c6907a5345c2",
+      "bytes": 3816,
+      "pass_signal": true,
+      "stock_match": true,
+      "risk_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "id": "evidence_map",
+      "name": "股票报告证据源映射预览",
+      "role": "把报告字段对应到本地证据源和缺口",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\219股票报告证据源映射\\股票报告证据源映射预览_最新.json",
+      "exists": true,
+      "sha256": "99ed8894839d7e6d56bff2990aad0c71e8bb986b4ef6c43767ecaa47b9882f6b",
+      "bytes": 14308,
+      "pass_signal": true,
+      "stock_match": true,
+      "risk_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "id": "evidence_map_validation",
+      "name": "股票报告证据源映射验收",
+      "role": "确认证据映射本地验收通过",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\219股票报告证据源映射\\股票报告证据源映射预览验收_最新.json",
+      "exists": true,
+      "sha256": "e45e1be33391e5be8cec55075a6e82d7d1a91768b9b37a6b3908a68965bfaaf3",
+      "bytes": 5490,
+      "pass_signal": true,
+      "stock_match": true,
+      "risk_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "id": "wecom_short_reply",
+      "name": "企业微信单股短回复",
+      "role": "双前台中的用户可读短答草稿",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\24企业微信短回复\\企业微信单股短回复_最新.json",
+      "exists": true,
+      "sha256": "284857ddd48194d263003deeabaea4e28ee768e2f5429dba5efb602737d40f76",
+      "bytes": 8823,
+      "pass_signal": true,
+      "stock_match": true,
+      "risk_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "id": "wecom_shadow_validation",
+      "name": "企业微信短回复 shadow_v21 实跑输出验收",
+      "role": "确认短答 dry-run 已走通且没有真实发送",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\231企业微信短回复shadow_v21_dry_run\\企业微信单股短回复shadow_v21_dry_run实跑输出验收_最新.json",
+      "exists": true,
+      "sha256": "cc260cc1dc48b5b17e8e1a16ac3a0481b0be8c85571c115dc0c85459cfe231be",
+      "bytes": 9209,
+      "pass_signal": true,
+      "stock_match": true,
+      "risk_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "id": "daily_push_readonly",
+      "name": "股票每日推送总表只读巡检",
+      "role": "确认 08:50、15:30、21:00 推送任务和样本锚点存在",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\股票每日推送总表只读巡检\\股票每日推送总表只读巡检报告_最新.json",
+      "exists": true,
+      "sha256": "26965d5c80230c2f8767d86b9c15bab6f829d1a269b125a81c19e1bc48e290f8",
+      "bytes": 3938,
+      "pass_signal": true,
+      "stock_match": true,
+      "risk_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "id": "frontend_real_sample_gate",
+      "name": "股票前台报告实样影子门禁",
+      "role": "检查真实报告是否符合前台结果表达要求",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\289股票前台报告实样影子门禁\\股票前台报告实样影子门禁_最新.json",
+      "exists": true,
+      "sha256": "1a5e876ed94131ae9d70cac484b7327f5ddf7ed9083673f30ad4dc32261e5849",
+      "bytes": 12952,
+      "pass_signal": false,
+      "stock_match": true,
+      "risk_true_hits": [],
+      "status": "pass",
+      "problems": []
+    },
+    {
+      "id": "frontend_real_sample_gate_validation",
+      "name": "股票前台报告实样影子门禁验收",
+      "role": "确认前台实样门禁本身可运行",
+      "path": "D:\\杰哥智能化系统\\02杰哥扩展系统\\01股票研究系统\\03数据\\289股票前台报告实样影子门禁\\股票前台报告实样影子门禁验收_最新.json",
+      "exists": true,
+      "sha256": "44781f2db66bf2f71bd70b5f1ea5613428e66bd05084f63b5b900b2e351cb07b",
+      "bytes": 257,
+      "pass_signal": true,
+      "stock_match": true,
+      "risk_true_hits": [],
+      "status": "pass",
+      "problems": []
+    }
+  ],
+  "下一步收口": [
+    "把前台报告表达缺口回补到单股报告生成逻辑，不让使用者二次计算价量阈值。",
+    "把本对齐包纳入样本房本地验收面板，形成业务闭环验收项。",
+    "CircleCI 只做后台守门，不作为主线等待点。"
+  ],
+  "安全边界": {
+    "真实发送": false,
+    "真实n8n": false,
+    "Webhook": false,
+    "正式入口切换": false,
+    "服务重启": false,
+    "正式库写入": false,
+    "券商接口": false,
+    "自动交易": false
+  }
+}
