@@ -79,6 +79,29 @@ LOCAL_WORKFLOW_MECHANISMS = [
 
 CLOUD_CI_BOUNDARY = "CircleCI only guards repository commits; local construction decisions stay in the D-drive system."
 
+STOCK_GATE_PATHS = [
+    {
+        "name": "stock_sample_room_gate",
+        "role": "sample room local acceptance gate",
+        "path": "02杰哥扩展系统/01股票研究系统/02脚本/生成股票样本房本地验收面板.py",
+    },
+    {
+        "name": "stock_mainline_gate",
+        "role": "mainline construction acceptance gate",
+        "path": "02杰哥扩展系统/01股票研究系统/02脚本/生成股票主线施工闸口面板.py",
+    },
+    {
+        "name": "stock_sample_room_ci_wrapper",
+        "role": "CircleCI wrapper for sample room gate",
+        "path": "ci/stock_sample_room_ci_check.py",
+    },
+    {
+        "name": "stock_mainline_ci_wrapper",
+        "role": "CircleCI wrapper for mainline gate",
+        "path": "ci/stock_mainline_ci_check.py",
+    },
+]
+
 
 @dataclass(frozen=True)
 class GitChange:
@@ -155,6 +178,16 @@ def local_workflow_mechanism_status() -> list[dict[str, Any]]:
     return mechanisms
 
 
+def stock_gate_status() -> list[dict[str, Any]]:
+    gates: list[dict[str, Any]] = []
+    for gate in STOCK_GATE_PATHS:
+        item = dict(gate)
+        item["exists"] = (ROOT / item["path"]).exists()
+        item["action"] = "ci_guarded" if item["exists"] else "gap_to_fill"
+        gates.append(item)
+    return gates
+
+
 def build_report() -> dict[str, Any]:
     changes = parse_status_short(run_git("status", "--short"))
     categories: dict[str, int] = {}
@@ -176,6 +209,7 @@ def build_report() -> dict[str, Any]:
         "cloud_ci_boundary": CLOUD_CI_BOUNDARY,
         "integration_principle": "reuse existing local mechanisms before adding new ones",
         "local_workflow_mechanisms": local_workflow_mechanism_status(),
+        "stock_gate_status": stock_gate_status(),
         "recommendation": recommend_next_step(changes),
     }
 
@@ -230,6 +264,19 @@ def render_markdown(report: dict[str, Any]) -> str:
             f"`{item['circleci_logic']}` -> `{item['local_mechanism']}`: "
             f"{item['action']}; `{item['path']}`; {item['reuse_rule']}"
         )
+
+    lines.extend(["", "## Stock Gate Status"])
+    stock_gate_items = report.get("stock_gate_status", [])
+    if stock_gate_items:
+        for item in stock_gate_items:
+            state = "present" if item["exists"] else "missing"
+            lines.append(
+                "- "
+                f"`{item['name']}`: {state}; {item['action']}; "
+                f"`{item['path']}`; {item['role']}"
+            )
+    else:
+        lines.append("- none")
 
     lines.extend(["", "## Redline Stop Terms"])
     for term in report["redline_stop_terms"]:

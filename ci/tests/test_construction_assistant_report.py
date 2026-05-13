@@ -37,6 +37,7 @@ class ConstructionAssistantReportTests(unittest.TestCase):
                 "cloud_ci_boundary": "CircleCI only guards repository commits",
                 "integration_principle": "reuse existing local mechanisms before adding new ones",
                 "local_workflow_mechanisms": [],
+                "stock_gate_status": [],
                 "recommendation": "continue_low_risk_construction",
             }
         )
@@ -55,6 +56,14 @@ class ConstructionAssistantReportTests(unittest.TestCase):
         self.assertTrue(mechanisms)
         self.assertTrue(any(item["circleci_logic"] == "trigger" for item in mechanisms))
         self.assertTrue(any(item["action"] == "reuse_existing" for item in mechanisms))
+
+    def test_stock_gate_status_includes_sample_room_and_mainline(self):
+        gates = report.stock_gate_status()
+        names = {item["name"] for item in gates}
+
+        self.assertIn("stock_sample_room_gate", names)
+        self.assertIn("stock_mainline_gate", names)
+        self.assertTrue(any(item["action"] == "ci_guarded" for item in gates))
 
     def test_render_markdown_contains_local_absorption_section(self):
         report_data = {
@@ -78,12 +87,42 @@ class ConstructionAssistantReportTests(unittest.TestCase):
                     "action": "reuse_existing",
                 }
             ],
+            "stock_gate_status": [],
             "recommendation": "continue_low_risk_construction",
         }
         markdown = report.render_markdown(report_data)
         self.assertIn("Local Workflow Absorption", markdown)
         self.assertIn("reuse_existing", markdown)
         self.assertIn("CircleCI only guards repository commits", markdown)
+
+    def test_render_markdown_contains_stock_gate_status(self):
+        report_data = {
+            "branch": "main",
+            "head": "abc",
+            "tracked_files": 1,
+            "dirty_files": 0,
+            "dirty_categories": {},
+            "gitlinks": [],
+            "key_status_files": [],
+            "redline_stop_terms": [],
+            "cloud_ci_boundary": "CircleCI only guards repository commits",
+            "integration_principle": "reuse existing local mechanisms before adding new ones",
+            "local_workflow_mechanisms": [],
+            "stock_gate_status": [
+                {
+                    "name": "stock_mainline_gate",
+                    "role": "mainline construction acceptance gate",
+                    "path": "02杰哥扩展系统/01股票研究系统/02脚本/生成股票主线施工闸口面板.py",
+                    "exists": True,
+                    "action": "ci_guarded",
+                }
+            ],
+            "recommendation": "continue_low_risk_construction",
+        }
+        markdown = report.render_markdown(report_data)
+        self.assertIn("Stock Gate Status", markdown)
+        self.assertIn("stock_mainline_gate", markdown)
+        self.assertIn("ci_guarded", markdown)
 
 
 if __name__ == "__main__":
