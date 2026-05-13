@@ -82,6 +82,7 @@ ALLOWED_CIRCLECI_COMMANDS = {
     "python --version",
     "git --version",
     "python ci/construction_assistant_report.py",
+    "python ci/stock_sample_room_ci_check.py",
     "python ci/safe_ci_check.py",
 }
 
