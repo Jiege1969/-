@@ -22,7 +22,7 @@ except ModuleNotFoundError:  # Running as `python ci/stock_sample_pool_ci_check.
 
 
 OWNER_LANE = "sample_pool"
-EXPECTED_DUPLICATE_TARGETS = {"01", "283", "286"}
+EXPECTED_DUPLICATE_TARGETS = {"01", "283"}
 MIN_PANEL_QUEUE_COUNT = 1
 GUARDRAILS = [
     "read_only_sample_pool_check",
