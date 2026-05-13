@@ -1,21 +1,21 @@
 version: 2.1
 
 jobs:
-  health-check:
+  safe-ci:
     docker:
       - image: cimg/python:3.11
     steps:
       - checkout
       - run:
-          name: Install Python dependencies
+          name: Show runtime versions
           command: |
             python --version
-            if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+            git --version
       - run:
-          name: Run local health check
-          command: python "02杰哥扩展系统/00公共组件/02脚本/test_local_health.py"
+          name: Run safe offline CI checks
+          command: python ci/safe_ci_check.py
 
 workflows:
-  health-check:
+  safe-ci:
     jobs:
-      - health-check
+      - safe-ci
