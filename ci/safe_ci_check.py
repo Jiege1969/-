@@ -98,6 +98,7 @@ ALLOWED_CIRCLECI_COMMANDS = {
     "python ci/stock_ci_learning_summary.py",
     "python ci/stock_construction_advice_ci_check.py",
     "python ci/stock_ci_traceability_ci_check.py",
+    "python ci/stock_dependency_order_ci_check.py",
     "python ci/safe_ci_check.py",
 }
 

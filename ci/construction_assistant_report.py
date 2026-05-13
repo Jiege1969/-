@@ -170,6 +170,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI stock-system CI traceability check for config, whitelist, index, and tests",
         "path": "ci/stock_ci_traceability_ci_check.py",
     },
+    {
+        "name": "stock_dependency_order_ci_checker",
+        "role": "CircleCI stock-system dependency-order check for contract stages and meta-CI order",
+        "path": "ci/stock_dependency_order_ci_check.py",
+    },
 ]
 
 
