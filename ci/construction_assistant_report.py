@@ -135,6 +135,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI pre-push gate closure check for draft and dry-run push workflow",
         "path": "ci/stock_pre_push_gate_ci_check.py",
     },
+    {
+        "name": "stock_review_loop_ci_checker",
+        "role": "CircleCI review-loop closure check for feedback and learning workflow",
+        "path": "ci/stock_review_loop_ci_check.py",
+    },
 ]
 
 
