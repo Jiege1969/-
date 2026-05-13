@@ -115,6 +115,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI closure panel for owner-lane construction queues",
         "path": "ci/stock_closure_panel_ci_check.py",
     },
+    {
+        "name": "stock_quality_evidence_ci_checker",
+        "role": "CircleCI quality-evidence closure check for the largest stock-system queue",
+        "path": "ci/stock_quality_evidence_ci_check.py",
+    },
 ]
 
 
