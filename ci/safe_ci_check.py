@@ -86,6 +86,7 @@ ALLOWED_CIRCLECI_COMMANDS = {
     "python ci/stock_mainline_ci_check.py",
     "python ci/stock_maturity_ci_check.py",
     "python ci/stock_consolidation_index_ci_check.py",
+    "python ci/stock_closure_panel_ci_check.py",
     "python ci/safe_ci_check.py",
 }
 

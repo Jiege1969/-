@@ -110,6 +110,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI consolidation index for duplicate and overlap review",
         "path": "ci/stock_consolidation_index_ci_check.py",
     },
+    {
+        "name": "stock_closure_panel_ci_checker",
+        "role": "CircleCI closure panel for owner-lane construction queues",
+        "path": "ci/stock_closure_panel_ci_check.py",
+    },
 ]
 
 
