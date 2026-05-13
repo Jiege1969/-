@@ -180,6 +180,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI stock-system risk matrix for impacted lanes and required gates",
         "path": "ci/stock_risk_matrix_ci_check.py",
     },
+    {
+        "name": "stock_acceptance_overview_ci_checker",
+        "role": "CircleCI stock-system acceptance overview for readiness score and next action",
+        "path": "ci/stock_acceptance_overview_ci_check.py",
+    },
 ]
 
 

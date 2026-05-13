@@ -63,6 +63,7 @@ class SafeCiCheckTests(unittest.TestCase):
         self.assertIn("python ci/stock_ci_traceability_ci_check.py", commands)
         self.assertIn("python ci/stock_dependency_order_ci_check.py", commands)
         self.assertIn("python ci/stock_risk_matrix_ci_check.py", commands)
+        self.assertIn("python ci/stock_acceptance_overview_ci_check.py", commands)
         self.assertIn("python ci/safe_ci_check.py", commands)
         self.assertTrue(set(commands).issubset(safe_ci_check.ALLOWED_CIRCLECI_COMMANDS))
 
@@ -136,6 +137,10 @@ class SafeCiCheckTests(unittest.TestCase):
 
     def test_stock_risk_matrix_ci_checker_exists(self):
         checker = safe_ci_check.ROOT / "ci" / "stock_risk_matrix_ci_check.py"
+        self.assertTrue(checker.exists())
+
+    def test_stock_acceptance_overview_ci_checker_exists(self):
+        checker = safe_ci_check.ROOT / "ci" / "stock_acceptance_overview_ci_check.py"
         self.assertTrue(checker.exists())
 
 
