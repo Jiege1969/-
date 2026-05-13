@@ -72,6 +72,7 @@ class ConstructionAssistantReportTests(unittest.TestCase):
         self.assertIn("stock_pre_push_gate_ci_checker", names)
         self.assertIn("stock_review_loop_ci_checker", names)
         self.assertIn("stock_safe_boundary_ci_checker", names)
+        self.assertIn("stock_system_contract_ci_checker", names)
         self.assertTrue(any(item["action"] == "ci_guarded" for item in gates))
 
     def test_render_markdown_contains_local_absorption_section(self):

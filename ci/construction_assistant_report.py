@@ -145,6 +145,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI safe-boundary closure check for delivery acceptance and auto-trade blocking",
         "path": "ci/stock_safe_boundary_ci_check.py",
     },
+    {
+        "name": "stock_system_contract_ci_checker",
+        "role": "CircleCI stock-system contract check for mainline dependencies and guardrails",
+        "path": "ci/stock_system_contract_ci_check.py",
+    },
 ]
 
 
