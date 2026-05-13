@@ -34,6 +34,19 @@ class SafeCiCheckTests(unittest.TestCase):
         public_key = "ssh-ed25519 " + ("A" * 68) + " user@example.invalid"
         self.assertEqual(safe_ci_check.secret_labels_in_text(public_key), [])
 
+    def test_circleci_executable_lines_extracts_only_commands(self):
+        text = "name: demo\ncommand: |\n  python --version\n  echo hello\n  git --version\n"
+        self.assertEqual(
+            safe_ci_check.circleci_executable_lines(text),
+            ["python --version", "git --version"],
+        )
+
+    def test_circleci_allowed_commands_match_current_config(self):
+        config = safe_ci_check.ROOT / ".circleci" / "config.yml"
+        commands = safe_ci_check.circleci_executable_lines(config.read_text(encoding="utf-8"))
+        self.assertTrue(commands)
+        self.assertTrue(set(commands).issubset(safe_ci_check.ALLOWED_CIRCLECI_COMMANDS))
+
 
 if __name__ == "__main__":
     unittest.main()

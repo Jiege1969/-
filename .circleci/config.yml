@@ -13,7 +13,9 @@ jobs:
             git --version
       - run:
           name: Run safe offline CI checks
-          command: python ci/safe_ci_check.py
+          command: |
+            python ci/construction_assistant_report.py
+            python ci/safe_ci_check.py
 
 workflows:
   safe-ci:

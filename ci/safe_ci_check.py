@@ -78,6 +78,50 @@ FORBIDDEN_CIRCLECI_TERMS = [
     "wget ",
 ]
 
+ALLOWED_CIRCLECI_COMMANDS = {
+    "python --version",
+    "git --version",
+    "python ci/construction_assistant_report.py",
+    "python ci/safe_ci_check.py",
+}
+
+EXECUTABLE_COMMAND_PREFIXES = (
+    "python ",
+    "git ",
+    "curl ",
+    "wget ",
+    "powershell",
+    "pwsh",
+    "bash ",
+    "sh ",
+    "docker ",
+    "npm ",
+    "uvi" + "corn",
+    "flask ",
+)
+
+CI_SIDE_EFFECT_PATTERNS = [
+    ("HTTP POST", re.compile(r"\brequests\.post\b")),
+    ("urllib network call", re.compile(r"\burllib\.request\b")),
+    ("raw socket", re.compile(r"\bsocket\.socket\b")),
+    ("SMTP", re.compile(r"\bsmtplib\b")),
+    ("PowerShell process start", re.compile(r"\b" + "Start" + r"-Process\b", re.IGNORECASE)),
+    ("service manager", re.compile(r"\b" + "system" + r"ctl\b")),
+    ("container compose startup", re.compile(r"\b" + "docker" + r"\s+compose\s+up\b", re.IGNORECASE)),
+    ("node dev server", re.compile(r"\b" + "npm" + r"\s+run\s+dev\b", re.IGNORECASE)),
+    ("python ASGI server", re.compile(r"\b" + "uvi" + r"corn\b")),
+    ("python Flask server", re.compile(r"\b" + "flask" + r"\s+run\b", re.IGNORECASE)),
+]
+
+
+def circleci_executable_lines(text: str) -> list[str]:
+    commands: list[str] = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith(EXECUTABLE_COMMAND_PREFIXES):
+            commands.append(stripped)
+    return commands
+
 
 def run_git(*args: str) -> bytes:
     return subprocess.check_output(
@@ -111,6 +155,12 @@ def check_circleci_config() -> None:
     for term in FORBIDDEN_CIRCLECI_TERMS:
         if term.lower() in lower_text:
             fail(f"CircleCI config contains forbidden term: {term}")
+
+    disallowed_commands = [
+        command for command in circleci_executable_lines(text) if command not in ALLOWED_CIRCLECI_COMMANDS
+    ]
+    if disallowed_commands:
+        fail("CircleCI config contains non-whitelisted command:\n" + "\n".join(disallowed_commands))
 
     if "python ci/safe_ci_check.py" not in text:
         fail("CircleCI config must run python ci/safe_ci_check.py")
@@ -208,6 +258,24 @@ def check_no_tracked_secrets(paths: list[Path]) -> None:
         fail("possible secrets in tracked files:\n" + "\n".join(offenders[:30]))
 
 
+def check_ci_support_files_have_no_side_effect_terms(paths: list[Path]) -> None:
+    offenders: list[str] = []
+    for path in paths:
+        relative = path.relative_to(ROOT).as_posix()
+        if not (relative.startswith("ci/") or relative.startswith(".circleci/")):
+            continue
+        text = read_text_safely(path)
+        if text is None:
+            continue
+        for label, pattern in CI_SIDE_EFFECT_PATTERNS:
+            if pattern.search(text):
+                offenders.append(f"{relative}: {label}")
+                break
+
+    if offenders:
+        fail("possible side-effect terms in CI support files:\n" + "\n".join(offenders[:30]))
+
+
 def run_unittest_module(module_name: str, cwd: Path, import_root: Path) -> None:
     old_cwd = Path.cwd()
     old_path = list(sys.path)
@@ -225,8 +293,22 @@ def run_unittest_module(module_name: str, cwd: Path, import_root: Path) -> None:
         sys.path[:] = old_path
 
 
+def run_ci_unit_tests() -> None:
+    test_root = ROOT / "ci" / "tests"
+    suite = unittest.defaultTestLoader.discover(
+        start_dir=str(test_root),
+        pattern="test_*.py",
+        top_level_dir=str(ROOT),
+    )
+    if suite.countTestCases() == 0:
+        fail("ci unit tests were not discovered")
+    result = unittest.TextTestRunner(stream=sys.stdout, verbosity=2).run(suite)
+    if not result.wasSuccessful():
+        fail("ci unit tests failed")
+
+
 def run_offline_unit_tests() -> None:
-    run_unittest_module("ci.tests.test_safe_ci_check", ROOT, ROOT)
+    run_ci_unit_tests()
 
     test_root = ROOT / "02杰哥扩展系统" / "02视频制作系统" / "06临时" / "social-auto-upload"
     test_file = test_root / "tests" / "test_bilibili_runtime.py"
@@ -246,6 +328,7 @@ def main() -> int:
     check_tracked_file_sizes(paths)
     check_redline_flags(paths)
     check_no_tracked_secrets(paths)
+    check_ci_support_files_have_no_side_effect_terms(paths)
     check_python_compiles(paths)
     run_offline_unit_tests()
 
