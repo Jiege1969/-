@@ -160,6 +160,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI stock-system learning summary for contract and impact signals",
         "path": "ci/stock_ci_learning_summary.py",
     },
+    {
+        "name": "stock_construction_advice_ci_checker",
+        "role": "CircleCI stock-system construction advice from contract, impact, and learning signals",
+        "path": "ci/stock_construction_advice_ci_check.py",
+    },
 ]
 
 
