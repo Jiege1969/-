@@ -47,6 +47,9 @@ META_CI_ORDER = [
     "ci/stock_construction_advice_ci_check.py",
     "ci/stock_ci_traceability_ci_check.py",
     "ci/stock_dependency_order_ci_check.py",
+    "ci/stock_risk_matrix_ci_check.py",
+    "ci/stock_acceptance_overview_ci_check.py",
+    "ci/stock_runtime_artifact_governance_ci_check.py",
 ]
 
 GUARDRAILS = [

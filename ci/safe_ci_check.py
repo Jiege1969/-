@@ -101,6 +101,7 @@ ALLOWED_CIRCLECI_COMMANDS = {
     "python ci/stock_dependency_order_ci_check.py",
     "python ci/stock_risk_matrix_ci_check.py",
     "python ci/stock_acceptance_overview_ci_check.py",
+    "python ci/stock_runtime_artifact_governance_ci_check.py",
     "python ci/safe_ci_check.py",
 }
 

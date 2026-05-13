@@ -185,6 +185,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI stock-system acceptance overview for readiness score and next action",
         "path": "ci/stock_acceptance_overview_ci_check.py",
     },
+    {
+        "name": "stock_runtime_artifact_governance_ci_checker",
+        "role": "CircleCI stock-system runtime artifact governance for evidence and live status hygiene",
+        "path": "ci/stock_runtime_artifact_governance_ci_check.py",
+    },
 ]
 
 
