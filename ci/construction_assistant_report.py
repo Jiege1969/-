@@ -175,6 +175,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI stock-system dependency-order check for contract stages and meta-CI order",
         "path": "ci/stock_dependency_order_ci_check.py",
     },
+    {
+        "name": "stock_risk_matrix_ci_checker",
+        "role": "CircleCI stock-system risk matrix for impacted lanes and required gates",
+        "path": "ci/stock_risk_matrix_ci_check.py",
+    },
 ]
 
 
