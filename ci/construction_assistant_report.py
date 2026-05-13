@@ -155,6 +155,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI stock-system change-impact check for touched lanes and guardrails",
         "path": "ci/stock_change_impact_ci_check.py",
     },
+    {
+        "name": "stock_ci_learning_summary",
+        "role": "CircleCI stock-system learning summary for contract and impact signals",
+        "path": "ci/stock_ci_learning_summary.py",
+    },
 ]
 
 
