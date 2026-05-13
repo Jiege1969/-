@@ -84,6 +84,7 @@ ALLOWED_CIRCLECI_COMMANDS = {
     "python ci/construction_assistant_report.py",
     "python ci/stock_sample_room_ci_check.py",
     "python ci/stock_mainline_ci_check.py",
+    "python ci/stock_maturity_ci_check.py",
     "python ci/safe_ci_check.py",
 }
 

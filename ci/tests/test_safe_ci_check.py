@@ -47,6 +47,7 @@ class SafeCiCheckTests(unittest.TestCase):
         self.assertTrue(commands)
         self.assertIn("python ci/stock_sample_room_ci_check.py", commands)
         self.assertIn("python ci/stock_mainline_ci_check.py", commands)
+        self.assertIn("python ci/stock_maturity_ci_check.py", commands)
         self.assertIn("python ci/safe_ci_check.py", commands)
         self.assertTrue(set(commands).issubset(safe_ci_check.ALLOWED_CIRCLECI_COMMANDS))
 
@@ -57,6 +58,10 @@ class SafeCiCheckTests(unittest.TestCase):
     def test_stock_mainline_ci_wrapper_exists(self):
         wrapper = safe_ci_check.ROOT / "ci" / "stock_mainline_ci_check.py"
         self.assertTrue(wrapper.exists())
+
+    def test_stock_maturity_ci_checker_exists(self):
+        checker = safe_ci_check.ROOT / "ci" / "stock_maturity_ci_check.py"
+        self.assertTrue(checker.exists())
 
 
 if __name__ == "__main__":
