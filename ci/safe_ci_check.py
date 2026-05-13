@@ -14,6 +14,7 @@ import py_compile
 import re
 import subprocess
 import sys
+import unittest
 from pathlib import Path
 
 
@@ -181,6 +182,27 @@ def check_redline_flags(paths: list[Path]) -> None:
         fail("redline flags enabled in tracked files:\n" + "\n".join(offenders[:30]))
 
 
+def run_offline_unit_tests() -> None:
+    test_root = ROOT / "02杰哥扩展系统" / "02视频制作系统" / "06临时" / "social-auto-upload"
+    test_file = test_root / "tests" / "test_bilibili_runtime.py"
+    if not test_file.exists():
+        print("Offline unit tests: skipped, test_bilibili_runtime.py not found")
+        return
+
+    old_cwd = Path.cwd()
+    old_path = list(sys.path)
+    try:
+        os.chdir(test_root)
+        sys.path.insert(0, str(test_root))
+        suite = unittest.defaultTestLoader.loadTestsFromName("tests.test_bilibili_runtime")
+        result = unittest.TextTestRunner(verbosity=2).run(suite)
+        if not result.wasSuccessful():
+            fail("offline unit tests failed")
+    finally:
+        os.chdir(old_cwd)
+        sys.path[:] = old_path
+
+
 def main() -> int:
     os.environ.setdefault("JIEGE_CI_SAFE_MODE", "1")
     paths = tracked_files()
@@ -190,6 +212,7 @@ def main() -> int:
     check_tracked_file_sizes(paths)
     check_redline_flags(paths)
     check_python_compiles(paths)
+    run_offline_unit_tests()
 
     print("Safe CI checks passed.")
     return 0
