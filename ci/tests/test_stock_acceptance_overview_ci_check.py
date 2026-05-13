@@ -41,6 +41,8 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
         self.assertEqual(report["ci_gate_status"], "pass")
         self.assertIn(report["state"], {"continue", "review_before_continue", "human_review_required", "blocked"})
         self.assertTrue(report["advice_modes"])
+        self.assertEqual(report["upstream_statuses"]["runtime_artifact_governance"], "pass")
+        self.assertGreaterEqual(report["runtime_artifact_governance"]["live_runtime_status_count"], 1)
 
     def test_validate_report_rejects_continue_with_high_risk(self):
         report = overview.build_acceptance_overview_report()
@@ -57,6 +59,7 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
 
         self.assertIn("Stock Acceptance Overview", markdown)
         self.assertIn("Upstream Statuses", markdown)
+        self.assertIn("runtime_artifact_governance", markdown)
         self.assertIn("Risk Counts", markdown)
 
 

@@ -22,17 +22,20 @@ from typing import Any
 try:
     from ci import stock_construction_advice_ci_check as advice
     from ci import stock_risk_matrix_ci_check as risk
+    from ci import stock_runtime_artifact_governance_ci_check as runtime_artifacts
 except ModuleNotFoundError:  # Running as `python ci/stock_acceptance_overview_ci_check.py`.
     import stock_construction_advice_ci_check as advice  # type: ignore[no-redef]
     import stock_risk_matrix_ci_check as risk  # type: ignore[no-redef]
+    import stock_runtime_artifact_governance_ci_check as runtime_artifacts  # type: ignore[no-redef]
 
 
 UPSTREAM_WEIGHTS = {
-    "risk_matrix": 30,
-    "construction_advice": 25,
+    "risk_matrix": 25,
+    "construction_advice": 20,
     "change_impact": 15,
     "dependency_order": 15,
     "learning_summary": 15,
+    "runtime_artifact_governance": 10,
 }
 
 RISK_PENALTY = {
@@ -54,6 +57,7 @@ GUARDRAILS = [
 def upstream_statuses(
     risk_report: dict[str, Any],
     advice_report: dict[str, Any],
+    runtime_report: dict[str, Any],
 ) -> dict[str, str]:
     return {
         "risk_matrix": risk_report["ci_gate_status"],
@@ -61,6 +65,7 @@ def upstream_statuses(
         "change_impact": risk_report["upstream"]["change_impact_status"],
         "dependency_order": risk_report["upstream"]["dependency_order_status"],
         "learning_summary": advice_report["upstream"]["learning_gate_status"],
+        "runtime_artifact_governance": runtime_report["ci_gate_status"],
     }
 
 
@@ -123,13 +128,19 @@ def validate_report(report: dict[str, Any]) -> list[str]:
 def build_acceptance_overview_report() -> dict[str, Any]:
     risk_report = risk.build_risk_matrix_report()
     advice_report = advice.build_construction_advice_report()
-    statuses = upstream_statuses(risk_report, advice_report)
+    runtime_report = runtime_artifacts.build_runtime_artifact_report()
+    statuses = upstream_statuses(risk_report, advice_report, runtime_report)
     score = readiness_score(statuses, risk_report["risk_counts"])
     state = acceptance_state(score, risk_report["risk_counts"], statuses)
     report = {
         "name": "stock_acceptance_overview",
         "scope": "stock_analysis_sample_room",
         "upstream_statuses": statuses,
+        "runtime_artifact_governance": {
+            "live_runtime_status_count": len(runtime_report.get("live_runtime_status_files", [])),
+            "category_counts": runtime_report.get("category_counts", {}),
+            "blocking_problems": runtime_report.get("blocking_problems", []),
+        },
         "risk_counts": risk_report["risk_counts"],
         "advice_modes": advice_modes(advice_report),
         "score": score,
