@@ -221,6 +221,7 @@ def build_report() -> dict[str, Any]:
         "红线命中数": len(redline_hits),
         "主线泳道": lanes,
         "下一步建议": next_actions(lanes, missing_assets, review_assets, redline_hits),
+        "construction_queue": build_construction_queue(lanes),
         "安全边界": {
             "真实发送企业微信": False,
             "触发n8n": False,
@@ -231,6 +232,42 @@ def build_report() -> dict[str, Any]:
             "重启服务": False,
         },
     }
+
+
+def lane_blocking_reason(lane: dict[str, Any]) -> str:
+    if lane.get("redline_hit_count", 0):
+        return "redline_hit"
+    if lane.get("missing_count", 0):
+        return "missing_asset"
+    if lane.get("review_count", 0):
+        return "review_asset"
+    return "ready"
+
+
+def lane_asset_paths_by_status(lane: dict[str, Any], status: str) -> list[str]:
+    return [
+        asset["path"]
+        for asset in lane.get("assets", [])
+        if asset.get("status") == status
+    ]
+
+
+def build_construction_queue(lanes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    queue: list[dict[str, Any]] = []
+    for index, lane in enumerate(lanes, start=1):
+        queue.append(
+            {
+                "priority": index * 10,
+                "lane": lane["name"],
+                "status": lane["status"],
+                "blocking_reason": lane_blocking_reason(lane),
+                "expected_next": lane["expected_next"],
+                "missing_assets": lane_asset_paths_by_status(lane, "missing"),
+                "review_assets": lane_asset_paths_by_status(lane, "review"),
+                "redline_hits": lane.get("redline_hits", []),
+            }
+        )
+    return sorted(queue, key=lambda item: (item["blocking_reason"] == "ready", item["priority"]))
 
 
 def next_actions(
@@ -288,6 +325,15 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines.extend(["", "## 安全边界", ""])
     for key, value in report["安全边界"].items():
         lines.append(f"- {key}：{str(value).lower()}")
+    if report.get("construction_queue"):
+        lines.extend(["", "## Construction Queue", ""])
+        for item in report["construction_queue"]:
+            lines.append(
+                "- "
+                f"P{item['priority']} {item['lane']}: "
+                f"{item['status']}; {item['blocking_reason']}; "
+                f"{item['expected_next']}"
+            )
     return "\n".join(lines) + "\n"
 
 
