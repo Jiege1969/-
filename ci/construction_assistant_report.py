@@ -140,6 +140,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI review-loop closure check for feedback and learning workflow",
         "path": "ci/stock_review_loop_ci_check.py",
     },
+    {
+        "name": "stock_safe_boundary_ci_checker",
+        "role": "CircleCI safe-boundary closure check for delivery acceptance and auto-trade blocking",
+        "path": "ci/stock_safe_boundary_ci_check.py",
+    },
 ]
 
 

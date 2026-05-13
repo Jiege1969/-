@@ -92,6 +92,7 @@ ALLOWED_CIRCLECI_COMMANDS = {
     "python ci/stock_manual_review_ci_check.py",
     "python ci/stock_pre_push_gate_ci_check.py",
     "python ci/stock_review_loop_ci_check.py",
+    "python ci/stock_safe_boundary_ci_check.py",
     "python ci/safe_ci_check.py",
 }
 
