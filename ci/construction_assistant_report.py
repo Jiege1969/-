@@ -100,6 +100,16 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI wrapper for mainline gate",
         "path": "ci/stock_mainline_ci_check.py",
     },
+    {
+        "name": "stock_maturity_ci_checker",
+        "role": "CircleCI maturity audit for workflow closure and overlap",
+        "path": "ci/stock_maturity_ci_check.py",
+    },
+    {
+        "name": "stock_consolidation_index_ci_checker",
+        "role": "CircleCI consolidation index for duplicate and overlap review",
+        "path": "ci/stock_consolidation_index_ci_check.py",
+    },
 ]
 
 
