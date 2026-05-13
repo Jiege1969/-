@@ -1,5 +1,5 @@
 ﻿{
-    "record_time":  "2026-05-13 13:28:01",
+    "record_time":  "2026-05-13 13:31:01",
     "status":  "ready",
     "ready":  true,
     "corrected_port_mapping":  {
@@ -20,7 +20,7 @@
                                           {
                                               "url":  "http://127.0.0.1:19300/health",
                                               "status_code":  200,
-                                              "elapsed_ms":  126,
+                                              "elapsed_ms":  123,
                                               "ok":  true,
                                               "error":  null
                                           }
@@ -54,7 +54,7 @@
                                           {
                                               "url":  "http://127.0.0.1:19310/health",
                                               "status_code":  200,
-                                              "elapsed_ms":  44,
+                                              "elapsed_ms":  41,
                                               "ok":  true,
                                               "error":  null
                                           }
@@ -71,7 +71,7 @@
                                           {
                                               "url":  "http://127.0.0.1:28100/health",
                                               "status_code":  200,
-                                              "elapsed_ms":  15,
+                                              "elapsed_ms":  14,
                                               "ok":  true,
                                               "error":  null
                                           }
@@ -98,7 +98,7 @@
                                           {
                                               "url":  "http://127.0.0.1:28679/healthz",
                                               "status_code":  200,
-                                              "elapsed_ms":  16,
+                                              "elapsed_ms":  15,
                                               "ok":  true,
                                               "error":  null
                                           }
@@ -115,7 +115,7 @@
                                           {
                                               "url":  "http://127.0.0.1:29134/api/tags",
                                               "status_code":  200,
-                                              "elapsed_ms":  188,
+                                              "elapsed_ms":  179,
                                               "ok":  true,
                                               "error":  null
                                           }
