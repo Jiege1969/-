@@ -186,8 +186,7 @@ def run_offline_unit_tests() -> None:
     test_root = ROOT / "02杰哥扩展系统" / "02视频制作系统" / "06临时" / "social-auto-upload"
     test_file = test_root / "tests" / "test_bilibili_runtime.py"
     if not test_file.exists():
-        print("Offline unit tests: skipped, test_bilibili_runtime.py not found")
-        return
+        fail("offline unit test file is missing: tests/test_bilibili_runtime.py")
 
     old_cwd = Path.cwd()
     old_path = list(sys.path)
@@ -195,7 +194,7 @@ def run_offline_unit_tests() -> None:
         os.chdir(test_root)
         sys.path.insert(0, str(test_root))
         suite = unittest.defaultTestLoader.loadTestsFromName("tests.test_bilibili_runtime")
-        result = unittest.TextTestRunner(verbosity=2).run(suite)
+        result = unittest.TextTestRunner(stream=sys.stdout, verbosity=2).run(suite)
         if not result.wasSuccessful():
             fail("offline unit tests failed")
     finally:
