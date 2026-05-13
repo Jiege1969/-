@@ -1,4 +1,6 @@
 import unittest
+import importlib.util
+from pathlib import Path
 
 import ci.stock_frontend_message_contract_ci_check as frontend_contract
 
@@ -41,6 +43,8 @@ class StockFrontendMessageContractCiCheckTests(unittest.TestCase):
         report = frontend_contract.build_report()
         daily_push = report["daily_push_table"]
 
+        self.assertTrue(report["daily_push_audit_script"]["table_references_script"])
+        self.assertTrue(report["daily_push_audit_script"]["script_exists"])
         self.assertTrue(daily_push["required_current_tasks"]["preopen_shortlist_0850"])
         self.assertTrue(daily_push["required_current_tasks"]["postclose_short_observation_1530"])
         self.assertTrue(daily_push["required_current_tasks"]["night_expert_research_2100"])
@@ -66,6 +70,30 @@ class StockFrontendMessageContractCiCheckTests(unittest.TestCase):
             self.assertTrue(task["safety"]["n8n_false"])
             self.assertTrue(task["safety"]["webhook_false"])
             self.assertTrue(task["safety"]["ci_enabled"])
+
+    def test_daily_push_audit_script_builds_pass_report(self):
+        script_path = (
+            Path(__file__).resolve().parents[2]
+            / "02杰哥扩展系统"
+            / "01股票研究系统"
+            / "02脚本"
+            / "生成股票每日推送总表只读巡检报告.py"
+        )
+        spec = importlib.util.spec_from_file_location("stock_daily_push_audit", script_path)
+        self.assertIsNotNone(spec)
+        self.assertIsNotNone(spec.loader)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+
+        report = module.build_report(now="2026-05-14 00:00:00")
+
+        self.assertEqual(report["结论"], "pass")
+        self.assertEqual(report["阻断问题"], [])
+        self.assertFalse(report["实际动作"]["企业微信真实发送"])
+        self.assertFalse(report["实际动作"]["触发n8n"])
+        self.assertFalse(report["实际动作"]["访问Webhook"])
+        self.assertFalse(report["实际动作"]["调用券商接口"])
+        self.assertFalse(report["实际动作"]["自动交易"])
 
     def test_validate_report_rejects_missing_star_expression(self):
         report = frontend_contract.build_report()

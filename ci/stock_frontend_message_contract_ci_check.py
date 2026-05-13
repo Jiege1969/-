@@ -29,6 +29,7 @@ OUTPUT_STANDARD_PATH = STOCK_ROOT / "01配置" / "股票前台输出标准_v2.js
 LAYER_RULE_PATH = STOCK_ROOT / "01配置" / "股票前后台表达分层与杰哥推荐前台规则_v1.0.json"
 DAILY_PUSH_TABLE_PATH = STOCK_ROOT / "01配置" / "股票每日推送总表_v1.0.json"
 PUSH_SAMPLE_DOC_PATH = STOCK_ROOT / "07文档" / "股票前台推送消息样本_v1.0.md"
+DAILY_PUSH_AUDIT_SCRIPT_PATH = STOCK_ROOT / "02脚本" / "生成股票每日推送总表只读巡检报告.py"
 
 REQUIRED_TOP_LEVEL_KEYS = [
     "最高口径",
@@ -262,6 +263,10 @@ def build_report() -> dict[str, Any]:
             "path": rel(PUSH_SAMPLE_DOC_PATH),
             "exists": PUSH_SAMPLE_DOC_PATH.exists(),
         },
+        "daily_push_audit_script": {
+            "path": rel(DAILY_PUSH_AUDIT_SCRIPT_PATH),
+            "exists": DAILY_PUSH_AUDIT_SCRIPT_PATH.exists(),
+        },
     }
 
     contract: dict[str, Any] = {}
@@ -321,6 +326,10 @@ def build_report() -> dict[str, Any]:
         },
         "method_kernel_over_template": "不以用户模板举例为准" in contract_text,
         "daily_push_table": build_daily_push_table_report(daily_push_table),
+        "daily_push_audit_script": {
+            "table_references_script": daily_push_table.get("只读巡检脚本") == "02脚本/生成股票每日推送总表只读巡检报告.py",
+            "script_exists": DAILY_PUSH_AUDIT_SCRIPT_PATH.exists(),
+        },
         "governance": {
             "single_current_contract": governance.get("唯一现行规则源") == "01配置/股票前台报告表达定稿规则_v1.0.json",
             "single_current_document": governance.get("唯一现行说明文档") == "07文档/股票前台报告表达定稿与推送消息标准_v1.0.md",
@@ -374,6 +383,11 @@ def validate_report(report: dict[str, Any]) -> list[str]:
         problems.append("method_kernel_over_template_missing")
 
     daily_push = report["daily_push_table"]
+    audit_script = report["daily_push_audit_script"]
+    if not audit_script["table_references_script"]:
+        problems.append("daily_push_table_not_referencing_audit_script")
+    if not audit_script["script_exists"]:
+        problems.append("daily_push_audit_script_missing")
     for task_id, present in daily_push["required_current_tasks"].items():
         if not present:
             problems.append(f"missing_current_push_task:{task_id}")
