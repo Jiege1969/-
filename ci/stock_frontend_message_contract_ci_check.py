@@ -27,6 +27,8 @@ CONTRACT_PATH = STOCK_ROOT / "01配置" / "股票前台报告表达定稿规则_
 DOC_PATH = STOCK_ROOT / "07文档" / "股票前台报告表达定稿与推送消息标准_v1.0.md"
 OUTPUT_STANDARD_PATH = STOCK_ROOT / "01配置" / "股票前台输出标准_v2.json"
 LAYER_RULE_PATH = STOCK_ROOT / "01配置" / "股票前后台表达分层与杰哥推荐前台规则_v1.0.json"
+DAILY_PUSH_TABLE_PATH = STOCK_ROOT / "01配置" / "股票每日推送总表_v1.0.json"
+PUSH_SAMPLE_DOC_PATH = STOCK_ROOT / "07文档" / "股票前台推送消息样本_v1.0.md"
 
 REQUIRED_TOP_LEVEL_KEYS = [
     "最高口径",
@@ -55,6 +57,8 @@ REQUIRED_DOC_PHRASES = [
     "企业微信机器人只是输入输出终端",
     "不是新增一层规则",
     "旧文件不得再作为前台报告现行规则源",
+    "股票每日推送总表_v1.0.json",
+    "股票前台推送消息样本_v1.0.md",
 ]
 
 REQUIRED_NUMERIC_OUTPUTS = [
@@ -79,6 +83,44 @@ REQUIRED_MESSAGE_TYPES = [
 REQUIRED_BOTS = [
     "杰哥股票短线分析助手",
     "杰哥股票分析专家",
+]
+
+REQUIRED_PUSH_TASK_FIELDS = [
+    "任务ID",
+    "状态",
+    "推送时间",
+    "推送类型",
+    "对应机器人",
+    "消息标题",
+    "内容字段",
+    "样本文件",
+    "生成脚本",
+    "是否允许真实发送",
+    "是否允许触发n8n",
+    "是否允许Webhook",
+    "是否进入CI检查",
+]
+
+REQUIRED_CURRENT_PUSH_TASKS = [
+    "preopen_shortlist_0850",
+    "postclose_short_observation_1530",
+    "night_expert_research_2100",
+]
+
+REQUIRED_PUSH_NUMERIC_FIELDS = [
+    "当前价",
+    "最近5日平均成交量",
+    "放量达标线",
+    "当前成交量",
+    "风险线",
+]
+
+REQUIRED_PUSH_SAMPLE_PHRASES = [
+    "不是后台技术指标复述",
+    "不能把计算题留给使用者",
+    "最近5日平均成交量：820万手",
+    "今日放量达标线：984万手",
+    "风险线：17.40元",
 ]
 
 GUARDRAILS = [
@@ -111,7 +153,7 @@ def text_contains_all(text: str, phrases: list[str]) -> list[str]:
 
 def load_referenced_texts() -> dict[str, str]:
     texts: dict[str, str] = {}
-    for path in [DOC_PATH, OUTPUT_STANDARD_PATH, LAYER_RULE_PATH]:
+    for path in [DOC_PATH, OUTPUT_STANDARD_PATH, LAYER_RULE_PATH, DAILY_PUSH_TABLE_PATH, PUSH_SAMPLE_DOC_PATH]:
         if path.exists():
             texts[rel(path)] = read_text(path)
     return texts
@@ -123,6 +165,75 @@ def stock_legacy_backup_files() -> list[str]:
         for path in STOCK_ROOT.rglob("*before-rename-stock-advisor-20260510-2220*")
         if path.is_file()
     )
+
+
+def push_sample_anchor_exists(sample_ref: str, sample_text: str) -> bool:
+    if "#" not in sample_ref:
+        return False
+    anchor = sample_ref.split("#", 1)[1]
+    compact_anchor = "".join(ch for ch in anchor if ch.isalnum())
+    for line in sample_text.splitlines():
+        if line.startswith("#"):
+            compact_line = "".join(ch for ch in line.lstrip("# ").strip() if ch.isalnum())
+            if compact_anchor in compact_line or compact_line in compact_anchor:
+                return True
+    return False
+
+
+def build_daily_push_table_report(table: dict[str, Any]) -> dict[str, Any]:
+    tasks = table.get("推送任务", []) if isinstance(table, dict) else []
+    sample_text = read_text(PUSH_SAMPLE_DOC_PATH) if PUSH_SAMPLE_DOC_PATH.exists() else ""
+    task_reports = []
+    for task in tasks:
+        content_fields = task.get("内容字段", []) if isinstance(task, dict) else []
+        script_path = STOCK_ROOT / task.get("生成脚本", "") if isinstance(task, dict) else STOCK_ROOT
+        sample_ref = task.get("样本文件", "") if isinstance(task, dict) else ""
+        sample_path_text = sample_ref.split("#", 1)[0] if sample_ref else ""
+        sample_path = STOCK_ROOT / sample_path_text if sample_path_text else STOCK_ROOT
+        task_reports.append(
+            {
+                "task_id": task.get("任务ID") if isinstance(task, dict) else None,
+                "required_field_coverage": {
+                    field: field in task
+                    for field in REQUIRED_PUSH_TASK_FIELDS
+                } if isinstance(task, dict) else {},
+                "numeric_field_coverage": {
+                    field: field in content_fields
+                    for field in REQUIRED_PUSH_NUMERIC_FIELDS
+                },
+                "script_exists": script_path.exists(),
+                "sample_file_exists": sample_path.exists(),
+                "sample_anchor_exists": push_sample_anchor_exists(sample_ref, sample_text),
+                "safety": {
+                    "real_send_false": task.get("是否允许真实发送") is False if isinstance(task, dict) else False,
+                    "n8n_false": task.get("是否允许触发n8n") is False if isinstance(task, dict) else False,
+                    "webhook_false": task.get("是否允许Webhook") is False if isinstance(task, dict) else False,
+                    "ci_enabled": task.get("是否进入CI检查") is True if isinstance(task, dict) else False,
+                },
+                "bot": task.get("对应机器人") if isinstance(task, dict) else None,
+                "status": task.get("状态") if isinstance(task, dict) else None,
+            }
+        )
+    return {
+        "task_count": len(tasks),
+        "required_current_tasks": {
+            task_id: any(row["task_id"] == task_id for row in task_reports)
+            for task_id in REQUIRED_CURRENT_PUSH_TASKS
+        },
+        "bot_coverage": {
+            bot: any(row["bot"] == bot for row in task_reports)
+            for bot in REQUIRED_BOTS
+        },
+        "task_reports": task_reports,
+        "sample_phrase_missing": text_contains_all(sample_text, REQUIRED_PUSH_SAMPLE_PHRASES),
+        "safe_global_switches": {
+            "real_send_false": table.get("安全总开关", {}).get("允许真实发送企业微信") is False if isinstance(table, dict) else False,
+            "n8n_false": table.get("安全总开关", {}).get("允许触发n8n") is False if isinstance(table, dict) else False,
+            "webhook_false": table.get("安全总开关", {}).get("允许Webhook") is False if isinstance(table, dict) else False,
+            "broker_false": table.get("安全总开关", {}).get("允许调用券商接口") is False if isinstance(table, dict) else False,
+            "auto_trade_false": table.get("安全总开关", {}).get("允许自动交易") is False if isinstance(table, dict) else False,
+        },
+    }
 
 
 def build_report() -> dict[str, Any]:
@@ -143,6 +254,14 @@ def build_report() -> dict[str, Any]:
             "path": rel(LAYER_RULE_PATH),
             "exists": LAYER_RULE_PATH.exists(),
         },
+        "daily_push_table": {
+            "path": rel(DAILY_PUSH_TABLE_PATH),
+            "exists": DAILY_PUSH_TABLE_PATH.exists(),
+        },
+        "push_sample_doc": {
+            "path": rel(PUSH_SAMPLE_DOC_PATH),
+            "exists": PUSH_SAMPLE_DOC_PATH.exists(),
+        },
     }
 
     contract: dict[str, Any] = {}
@@ -150,6 +269,9 @@ def build_report() -> dict[str, Any]:
     if CONTRACT_PATH.exists():
         contract = read_json(CONTRACT_PATH)
         contract_text = read_text(CONTRACT_PATH)
+    daily_push_table: dict[str, Any] = {}
+    if DAILY_PUSH_TABLE_PATH.exists():
+        daily_push_table = read_json(DAILY_PUSH_TABLE_PATH)
 
     referenced_texts = load_referenced_texts()
     references = {
@@ -198,6 +320,7 @@ def build_report() -> dict[str, Any]:
             "not_trade_instruction": "不是买卖指令" in json.dumps(strong_focus, ensure_ascii=False),
         },
         "method_kernel_over_template": "不以用户模板举例为准" in contract_text,
+        "daily_push_table": build_daily_push_table_report(daily_push_table),
         "governance": {
             "single_current_contract": governance.get("唯一现行规则源") == "01配置/股票前台报告表达定稿规则_v1.0.json",
             "single_current_document": governance.get("唯一现行说明文档") == "07文档/股票前台报告表达定稿与推送消息标准_v1.0.md",
@@ -250,6 +373,36 @@ def validate_report(report: dict[str, Any]) -> list[str]:
     if not report["method_kernel_over_template"]:
         problems.append("method_kernel_over_template_missing")
 
+    daily_push = report["daily_push_table"]
+    for task_id, present in daily_push["required_current_tasks"].items():
+        if not present:
+            problems.append(f"missing_current_push_task:{task_id}")
+    for bot, present in daily_push["bot_coverage"].items():
+        if not present:
+            problems.append(f"daily_push_missing_bot:{bot}")
+    for key, ok in daily_push["safe_global_switches"].items():
+        if not ok:
+            problems.append(f"daily_push_global_safety_not_false:{key}")
+    for phrase in daily_push["sample_phrase_missing"]:
+        problems.append(f"missing_push_sample_phrase:{phrase}")
+    for task in daily_push["task_reports"]:
+        task_id = task["task_id"] or "unknown"
+        for field, present in task["required_field_coverage"].items():
+            if not present:
+                problems.append(f"daily_push_task_missing_field:{task_id}:{field}")
+        for field, present in task["numeric_field_coverage"].items():
+            if not present:
+                problems.append(f"daily_push_task_missing_numeric_field:{task_id}:{field}")
+        if not task["script_exists"]:
+            problems.append(f"daily_push_task_script_missing:{task_id}")
+        if not task["sample_file_exists"]:
+            problems.append(f"daily_push_task_sample_missing:{task_id}")
+        if not task["sample_anchor_exists"]:
+            problems.append(f"daily_push_task_sample_anchor_missing:{task_id}")
+        for key, ok in task["safety"].items():
+            if not ok:
+                problems.append(f"daily_push_task_safety_failed:{task_id}:{key}")
+
     governance = report["governance"]
     if not governance["single_current_contract"]:
         problems.append("governance_single_current_contract_missing")
@@ -297,6 +450,11 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines.extend(["", "## Computed Conditions"])
     for name, present in report["numeric_output_coverage"].items():
         lines.append(f"- `{name}`: {str(present).lower()}")
+
+    lines.extend(["", "## Daily Push Table"])
+    lines.append(f"- task count: {report['daily_push_table']['task_count']}")
+    for task_id, present in report["daily_push_table"]["required_current_tasks"].items():
+        lines.append(f"- `{task_id}`: {str(present).lower()}")
 
     lines.extend(["", "## Guardrails"])
     for guardrail in report["guardrails"]:

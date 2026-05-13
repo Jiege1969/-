@@ -37,6 +37,36 @@ class StockFrontendMessageContractCiCheckTests(unittest.TestCase):
         self.assertTrue(report["governance"]["mentions_absorb_replace_or_deprecate"])
         self.assertEqual(report["governance"]["legacy_backup_files"], [])
 
+    def test_daily_push_table_covers_current_tasks_and_safety(self):
+        report = frontend_contract.build_report()
+        daily_push = report["daily_push_table"]
+
+        self.assertTrue(daily_push["required_current_tasks"]["preopen_shortlist_0850"])
+        self.assertTrue(daily_push["required_current_tasks"]["postclose_short_observation_1530"])
+        self.assertTrue(daily_push["required_current_tasks"]["night_expert_research_2100"])
+        self.assertTrue(daily_push["bot_coverage"]["杰哥股票短线分析助手"])
+        self.assertTrue(daily_push["bot_coverage"]["杰哥股票分析专家"])
+        self.assertEqual(daily_push["sample_phrase_missing"], [])
+        for ok in daily_push["safe_global_switches"].values():
+            self.assertTrue(ok)
+
+    def test_daily_push_tasks_require_computed_numeric_fields(self):
+        report = frontend_contract.build_report()
+
+        for task in report["daily_push_table"]["task_reports"]:
+            self.assertTrue(task["numeric_field_coverage"]["当前价"])
+            self.assertTrue(task["numeric_field_coverage"]["最近5日平均成交量"])
+            self.assertTrue(task["numeric_field_coverage"]["放量达标线"])
+            self.assertTrue(task["numeric_field_coverage"]["当前成交量"])
+            self.assertTrue(task["numeric_field_coverage"]["风险线"])
+            self.assertTrue(task["script_exists"])
+            self.assertTrue(task["sample_file_exists"])
+            self.assertTrue(task["sample_anchor_exists"])
+            self.assertTrue(task["safety"]["real_send_false"])
+            self.assertTrue(task["safety"]["n8n_false"])
+            self.assertTrue(task["safety"]["webhook_false"])
+            self.assertTrue(task["safety"]["ci_enabled"])
+
     def test_validate_report_rejects_missing_star_expression(self):
         report = frontend_contract.build_report()
         report["strong_focus"]["uses_star_expression"] = False
@@ -66,6 +96,14 @@ class StockFrontendMessageContractCiCheckTests(unittest.TestCase):
             problems,
         )
 
+    def test_validate_report_rejects_daily_push_safety_gap(self):
+        report = frontend_contract.build_report()
+        report["daily_push_table"]["task_reports"][0]["safety"]["real_send_false"] = False
+
+        problems = frontend_contract.validate_report(report)
+
+        self.assertIn("daily_push_task_safety_failed:preopen_shortlist_0850:real_send_false", problems)
+
     def test_render_markdown_contains_contract_sections(self):
         report = frontend_contract.build_report()
         markdown = frontend_contract.render_markdown(report)
@@ -73,6 +111,7 @@ class StockFrontendMessageContractCiCheckTests(unittest.TestCase):
         self.assertIn("Stock Frontend Message Contract", markdown)
         self.assertIn("Message Types", markdown)
         self.assertIn("Computed Conditions", markdown)
+        self.assertIn("Daily Push Table", markdown)
         self.assertIn("Legacy Cleanup", markdown)
 
 
