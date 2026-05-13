@@ -40,6 +40,21 @@ HIGH_RISK_WORDS = [
     "自动交易",
     "下单",
 ]
+NEGATION_PREFIXES = [
+    "不触发",
+    "不发送",
+    "不调用",
+    "不重启",
+    "不写",
+    "不修改",
+    "不切换",
+    "不碰",
+    "不接入",
+    "不启用",
+    "不实施",
+    "禁止",
+    "关闭",
+]
 MEDIUM_RISK_WORDS = [
     "前台",
     "报告",
@@ -84,8 +99,30 @@ def contains_any(text: str, words: list[str]) -> list[str]:
     return [word for word in words if word.lower() in text.lower()]
 
 
+def split_action_clauses(text: str) -> list[str]:
+    normalized = text.replace(",", "，").replace("；", "，").replace(";", "，").replace("。", "，")
+    return [part.strip() for part in normalized.split("，") if part.strip()]
+
+
+def is_negated_in_action(text: str, word: str) -> bool:
+    for clause in split_action_clauses(text):
+        if word.lower() not in clause.lower():
+            continue
+        if any(prefix in clause for prefix in NEGATION_PREFIXES):
+            return True
+    return False
+
+
+def contains_positive_risk(text: str, words: list[str]) -> list[str]:
+    return [
+        word
+        for word in words
+        if word.lower() in text.lower() and not is_negated_in_action(text, word)
+    ]
+
+
 def classify_action(action: str) -> dict[str, Any]:
-    high_hits = contains_any(action, HIGH_RISK_WORDS)
+    high_hits = contains_positive_risk(action, HIGH_RISK_WORDS)
     medium_hits = contains_any(action, MEDIUM_RISK_WORDS)
     low_hits = contains_any(action, LOW_RISK_WORDS)
     if high_hits:

@@ -1,0 +1,12 @@
+{
+  "name": "股票前台报告实样影子门禁验收",
+  "generated_at": "2026-05-14 06:55:49",
+  "passed": true,
+  "errors": [],
+  "metrics": {
+    "report_count": 8,
+    "passed_count": 0,
+    "must_fix_total": 3,
+    "review_total": 8
+  }
+}

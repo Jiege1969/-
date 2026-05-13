@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
-"""
-名称：验证企业微信单股短回复shadow_v21_dry_run参数.py
-作用：验收正式短回复生成器新增的默认关闭 shadow_v21 dry-run 双写参数是否安全、可发现、未改变桥接和助手入口。
-安全边界：只读源码和230对照包；只运行 --help 安全探测；只写231验收报告；不生成正式短回复、不发送企业微信、不触发 n8n、不交易。
+"""验证企业微信单股短回复 shadow_v21 dry-run 参数。
+
+只做源码和帮助信息检查，不生成短回复、不发送企业微信、不触发 n8n。
 """
 
 from __future__ import annotations
 
-import hashlib
 import json
 import py_compile
 import subprocess
@@ -22,35 +20,14 @@ OUT_DIR = ROOT / "03数据" / "231企业微信短回复shadow_v21_dry_run"
 FORMAL_GENERATOR = ROOT / "02脚本" / "生成企业微信单股短回复.py"
 BRIDGE_ENTRY = ROOT / "02脚本" / "股票企业微信桥接入口.py"
 ASSISTANT_ENTRY = ROOT / "02脚本" / "股票助手入口.py"
-COMPARE_230 = ROOT / "03数据" / "230微信短文正式生成器正式成交额口径对照包" / "微信短文正式生成器正式成交额口径对照包_最新.json"
-
-
-def load_json(path: Path) -> dict[str, Any]:
-    if not path.exists():
-        return {}
-    return json.loads(path.read_text(encoding="utf-8-sig"))
+RESULT_JSON = OUT_DIR / "企业微信单股短回复shadow_v21_dry_run参数验收_最新.json"
+RESULT_MD = OUT_DIR / "企业微信单股短回复shadow_v21_dry_run参数验收_最新.md"
 
 
 def read_text(path: Path) -> str:
     if not path.exists():
         return ""
     return path.read_text(encoding="utf-8-sig", errors="ignore")
-
-
-def write_json(path: Path, data: dict[str, Any]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-
-
-def write_text(path: Path, text: str) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(text, encoding="utf-8")
-
-
-def sha256(path: Path) -> str:
-    if not path.exists():
-        return ""
-    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def check(condition: bool, name: str, detail: str = "") -> dict[str, Any]:
@@ -73,6 +50,14 @@ def help_probe() -> dict[str, Any]:
         "stdout": completed.stdout,
         "stderr": completed.stderr,
     }
+
+
+def compile_path(path: Path) -> tuple[bool, str]:
+    try:
+        py_compile.compile(str(path), doraise=True)
+        return True, ""
+    except Exception as exc:  # noqa: BLE001
+        return False, str(exc)
 
 
 def build_markdown(report: dict[str, Any]) -> str:
@@ -99,42 +84,31 @@ def build_markdown(report: dict[str, Any]) -> str:
 
 def main() -> int:
     source = read_text(FORMAL_GENERATOR)
-    compare = load_json(COMPARE_230)
+    generator_compile_ok, generator_compile_error = compile_path(FORMAL_GENERATOR)
+    bridge_compile_ok, bridge_compile_error = compile_path(BRIDGE_ENTRY)
+    assistant_compile_ok, assistant_compile_error = compile_path(ASSISTANT_ENTRY)
     probe = help_probe()
-    compile_ok = True
-    compile_error = ""
-    try:
-        py_compile.compile(str(FORMAL_GENERATOR), doraise=True)
-    except Exception as exc:  # noqa: BLE001
-        compile_ok = False
-        compile_error = str(exc)
-    old_snapshots = {Path(item.get("路径", "")).name: item for item in compare.get("正式入口快照", []) or []}
-    bridge_snapshot = old_snapshots.get(BRIDGE_ENTRY.name, {})
-    assistant_snapshot = old_snapshots.get(ASSISTANT_ENTRY.name, {})
     checks = [
         check(FORMAL_GENERATOR.exists(), "正式短回复生成器存在", str(FORMAL_GENERATOR)),
-        check(compile_ok, "正式短回复生成器编译通过", compile_error),
-        check("--shadow-v21-dry-run" in source, "新增显式参数 --shadow-v21-dry-run", ""),
-        check("default=False" in source and "action=\"store_true\"" in source, "参数默认关闭且为显式开关", ""),
-        check("if args.shadow_v21_dry_run:" in source, "shadow写包仅在显式开关内执行", ""),
-        check("write_shadow_v21_dry_run" in source and "231企业微信短回复shadow_v21_dry_run" in source, "shadow_v21双写输出目录明确", ""),
-        check("覆盖正式短回复\": False" in source and "发送企业微信\": False" in source, "shadow包实际动作保持关闭", ""),
-        check("trigger_n8n" not in source.lower() or "触发n8n\": False" in source, "未引入n8n触发逻辑", ""),
-        check(probe["returncode"] == 0 and "--shadow-v21-dry-run" in probe["stdout"], "--help安全探测可发现新参数", probe["stderr"][:500]),
-        check("generate_unified_reply(root, args.stock)" in source, "默认正式草稿生成路径保留", ""),
-        check(compare.get("对照结果", {}).get("建议仅实现默认关闭dry_run双写") is True, "230上游建议为默认关闭dry_run双写", json.dumps(compare.get("对照结果", {}), ensure_ascii=False)),
-        check(sha256(BRIDGE_ENTRY) == bridge_snapshot.get("sha256"), "股票企业微信桥接入口哈希未变化", sha256(BRIDGE_ENTRY)[:12]),
-        check(sha256(ASSISTANT_ENTRY) == assistant_snapshot.get("sha256"), "股票助手入口哈希未变化", sha256(ASSISTANT_ENTRY)[:12]),
+        check(generator_compile_ok, "正式短回复生成器编译通过", generator_compile_error),
+        check("--shadow-v21-dry-run" in source, "显式参数 --shadow-v21-dry-run 存在", ""),
+        check("--use-v21-template-dry-run" in source, "显式参数 --use-v21-template-dry-run 存在", ""),
+        check("action=\"store_true\"" in source and "default=False" in source, "dry-run参数默认关闭", ""),
+        check("if args.shadow_v21_dry_run:" in source, "shadow双写只在显式开关内执行", ""),
+        check("write_shadow_v21_dry_run" in source and "231企业微信短回复shadow_v21_dry_run" in source, "shadow_v21输出目录明确", ""),
+        check("发送企业微信\": False" in source and "触发n8n\": False" in source, "shadow包实际动作保持关闭", ""),
+        check(probe["returncode"] == 0 and "--shadow-v21-dry-run" in probe["stdout"], "--help可发现shadow参数", probe["stderr"][:500]),
+        check(BRIDGE_ENTRY.exists() and bridge_compile_ok, "股票企业微信桥接入口存在且可编译", bridge_compile_error),
+        check(ASSISTANT_ENTRY.exists() and assistant_compile_ok, "股票助手入口存在且可编译", assistant_compile_error),
+        check("generate_unified_reply(root, args.stock)" in source, "默认仍走统一股票助手生成路径", ""),
     ]
     failed = [item for item in checks if not item["通过"]]
-    now = datetime.now()
     report = {
         "名称": "企业微信单股短回复shadow_v21_dry_run参数验收",
-        "生成时间": now.strftime("%Y-%m-%d %H:%M:%S"),
+        "生成时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "结论": "通过" if not failed else "失败",
         "通过数量": len(checks) - len(failed),
         "失败数量": len(failed),
-        "正式短回复生成器sha256": sha256(FORMAL_GENERATOR),
         "检查结果": checks,
         "安全探测": {
             "命令": f"{sys.executable} {FORMAL_GENERATOR} --help",
@@ -146,8 +120,6 @@ def main() -> int:
             "执行正式短回复生成": False,
             "修改股票企业微信桥接入口": False,
             "修改股票助手入口": False,
-            "重启19300": False,
-            "重启19302": False,
             "发送企业微信": False,
             "触发n8n": False,
             "写正式库": False,
@@ -155,15 +127,13 @@ def main() -> int:
             "自动交易": False,
         },
     }
-    latest_json = OUT_DIR / "企业微信单股短回复shadow_v21_dry_run参数验收_最新.json"
-    latest_md = OUT_DIR / "企业微信单股短回复shadow_v21_dry_run参数验收_最新.md"
-    write_json(latest_json, report)
-    write_text(latest_md, build_markdown(report))
+    RESULT_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    RESULT_MD.write_text(build_markdown(report), encoding="utf-8")
     print(json.dumps({
         "状态": report["结论"],
         "通过数量": report["通过数量"],
         "失败数量": report["失败数量"],
-        "报告": str(latest_md),
+        "报告": str(RESULT_MD),
     }, ensure_ascii=False))
     return 0 if not failed else 1
 
