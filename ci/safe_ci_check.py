@@ -182,24 +182,33 @@ def check_redline_flags(paths: list[Path]) -> None:
         fail("redline flags enabled in tracked files:\n" + "\n".join(offenders[:30]))
 
 
-def run_offline_unit_tests() -> None:
-    test_root = ROOT / "02杰哥扩展系统" / "02视频制作系统" / "06临时" / "social-auto-upload"
-    test_file = test_root / "tests" / "test_bilibili_runtime.py"
-    if not test_file.exists():
-        fail("offline unit test file is missing: tests/test_bilibili_runtime.py")
-
+def run_unittest_module(module_name: str, cwd: Path, import_root: Path) -> None:
     old_cwd = Path.cwd()
     old_path = list(sys.path)
     try:
-        os.chdir(test_root)
-        sys.path.insert(0, str(test_root))
-        suite = unittest.defaultTestLoader.loadTestsFromName("tests.test_bilibili_runtime")
+        os.chdir(cwd)
+        sys.path.insert(0, str(import_root))
+        suite = unittest.defaultTestLoader.loadTestsFromName(module_name)
+        if suite.countTestCases() == 0:
+            fail(f"offline unit test module has no tests: {module_name}")
         result = unittest.TextTestRunner(stream=sys.stdout, verbosity=2).run(suite)
         if not result.wasSuccessful():
-            fail("offline unit tests failed")
+            fail(f"offline unit tests failed: {module_name}")
     finally:
         os.chdir(old_cwd)
         sys.path[:] = old_path
+
+
+def run_offline_unit_tests() -> None:
+    run_unittest_module("ci.tests.test_safe_ci_check", ROOT, ROOT)
+
+    test_root = ROOT / "02杰哥扩展系统" / "02视频制作系统" / "06临时" / "social-auto-upload"
+    test_file = test_root / "tests" / "test_bilibili_runtime.py"
+    if not test_file.exists():
+        print("Optional social-auto-upload tests: skipped, gitlink content is not checked out")
+        return
+
+    run_unittest_module("tests.test_bilibili_runtime", test_root, test_root)
 
 
 def main() -> int:
