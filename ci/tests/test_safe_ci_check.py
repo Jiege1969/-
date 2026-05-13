@@ -26,6 +26,14 @@ class SafeCiCheckTests(unittest.TestCase):
         text = "REAL" + "_SEND = " + "True"
         self.assertTrue(any(pattern.search(text) for pattern in safe_ci_check.REDLINE_TRUE_PATTERNS))
 
+    def test_secret_scan_catches_github_token_shape(self):
+        fake_token = "gh" + "p_" + ("A" * 36)
+        self.assertIn("GitHub classic token", safe_ci_check.secret_labels_in_text(fake_token))
+
+    def test_secret_scan_ignores_public_ssh_key(self):
+        public_key = "ssh-ed25519 " + ("A" * 68) + " user@example.invalid"
+        self.assertEqual(safe_ci_check.secret_labels_in_text(public_key), [])
+
 
 if __name__ == "__main__":
     unittest.main()

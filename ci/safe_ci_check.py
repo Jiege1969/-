@@ -60,6 +60,14 @@ REDLINE_TRUE_PATTERNS = [
     re.compile(r"\bREAL_SEND\s*=\s*True\b"),
 ]
 
+SECRET_PATTERNS = [
+    ("GitHub classic token", re.compile(r"\bghp_[A-Za-z0-9]{30,}\b")),
+    ("GitHub fine-grained token", re.compile(r"\bgithub_pat_[A-Za-z0-9_]{30,}\b")),
+    ("OpenSSH private key", re.compile("-" * 5 + "BEGIN OPENSSH " + "PRIVATE KEY" + "-" * 5)),
+    ("RSA private key", re.compile("-" * 5 + "BEGIN RSA " + "PRIVATE KEY" + "-" * 5)),
+    ("EC private key", re.compile("-" * 5 + "BEGIN EC " + "PRIVATE KEY" + "-" * 5)),
+]
+
 FORBIDDEN_CIRCLECI_TERMS = [
     "test_local_health.py",
     "127.0.0.1:19310",
@@ -182,6 +190,24 @@ def check_redline_flags(paths: list[Path]) -> None:
         fail("redline flags enabled in tracked files:\n" + "\n".join(offenders[:30]))
 
 
+def secret_labels_in_text(text: str) -> list[str]:
+    return [label for label, pattern in SECRET_PATTERNS if pattern.search(text)]
+
+
+def check_no_tracked_secrets(paths: list[Path]) -> None:
+    offenders: list[str] = []
+    for path in paths:
+        text = read_text_safely(path)
+        if text is None:
+            continue
+        labels = secret_labels_in_text(text)
+        if labels:
+            offenders.append(f"{rel(path)}: {', '.join(labels)}")
+
+    if offenders:
+        fail("possible secrets in tracked files:\n" + "\n".join(offenders[:30]))
+
+
 def run_unittest_module(module_name: str, cwd: Path, import_root: Path) -> None:
     old_cwd = Path.cwd()
     old_path = list(sys.path)
@@ -219,6 +245,7 @@ def main() -> int:
     check_circleci_config()
     check_tracked_file_sizes(paths)
     check_redline_flags(paths)
+    check_no_tracked_secrets(paths)
     check_python_compiles(paths)
     run_offline_unit_tests()
 
