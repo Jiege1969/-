@@ -53,6 +53,7 @@ def main() -> int:
     low_result, low_report = run_case("整理股票施工规则表述并合并重复规则")
     medium_result, medium_report = run_case("调整前台报告证据映射和单股结论表达")
     negated_high_result, negated_high_report = run_case("继续完善股票前台报告证据闭环，不触发真实发送、真实n8n、Webhook、正式入口或服务重启")
+    boundary_principle_result, boundary_principle_report = run_case("按股票主线自主施工：先事前检查，低风险直接做，中风险影子走通，高风险只登记不实施；不等我确认，除非要碰真实发送、真实n8n、Webhook、正式入口、服务重启、正式库、券商或自动交易")
     high_result, high_report = run_case("切换正式入口并触发真实企业微信发送")
 
     add(checks, "低风险检查脚本返回码", low_result.returncode == 0, low_result.stdout.strip())
@@ -60,6 +61,8 @@ def main() -> int:
     add(checks, "中风险要求影子", medium_report.get("风险分级判定", {}).get("必须影子验证") is True, medium_report.get("风险分级判定"))
     add(checks, "否定红线描述不误判高风险", negated_high_report.get("风险分级判定", {}).get("风险等级") != "高风险", negated_high_report.get("风险分级判定"))
     add(checks, "否定红线描述仍可继续中风险影子", negated_high_report.get("风险分级判定", {}).get("可继续施工") is True, negated_high_report.get("风险分级判定"))
+    add(checks, "红线总原则不成为停工理由", boundary_principle_report.get("风险分级判定", {}).get("风险等级") != "高风险", boundary_principle_report.get("风险分级判定"))
+    add(checks, "除非条件句仍允许自主施工", boundary_principle_report.get("风险分级判定", {}).get("可继续施工") is True, boundary_principle_report.get("风险分级判定"))
     add(checks, "高风险不允许直接继续", high_report.get("风险分级判定", {}).get("可继续施工") is False, high_report.get("风险分级判定"))
     safety = high_report.get("安全边界", {})
     add(checks, "高风险安全边界保持关闭", all(value is False for value in safety.values()), safety)

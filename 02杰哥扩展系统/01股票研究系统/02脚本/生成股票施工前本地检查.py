@@ -52,6 +52,16 @@ NEGATION_PREFIXES = [
     "不接入",
     "不启用",
     "不实施",
+    "不会涉及",
+    "不涉及",
+    "不是",
+    "并非",
+    "只登记",
+    "除非",
+    "除非要碰",
+    "红线",
+    "安全边界",
+    "总原则",
     "禁止",
     "关闭",
 ]
@@ -125,6 +135,7 @@ def classify_action(action: str) -> dict[str, Any]:
     high_hits = contains_positive_risk(action, HIGH_RISK_WORDS)
     medium_hits = contains_any(action, MEDIUM_RISK_WORDS)
     low_hits = contains_any(action, LOW_RISK_WORDS)
+    boundary_hits = contains_any(action, ["除非", "红线", "安全边界", "总原则", "不会涉及", "不涉及", "不碰"])
     if high_hits:
         level = "高风险"
         decision = "只登记，不实施；必须影子走通、列出回滚和验收口径，并等待人工确认。"
@@ -152,7 +163,9 @@ def classify_action(action: str) -> dict[str, Any]:
             "高风险": high_hits,
             "中风险": medium_hits,
             "低风险": low_hits,
+            "边界声明": boundary_hits,
         },
+        "红线解释": "红线是施工边界，不是停工口令；只有正向要求执行真实外发、真实n8n、Webhook、正式入口、服务重启、正式库、券商或自动交易时才阻断。否定说明、条件说明、总原则说明必须放行。",
         "施工判定": decision,
         "推荐路径": required_path,
         "可继续施工": can_continue,
