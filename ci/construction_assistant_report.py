@@ -120,6 +120,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI quality-evidence closure check for the largest stock-system queue",
         "path": "ci/stock_quality_evidence_ci_check.py",
     },
+    {
+        "name": "stock_sample_pool_ci_checker",
+        "role": "CircleCI sample-pool closure check for stock pool and sample-room ownership",
+        "path": "ci/stock_sample_pool_ci_check.py",
+    },
 ]
 
 
