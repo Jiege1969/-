@@ -56,7 +56,7 @@ def rel(path: Path, root: Path = ROOT) -> str:
 
 
 def run_git(root: Path, *args: str) -> bytes:
-    return subprocess.check_output(["git", *args], cwd=root)
+    return subprocess.check_output(["git", "-c", "core.quotePath=false", *args], cwd=root)
 
 
 def tracked_paths(root: Path = ROOT) -> list[str]:
