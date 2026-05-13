@@ -52,6 +52,7 @@ class SafeCiCheckTests(unittest.TestCase):
         self.assertIn("python ci/stock_closure_panel_ci_check.py", commands)
         self.assertIn("python ci/stock_quality_evidence_ci_check.py", commands)
         self.assertIn("python ci/stock_sample_pool_ci_check.py", commands)
+        self.assertIn("python ci/stock_manual_review_ci_check.py", commands)
         self.assertIn("python ci/safe_ci_check.py", commands)
         self.assertTrue(set(commands).issubset(safe_ci_check.ALLOWED_CIRCLECI_COMMANDS))
 
@@ -81,6 +82,10 @@ class SafeCiCheckTests(unittest.TestCase):
 
     def test_stock_sample_pool_ci_checker_exists(self):
         checker = safe_ci_check.ROOT / "ci" / "stock_sample_pool_ci_check.py"
+        self.assertTrue(checker.exists())
+
+    def test_stock_manual_review_ci_checker_exists(self):
+        checker = safe_ci_check.ROOT / "ci" / "stock_manual_review_ci_check.py"
         self.assertTrue(checker.exists())
 
 

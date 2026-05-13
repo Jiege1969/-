@@ -125,6 +125,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI sample-pool closure check for stock pool and sample-room ownership",
         "path": "ci/stock_sample_pool_ci_check.py",
     },
+    {
+        "name": "stock_manual_review_ci_checker",
+        "role": "CircleCI manual-review closure check for stock verification workflow",
+        "path": "ci/stock_manual_review_ci_check.py",
+    },
 ]
 
 
