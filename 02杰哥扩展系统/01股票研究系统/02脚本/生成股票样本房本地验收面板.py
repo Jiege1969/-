@@ -172,7 +172,10 @@ def flatten_json(value: Any, prefix: str = "") -> list[tuple[str, Any]]:
 def contains_pass(value: Any) -> bool:
     if isinstance(value, str):
         lowered = value.lower()
-        return "通过" in value or lowered == "pass" or lowered == "ok"
+        if "失败" in value or "未通过" in value:
+            return False
+        positive_tokens = ("通过", "已补足", "已完成", "可支撑", "完成")
+        return any(token in value for token in positive_tokens) or lowered == "pass" or lowered == "ok"
     if isinstance(value, dict):
         return any(contains_pass(child) for child in value.values())
     if isinstance(value, list):

@@ -21,8 +21,14 @@ OUT_DIR = DATA / "219股票报告证据源映射"
 
 REPORT_MD = DATA / "135分层日报" / "单股标准报告v2_最新.md"
 MARKET_JSON = DATA / "04数据快照" / "重点关注池公开行情快照_最新.json"
+SAMPLE_MARKET_JSON = DATA / "04数据快照" / "2000只样本池基础行情统一快照_最新.json"
 WECHAT_SHADOW_JSON = DATA / "218微信短文生成器v21影子接入预演" / "微信短文生成器v21影子接入预演_最新.json"
 SAFETY_JSON = DATA / "150报告安全边界检查" / "股票系统报告安全边界检查_最新.json"
+FORMAL_ENTRY_FILES = [
+    ROOT / "02脚本" / "股票助手入口.py",
+    ROOT / "02脚本" / "股票企业微信桥接入口.py",
+    ROOT / "02脚本" / "生成企业微信单股短回复.py",
+]
 
 
 def read_text(path: Path) -> str:
@@ -79,10 +85,39 @@ def extract_first(pattern: str, text: str, default: str = "未提取") -> str:
 
 def find_market_row(market: dict[str, Any], code: str) -> dict[str, Any]:
     rows = market.get("行情", [])
+    expected = code[-6:].zfill(6)
     for row in rows:
-        if str(row.get("代码", "")).zfill(6) == code:
+        row_code = str(row.get("代码", "")).strip().lower()
+        if row_code[-6:].zfill(6) == expected:
             return row
     return {}
+
+
+def market_source_card(market: dict[str, Any], path: Path, row: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "来源": market.get("数据源", "未知"),
+        "生成时间": market.get("生成时间", "未知"),
+        "请求数量": market.get("请求数量", 0),
+        "返回数量": market.get("返回数量", 0),
+        "快照路径": str(path),
+        "样本行情": row,
+    }
+
+
+def current_formal_entry_snapshot() -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for path in FORMAL_ENTRY_FILES:
+        rows.append(
+            {
+                "路径": str(path),
+                "存在": path.exists(),
+                "大小": path.stat().st_size if path.exists() else 0,
+                "修改时间": datetime.fromtimestamp(path.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S") if path.exists() else "",
+                "sha256": sha256(path),
+                "快照来源": "股票报告证据源映射预览当前只读采样",
+            }
+        )
+    return rows
 
 
 def build_markdown(preview: dict[str, Any]) -> str:
@@ -124,11 +159,22 @@ def build_markdown(preview: dict[str, Any]) -> str:
 def main() -> int:
     now = datetime.now()
     report_text = read_text(REPORT_MD)
-    market = load_json(MARKET_JSON, {})
+    focus_market = load_json(MARKET_JSON, {})
+    sample_market = load_json(SAMPLE_MARKET_JSON, {})
     shadow = load_json(WECHAT_SHADOW_JSON, {})
     safety = load_json(SAFETY_JSON, {})
     stock = extract_stock(report_text)
-    market_row = find_market_row(market, stock["代码"])
+    market_row = find_market_row(focus_market, stock["代码"])
+    market_scope = "重点关注池公开行情快照"
+    market_path = MARKET_JSON
+    market = focus_market
+    if not market_row:
+        sample_row = find_market_row(sample_market, stock["代码"])
+        if sample_row:
+            market_row = sample_row
+            market_scope = "2000只样本池基础行情统一快照"
+            market_path = SAMPLE_MARKET_JSON
+            market = sample_market
 
     extracted = {
         "报告结论": extract_first(r"【结论】\s*([\s\S]*?)(?:\n\n|【操作策略】)", report_text).replace("\n", "；"),
@@ -141,12 +187,12 @@ def main() -> int:
 
     evidence_sources = [
         file_card(REPORT_MD, "报告正文证据", "承载当前系统已经生成的分析结论、价位、风险提示和待核验项。", "报告本身不是外部正式依据，不能单独证明财务、公告、行业景气或最终关注级别正确。"),
-        file_card(MARKET_JSON, "公开行情快照", "支撑样本股票的当前价、成交额、市盈率、量比、行业等即时行情字段。", "东方财富公开行情快照不能替代上市公司公告、财报正文、行业正式资料或人工核验结论。"),
+        file_card(market_path, "公开行情快照", "支撑样本股票的当前价、成交额、市盈率、量比、行业等即时行情字段。", "公开行情快照不能替代上市公司公告、财报正文、行业正式资料或人工核验结论。"),
         file_card(WECHAT_SHADOW_JSON, "微信短文v2.1契约影子预演", "支撑微信短文格式、字段契约、正式入口不替换和非交易边界。", "不能支撑个股事实、财务指标或推荐结论。"),
         file_card(SAFETY_JSON, "报告安全边界检查", "支撑当前报告链路的非交易、无真实发送、无券商接口边界自检。", "不能支撑股票研究结论本身。"),
     ]
 
-    formal_snapshot = shadow.get("正式入口快照", [])
+    formal_snapshot = current_formal_entry_snapshot()
     field_mapping = [
         {
             "字段": "股票名称与代码",
@@ -158,9 +204,9 @@ def main() -> int:
         {
             "字段": "当前价、成交额、市盈率、量比、行业",
             "当前值": market_row,
-            "证据源": "东方财富公开行情接口快照",
-            "证据状态": "已有行情证据",
-            "处理要求": "可支撑行情字段；不能据此升级为强推荐或价值结论。",
+            "证据源": market_scope,
+            "证据状态": "已有行情证据" if market_row else "行情证据缺失",
+            "处理要求": "可支撑行情字段；不能据此升级为强推荐或价值结论。" if market_row else "必须先补齐样本股票行情快照，前台不得把当前价和量能写成已核实事实。",
         },
         {
             "字段": "承接区、转强线、风险线",
@@ -215,17 +261,19 @@ def main() -> int:
         "当前结论": "已完成当前报告的证据源影子映射；行情字段有公开快照支撑，财务、公告、行业和事件风险仍缺正式依据，不能升级为强推荐或价值结论。",
         "读取文件": {
             "报告正文": str(REPORT_MD),
-            "行情快照": str(MARKET_JSON),
+            "行情快照": str(market_path),
             "微信短文影子预演": str(WECHAT_SHADOW_JSON),
             "安全边界检查": str(SAFETY_JSON),
         },
         "证据源清单": evidence_sources,
         "报告提取字段": extracted,
         "行情源": {
+            "快照范围": market_scope,
             "来源": market.get("数据源", "未知"),
             "生成时间": market.get("生成时间", "未知"),
             "请求数量": market.get("请求数量", 0),
             "返回数量": market.get("返回数量", 0),
+            "快照路径": str(market_path),
             "样本行情": market_row,
         },
         "字段证据映射": field_mapping,

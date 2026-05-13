@@ -1,20 +1,18 @@
 {
   "名称": "股票样本房本地验收面板",
-  "生成时间": "2026-05-13 16:41:47",
+  "生成时间": "2026-05-14 06:22:58",
   "定位": "股票系统作为样本房，沉淀可复用的分析、验收、边界和回灌机制。",
-  "结论": "需复核",
+  "结论": "通过",
   "检查资产数": 13,
   "状态统计": {
-    "pass": 11,
-    "review": 2
+    "pass": 13
   },
   "分组统计": {
     "样本双账": {
       "pass": 3
     },
     "方法内核": {
-      "review": 1,
-      "pass": 1
+      "pass": 2
     },
     "通用判断": {
       "pass": 1
@@ -23,8 +21,7 @@
       "pass": 1
     },
     "证据核验": {
-      "pass": 1,
-      "review": 1
+      "pass": 2
     },
     "安全边界": {
       "pass": 2
@@ -76,7 +73,7 @@
       "bytes": 422692,
       "json_ok": true,
       "record_count": 150,
-      "pass_signal": false,
+      "pass_signal": true,
       "redline_true_hits": [],
       "status": "pass",
       "problems": []
@@ -89,7 +86,7 @@
       "bytes": 419620,
       "json_ok": true,
       "record_count": 150,
-      "pass_signal": false,
+      "pass_signal": true,
       "redline_true_hits": [],
       "status": "pass",
       "problems": []
@@ -102,7 +99,7 @@
       "bytes": 6490660,
       "json_ok": true,
       "record_count": 2000,
-      "pass_signal": false,
+      "pass_signal": true,
       "redline_true_hits": [],
       "status": "pass",
       "problems": []
@@ -115,12 +112,10 @@
       "bytes": 1554,
       "json_ok": true,
       "record_count": 2,
-      "pass_signal": false,
+      "pass_signal": true,
       "redline_true_hits": [],
-      "status": "review",
-      "problems": [
-        "missing_pass_signal"
-      ]
+      "status": "pass",
+      "problems": []
     },
     {
       "group": "方法内核",
@@ -179,15 +174,13 @@
       "name": "股票报告证据源映射验收",
       "path": "03数据/219股票报告证据源映射/股票报告证据源映射预览验收_最新.json",
       "exists": true,
-      "bytes": 3967,
+      "bytes": 5490,
       "json_ok": true,
       "record_count": 14,
-      "pass_signal": false,
+      "pass_signal": true,
       "redline_true_hits": [],
-      "status": "review",
-      "problems": [
-        "missing_pass_signal"
-      ]
+      "status": "pass",
+      "problems": []
     },
     {
       "group": "安全边界",
@@ -243,8 +236,9 @@
     }
   ],
   "下一步建议": [
-    "先复核 杰哥推荐方法内核验收：missing_pass_signal",
-    "先复核 股票报告证据源映射验收：missing_pass_signal"
+    "继续把股票系统作为样本房，优先沉淀可复用判断机制。",
+    "下一轮可补强样本房到总管/进化系统的轻量回灌索引。",
+    "CircleCI 只做代码外部验收，本地施工判断继续走本面板和总管机制。"
   ],
   "安全边界": {
     "真实发送企业微信": false,

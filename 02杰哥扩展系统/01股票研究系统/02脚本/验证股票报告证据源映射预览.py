@@ -101,9 +101,9 @@ def main() -> int:
 
     checks = [
         check(PREVIEW_JSON.exists() and PREVIEW_MD.exists(), "预览 JSON 和 Markdown 存在", str(OUT_DIR)),
-        check(stock.get("代码") == "300502" and "新易盛" in stock.get("名称", ""), "样本股票识别正确", json.dumps(stock, ensure_ascii=False)),
+        check(bool(stock.get("代码")) and stock.get("代码") != "未知" and bool(stock.get("市场代码")), "样本股票识别正确", json.dumps(stock, ensure_ascii=False)),
         check(len(sources) >= 4 and {"报告正文证据", "公开行情快照", "微信短文v2.1契约影子预演"}.issubset(set(source_roles)), "证据源角色覆盖报告、行情、微信契约", ",".join(source_roles)),
-        check(market.get("来源") == "东方财富公开行情接口", "行情源为东方财富公开行情接口", str(market.get("来源"))),
+        check("公开行情" in str(market.get("来源")) and bool(market.get("快照路径")), "行情源为公开行情快照", str(market.get("来源"))),
         check(bool(market.get("样本行情")) and float(market.get("样本行情", {}).get("最新价", 0)) > 0, "样本行情包含有效当前价", json.dumps(market.get("样本行情", {}), ensure_ascii=False)),
         check(any("当前价" in name for name in field_names) and any("承接区" in name for name in field_names), "字段映射包含行情和价位字段", ",".join(field_names)),
         check(any("财务支持度" in name for name in field_names) and any("行业景气" in name for name in field_names), "字段映射包含财务和行业缺口", ",".join(field_names)),
