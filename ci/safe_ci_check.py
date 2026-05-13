@@ -94,6 +94,7 @@ ALLOWED_CIRCLECI_COMMANDS = {
     "python ci/stock_review_loop_ci_check.py",
     "python ci/stock_safe_boundary_ci_check.py",
     "python ci/stock_system_contract_ci_check.py",
+    "python ci/stock_change_impact_ci_check.py",
     "python ci/safe_ci_check.py",
 }
 

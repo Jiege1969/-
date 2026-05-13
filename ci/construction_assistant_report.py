@@ -150,6 +150,11 @@ STOCK_GATE_PATHS = [
         "role": "CircleCI stock-system contract check for mainline dependencies and guardrails",
         "path": "ci/stock_system_contract_ci_check.py",
     },
+    {
+        "name": "stock_change_impact_ci_checker",
+        "role": "CircleCI stock-system change-impact check for touched lanes and guardrails",
+        "path": "ci/stock_change_impact_ci_check.py",
+    },
 ]
 
 
