@@ -6,7 +6,7 @@
 依赖：Python标准库；股票助手本地服务127.0.0.1:19300；企业微信响应URL发送器.py；企业微信本机环境.env。
 所属系统：02杰哥扩展系统/01股票研究系统
 输出：本地 HTTP 服务 127.0.0.1:19302；企业微信桥接日志；图文报告HTML/PNG/SVG代理响应。
-安全边界：仅绑定127.0.0.1:19302；默认dry-run；不保存明文response_url；不写旧系统；不写正式库；不连接券商接口；不自动交易。
+安全边界：仅绑定127.0.0.1:19302；企业微信用户发问后的被动回复允许真实回传；主动推送仍走本人白名单受控发送器；不保存明文response_url；不写旧系统；不写正式库；不连接券商接口；不自动交易。
 创建修改记录：2026-04-29 创建本地桥接入口；吸收旧系统智能机器人stream回复和response_url捕获逻辑；2026-04-30 改为读取新系统企业微信本机环境文件。
 标识：stock-wecom-bridge-service
 """
@@ -1462,6 +1462,8 @@ def process_message(data: dict[str, Any], robot_stream: bool = False) -> dict[st
             "调用股票助手": True,
             "生成杰哥推荐后台材料包": bool(material_package_result and material_package_result.get("状态") == "完成"),
             "材料包真源": "19300股票助手本体" if isinstance(stock_result.get("杰哥推荐后台材料包"), dict) else "19302桥接兜底" if material_package_result else "未生成",
+            "企业微信被动回复": bool(robot_stream),
+            "主动群发": False,
             "尝试response_url回传": bool(response_url and real_send),
             "写旧系统": False,
             "写正式库": False,
@@ -1738,7 +1740,7 @@ class Handler(BaseHTTPRequestHandler):
                 "状态": "正常",
                 "服务": "股票企业微信桥接入口",
                 "端口": PORT,
-                "能力": ["本地股票查询", "杰哥推荐单股材料包生成", "n8n/OpenClaw桥接", "企业微信智能机器人stream回复", "response_url脱敏捕获"],
+                "能力": ["本地股票查询", "杰哥推荐单股材料包生成", "n8n/OpenClaw桥接", "企业微信智能机器人stream回复", "response_url被动真实回传", "response_url脱敏捕获"],
                 "边界": {"写旧系统": False, "调用券商接口": False, "自动交易": False},
                 "时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             })
