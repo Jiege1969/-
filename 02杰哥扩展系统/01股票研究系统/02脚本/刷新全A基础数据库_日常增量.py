@@ -32,7 +32,10 @@ def write_text(path: Path, text: str) -> None:
 
 
 def default_end_date() -> str:
-    return (datetime.now() - timedelta(days=1)).strftime("%Y%m%d")
+    now = datetime.now()
+    after_close = now.weekday() < 5 and (now.hour, now.minute) >= (15, 35)
+    target = now if after_close else now - timedelta(days=1)
+    return target.strftime("%Y%m%d")
 
 
 def run_step(name: str, args: list[str], timeout: int = 600) -> dict[str, Any]:
