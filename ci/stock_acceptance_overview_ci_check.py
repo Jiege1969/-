@@ -139,6 +139,21 @@ def delivery_truthfulness_status(
     }
 
 
+def wecom_status_command_status(wecom_text: str | None = None) -> dict[str, Any]:
+    wecom = wecom_text if wecom_text is not None else read_text(WECOM_EXPERIENCE_MD)
+    required_terms = [
+        "状态帮助短答可用",
+        "问答入口：可用",
+        "需放行IP",
+    ]
+    missing = [term for term in required_terms if term not in wecom]
+    return {
+        "status": "fail" if missing else "pass",
+        "missing_terms": missing,
+        "wecom_experience_report": str(WECOM_EXPERIENCE_MD),
+    }
+
+
 def validate_report(report: dict[str, Any]) -> list[str]:
     problems: list[str] = []
     if report["score"] < 0 or report["score"] > 100:
@@ -158,6 +173,8 @@ def validate_report(report: dict[str, Any]) -> list[str]:
             problems.append(f"missing_guardrail:{guardrail}")
     if report.get("delivery_truthfulness", {}).get("status") != "pass":
         problems.append("final_delivery_claim_conflicts_with_wecom_ip_gate")
+    if report.get("wecom_status_command", {}).get("status") != "pass":
+        problems.append("wecom_status_command_not_covered_by_experience_acceptance")
     return problems
 
 
@@ -183,6 +200,7 @@ def build_acceptance_overview_report() -> dict[str, Any]:
         "state": state,
         "next_action": next_action_for_state(state),
         "delivery_truthfulness": delivery_truthfulness_status(),
+        "wecom_status_command": wecom_status_command_status(),
         "guardrails": GUARDRAILS,
     }
     problems = validate_report(report)
@@ -223,6 +241,11 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines.append(f"- `status`: `{truth['status']}`")
     lines.append(f"- `claims_complete`: `{str(truth['claims_complete']).lower()}`")
     lines.append(f"- `active_push_blocked`: `{str(truth['active_push_blocked']).lower()}`")
+
+    lines.extend(["", "## WeCom Status Command"])
+    status_command = report["wecom_status_command"]
+    lines.append(f"- `status`: `{status_command['status']}`")
+    lines.append(f"- `missing_terms`: `{len(status_command['missing_terms'])}`")
 
     if report["blocking_problems"]:
         lines.extend(["", "## Blocking Problems"])

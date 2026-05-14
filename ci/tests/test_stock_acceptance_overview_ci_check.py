@@ -44,6 +44,7 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
         self.assertEqual(report["upstream_statuses"]["runtime_artifact_governance"], "pass")
         self.assertGreaterEqual(report["runtime_artifact_governance"]["live_runtime_status_count"], 1)
         self.assertEqual(report["delivery_truthfulness"]["status"], "pass")
+        self.assertEqual(report["wecom_status_command"]["status"], "pass")
 
     def test_delivery_truthfulness_rejects_complete_claim_when_wecom_ip_blocked(self):
         result = overview.delivery_truthfulness_status(
@@ -63,6 +64,19 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
 
         self.assertEqual(result["status"], "pass")
 
+    def test_wecom_status_command_requires_status_help_terms(self):
+        result = overview.wecom_status_command_status(
+            "状态帮助短答可用\n问答入口：可用\n需放行IP：183.227.145.167"
+        )
+
+        self.assertEqual(result["status"], "pass")
+
+    def test_wecom_status_command_rejects_missing_status_help(self):
+        result = overview.wecom_status_command_status("短线机器人本地stream回复可用")
+
+        self.assertEqual(result["status"], "fail")
+        self.assertIn("状态帮助短答可用", result["missing_terms"])
+
     def test_validate_report_rejects_continue_with_high_risk(self):
         report = overview.build_acceptance_overview_report()
         report["state"] = "continue"
@@ -80,6 +94,7 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
         self.assertIn("Upstream Statuses", markdown)
         self.assertIn("runtime_artifact_governance", markdown)
         self.assertIn("Risk Counts", markdown)
+        self.assertIn("WeCom Status Command", markdown)
 
 
 if __name__ == "__main__":
