@@ -179,6 +179,37 @@ def collect_trusted_ip_status(status: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def collect_feedback_loop(root: Path) -> dict[str, Any]:
+    feedback_path = root / "04日志" / "用户反馈" / "反馈日志.json"
+    raw = load_json(feedback_path, {})
+    records = raw.get("反馈记录", []) if isinstance(raw, dict) else []
+    if not isinstance(records, list):
+        records = []
+    valid_records = [item for item in records if isinstance(item, dict)]
+    lane_counter = Counter(str(item.get("学习沉淀主分类") or "未分类") for item in valid_records)
+    subtype_counter = Counter(str(item.get("学习沉淀子分类") or "未分类") for item in valid_records)
+    priority_counter = Counter(str(item.get("复盘优先级") or "未标注") for item in valid_records)
+    latest = []
+    for item in reversed(valid_records[-5:]):
+        latest.append({
+            "时间": item.get("时间") or item.get("记录时间") or "",
+            "反馈类型": item.get("反馈类型") or "",
+            "反馈内容": str(item.get("反馈内容") or "")[:80],
+            "学习沉淀主分类": item.get("学习沉淀主分类") or "未分类",
+            "复盘优先级": item.get("复盘优先级") or "未标注",
+            "处理状态": item.get("处理状态") or "",
+        })
+    return {
+        "反馈日志": file_state(feedback_path),
+        "反馈数量": len(valid_records),
+        "学习沉淀主分类分布": [{"分类": key, "数量": value} for key, value in lane_counter.most_common()],
+        "学习沉淀子分类Top": [{"分类": key, "数量": value} for key, value in subtype_counter.most_common(5)],
+        "复盘优先级分布": [{"优先级": key, "数量": value} for key, value in priority_counter.most_common()],
+        "最近反馈": latest,
+        "闭环口径": "企业微信反馈先入使用-反馈-改进闭环，再由经验候选账和复盘线吸收；不自动改正式规则。",
+    }
+
+
 def extract_ip(text: str) -> str:
     match = re.search(r"from ip:\s*([0-9]+(?:\.[0-9]+){3})", text or "")
     if match:
@@ -194,6 +225,7 @@ def build_quality_flags(
     finance_summary: dict[str, Any],
     safety_summary: dict[str, Any],
     trusted_ip_summary: dict[str, Any],
+    feedback_summary: dict[str, Any],
 ) -> list[dict[str, str]]:
     flags: list[dict[str, str]] = []
     if l5_summary["输出数量"] != l5_summary["目标数量"]:
@@ -228,6 +260,10 @@ def build_quality_flags(
             flags.append({"等级": "阻断", "事项": f"企业微信可信IP待放行：{trusted_ip_summary.get('当前需放行IP') or '未提取到IP'}"})
     else:
         flags.append({"等级": "观察", "事项": "可信IP状态监测尚未生成"})
+    if not feedback_summary.get("反馈日志", {}).get("存在"):
+        flags.append({"等级": "观察", "事项": "企业微信使用反馈日志尚未生成；可用后需要从体验中继续回收问题"})
+    elif not feedback_summary.get("反馈数量"):
+        flags.append({"等级": "观察", "事项": "企业微信使用反馈日志存在但暂无反馈记录"})
     real_ok = bool((delivery.get("层级验收") or {}).get("D真实灰度可用", {}).get("是否通过"))
     if not real_ok:
         flags.append({"等级": "阻断", "事项": "企业微信真实主动推送未通过，等待可信IP白名单"})
@@ -344,12 +380,14 @@ def build_markdown(report: dict[str, Any]) -> str:
 
     safety = report["报告安全边界摘要"]
     trusted_ip = report["可信IP状态摘要"]
+    feedback = report["使用反馈闭环摘要"]
     lines.extend([
         "",
         "## 五、质量观察项",
         "",
         f"- 报告安全边界：{safety['安全结论']}，命中：{safety['命中总数'] if safety['命中总数'] is not None else '未检查'}，检查文件数：{safety['检查文件数']}",
         f"- 可信IP状态：{trusted_ip['状态']}；需放行IP：`{trusted_ip['当前需放行IP'] or '未提取'}`；真实发送已通过：{trusted_ip['企业微信真实发送已通过']}",
+        f"- 使用反馈闭环：反馈日志{'存在' if feedback['反馈日志']['存在'] else '缺失'}，累计反馈 {feedback['反馈数量']} 条",
         "",
     ])
     light = report["质量灯号"]
@@ -368,12 +406,28 @@ def build_markdown(report: dict[str, Any]) -> str:
     lines.append("")
     for flag in report["质量观察项"]:
         lines.append(f"- [{flag['等级']}] {flag['事项']}")
-    lines.extend(["", "## 六、关键文件", ""])
+    lines.extend(["", "## 六、使用反馈闭环", ""])
+    lines.append(f"- 闭环口径：{feedback['闭环口径']}")
+    if feedback["学习沉淀主分类分布"]:
+        lines.append("- 学习沉淀主分类分布：")
+        for item in feedback["学习沉淀主分类分布"]:
+            lines.append(f"  - {item['分类']}：{item['数量']}条")
+    else:
+        lines.append("- 学习沉淀主分类分布：暂无")
+    if feedback["最近反馈"]:
+        lines.append("- 最近反馈：")
+        for item in feedback["最近反馈"]:
+            lines.append(
+                f"  - {item['时间'] or '未记录时间'}｜{item['学习沉淀主分类']}｜{item['复盘优先级']}｜{item['反馈内容'] or item['反馈类型']}"
+            )
+    else:
+        lines.append("- 最近反馈：暂无")
+    lines.extend(["", "## 七、关键文件", ""])
     for name, state in report["关键文件"].items():
         lines.append(f"- {name}：{'存在' if state['存在'] else '缺失'}，`{state['路径']}`")
     lines.extend([
         "",
-        "## 七、安全边界",
+        "## 八、安全边界",
         "",
         "- 本面板只读分析现有结果。",
         "- 不触发n8n。",
@@ -419,7 +473,8 @@ def main() -> int:
     finance_summary = collect_finance_review(finance_review)
     safety_summary = collect_report_safety(safety_review)
     trusted_ip_summary = collect_trusted_ip_status(trusted_ip_status)
-    flags = build_quality_flags(l5_summary, ai_summary, delivery, finance_summary, safety_summary, trusted_ip_summary)
+    feedback_summary = collect_feedback_loop(root)
+    flags = build_quality_flags(l5_summary, ai_summary, delivery, finance_summary, safety_summary, trusted_ip_summary, feedback_summary)
     quality_light = judge_quality_light(l5_summary, ai_summary, flags, rules)
     blocking_count = sum(1 for item in flags if item["等级"] == "阻断")
     warning_count = sum(1 for item in flags if item["等级"] == "注意")
@@ -444,6 +499,7 @@ def main() -> int:
         "金融专项复核摘要": finance_summary,
         "报告安全边界摘要": safety_summary,
         "可信IP状态摘要": trusted_ip_summary,
+        "使用反馈闭环摘要": feedback_summary,
         "质量观察项": flags,
         "关键文件": {
             "L5深度研究池": file_state(l5_path),
@@ -454,6 +510,7 @@ def main() -> int:
             "金融专项复核": file_state(finance_path),
             "报告安全边界检查": file_state(safety_path),
             "可信IP状态监测": file_state(trusted_ip_path),
+            "使用反馈日志": feedback_summary["反馈日志"],
         },
         "安全边界": {
             "是否触发n8n": False,

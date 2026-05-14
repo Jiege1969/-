@@ -15,6 +15,7 @@ class StockFrontendMessageContractCiCheckTests(unittest.TestCase):
         self.assertTrue(report["method_kernel_over_template"])
         self.assertEqual(report["feedback_loop_source"]["assistant_missing_phrases"], [])
         self.assertEqual(report["feedback_loop_source"]["bridge_missing_phrases"], [])
+        self.assertEqual(report["feedback_loop_source"]["quality_panel_missing_phrases"], [])
 
     def test_numeric_requirements_cover_computed_conditions(self):
         report = frontend_contract.build_report()
@@ -117,11 +118,13 @@ class StockFrontendMessageContractCiCheckTests(unittest.TestCase):
         report = frontend_contract.build_report()
         report["feedback_loop_source"]["assistant_missing_phrases"] = ["算出来"]
         report["feedback_loop_source"]["bridge_missing_phrases"] = ["强烈关注"]
+        report["feedback_loop_source"]["quality_panel_missing_phrases"] = ["使用反馈闭环摘要"]
 
         problems = frontend_contract.validate_report(report)
 
         self.assertIn("feedback_loop_assistant_missing_phrase:算出来", problems)
         self.assertIn("feedback_loop_bridge_missing_phrase:强烈关注", problems)
+        self.assertIn("feedback_loop_quality_panel_missing_phrase:使用反馈闭环摘要", problems)
 
     def test_validate_report_rejects_remaining_legacy_backup(self):
         report = frontend_contract.build_report()

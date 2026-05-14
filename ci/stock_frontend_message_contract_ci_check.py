@@ -32,6 +32,7 @@ PUSH_SAMPLE_DOC_PATH = STOCK_ROOT / "07文档" / "股票前台推送消息样本
 DAILY_PUSH_AUDIT_SCRIPT_PATH = STOCK_ROOT / "02脚本" / "生成股票每日推送总表只读巡检报告.py"
 STOCK_ASSISTANT_PATH = STOCK_ROOT / "02脚本" / "股票助手入口.py"
 STOCK_WECOM_BRIDGE_PATH = STOCK_ROOT / "02脚本" / "股票企业微信桥接入口.py"
+QUALITY_PANEL_SCRIPT_PATH = STOCK_ROOT / "02脚本" / "生成股票系统质量观察面板.py"
 
 REQUIRED_TOP_LEVEL_KEYS = [
     "最高口径",
@@ -135,6 +136,13 @@ REQUIRED_FEEDBACK_LOOP_PHRASES = [
     "跌破",
     "强烈关注",
     "五星",
+]
+
+REQUIRED_FEEDBACK_PANEL_PHRASES = [
+    "使用反馈闭环摘要",
+    "反馈日志",
+    "学习沉淀主分类",
+    "企业微信使用反馈",
 ]
 
 GUARDRAILS = [
@@ -280,6 +288,10 @@ def build_report() -> dict[str, Any]:
             "path": rel(DAILY_PUSH_AUDIT_SCRIPT_PATH),
             "exists": DAILY_PUSH_AUDIT_SCRIPT_PATH.exists(),
         },
+        "quality_panel_script": {
+            "path": rel(QUALITY_PANEL_SCRIPT_PATH),
+            "exists": QUALITY_PANEL_SCRIPT_PATH.exists(),
+        },
     }
 
     contract: dict[str, Any] = {}
@@ -346,6 +358,7 @@ def build_report() -> dict[str, Any]:
         "feedback_loop_source": {
             "assistant_exists": STOCK_ASSISTANT_PATH.exists(),
             "bridge_exists": STOCK_WECOM_BRIDGE_PATH.exists(),
+            "quality_panel_exists": QUALITY_PANEL_SCRIPT_PATH.exists(),
             "assistant_missing_phrases": text_contains_all(
                 read_text(STOCK_ASSISTANT_PATH) if STOCK_ASSISTANT_PATH.exists() else "",
                 REQUIRED_FEEDBACK_LOOP_PHRASES,
@@ -353,6 +366,10 @@ def build_report() -> dict[str, Any]:
             "bridge_missing_phrases": text_contains_all(
                 read_text(STOCK_WECOM_BRIDGE_PATH) if STOCK_WECOM_BRIDGE_PATH.exists() else "",
                 REQUIRED_FEEDBACK_LOOP_PHRASES,
+            ),
+            "quality_panel_missing_phrases": text_contains_all(
+                read_text(QUALITY_PANEL_SCRIPT_PATH) if QUALITY_PANEL_SCRIPT_PATH.exists() else "",
+                REQUIRED_FEEDBACK_PANEL_PHRASES,
             ),
         },
         "governance": {
@@ -418,10 +435,14 @@ def validate_report(report: dict[str, Any]) -> list[str]:
         problems.append("feedback_loop_assistant_missing")
     if not feedback_loop["bridge_exists"]:
         problems.append("feedback_loop_bridge_missing")
+    if not feedback_loop["quality_panel_exists"]:
+        problems.append("feedback_loop_quality_panel_missing")
     for phrase in feedback_loop["assistant_missing_phrases"]:
         problems.append(f"feedback_loop_assistant_missing_phrase:{phrase}")
     for phrase in feedback_loop["bridge_missing_phrases"]:
         problems.append(f"feedback_loop_bridge_missing_phrase:{phrase}")
+    for phrase in feedback_loop["quality_panel_missing_phrases"]:
+        problems.append(f"feedback_loop_quality_panel_missing_phrase:{phrase}")
     for task_id, present in daily_push["required_current_tasks"].items():
         if not present:
             problems.append(f"missing_current_push_task:{task_id}")
