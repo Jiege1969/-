@@ -32,6 +32,7 @@ OLD_MANAGED_BOARDS = [
     "杰哥L6市场位置增强池",
     "杰哥L5市场位置增强池",
 ]
+REMOVED_EMPTY_BOARDS = ["临时"]
 
 
 def module_root() -> Path:
@@ -283,7 +284,7 @@ def main() -> int:
 
     boards = build_boards()
     existing_names = read_cfg_names()
-    old_managed_paths = [CITIC_BLOCK_DIR / f"{name}.blk" for name in OLD_MANAGED_BOARDS]
+    old_managed_paths = [CITIC_BLOCK_DIR / f"{name}.blk" for name in [*OLD_MANAGED_BOARDS, *REMOVED_EMPTY_BOARDS]]
     planned_paths = [CITIC_BLOCK_DIR / board["文件"] for board in boards]
     backup_files = [CFG_FILE, *old_managed_paths, *planned_paths]
     backed_up = backup_existing(backup_files, backup_dir)
@@ -316,7 +317,7 @@ def main() -> int:
             path.unlink()
             removed_old_files.append(str(path))
 
-    preserved_names = [name for name in existing_names if name not in OLD_MANAGED_BOARDS]
+    preserved_names = [name for name in existing_names if name not in [*OLD_MANAGED_BOARDS, *REMOVED_EMPTY_BOARDS]]
     final_names = list(dict.fromkeys([*preserved_names, *[board["名称"] for board in boards]]))
     write_cfg_names(final_names)
 
@@ -331,6 +332,7 @@ def main() -> int:
         "已备份文件": backed_up,
         "已移除旧内部过程板块文件": removed_old_files,
         "已从前台隐藏的内部过程板块": OLD_MANAGED_BOARDS,
+        "已删除空板块": REMOVED_EMPTY_BOARDS,
         "同步前原有板块": existing_names,
         "同步后板块": final_names,
         "同步板块": board_reports,
