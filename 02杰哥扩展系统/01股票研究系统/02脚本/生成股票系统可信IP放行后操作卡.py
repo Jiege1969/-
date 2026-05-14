@@ -19,6 +19,9 @@ from pathlib import Path
 from typing import Any
 
 
+FIXED_PUBLIC_EGRESS_IP = "43.167.210.211"
+
+
 def module_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
@@ -64,7 +67,7 @@ def build_markdown(report: dict[str, Any]) -> str:
         "",
         "## 一、先确认",
         "",
-        f"- 当前应加入企业微信可信IP白名单：`{report['当前需放行IP'] or '未提取到'}`",
+        f"- 当前应加入企业微信可信IP白名单的固定公网出口：`{report['当前需放行IP'] or FIXED_PUBLIC_EGRESS_IP}`",
         "- 只有确认已在企业微信后台加入该IP后，才执行真实复测。",
         "- 真实复测入口会再次弹出按键确认。",
         "",
@@ -78,8 +81,8 @@ def build_markdown(report: dict[str, Any]) -> str:
         "",
         "## 三、如果失败",
         "",
-        "- 若仍提示 `60020 not allow to access from your ip`，说明可信IP仍未放行或公网IP变化。",
-        "- 打开05入口工具：`股票系统可信IP状态监测_打开.bat`，确认最新IP。",
+        "- 若仍提示 `60020 not allow to access from your ip`，说明该固定公网出口仍未被企业微信可信IP白名单放行。",
+        "- 打开05入口工具：`股票系统可信IP状态监测_打开.bat`，确认最新固定公网出口IP；不再追着本地宽带IP变化。",
         "- 不要排查券商接口、n8n自动触发或自动交易模块，它们当前本来就是关闭状态。",
         "",
         "## 四、安全边界",
@@ -114,7 +117,8 @@ def main() -> int:
         "版本": "2026-05-01",
         "生成时间": now.strftime("%Y-%m-%d %H:%M:%S"),
         "生成工具": "生成股票系统可信IP放行后操作卡.py",
-        "当前需放行IP": ip_status.get("当前需放行IP") or retest.get("当前需放行IP") or "",
+        "当前需放行IP": ip_status.get("当前需放行IP") or retest.get("当前需放行IP") or FIXED_PUBLIC_EGRESS_IP,
+        "固定公网出口IP": FIXED_PUBLIC_EGRESS_IP,
         "刷新动作": refresh_action,
         "真实复测入口": str(root / "05入口工具" / "股票系统企微真实推送复测_确认可信IP后真实发送.bat"),
         "最终验收入口": str(root / "05入口工具" / "股票系统完全交付最终验收_打开.bat"),

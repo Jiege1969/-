@@ -63,8 +63,11 @@ WECOM_IP_ALLOW_STATUS_JSON = STOCK_ROOT / "03数据" / "85企业微信可信IP�
 COMMON_SENDER_PY = ROOT / "02杰哥扩展系统" / "00公共组件" / "02脚本" / "企业微信受控发送器.py"
 STOCK_GRAY_SEND_PY = STOCK_ROOT / "02脚本" / "执行股票主动研究企微灰度发送.py"
 STOCK_RETEST_CONTROLLER_PY = STOCK_ROOT / "02脚本" / "股票系统企微真实推送复测控制器.py"
+STOCK_DELIVERY_PACKAGE_PY = STOCK_ROOT / "02脚本" / "生成股票系统交付总包.py"
+STOCK_AFTER_ALLOW_CARD_PY = STOCK_ROOT / "02脚本" / "生成股票系统可信IP放行后操作卡.py"
 WECOM_CONTROLLED_SEND_CONFIG_JSON = ROOT / "02杰哥扩展系统" / "00公共组件" / "01配置" / "企业微信受控发送配置.json"
 FIXED_PUBLIC_EGRESS_IP = "43.167.210.211"
+LEGACY_LOCAL_BROADBAND_IP_PREFIX = "183.227."
 
 
 def upstream_statuses(
@@ -254,6 +257,30 @@ def wecom_fixed_public_egress_contract_status(
     }
 
 
+def wecom_legacy_ip_residue_status(paths: list[Path] | None = None) -> dict[str, Any]:
+    scan_paths = paths or [
+        STOCK_DELIVERY_PACKAGE_PY,
+        STOCK_AFTER_ALLOW_CARD_PY,
+        STOCK_RETEST_CONTROLLER_PY,
+        STOCK_GRAY_SEND_PY,
+    ]
+    hits = []
+    for path in scan_paths:
+        text = read_text(path)
+        if LEGACY_LOCAL_BROADBAND_IP_PREFIX in text:
+            hits.append({
+                "path": str(path),
+                "needle": LEGACY_LOCAL_BROADBAND_IP_PREFIX,
+            })
+    return {
+        "status": "fail" if hits else "pass",
+        "legacy_ip_prefix": LEGACY_LOCAL_BROADBAND_IP_PREFIX,
+        "fixed_public_egress_ip": FIXED_PUBLIC_EGRESS_IP,
+        "hits": hits,
+        "scanned": [str(path) for path in scan_paths],
+    }
+
+
 def validate_report(report: dict[str, Any]) -> list[str]:
     problems: list[str] = []
     if report["score"] < 0 or report["score"] > 100:
@@ -279,6 +306,8 @@ def validate_report(report: dict[str, Any]) -> list[str]:
         problems.append("wecom_trusted_ip_status_inconsistent")
     if report.get("wecom_fixed_public_egress", {}).get("status") != "pass":
         problems.append("wecom_fixed_public_egress_contract_missing")
+    if report.get("wecom_legacy_ip_residue", {}).get("status") != "pass":
+        problems.append("wecom_legacy_broadband_ip_residue")
     return problems
 
 
@@ -307,6 +336,7 @@ def build_acceptance_overview_report() -> dict[str, Any]:
         "wecom_ip_consistency": wecom_ip_consistency_status(),
         "wecom_status_command": wecom_status_command_status(),
         "wecom_fixed_public_egress": wecom_fixed_public_egress_contract_status(),
+        "wecom_legacy_ip_residue": wecom_legacy_ip_residue_status(),
         "guardrails": GUARDRAILS,
     }
     problems = validate_report(report)
@@ -362,6 +392,12 @@ def render_markdown(report: dict[str, Any]) -> str:
     fixed_egress = report["wecom_fixed_public_egress"]
     lines.append(f"- `status`: `{fixed_egress['status']}`")
     lines.append(f"- `fixed_public_egress_ip`: `{fixed_egress['fixed_public_egress_ip']}`")
+
+    lines.extend(["", "## WeCom Legacy IP Residue"])
+    legacy_ip = report["wecom_legacy_ip_residue"]
+    lines.append(f"- `status`: `{legacy_ip['status']}`")
+    lines.append(f"- `legacy_ip_prefix`: `{legacy_ip['legacy_ip_prefix']}`")
+    lines.append(f"- `hits`: `{len(legacy_ip['hits'])}`")
 
     if report["blocking_problems"]:
         lines.extend(["", "## Blocking Problems"])

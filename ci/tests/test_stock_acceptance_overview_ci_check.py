@@ -1,4 +1,5 @@
 import unittest
+from pathlib import Path
 
 import ci.stock_acceptance_overview_ci_check as overview
 
@@ -47,6 +48,7 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
         self.assertEqual(report["wecom_ip_consistency"]["status"], "pass")
         self.assertEqual(report["wecom_status_command"]["status"], "pass")
         self.assertEqual(report["wecom_fixed_public_egress"]["status"], "pass")
+        self.assertEqual(report["wecom_legacy_ip_residue"]["status"], "pass")
 
     def test_delivery_truthfulness_rejects_complete_claim_when_wecom_ip_blocked(self):
         result = overview.delivery_truthfulness_status(
@@ -123,6 +125,28 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
         self.assertIn("common_sender_supports_fixed_mode", result["missing"])
         self.assertIn("stock_real_send_defaults_to_fixed_mode", result["missing"])
 
+    def test_wecom_legacy_ip_residue_rejects_old_broadband_ip(self):
+        original_read_text = overview.read_text
+        try:
+            overview.read_text = lambda path: "企业微信后台加入可信IP 183.227.144.47 后再复测"
+            result = overview.wecom_legacy_ip_residue_status(paths=[Path("交付提示.py")])
+        finally:
+            overview.read_text = original_read_text
+
+        self.assertEqual(result["status"], "fail")
+        self.assertEqual(result["hits"][0]["needle"], "183.227.")
+
+    def test_wecom_legacy_ip_residue_accepts_fixed_public_ip(self):
+        original_read_text = overview.read_text
+        try:
+            overview.read_text = lambda path: "企业微信后台加入固定公网出口IP 43.167.210.211 后再复测"
+            result = overview.wecom_legacy_ip_residue_status(paths=[Path("操作卡.py")])
+        finally:
+            overview.read_text = original_read_text
+
+        self.assertEqual(result["status"], "pass")
+        self.assertEqual(result["hits"], [])
+
     def test_validate_report_rejects_continue_with_high_risk(self):
         report = overview.build_acceptance_overview_report()
         report["state"] = "continue"
@@ -143,6 +167,7 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
         self.assertIn("WeCom Trusted IP Consistency", markdown)
         self.assertIn("WeCom Status Command", markdown)
         self.assertIn("WeCom Fixed Public Egress", markdown)
+        self.assertIn("WeCom Legacy IP Residue", markdown)
 
 
 if __name__ == "__main__":

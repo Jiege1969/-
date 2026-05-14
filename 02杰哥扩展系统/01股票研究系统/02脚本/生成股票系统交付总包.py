@@ -17,6 +17,9 @@ from pathlib import Path
 from typing import Any
 
 
+FIXED_PUBLIC_EGRESS_IP = "43.167.210.211"
+
+
 def module_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
@@ -46,6 +49,18 @@ def exists(path: Path) -> dict[str, Any]:
     }
 
 
+def current_trusted_ip(root: Path) -> str:
+    status = load_json(root / "03数据" / "155可信IP状态监测" / "股票系统可信IP状态监测_最新.json", {})
+    retest = load_json(root / "03数据" / "157企微真实推送复测" / "股票系统企微真实推送复测_最新.json", {})
+    return str(
+        status.get("当前需放行IP")
+        or status.get("固定公网出口IP")
+        or retest.get("当前需放行IP")
+        or retest.get("固定公网出口IP")
+        or FIXED_PUBLIC_EGRESS_IP
+    )
+
+
 def build_markdown(report: dict[str, Any]) -> str:
     lines = [
         f"# 股票系统交付总包 - {report['生成时间']}",
@@ -55,6 +70,7 @@ def build_markdown(report: dict[str, Any]) -> str:
         f"- 当前交付层级：{report['当前交付层级']}",
         f"- 日常可用结论：{report['日常可用结论']}",
         f"- 剩余硬阻断：{report['剩余硬阻断']}",
+        f"- 固定公网出口IP：`{report['固定公网出口IP']}`",
         "",
         "## 二、日常入口",
         "",
@@ -79,6 +95,7 @@ def build_markdown(report: dict[str, Any]) -> str:
 def main() -> int:
     root = module_root()
     now = datetime.now()
+    trusted_ip = current_trusted_ip(root)
     self_check = load_json(root / "03数据" / "140交付自检" / "股票系统交付自检报告_最新.json", {})
     console = load_json(root / "03数据" / "143交付控制台" / "股票系统交付控制台_最新.json", {})
     level = str(self_check.get("当前交付层级") or console.get("当前状态", {}).get("交付层级") or "未知")
@@ -126,6 +143,7 @@ def main() -> int:
         "当前交付层级": level,
         "日常可用结论": ("可日常使用：本地闭环、AI报告、n8n手动受控测试、企业微信真实灰度推送均已可用。" if real_wecom_ok else "可日常使用：本地闭环、AI报告、n8n手动受控测试可用；企业微信真实主动推送待可信IP修复。") if daily_ok else "未达到日常可用，请先查看交付自检。",
         "剩余硬阻断": "企业微信应用主动消息可信IP白名单" if not real_wecom_ok else "无",
+        "固定公网出口IP": trusted_ip,
         "日常入口": [
             {"名称": "日常速查卡", "路径": str(entry_dir / "股票系统日常使用速查卡_打开.bat")},
             {"名称": "质量观察面板", "路径": str(entry_dir / "股票系统质量观察面板_打开.bat")},
@@ -187,10 +205,10 @@ def main() -> int:
             "需要最终确认当前C+++日常可用形态时打开05入口工具中的“股票系统C+++日常可用总验收_打开”。",
             "企业微信后台加入可信IP前，先打开05入口工具中的“股票系统可信IP放行后最终验收包_打开”查看验收步骤。",
             "需要确认当前是否仍卡可信IP时，打开05入口工具中的“股票系统可信IP状态监测_打开”。",
-            "企业微信后台加入可信IP 183.227.144.47 前，可先运行“股票系统企微真实推送复测_预检不发送”。",
-            "企业微信后台加入可信IP 183.227.144.47 后，不确定步骤时先打开“股票系统可信IP放行后操作卡_打开”。",
+            f"企业微信后台加入固定公网出口IP {trusted_ip} 前，可先运行“股票系统企微真实推送复测_预检不发送”。",
+            f"企业微信后台加入固定公网出口IP {trusted_ip} 后，不确定步骤时先打开“股票系统可信IP放行后操作卡_打开”。",
             "担心真实发送入口混乱时，打开“股票系统真实发送入口清点报告_打开”。",
-            "企业微信后台加入可信IP 183.227.144.47 后，再运行“股票系统企微真实推送复测_确认可信IP后真实发送”。",
+            f"企业微信后台加入固定公网出口IP {trusted_ip} 后，再运行“股票系统企微真实推送复测_确认可信IP后真实发送”。",
             "真实推送复测完成后，运行“股票系统完全交付最终验收_打开”确认是否进入完全交付状态。",
             "最省心的日常使用方式：运行05入口工具中的“股票系统一键运行并查看质量面板”。",
             "只想刷新状态、不重新跑AI闭环时：运行05入口工具中的“股票系统快速刷新状态_不跑闭环”。",
