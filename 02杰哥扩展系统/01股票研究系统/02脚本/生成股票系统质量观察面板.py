@@ -159,6 +159,24 @@ def collect_report_safety(safety: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def collect_report_data_caliber(caliber: dict[str, Any]) -> dict[str, Any]:
+    if not caliber:
+        return {
+            "是否存在": False,
+            "状态": "未检查",
+            "严重问题数": None,
+            "提示数": None,
+            "生成时间": "",
+        }
+    return {
+        "是否存在": True,
+        "状态": caliber.get("状态") or "未知",
+        "严重问题数": caliber.get("严重问题数"),
+        "提示数": caliber.get("提示数"),
+        "生成时间": caliber.get("生成时间") or "",
+    }
+
+
 def collect_trusted_ip_status(status: dict[str, Any]) -> dict[str, Any]:
     if not status:
         return {
@@ -224,6 +242,7 @@ def build_quality_flags(
     delivery: dict[str, Any],
     finance_summary: dict[str, Any],
     safety_summary: dict[str, Any],
+    data_caliber_summary: dict[str, Any],
     trusted_ip_summary: dict[str, Any],
     feedback_summary: dict[str, Any],
 ) -> list[dict[str, str]]:
@@ -255,6 +274,12 @@ def build_quality_flags(
             flags.append({"等级": "注意", "事项": f"报告安全边界检查命中{hit_count}处，需人工复核"})
     else:
         flags.append({"等级": "观察", "事项": "报告安全边界检查尚未生成"})
+    if data_caliber_summary.get("是否存在"):
+        severe_count = data_caliber_summary.get("严重问题数")
+        if isinstance(severe_count, int) and severe_count > 0:
+            flags.append({"等级": "注意", "事项": f"报告数据口径检查存在{severe_count}个严重问题"})
+    else:
+        flags.append({"等级": "观察", "事项": "报告数据口径检查尚未生成"})
     if trusted_ip_summary.get("是否存在"):
         if trusted_ip_summary.get("是否命中60020") and not trusted_ip_summary.get("企业微信真实发送已通过"):
             flags.append({"等级": "阻断", "事项": f"企业微信可信IP待放行：{trusted_ip_summary.get('当前需放行IP') or '未提取到IP'}"})
@@ -379,6 +404,7 @@ def build_markdown(report: dict[str, Any]) -> str:
     ])
 
     safety = report["报告安全边界摘要"]
+    data_caliber = report["报告数据口径摘要"]
     trusted_ip = report["可信IP状态摘要"]
     feedback = report["使用反馈闭环摘要"]
     lines.extend([
@@ -386,6 +412,7 @@ def build_markdown(report: dict[str, Any]) -> str:
         "## 五、质量观察项",
         "",
         f"- 报告安全边界：{safety['安全结论']}，命中：{safety['命中总数'] if safety['命中总数'] is not None else '未检查'}，检查文件数：{safety['检查文件数']}",
+        f"- 报告数据口径：{data_caliber['状态']}，严重问题：{data_caliber['严重问题数'] if data_caliber['严重问题数'] is not None else '未检查'}，提示：{data_caliber['提示数'] if data_caliber['提示数'] is not None else '未检查'}",
         f"- 可信IP状态：{trusted_ip['状态']}；需放行IP：`{trusted_ip['当前需放行IP'] or '未提取'}`；真实发送已通过：{trusted_ip['企业微信真实发送已通过']}",
         f"- 使用反馈闭环：反馈日志{'存在' if feedback['反馈日志']['存在'] else '缺失'}，累计反馈 {feedback['反馈数量']} 条",
         "",
@@ -455,6 +482,7 @@ def main() -> int:
     ip_fix_path = root / "03数据" / "141企微可信IP修复包" / "企业微信可信IP修复包_最新.md"
     finance_path = root / "03数据" / "149金融专项复核" / "股票金融专项复核_最新.json"
     safety_path = root / "03数据" / "150报告安全边界检查" / "股票系统报告安全边界检查_最新.json"
+    data_caliber_path = root / "03数据" / "183报告数据口径检查" / "股票报告数据口径检查_最新.json"
     trusted_ip_path = root / "03数据" / "155可信IP状态监测" / "股票系统可信IP状态监测_最新.json"
     rules_path = root / "01配置" / "股票系统质量观察规则.json"
 
@@ -464,6 +492,7 @@ def main() -> int:
     delivery = load_json(delivery_path, {})
     finance_review = load_json(finance_path, {})
     safety_review = load_json(safety_path, {})
+    data_caliber_review = load_json(data_caliber_path, {})
     trusted_ip_status = load_json(trusted_ip_path, {})
     rules = load_json(rules_path, {})
     ip_text = load_text(ip_fix_path)
@@ -472,9 +501,10 @@ def main() -> int:
     ai_summary = collect_ai(ai)
     finance_summary = collect_finance_review(finance_review)
     safety_summary = collect_report_safety(safety_review)
+    data_caliber_summary = collect_report_data_caliber(data_caliber_review)
     trusted_ip_summary = collect_trusted_ip_status(trusted_ip_status)
     feedback_summary = collect_feedback_loop(root)
-    flags = build_quality_flags(l5_summary, ai_summary, delivery, finance_summary, safety_summary, trusted_ip_summary, feedback_summary)
+    flags = build_quality_flags(l5_summary, ai_summary, delivery, finance_summary, safety_summary, data_caliber_summary, trusted_ip_summary, feedback_summary)
     quality_light = judge_quality_light(l5_summary, ai_summary, flags, rules)
     blocking_count = sum(1 for item in flags if item["等级"] == "阻断")
     warning_count = sum(1 for item in flags if item["等级"] == "注意")
@@ -498,6 +528,7 @@ def main() -> int:
         "AI摘要": ai_summary,
         "金融专项复核摘要": finance_summary,
         "报告安全边界摘要": safety_summary,
+        "报告数据口径摘要": data_caliber_summary,
         "可信IP状态摘要": trusted_ip_summary,
         "使用反馈闭环摘要": feedback_summary,
         "质量观察项": flags,
@@ -509,6 +540,7 @@ def main() -> int:
             "可信IP修复包": file_state(ip_fix_path),
             "金融专项复核": file_state(finance_path),
             "报告安全边界检查": file_state(safety_path),
+            "报告数据口径检查": file_state(data_caliber_path),
             "可信IP状态监测": file_state(trusted_ip_path),
             "使用反馈日志": feedback_summary["反馈日志"],
         },
