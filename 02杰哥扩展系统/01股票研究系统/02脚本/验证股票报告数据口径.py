@@ -17,6 +17,29 @@ from pathlib import Path
 from typing import Any
 
 
+FORBIDDEN_LATEST_SINGLE_REPORT_TERMS = [
+    "【证据头】",
+    "方法口径：",
+    "分析顺序：",
+    "方法版本：",
+    "技术指标=",
+    "成交活跃就是",
+    "明显活跃就是",
+    "具体金额/手数见成交标准",
+]
+
+REQUIRED_LATEST_SINGLE_REPORT_TERMS = [
+    "【结果依据】",
+    "行情依据",
+    "公司依据",
+    "行业依据",
+    "还缺什么",
+    "当前价",
+    "转强线",
+    "风险线",
+]
+
+
 def module_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
@@ -114,6 +137,36 @@ def main() -> int:
     if re.search(r"\d+(?:\.\d+)?\s*万亿元", md_text):
         add_issue(issues, "严重", "AI分析报告Markdown", "Markdown报告含异常万亿元口径。", "重新生成或前台屏蔽原文。")
 
+    latest_single_report_path = single_report_dir / "单股标准报告v2_最新.md"
+    latest_single_text = read_text(latest_single_report_path)
+    if not latest_single_text:
+        add_issue(
+            issues,
+            "严重",
+            "最新单股标准报告",
+            "单股标准报告v2_最新.md不存在或为空。",
+            "先生成一份可体验的单股标准报告，再进入企微前台体验。",
+        )
+    else:
+        forbidden_hits = [term for term in FORBIDDEN_LATEST_SINGLE_REPORT_TERMS if term in latest_single_text]
+        if forbidden_hits:
+            add_issue(
+                issues,
+                "严重",
+                "最新单股标准报告",
+                f"最新单股报告混入后台过程词或半成品成交表达：{'、'.join(forbidden_hits)}。",
+                "前台只保留结果依据、具体价位、成交金额/手数和风险条件；后台方法链留在证据链。",
+            )
+        missing_latest_terms = [term for term in REQUIRED_LATEST_SINGLE_REPORT_TERMS if term not in latest_single_text]
+        if missing_latest_terms:
+            add_issue(
+                issues,
+                "严重",
+                "最新单股标准报告",
+                f"最新单股报告缺少前台必备字段：{'、'.join(missing_latest_terms)}。",
+                "重新生成单股标准报告，确保先结论、再结果依据、再具体观察条件。",
+            )
+
     single_report_files = sorted(
         [
             path for path in single_report_dir.glob("单股标准报告v2_*_最新.md")
@@ -149,7 +202,9 @@ def main() -> int:
                 "单股标准报告存在交易化措辞。",
                 "改为研究条件、观察条件、风险底线和状态变化，不输出交易指令。",
             )
-        missing_terms = [term for term in ["【结论】", "当前价", "承接区", "转强线", "风险线"] if term not in text]
+        missing_terms = [term for term in ["【结论】", "当前价", "转强线", "风险线"] if term not in text]
+        if "承接区" not in text and "修复区" not in text:
+            missing_terms.append("承接区/修复区")
         if missing_terms:
             add_issue(
                 warnings,
