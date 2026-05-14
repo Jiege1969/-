@@ -116,6 +116,7 @@ JUDGMENT_REPLAY_LEDGER_LATEST_PATH = ROOT / "04日志" / "复盘" / "判断复�
 WECHAT_PUSH_DRAFT_LATEST_PATH = ROOT / "03数据" / "136推送草案" / "股票企微推送草案_最新.md"
 WECHAT_USER_REPORT_LATEST_PATH = ROOT / "03数据" / "136推送草案" / "股票企微用户报告推送稿_最新.md"
 WECHAT_USER_REPORT_JSON_LATEST_PATH = ROOT / "03数据" / "136推送草案" / "股票企微用户报告推送稿_最新.json"
+SHORTLINE_REPORT_JSON_LATEST_PATH = ROOT / "03数据" / "260股票n8n日内报告闭环与晨报推送策略包" / "收盘短线观察_基于300只轻扫描_最新.json"
 EXPERT_OVERVIEW_DIR = ROOT / "03数据" / "185专家市场总览"
 EXPERT_OVERVIEW_JSON_LATEST_PATH = EXPERT_OVERVIEW_DIR / "股票专家市场总览_最新.json"
 EXPERT_OVERVIEW_MD_LATEST_PATH = EXPERT_OVERVIEW_DIR / "股票专家市场总览_最新.md"
@@ -2549,6 +2550,9 @@ def build_system_review_line(item: dict[str, Any], industry: str) -> str:
 
 def build_user_oriented_daily_report() -> tuple[str, dict[str, Any]]:
     """把后台AI日报压缩成企业微信端可交流、可反馈的用户阅读稿。"""
+    shortline_text, shortline_meta = build_user_oriented_shortline_report()
+    if shortline_text:
+        return shortline_text, shortline_meta
     ai_report = load_json(AI_DAILY_REPORT_JSON_PATH, {}) or {}
     rows = ai_report.get("分析结果", []) if isinstance(ai_report.get("分析结果"), list) else []
     if not rows:
@@ -2644,6 +2648,63 @@ def build_user_oriented_daily_report() -> tuple[str, dict[str, Any]]:
         "候选数量": len(rows),
         "输出目的": "微信端交流和反馈，不展示后台技术过程",
         "源文件": str(AI_DAILY_REPORT_JSON_PATH),
+        "markdown": text,
+    }
+    write_text(WECHAT_USER_REPORT_LATEST_PATH, text)
+    write_json(WECHAT_USER_REPORT_JSON_LATEST_PATH, meta)
+    return text, meta
+
+
+def build_user_oriented_shortline_report() -> tuple[str, dict[str, Any]]:
+    """今日观察优先展示最新短线观察结果，让企业微信端看到当前可用结论。"""
+    report = load_json(SHORTLINE_REPORT_JSON_LATEST_PATH, {}) or {}
+    rows = report.get("股票", []) if isinstance(report.get("股票"), list) else []
+    if not rows:
+        return "", {}
+    data_date = str(report.get("数据日期") or datetime.now().strftime("%Y-%m-%d"))
+    lines = [
+        f"【股票观察晨报｜{data_date}】",
+        "杰哥，您好！今天先看短线观察池。下面不是交易指令，是系统筛出的观察对象，重点看价格和成交量条件是否同时成立。",
+        "查看方式：点股票名称可直接打开这只股票的具体分析报告。",
+        "数据提示：每只股票下面的价位和成交量标准已经算好，不需要你再手工计算。",
+        "",
+        "一、今日观察个股",
+    ]
+    for index, item in enumerate(rows[:5], start=1):
+        name = str(item.get("名称") or "").strip()
+        code = str(item.get("代码") or "").strip()
+        trade = item.get("成交观察", {}) if isinstance(item.get("成交观察"), dict) else {}
+        trade_text = str(trade.get("前台说明") or "成交标准待补齐。")
+        lines.extend([
+            f"{index}. {stock_link_label(name, code)}",
+            "",
+            f"① 当前判断：{item.get('前台状态') or '先按短线观察处理，等待条件确认。'}",
+            "",
+            f"② 为什么看：{item.get('核心逻辑') or '系统短线观察池入选，等待盘中验证。'}",
+            "",
+            f"③ 明确的观察条件：{trade_text}{item.get('明天短线观察条件') or '等待下一次数据刷新。'}",
+            "",
+            f"④ 风险/缺口：{item.get('短线止损参考价') or '风险线待补齐。'}{item.get('证据摘要') or ''}",
+            "",
+        ])
+    lines.extend([
+        "二、今天的观察池使用说明",
+        "- 只有同时满足价格站稳和成交活跃，才算观察逻辑变强。",
+        "- 跌破风险线，先取消短线观察，不硬扛。",
+        "- 行业、公告和财务证据仍要继续补齐；缺口会进入后续复核。",
+        "",
+        "报告缺少什么，直接告诉我，比如“股票名称应该可以点击”“风险没讲清”“条件太空泛”，我会把反馈记入下一轮修正。",
+        "",
+        "以上仅为股票研究辅助，不构成投资建议，不作为买卖指令。",
+    ])
+    text = "\n".join(lines)
+    meta = {
+        "名称": "股票企微用户报告推送稿",
+        "生成方式": "收盘短线观察前台报告",
+        "数据日期": data_date,
+        "候选数量": len(rows),
+        "输出目的": "微信端交流和反馈，不展示后台技术过程",
+        "源文件": str(SHORTLINE_REPORT_JSON_LATEST_PATH),
         "markdown": text,
     }
     write_text(WECHAT_USER_REPORT_LATEST_PATH, text)

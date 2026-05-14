@@ -11,6 +11,7 @@ import json
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote
 
 from 重点观察池晋级候选公共库 import register_promotion_candidate
 
@@ -64,6 +65,34 @@ def safe_float(value: Any, default: float = 0.0) -> float:
 
 def ratio_text(value: float) -> str:
     return f"{value:.2f}" if value > 0 else "暂无"
+
+
+def volume_text(value: Any) -> str:
+    amount = safe_float(value)
+    if amount <= 0:
+        return "暂无"
+    if amount >= 10000:
+        return f"{amount / 10000:.2f}万手"
+    return f"{amount:.0f}手"
+
+
+def amount_text(value: Any) -> str:
+    amount = safe_float(value)
+    if amount <= 0:
+        return "暂无"
+    if amount >= 100000000:
+        return f"{amount / 100000000:.2f}亿元"
+    if amount >= 10000:
+        return f"{amount / 10000:.2f}万元"
+    return f"{amount:.0f}元"
+
+
+def detail_link(name: Any, code: Any) -> str:
+    stock_name = str(name or "").strip()
+    stock_code = str(code or "").strip()
+    label = f"{stock_name}（{stock_code}）" if stock_code else stock_name
+    url = "http://43.167.210.211/wecom-bot/message?ask=" + quote(f"分析{stock_name}", safe="")
+    return f"[{label}]({url})"
 
 
 def build_indicator_index(*indicator_files: Path) -> dict[str, dict[str, Any]]:
@@ -128,6 +157,47 @@ def latest_amount_context(history: dict[str, Any], candidate: dict[str, Any]) ->
         "当日涨跌幅": safe_float(candidate.get("涨跌幅")),
         "成交额来源": "候选清单降级字段",
         "最新日期": "",
+    }
+
+
+def latest_trade_context(history: dict[str, Any], candidate: dict[str, Any]) -> dict[str, Any]:
+    rows = history.get("K线", []) if isinstance(history.get("K线"), list) else []
+    valid_rows = [row for row in rows if isinstance(row, dict) and (safe_float(row.get("成交量")) > 0 or safe_float(row.get("成交额")) > 0)]
+    if valid_rows:
+        latest = valid_rows[-1]
+        last5 = valid_rows[-5:]
+        last20 = valid_rows[-20:]
+        valid_volume5 = [safe_float(row.get("成交量")) for row in last5 if safe_float(row.get("成交量")) > 0]
+        valid_amount5 = [safe_float(row.get("成交额")) for row in last5 if safe_float(row.get("成交额")) > 0]
+        valid_amount20 = [safe_float(row.get("成交额")) for row in last20 if safe_float(row.get("成交额")) > 0]
+        avg5_volume = sum(valid_volume5) / len(valid_volume5) if valid_volume5 else 0.0
+        avg5_amount = sum(valid_amount5) / len(valid_amount5) if valid_amount5 else 0.0
+        avg20_amount = sum(valid_amount20) / len(valid_amount20) if valid_amount20 else 0.0
+        return {
+            "当日成交量": safe_float(latest.get("成交量")),
+            "5日成交量均值": avg5_volume,
+            "放量达标量": avg5_volume * 1.2 if avg5_volume > 0 else 0.0,
+            "当日成交额": safe_float(latest.get("成交额")),
+            "5日成交额均值": avg5_amount,
+            "20日成交额均值": avg20_amount,
+            "成交额达标线": avg5_amount * 1.2 if avg5_amount > 0 else 0.0,
+            "当日涨跌幅": safe_float(latest.get("涨跌幅"), default=safe_float(candidate.get("涨跌幅"))),
+            "最新日期": latest.get("日期", ""),
+            "来源": "候选历史K线",
+        }
+    amount = safe_float(candidate.get("成交额"))
+    avg5_amount = safe_float(candidate.get("近5日日均成交额"))
+    return {
+        "当日成交量": safe_float(candidate.get("成交量")),
+        "5日成交量均值": safe_float(candidate.get("近5日日均成交量")),
+        "放量达标量": safe_float(candidate.get("近5日日均成交量")) * 1.2 if safe_float(candidate.get("近5日日均成交量")) > 0 else 0.0,
+        "当日成交额": amount,
+        "5日成交额均值": avg5_amount,
+        "20日成交额均值": safe_float(candidate.get("近20日日均成交额")),
+        "成交额达标线": avg5_amount * 1.2 if avg5_amount > 0 else 0.0,
+        "当日涨跌幅": safe_float(candidate.get("涨跌幅")),
+        "最新日期": "",
+        "来源": "候选清单降级字段",
     }
 
 
@@ -232,7 +302,7 @@ def derive_price_levels(candidate: dict[str, Any], indicator: dict[str, Any]) ->
     ma_values = [float(v) for v in ma.values() if isinstance(v, (int, float)) and v > 0]
     below = sorted([v for v in ma_values if v <= close], reverse=True)
     above = sorted([v for v in ma_values if v > close])
-    support = below[0] if below else (min(ma_values) if ma_values else close * 0.97)
+    support = below[0] if below else close * 0.985
     pressure = above[0] if above else close * 1.035
     stop = min(support * 0.97, close * 0.97)
     confirm = max(pressure, close * 1.02)
@@ -274,6 +344,7 @@ def build_evidence_summary(candidate: dict[str, Any], indicator: dict[str, Any],
 
 def build_stock_line(candidate: dict[str, Any], indicator: dict[str, Any], history: dict[str, Any], observation: dict[str, Any], risk_refresh_valid: bool) -> dict[str, Any]:
     levels = derive_price_levels(candidate, indicator)
+    trade_ctx = latest_trade_context(history, candidate)
     name = candidate.get("名称") or indicator.get("名称") or "未知股票"
     code = candidate.get("代码") or indicator.get("代码") or ""
     volume_ratio = indicator.get("量比5日")
@@ -294,17 +365,36 @@ def build_stock_line(candidate: dict[str, Any], indicator: dict[str, Any], histo
     else:
         core_logic = f"{name}进入短线观察池，主要依据是量价活跃度、关键均线位置和盘后轻扫描排序。"
     action = f"{name}收盘在{money(levels['现价'])}，{obs_text}，{volume_phrase}，{macd_phrase}。"
-    if risk_refresh_valid:
-        condition = f"明天若放量站稳{money(levels['转强确认位'])}上方，再列入短线高优先级；若开盘后始终压在{money(levels['承接位'])}下方，则不进入当日主盯列表。"
-        stop = f"跌破{money(levels['短线放弃线'])}则日内不再看。"
+    front_status = f"收盘价{money(levels['现价'])}，目前先按短线观察处理；明天重点看能否站上{money(levels['转强确认位'])}。"
+    if safe_float(trade_ctx.get("5日成交量均值")) > 0:
+        trade_standard = f"最近5日平均成交量{volume_text(trade_ctx.get('5日成交量均值'))}，放量达标线{volume_text(trade_ctx.get('放量达标量'))}。"
+        volume_condition = f"成交量达到{volume_text(trade_ctx.get('放量达标量'))}以上"
+    elif safe_float(trade_ctx.get("5日成交额均值")) > 0:
+        trade_standard = f"最近5日平均成交额{amount_text(trade_ctx.get('5日成交额均值'))}，成交活跃达标线{amount_text(trade_ctx.get('成交额达标线'))}。"
+        volume_condition = f"成交额达到{amount_text(trade_ctx.get('成交额达标线'))}以上"
     else:
-        condition = "观察线刷新未通过，不设具体触发价；只保留量价候选身份，等待观察线刷新后再给价位型条件。"
-        stop = "观察线刷新未通过，不生成具体止损价；该票先进入数据维护复核。"
+        trade_standard = "近5日成交量/成交额均值不足，本次只给价格观察线。"
+        volume_condition = "成交活跃度补齐后再确认"
+    if risk_refresh_valid:
+        condition_prefix = ""
+    else:
+        condition_prefix = "观察线未当日刷新，先用收盘价、均线和近5日成交数据降级给出可观察条件："
+    condition = f"{condition_prefix}明天若收盘价站稳{money(levels['转强确认位'])}以上，并且{volume_condition}，说明资金活跃度达标，可提高关注级别；如果价格只在{money(levels['承接位'])}附近反复，先维持普通观察。"
+    stop = f"风险线{money(levels['短线放弃线'])}；若收盘价跌破这条线，短线观察逻辑失效，先取消关注。"
     return {
         "代码": code,
         "名称": name,
         "核心逻辑": core_logic,
         "技术动作": action,
+        "前台状态": front_status,
+        "成交观察": {
+            "近5日平均成交量": round(safe_float(trade_ctx.get("5日成交量均值")), 2),
+            "放量达标量": round(safe_float(trade_ctx.get("放量达标量")), 2),
+            "近5日平均成交额": round(safe_float(trade_ctx.get("5日成交额均值")), 2),
+            "成交额达标线": round(safe_float(trade_ctx.get("成交额达标线")), 2),
+            "前台说明": trade_standard,
+            "来源": trade_ctx.get("来源", ""),
+        },
         "明天短线观察条件": condition,
         "短线止损参考价": stop,
         "证据摘要": evidence_summary,
@@ -381,21 +471,22 @@ def build_report(root: Path) -> dict[str, Any]:
     lines = [
         f"【收盘短线观察｜{data_date}】",
         "",
-        "杰哥，您好。今天收盘后，通过纯量价扫描，以下个股在技术面上出现了短线可观察的信号。",
+        "杰哥，您好。今天收盘后，系统筛出以下短线观察对象。点股票名称可打开单股详细分析报告。",
         "",
     ]
     if not risk_refresh_valid:
         lines.extend([
-            "观察线刷新未通过：本报告只展示量价候选，不生成具体触发价、承接位和止损价。",
+            "说明：观察线不是当日刷新，本次已自动降级用收盘价、均线和近5日成交数据计算观察条件；不再把计算题留给你。",
             "",
         ])
     for index, row in enumerate(rows, start=1):
         lines.extend([
-            f"{index}. {row['名称']}（{row['代码']}）",
+            f"{index}. {detail_link(row['名称'], row['代码'])}",
             f"- 核心逻辑：{row['核心逻辑']}",
-            f"- 技术动作：{row['技术动作']}",
+            f"- 当前状态：{row['前台状态']}",
+            f"- 成交标准：{row['成交观察']['前台说明']}",
             f"- 明天条件：{row['明天短线观察条件']}",
-            f"- 短线止损参考价：{row['短线止损参考价']}",
+            f"- 失效条件：{row['短线止损参考价']}",
             f"- 证据摘要：{row['证据摘要']}",
             "",
         ])
