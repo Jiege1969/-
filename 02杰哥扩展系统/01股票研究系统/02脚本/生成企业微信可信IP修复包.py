@@ -46,7 +46,12 @@ def extract_ip(text: str) -> str:
     return match.group(1) if match else ""
 
 
-def find_latest_send_error(log_dir: Path) -> tuple[Path, dict[str, Any], str]:
+def find_latest_sender_log(log_dir: Path) -> tuple[Path, dict[str, Any], str]:
+    latest = log_dir / "wework-controlled-sender-最新.json"
+    if latest.exists():
+        data = load_json(latest, required=True)
+        errmsg = str(data.get("发送结果", {}).get("企业微信返回", {}).get("errmsg", ""))
+        return latest, data, errmsg
     candidates = sorted(
         [p for p in log_dir.glob("wework-controlled-sender-*.json") if p.name != "wework-controlled-sender-最新.json"],
         key=lambda p: p.stat().st_mtime,
@@ -63,10 +68,7 @@ def find_latest_send_error(log_dir: Path) -> tuple[Path, dict[str, Any], str]:
         errmsg = str(data.get("发送结果", {}).get("企业微信返回", {}).get("errmsg", ""))
         if errmsg:
             return path, data, errmsg
-    latest = log_dir / "wework-controlled-sender-最新.json"
-    data = load_json(latest, required=True)
-    errmsg = str(data.get("发送结果", {}).get("企业微信返回", {}).get("errmsg", ""))
-    return latest, data, errmsg
+    return Path(), {}, ""
 
 
 def build_markdown(data: dict[str, Any]) -> str:
@@ -109,8 +111,15 @@ def build_markdown(data: dict[str, Any]) -> str:
 def main() -> int:
     root = module_root()
     common_log_dir = root.parents[0] / "00公共组件" / "04日志" / "企业微信受控发送器"
-    common_log, log_data, errmsg = find_latest_send_error(common_log_dir)
-    ip = extract_ip(errmsg)
+    common_log, log_data, errmsg = find_latest_sender_log(common_log_dir)
+    send_result = log_data.get("发送结果", {}).get("企业微信返回", {}) if isinstance(log_data, dict) else {}
+    fixed_public = log_data.get("固定公网出口", {}) if isinstance(log_data.get("固定公网出口"), dict) else {}
+    hit_60020 = send_result.get("errcode") == 60020
+    ip = (
+        extract_ip(errmsg)
+        if hit_60020
+        else str(fixed_public.get("实际出口IP") or fixed_public.get("公网IP") or FIXED_PUBLIC_EGRESS_IP)
+    )
     target_profile = log_data.get("目标应用档案") if isinstance(log_data.get("目标应用档案"), dict) else {}
     now = datetime.now()
     stamp = now.strftime("%Y%m%d_%H%M%S")
@@ -120,7 +129,7 @@ def main() -> int:
         "生成时间": now.strftime("%Y-%m-%d %H:%M:%S"),
         "生成工具": "生成企业微信可信IP修复包.py",
         "上游日志": str(common_log),
-        "是否命中60020": "60020" in errmsg,
+        "是否命中60020": hit_60020,
         "当前公网出口IP": ip or FIXED_PUBLIC_EGRESS_IP,
         "固定公网出口IP": FIXED_PUBLIC_EGRESS_IP,
         "目标应用档案": {

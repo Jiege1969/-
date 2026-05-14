@@ -1,13 +1,13 @@
-# 企业微信可信IP修复包 - 2026-05-14 09:35:18
+# 企业微信可信IP修复包 - 2026-05-14 18:06:01
 
 ## 一、当前结论
 
-- 是否命中60020：True
+- 是否命中60020：False
 - 当前公网出口IP：`43.167.210.211`
 - 目标应用档案：`n8n指令通行证`
 - 企业ID变量：`WECOM_CORP_ID`
 - 应用ID变量：`WECOM_AGENT_ID`
-- 企业微信返回：`not allow to access from your ip, hint: [1778722498617342990115469], from ip: 43.167.210.211, more info at https://open.work.weixin.qq.com/devtool/query?e=60020`
+- 企业微信返回：`ok`
 
 ## 二、修复动作
 
