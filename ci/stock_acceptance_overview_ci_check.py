@@ -58,6 +58,8 @@ ROOT = Path(__file__).resolve().parents[1]
 STOCK_ROOT = ROOT / "02杰哥扩展系统" / "01股票研究系统"
 FINAL_DELIVERY_MD = STOCK_ROOT / "03数据" / "158完全交付最终验收" / "股票系统完全交付最终验收_最新.md"
 WECOM_EXPERIENCE_MD = STOCK_ROOT / "03数据" / "289企业微信体验入口状态" / "股票企业微信体验入口状态_最新.md"
+TRUSTED_IP_STATUS_JSON = STOCK_ROOT / "03数据" / "155可信IP状态监测" / "股票系统可信IP状态监测_最新.json"
+WECOM_IP_ALLOW_STATUS_JSON = STOCK_ROOT / "03数据" / "85企业微信可信IP放行状态" / "企业微信可信IP放行状态_最新.json"
 
 
 def upstream_statuses(
@@ -117,6 +119,32 @@ def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8-sig", errors="replace")
 
 
+def read_json(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError:
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def extract_ipv4s(text: str) -> list[str]:
+    import re
+
+    return re.findall(r"\b(?:\d{1,3}\.){3}\d{1,3}\b", text or "")
+
+
+def extract_wecom_trusted_ip_context_ips(text: str) -> list[str]:
+    context_terms = ("需放行IP", "当前需放行IP", "from ip", "可信IP")
+    scoped_lines = [
+        line
+        for line in (text or "").splitlines()
+        if any(term in line for term in context_terms)
+    ]
+    return extract_ipv4s("\n".join(scoped_lines))
+
+
 def delivery_truthfulness_status(
     final_text: str | None = None,
     wecom_text: str | None = None,
@@ -136,6 +164,42 @@ def delivery_truthfulness_status(
         "active_push_blocked": active_push_blocked,
         "final_report": str(FINAL_DELIVERY_MD),
         "wecom_experience_report": str(WECOM_EXPERIENCE_MD),
+    }
+
+
+def wecom_ip_consistency_status(
+    final_text: str | None = None,
+    wecom_text: str | None = None,
+    trusted_status: dict[str, Any] | None = None,
+    allow_status: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    final = final_text if final_text is not None else read_text(FINAL_DELIVERY_MD)
+    wecom = wecom_text if wecom_text is not None else read_text(WECOM_EXPERIENCE_MD)
+    trusted = trusted_status if trusted_status is not None else read_json(TRUSTED_IP_STATUS_JSON)
+    allow = allow_status if allow_status is not None else read_json(WECOM_IP_ALLOW_STATUS_JSON)
+
+    sources = {
+        "final_delivery": extract_wecom_trusted_ip_context_ips(final),
+        "wecom_experience": extract_wecom_trusted_ip_context_ips(wecom),
+        "trusted_ip_status": extract_ipv4s(
+            str(trusted.get("当前需放行IP") or "")
+            + "\n"
+            + str(trusted.get("企业微信返回errmsg") or "")
+        ),
+        "wecom_ip_allow_status": extract_ipv4s(
+            str((allow.get("最近企业微信返回") or {}).get("识别到的公网IP") or "")
+            + "\n"
+            + str((allow.get("最近企业微信返回") or {}).get("errmsg摘要") or "")
+        ),
+    }
+    active_sources = {name: sorted(set(ips)) for name, ips in sources.items() if ips}
+    all_ips = sorted({ip for ips in active_sources.values() for ip in ips})
+    return {
+        "status": "fail" if len(all_ips) > 1 else "pass",
+        "ips": all_ips,
+        "sources": active_sources,
+        "trusted_ip_status_report": str(TRUSTED_IP_STATUS_JSON),
+        "wecom_ip_allow_status_report": str(WECOM_IP_ALLOW_STATUS_JSON),
     }
 
 
@@ -175,6 +239,8 @@ def validate_report(report: dict[str, Any]) -> list[str]:
         problems.append("final_delivery_claim_conflicts_with_wecom_ip_gate")
     if report.get("wecom_status_command", {}).get("status") != "pass":
         problems.append("wecom_status_command_not_covered_by_experience_acceptance")
+    if report.get("wecom_ip_consistency", {}).get("status") != "pass":
+        problems.append("wecom_trusted_ip_status_inconsistent")
     return problems
 
 
@@ -200,6 +266,7 @@ def build_acceptance_overview_report() -> dict[str, Any]:
         "state": state,
         "next_action": next_action_for_state(state),
         "delivery_truthfulness": delivery_truthfulness_status(),
+        "wecom_ip_consistency": wecom_ip_consistency_status(),
         "wecom_status_command": wecom_status_command_status(),
         "guardrails": GUARDRAILS,
     }
@@ -241,6 +308,11 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines.append(f"- `status`: `{truth['status']}`")
     lines.append(f"- `claims_complete`: `{str(truth['claims_complete']).lower()}`")
     lines.append(f"- `active_push_blocked`: `{str(truth['active_push_blocked']).lower()}`")
+
+    lines.extend(["", "## WeCom Trusted IP Consistency"])
+    ip_consistency = report["wecom_ip_consistency"]
+    lines.append(f"- `status`: `{ip_consistency['status']}`")
+    lines.append(f"- `ips`: `{', '.join(ip_consistency['ips']) or 'none'}`")
 
     lines.extend(["", "## WeCom Status Command"])
     status_command = report["wecom_status_command"]

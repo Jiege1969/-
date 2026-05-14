@@ -44,6 +44,7 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
         self.assertEqual(report["upstream_statuses"]["runtime_artifact_governance"], "pass")
         self.assertGreaterEqual(report["runtime_artifact_governance"]["live_runtime_status_count"], 1)
         self.assertEqual(report["delivery_truthfulness"]["status"], "pass")
+        self.assertEqual(report["wecom_ip_consistency"]["status"], "pass")
         self.assertEqual(report["wecom_status_command"]["status"], "pass")
 
     def test_delivery_truthfulness_rejects_complete_claim_when_wecom_ip_blocked(self):
@@ -71,6 +72,28 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
 
         self.assertEqual(result["status"], "pass")
 
+    def test_wecom_ip_consistency_rejects_mismatched_current_ips(self):
+        result = overview.wecom_ip_consistency_status(
+            final_text="当前需放行IP：183.227.145.167",
+            wecom_text="需放行IP：183.227.145.167",
+            trusted_status={"当前需放行IP": "183.227.144.47"},
+            allow_status={"最近企业微信返回": {"识别到的公网IP": "183.227.145.167"}},
+        )
+
+        self.assertEqual(result["status"], "fail")
+        self.assertEqual(result["ips"], ["183.227.144.47", "183.227.145.167"])
+
+    def test_wecom_ip_consistency_accepts_current_ip_across_reports(self):
+        result = overview.wecom_ip_consistency_status(
+            final_text="当前需放行IP：183.227.145.167",
+            wecom_text="图形报告：http://43.167.210.211/report.png\n需放行IP：183.227.145.167",
+            trusted_status={"当前需放行IP": "183.227.145.167"},
+            allow_status={"最近企业微信返回": {"识别到的公网IP": "183.227.145.167"}},
+        )
+
+        self.assertEqual(result["status"], "pass")
+        self.assertEqual(result["ips"], ["183.227.145.167"])
+
     def test_wecom_status_command_rejects_missing_status_help(self):
         result = overview.wecom_status_command_status("短线机器人本地stream回复可用")
 
@@ -94,6 +117,7 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
         self.assertIn("Upstream Statuses", markdown)
         self.assertIn("runtime_artifact_governance", markdown)
         self.assertIn("Risk Counts", markdown)
+        self.assertIn("WeCom Trusted IP Consistency", markdown)
         self.assertIn("WeCom Status Command", markdown)
 
 
