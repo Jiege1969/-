@@ -13,6 +13,7 @@
 
 from __future__ import annotations
 
+import csv
 import json
 import importlib.util
 import math
@@ -126,6 +127,7 @@ REPORT_CREDIBILITY_LATEST_PATH = ROOT / "03数据" / "170报告可信度面板" 
 EVIDENCE_OVERVIEW_LATEST_PATH = ROOT / "03数据" / "180证据核验总览面板" / "股票证据核验总览面板_最新.json"
 FINANCE_REVIEW_LATEST_PATH = ROOT / "03数据" / "149金融专项复核" / "股票金融专项复核_最新.json"
 FINANCE_REVIEW_INDEX_LATEST_PATH = ROOT / "03数据" / "149金融专项复核索引" / "股票金融专项复核索引_最新.json"
+MARKET_POSITION_LATEST_PATH = ROOT / "03数据" / "292中信概念板块成分映射" / "中信股票市场位置_最新.csv"
 MODEL_HEALTH_LATEST_PATH = ROOT / "03数据" / "148模型健康检查" / "股票系统模型健康检查_最新.md"
 FINAL_ACCEPTANCE_LATEST_PATH = ROOT / "03数据" / "158完全交付最终验收" / "股票系统完全交付最终验收_最新.md"
 RISK_OBSERVATION_PANEL_LATEST_PATH = ROOT / "03数据" / "184风险失效条件观察面板" / "股票风险失效条件观察面板_最新.json"
@@ -710,6 +712,48 @@ def normalize_full_code(code: str) -> str:
     if text.startswith(("4", "8")):
         return "bj" + text.zfill(6)
     return "sz" + text.zfill(6) if text.isdigit() else text
+
+
+_MARKET_POSITION_CACHE: dict[str, dict[str, str]] | None = None
+_MARKET_POSITION_CACHE_MTIME: float | None = None
+
+
+def load_market_position_map() -> dict[str, dict[str, str]]:
+    global _MARKET_POSITION_CACHE, _MARKET_POSITION_CACHE_MTIME
+    if not MARKET_POSITION_LATEST_PATH.exists():
+        return {}
+    mtime = MARKET_POSITION_LATEST_PATH.stat().st_mtime
+    if _MARKET_POSITION_CACHE is not None and _MARKET_POSITION_CACHE_MTIME == mtime:
+        return _MARKET_POSITION_CACHE
+    mapping: dict[str, dict[str, str]] = {}
+    with MARKET_POSITION_LATEST_PATH.open("r", encoding="utf-8-sig", newline="") as fh:
+        for row in csv.DictReader(fh):
+            code = normalize_full_code(row.get("股票代码") or "")
+            if code:
+                mapping[code] = {str(k): str(v or "") for k, v in row.items()}
+    _MARKET_POSITION_CACHE = mapping
+    _MARKET_POSITION_CACHE_MTIME = mtime
+    return mapping
+
+
+def find_market_position(stock: dict[str, Any]) -> dict[str, str]:
+    code = normalize_full_code(stock.get("代码") or stock.get("code") or "")
+    if not code:
+        return {}
+    return load_market_position_map().get(code, {})
+
+
+def compact_market_position_line(position: dict[str, str], limit: int = 110) -> str:
+    if not position:
+        return "市场位置：中信板块位置待刷新。"
+    summary = str(position.get("市场位置摘要") or "").strip()
+    if not summary:
+        industry = position.get("行业名称") or "行业待核验"
+        fine = position.get("细分行业名称") or ""
+        concepts = [item for item in str(position.get("概念板块") or "").split("、") if item][:5]
+        tags = f"；相关主题：{'、'.join(concepts)}" if concepts else ""
+        summary = f"行业位置：{industry}{('/' + fine) if fine and fine != industry else ''}{tags}。"
+    return summary if len(summary) <= limit else summary[: limit - 1] + "…"
 
 
 def find_company_snapshot(stock: dict[str, Any]) -> dict[str, Any]:
@@ -4309,6 +4353,8 @@ def build_frontend_stock_reply(
         or "-"
     )
     industry_state = find_industry_prosperity(industry)
+    market_position = find_market_position(stock)
+    market_position_line = compact_market_position_line(market_position)
     level = frontend_level(decision, industry_state, snapshot, holding_mode=holding_mode)
     calibration = find_jiege_recommend_calibration(stock) if "杰哥推荐" in str(decision.get("分层") or "") else None
     if calibration:
@@ -4338,6 +4384,12 @@ def build_frontend_stock_reply(
         )
         if l3_short_reply.get("状态") == "完成":
             short_answer = str(l3_short_reply.get("短答") or "")
+            if market_position and "市场位置" not in short_answer:
+                market_line = f"当前市场位置：{market_position_line}"
+                if "\n说明：" in short_answer:
+                    short_answer = short_answer.replace("\n说明：", f"\n{market_line}\n说明：", 1)
+                else:
+                    short_answer = f"{short_answer.rstrip()}\n{market_line}"
             if quote_notice and quote_notice not in short_answer:
                 short_answer = f"{short_answer.rstrip()}\n\n{quote_notice}"
             return short_answer
@@ -4358,6 +4410,7 @@ def build_frontend_stock_reply(
             f"研究等级：{research_level}。",
             f"当前状态：{current_status}。",
             f"强度：{strength}",
+            market_position_line,
             "",
             f"核心答案：{risk_summary}",
             "",
@@ -4384,6 +4437,7 @@ def build_frontend_stock_reply(
         f"当前状态：{current_status}。",
         f"强度：{strength}",
         f"现价：{watch_rules['现价']}",
+        market_position_line,
         "",
         front_block("操作策略", action_text),
         "",
@@ -4558,6 +4612,8 @@ def build_wecom_stock_report(
     industry_display_line = f"{display_industry} / {display_sub_industry}" if display_sub_industry else display_industry
     industry_state_subject = f"{display_industry}行业景气状态" if not is_unknown_text(industry) else "行业景气状态"
     industry_state = find_industry_prosperity(industry)
+    market_position = find_market_position(stock)
+    market_position_line = compact_market_position_line(market_position, limit=160)
     signal = decision.get("研究信号", {})
     checklist = build_operation_checklist(row, indicator)
     volume_ratio = format_volume_ratio(current_volume_ratio(quote, indicator))
@@ -4705,6 +4761,7 @@ def build_wecom_stock_report(
     }.get(volume_state, "成交量状态待确认。")
     evidence_lines = [
         f"- 行业：{industry_display_line}；景气：{industry_mobile_line}。",
+        f"- 当前市场位置：{market_position_line}",
         f"- 财报：{finance_mobile_line}",
         f"- 证据缺口：{evidence_gap}。",
     ]
@@ -4720,6 +4777,7 @@ def build_wecom_stock_report(
     evidence_lines.insert(0, quote_line)
     if is_unknown_text(industry):
         evidence_lines[1] = "- 行业：仍待核验，暂不把行业结论作为强支撑。"
+        evidence_lines[2] = f"- 当前市场位置：{market_position_line}"
     evidence_header_lines = report_evidence_header_lines(
         stock=stock,
         row=row,
