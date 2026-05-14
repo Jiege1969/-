@@ -108,6 +108,16 @@ STAGE_MARKERS = {
     ],
 }
 
+EXPLICIT_STAGE_RULES = [
+    (("股票企业微信桥接入口.py",), ["pre_push_gate", "safe_boundary"]),
+    (("验证股票企业微信体验入口状态.py",), ["pre_push_gate", "safe_boundary"]),
+    (("验证股票推荐点击详情与手机排版.py",), ["quality_evidence", "pre_push_gate"]),
+    (("03数据/289企业微信体验入口状态/",), ["pre_push_gate", "safe_boundary"]),
+    (("03数据/196推荐点击详情与手机排版验收/",), ["quality_evidence", "pre_push_gate"]),
+    (("同步系统股票池到中信自选板块.py",), ["sample_pool", "review_loop", "safe_boundary"]),
+    (("03数据/295中信自选板块正式同步/",), ["sample_pool", "review_loop", "safe_boundary"]),
+]
+
 HIGH_RISK_MARKERS = [
     "\u771f\u5b9e",
     "n8n",
@@ -207,6 +217,10 @@ def impacted_stages(path: str) -> list[str]:
         return [stage["name"] for stage in contract.CONTRACT_STAGES]
     if normalized.endswith("\u751f\u6210\u80a1\u7968\u6837\u672c\u623f\u672c\u5730\u9a8c\u6536\u9762\u677f.py"):
         return ["sample_pool", "quality_evidence", "safe_boundary"]
+
+    for markers, stages in EXPLICIT_STAGE_RULES:
+        if any(marker in relative for marker in markers):
+            return stages
 
     stages = [
         stage

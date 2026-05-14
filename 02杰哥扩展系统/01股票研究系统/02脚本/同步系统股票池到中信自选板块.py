@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 名称：同步系统股票池到中信自选板块.py
-作用：把股票分析系统的结果型股票池写入中信证券已经创建好的自选板块，便于在中信软件中直接观察。
-边界：只写中信软件已认可的同名/拼音自选板块 .blk 文件；先备份；不后台新建板块；不触碰交易、委托、账户、券商接口。
+作用：把股票分析系统的结果型股票池写入中信证券自选板块，便于在中信软件中直接观察。
+边界：只维护结果型自选板块和股票列表；先备份；不触碰交易、委托、账户、券商接口。
 """
 
 from __future__ import annotations
@@ -37,12 +37,27 @@ OLD_MANAGED_BOARDS = [
 ]
 REMOVED_EMPTY_BOARDS = ["临时"]
 INVALID_AUTO_NAMES = {"殚"}
+PRESERVED_MANUAL_BOARD_NAMES = ["杰哥的临时选股"]
 BOARD_FILE_CANDIDATES = {
     "杰哥的学习分析股票池": ["JGDXXFXGPC.blk"],
     "杰哥的重点分析股票池": ["JGDZDFXGPC.blk"],
     "杰哥短线池": ["JGDXC.blk"],
 }
-STALE_GENERATED_BOARD_FILES = ["杰哥的学习分析股票池.blk", "杰哥的重点分析股票池.blk"]
+TARGET_BOARD_NAMES = list(BOARD_FILE_CANDIDATES)
+STALE_VISIBLE_BOARD_NAMES = [
+    "杰哥的重",
+    "杰哥的学",
+    "杰哥的重点分析股票",
+    "分析股票池",
+    *OLD_MANAGED_BOARDS,
+    *REMOVED_EMPTY_BOARDS,
+]
+STALE_GENERATED_BOARD_FILES = [
+    "分析股票池.blk",
+    "临时.blk",
+    "杰哥的学习分析股票池.blk",
+    "杰哥的重点分析股票池.blk",
+]
 
 
 def module_root() -> Path:
@@ -182,7 +197,10 @@ def read_shortline_report_codes(path: Path) -> list[str]:
 def read_cfg_names() -> list[str]:
     if not CFG_FILE.exists():
         return []
-    raw = CFG_FILE.read_bytes()
+    try:
+        raw = CFG_FILE.read_bytes()
+    except OSError:
+        return []
     names: list[str] = []
     for start in range(0, len(raw), CFG_RECORD_BYTES):
         chunk = raw[start : start + CFG_RECORD_BYTES]
@@ -203,6 +221,56 @@ def read_clr_names() -> list[str]:
         if name and name not in INVALID_AUTO_NAMES:
             names.append(name)
     return names
+
+
+def is_stale_visible_name(name: str) -> bool:
+    return name in {*STALE_VISIBLE_BOARD_NAMES, *INVALID_AUTO_NAMES}
+
+
+def cfg_record(name: str) -> bytes:
+    raw = name.encode(GBK)
+    if len(raw) > CFG_RECORD_BYTES - 1:
+        raise ValueError(f"中信板块名称过长：{name}")
+    return raw + b"\x00" * (CFG_RECORD_BYTES - len(raw))
+
+
+def effective_cfg_names(existing_names: list[str]) -> list[str]:
+    names: list[str] = []
+    for name in PRESERVED_MANUAL_BOARD_NAMES:
+        if name not in names:
+            names.append(name)
+    for name in existing_names:
+        if name and not is_stale_visible_name(name) and name not in names:
+            names.append(name)
+    for name in TARGET_BOARD_NAMES:
+        if resolve_existing_board_file(name).exists() and name not in names:
+            names.append(name)
+    return names
+
+
+def rewrite_cfg_index(existing_names: list[str]) -> dict[str, Any]:
+    target_names = effective_cfg_names(existing_names)
+    result: dict[str, Any] = {
+        "状态": "未执行",
+        "清理前板块": existing_names,
+        "清理后板块": target_names,
+        "移除板块": [name for name in existing_names if is_stale_visible_name(name)],
+        "错误": "",
+    }
+    if not CFG_FILE.exists():
+        result["状态"] = "索引不存在"
+        return result
+    if existing_names == target_names:
+        result["状态"] = "无需清理"
+        return result
+    try:
+        CFG_FILE.write_bytes(b"".join(cfg_record(name) for name in target_names))
+    except OSError as exc:
+        result["状态"] = "待关闭中信软件后清理"
+        result["错误"] = str(exc)
+        return result
+    result["状态"] = "已清理"
+    return result
 
 
 def write_blk(path: Path, codes: list[str]) -> None:
@@ -234,15 +302,21 @@ def is_citic_running() -> bool:
     return PROCESS_NAME.lower() in (completed.stdout or "").lower()
 
 
-def backup_existing(paths: list[Path], backup_dir: Path) -> list[str]:
+def backup_existing(paths: list[Path], backup_dir: Path) -> tuple[list[str], list[str]]:
     backup_dir.mkdir(parents=True, exist_ok=True)
     copied: list[str] = []
-    for path in paths:
+    failed: list[str] = []
+    unique_paths = list(dict.fromkeys(paths))
+    for path in unique_paths:
         if path.exists():
             target = backup_dir / path.name
-            shutil.copy2(path, target)
+            try:
+                shutil.copy2(path, target)
+            except OSError as exc:
+                failed.append(f"{path}: {exc}")
+                continue
             copied.append(str(target))
-    return copied
+    return copied, failed
 
 
 def build_boards() -> list[dict[str, Any]]:
@@ -285,7 +359,9 @@ def build_markdown(report: dict[str, Any]) -> str:
         f"- 状态：{report['状态']}",
         f"- 中信目录：`{report['中信板块目录']}`",
         f"- 备份目录：`{report['备份目录']}`",
-        f"- 保留原有板块：{', '.join(report['同步前原有板块']) if report['同步前原有板块'] else '无'}",
+        f"- 当前有效板块：{', '.join(report['同步后板块']) if report['同步后板块'] else '无'}",
+        f"- 索引清理：{report['索引清理']['状态']}",
+        f"- 已移除旧板块文件：{len(report['已移除旧板块文件'])} 个",
         "",
         "## 已同步板块",
         "",
@@ -312,10 +388,10 @@ def build_markdown(report: dict[str, Any]) -> str:
             "- 重点分析股票池不是固定规模池，数量由系统方法和市场条件共同决定。",
             "- 不调用券商交易接口。",
             "- 不读取账户，不委托，不自动交易。",
-            "- 每次同步前备份将要覆盖的 `.blk` 文件。",
-            "- 自选板块必须先由中信软件创建；系统只负责向已存在板块填入股票。",
-            "- 当前中信已创建文件：`JGDXXFXGPC.blk`、`JGDZDFXGPC.blk`。",
-            "- 短线池由中信软件创建为 `JGDXC.blk`；系统只同步收盘短线观察结果。",
+            "- 每次同步前备份将要覆盖或清理的中信自选文件。",
+            "- 中信前台保留四个板块：杰哥的临时选股、学习分析股票池、重点分析股票池、短线池。",
+            "- 系统只覆盖后三个结果型股票池，不覆盖你手工维护的临时选股。",
+            "- 中信板块文件约定：`JGDXXFXGPC.blk`、`JGDZDFXGPC.blk`、`JGDXC.blk`。",
         ]
     )
     return "\n".join(lines) + "\n"
@@ -331,14 +407,14 @@ def main() -> int:
         raise FileNotFoundError(f"中信自选板块目录不存在：{CITIC_BLOCK_DIR}")
 
     boards = build_boards()
-    existing_names = list(dict.fromkeys([*read_clr_names(), *read_cfg_names()]))
+    existing_names = read_cfg_names()
     old_managed_paths = [
-        *[CITIC_BLOCK_DIR / f"{name}.blk" for name in [*OLD_MANAGED_BOARDS, *REMOVED_EMPTY_BOARDS]],
+        *[CITIC_BLOCK_DIR / f"{name}.blk" for name in STALE_VISIBLE_BOARD_NAMES],
         *[CITIC_BLOCK_DIR / filename for filename in STALE_GENERATED_BOARD_FILES],
     ]
     planned_paths = [resolve_existing_board_file(board["名称"]) for board in boards]
-    backup_files = [*old_managed_paths, *planned_paths]
-    backed_up = backup_existing(backup_files, backup_dir)
+    backup_files = [CFG_FILE, CLR_FILE, *old_managed_paths, *planned_paths]
+    backed_up, backup_failed = backup_existing(backup_files, backup_dir)
     citic_running = is_citic_running()
 
     board_reports: list[dict[str, Any]] = []
@@ -365,12 +441,18 @@ def main() -> int:
         )
 
     removed_old_files: list[str] = []
+    remove_failed: list[str] = []
     for path in old_managed_paths:
         if path.exists():
-            path.unlink()
+            try:
+                path.unlink()
+            except OSError as exc:
+                remove_failed.append(f"{path}: {exc}")
+                continue
             removed_old_files.append(str(path))
 
-    final_names = [name for name in existing_names if name not in [*OLD_MANAGED_BOARDS, *REMOVED_EMPTY_BOARDS, *INVALID_AUTO_NAMES]]
+    cfg_cleanup = rewrite_cfg_index(existing_names)
+    final_names = cfg_cleanup["清理后板块"]
 
     report: dict[str, Any] = {
         "名称": "中信自选板块正式同步",
@@ -378,12 +460,16 @@ def main() -> int:
         "状态": "完成",
         "中信板块目录": str(CITIC_BLOCK_DIR),
         "中信软件当前是否运行": citic_running,
-        "可见性提示": "中信软件已运行；本次只写入已存在板块的股票列表，若界面未刷新可切换板块或重进自选股。" if citic_running else "中信软件未运行；下次启动会读取已存在板块的最新股票列表。",
+        "可见性提示": "中信软件已运行；本次已写入股票列表并尝试收口索引，若界面未刷新可切换板块或重进自选股。" if citic_running else "中信软件未运行；下次启动会读取结果型股票池。",
         "备份目录": str(backup_dir),
         "已备份文件": backed_up,
-        "已移除旧内部过程板块文件": removed_old_files,
+        "备份失败": backup_failed,
+        "已移除旧板块文件": removed_old_files,
+        "移除失败": remove_failed,
+        "索引清理": cfg_cleanup,
         "已从前台隐藏的内部过程板块": OLD_MANAGED_BOARDS,
-        "已删除空板块": REMOVED_EMPTY_BOARDS,
+        "已删除旧重复板块": [name for name in existing_names if is_stale_visible_name(name)],
+        "保留手工板块": PRESERVED_MANUAL_BOARD_NAMES,
         "同步前原有板块": existing_names,
         "同步后板块": final_names,
         "同步板块": board_reports,

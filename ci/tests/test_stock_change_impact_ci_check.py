@@ -39,6 +39,24 @@ class StockChangeImpactCiCheckTests(unittest.TestCase):
         self.assertEqual(report["ci_gate_status"], "pass")
         self.assertIn("unmapped_stock_change:", report["review_items"][0])
 
+    def test_wecom_bridge_is_mapped_to_frontend_gate(self):
+        path = impact.STOCK_PREFIXES[0] + "02脚本/股票企业微信桥接入口.py"
+
+        stages = impact.impacted_stages(path)
+
+        self.assertIn("pre_push_gate", stages)
+        self.assertIn("safe_boundary", stages)
+        self.assertNotIn("unmapped_stock", stages)
+
+    def test_citic_sync_is_mapped_to_sample_and_review_loop(self):
+        path = impact.STOCK_PREFIXES[0] + "02脚本/同步系统股票池到中信自选板块.py"
+
+        stages = impact.impacted_stages(path)
+
+        self.assertIn("sample_pool", stages)
+        self.assertIn("review_loop", stages)
+        self.assertIn("safe_boundary", stages)
+
     def test_build_change_impact_report_passes_for_current_head(self):
         report = impact.build_change_impact_report()
 

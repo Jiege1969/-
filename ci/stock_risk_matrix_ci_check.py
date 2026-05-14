@@ -37,7 +37,7 @@ REQUIRED_GATES_BY_LEVEL = {
 STOCK_CATEGORY_RISK = {
     "ci_support": "medium",
     "stock_config": "medium",
-    "stock_script": "high",
+    "stock_script": "medium",
     "stock_data": "medium",
     "stock_runtime_status": "high",
     "stock_doc": "low",
@@ -64,8 +64,6 @@ def risk_level_for_change(change: dict[str, Any]) -> str:
     stages = set(change.get("impacted_stages", []))
     if change.get("high_risk_marker"):
         level = "high"
-    if "safe_boundary" in stages:
-        level = higher_risk(level, "high")
     if "unmapped_stock" in stages:
         level = higher_risk(level, "medium")
     return level

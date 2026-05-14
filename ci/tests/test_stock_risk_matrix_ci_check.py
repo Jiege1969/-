@@ -22,6 +22,15 @@ class StockRiskMatrixCiCheckTests(unittest.TestCase):
 
         self.assertIn("sample_pool", risk.required_gates_for_change(change))
 
+    def test_offline_stock_script_without_high_risk_marker_is_medium(self):
+        change = {
+            "category": "stock_script",
+            "impacted_stages": ["sample_pool", "safe_boundary"],
+            "high_risk_marker": False,
+        }
+
+        self.assertEqual(risk.risk_level_for_change(change), "medium")
+
     def test_gate_statuses_include_focused_lanes(self):
         impact_report = {
             "ci_gate_status": "pass",
