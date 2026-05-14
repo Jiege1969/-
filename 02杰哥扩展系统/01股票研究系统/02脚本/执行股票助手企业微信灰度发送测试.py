@@ -44,10 +44,11 @@ def call_stock_assistant(message: str) -> dict[str, Any]:
     return json.loads(body)
 
 
-def run_sender(content: str, real_send: bool) -> dict[str, Any]:
+def run_sender(content: str, real_send: bool, egress_mode: str) -> dict[str, Any]:
     args = [sys.executable, str(COMMON_SENDER), "--content", content]
     if real_send:
         args.append("--real-send")
+        args.extend(["--egress-mode", egress_mode])
     completed = subprocess.run(args, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=60)
     return {"返回码": completed.returncode, "stdout": completed.stdout.strip(), "stderr": completed.stderr.strip()}
 
@@ -56,13 +57,14 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--message", default="分析新易盛")
     parser.add_argument("--real-send", action="store_true")
+    parser.add_argument("--egress-mode", default="fixed-public", choices=["local", "fixed-public"])
     args = parser.parse_args()
     stock_result = call_stock_assistant(args.message)
     reply = str(stock_result.get("回复") or stock_result.get("结果", {}).get("回复") or "").strip()
     if not reply:
         reply = json.dumps(stock_result, ensure_ascii=False)[:2000]
     content = f"【杰哥股票研究助手灰度】\n{reply}"
-    sender = run_sender(content, args.real_send)
+    sender = run_sender(content, args.real_send, args.egress_mode)
     result = {
         "生成时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "输入消息": args.message,
@@ -70,6 +72,7 @@ def main() -> int:
         "股票助手状态": stock_result.get("状态"),
         "回复长度": len(reply),
         "发送器结果": sender,
+        "发送出口模式": args.egress_mode if args.real_send else "dry-run",
         "实际动作": {
             "调用股票助手": True,
             "尝试发送企业微信": args.real_send,

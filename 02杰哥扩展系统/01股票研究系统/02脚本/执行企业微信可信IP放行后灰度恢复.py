@@ -44,8 +44,8 @@ def main() -> int:
     parser.add_argument("--message", default="分析新易盛")
     args = parser.parse_args()
     ip_status = run([sys.executable, str(IP_REPORT)], timeout=60)
-    token_probe = run([sys.executable, str(SENDER), "--content", "股票系统可信IP放行后token探测，不真实发送。", "--probe-token"], timeout=120)
-    gray_args = [sys.executable, str(GRAY_SEND), "--message", args.message]
+    token_probe = run([sys.executable, str(SENDER), "--content", "股票系统可信IP放行后token探测，不真实发送。", "--probe-token", "--egress-mode", "fixed-public"], timeout=120)
+    gray_args = [sys.executable, str(GRAY_SEND), "--message", args.message, "--egress-mode", "fixed-public"]
     if args.real_send:
         gray_args.append("--real-send")
     gray_result = run(gray_args, timeout=120)

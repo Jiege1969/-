@@ -289,7 +289,7 @@ def build_quality_flags(
         flags.append({"等级": "观察", "事项": "企业微信使用反馈日志尚未生成；可用后需要从体验中继续回收问题"})
     elif not feedback_summary.get("反馈数量"):
         flags.append({"等级": "观察", "事项": "企业微信使用反馈日志存在但暂无反馈记录"})
-    real_ok = bool((delivery.get("层级验收") or {}).get("D真实灰度可用", {}).get("是否通过"))
+    real_ok = bool(trusted_ip_summary.get("企业微信真实发送已通过")) or bool((delivery.get("层级验收") or {}).get("D真实灰度可用", {}).get("是否通过"))
     if not real_ok:
         flags.append({"等级": "阻断", "事项": "企业微信真实主动推送未通过，等待可信IP白名单"})
     return flags
@@ -508,6 +508,9 @@ def main() -> int:
     quality_light = judge_quality_light(l5_summary, ai_summary, flags, rules)
     blocking_count = sum(1 for item in flags if item["等级"] == "阻断")
     warning_count = sum(1 for item in flags if item["等级"] == "注意")
+    delivery_level = (control.get("当前状态") or {}).get("交付层级") or delivery.get("当前交付层级") or "未知"
+    if trusted_ip_summary.get("企业微信真实发送已通过") and "真实主动消息尚未成功" in delivery_level:
+        delivery_level = delivery_level.replace("真实主动消息尚未成功", "真实主动消息已通过")
     if quality_light["灯号"] == "红灯":
         quality_conclusion = "质量红灯，需要先排查本地闭环"
     elif quality_light["灯号"] == "黄灯":
@@ -520,10 +523,10 @@ def main() -> int:
         "版本": "2026-05-01",
         "生成时间": now.strftime("%Y-%m-%d %H:%M:%S"),
         "生成工具": "生成股票系统质量观察面板.py",
-        "当前交付层级": (control.get("当前状态") or {}).get("交付层级") or delivery.get("当前交付层级") or "未知",
+        "当前交付层级": delivery_level,
         "质量结论": quality_conclusion,
         "质量灯号": quality_light,
-        "当前公网IP": extract_ip(ip_text),
+        "当前公网IP": trusted_ip_summary.get("当前需放行IP") or extract_ip(ip_text),
         "L5摘要": l5_summary,
         "AI摘要": ai_summary,
         "金融专项复核摘要": finance_summary,

@@ -94,7 +94,7 @@ def extract_ip(text: str) -> str:
     return match.group(1) if match else ""
 
 
-def latest_controlled_sender_block(root: Path) -> dict[str, Any]:
+def latest_controlled_sender_status(root: Path) -> dict[str, Any]:
     log_dir = root.parents[0] / "00公共组件" / "04日志" / "企业微信受控发送器"
     if not log_dir.exists():
         return {}
@@ -103,19 +103,29 @@ def latest_controlled_sender_block(root: Path) -> dict[str, Any]:
         key=lambda p: p.stat().st_mtime,
         reverse=True,
     )
-    for path in candidates:
-        data = load_json(path, {})
-        wecom_return = data.get("发送结果", {}).get("企业微信返回", {}) if isinstance(data, dict) else {}
-        errmsg = str(wecom_return.get("errmsg") or "")
-        if wecom_return.get("errcode") == 60020:
-            return {
-                "路径": str(path),
-                "生成时间": data.get("生成时间", ""),
-                "errcode": 60020,
-                "errmsg": errmsg,
-                "公网IP": extract_ip(errmsg),
-            }
-    return {}
+    latest_alias = log_dir / "wework-controlled-sender-最新.json"
+    path = latest_alias if latest_alias.exists() else (candidates[0] if candidates else None)
+    if path is None:
+        return {}
+    data = load_json(path, {})
+    if not isinstance(data, dict):
+        return {}
+    wecom_return = data.get("发送结果", {}).get("企业微信返回", {})
+    errmsg = str(wecom_return.get("errmsg") or "")
+    fixed_public = data.get("固定公网出口", {}) if isinstance(data.get("固定公网出口"), dict) else {}
+    errcode = wecom_return.get("errcode")
+    return {
+        "路径": str(path),
+        "生成时间": data.get("生成时间", ""),
+        "发送出口模式": data.get("发送出口模式", ""),
+        "固定公网出口IP": fixed_public.get("公网IP") or "",
+        "实际出口IP": fixed_public.get("实际出口IP") or "",
+        "发送企业微信成功": bool((data.get("实际动作") or {}).get("发送企业微信成功")),
+        "errcode": errcode,
+        "errmsg": errmsg,
+        "是否命中60020": errcode == 60020,
+        "拦截公网IP": extract_ip(errmsg) if errcode == 60020 else "",
+    }
 
 
 def build_markdown(report: dict[str, Any]) -> str:
@@ -131,6 +141,8 @@ def build_markdown(report: dict[str, Any]) -> str:
         f"- 最新真实发送复测时间：{report.get('最新真实发送复测生成时间') or '无'}",
         f"- 是否命中60020：{report['是否命中60020']}",
         f"- 历史修复包是否命中60020：{report.get('历史修复包是否命中60020')}",
+        f"- 最新受控发送出口：{report.get('最新受控发送状态', {}).get('发送出口模式') or '无'}",
+        f"- 最新受控发送实际出口IP：`{report.get('最新受控发送状态', {}).get('实际出口IP') or '无'}`",
         f"- 交付层级：{report['当前交付层级']}",
         "",
         "## 二、下一步",
@@ -203,11 +215,19 @@ def main() -> int:
     console = load_json(console_path, {})
     retest = load_json(retest_json_path, {})
     layers = self_check.get("层级验收") or {}
-    latest_block = latest_controlled_sender_block(root)
-    latest_sender_blocked = bool(latest_block)
-    real_retest_ok = bool(retest.get("真实发送成功")) and not latest_sender_blocked
+    latest_sender = latest_controlled_sender_status(root)
+    latest_sender_blocked = bool(latest_sender.get("是否命中60020"))
+    latest_sender_ok = bool(latest_sender.get("发送企业微信成功"))
+    real_retest_ok = (bool(retest.get("真实发送成功")) or latest_sender_ok) and not latest_sender_blocked
     real_ok = (real_retest_ok or bool(layers.get("D真实灰度可用", {}).get("是否通过"))) and not latest_sender_blocked
-    current_ip = str(latest_block.get("公网IP") or retest.get("当前需放行IP") or fix.get("当前公网出口IP") or FIXED_PUBLIC_EGRESS_IP)
+    current_ip = str(
+        latest_sender.get("拦截公网IP")
+        or latest_sender.get("实际出口IP")
+        or latest_sender.get("固定公网出口IP")
+        or retest.get("当前需放行IP")
+        or fix.get("当前公网出口IP")
+        or FIXED_PUBLIC_EGRESS_IP
+    )
     historical_hit_60020 = bool(fix.get("是否命中60020"))
     hit_60020 = latest_sender_blocked or (historical_hit_60020 and not real_retest_ok)
 
@@ -238,6 +258,10 @@ def main() -> int:
             "确认最新企业微信返回后，再决定是否需要加入可信IP。",
         ]
 
+    delivery_level = (console.get("当前状态") or {}).get("交付层级") or self_check.get("当前交付层级") or ""
+    if real_ok and "真实主动消息尚未成功" in delivery_level:
+        delivery_level = delivery_level.replace("真实主动消息尚未成功", "真实主动消息已通过")
+
     report = {
         "名称": "股票系统可信IP状态监测",
         "版本": "2026-05-01",
@@ -251,9 +275,10 @@ def main() -> int:
         "企业微信真实发送已通过": real_ok,
         "最新真实发送复测已通过": real_retest_ok,
         "最新真实发送复测生成时间": retest.get("生成时间", ""),
-        "当前交付层级": (console.get("当前状态") or {}).get("交付层级") or self_check.get("当前交付层级") or "",
+        "当前交付层级": delivery_level,
         "企业微信返回errmsg": fix.get("企业微信返回errmsg") or "",
-        "最新受控发送可信IP拦截": latest_block,
+        "最新受控发送状态": latest_sender,
+        "最新受控发送可信IP拦截": latest_sender if latest_sender_blocked else {},
         "复测入口": str(root / "05入口工具" / "股票系统企微真实推送复测_确认可信IP后真实发送.bat"),
         "可信IP修复包刷新动作": refresh_fix,
         "下一步动作": next_actions,
