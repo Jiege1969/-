@@ -2,7 +2,7 @@
 """
 名称：同步系统股票池到中信自选板块.py
 作用：把股票分析系统的结果型股票池写入中信证券自选板块目录，便于在中信软件中直接观察。
-边界：只写 T0002/blocknew 下的自选板块文件和 blocknew.cfg；先备份；不触碰交易、委托、账户、券商接口。
+边界：只写 T0002/blocknew 下的自选板块文件和自选板块登记文件；先备份；不触碰交易、委托、账户、券商接口。
 """
 
 from __future__ import annotations
@@ -20,6 +20,10 @@ from typing import Any
 CITIC_BLOCK_DIR = Path(r"F:\股票工具\中信证券\T0002\blocknew")
 CFG_FILE = CITIC_BLOCK_DIR / "blocknew.cfg"
 CFG_RECORD_BYTES = 40
+CLR_FILE = CITIC_BLOCK_DIR / "blocknew.clr"
+CLR_RECORD_BYTES = 100
+CLR_NAME_BYTES = 50
+CLR_SLOT_COUNT = 16
 GBK = "gbk"
 CODE_RE = re.compile(r"\b(?:sh|sz|bj)?(?:60|68|90|00|30|20|43|83|87|92)\d{4}\b", re.IGNORECASE)
 PROCESS_NAME = "TdxW.exe"
@@ -33,6 +37,7 @@ OLD_MANAGED_BOARDS = [
     "杰哥L5市场位置增强池",
 ]
 REMOVED_EMPTY_BOARDS = ["临时"]
+INVALID_AUTO_NAMES = {"殚"}
 
 
 def module_root() -> Path:
@@ -162,7 +167,20 @@ def read_cfg_names() -> list[str]:
     for start in range(0, len(raw), CFG_RECORD_BYTES):
         chunk = raw[start : start + CFG_RECORD_BYTES]
         name = chunk.decode(GBK, errors="ignore").strip("\x00").strip()
-        if name:
+        if name and name not in INVALID_AUTO_NAMES:
+            names.append(name)
+    return names
+
+
+def read_clr_names() -> list[str]:
+    if not CLR_FILE.exists():
+        return []
+    raw = CLR_FILE.read_bytes()
+    names: list[str] = []
+    for start in range(0, len(raw), CLR_RECORD_BYTES):
+        chunk = raw[start : start + CLR_NAME_BYTES]
+        name = chunk.split(b"\x00", 1)[0].decode(GBK, errors="ignore").strip()
+        if name and name not in INVALID_AUTO_NAMES:
             names.append(name)
     return names
 
@@ -175,8 +193,36 @@ def encode_cfg_name(name: str) -> bytes:
 
 
 def write_cfg_names(names: list[str]) -> None:
-    unique_names = list(dict.fromkeys([name for name in names if name.strip()]))
+    unique_names = list(dict.fromkeys([name for name in names if name.strip() and name not in INVALID_AUTO_NAMES]))
     CFG_FILE.write_bytes(b"".join(encode_cfg_name(name) for name in unique_names))
+
+
+def encode_clr_name(name: str) -> bytes:
+    raw = name.encode(GBK, errors="ignore")
+    if len(raw) > CLR_NAME_BYTES:
+        raise ValueError(f"板块名称超过 {CLR_NAME_BYTES} 字节：{name}")
+    return raw + b"\x00" * (CLR_NAME_BYTES - len(raw))
+
+
+def write_clr_names(names: list[str]) -> None:
+    unique_names = list(dict.fromkeys([name for name in names if name.strip() and name not in INVALID_AUTO_NAMES]))
+    if len(unique_names) > CLR_SLOT_COUNT:
+        raise ValueError(f"中信自选板块登记槽位不足：{len(unique_names)} > {CLR_SLOT_COUNT}")
+
+    if CLR_FILE.exists() and CLR_FILE.stat().st_size >= CLR_RECORD_BYTES:
+        raw = bytearray(CLR_FILE.read_bytes())
+    else:
+        raw = bytearray(CLR_RECORD_BYTES * CLR_SLOT_COUNT)
+    required_len = CLR_RECORD_BYTES * CLR_SLOT_COUNT
+    if len(raw) < required_len:
+        raw.extend(b"\x00" * (required_len - len(raw)))
+
+    for index in range(CLR_SLOT_COUNT):
+        start = index * CLR_RECORD_BYTES
+        raw[start : start + CLR_NAME_BYTES] = b"\x00" * CLR_NAME_BYTES
+        if index < len(unique_names):
+            raw[start : start + CLR_NAME_BYTES] = encode_clr_name(unique_names[index])
+    CLR_FILE.write_bytes(bytes(raw[:required_len]))
 
 
 def write_blk(path: Path, codes: list[str]) -> None:
@@ -266,7 +312,7 @@ def build_markdown(report: dict[str, Any]) -> str:
             "- 重点分析股票池不是固定规模池，数量由系统方法和市场条件共同决定。",
             "- 不调用券商交易接口。",
             "- 不读取账户，不委托，不自动交易。",
-            "- 每次同步前备份 `blocknew.cfg` 和将要覆盖的同名 `.blk` 文件。",
+            "- 每次同步前备份自选板块登记文件和将要覆盖的同名 `.blk` 文件。",
             "- 如果中信软件已经打开，新板块通常要完全退出并重新打开后才会出现在界面。",
         ]
     )
@@ -283,10 +329,10 @@ def main() -> int:
         raise FileNotFoundError(f"中信自选板块目录不存在：{CITIC_BLOCK_DIR}")
 
     boards = build_boards()
-    existing_names = read_cfg_names()
+    existing_names = list(dict.fromkeys([*read_clr_names(), *read_cfg_names()]))
     old_managed_paths = [CITIC_BLOCK_DIR / f"{name}.blk" for name in [*OLD_MANAGED_BOARDS, *REMOVED_EMPTY_BOARDS]]
     planned_paths = [CITIC_BLOCK_DIR / board["文件"] for board in boards]
-    backup_files = [CFG_FILE, *old_managed_paths, *planned_paths]
+    backup_files = [CFG_FILE, CLR_FILE, *old_managed_paths, *planned_paths]
     backed_up = backup_existing(backup_files, backup_dir)
     citic_running = is_citic_running()
 
@@ -317,9 +363,10 @@ def main() -> int:
             path.unlink()
             removed_old_files.append(str(path))
 
-    preserved_names = [name for name in existing_names if name not in [*OLD_MANAGED_BOARDS, *REMOVED_EMPTY_BOARDS]]
+    preserved_names = [name for name in existing_names if name not in [*OLD_MANAGED_BOARDS, *REMOVED_EMPTY_BOARDS, *INVALID_AUTO_NAMES]]
     final_names = list(dict.fromkeys([*preserved_names, *[board["名称"] for board in boards]]))
     write_cfg_names(final_names)
+    write_clr_names(final_names)
 
     report: dict[str, Any] = {
         "名称": "中信自选板块正式同步",
