@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from pathlib import Path
 from typing import Any
 
 try:
@@ -52,6 +53,11 @@ GUARDRAILS = [
     "no_real_send_or_n8n_or_webhook",
     "no_auto_trade_or_broker_interface",
 ]
+
+ROOT = Path(__file__).resolve().parents[1]
+STOCK_ROOT = ROOT / "02杰哥扩展系统" / "01股票研究系统"
+FINAL_DELIVERY_MD = STOCK_ROOT / "03数据" / "158完全交付最终验收" / "股票系统完全交付最终验收_最新.md"
+WECOM_EXPERIENCE_MD = STOCK_ROOT / "03数据" / "289企业微信体验入口状态" / "股票企业微信体验入口状态_最新.md"
 
 
 def upstream_statuses(
@@ -105,6 +111,34 @@ def advice_modes(advice_report: dict[str, Any]) -> list[str]:
     return sorted({card.get("mode", "unknown") for card in advice_report.get("advice_cards", [])})
 
 
+def read_text(path: Path) -> str:
+    if not path.exists():
+        return ""
+    return path.read_text(encoding="utf-8-sig", errors="replace")
+
+
+def delivery_truthfulness_status(
+    final_text: str | None = None,
+    wecom_text: str | None = None,
+) -> dict[str, Any]:
+    final = final_text if final_text is not None else read_text(FINAL_DELIVERY_MD)
+    wecom = wecom_text if wecom_text is not None else read_text(WECOM_EXPERIENCE_MD)
+    claims_complete = "结论：完全交付通过" in final or "完全交付通过：股票分析系统已可完整使用" in final
+    active_push_blocked = (
+        "最新受控发送被可信IP拦截" in final
+        or "主动推送受可信IP限制" in wecom
+        or "主动推送可信IP受限" in wecom
+    )
+    status = "fail" if claims_complete and active_push_blocked else "pass"
+    return {
+        "status": status,
+        "claims_complete": claims_complete,
+        "active_push_blocked": active_push_blocked,
+        "final_report": str(FINAL_DELIVERY_MD),
+        "wecom_experience_report": str(WECOM_EXPERIENCE_MD),
+    }
+
+
 def validate_report(report: dict[str, Any]) -> list[str]:
     problems: list[str] = []
     if report["score"] < 0 or report["score"] > 100:
@@ -122,6 +156,8 @@ def validate_report(report: dict[str, Any]) -> list[str]:
     for guardrail in GUARDRAILS:
         if guardrail not in report.get("guardrails", []):
             problems.append(f"missing_guardrail:{guardrail}")
+    if report.get("delivery_truthfulness", {}).get("status") != "pass":
+        problems.append("final_delivery_claim_conflicts_with_wecom_ip_gate")
     return problems
 
 
@@ -146,6 +182,7 @@ def build_acceptance_overview_report() -> dict[str, Any]:
         "score": score,
         "state": state,
         "next_action": next_action_for_state(state),
+        "delivery_truthfulness": delivery_truthfulness_status(),
         "guardrails": GUARDRAILS,
     }
     problems = validate_report(report)
@@ -180,6 +217,12 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines.extend(["", "## Guardrails"])
     for guardrail in report["guardrails"]:
         lines.append(f"- `{guardrail}`")
+
+    lines.extend(["", "## Delivery Truthfulness"])
+    truth = report["delivery_truthfulness"]
+    lines.append(f"- `status`: `{truth['status']}`")
+    lines.append(f"- `claims_complete`: `{str(truth['claims_complete']).lower()}`")
+    lines.append(f"- `active_push_blocked`: `{str(truth['active_push_blocked']).lower()}`")
 
     if report["blocking_problems"]:
         lines.extend(["", "## Blocking Problems"])

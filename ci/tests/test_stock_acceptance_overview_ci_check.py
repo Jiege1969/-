@@ -43,6 +43,25 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
         self.assertTrue(report["advice_modes"])
         self.assertEqual(report["upstream_statuses"]["runtime_artifact_governance"], "pass")
         self.assertGreaterEqual(report["runtime_artifact_governance"]["live_runtime_status_count"], 1)
+        self.assertEqual(report["delivery_truthfulness"]["status"], "pass")
+
+    def test_delivery_truthfulness_rejects_complete_claim_when_wecom_ip_blocked(self):
+        result = overview.delivery_truthfulness_status(
+            final_text="结论：完全交付通过\n企业微信真实主动推送通过 | 未通过 | 最新受控发送被可信IP拦截",
+            wecom_text="主动推送受可信IP限制",
+        )
+
+        self.assertEqual(result["status"], "fail")
+        self.assertTrue(result["claims_complete"])
+        self.assertTrue(result["active_push_blocked"])
+
+    def test_delivery_truthfulness_allows_incomplete_claim_when_wecom_ip_blocked(self):
+        result = overview.delivery_truthfulness_status(
+            final_text="结论：未完全交付：仍有外部或本地验收项未通过",
+            wecom_text="主动推送受可信IP限制",
+        )
+
+        self.assertEqual(result["status"], "pass")
 
     def test_validate_report_rejects_continue_with_high_risk(self):
         report = overview.build_acceptance_overview_report()
