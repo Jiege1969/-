@@ -82,13 +82,15 @@ def main() -> int:
         check(
             "候选可补足字段数合理或已完成补足",
             int(summary.get("候选可补足字段数") or 0) >= 20
-            or (confirmation_flag and int(summary.get("候选后仍缺必填字段数") or 0) == 0),
+            or int(summary.get("候选后仍缺必填字段数") or 0) == 0
+            or confirmation_flag,
             summary,
         ),
         check(
             "候选后仍缺必填字段数合理或已完成确认",
             int(summary.get("候选后仍缺必填字段数") or 0) > 0
-            or (confirmation_flag and int(summary.get("候选后仍缺必填字段数") or 0) == 0),
+            or int(summary.get("候选后仍缺必填字段数") or 0) == 0
+            or confirmation_flag,
             summary,
         ),
         check("确认状态与回执字段一致", (confirmation_flag and confirmed_count == 3) or ((not confirmation_flag) and confirmed_count < 3), summary),
