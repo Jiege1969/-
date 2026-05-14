@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 名称：同步系统股票池到中信自选板块.py
-作用：把股票分析系统的核心股票池写入中信证券自选板块目录，便于在中信软件中直接观察。
+作用：把股票分析系统的结果型股票池写入中信证券自选板块目录，便于在中信软件中直接观察。
 边界：只写 T0002/blocknew 下的自选板块文件和 blocknew.cfg；先备份；不触碰交易、委托、账户、券商接口。
 """
 
@@ -11,6 +11,7 @@ import csv
 import json
 import re
 import shutil
+import subprocess
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -21,6 +22,16 @@ CFG_FILE = CITIC_BLOCK_DIR / "blocknew.cfg"
 CFG_RECORD_BYTES = 40
 GBK = "gbk"
 CODE_RE = re.compile(r"\b(?:sh|sz|bj)?(?:60|68|90|00|30|20|43|83|87|92)\d{4}\b", re.IGNORECASE)
+PROCESS_NAME = "TdxW.exe"
+OLD_MANAGED_BOARDS = [
+    "杰哥L8X综合候选池",
+    "杰哥L7可观察过滤池",
+    "杰哥L6行业主题观察池",
+    "杰哥L5深度研究池",
+    "杰哥人工确认观察池",
+    "杰哥L6市场位置增强池",
+    "杰哥L5市场位置增强池",
+]
 
 
 def module_root() -> Path:
@@ -29,6 +40,10 @@ def module_root() -> Path:
 
 def data_root() -> Path:
     return module_root() / "03数据"
+
+
+def config_root() -> Path:
+    return module_root() / "01配置"
 
 
 def normalize_code(raw: str) -> str | None:
@@ -86,6 +101,58 @@ def read_csv_codes(path: Path, column: str = "股票代码") -> list[str]:
     return sorted(dict.fromkeys(codes))
 
 
+def walk_values(value: Any) -> list[str]:
+    values: list[str] = []
+    if isinstance(value, dict):
+        for key, item in value.items():
+            if isinstance(key, str):
+                values.append(key)
+            values.extend(walk_values(item))
+    elif isinstance(value, list):
+        for item in value:
+            values.extend(walk_values(item))
+    elif isinstance(value, str):
+        values.append(value)
+    elif isinstance(value, (int, float)):
+        text = str(value)
+        if len(text) == 6:
+            values.append(text)
+    return values
+
+
+def read_json_codes(path: Path) -> list[str]:
+    if not path.exists():
+        return []
+    data = json.loads(path.read_text(encoding="utf-8"))
+    codes: list[str] = []
+
+    def collect_structured(value: Any) -> None:
+        if isinstance(value, dict):
+            for key in ("代码", "股票代码", "证券代码"):
+                if key in value:
+                    code = normalize_code(str(value[key]))
+                    blk_code = citic_blk_code(code) if code else None
+                    if blk_code:
+                        codes.append(blk_code)
+            for item in value.values():
+                collect_structured(item)
+        elif isinstance(value, list):
+            for item in value:
+                collect_structured(item)
+
+    collect_structured(data)
+    if codes:
+        return sorted(dict.fromkeys(codes))
+
+    for value in walk_values(data):
+        for match in CODE_RE.finditer(str(value)):
+            code = normalize_code(match.group(0))
+            blk_code = citic_blk_code(code) if code else None
+            if blk_code:
+                codes.append(blk_code)
+    return sorted(dict.fromkeys(codes))
+
+
 def read_cfg_names() -> list[str]:
     if not CFG_FILE.exists():
         return []
@@ -116,6 +183,18 @@ def write_blk(path: Path, codes: list[str]) -> None:
     path.write_bytes(content.encode("ascii"))
 
 
+def is_citic_running() -> bool:
+    completed = subprocess.run(
+        ["tasklist", "/FI", f"IMAGENAME eq {PROCESS_NAME}", "/NH"],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        check=False,
+    )
+    return PROCESS_NAME.lower() in (completed.stdout or "").lower()
+
+
 def backup_existing(paths: list[Path], backup_dir: Path) -> list[str]:
     backup_dir.mkdir(parents=True, exist_ok=True)
     copied: list[str] = []
@@ -128,16 +207,25 @@ def backup_existing(paths: list[Path], backup_dir: Path) -> list[str]:
 
 
 def build_boards() -> list[dict[str, Any]]:
-    shadow_dir = data_root() / "289中信自选板块影子同步" / "shadow_blocknew"
-    enhanced_dir = data_root() / "293中信市场位置增强样本池"
+    learning_pool = data_root() / "01股票池" / "2500只样本股票池_最新.json"
+    if not learning_pool.exists():
+        learning_pool = data_root() / "01股票池" / "2000只样本股票池_最新.json"
+    focus_pool = config_root() / "重点关注股票池.json"
     return [
-        {"名称": "杰哥L8X综合候选池", "文件": "杰哥L8X综合候选池.blk", "来源": shadow_dir / "JG_L8X.blk", "类型": "shadow"},
-        {"名称": "杰哥L7可观察过滤池", "文件": "杰哥L7可观察过滤池.blk", "来源": shadow_dir / "JG_L7.blk", "类型": "shadow"},
-        {"名称": "杰哥L6行业主题观察池", "文件": "杰哥L6行业主题观察池.blk", "来源": shadow_dir / "JG_L6.blk", "类型": "shadow"},
-        {"名称": "杰哥L5深度研究池", "文件": "杰哥L5深度研究池.blk", "来源": shadow_dir / "JG_L5.blk", "类型": "shadow"},
-        {"名称": "杰哥人工确认观察池", "文件": "杰哥人工确认观察池.blk", "来源": shadow_dir / "JG_MANUAL.blk", "类型": "shadow"},
-        {"名称": "杰哥L6市场位置增强池", "文件": "杰哥L6市场位置增强池.blk", "来源": enhanced_dir / "L6市场位置增强排序_最新.csv", "类型": "csv"},
-        {"名称": "杰哥L5市场位置增强池", "文件": "杰哥L5市场位置增强池.blk", "来源": enhanced_dir / "L5市场位置增强排序_最新.csv", "类型": "csv"},
+        {
+            "名称": "杰哥的学习分析股票池",
+            "文件": "杰哥的学习分析股票池.blk",
+            "来源": learning_pool,
+            "类型": "json",
+            "定位": "大样本承载、长期学习、方法验证、减少系统重复基础计算压力。",
+        },
+        {
+            "名称": "杰哥的重点分析股票池",
+            "文件": "杰哥的重点分析股票池.blk",
+            "来源": focus_pool,
+            "类型": "json",
+            "定位": "当前重点跟踪、重点报告、重点复盘；数量随系统分析结果动态变化，按条件入池，按失效条件退出，不按固定数量凑数。",
+        },
     ]
 
 
@@ -163,6 +251,7 @@ def build_markdown(report: dict[str, Any]) -> str:
                 f"- 文件：`{item['文件']}`",
                 f"- 来源：`{item['来源']}`",
                 f"- 股票数：{item['股票数']}",
+                f"- 定位：{item['定位']}",
                 f"- 前20只：{', '.join(item['代码样例']) if item['代码样例'] else '无'}",
                 "",
             ]
@@ -172,9 +261,12 @@ def build_markdown(report: dict[str, Any]) -> str:
             "## 边界",
             "",
             "- 只同步自选板块，方便观察和复盘。",
+            "- 中信前台只放结果型股票池，不暴露 L5-L8 内部分析过程。",
+            "- 重点分析股票池不是固定规模池，数量由系统方法和市场条件共同决定。",
             "- 不调用券商交易接口。",
             "- 不读取账户，不委托，不自动交易。",
             "- 每次同步前备份 `blocknew.cfg` 和将要覆盖的同名 `.blk` 文件。",
+            "- 如果中信软件已经打开，新板块通常要完全退出并重新打开后才会出现在界面。",
         ]
     )
     return "\n".join(lines) + "\n"
@@ -191,16 +283,20 @@ def main() -> int:
 
     boards = build_boards()
     existing_names = read_cfg_names()
+    old_managed_paths = [CITIC_BLOCK_DIR / f"{name}.blk" for name in OLD_MANAGED_BOARDS]
     planned_paths = [CITIC_BLOCK_DIR / board["文件"] for board in boards]
-    backup_files = [CFG_FILE, *planned_paths]
+    backup_files = [CFG_FILE, *old_managed_paths, *planned_paths]
     backed_up = backup_existing(backup_files, backup_dir)
+    citic_running = is_citic_running()
 
     board_reports: list[dict[str, Any]] = []
     for board in boards:
         if board["类型"] == "shadow":
             codes = read_shadow_blk(board["来源"])
-        else:
+        elif board["类型"] == "csv":
             codes = read_csv_codes(board["来源"])
+        else:
+            codes = read_json_codes(board["来源"])
         target = CITIC_BLOCK_DIR / board["文件"]
         write_blk(target, codes)
         board_reports.append(
@@ -209,11 +305,19 @@ def main() -> int:
                 "文件": str(target),
                 "来源": str(board["来源"]),
                 "股票数": len(codes),
+                "定位": board["定位"],
                 "代码样例": codes[:20],
             }
         )
 
-    final_names = list(dict.fromkeys([*existing_names, *[board["名称"] for board in boards]]))
+    removed_old_files: list[str] = []
+    for path in old_managed_paths:
+        if path.exists():
+            path.unlink()
+            removed_old_files.append(str(path))
+
+    preserved_names = [name for name in existing_names if name not in OLD_MANAGED_BOARDS]
+    final_names = list(dict.fromkeys([*preserved_names, *[board["名称"] for board in boards]]))
     write_cfg_names(final_names)
 
     report: dict[str, Any] = {
@@ -221,13 +325,18 @@ def main() -> int:
         "生成时间": now.strftime("%Y-%m-%d %H:%M:%S"),
         "状态": "完成",
         "中信板块目录": str(CITIC_BLOCK_DIR),
+        "中信软件当前是否运行": citic_running,
+        "可见性提示": "中信软件已运行，需完全退出并重新打开后才能稳定看到最新自选板块。" if citic_running else "中信软件未运行，下次启动会读取最新自选板块。",
         "备份目录": str(backup_dir),
         "已备份文件": backed_up,
+        "已移除旧内部过程板块文件": removed_old_files,
+        "已从前台隐藏的内部过程板块": OLD_MANAGED_BOARDS,
         "同步前原有板块": existing_names,
         "同步后板块": final_names,
         "同步板块": board_reports,
         "安全边界": {
             "只写自选板块": True,
+            "中信前台只放结果型股票池": True,
             "不触碰交易接口": True,
             "不读取账户": True,
             "不自动交易": True,
@@ -238,7 +347,13 @@ def main() -> int:
         encoding="utf-8",
     )
     (out_dir / "中信自选板块正式同步_最新.md").write_text(build_markdown(report), encoding="utf-8")
-    print(json.dumps({"状态": report["状态"], "同步板块数": len(board_reports), "备份目录": str(backup_dir)}, ensure_ascii=False))
+    print(json.dumps({
+        "状态": report["状态"],
+        "同步板块数": len(board_reports),
+        "中信软件当前是否运行": citic_running,
+        "同步后板块": final_names,
+        "备份目录": str(backup_dir),
+    }, ensure_ascii=False))
     return 0
 
 
