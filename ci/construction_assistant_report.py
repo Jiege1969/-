@@ -101,6 +101,11 @@ STOCK_GATE_PATHS = [
         "path": "ci/stock_mainline_ci_check.py",
     },
     {
+        "name": "stock_citic_pool_contract_ci_checker",
+        "role": "CircleCI stock-system CITIC board contract for four visible pools and three system-managed pools",
+        "path": "ci/stock_citic_pool_contract_ci_check.py",
+    },
+    {
         "name": "stock_maturity_ci_checker",
         "role": "CircleCI maturity audit for workflow closure and overlap",
         "path": "ci/stock_maturity_ci_check.py",

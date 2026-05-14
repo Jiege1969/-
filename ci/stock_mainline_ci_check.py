@@ -32,6 +32,7 @@ DELIVERY_GATE_SYNC_SCRIPT = (
     / "02脚本"
     / "刷新股票系统交付状态扎口.py"
 )
+CITIC_POOL_CONTRACT_SCRIPT = ROOT / "ci" / "stock_citic_pool_contract_ci_check.py"
 
 
 def main() -> int:
@@ -59,6 +60,12 @@ def main() -> int:
         print(f"FAIL: missing delivery gate sync checker: {DELIVERY_GATE_SYNC_SCRIPT}", file=sys.stderr)
         return 1
     result = subprocess.run([sys.executable, str(DELIVERY_GATE_SYNC_SCRIPT), "--check"], cwd=str(ROOT), check=False)
+    if result.returncode != 0:
+        return int(result.returncode)
+    if not CITIC_POOL_CONTRACT_SCRIPT.exists():
+        print(f"FAIL: missing CITIC pool contract checker: {CITIC_POOL_CONTRACT_SCRIPT}", file=sys.stderr)
+        return 1
+    result = subprocess.run([sys.executable, str(CITIC_POOL_CONTRACT_SCRIPT)], cwd=str(ROOT), check=False)
     return int(result.returncode)
 
 
