@@ -1,12 +1,12 @@
 {
-  "生成时间": "2026-05-14 08:55:16",
+  "生成时间": "2026-05-14 09:33:36",
   "状态": "需放行可信IP",
   "扫描日志数量": 50,
-  "阻断来源日志": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\04日志\\企业微信受控发送器\\wework-controlled-sender-20260514-081118-065677.json",
+  "阻断来源日志": "D:\\杰哥智能化系统\\02杰哥扩展系统\\00公共组件\\04日志\\企业微信受控发送器\\wework-controlled-sender-20260514-092955-123833.json",
   "最近企业微信返回": {
     "errcode": 60020,
-    "errmsg摘要": "not allow to access from your ip, hint: [1778717476598871132516840], from ip: 183.227.145.167, more info at https://open.work.weixin.qq.com/devtool/query?e=60020",
-    "识别到的公网IP": "183.227.145.167"
+    "errmsg摘要": "not allow to access from your ip, hint: [1778722193601432281574809], from ip: 43.167.210.211, more info at https://open.work.weixin.qq.com/devtool/query?e=60020",
+    "识别到的公网IP": "43.167.210.211"
   },
   "当前判断": "应用消息通道需要在企业微信后台可信IP中放行该公网IP；response_url路线不依赖此应用消息可信IP。",
   "恢复动作": [

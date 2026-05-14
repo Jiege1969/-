@@ -17,6 +17,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+FIXED_PUBLIC_EGRESS_IP = "43.167.210.211"
 
 def module_root() -> Path:
     return Path(__file__).resolve().parents[1]
@@ -83,7 +84,7 @@ def build_markdown(data: dict[str, Any]) -> str:
         "",
         "## 二、修复动作",
         "",
-        "在企业微信管理后台进入上面的目标自建应用，把公网出口IP加入该应用的可信IP白名单。",
+        f"在企业微信管理后台进入上面的目标自建应用，把固定公网出口IP `{FIXED_PUBLIC_EGRESS_IP}` 加入该应用的可信IP白名单。",
         "",
         "完成后重新执行：",
         "",
@@ -120,7 +121,8 @@ def main() -> int:
         "生成工具": "生成企业微信可信IP修复包.py",
         "上游日志": str(common_log),
         "是否命中60020": "60020" in errmsg,
-        "当前公网出口IP": ip,
+        "当前公网出口IP": ip or FIXED_PUBLIC_EGRESS_IP,
+        "固定公网出口IP": FIXED_PUBLIC_EGRESS_IP,
         "目标应用档案": {
             "名称": target_profile.get("名称", ""),
             "状态": target_profile.get("状态", ""),
@@ -130,7 +132,7 @@ def main() -> int:
             "说明": target_profile.get("说明", ""),
         },
         "企业微信返回errmsg": errmsg,
-        "修复建议": "将当前公网出口IP加入企业微信对应自建应用可信IP白名单后，再重新执行真实灰度发送。",
+        "修复建议": f"将固定公网出口IP {FIXED_PUBLIC_EGRESS_IP} 加入企业微信对应自建应用可信IP白名单后，再重新执行真实灰度发送。",
         "安全边界": {
             "是否自动修改企业微信后台": False,
             "是否调用企业微信API": False,
@@ -142,6 +144,7 @@ def main() -> int:
         "实际动作": {
             "读取公共发送器日志": True,
             "提取公网出口IP": bool(ip),
+            "使用固定公网出口": True,
             "写入03数据": True,
             "调用企业微信API": False,
             "发送企业微信": False,

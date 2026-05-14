@@ -20,6 +20,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+FIXED_PUBLIC_EGRESS_IP = "43.167.210.211"
 
 def module_root() -> Path:
     return Path(__file__).resolve().parents[1]
@@ -188,7 +189,7 @@ def main() -> int:
     actions: list[dict[str, Any]] = []
 
     actions.append(run_script(root, "生成股票系统可信IP状态监测.py", timeout=120))
-    send_args = ["--real-send"] if args.real_send else []
+    send_args = ["--real-send", "--fixed-public-egress"] if args.real_send else []
     actions.append(run_script(root, "执行股票主动研究企微灰度发送.py", send_args, timeout=180))
     actions.append(run_script(root, "生成企业微信可信IP修复包.py", timeout=120))
     actions.append(run_script(root, "生成股票系统可信IP状态监测.py", timeout=120))
@@ -217,14 +218,14 @@ def main() -> int:
     elif args.real_send:
         conclusion = "真实推送复测未成功：优先检查可信IP是否已放行"
         next_actions = [
-            f"确认企业微信后台已加入当前IP：{fix.get('当前公网出口IP') or trusted.get('当前需放行IP') or '未提取'}。",
-            "若企业微信仍返回60020，重新生成可信IP状态监测并更新后台白名单。",
+            f"确认企业微信后台已加入固定公网出口IP：{FIXED_PUBLIC_EGRESS_IP}。",
+            "若企业微信仍返回60020，只围绕这个固定公网出口复核，不再追着本地宽带IP变化。",
             "不要排查券商接口、n8n自动触发或交易模块；它们仍保持关闭。",
         ]
     else:
         conclusion = "预检完成：未真实发送，等待可信IP放行后执行真实复测"
         next_actions = [
-            f"在企业微信后台加入当前IP：{fix.get('当前公网出口IP') or trusted.get('当前需放行IP') or '未提取'}。",
+            f"在企业微信后台加入固定公网出口IP：{FIXED_PUBLIC_EGRESS_IP}。",
             "加入后运行05入口工具中的“股票系统企微真实推送复测_确认可信IP后真实发送”。",
             "真实复测完成后打开05入口工具中的“股票系统完全交付最终验收_打开”。",
             "预检模式不会发送企业微信消息。",
@@ -237,7 +238,8 @@ def main() -> int:
         "生成工具": "股票系统企微真实推送复测控制器.py",
         "模式": "real-send" if args.real_send else "precheck-only",
         "复测结论": conclusion,
-        "当前需放行IP": fix.get("当前公网出口IP") or trusted.get("当前需放行IP") or "",
+        "当前需放行IP": FIXED_PUBLIC_EGRESS_IP if args.real_send else (fix.get("当前公网出口IP") or trusted.get("当前需放行IP") or FIXED_PUBLIC_EGRESS_IP),
+        "固定公网出口IP": FIXED_PUBLIC_EGRESS_IP,
         "真实发送成功": real_success,
         "动作": actions,
         "下一步动作": next_actions,
@@ -255,6 +257,7 @@ def main() -> int:
         "实际动作": {
             "企业微信真实发送": bool(args.real_send),
             "企业微信真实发送成功": real_success,
+            "使用固定公网出口": bool(args.real_send),
             "启用n8n自动触发": False,
             "调用券商接口": False,
             "自动交易": False,
@@ -293,6 +296,12 @@ def main() -> int:
     report["动作"] = actions
     report["最终交付总包刷新"] = "完全交付最终验收执行后再次刷新交付总包，确保总包引用最新最终验收状态。"
     report["关键文件"]["交付总包"] = file_state(root / "03数据" / "144交付总包" / "股票系统交付总包_最新.md")
+
+    final_trusted_status = run_script(root, "生成股票系统可信IP状态监测.py", timeout=120)
+    actions.append(final_trusted_status)
+    report["动作"] = actions
+    report["可信IP状态监测最终刷新"] = "复测报告写入后再次刷新可信IP状态，避免状态面板引用上一轮复测时间。"
+    report["关键文件"]["可信IP状态监测"] = file_state(root / "03数据" / "155可信IP状态监测" / "股票系统可信IP状态监测_最新.md")
 
     markdown = build_markdown(report)
     write_json(output_json, report)

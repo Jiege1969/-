@@ -46,6 +46,7 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
         self.assertEqual(report["delivery_truthfulness"]["status"], "pass")
         self.assertEqual(report["wecom_ip_consistency"]["status"], "pass")
         self.assertEqual(report["wecom_status_command"]["status"], "pass")
+        self.assertEqual(report["wecom_fixed_public_egress"]["status"], "pass")
 
     def test_delivery_truthfulness_rejects_complete_claim_when_wecom_ip_blocked(self):
         result = overview.delivery_truthfulness_status(
@@ -100,6 +101,28 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
         self.assertEqual(result["status"], "fail")
         self.assertIn("状态帮助短答可用", result["missing_terms"])
 
+    def test_wecom_fixed_public_egress_contract_requires_stock_real_send_fixed_mode(self):
+        result = overview.wecom_fixed_public_egress_contract_status(
+            sender_text="--fixed-public-egress\nsend_message_via_fixed_public_egress",
+            stock_gray_text="fixed_public_egress = bool(args.real_send and not args.local_egress)",
+            retest_text='send_args = ["--real-send", "--fixed-public-egress"]',
+            send_config={"固定公网出口": {"公网IP": "43.167.210.211", "SSH主机": "43.167.210.211"}},
+        )
+
+        self.assertEqual(result["status"], "pass")
+
+    def test_wecom_fixed_public_egress_contract_rejects_local_only_real_send(self):
+        result = overview.wecom_fixed_public_egress_contract_status(
+            sender_text="local sender only",
+            stock_gray_text='send_args = ["--real-send"]',
+            retest_text='send_args = ["--real-send"]',
+            send_config={"固定公网出口": {"公网IP": "183.227.145.167", "SSH主机": "183.227.145.167"}},
+        )
+
+        self.assertEqual(result["status"], "fail")
+        self.assertIn("common_sender_supports_fixed_mode", result["missing"])
+        self.assertIn("stock_real_send_defaults_to_fixed_mode", result["missing"])
+
     def test_validate_report_rejects_continue_with_high_risk(self):
         report = overview.build_acceptance_overview_report()
         report["state"] = "continue"
@@ -119,6 +142,7 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
         self.assertIn("Risk Counts", markdown)
         self.assertIn("WeCom Trusted IP Consistency", markdown)
         self.assertIn("WeCom Status Command", markdown)
+        self.assertIn("WeCom Fixed Public Egress", markdown)
 
 
 if __name__ == "__main__":

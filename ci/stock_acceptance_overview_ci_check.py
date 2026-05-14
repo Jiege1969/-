@@ -60,6 +60,11 @@ FINAL_DELIVERY_MD = STOCK_ROOT / "03数据" / "158完全交付最终验收" / "�
 WECOM_EXPERIENCE_MD = STOCK_ROOT / "03数据" / "289企业微信体验入口状态" / "股票企业微信体验入口状态_最新.md"
 TRUSTED_IP_STATUS_JSON = STOCK_ROOT / "03数据" / "155可信IP状态监测" / "股票系统可信IP状态监测_最新.json"
 WECOM_IP_ALLOW_STATUS_JSON = STOCK_ROOT / "03数据" / "85企业微信可信IP放行状态" / "企业微信可信IP放行状态_最新.json"
+COMMON_SENDER_PY = ROOT / "02杰哥扩展系统" / "00公共组件" / "02脚本" / "企业微信受控发送器.py"
+STOCK_GRAY_SEND_PY = STOCK_ROOT / "02脚本" / "执行股票主动研究企微灰度发送.py"
+STOCK_RETEST_CONTROLLER_PY = STOCK_ROOT / "02脚本" / "股票系统企微真实推送复测控制器.py"
+WECOM_CONTROLLED_SEND_CONFIG_JSON = ROOT / "02杰哥扩展系统" / "00公共组件" / "01配置" / "企业微信受控发送配置.json"
+FIXED_PUBLIC_EGRESS_IP = "43.167.210.211"
 
 
 def upstream_statuses(
@@ -218,6 +223,37 @@ def wecom_status_command_status(wecom_text: str | None = None) -> dict[str, Any]
     }
 
 
+def wecom_fixed_public_egress_contract_status(
+    sender_text: str | None = None,
+    stock_gray_text: str | None = None,
+    retest_text: str | None = None,
+    send_config: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    sender = sender_text if sender_text is not None else read_text(COMMON_SENDER_PY)
+    stock_gray = stock_gray_text if stock_gray_text is not None else read_text(STOCK_GRAY_SEND_PY)
+    retest = retest_text if retest_text is not None else read_text(STOCK_RETEST_CONTROLLER_PY)
+    config = send_config if send_config is not None else read_json(WECOM_CONTROLLED_SEND_CONFIG_JSON)
+    fixed_config = config.get("固定公网出口", {}) if isinstance(config, dict) else {}
+    checks = {
+        "config_has_fixed_ip": fixed_config.get("公网IP") == FIXED_PUBLIC_EGRESS_IP,
+        "config_has_ssh_host": fixed_config.get("SSH主机") == FIXED_PUBLIC_EGRESS_IP,
+        "common_sender_supports_fixed_mode": "--fixed-public-egress" in sender and "send_message_via_fixed_public_egress" in sender,
+        "stock_real_send_defaults_to_fixed_mode": "args.real_send and not args.local_egress" in stock_gray,
+        "retest_controller_passes_fixed_mode": '"--fixed-public-egress"' in retest or "'--fixed-public-egress'" in retest,
+    }
+    missing = [name for name, ok in checks.items() if not ok]
+    return {
+        "status": "fail" if missing else "pass",
+        "fixed_public_egress_ip": FIXED_PUBLIC_EGRESS_IP,
+        "checks": checks,
+        "missing": missing,
+        "common_sender": str(COMMON_SENDER_PY),
+        "stock_gray_sender": str(STOCK_GRAY_SEND_PY),
+        "stock_retest_controller": str(STOCK_RETEST_CONTROLLER_PY),
+        "send_config": str(WECOM_CONTROLLED_SEND_CONFIG_JSON),
+    }
+
+
 def validate_report(report: dict[str, Any]) -> list[str]:
     problems: list[str] = []
     if report["score"] < 0 or report["score"] > 100:
@@ -241,6 +277,8 @@ def validate_report(report: dict[str, Any]) -> list[str]:
         problems.append("wecom_status_command_not_covered_by_experience_acceptance")
     if report.get("wecom_ip_consistency", {}).get("status") != "pass":
         problems.append("wecom_trusted_ip_status_inconsistent")
+    if report.get("wecom_fixed_public_egress", {}).get("status") != "pass":
+        problems.append("wecom_fixed_public_egress_contract_missing")
     return problems
 
 
@@ -268,6 +306,7 @@ def build_acceptance_overview_report() -> dict[str, Any]:
         "delivery_truthfulness": delivery_truthfulness_status(),
         "wecom_ip_consistency": wecom_ip_consistency_status(),
         "wecom_status_command": wecom_status_command_status(),
+        "wecom_fixed_public_egress": wecom_fixed_public_egress_contract_status(),
         "guardrails": GUARDRAILS,
     }
     problems = validate_report(report)
@@ -318,6 +357,11 @@ def render_markdown(report: dict[str, Any]) -> str:
     status_command = report["wecom_status_command"]
     lines.append(f"- `status`: `{status_command['status']}`")
     lines.append(f"- `missing_terms`: `{len(status_command['missing_terms'])}`")
+
+    lines.extend(["", "## WeCom Fixed Public Egress"])
+    fixed_egress = report["wecom_fixed_public_egress"]
+    lines.append(f"- `status`: `{fixed_egress['status']}`")
+    lines.append(f"- `fixed_public_egress_ip`: `{fixed_egress['fixed_public_egress_ip']}`")
 
     if report["blocking_problems"]:
         lines.extend(["", "## Blocking Problems"])

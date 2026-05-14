@@ -129,10 +129,12 @@ def parse_sender_stdout(stdout: str) -> dict[str, Any]:
         return {"原始stdout": text}
 
 
-def run_sender(sender_path: Path, content: str, real_send: bool) -> dict[str, Any]:
+def run_sender(sender_path: Path, content: str, real_send: bool, fixed_public_egress: bool) -> dict[str, Any]:
     args = [sys.executable, str(sender_path), "--content", content, "--msgtype", "markdown"]
     if real_send:
         args.append("--real-send")
+    if fixed_public_egress:
+        args.append("--fixed-public-egress")
     completed = subprocess.run(
         args,
         capture_output=True,
@@ -142,7 +144,12 @@ def run_sender(sender_path: Path, content: str, real_send: bool) -> dict[str, An
         timeout=90,
     )
     return {
-        "命令": " ".join([Path(args[0]).name, Path(args[1]).name] + args[2:3] + (["--real-send"] if real_send else [])),
+        "命令": " ".join(
+            [Path(args[0]).name, Path(args[1]).name]
+            + args[2:3]
+            + (["--real-send"] if real_send else [])
+            + (["--fixed-public-egress"] if fixed_public_egress else [])
+        ),
         "返回码": completed.returncode,
         "stdout": completed.stdout.strip(),
         "stdout_json": parse_sender_stdout(completed.stdout),
@@ -150,10 +157,10 @@ def run_sender(sender_path: Path, content: str, real_send: bool) -> dict[str, An
     }
 
 
-def run_senders(sender_path: Path, chunks: list[str], real_send: bool) -> list[dict[str, Any]]:
+def run_senders(sender_path: Path, chunks: list[str], real_send: bool, fixed_public_egress: bool) -> list[dict[str, Any]]:
     results: list[dict[str, Any]] = []
     for chunk in chunks:
-        results.append(run_sender(sender_path, chunk, real_send))
+        results.append(run_sender(sender_path, chunk, real_send, fixed_public_egress))
     return results
 
 
@@ -161,6 +168,8 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--real-send", action="store_true", help="显式开启本人白名单真实灰度发送")
     parser.add_argument("--source-md", default="", help="可选：指定推送草案Markdown路径")
+    parser.add_argument("--fixed-public-egress", action="store_true", help="真实发送走固定公网服务器出口，避免本地宽带IP变化")
+    parser.add_argument("--local-egress", action="store_true", help="保留排障入口：强制走本机出口")
     args = parser.parse_args()
 
     root = module_root()
@@ -176,7 +185,8 @@ def main() -> int:
     chunks = split_message(draft_text)
     if not chunks:
         raise ValueError("待发送内容为空")
-    sender_results = run_senders(common_sender, chunks, args.real_send)
+    fixed_public_egress = bool(args.fixed_public_egress or (args.real_send and not args.local_egress))
+    sender_results = run_senders(common_sender, chunks, args.real_send, fixed_public_egress)
 
     sender_stdout_list = [item.get("stdout_json", {}) for item in sender_results]
     real_success = bool(args.real_send and all(item.get("real_send_success") is True for item in sender_stdout_list))
@@ -185,6 +195,7 @@ def main() -> int:
         "名称": "股票主动研究企微灰度发送记录",
         "生成时间": now.strftime("%Y-%m-%d %H:%M:%S"),
         "模式": "real-send" if args.real_send else "dry-run",
+        "发送出口模式": "fixed-public" if fixed_public_egress else "local",
         "上游草案Markdown": str(source_md),
         "上游草案JSON": str(source_json),
         "草案数据日期": draft_meta.get("数据日期", ""),
@@ -216,6 +227,7 @@ def main() -> int:
             "调用公共受控发送器": True,
             "企业微信真实发送": bool(args.real_send),
             "企业微信真实发送成功": real_success,
+            "使用固定公网出口": fixed_public_egress,
             "写入04日志": True,
             "触发n8n": False,
             "调用券商接口": False,

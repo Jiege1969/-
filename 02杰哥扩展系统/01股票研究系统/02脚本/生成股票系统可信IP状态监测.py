@@ -19,6 +19,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+FIXED_PUBLIC_EGRESS_IP = "43.167.210.211"
 
 def module_root() -> Path:
     return Path(__file__).resolve().parents[1]
@@ -206,7 +207,7 @@ def main() -> int:
     latest_sender_blocked = bool(latest_block)
     real_retest_ok = bool(retest.get("真实发送成功")) and not latest_sender_blocked
     real_ok = (real_retest_ok or bool(layers.get("D真实灰度可用", {}).get("是否通过"))) and not latest_sender_blocked
-    current_ip = str(latest_block.get("公网IP") or retest.get("当前需放行IP") or fix.get("当前公网出口IP") or "")
+    current_ip = str(latest_block.get("公网IP") or retest.get("当前需放行IP") or fix.get("当前公网出口IP") or FIXED_PUBLIC_EGRESS_IP)
     historical_hit_60020 = bool(fix.get("是否命中60020"))
     hit_60020 = latest_sender_blocked or (historical_hit_60020 and not real_retest_ok)
 
@@ -222,7 +223,7 @@ def main() -> int:
         next_actions = [
             f"在企业微信后台对应自建应用可信IP中加入 {current_ip}。",
             "加入后运行05入口工具中的“股票系统企微真实推送复测_确认可信IP后真实发送”。",
-            "如果仍失败，先重新生成可信IP修复包和本状态监测，确认公网IP是否变化。",
+            f"如果仍失败，只围绕固定公网出口 {FIXED_PUBLIC_EGRESS_IP} 复核，不再追着本地宽带IP变化。",
         ]
     elif real_ok:
         status = "已通过：企业微信真实主动推送已可用"
@@ -244,6 +245,7 @@ def main() -> int:
         "生成工具": "生成股票系统可信IP状态监测.py",
         "状态": status,
         "当前需放行IP": current_ip,
+        "固定公网出口IP": FIXED_PUBLIC_EGRESS_IP,
         "是否命中60020": hit_60020,
         "历史修复包是否命中60020": historical_hit_60020,
         "企业微信真实发送已通过": real_ok,
