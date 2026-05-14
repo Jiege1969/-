@@ -13,6 +13,8 @@ class StockFrontendMessageContractCiCheckTests(unittest.TestCase):
         self.assertEqual(report["contract_version"], "v1.0")
         self.assertTrue(report["strong_focus"]["uses_star_expression"])
         self.assertTrue(report["method_kernel_over_template"])
+        self.assertEqual(report["feedback_loop_source"]["assistant_missing_phrases"], [])
+        self.assertEqual(report["feedback_loop_source"]["bridge_missing_phrases"], [])
 
     def test_numeric_requirements_cover_computed_conditions(self):
         report = frontend_contract.build_report()
@@ -111,6 +113,16 @@ class StockFrontendMessageContractCiCheckTests(unittest.TestCase):
 
         self.assertIn("missing_numeric_output_requirement:放量达标线", problems)
 
+    def test_validate_report_rejects_missing_feedback_phrase(self):
+        report = frontend_contract.build_report()
+        report["feedback_loop_source"]["assistant_missing_phrases"] = ["算出来"]
+        report["feedback_loop_source"]["bridge_missing_phrases"] = ["强烈关注"]
+
+        problems = frontend_contract.validate_report(report)
+
+        self.assertIn("feedback_loop_assistant_missing_phrase:算出来", problems)
+        self.assertIn("feedback_loop_bridge_missing_phrase:强烈关注", problems)
+
     def test_validate_report_rejects_remaining_legacy_backup(self):
         report = frontend_contract.build_report()
         report["governance"]["legacy_backup_files"] = [
@@ -140,6 +152,7 @@ class StockFrontendMessageContractCiCheckTests(unittest.TestCase):
         self.assertIn("Message Types", markdown)
         self.assertIn("Computed Conditions", markdown)
         self.assertIn("Daily Push Table", markdown)
+        self.assertIn("Feedback Loop Source", markdown)
         self.assertIn("Legacy Cleanup", markdown)
 
 

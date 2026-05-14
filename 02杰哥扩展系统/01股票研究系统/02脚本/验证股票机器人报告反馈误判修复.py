@@ -27,6 +27,9 @@ LONG_FEEDBACK = """这份报告的缺点：
 """
 
 TYPO_FEEDBACK = "分析太空乏，风险没将清楚"
+RESULT_STYLE_FEEDBACK = "前台报告要少讲技术过程，多讲结果，不要把MACD这些分析过程堆给我。"
+NUMERIC_CONDITION_FEEDBACK = "成交量达到最近5日平均量1.2倍要具体算出来，站稳和跌破也要给具体数字。"
+STRONG_WATCH_FEEDBACK = "强烈关注要参照五星方式表达，不能只写一句强烈关注。"
 
 
 def write_json(path: Path, data: dict[str, Any]) -> None:
@@ -96,6 +99,15 @@ def main() -> int:
     add_check(checks, "错别字太空乏归一为太空泛", typo_result.get("反馈记录", {}).get("反馈类型") == "太空泛", typo_result.get("反馈记录", {}))
     add_check(checks, "错别字反馈不要求补股票名", "请告诉我股票名称" not in typo_reply and "需要补充股票" != typo_result.get("状态"), typo_reply)
     add_check(checks, "错别字反馈不触发交易拦截", typo_result.get("trade_guard") is not True and "已拦截" not in typo_reply, typo_reply)
+    result_style_type = module.classify_report_feedback(RESULT_STYLE_FEEDBACK)
+    result_style_lane = module.classify_feedback_learning_lane(RESULT_STYLE_FEEDBACK, result_style_type)
+    numeric_type = module.classify_report_feedback(NUMERIC_CONDITION_FEEDBACK)
+    numeric_lane = module.classify_feedback_learning_lane(NUMERIC_CONDITION_FEEDBACK, numeric_type)
+    star_type = module.classify_report_feedback(STRONG_WATCH_FEEDBACK)
+    star_lane = module.classify_feedback_learning_lane(STRONG_WATCH_FEEDBACK, star_type)
+    add_check(checks, "前台少讲技术多讲结果归入三阶段报告", result_style_type in {"前台报告过程过重", "前台报告结果不突出"} and result_style_lane.get("主分类") == "三阶段报告", {"反馈类型": result_style_type, "学习线": result_style_lane})
+    add_check(checks, "成交量和站稳跌破反馈归入指标具体条件", numeric_type in {"条件没有算成具体数字", "成交量条件未算清", "触发条件需要具体化", "失效条件需要具体化"} and numeric_lane.get("主分类") == "指标", {"反馈类型": numeric_type, "学习线": numeric_lane})
+    add_check(checks, "强烈关注五星反馈归入模型评分口径", star_type == "强烈关注星级口径" and star_lane.get("主分类") == "模型", {"反馈类型": star_type, "学习线": star_lane})
     safety = {
         "真实发送企业微信": False,
         "触发n8n": False,

@@ -30,6 +30,8 @@ LAYER_RULE_PATH = STOCK_ROOT / "01配置" / "股票前后台表达分层与杰�
 DAILY_PUSH_TABLE_PATH = STOCK_ROOT / "01配置" / "股票每日推送总表_v1.0.json"
 PUSH_SAMPLE_DOC_PATH = STOCK_ROOT / "07文档" / "股票前台推送消息样本_v1.0.md"
 DAILY_PUSH_AUDIT_SCRIPT_PATH = STOCK_ROOT / "02脚本" / "生成股票每日推送总表只读巡检报告.py"
+STOCK_ASSISTANT_PATH = STOCK_ROOT / "02脚本" / "股票助手入口.py"
+STOCK_WECOM_BRIDGE_PATH = STOCK_ROOT / "02脚本" / "股票企业微信桥接入口.py"
 
 REQUIRED_TOP_LEVEL_KEYS = [
     "最高口径",
@@ -122,6 +124,17 @@ REQUIRED_PUSH_SAMPLE_PHRASES = [
     "最近5日平均成交量：820万手",
     "今日放量达标线：984万手",
     "风险线：17.40元",
+]
+
+REQUIRED_FEEDBACK_LOOP_PHRASES = [
+    "少讲技术",
+    "多讲结果",
+    "成交量达到",
+    "算出来",
+    "站稳",
+    "跌破",
+    "强烈关注",
+    "五星",
 ]
 
 GUARDRAILS = [
@@ -330,6 +343,18 @@ def build_report() -> dict[str, Any]:
             "table_references_script": daily_push_table.get("只读巡检脚本") == "02脚本/生成股票每日推送总表只读巡检报告.py",
             "script_exists": DAILY_PUSH_AUDIT_SCRIPT_PATH.exists(),
         },
+        "feedback_loop_source": {
+            "assistant_exists": STOCK_ASSISTANT_PATH.exists(),
+            "bridge_exists": STOCK_WECOM_BRIDGE_PATH.exists(),
+            "assistant_missing_phrases": text_contains_all(
+                read_text(STOCK_ASSISTANT_PATH) if STOCK_ASSISTANT_PATH.exists() else "",
+                REQUIRED_FEEDBACK_LOOP_PHRASES,
+            ),
+            "bridge_missing_phrases": text_contains_all(
+                read_text(STOCK_WECOM_BRIDGE_PATH) if STOCK_WECOM_BRIDGE_PATH.exists() else "",
+                REQUIRED_FEEDBACK_LOOP_PHRASES,
+            ),
+        },
         "governance": {
             "single_current_contract": governance.get("唯一现行规则源") == "01配置/股票前台报告表达定稿规则_v1.0.json",
             "single_current_document": governance.get("唯一现行说明文档") == "07文档/股票前台报告表达定稿与推送消息标准_v1.0.md",
@@ -388,6 +413,15 @@ def validate_report(report: dict[str, Any]) -> list[str]:
         problems.append("daily_push_table_not_referencing_audit_script")
     if not audit_script["script_exists"]:
         problems.append("daily_push_audit_script_missing")
+    feedback_loop = report["feedback_loop_source"]
+    if not feedback_loop["assistant_exists"]:
+        problems.append("feedback_loop_assistant_missing")
+    if not feedback_loop["bridge_exists"]:
+        problems.append("feedback_loop_bridge_missing")
+    for phrase in feedback_loop["assistant_missing_phrases"]:
+        problems.append(f"feedback_loop_assistant_missing_phrase:{phrase}")
+    for phrase in feedback_loop["bridge_missing_phrases"]:
+        problems.append(f"feedback_loop_bridge_missing_phrase:{phrase}")
     for task_id, present in daily_push["required_current_tasks"].items():
         if not present:
             problems.append(f"missing_current_push_task:{task_id}")
@@ -473,6 +507,11 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines.extend(["", "## Guardrails"])
     for guardrail in report["guardrails"]:
         lines.append(f"- `{guardrail}`")
+
+    lines.extend(["", "## Feedback Loop Source"])
+    feedback_loop = report["feedback_loop_source"]
+    lines.append(f"- assistant missing phrases: `{len(feedback_loop['assistant_missing_phrases'])}`")
+    lines.append(f"- bridge missing phrases: `{len(feedback_loop['bridge_missing_phrases'])}`")
 
     lines.extend(["", "## Legacy Cleanup"])
     lines.append(f"- single current contract: {str(report['governance']['single_current_contract']).lower()}")

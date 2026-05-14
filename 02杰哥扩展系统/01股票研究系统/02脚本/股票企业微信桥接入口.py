@@ -519,6 +519,23 @@ def is_report_feedback_message(message: str) -> bool:
         "分析太虚",
         "分析太空泛",
         "风险没讲清",
+        "少讲技术",
+        "多讲结果",
+        "不要讲技术过程",
+        "分析过程太多",
+        "具体算出来",
+        "算出来",
+        "具体数字",
+        "成交量达到",
+        "站稳",
+        "跌破",
+        "风险线",
+        "触发条件",
+        "关键价位",
+        "后面只盯",
+        "当前市场位置",
+        "强烈关注",
+        "五星",
         "复核不是分析系统应该做的吗",
         "桥接运行记录",
         "企业微信可读内容",
@@ -531,7 +548,7 @@ def is_report_feedback_message(message: str) -> bool:
     )
     if any(term in text for term in explicit_terms):
         return True
-    return "报告" in text and any(term in text for term in ("缺少", "少了", "补充", "添加", "点击", "链接", "风险", "标题", "不符合"))
+    return "报告" in text and any(term in text for term in ("缺少", "少了", "补充", "添加", "点击", "链接", "风险", "标题", "不符合", "结果", "技术过程", "成交量", "站稳", "跌破", "关键价位"))
 
 
 def build_trade_block_result(message: str, data: dict[str, Any], robot_stream: bool) -> dict[str, Any]:

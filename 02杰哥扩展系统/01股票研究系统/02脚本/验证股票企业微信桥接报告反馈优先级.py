@@ -22,6 +22,9 @@ LOG_DIR = ROOT / "04日志" / "股票企业微信桥接报告反馈优先级"
 
 LONG_FEEDBACK = "这份报告的缺点：标题不对 股票n8n企业微信终端桥接运行记录 不符合杰哥的股票分析专家，不应该有阶段：after_close_report 问题：今日观察 成功：True 真实发送企业微信：False 接券商/交易：False 企业微信可读内容，分析太虚，风险没讲清楚"
 TYPO_FEEDBACK = "分析太空乏，风险没将清楚"
+RESULT_STYLE_FEEDBACK = "前台报告要少讲技术过程，多讲结果，后面只盯哪几件事要说清楚。"
+NUMERIC_CONDITION_FEEDBACK = "成交量达到最近5日平均量1.2倍要具体算出来，站稳和跌破也要给具体数字。"
+STRONG_WATCH_FEEDBACK = "强烈关注要参照五星方式表达，不能只写一句强烈关注。"
 
 
 def write_json(path: Path, data: dict[str, Any]) -> None:
@@ -80,6 +83,9 @@ def main() -> int:
     add_check(checks, "错别字反馈桥接层识别为报告反馈消息", module.is_report_feedback_message(TYPO_FEEDBACK), TYPO_FEEDBACK)
     add_check(checks, "错别字反馈不要求补股票名", "请告诉我股票名称" not in typo_content and "记入反馈日志" in typo_content, typo_content)
     add_check(checks, "错别字反馈不被桥接交易护栏拦截", typo_result.get("股票助手状态") != "已拦截" and "已拦截" not in typo_content, typo_content)
+    add_check(checks, "前台少讲技术多讲结果被桥接识别为报告反馈", module.is_report_feedback_message(RESULT_STYLE_FEEDBACK), RESULT_STYLE_FEEDBACK)
+    add_check(checks, "成交量站稳跌破具体数字被桥接识别为报告反馈", module.is_report_feedback_message(NUMERIC_CONDITION_FEEDBACK), NUMERIC_CONDITION_FEEDBACK)
+    add_check(checks, "强烈关注五星口径被桥接识别为报告反馈", module.is_report_feedback_message(STRONG_WATCH_FEEDBACK), STRONG_WATCH_FEEDBACK)
     safety = {"真实发送企业微信": False, "触发n8n": False, "接券商": False, "交易": False, "重载19310": False, "重载19302": False}
     for key, value in safety.items():
         add_check(checks, f"安全边界：{key}=false", value is False, safety)
