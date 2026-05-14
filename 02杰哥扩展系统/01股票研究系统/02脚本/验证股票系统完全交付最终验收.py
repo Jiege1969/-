@@ -60,6 +60,41 @@ def latest_gray_send_success(root: Path) -> bool:
     )
 
 
+def latest_controlled_sender_state(root: Path) -> dict[str, Any]:
+    """Read the common WeCom sender latest log; newest controlled send overrides older gray-send reports."""
+    path = root.parents[0] / "00公共组件" / "04日志" / "企业微信受控发送器" / "wework-controlled-sender-最新.json"
+    data = load_json(path, {})
+    if isinstance(data, dict):
+        data["_path"] = str(path)
+    return data if isinstance(data, dict) else {}
+
+
+def latest_controlled_sender_blocks_real_push(root: Path) -> bool:
+    data = latest_controlled_sender_state(root)
+    if not data:
+        return False
+    send_result = data.get("发送结果", {})
+    wecom_return = send_result.get("企业微信返回", {}) if isinstance(send_result, dict) else {}
+    actions = data.get("实际动作", {})
+    return bool(
+        data.get("模式") == "real-send"
+        and actions.get("尝试发送企业微信") is True
+        and actions.get("发送企业微信成功") is False
+        and wecom_return.get("errcode") == 60020
+    )
+
+
+def latest_controlled_sender_block_ip(root: Path) -> str:
+    data = latest_controlled_sender_state(root)
+    send_result = data.get("发送结果", {})
+    wecom_return = send_result.get("企业微信返回", {}) if isinstance(send_result, dict) else {}
+    text = str(wecom_return.get("errmsg") or "")
+    marker = "from ip: "
+    if marker not in text:
+        return ""
+    return text.split(marker, 1)[1].split(",", 1)[0].strip()
+
+
 def check_item(name: str, ok: bool, detail: str) -> dict[str, Any]:
     return {"检查项": name, "通过": bool(ok), "说明": detail}
 
@@ -159,15 +194,16 @@ def main() -> int:
     daily_ok = bool(total.get("日常可用") is True or "可日常使用" in daily_text)
     cppp_ok = int(cppp.get("失败数量") or 0) == 0 and int(cppp.get("通过数量") or 0) >= 14
     safety_ok = safety.get("安全结论") == "通过" and int(safety.get("命中总数") or 0) == 0
-    real_push_ok = bool(retest.get("真实发送成功") or ip_status.get("企业微信真实发送已通过") or latest_gray_send_success(root))
-    trusted_ip = retest.get("当前需放行IP") or ip_status.get("当前需放行IP") or ""
+    latest_sender_blocked = latest_controlled_sender_blocks_real_push(root)
+    real_push_ok = (not latest_sender_blocked) and bool(retest.get("真实发送成功") or ip_status.get("企业微信真实发送已通过") or latest_gray_send_success(root))
+    trusted_ip = latest_controlled_sender_block_ip(root) or retest.get("当前需放行IP") or ip_status.get("当前需放行IP") or ""
 
     checks = [
         check_item("本地日常可用", daily_ok, daily_text),
         check_item("交付层级达到C+++或更高", level_ok, level),
         check_item("C+++日常可用总验收通过", cppp_ok, f"{cppp.get('通过数量')}/{cppp.get('检查数量')}，失败{cppp.get('失败数量')}"),
         check_item("报告安全边界通过", safety_ok, f"安全结论={safety.get('安全结论')}，命中={safety.get('命中总数')}"),
-        check_item("企业微信真实主动推送通过", real_push_ok, str(retest.get("复测结论") or "尚未完成真实发送复测")),
+        check_item("企业微信真实主动推送通过", real_push_ok, "最新受控发送被可信IP拦截" if latest_sender_blocked else str(retest.get("复测结论") or "尚未完成真实发送复测")),
     ]
 
     pending: list[str] = []
