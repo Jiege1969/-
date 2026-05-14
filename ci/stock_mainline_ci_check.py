@@ -25,6 +25,14 @@ SHORTLINE_FRONT_CHECK_SCRIPT = (
     / "验证收盘短线观察前台条件.py"
 )
 
+DELIVERY_GATE_SYNC_SCRIPT = (
+    ROOT
+    / "02杰哥扩展系统"
+    / "01股票研究系统"
+    / "02脚本"
+    / "刷新股票系统交付状态扎口.py"
+)
+
 
 def main() -> int:
     if not STOCK_MAINLINE_SCRIPT.exists():
@@ -45,6 +53,12 @@ def main() -> int:
         print(f"FAIL: missing shortline front checker: {SHORTLINE_FRONT_CHECK_SCRIPT}", file=sys.stderr)
         return 1
     result = subprocess.run([sys.executable, str(SHORTLINE_FRONT_CHECK_SCRIPT)], cwd=str(ROOT), check=False)
+    if result.returncode != 0:
+        return int(result.returncode)
+    if not DELIVERY_GATE_SYNC_SCRIPT.exists():
+        print(f"FAIL: missing delivery gate sync checker: {DELIVERY_GATE_SYNC_SCRIPT}", file=sys.stderr)
+        return 1
+    result = subprocess.run([sys.executable, str(DELIVERY_GATE_SYNC_SCRIPT), "--check"], cwd=str(ROOT), check=False)
     return int(result.returncode)
 
 
