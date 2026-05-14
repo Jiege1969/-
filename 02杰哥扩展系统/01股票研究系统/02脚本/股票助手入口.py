@@ -138,9 +138,24 @@ def load_json(path: Path, default: Any = None) -> Any:
     last_error: Exception | None = None
     for encoding in ("utf-8-sig", "utf-8", "gb18030"):
         try:
-            return json.loads(raw.decode(encoding))
+            text = raw.decode(encoding)
+            try:
+                return json.loads(text)
+            except json.JSONDecodeError as exc:
+                last_error = exc
+                try:
+                    value, _ = json.JSONDecoder().raw_decode(text.lstrip("\ufeff \t\r\n"))
+                    return value
+                except json.JSONDecodeError:
+                    continue
         except (UnicodeDecodeError, json.JSONDecodeError) as exc:
             last_error = exc
+            try:
+                text = raw.decode(encoding, errors="ignore")
+                value, _ = json.JSONDecoder().raw_decode(text.lstrip("\ufeff \t\r\n"))
+                return value
+            except (UnicodeDecodeError, json.JSONDecodeError):
+                continue
     if default is not None:
         return default
     raise last_error or ValueError(f"无法读取JSON文件：{path}")
