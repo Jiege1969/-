@@ -56,6 +56,8 @@ ASSISTANT_ROUTE_CONFIG = {
     "/wecom/unified": ("杰哥系统管家", "http://127.0.0.1:19310/wecom/unified"),
 }
 EXPERT_OVERVIEW_JSON = ROOT / "03数据" / "185专家市场总览" / "股票专家市场总览_最新.json"
+WECOM_EXPERIENCE_STATUS_JSON = ROOT / "03数据" / "289企业微信体验入口状态" / "股票企业微信体验入口状态_最新.json"
+FINAL_DELIVERY_STATUS_JSON = ROOT / "03数据" / "158完全交付最终验收" / "股票系统完全交付最终验收_最新.json"
 METHOD_KERNEL_SIMILARITY_JSON = ROOT / "03数据" / "270杰哥推荐方法内核" / "当前候选股相似度识别_最新.json"
 METHOD_KERNEL_CALIBRATION_JSON = ROOT / "03数据" / "278杰哥推荐方法内核校准" / "杰哥推荐方法内核校准报告_最新.json"
 ADAPTIVE_FUNNEL_JSON = ROOT / "03数据" / "283环境自适应三级漏斗推荐引擎" / "环境自适应三级漏斗推荐引擎_最新.json"
@@ -98,7 +100,9 @@ def mask_url(url: str) -> str:
 
 def write_json(path: Path, data: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    temp_path = path.with_name(f".{path.name}.{os.getpid()}.{threading.get_ident()}.tmp")
+    temp_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    os.replace(temp_path, path)
 
 
 def write_async_log(name: str, data: dict[str, Any]) -> None:
@@ -374,6 +378,26 @@ def is_recommendation_message(message: str) -> bool:
     return bool(text) and any(keyword in text for keyword in keywords)
 
 
+def is_stock_status_message(message: str) -> bool:
+    """识别用户在企业微信里询问股票系统可用状态的短命令。"""
+    text = str(message or "").replace(" ", "").strip()
+    if not text:
+        return False
+    keywords = (
+        "股票系统状态",
+        "股票状态",
+        "系统状态",
+        "入口状态",
+        "企业微信状态",
+        "企微状态",
+        "股票帮助",
+        "使用帮助",
+        "怎么用",
+        "帮助",
+    )
+    return any(keyword in text for keyword in keywords)
+
+
 def is_expert_overview_message(message: str) -> bool:
     """识别市场环境、行业强弱、方法解释等专家类问题。"""
     text = str(message or "").replace(" ", "").strip()
@@ -534,6 +558,79 @@ def build_trade_block_result(message: str, data: dict[str, Any], robot_stream: b
     }
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S-%f")
     write_json(LOG_DIR / "stock-wework-bridge-最新.json", result)
+    write_json(LOG_DIR / "stock-wework-bridge-最新.json", result)
+    if robot_stream:
+        result["智能机器人回复"] = build_stream_reply(reply, data)
+    return result
+
+
+def read_json_safe(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8-sig", errors="replace"))
+    except Exception:
+        return {}
+
+
+def build_stock_status_text() -> str:
+    experience = read_json_safe(WECOM_EXPERIENCE_STATUS_JSON)
+    final = read_json_safe(FINAL_DELIVERY_STATUS_JSON)
+    push_state = experience.get("主动推送状态", {}) if isinstance(experience.get("主动推送状态"), dict) else {}
+    wecom_return = push_state.get("企业微信返回", {}) if isinstance(push_state.get("企业微信返回"), dict) else {}
+    current_ip = str(final.get("当前需放行IP") or "")
+    if not current_ip:
+        errmsg = str(wecom_return.get("errmsg") or "")
+        marker = "from ip: "
+        if marker in errmsg:
+            current_ip = errmsg.split(marker, 1)[1].split(",", 1)[0].strip()
+    query_ok = bool(any(item.get("检查项") == "短线机器人本地stream回复可用" and item.get("通过") for item in experience.get("检查结果", []) if isinstance(item, dict)))
+    expert_ok = bool(any(item.get("检查项") == "专家机器人本地stream回复可用" and item.get("通过") for item in experience.get("检查结果", []) if isinstance(item, dict)))
+    active_push_blocked = bool(push_state.get("可信IP受限") or wecom_return.get("errcode") == 60020)
+    delivery_conclusion = str(final.get("验收结论") or "待刷新")
+    lines = [
+        "【股票系统状态】",
+        f"问答入口：{'可用' if query_ok and expert_ok else '待检查'}",
+        f"交付状态：{delivery_conclusion}",
+        f"主动推送：{'受可信IP限制' if active_push_blocked else '待复测/可用'}",
+    ]
+    if current_ip:
+        lines.append(f"需放行IP：{current_ip}")
+    lines.extend([
+        "",
+        "你现在可以这样问：",
+        "1、分析 云南锗业",
+        "2、今日推荐",
+        "3、这周哪些行业最值得盯",
+        "",
+        "说明：问答回复可体验；主动推送只发本人白名单，不群发，不触发n8n，不交易。",
+    ])
+    return "\n".join(lines)
+
+
+def build_stock_status_result(message: str, data: dict[str, Any], robot_stream: bool) -> dict[str, Any]:
+    reply = build_stock_status_text()
+    result = {
+        "生成时间": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "输入消息": message,
+        "股票助手状态": "状态短答",
+        "回复": reply,
+        "企业微信内容": reply,
+        "response_url存在": bool(extract_response_url(data)),
+        "response_url指纹": mask_url(extract_response_url(data)),
+        "真实回传": False,
+        "发送器结果": None,
+        "实际动作": {
+            "调用股票助手": False,
+            "读取体验入口状态": True,
+            "主动群发": False,
+            "尝试response_url回传": False,
+            "写旧系统": False,
+            "写正式库": False,
+            "调用券商接口": False,
+            "自动交易": False,
+        },
+    }
     write_json(LOG_DIR / "stock-wework-bridge-最新.json", result)
     if robot_stream:
         result["智能机器人回复"] = build_stream_reply(reply, data)
@@ -1404,6 +1501,8 @@ def process_message(data: dict[str, Any], robot_stream: bool = False) -> dict[st
         if robot_stream:
             result["智能机器人回复"] = build_stream_reply(reply, data)
         return result
+    if is_stock_status_message(message):
+        return build_stock_status_result(message, data, robot_stream)
     if is_trade_instruction(message) and not is_report_feedback_message(message):
         return build_trade_block_result(message, data, robot_stream)
     stream_id = extract_stream_id(data)
