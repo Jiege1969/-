@@ -137,21 +137,31 @@ def main() -> int:
     send_result = sender_log.get("发送结果", {}) if isinstance(sender_log, dict) else {}
     wecom_return = send_result.get("企业微信返回", {}) if isinstance(send_result, dict) else {}
     token_probe = sender_log.get("token探测", {}) if isinstance(sender_log, dict) else {}
+    active_push_ok = wecom_return.get("errcode") == 0
+    active_send_blocked = wecom_return.get("errcode") == 60020
+    expected_push_text_ok = (
+        "主动推送：受控白名单可用" in status_text
+        if active_push_ok
+        else ("主动推送：受可信IP限制" in status_text and "需放行IP" in status_text)
+        if active_send_blocked
+        else "主动推送：" in status_text
+    )
 
     checks = [
         check_item("19302桥接服务健康", health.get("ok") and health.get("json", {}).get("状态") == "正常", health.get("json") or health.get("error")),
         check_item("短线机器人本地stream回复可用", shortline.get("ok") and "【个股分析报告】" in shortline_text and "说明：仅供研究参考" in shortline_text, shortline_text[:160]),
         check_item("专家机器人本地stream回复可用", expert.get("ok") and "今日重点观察个股" in expert_text and "证据边界" in expert_text, expert_text[:160]),
-        check_item("状态帮助短答可用", status_reply.get("ok") and "【股票系统状态】" in status_text and "问答入口：可用" in status_text and "需放行IP" in status_text, status_text[:200]),
+        check_item("状态帮助短答可用", status_reply.get("ok") and "【股票系统状态】" in status_text and "问答入口：可用" in status_text and expected_push_text_ok, status_text[:200]),
         check_item("主动发送token可获取", token_probe.get("ok") is True, token_probe.get("企业微信返回", {})),
         check_item("主动推送日志状态可识别", wecom_return.get("errcode") in {0, 60020, None}, wecom_return),
         check_item("未触发n8n券商交易", True, {"触发n8n": False, "调用券商接口": False, "自动交易": False}),
     ]
     failed = [item for item in checks if not item.get("通过")]
     front_failed = [item for item in checks[:4] if not item.get("通过")]
-    active_send_blocked = wecom_return.get("errcode") == 60020
     if active_send_blocked and not front_failed:
         conclusion = "企业微信问答入口本地可用；主动推送受可信IP限制，需在企业微信后台放行当前出口IP后再复测。"
+    elif active_push_ok and not front_failed:
+        conclusion = "企业微信问答入口和受控主动推送可用。"
     elif not front_failed:
         conclusion = "企业微信问答入口可用。"
     else:

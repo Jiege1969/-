@@ -70,7 +70,14 @@ class StockAcceptanceOverviewCiCheckTests(unittest.TestCase):
 
     def test_wecom_status_command_requires_status_help_terms(self):
         result = overview.wecom_status_command_status(
-            "状态帮助短答可用\n问答入口：可用\n需放行IP：183.227.145.167"
+            "状态帮助短答可用\n问答入口：可用\n主动推送：受控白名单可用"
+        )
+
+        self.assertEqual(result["status"], "pass")
+
+    def test_wecom_status_command_requires_ip_only_when_push_blocked(self):
+        result = overview.wecom_status_command_status(
+            "状态帮助短答可用\n问答入口：可用\n主动推送：受可信IP限制\n需放行IP：183.227.145.167"
         )
 
         self.assertEqual(result["status"], "pass")

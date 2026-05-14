@@ -635,14 +635,18 @@ def build_stock_status_text() -> str:
     query_ok = bool(any(item.get("检查项") == "短线机器人本地stream回复可用" and item.get("通过") for item in experience.get("检查结果", []) if isinstance(item, dict)))
     expert_ok = bool(any(item.get("检查项") == "专家机器人本地stream回复可用" and item.get("通过") for item in experience.get("检查结果", []) if isinstance(item, dict)))
     active_push_blocked = bool(push_state.get("可信IP受限") or wecom_return.get("errcode") == 60020)
+    active_push_ok = wecom_return.get("errcode") == 0
     delivery_conclusion = str(final.get("验收结论") or "待刷新")
+    if active_push_ok and "可信IP" in delivery_conclusion:
+        delivery_conclusion = "问答入口和受控主动推送可用；本地细节继续收口。"
+    push_text = "受控白名单可用" if active_push_ok else ("受可信IP限制" if active_push_blocked else "待复测")
     lines = [
         "【股票系统状态】",
         f"问答入口：{'可用' if query_ok and expert_ok else '待检查'}",
         f"交付状态：{delivery_conclusion}",
-        f"主动推送：{'受可信IP限制' if active_push_blocked else '待复测/可用'}",
+        f"主动推送：{push_text}",
     ]
-    if current_ip:
+    if current_ip and active_push_blocked:
         lines.append(f"需放行IP：{current_ip}")
     lines.extend([
         "",
@@ -1395,9 +1399,27 @@ def split_condition_segments(text: str) -> list[str]:
     return [item.strip("；;。 ").strip() for item in re.split(r"[；;]", str(text or "")) if item.strip("；;。 ").strip()]
 
 
+def condition_sentence(value: str, fallback: str, suffix: str | None = None) -> str:
+    sentence = re.sub(r"\s+", " ", str(value or fallback or "")).strip(" 。；;，,")
+    if not sentence:
+        sentence = fallback.strip(" 。；;，,")
+    if suffix:
+        clean_suffix = suffix.strip(" 。；;，,")
+        if clean_suffix and clean_suffix not in sentence:
+            sentence = f"{sentence}，{clean_suffix}"
+    return sentence + "。"
+
+
 def pick_segment(segments: list[str], keywords: tuple[str, ...], fallback: str = "") -> str:
     for item in segments:
         if any(keyword in item for keyword in keywords):
+            return item
+    return fallback
+
+
+def pick_first_segment_without(segments: list[str], banned_keywords: tuple[str, ...], fallback: str = "") -> str:
+    for item in segments:
+        if not any(keyword in item for keyword in banned_keywords):
             return item
     return fallback
 
@@ -1436,8 +1458,10 @@ def render_user_single_stock_template(content: str) -> str:
     detail_url = f"{PUBLIC_STOCK_DETAIL_BASE}分析{stock_name}"
 
     segments = split_condition_segments(observe)
-    price_condition = pick_segment(segments, ("价格回到", "企稳", "支撑", "不跌破"), observe)
-    turn_condition = pick_segment(segments, ("高于", "站上", "转强", "突破", "收盘价", "实时价"), observe)
+    price_condition = pick_segment(segments, ("价格回到", "企稳", "支撑", "承接区", "不跌破"), "")
+    if not price_condition:
+        price_condition = pick_first_segment_without(segments, ("成交", "活跃", "量比", "倍", "收盘价", "实时价", "高于", "站上", "突破"), "")
+    turn_condition = pick_segment(segments, ("高于", "站上", "转强", "突破", "收盘价", "实时价"), "")
     volume_condition = pick_segment(segments, ("成交", "活跃", "量比", "倍"), "成交活跃度达到系统当前活跃标准")
     support_range = extract_price_range(price_condition)
     turn_price = extract_first_price(turn_condition)
@@ -1460,9 +1484,9 @@ def render_user_single_stock_template(content: str) -> str:
         f"近5日成交活跃度：{volume_status}。",
         "",
         "二、重新关注时机",
-        f"1、价格企稳：{price_condition or '股价重新站稳企稳区间，并且不再跌破底线支撑价。'}；站稳后才视为承接成立。",
-        f"2、走势转强：{turn_condition or '收盘价连续站上转强压力线。'}；更稳妥看连续2个交易日收盘价都高于{turn_price}。",
-        f"3、资金回流：{volume_condition or '近5日成交活跃度达到系统活跃标准。'}",
+        f"1、价格企稳：{condition_sentence(price_condition, '股价重新站稳企稳区间，并且不再跌破底线支撑价', '站稳后才视为承接成立')}",
+        f"2、走势转强：{condition_sentence(turn_condition, '收盘价连续站上转强压力线', f'更稳妥看连续2个交易日收盘价都高于{turn_price}')}",
+        f"3、资金回流：{condition_sentence(volume_condition, '近5日成交活跃度达到系统活跃标准')}",
         f"成交标准：近5日成交活跃度达到平时的{active_ratio:.2f}倍以上才算活跃；达到平时的{strong_active_ratio:.2f}倍以上才算明显活跃。具体金额由系统按当日数据算好后直出。",
         "",
         "三、关键价位对照表",

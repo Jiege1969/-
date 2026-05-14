@@ -216,9 +216,12 @@ def wecom_status_command_status(wecom_text: str | None = None) -> dict[str, Any]
     required_terms = [
         "状态帮助短答可用",
         "问答入口：可用",
-        "需放行IP",
     ]
     missing = [term for term in required_terms if term not in wecom]
+    if "主动推送：受控白名单可用" not in wecom and "主动推送：受可信IP限制" not in wecom:
+        missing.append("主动推送状态")
+    if "主动推送：受可信IP限制" in wecom and "需放行IP" not in wecom:
+        missing.append("需放行IP")
     return {
         "status": "fail" if missing else "pass",
         "missing_terms": missing,
