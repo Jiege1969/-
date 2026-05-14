@@ -16,6 +16,8 @@ class StockFrontendMessageContractCiCheckTests(unittest.TestCase):
         self.assertEqual(report["feedback_loop_source"]["assistant_missing_phrases"], [])
         self.assertEqual(report["feedback_loop_source"]["bridge_missing_phrases"], [])
         self.assertEqual(report["feedback_loop_source"]["quality_panel_missing_phrases"], [])
+        self.assertEqual(report["single_report_frontend_style"]["required_phrase_missing"], [])
+        self.assertEqual(report["single_report_frontend_style"]["forbidden_phrase_hits"], [])
 
     def test_numeric_requirements_cover_computed_conditions(self):
         report = frontend_contract.build_report()
@@ -125,6 +127,16 @@ class StockFrontendMessageContractCiCheckTests(unittest.TestCase):
         self.assertIn("feedback_loop_assistant_missing_phrase:算出来", problems)
         self.assertIn("feedback_loop_bridge_missing_phrase:强烈关注", problems)
         self.assertIn("feedback_loop_quality_panel_missing_phrase:使用反馈闭环摘要", problems)
+
+    def test_validate_report_rejects_single_report_backend_process_wording(self):
+        report = frontend_contract.build_report()
+        report["single_report_frontend_style"]["required_phrase_missing"] = ["【结果依据】"]
+        report["single_report_frontend_style"]["forbidden_phrase_hits"] = ["方法口径："]
+
+        problems = frontend_contract.validate_report(report)
+
+        self.assertIn("single_report_frontend_missing_phrase:【结果依据】", problems)
+        self.assertIn("single_report_frontend_forbidden_phrase:方法口径：", problems)
 
     def test_validate_report_rejects_remaining_legacy_backup(self):
         report = frontend_contract.build_report()

@@ -372,15 +372,14 @@ def report_evidence_header_lines(
     evidence_gap: str,
 ) -> list[str]:
     quote = quote_row_evidence(row)
-    selector = indicator_selector_summary()
     quote_status = quote.get("状态") or "行情证据待核验"
 
     if indicator:
-        indicator_status = "已接入本地技术指标"
+        price_data_status = "本地价量数据已接入，可用于生成观察价位。"
     elif row:
-        indicator_status = "未匹配本地技术指标，按公开行情和材料包降级判断"
+        price_data_status = "公开行情已接入，本地价量细节不完整，观察条件按保守口径生成。"
     else:
-        indicator_status = "行情和技术指标均不足"
+        price_data_status = "行情不足，暂不提高研究优先级。"
 
     evidence_state = snapshot.get("证据状态", {}) if isinstance(snapshot, dict) else {}
     company_status = evidence_state.get("公司概况", "待接入")
@@ -401,17 +400,13 @@ def report_evidence_header_lines(
     credibility_gaps = credibility.get("主要缺口", []) if isinstance(credibility.get("主要缺口"), list) else []
     credibility_gap_text = "；".join(str(item) for item in credibility_gaps[:2]) or "按170可信度面板继续核验证据缺口。"
 
-    method_time = selector.get("生成时间") or "待生成"
     return [
-        "【证据头】",
-        f"- 数据时效：行情={quote_status}；技术指标={indicator_status}。",
-        f"- 公司证据：财报={finance_status_text}（{finance_line_text}）；公司概况={company_status}；行业地位={industry_position_status}；未来方向={future_status}。",
-        f"- 行业证据：行业={industry_display_line}；行业强度={industry_strength_text}；行业数据状态={industry_data_status}；行业价格={industry_price_status}（{industry_price_line}）。",
-        f"- 方法口径：市场状态={selector.get('市场状态') or '待识别'}；方法组合={selector.get('方法组合') or '待选择'}；主导={join_limited(selector.get('主导指标', []))}；辅助={join_limited(selector.get('辅助指标', []))}；否决={join_limited(selector.get('否决指标', []), 3)}。",
-        "- 分析顺序：先数据可信和风险闸门，再看市场/行业/个股分层，最后输出观察条件；辅助指标只做确认和解释。",
-        f"- 证据可信：可信度={credibility_score}/100（{credibility_grade}）；{credibility_gap_text}",
-        f"- 证据缺口：{evidence_gap}；{('；'.join(l3_missing) + '；') if l3_missing else ''}公告、解禁减持、行业价格连续序列仍需继续补齐。",
-        f"- 方法版本：通用分析机制={ANALYSIS_MECHANISM_PATH.name}；指标选择引擎时间={method_time}。",
+        "【结果依据】",
+        f"- 行情依据：{quote_status}；{price_data_status}",
+        f"- 公司依据：财报={finance_status_text}，{finance_line_text}；公司概况={company_status}，行业地位={industry_position_status}。",
+        f"- 行业依据：{industry_display_line}，强度{industry_strength_text}；行业数据={industry_data_status}；行业价格={industry_price_status}，{industry_price_line}。",
+        f"- 可信度：{credibility_score}/100（{credibility_grade}）；{credibility_gap_text}",
+        f"- 还缺什么：{evidence_gap}；{('；'.join(l3_missing) + '；') if l3_missing else ''}公告、解禁减持、行业价格连续序列仍需继续补齐。",
         "",
     ]
 
@@ -3653,6 +3648,22 @@ def build_front_volume_thresholds(
     return "成交额或成交量未入库，无法把成交活跃倍数折算成具体金额或手数，本次不输出放量达标结论。"
 
 
+def build_front_active_threshold_text(
+    quote: dict[str, Any] | None,
+    volume_ratio: float | None,
+    active_line: float,
+) -> str:
+    if volume_ratio is None or volume_ratio <= 0:
+        return f"成交达到{active_line:.2f}倍活跃线"
+    amount = quote_number(quote, "成交额", "turnover")
+    if amount is not None and amount > 0:
+        return f"成交额达到{format_amount_yuan((amount / volume_ratio) * active_line)}以上"
+    volume = quote_number(quote, "成交量", "volume")
+    if volume is not None and volume > 0:
+        return f"成交量达到{format_volume_hands((volume / volume_ratio) * active_line)}以上"
+    return f"成交达到{active_line:.2f}倍活跃线"
+
+
 def strip_html_tags(value: Any) -> str:
     return html.unescape(re.sub(r"<[^>]+>", "", str(value or ""))).strip()
 
@@ -3973,9 +3984,8 @@ def build_numeric_watch_rules(row: dict[str, Any] | None, indicator: dict[str, A
     support_zone = f"{format_price(support)}-{format_price(support_upper)}" if support is not None and support_upper is not None else points.get("理想买点", "-")
     risk_line = format_price(risk) if risk is not None else points.get("防守位", "-")
     strong_line_price = format_price(strong) if strong is not None else points.get("目标压力位", "-")
-    active_plain = f"近5日成交活跃度达到平时的{active_line:.2f}倍以上"
-    strong_plain = f"近5日成交活跃度达到平时的{strong_line:.2f}倍以上"
     volume_thresholds = build_front_volume_thresholds(quote, volume_ratio, active_line, strong_line)
+    active_plain = build_front_active_threshold_text(quote, volume_ratio, active_line)
     if volume_ratio is None and is_realtime_quote_row(quote):
         volume_current = "实时源未返回量比"
         volume_result = "不使用旧量比替代盘中事实"
@@ -3984,6 +3994,7 @@ def build_numeric_watch_rules(row: dict[str, Any] | None, indicator: dict[str, A
         volume_result = "达到活跃标准" if volume_ratio is not None and volume_ratio >= active_line else "没有达到活跃标准" if volume_ratio is not None else "等待系统刷新"
     if volume_ratio is not None and volume_ratio >= strong_line:
         volume_result = "明显活跃"
+    active_low_plain = active_plain.replace("达到", "低于").replace("以上", "")
     below_main_line = latest is not None and (
         (risk is not None and latest < risk)
         or (support is not None and latest < support and level in {"风险复核", "离场观望", "回避"})
@@ -3995,7 +4006,7 @@ def build_numeric_watch_rules(row: dict[str, Any] | None, indicator: dict[str, A
             "承接区": support_zone,
             "承接标准": f"当前{format_price(latest)}低于承接区{support_zone}，先不作为重点研究；重新站回{format_price(support)}上方并且不再跌回{weak_line}下方，才算止跌修复。",
             "转强标准": f"当天收盘价或当前实时价高于{strong_line_price}；更稳妥看连续2个交易日收盘价都高于{strong_line_price}，同时{active_plain}。",
-            "成交标准": f"{volume_thresholds}；成交活跃就是{active_plain}；明显活跃就是{strong_plain}。{volume_current}，{volume_result}。",
+            "成交标准": f"{volume_thresholds}；{volume_current}，{volume_result}。",
             "风险标准": f"当前已低于{risk_line}风险线，维持风险复核；只要没有重新站回{risk_line}上方，就继续回避；若继续跌破{weak_line}，风险加重。",
             "下一步": f"先等两个修复信号：一是重新站回{format_price(support)}上方并稳住；二是站上{strong_line_price}且成交活跃度达标。未出现前不列为重点研究。",
             "数据状态": "可用",
@@ -4005,8 +4016,8 @@ def build_numeric_watch_rules(row: dict[str, Any] | None, indicator: dict[str, A
         "承接区": support_zone,
         "承接标准": f"价格回到{support_zone}后不跌破{risk_line}；当天收盘价或当前实时价重新站上{format_price(support)}，视为承接成立。",
         "转强标准": f"当天收盘价或当前实时价高于{strong_line_price}；更稳妥看连续2个交易日收盘价都高于{strong_line_price}，同时{active_plain}。",
-        "成交标准": f"{volume_thresholds}；成交活跃就是{active_plain}；明显活跃就是{strong_plain}。{volume_current}，{volume_result}。",
-        "风险标准": f"跌破{risk_line}，或跌回{format_price(support)}下方且近5日成交活跃度低于平时的{active_line:.2f}倍，转为谨慎观察。",
+        "成交标准": f"{volume_thresholds}；{volume_current}，{volume_result}。",
+        "风险标准": f"跌破{risk_line}，或跌回{format_price(support)}下方且{active_low_plain}，转为谨慎观察。",
         "下一步": f"只等两个信号：一是承接区{support_zone}按标准成立；二是站上{strong_line_price}且成交活跃度达标。",
         "数据状态": "可用",
     }

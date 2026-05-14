@@ -145,6 +145,25 @@ REQUIRED_FEEDBACK_PANEL_PHRASES = [
     "企业微信使用反馈",
 ]
 
+REQUIRED_SINGLE_REPORT_FRONT_PHRASES = [
+    "【结果依据】",
+    "行情依据",
+    "公司依据",
+    "行业依据",
+    "还缺什么",
+]
+
+FORBIDDEN_SINGLE_REPORT_FRONT_PHRASES = [
+    "【证据头】",
+    "方法口径：",
+    "分析顺序：",
+    "方法版本：",
+    "技术指标=",
+    "成交活跃就是",
+    "明显活跃就是",
+    "具体金额/手数见成交标准",
+]
+
 GUARDRAILS = [
     "read_only_frontend_message_contract",
     "conclusion_and_computed_conditions_first",
@@ -302,6 +321,7 @@ def build_report() -> dict[str, Any]:
     daily_push_table: dict[str, Any] = {}
     if DAILY_PUSH_TABLE_PATH.exists():
         daily_push_table = read_json(DAILY_PUSH_TABLE_PATH)
+    stock_assistant_text = read_text(STOCK_ASSISTANT_PATH) if STOCK_ASSISTANT_PATH.exists() else ""
 
     referenced_texts = load_referenced_texts()
     references = {
@@ -371,6 +391,14 @@ def build_report() -> dict[str, Any]:
                 read_text(QUALITY_PANEL_SCRIPT_PATH) if QUALITY_PANEL_SCRIPT_PATH.exists() else "",
                 REQUIRED_FEEDBACK_PANEL_PHRASES,
             ),
+        },
+        "single_report_frontend_style": {
+            "required_phrase_missing": text_contains_all(stock_assistant_text, REQUIRED_SINGLE_REPORT_FRONT_PHRASES),
+            "forbidden_phrase_hits": [
+                phrase
+                for phrase in FORBIDDEN_SINGLE_REPORT_FRONT_PHRASES
+                if phrase in stock_assistant_text
+            ],
         },
         "governance": {
             "single_current_contract": governance.get("唯一现行规则源") == "01配置/股票前台报告表达定稿规则_v1.0.json",
@@ -443,6 +471,11 @@ def validate_report(report: dict[str, Any]) -> list[str]:
         problems.append(f"feedback_loop_bridge_missing_phrase:{phrase}")
     for phrase in feedback_loop["quality_panel_missing_phrases"]:
         problems.append(f"feedback_loop_quality_panel_missing_phrase:{phrase}")
+    single_report_style = report["single_report_frontend_style"]
+    for phrase in single_report_style["required_phrase_missing"]:
+        problems.append(f"single_report_frontend_missing_phrase:{phrase}")
+    for phrase in single_report_style["forbidden_phrase_hits"]:
+        problems.append(f"single_report_frontend_forbidden_phrase:{phrase}")
     for task_id, present in daily_push["required_current_tasks"].items():
         if not present:
             problems.append(f"missing_current_push_task:{task_id}")
