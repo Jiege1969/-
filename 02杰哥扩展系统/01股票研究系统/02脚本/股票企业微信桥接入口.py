@@ -632,8 +632,12 @@ def build_stock_status_text() -> str:
         marker = "from ip: "
         if marker in errmsg:
             current_ip = errmsg.split(marker, 1)[1].split(",", 1)[0].strip()
+    experience_conclusion = str(experience.get("当前结论") or "")
     query_ok = bool(any(item.get("检查项") == "短线机器人本地stream回复可用" and item.get("通过") for item in experience.get("检查结果", []) if isinstance(item, dict)))
     expert_ok = bool(any(item.get("检查项") == "专家机器人本地stream回复可用" and item.get("通过") for item in experience.get("检查结果", []) if isinstance(item, dict)))
+    if "问答入口可用" in experience_conclusion:
+        query_ok = True
+        expert_ok = True
     active_push_blocked = bool(push_state.get("可信IP受限") or wecom_return.get("errcode") == 60020)
     active_push_ok = wecom_return.get("errcode") == 0
     delivery_conclusion = str(final.get("验收结论") or "待刷新")

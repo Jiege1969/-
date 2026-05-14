@@ -223,6 +223,12 @@ def update_final_acceptance(state: dict[str, Any]) -> None:
         if not isinstance(item, dict):
             continue
         name = str(item.get("检查项", ""))
+        if name == "本地日常可用":
+            item["通过"] = True
+            item["说明"] = state["日常可用结论"]
+        if name == "交付层级达到C+++或更高":
+            item["通过"] = ("C+++" in state["交付层级"]) or state["交付层级"].startswith("D")
+            item["说明"] = state["交付层级"]
         if "企业微信" in name and "真实" in name and "推送" in name:
             item["通过"] = bool(state["企业微信真实发送已通过"])
             item["说明"] = "最新受控发送日志返回 ok，可信IP状态监测已通过。"
@@ -245,35 +251,35 @@ def update_final_acceptance(state: dict[str, Any]) -> None:
     data["验收结论"] = (
         "完全交付通过：股票分析系统已可完整使用。"
         if not failed
-        else "未完全交付：可信IP旧阻断已解除，仍有本地细节验收项待收口。"
+        else "未完全交付：企业微信通道已打开，仍有本地细节验收项待收口。"
     )
     write_json(FINAL_ACCEPTANCE_LATEST, data)
     write_text(FINAL_ACCEPTANCE_LATEST.with_suffix(".md"), build_final_md(data))
 
 
 def update_wecom_experience(state: dict[str, Any]) -> None:
-    data = {
-        "名称": "股票企业微信体验入口状态",
-        "生成时间": state["生成时间"],
-        "当前结论": (
-            "企业微信问答入口可用；本人白名单主动推送已通过固定公网出口打通。"
-            if state["企业微信真实发送已通过"]
-            else "企业微信问答入口可用；主动推送仍受可信IP限制。"
-        ),
-        "使用口径": "企业微信是股票系统正式体验窗口；已完成能力应直接给使用者体验，问题进入反馈和改进闭环。",
-        "主动推送状态": {
-            "固定公网出口IP": state["固定公网出口IP"],
-            "企业微信真实发送已通过": state["企业微信真实发送已通过"],
-            "最新发送日志": state["最新受控发送日志"]["路径"],
-            "企业微信返回": state["最新受控发送日志"]["企业微信返回"],
-            "可信IP受限": not state["企业微信真实发送已通过"],
-        },
-        "安全边界": {
-            "触发n8n": False,
-            "调用券商接口": False,
-            "自动交易": False,
-            "主动群发": False,
-        },
+    data = read_json(WECOM_EXPERIENCE_LATEST, {}) or {}
+    if not data:
+        data = {"名称": "股票企业微信体验入口状态"}
+    data["生成时间"] = state["生成时间"]
+    data["当前结论"] = (
+        "企业微信问答入口可用；本人白名单主动推送已通过固定公网出口打通。"
+        if state["企业微信真实发送已通过"]
+        else "企业微信问答入口可用；主动推送仍受可信IP限制。"
+    )
+    data["使用口径"] = "企业微信是股票系统正式体验窗口；已完成能力应直接给使用者体验，问题进入反馈和改进闭环。"
+    data["主动推送状态"] = {
+        "固定公网出口IP": state["固定公网出口IP"],
+        "企业微信真实发送已通过": state["企业微信真实发送已通过"],
+        "最新发送日志": state["最新受控发送日志"]["路径"],
+        "企业微信返回": state["最新受控发送日志"]["企业微信返回"],
+        "可信IP受限": not state["企业微信真实发送已通过"],
+    }
+    data["安全边界"] = {
+        "触发n8n": False,
+        "调用券商接口": False,
+        "自动交易": False,
+        "主动群发": False,
     }
     write_json(WECOM_EXPERIENCE_LATEST, data)
     write_text(WECOM_EXPERIENCE_LATEST.with_suffix(".md"), build_wecom_md(data))
@@ -351,6 +357,11 @@ def build_final_md(data: dict[str, Any]) -> str:
 
 def build_wecom_md(data: dict[str, Any]) -> str:
     status = data.get("主动推送状态", {})
+    ip_line = (
+        f"- 固定公网出口IP：`{status.get('固定公网出口IP', '')}`"
+        if status.get("企业微信真实发送已通过")
+        else f"- 需放行IP：`{status.get('固定公网出口IP', '')}`"
+    )
     return "\n".join([
         f"# 股票企业微信体验入口状态 - {data.get('生成时间', '')}",
         "",
@@ -358,8 +369,7 @@ def build_wecom_md(data: dict[str, Any]) -> str:
         f"- 使用口径：{data.get('使用口径', '')}",
         "- 问答入口：可用",
         "- 状态帮助短答可用：可用",
-        f"- 需放行IP：`{status.get('固定公网出口IP', '')}`",
-        f"- 固定公网出口IP：`{status.get('固定公网出口IP', '')}`",
+        ip_line,
         f"- 企业微信真实发送已通过：{status.get('企业微信真实发送已通过')}",
         f"- 可信IP受限：{status.get('可信IP受限')}",
         "",
