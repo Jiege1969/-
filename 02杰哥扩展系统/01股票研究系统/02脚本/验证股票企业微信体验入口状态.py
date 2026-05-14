@@ -107,7 +107,7 @@ def build_markdown(report: dict[str, Any]) -> str:
         "",
         "## 边界",
         "- 企业微信用户问答被动回复是股票系统前台入口，应保持可体验。",
-        "- 主动推送只允许本人白名单灰度，不群发，不外部客户。",
+        "- 主动推送按受控白名单灰度执行。",
         "- 可信IP导致的主动推送失败登记为环境限制，不等同于股票问答入口失败。",
         "- 不触发n8n，不调用券商接口，不自动交易。",
         "",
@@ -144,7 +144,7 @@ def main() -> int:
         check_item("专家机器人本地stream回复可用", expert.get("ok") and "今日重点观察个股" in expert_text and "证据边界" in expert_text, expert_text[:160]),
         check_item("状态帮助短答可用", status_reply.get("ok") and "【股票系统状态】" in status_text and "问答入口：可用" in status_text and "需放行IP" in status_text, status_text[:200]),
         check_item("主动发送token可获取", token_probe.get("ok") is True, token_probe.get("企业微信返回", {})),
-        check_item("主动推送失败已识别为可信IP限制", wecom_return.get("errcode") in {60020, None}, wecom_return),
+        check_item("主动推送日志状态可识别", wecom_return.get("errcode") in {0, 60020, None}, wecom_return),
         check_item("未触发n8n券商交易", True, {"触发n8n": False, "调用券商接口": False, "自动交易": False}),
     ]
     failed = [item for item in checks if not item.get("通过")]

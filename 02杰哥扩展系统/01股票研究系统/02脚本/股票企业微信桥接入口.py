@@ -45,6 +45,7 @@ STOCK_ASSISTANT_CARD_PNG_URL = "http://127.0.0.1:19300/card/latest.png"
 STOCK_ASSISTANT_SIGNAL_ICON_URL = "http://127.0.0.1:19300/card/signal-icon.png"
 PUBLIC_STOCK_RECO_URL = "http://43.167.210.211/wecom-bot/message?view=stock-reco"
 PUBLIC_STOCK_DETAIL_BASE = "http://43.167.210.211/wecom-bot/message?ask="
+FRONT_OUTPUT_STANDARD_JSON = ROOT / "01配置" / "股票前台输出标准_v2.json"
 SHORTLINE_BOT_PATH = "/wecom-bot/stock-shortline"
 EXPERT_BOT_PATH = "/wecom-bot/stock-expert"
 SYSTEM_MANAGER_PROXY_URL = "http://127.0.0.1:19310/wecom/system-manager"
@@ -63,6 +64,36 @@ METHOD_KERNEL_CALIBRATION_JSON = ROOT / "03数据" / "278杰哥推荐方法内�
 ADAPTIVE_FUNNEL_JSON = ROOT / "03数据" / "283环境自适应三级漏斗推荐引擎" / "环境自适应三级漏斗推荐引擎_最新.json"
 JIEGE_RECOMMEND_MATERIAL_BUILDER = ROOT / "02脚本" / "生成杰哥推荐单股分析材料包.py"
 JIEGE_RECOMMEND_MATERIAL_LATEST_JSON = ROOT / "03数据" / "275杰哥推荐单股分析材料包" / "单股分析材料包_最新.json"
+
+
+def load_front_output_standard() -> dict[str, Any]:
+    """读取前台输出设置；设置读不到时使用保守默认值，不能让入口崩掉。"""
+    try:
+        data = json.loads(FRONT_OUTPUT_STANDARD_JSON.read_text(encoding="utf-8-sig", errors="replace"))
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def single_stock_quant_config() -> dict[str, float]:
+    standard = load_front_output_standard()
+    template = standard.get("单股短答模板") if isinstance(standard.get("单股短答模板"), dict) else {}
+    raw = template.get("量化标准") if isinstance(template.get("量化标准"), dict) else {}
+    defaults = {"成交活跃量比5日": 1.10, "成交明显活跃量比5日": 1.30}
+    output: dict[str, float] = {}
+    for key, default in defaults.items():
+        try:
+            output[key] = float(raw.get(key, default))
+        except Exception:
+            output[key] = default
+    return output
+
+
+def single_stock_forbidden_terms() -> list[str]:
+    standard = load_front_output_standard()
+    template = standard.get("单股短答模板") if isinstance(standard.get("单股短答模板"), dict) else {}
+    terms = template.get("禁止话术")
+    return [str(item) for item in terms] if isinstance(terms, list) else []
 
 
 def load_env_file(path: Path) -> dict[str, str]:
@@ -620,7 +651,7 @@ def build_stock_status_text() -> str:
         "2、今日推荐",
         "3、这周哪些行业最值得盯",
         "",
-        "说明：问答回复可体验；主动推送只发本人白名单，不群发，不触发n8n，不交易。",
+        "说明：问答回复可体验；主动推送按受控白名单执行，系统不触发n8n，不交易。",
     ])
     return "\n".join(lines)
 
@@ -746,6 +777,21 @@ def build_single_stock_reply_from_material_package(path: Path = JIEGE_RECOMMEND_
         "本消息为研究摘要，不构成投资建议，不作为买卖指令。",
     ]
     return "\n".join(lines)
+
+
+def is_stock_clarification_reply(content: str) -> bool:
+    """识别股票助手没有落到单股对象时的澄清话术，桥接层再用材料包兜底。"""
+    text = str(content or "")
+    clarification_terms = (
+        "请告诉我股票名称或代码",
+        "需要补充股票",
+        "没有收到可分析文本",
+        "我还没对齐你的意思",
+        "你是想看“今日推荐”",
+        "你是想看\"今日推荐\"",
+        "还是想分析某只股票",
+    )
+    return any(term in text for term in clarification_terms)
 
 
 def call_system_manager(message: str, data: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -1128,9 +1174,12 @@ def build_jiege_recommendation_text(record: dict[str, Any] | None = None) -> str
         "【中期推荐股票】",
         f"推荐日期：{date_text}",
         "杰哥，您好！直接结论：",
+        "今日摘要：",
         f"本次系统筛出重点关注{len(recommended)}只、观察{len(observed)}只，适合按10-20、20-60个交易日跟踪；60个交易日以上只作中长期研究复核。",
         "入选股核心指标：行业热度靠前、趋势结构清楚、成交相对活跃、关键风险线没有破坏。",
         f"今日重点关注行业：{industry_text}",
+        f"完整图文报告：{PUBLIC_STOCK_RECO_URL}",
+        "进入图文报告后可点股票名称查看单股详情。",
         "数据提示：本报告基于最新入库行情和系统评分生成，盘中价格和量能变化后会重新判断。",
         "",
         f"今日重点观察个股（推荐时间：{date_text}）：",
@@ -1138,7 +1187,7 @@ def build_jiege_recommendation_text(record: dict[str, Any] | None = None) -> str
     if recommended:
         for index, item in enumerate(recommended, start=1):
             lines.append(f"{index}. {item['link']}：{item['stars']}")
-            lines.append(f"推荐理由：行业为{item['industry']}，当前进入重点关注层；点股票名称可进入详细分析报告。")
+            lines.append(f"行业：{item['industry']}；得分：{item['stars']}；结论：重点关注；关注点：风险线不破、成交继续活跃。")
     else:
         lines.append("当前暂无符合前台重点关注条件的个股；不为凑数推送。")
     lines.append("")
@@ -1146,7 +1195,7 @@ def build_jiege_recommendation_text(record: dict[str, Any] | None = None) -> str
     if observed:
         for index, item in enumerate(observed, start=1):
             lines.append(f"{index}. {item['link']}：{item['stars']}")
-            lines.append(f"推荐理由：行业为{item['industry']}，方向值得看但条件还没有完全达标。")
+            lines.append(f"行业：{item['industry']}；得分：{item['stars']}；结论：观察；关注点：等价格承接成立、成交达标后再提高优先级。")
     else:
         lines.append("当前暂无符合前台观察条件的个股；后台继续跟踪候选池。")
     lines.append("")
@@ -1369,6 +1418,9 @@ def render_user_single_stock_template(content: str) -> str:
     required = ("分析对象：", "结论：", "一句话：", "现在怎么处理：", "观察条件：", "风险线：", "为什么：")
     if not all(token in text for token in required):
         return text
+    quant_config = single_stock_quant_config()
+    active_ratio = quant_config["成交活跃量比5日"]
+    strong_active_ratio = quant_config["成交明显活跃量比5日"]
 
     subject = extract_prefixed_line_value(text, "分析对象：")
     conclusion = extract_prefixed_line_value(text, "结论：")
@@ -1380,6 +1432,8 @@ def render_user_single_stock_template(content: str) -> str:
     risk = extract_prefixed_line_value(text, "风险线：")
     why = extract_prefixed_line_value(text, "为什么：")
     gap = extract_prefixed_line_value(text, "缺口：")
+    stock_name = re.split(r"[（(]", subject, maxsplit=1)[0].strip() or subject
+    detail_url = f"{PUBLIC_STOCK_DETAIL_BASE}分析{stock_name}"
 
     segments = split_condition_segments(observe)
     price_condition = pick_segment(segments, ("价格回到", "企稳", "支撑", "不跌破"), observe)
@@ -1397,17 +1451,19 @@ def render_user_single_stock_template(content: str) -> str:
         "",
         "一、先说结论",
         f"结论：{conclusion}",
+        f"当前判断：{conclusion}",
         f"研究等级：{grade or '待系统确认'}",
         f"当前状态：{state or '待系统确认'}",
-        f"当前研究处理：{action or '继续观察，等待条件确认。'}",
+        f"操作策略：{action or '继续观察，等待条件确认。'}",
         f"一句话原因：{one_line or why or '系统暂未形成更高等级证据。'}",
-        "观察条件：见第二部分的价格、走势和资金三类重新关注时机。",
-        f"{volume_status}。",
+        "关注条件：见第二部分的价格、走势和资金三类重新关注时机。",
+        f"近5日成交活跃度：{volume_status}。",
         "",
         "二、重新关注时机",
-        f"1、价格企稳：{price_condition or '股价重新站稳企稳区间，并且不再跌破底线支撑价。'}",
-        f"2、走势转强：{turn_condition or '收盘价连续站上转强压力线。'}",
+        f"1、价格企稳：{price_condition or '股价重新站稳企稳区间，并且不再跌破底线支撑价。'}；站稳后才视为承接成立。",
+        f"2、走势转强：{turn_condition or '收盘价连续站上转强压力线。'}；更稳妥看连续2个交易日收盘价都高于{turn_price}。",
         f"3、资金回流：{volume_condition or '近5日成交活跃度达到系统活跃标准。'}",
+        f"成交标准：近5日成交活跃度达到平时的{active_ratio:.2f}倍以上才算活跃；达到平时的{strong_active_ratio:.2f}倍以上才算明显活跃。具体金额由系统按当日数据算好后直出。",
         "",
         "三、关键价位对照表",
         "- 现价：以系统最新行情和图形报告为准。",
@@ -1429,6 +1485,8 @@ def render_user_single_stock_template(content: str) -> str:
         f"2、量能：{volume_condition or '是否持续达到系统活跃标准。'}",
         "3、消息：公告、财报、行业政策、板块热度、解禁减持是否出现新变化。",
         "",
+        f"图文详情：{detail_url}",
+        "",
         "说明：仅供研究参考，不构成投资建议，不作为买卖指令。",
     ]
     return "\n".join(lines)
@@ -1437,6 +1495,10 @@ def render_user_single_stock_template(content: str) -> str:
 def align_stock_assistant_short_reply(content: str) -> str:
     """把单股短答对齐到企业微信终端验收字段，不改变股票助手原始判断。"""
     text = str(content or "").strip()
+    forbidden_terms = single_stock_forbidden_terms()
+    if any(term in text for term in forbidden_terms):
+        for term in forbidden_terms:
+            text = text.replace(term, "")
     if all(token in text for token in ("分析对象：", "结论：", "一句话：", "现在怎么处理：", "观察条件：", "风险线：", "为什么：", "缺口：")):
         return render_user_single_stock_template(text)
     if "分析对象：" not in text or "当前判断：" in text:
@@ -1543,15 +1605,13 @@ def process_message(data: dict[str, Any], robot_stream: bool = False) -> dict[st
             not material_package_result
             and not recommendation_request
             and is_single_stock_analysis_message(message)
-            and (stock_result.get("状态") == "需要补充股票" or "请告诉我股票名称或代码" in content)
+            and is_stock_clarification_reply(content)
         ):
             material_package_result = build_jiege_recommend_material_package(message)
         if material_package_result and material_package_result.get("状态") == "完成":
             fallback_material_reply = build_single_stock_reply_from_material_package()
             if fallback_material_reply and (
-                stock_result.get("状态") == "需要补充股票"
-                or "请告诉我股票名称或代码" in content
-                or "没有收到可分析文本" in content
+                is_stock_clarification_reply(content)
             ):
                 reply = fallback_material_reply
                 content = fallback_material_reply
@@ -1687,6 +1747,37 @@ def markdown_reply_to_html(content: str) -> str:
     import re
 
     text_without_images = re.sub(image_pattern, collect_image, text)
+
+    def wrap_mobile_line(line: str, max_len: int = 42) -> list[str]:
+        source = str(line or "").strip()
+        if len(source) <= max_len or source.startswith(("http://", "https://", "D:\\")):
+            return [source] if source else [""]
+        parts: list[str] = []
+        rest = source
+        delimiters = "。；;，,、：:"
+        while len(rest) > max_len:
+            cut = -1
+            for delimiter in delimiters:
+                index = rest.rfind(delimiter, 0, max_len + 1)
+                if index > cut:
+                    cut = index
+            if cut < 14:
+                cut = max_len
+            part = rest[: cut + 1].strip()
+            if part:
+                parts.append(part)
+            rest = rest[cut + 1 :].strip()
+        if rest:
+            parts.append(rest)
+        return parts or [source]
+
+    def wrap_mobile_text(value: str) -> str:
+        wrapped: list[str] = []
+        for line in str(value or "").splitlines():
+            wrapped.extend(wrap_mobile_line(line))
+        return "\n".join(wrapped)
+
+    text_without_images = wrap_mobile_text(text_without_images)
     escaped = html_lib.escape(text_without_images)
     escaped = re.sub(
         r"\[([^\]]+)\]\((https?://[^)]+|/[^)]+)\)",
@@ -1882,6 +1973,10 @@ class Handler(BaseHTTPRequestHandler):
                     content = report_path.read_text(encoding="utf-8-sig", errors="replace")
                 else:
                     content = str(result.get("企业微信回复") or result.get("回复") or "")
+                    if is_single_stock_analysis_message(ask) and is_stock_clarification_reply(content):
+                        material_package_result = build_jiege_recommend_material_package(ask)
+                        if material_package_result.get("状态") == "完成":
+                            content = build_single_stock_reply_from_material_package() or content
                 response_html(self, markdown_reply_to_html(content))
             except Exception as exc:
                 response_text(self, f"股票图文报告暂不可用：{exc}", status=503)

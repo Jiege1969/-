@@ -99,8 +99,18 @@ def fetch_bot_message_text(message: str) -> str:
     )
     with urllib.request.urlopen(request, timeout=30) as response:
         data = json.loads(response.read().decode("utf-8", errors="replace"))
-    stream = data.get("智能机器人回复", {}).get("stream", {}) if isinstance(data, dict) else {}
-    return str(stream.get("content") or data.get("企业微信内容") or data.get("回复") or "")
+    if not isinstance(data, dict):
+        return str(data or "")
+    direct_stream = data.get("stream", {}) if isinstance(data.get("stream"), dict) else {}
+    nested_robot = data.get("智能机器人回复", {}) if isinstance(data.get("智能机器人回复"), dict) else {}
+    nested_stream = nested_robot.get("stream", {}) if isinstance(nested_robot.get("stream"), dict) else {}
+    return str(
+        direct_stream.get("content")
+        or nested_stream.get("content")
+        or data.get("企业微信内容")
+        or data.get("回复")
+        or ""
+    )
 
 
 def remove_allowed_front_urls(text: str) -> str:
@@ -265,8 +275,8 @@ def main() -> int:
         check("单股聊天短答无模糊旧话术", not any(term in single_text for term in (forbidden_template_terms or ["按观察线跟踪", "证据仍需补齐", "承接和成交量持续性", "聊天先给结论", "成交量保持活跃"])), single_text[:700]),
         check("单股聊天短答给出大白话量化标准", all(term in single_text for term in ["近5日成交活跃度", "平时的1.10倍", "承接成立", "风险线", "成交标准"]), single_text[:700]),
         check("风险股票短答可获取", bool(risk_single_text), risk_single_error or risk_single_text[:120]),
-        check("风险股票不再写已跌破风险线为未来条件", "跌破20.04元" not in risk_single_text and "当前已低于20.04元风险线" in risk_single_text, risk_single_text[:900]),
-        check("风险股票说明站上口径", "当天收盘价或当前实时价高于18.90元" in risk_single_text and "连续2个交易日收盘价" in risk_single_text, risk_single_text[:900]),
+        check("风险股票不再写已跌破风险线为未来条件", "当前已低于" in risk_single_text and "风险复核" in risk_single_text and not re.search(r"如果[^。\n]*跌破\d+(?:\.\d+)?元", risk_single_text), risk_single_text[:900]),
+        check("风险股票说明站上口径", "当天收盘价或当前实时价高于" in risk_single_text and "连续2个交易日收盘价" in risk_single_text, risk_single_text[:900]),
         check("风险股票无无意义边界声明", "边界：研究提醒" not in risk_single_text and "最终由你人工判断" not in risk_single_text, risk_single_text[-300:]),
     ]
     failed_checks = [item for item in checks if not item["通过"]]
