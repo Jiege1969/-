@@ -40,6 +40,7 @@ INVALID_AUTO_NAMES = {"殚"}
 BOARD_FILE_CANDIDATES = {
     "杰哥的学习分析股票池": ["JGDXXFXGPC.blk"],
     "杰哥的重点分析股票池": ["JGDZDFXGPC.blk"],
+    "杰哥短线池": ["JGDXC.blk"],
 }
 STALE_GENERATED_BOARD_FILES = ["杰哥的学习分析股票池.blk", "杰哥的重点分析股票池.blk"]
 
@@ -163,6 +164,21 @@ def read_json_codes(path: Path) -> list[str]:
     return sorted(dict.fromkeys(codes))
 
 
+def read_shortline_report_codes(path: Path) -> list[str]:
+    if not path.exists():
+        return []
+    data = json.loads(path.read_text(encoding="utf-8-sig"))
+    codes: list[str] = []
+    for item in data.get("股票", []) if isinstance(data.get("股票"), list) else []:
+        if not isinstance(item, dict):
+            continue
+        code = normalize_code(str(item.get("代码", "")))
+        blk_code = citic_blk_code(code) if code else None
+        if blk_code and blk_code not in codes:
+            codes.append(blk_code)
+    return codes
+
+
 def read_cfg_names() -> list[str]:
     if not CFG_FILE.exists():
         return []
@@ -234,6 +250,7 @@ def build_boards() -> list[dict[str, Any]]:
     if not learning_pool.exists():
         learning_pool = data_root() / "01股票池" / "2000只样本股票池_最新.json"
     focus_pool = config_root() / "重点关注股票池.json"
+    shortline_pool = data_root() / "260股票n8n日内报告闭环与晨报推送策略包" / "收盘短线观察_基于300只轻扫描_最新.json"
     return [
         {
             "名称": "杰哥的学习分析股票池",
@@ -248,6 +265,13 @@ def build_boards() -> list[dict[str, Any]]:
             "来源": focus_pool,
             "类型": "json",
             "定位": "当前重点跟踪、重点报告、重点复盘；数量随系统分析结果动态变化，按条件入池，按失效条件退出，不按固定数量凑数。",
+        },
+        {
+            "名称": "杰哥短线池",
+            "文件": "杰哥短线池.blk",
+            "来源": shortline_pool,
+            "类型": "shortline_report",
+            "定位": "1-5天短线观察对象，供企业微信短线助手和中信软件同步查看；来源为收盘短线观察报告，按报告顺序写入。",
         },
     ]
 
@@ -291,6 +315,7 @@ def build_markdown(report: dict[str, Any]) -> str:
             "- 每次同步前备份将要覆盖的 `.blk` 文件。",
             "- 自选板块必须先由中信软件创建；系统只负责向已存在板块填入股票。",
             "- 当前中信已创建文件：`JGDXXFXGPC.blk`、`JGDZDFXGPC.blk`。",
+            "- 短线池由中信软件创建为 `JGDXC.blk`；系统只同步收盘短线观察结果。",
         ]
     )
     return "\n".join(lines) + "\n"
@@ -322,6 +347,8 @@ def main() -> int:
             codes = read_shadow_blk(board["来源"])
         elif board["类型"] == "csv":
             codes = read_csv_codes(board["来源"])
+        elif board["类型"] == "shortline_report":
+            codes = read_shortline_report_codes(board["来源"])
         else:
             codes = read_json_codes(board["来源"])
         target = resolve_existing_board_file(board["名称"])
